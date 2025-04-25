@@ -1,0 +1,9 @@
+/* Variable Font */
+@font-face {
+  font-family: "Monaspace Neon";
+  font-weight: 200 800;
+  font-stretch: 75% 125%;
+  font-style: oblique 0deg 12deg;
+  font-display: swap;
+  src: url("./MonaspaceNeonVarVF[wght,wdth,slnt].woff2") format("woff2-variations");
+}

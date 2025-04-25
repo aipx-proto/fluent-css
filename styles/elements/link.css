@@ -1,0 +1,11 @@
+a {
+  color: var(--colorBrandBase);
+  text-decoration: none;
+  &:hover {
+    color: var(--colorBrandBase);
+    text-decoration: underline;
+  }
+  &:active {
+    color: var(--colorBrandBase);
+  }
+}

@@ -1,0 +1,25 @@
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  background-color: var(--colorNeutralBackground1);
+  border: 1px solid transparent;
+  border-bottom-color: var(--colorNeutralStrokeAccessible);
+  border-radius: var(--borderRadiusMedium);
+  height: 32px;
+
+  /* appearance="filled-darker" */
+  border-color: transparent;
+  background-color: var(--colorBackground2);
+}
+
+input:not([type="radio"]):not([type="checkbox"]):focus,
+select:focus,
+textarea:focus {
+  outline: transparent solid 2px;
+  border-bottom-color: transparent;
+  box-shadow: inset 0px -22px 0px -20px var(--colorCompoundBrandStroke);
+}
+
+textarea {
+  padding-block: 0.5em;
+}

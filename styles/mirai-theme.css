@@ -1,0 +1,62 @@
+:root {
+  --fontSize1: 40px;
+  --fontSize2: 28px;
+  --fontSize3: 20px;
+  --fontSize4: 16px;
+  --fontSize5: 14px;
+  --fontSize6: 12px;
+  --fontSize7: 10px;
+
+  /* fluent theme css overrides */
+  --fontFamilySans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  --fontFamilyMono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
+
+  --fontWeightRegular: 400;
+  --fontWeightBold: 600;
+
+  --borderRadiusNone: 0;
+  --borderRadiusSmall: 4px;
+  --borderRadiusMedium: 8px;
+  --borderRadiusLarge: 12px;
+  --borderRadiusXLarge: 16px;
+  --borderRadiusCircular: 10000px;
+
+  --colorBrandBase: #0091ff;
+  
+}
+
+:root,
+.themeDark {
+  color-scheme: dark;
+
+  --colorBackground1: #1f1f1f;
+  --colorBackground2: #141414;
+  --colorBackground3: #0a0a0a;
+  --colorBackground4: #000000;
+
+  --colorBorder1: #666666;
+  --colorBorder2: var(--colorBackground3);
+
+  --colorText1: #ffffff;
+  --colorText2: #f5f5f5;
+  --colorText3: #e8e8e8;
+  --colorText4: #d1d1d1;
+}
+
+.themeLight {
+  color-scheme: light;
+
+  --colorBackground1: #ffffff;
+  --colorBackground2: #f5f5f5;
+  --colorBackground3: #f0f0f0;
+  --colorBackground4: #e6e6e6;
+
+  --colorBorder1: #d1d1d1;
+  --colorBorder2: var(--colorBackground3);
+
+  --colorText1: #000000;
+  --colorText2: #424242;
+  --colorText3: #707070;
+  --colorText4: #bdbdbd;
+}
