@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/@fluentui/web-components/dist/web-components.min.js"></script>
+</head>
+
+<body>
+    <!-- Thai Menu Example using Fluent Web Components -->
+    <fluent-text as="h2" slot="title">Thai Menu</fluent-text>
+    <fluent-divider></fluent-divider>
+    <fluent-button appearance="primary">testing
+    </fluent-button>
+    <table style="width: 100%; margin-top: 1rem;">
+        <thead>
+            <tr>
+                <th><fluent-text>Dish</fluent-text></th>
+                <th><fluent-text>Description</fluent-text></th>
+                <th><fluent-text>Spicy</fluent-text></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><fluent-text>Pad Thai</fluent-text></td>
+                <td><fluent-text>Stir-fried rice noodles with egg, tofu, peanuts, and bean sprouts</fluent-text></td>
+                <td>
+                    <fluent-badge appearance="filled" color="warning"><fluent-text>Mild</fluent-text></fluent-badge>
+                </td>
+            </tr>
+            <tr>
+                <td><fluent-text>Green Curry</fluent-text></td>
+                <td><fluent-text>Spicy coconut milk curry with chicken, eggplant, and basil</fluent-text></td>
+                <td>
+                    <fluent-badge appearance="filled" color="danger"><fluent-text>Hot</fluent-text></fluent-badge>
+                </td>
+            </tr>
+            <tr>
+                <td><fluent-text>Tom Yum Soup</fluent-text></td>
+                <td><fluent-text>Hot and sour soup with shrimp, lemongrass, and mushrooms</fluent-text></td>
+                <td>
+                    <fluent-badge appearance="filled" color="important"><fluent-text>Medium</fluent-text></fluent-badge>
+                </td>
+            </tr>
+            <tr>
+                <td><fluent-text>Mango Sticky Rice</fluent-text></td>
+                <td><fluent-text>Sweet sticky rice with fresh mango and coconut milk</fluent-text></td>
+                <td>
+                    <fluent-badge appearance="filled" color="success"><fluent-text>None</fluent-text></fluent-badge>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

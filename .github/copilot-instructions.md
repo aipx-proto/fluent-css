@@ -1,0 +1,21 @@
+# Fluent Web Components Editor
+
+When asked to edit HTML, please use the fluent web component library. Follow this precedence:
+
+1. Find the most relevant <fluent-xxx> element. If not available,
+2. Use basic semantic HTML elements.
+
+---
+
+## Component Documentation
+When using <fluent-xxx> elements, please carefully follow the "Fluent Web Components Examples" documentation examples. The nesting structure and correct slot usage very is important.
+
+Some additional rules:
+- fluent-checkbox and fluent-radio cannot have children and must be used in a fluent-field, like in the examples
+- **Always** use a slot for elements nested inside <fluent-xxx> elements
+- for fluent-button elements, please use shape="circular"
+- for fluent-input, fluent-textarea, & fluent-dropdown, please use appearance="filled-lighter"
+
+[component-examples-llm.md](./docs/component-examples-llm.md)
+
+[components-llm.md](./docs/components-llm.md)
