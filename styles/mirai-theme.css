@@ -8,9 +8,10 @@
   --fontSize7: 10px;
 
   /* fluent theme css overrides */
-  --fontFamilySans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-  --fontFamilyMono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
+  --fontFamilySans: "Aptos", "Segoe UI", "Segoe UI Web (West European)",
+    -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  --fontFamilyMono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier,
+    monospace;
 
   --fontWeightRegular: 400;
   --fontWeightBold: 600;
@@ -23,8 +24,41 @@
   --borderRadiusCircular: 10000px;
 
   --colorBrandBase: #0091ff;
-  
+
+  --durationRest: 100ms;
+  --durationHover: 150ms;
+  --durationActive: 50ms;
 }
+
+.size-small {
+  --sizeHeight: 24px;
+  --sizeFont: var(--fontSize6);
+  --sizePadding: 8px;
+}
+:root,
+.size-medium {
+  --sizeHeight: 32px;
+  --sizeFont: var(--fontSize5);
+  --sizePadding: 12px;
+}
+.size-large {
+  --sizeHeight: 40px;
+  --sizeFont: var(--fontSize4);
+  --sizePadding: 16px;
+}
+
+.shape-square {
+  --borderRadius: var(--borderRadiusSmall);
+}
+:root,
+.shape-rounded {
+  --borderRadius: var(--borderRadiusMedium);
+}
+.shape-circular {
+  --borderRadius: var(--borderRadiusCircular);
+}
+
+
 
 :root,
 .themeDark {
@@ -42,6 +76,29 @@
   --colorText2: #f5f5f5;
   --colorText3: #e8e8e8;
   --colorText4: #d1d1d1;
+  
+  &, .appearance-outline {
+    --interactiveRest: var(--colorBackground1);
+    --interactiveHover: #3d3d3d;
+    --interactiveActive: #141414;
+  }
+  .appearance-primary {
+    --interactiveRest: #0091ff;
+    --interactiveHover: #0077cc;
+    --interactiveActive: #005599;
+  }
+  .appearance-subtle {
+    --interactiveRest: var(--colorBackground2);
+    --interactiveHover: #3d3d3d;
+    --interactiveActive: #141414;
+  }
+  .appearance-transparent {
+    --interactiveRest: transparent;
+    --interactiveHover: #3d3d3d;
+    --interactiveActive: #141414;
+  }
+
+
 }
 
 .themeLight {

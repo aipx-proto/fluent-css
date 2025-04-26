@@ -1,12 +1,61 @@
 button,
 input[type="button"],
 input[type="submit"],
-input[type="reset"] {
+input[type="reset"],
+::-webkit-file-upload-button,
+.button {
+  /* default circular */
+  --borderRadius: var(--borderRadiusCircular);
+
+  cursor: pointer;
   appearance: none;
+
+  line-height: 1;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--borderRadiusCircular);
-  padding: 0 16px;
-  height: 32px;
+
+  border-radius: var(--borderRadius);
+  font-weight: var(--fontWeightBold);
+  font-size: var(--sizeFont);
+  color: var(--colorText1);
+  min-height: var(--sizeHeight);
+  padding: 2px var(--sizePadding);
+
+  background-color: var(--interactiveRest);
+  transition: background-color var(--durationRest) ease-in-out;
+  
+  &:not(:disabled) {
+    &:hover, &.checked {
+      background-color: var(--interactiveHover);
+      transition-duration: var(--durationHover);
+    }
+    
+    &:active {
+      background-color: var(--interactiveActive);
+      transition-duration: var(--durationActive);
+    }
+  }
+
+  border: 1px solid var(--colorBorder1);
+  &.appearance-subtle,
+  &.appearance-primary,
+  &.appearance-transparent {
+    border-color: transparent;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    /* background-color: var(--colorBackground2); */
+    /* border-color: transparent; */
+  }
+}
+
+/* .size-small, */
+::-webkit-file-upload-button {
+  --sizeHeight: 24px;
+  --sizeFont: var(--fontSize6);
+  --sizePadding: 8px;
 }
