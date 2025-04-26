@@ -92,8 +92,7 @@ pre,
 samp,
 tt {
   font-family: var(--fontFamilyMono);
-  /* smaller font size optically aligns the x-height of Monaspace Neon and Aptos */
-  font-size: 0.9em;
+  font-size: var(--fontFamilyMonoScale);
 }
 
 kbd {

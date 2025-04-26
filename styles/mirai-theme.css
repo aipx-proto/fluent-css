@@ -7,11 +7,12 @@
   --fontSize6: 12px;
   --fontSize7: 10px;
 
-  /* fluent theme css overrides */
   --fontFamilySans: "Aptos", "Segoe UI", "Segoe UI Web (West European)",
     -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   --fontFamilyMono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier,
     monospace;
+  /* smaller font size optically aligns the x-height of Monaspace Neon and Aptos */
+  --fontFamilyMonoScale: 0.9em;
 
   --fontWeightRegular: 400;
   --fontWeightBold: 600;
@@ -58,8 +59,6 @@
   --borderRadius: var(--borderRadiusCircular);
 }
 
-
-
 :root,
 .themeDark {
   color-scheme: dark;
@@ -76,8 +75,9 @@
   --colorText2: #f5f5f5;
   --colorText3: #e8e8e8;
   --colorText4: #d1d1d1;
-  
-  &, .appearance-outline {
+
+  &,
+  .appearance-outline {
     --interactiveRest: var(--colorBackground1);
     --interactiveHover: #3d3d3d;
     --interactiveActive: #141414;
@@ -97,8 +97,6 @@
     --interactiveHover: #3d3d3d;
     --interactiveActive: #141414;
   }
-
-
 }
 
 .themeLight {

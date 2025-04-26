@@ -1,21 +1,56 @@
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]),
 select,
 textarea {
-  background-color: var(--colorNeutralBackground1);
-  border: 1px solid transparent;
-  border-bottom-color: var(--colorNeutralStrokeAccessible);
-  border-radius: var(--borderRadiusMedium);
-  height: 32px;
 
-  /* appearance="filled-darker" */
-  border-color: transparent;
-  background-color: var(--colorBackground2);
+  --interactiveRest: var(--colorBackground2);
+  --underlineColor: transparent;
+  --borderColor: transparent;
+  
+  appearance: none;
+  line-height: 1;
 
-  &:focus {
-    outline: transparent solid 2px;
-    border-bottom-color: transparent;
-    box-shadow: inset 0px -22px 0px -20px var(--colorBrandBase);
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
+
+  border-radius: var(--borderRadius);
+  font-size: var(--sizeFont);
+  color: var(--colorText1);
+  min-height: var(--sizeHeight);
+  padding: 2px var(--sizePadding);
+
+  border: 1px solid var(--borderColor);
+
+  background-color: var(--interactiveRest);
+  box-shadow: inset 0px -22px 0px -20px var(--underlineColor);
+
+  &:not(:disabled) {  
+    &:hover {
+      --underlineColor: var(--colorBorder1);
+      border-bottom-color: transparent;
+    }
+
+    &:focus {
+      --underlineColor: var(--colorBrandBase);
+      border-bottom-color: transparent;
+    }
   }
+
+  outline: transparent solid 2px;
+
+  &.appearance-outline {
+    --borderColor: var(--colorBorder1);
+  }
+  /* &.appearance-transparent {
+    --underlineColor: var(--interactiveRest);
+    --borderRadius: var(--borderRadiusSmall);
+    background-color: transparent;
+  } */
+}
+
+input[type="number"], input[type="date"] {
+  font-family: var(--fontFamilyMono);
+  font-size: var(--fontFamilyMonoScale);
 }
 
 textarea {

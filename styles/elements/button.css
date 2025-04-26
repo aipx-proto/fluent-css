@@ -9,7 +9,6 @@ input[type="reset"],
 
   cursor: pointer;
   appearance: none;
-
   line-height: 1;
 
   display: inline-flex;
@@ -39,6 +38,7 @@ input[type="reset"],
   }
 
   border: 1px solid var(--colorBorder1);
+
   &.appearance-subtle,
   &.appearance-primary,
   &.appearance-transparent {
