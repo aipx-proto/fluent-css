@@ -29,6 +29,18 @@
   --durationRest: 100ms;
   --durationHover: 150ms;
   --durationActive: 50ms;
+
+  --colorShadowAmbient: rgba(0, 0, 0, 0.24);
+  --colorShadowKey: rgba(0, 0, 0, 0.28);
+
+  --shadow2:  0 0 2px var(--colorShadowAmbient), 0 1px 2px   var(--colorShadowKey);
+  --shadow4:  0 0 2px var(--colorShadowAmbient), 0 2px 4px   var(--colorShadowKey);
+  --shadow8:  0 0 2px var(--colorShadowAmbient), 0 4px 8px   var(--colorShadowKey);
+  --shadow16: 0 0 2px var(--colorShadowAmbient), 0 8px 16px  var(--colorShadowKey);
+  --shadow28: 0 0 8px var(--colorShadowAmbient), 0 14px 28px var(--colorShadowKey);
+  --shadow64: 0 0 8px var(--colorShadowAmbient), 0 32px 64px var(--colorShadowKey);
+
+  --colorBackgroundOverlay: rgba(0, 0, 0, 0.5);
 }
 
 .size-small {

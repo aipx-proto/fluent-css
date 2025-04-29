@@ -13,7 +13,7 @@
       padding: 20px;
     }
 
-    section {
+    .section {
       margin-bottom: 30px;
       padding: 20px;
       border-radius: var(--borderRadiusLarge);
@@ -52,19 +52,19 @@
       align-items: flex-start;
     }
 
-    footer {
+    .footer {
       margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid var(--Border);
       color: var(--colorNeutralForeground3);
     }
 
-    nav ul {
+    .nav ul {
       list-style: none;
       padding: 0;
     }
 
-    nav ul li {
+    .nav ul li {
       display: inline;
       margin-right: 20px;
     }
@@ -75,7 +75,7 @@
 
   <header>
     <h1>Fluent Mirai Theme Styles</h1>
-    <nav>
+    <nav class="nav">
       <ul>
         <li><a href="#html-elements">HTML Elements</a></li>
         <li><a href="#fluent-basic">Basic</a></li>
@@ -88,7 +88,7 @@
   </header>
 
   <main>
-    <section id="html-elements">
+    <section id="html-elements" class="section">
       <h2 class="section-header">HTML Elements</h2>
       <h3 class="component-header">Text Elements</h3>
       <h1>Heading 1</h1>
@@ -184,28 +184,31 @@ function example() {
       </table>
     </section>
 
+    <section id="fluent-overlay" class="section">
+      <h2 class="section-header">Overlay Elements</h2>
+      <h3 class="component-header">Dialog</h3>
+
+      <button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
+
+      <dialog closedby="any" id="sampleDialog" class="dialog-large">
+        <form method="dialog">
+          <header>
+            <h3>Dialog Title</h3>
+            <span>An example dialog</span>
+          </header>
+          <main>
+            <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user interaction.</p>
+          </main>
+          <footer>
+            <button class="dialog-close appearance-transparent icon-only">X</button>
+            <button class="appearance-subtle">Cancel</button>
+            <button class="appearance-primary">Primary</button>
+          </footer>
+        </form>
+      </dialog>
     </section>
 
-    <!-- <section id="media">
-      <h2 class="section-header">Media Elements</h2>
-      <h3 class="component-header" >Images</h3>
-      <img src="https://via.placeholder.com/300x200" alt="Placeholder image">
-
-      <h3 class="component-header" >Video</h3>
-      <video width="320" height="240" controls>
-          <source src="movie.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-
-      <h3 class="component-header" >Audio</h3>
-      <audio controls>
-          <source src="audio.mp3" type="audio/mpeg">
-          Your browser does not support the audio tag.
-      </audio>
-    </section> -->
-
-
-    <section id="forms">
+    <section id="forms" class="section">
       <h2 class="section-header">Form Elements</h2>
       <form action="/submit" method="post">
         <div class="form-group">
@@ -334,7 +337,7 @@ function example() {
 
   </main>
 
-  <footer>
+  <footer class="footer">
     <p>This is a footer with some <small>small text</small> and a <time datetime="2024-03-20">date</time>.</p>
   </footer>
 </body>

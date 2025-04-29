@@ -1,4 +1,98 @@
 dialog {
+  color: inherit;
+  border: 1px solid var(--colorBorder1);
+  background-color: var(--colorBackground1);
+  box-shadow: var(--shadow16);
+  padding: 0;
+  border-radius: var(--borderRadiusLarge);
+  overflow: hidden;
 
+  header {
+    padding: 24px 24px 12px 24px;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+  }
+  main {
+    padding: 12px 24px;
+
+    /* the main content should be scrollable */
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  footer {
+    padding: 12px 24px;
+    border-top: 1px solid var(--colorBorder2);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .dialog-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 12px;
+  }
+
+
+  /* Open/Close Animation */
+
+  --duration: 0.2s;
+
+  &,
+  &::backdrop {
+    transition: opacity var(--duration) ease-in-out, transform var(--duration) ease-in-out,
+      overlay var(--duration) allow-discrete, display var(--duration) allow-discrete;
+    opacity: 0;
+  }
+
+  transform: scale(0.8);
+  &::backdrop {
+    background-color: var(--colorBackgroundOverlay);
+  }
+
+  &[open] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    &[open] {
+      opacity: 0;
+      transform: scale(0.8);
+
+      &::backdrop {
+        opacity: 0;
+      }
+    }
+  }
+
+  /* opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.2s ease-in-out allow-discrete;
+
+  &::backdrop {
+    background-color: var(--colorBackgroundOverlay);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &[open] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &[open]::backdrop {
+    opacity: 1;
+  } */
 }
-

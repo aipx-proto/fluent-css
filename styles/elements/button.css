@@ -44,6 +44,12 @@ input[type="reset"],
   &.appearance-transparent {
     border-color: transparent;
   }
+
+  &.icon-only {
+    padding: 0;
+    width: var(--sizeHeight);
+    height: var(--sizeHeight);
+  }
   
 }
 
