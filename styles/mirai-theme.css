@@ -35,17 +35,20 @@
   --sizeHeight: 24px;
   --sizeFont: var(--fontSize6);
   --sizePadding: 8px;
+  --sizeIcon: 16px
 }
 :root,
 .size-medium {
   --sizeHeight: 32px;
   --sizeFont: var(--fontSize5);
   --sizePadding: 12px;
+  --sizeIcon: 16px
 }
 .size-large {
   --sizeHeight: 40px;
   --sizeFont: var(--fontSize4);
   --sizePadding: 16px;
+  --sizeIcon: 20px
 }
 
 .shape-square {
@@ -71,10 +74,10 @@
   --colorBorder1: #666666;
   --colorBorder2: var(--colorBackground3);
 
-  --colorText1: #ffffff;
-  --colorText2: #f5f5f5;
-  --colorText3: #e8e8e8;
-  --colorText4: #d1d1d1;
+  --colorText1: #FFFFFF;
+  --colorText2: #D6D6D6;
+  --colorText3: #999999;
+  --colorText4: #5C5C5C;
 
   &,
   .appearance-outline {
