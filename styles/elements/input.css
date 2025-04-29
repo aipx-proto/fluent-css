@@ -27,11 +27,10 @@ textarea {
   color: var(--colorText1);
   min-height: var(--sizeHeight);
   padding: 0 var(--sizePadding);
+  background-color: var(--interactiveRest);
 
   border: 1px solid var(--borderColor);
   /* box-shadow: inset 0 0 0 1px var(--borderColor); */
-
-  background-color: var(--interactiveRest);
 
   --underlineColorGradient: linear-gradient(to bottom, var(--underlineColor), var(--underlineColor));
   --underlineBorderGradient: linear-gradient(to bottom, var(--colorBorder1), var(--colorBorder1));
@@ -41,7 +40,7 @@ textarea {
 
   background: var(--focusUnderlineBackground), var(--hoverUnderlineBackground), var(--interactiveRest);
   background-repeat: no-repeat;
-  
+
   transition: 0.1s ease-in;
   transition-property: background-size, background-position, border-color;
 
@@ -92,6 +91,7 @@ input[type="color"] {
   padding: 0;
   height: var(--sizeHeight);
   width: var(--sizeHeight);
+
   &::-webkit-color-swatch-wrapper {
     padding: 4px;
   }
@@ -100,3 +100,6 @@ input[type="color"] {
     border-radius: calc(var(--borderRadius) - 4px);
   }
 }
+
+/* I cannot figure out how to vertically center this input's content */
+/* input[type="file"] {} */
