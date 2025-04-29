@@ -209,11 +209,21 @@ function example() {
       <h2 class="section-header">Form Elements</h2>
       <form action="/submit" method="post">
         <div class="form-group">
-          <label for="text-input">Text Input:</label>
-          <input type="text" id="text-input" class="appearance-outline" name="text-input" placeholder="Enter text" />
-          <input type="text" id="text-input" class="appearance-subtle" name="text-input" placeholder="Enter text" />
+          <input type="text" id="text-input" class="appearance-subtle" placeholder="Subtle / Default" />
+          <input type="text" id="text-input" class="appearance-outline" placeholder="Outline  " />
+          <input type="text" id="text-input" disabled class="appearance-subtle" placeholder="Disabled" />
         </div>
-        
+
+        <div class="form-group">
+          <input type="text" id="text-input" class="size-small" placeholder="Small" />
+          <input type="text" id="text-input" class="size-medium" placeholder="Medium" />
+          <input type="text" id="text-input" class="size-large" placeholder="Large" />
+        </div>
+
+        <div class="form-group">
+          <label for="text-input">Text Input:</label>
+          <input type="text" id="text-input" name="text-input" placeholder="Enter text" />
+        </div>
 
         <div class="form-group">
           <label for="email">Email:</label>
@@ -310,7 +320,7 @@ function example() {
       <button class="appearance-subtle">Subtle</button>
       <button class="appearance-transparent">Transparent</button>
 
-      <hr/>
+      <hr />
 
       <input type="reset" class="size-small" value="Input Reset" />
       <input type="submit" class="size-small" value="Input Submit" />
