@@ -12,9 +12,9 @@
 - dialog element
 - input elements
 - slider
-
-- accordion details element
 - anchor button
+- accordion details element
+
 - split button: button/input group - split button
 - menu with html popover and css anchor
 - loading

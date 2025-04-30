@@ -1,16 +1,32 @@
 details {
+  --timingOpen: 0.2s;
+  --timingClose: 0.07s;
+
+  --sizeMarker: 20px;
+
   summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+
     &::marker {
       content: "";
     }
+
     list-style: none;
     &:before {
-      content: "➡️";
+      content: var(--iconChevronRight);
+      height: var(--sizeMarker);
+      width:  var(--sizeMarker);
       display: inline-block;
       transform: rotate(0deg);
-      transition: transform 0.3s ease-in-out;
+      transform-origin: center;
+      transition: transform var(--timingOpen) ease-in-out;
     }
   }
+
   &[open] {
     summary {
       &:before {
@@ -22,9 +38,8 @@ details {
   &::details-content {
     opacity: 0.2;
     transform: translateY(-4px);
-    content-visibility: visible;
-    transition-property: opacity, transform, content-visibility;
-    transition-duration: 0.2s;
+    transition-property: opacity, transform, content-visibility, max-height;
+    transition-duration: var(--timingClose);
     transition-timing-function: ease-out;
     transition-behavior: allow-discrete;
   }
@@ -32,6 +47,7 @@ details {
   &[open]::details-content {
     opacity: 1;
     transform: translateY(0);
+    transition-duration: var(--timingOpen);
     transition-timing-function: ease-in;
   }
 }
