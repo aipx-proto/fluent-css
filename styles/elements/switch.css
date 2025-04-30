@@ -1,0 +1,58 @@
+input[type="checkbox"].switch {
+
+  --borderColor: var(--colorBorder1);
+  --interactiveRest: var(--colorBackground2);
+  --sizeThumb: var(--sizeIcon);
+  --sizeOffset: 2px;
+  --sizeDimension: calc(var(--sizeThumb) + (var(--sizeOffset) * 2) + 2px);
+  --checkedColor: var(--colorBrandBase);
+
+  border: 1px solid var(--colorBorder1);
+  background-color: var(--interactiveRest);
+  border-radius: var(--borderRadiusCircular);
+
+  appearance: none;
+  position: relative;
+  margin: 0;
+
+  height: var(--sizeDimension);
+  width: calc(var(--sizeDimension) * 2);
+
+  label & {
+    vertical-align: middle;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: var(--sizeThumb);
+    width:  var(--sizeThumb);
+    border-radius: var(--borderRadiusCircular);
+    background-color: var(--colorBorder1);
+
+    position: absolute;
+    top: var(--sizeOffset);
+    left: var(--sizeOffset);
+    /* margin: var(--sizeOffset); */
+
+    transition: 0.1s ease-in-out;
+    transition-property: inset, background-color;
+    
+  }
+
+  &:checked {
+    background-color: var(--checkedColor);
+    border-color: var(--checkedColor);
+    &:after {
+      left: calc(100% - var(--sizeThumb) - var(--sizeOffset));
+      background-color: var(--interactiveRest);
+    }
+  }
+
+  &:disabled {
+    --checkedColor: var(--borderColor);
+  }
+}
+
+
+
