@@ -7,6 +7,7 @@
 @import "./elements/base.css";
 @import "./elements/button.css";
 @import "./elements/checkbox-radio.css";
+@import "./elements/control-group.css";
 @import "./elements/dialog.css";
 @import "./elements/disabled.css";
 @import "./elements/input.css";

@@ -14,17 +14,15 @@
 - slider
 - anchor button
 - accordion details element
-
 - split button: button/input group - split button
+
+- select button, file upload button
 - menu with html popover and css anchor
 - loading
   - skeleton?
   - spinner
   - progress bar
-- firefox support (for input pseudo elements)
-
 - intent-color vars: info, warning, error, success, primary
-
 - tabs
 
 Examples
@@ -32,6 +30,7 @@ Examples
 - dialog: simple vs header/main/footer...
 
 Refactor
+- firefox support (for input pseudo elements)
 - unify/simplify variable usage
 - namespace variables
 - create docs

@@ -10,6 +10,8 @@ input[type="radio"] {
   width: var(--sizeDimension);
   height: var(--sizeDimension);
 
+  cursor: pointer;
+
   border: 1px solid var(--borderColor);
   border-radius: var(--borderRadius);
   background-color: var(--interactiveRest);
@@ -51,7 +53,7 @@ input[type="radio"] {
 
 input[type="checkbox"]:not(.switch) {
   --borderRadius: var(--borderRadiusSmall);
-  
+
   &:after {
     border-radius: calc(var(--borderRadius) - 2px);
   }
