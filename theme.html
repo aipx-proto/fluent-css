@@ -387,36 +387,47 @@ function example() {
         <p>This is a Popover using the new popover API</p>
       </div>
 
-      <button popovertarget="tooltip-example">
+      <!-- hover popover is not possible without javascript? -->
+      <!-- <button popovertarget="tooltip-example" 
+        onmouseenter="document.getElementById('tooltip-example').showPopover({source: this})"
+        onmouseleave="document.getElementById('tooltip-example').hidePopover()">
         Hover for tooltip
       </button>
       <div id="tooltip-example" popover="hint">
         This is a tooltip using the new popover API
+      </div> -->
+
+      <div
+        style="display:grid; justify-content: center; grid-template-columns: repeat(5, auto); grid-template-rows: repeat(5, auto); gap: 2px;">
+        <button class="icon-only shape-square" popovertarget="popover-above-start"
+          style="grid-column: 2; grid-row: 1;">AS</button>
+        <button class="icon-only shape-square" popovertarget="popover-above"
+          style="grid-column: 3; grid-row: 1;">A</button>
+        <button class="icon-only shape-square" popovertarget="popover-above-end"
+          style="grid-column: 4; grid-row: 1;">AE</button>
+
+        <button class="icon-only shape-square" popovertarget="popover-before-top"
+          style="grid-column: 1; grid-row: 2;">BT</button>
+        <button class="icon-only shape-square" popovertarget="popover-before"
+          style="grid-column: 1; grid-row: 3;">B</button>
+        <button class="icon-only shape-square" popovertarget="popover-before-bottom"
+          style="grid-column: 1; grid-row: 4;">BB</button>
+
+        <button class="icon-only shape-square" popovertarget="popover-after-top"
+          style="grid-column: 5; grid-row: 2;">AT</button>
+        <button class="icon-only shape-square" popovertarget="popover-after"
+          style="grid-column: 5; grid-row: 3;">A</button>
+        <button class="icon-only shape-square" popovertarget="popover-after-bottom"
+          style="grid-column: 5; grid-row: 4;">AB</button>
+
+        <button class="icon-only shape-square" popovertarget="popover-below-start"
+          style="grid-column: 2; grid-row: 5;">BS</button>
+        <button class="icon-only shape-square" popovertarget="popover-below"
+          style="grid-column: 3; grid-row: 5;">B</button>
+        <button class="icon-only shape-square" popovertarget="popover-below-end"
+          style="grid-column: 4; grid-row: 5;">BE</button>
       </div>
 
-      <div style="display:grid; justify-content: center; grid-template-columns: repeat(5, auto); grid-template-rows: repeat(5, auto); gap: 2px;">
-        <!-- Top row -->
-        <button class="icon-only shape-square" popovertarget="popover-above-start" style="grid-column: 2; grid-row: 1;">AS</button>
-        <button class="icon-only shape-square" popovertarget="popover-above" style="grid-column: 3; grid-row: 1;">A</button>
-        <button class="icon-only shape-square" popovertarget="popover-above-end" style="grid-column: 4; grid-row: 1;">AE</button>
-
-        <!-- Left column -->
-        <button class="icon-only shape-square" popovertarget="popover-before-top" style="grid-column: 1; grid-row: 2;">BT</button>
-        <button class="icon-only shape-square" popovertarget="popover-before" style="grid-column: 1; grid-row: 3;">B</button>
-        <button class="icon-only shape-square" popovertarget="popover-before-bottom" style="grid-column: 1; grid-row: 4;">BB</button>
-
-        <!-- Right column -->
-        <button class="icon-only shape-square" popovertarget="popover-after-top" style="grid-column: 5; grid-row: 2;">AT</button>
-        <button class="icon-only shape-square" popovertarget="popover-after" style="grid-column: 5; grid-row: 3;">A</button>
-        <button class="icon-only shape-square" popovertarget="popover-after-bottom" style="grid-column: 5; grid-row: 4;">AB</button>
-
-        <!-- Bottom row -->
-        <button class="icon-only shape-square" popovertarget="popover-below-start" style="grid-column: 2; grid-row: 5;">BS</button>
-        <button class="icon-only shape-square" popovertarget="popover-below" style="grid-column: 3; grid-row: 5;">B</button>
-        <button class="icon-only shape-square" popovertarget="popover-below-end" style="grid-column: 4; grid-row: 5;">BE</button>
-      </div>
-
-      <!-- Popovers -->
       <div id="popover-above-start" class="position-above-start" popover>position-above-start</div>
       <div id="popover-above" class="position-above" popover>position-above</div>
       <div id="popover-above-end" class="position-above-end" popover>position-above-end</div>
