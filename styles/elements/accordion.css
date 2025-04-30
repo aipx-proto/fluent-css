@@ -1,7 +1,35 @@
+/* marker is styled here even though it is a child of summary */
+
 details {
+  summary {
+    &::marker {
+      content: "";
+    }
+    list-style: none;
+    &:before {
+      content: "➡️";
+      /* width: 1em; */
+      /* height: 1em; */
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  &[open] {
+    summary {
+      &:before {
+        transform: rotate(90deg);
+      }
+    }
+  }
 
+  &::details-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  &[open]::details-content {
+    max-height: 1000px; /* Adjust based on expected content height */
+  }
 }
 
-summary {
-
-}

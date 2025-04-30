@@ -26,7 +26,8 @@ h5,
 h6,
 strong,
 em,
-th {
+th,
+summary {
   color: var(--colorText1);
 }
 
