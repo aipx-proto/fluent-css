@@ -3,6 +3,7 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 ::-webkit-file-upload-button,
+a.button,
 .button {
   /* default circular */
   --borderRadius: var(--borderRadiusCircular);
@@ -51,6 +52,10 @@ input[type="reset"],
     height: var(--sizeHeight);
   }
   
+}
+
+a.button {
+  text-decoration: none;
 }
 
 /* .size-small, */

@@ -13,26 +13,30 @@
 - input elements
 - slider
 
-- anchor button
-- intent: info, warning, error, success, primary
-- classes: card & shadow
-- button/input group - split button
 - accordion details element
+- anchor button
+- split button: button/input group - split button
 - menu with html popover and css anchor
-- field: label + input (and message?)
-- tabs
 - loading
   - skeleton?
   - spinner
   - progress bar
 - firefox support (for input pseudo elements)
 
+- intent-color vars: info, warning, error, success, primary
+
+- tabs
+
+Examples
+- field: label + input (and message?)
+- dialog: simple vs header/main/footer...
+
 Refactor
 - unify/simplify variable usage
 - namespace variables
+- create docs
 
-Later
+Icons?
 - icons with svg use external
+- with [fluent icons font and css file](https://github.com/microsoft/fluentui-system-icons/blob/cd860cfdb9c60f6b731f6164b21e04909b23178e/fonts/FluentSystemIcons-Resizable.css)?
 
-Maybe
-- toggle button with checkbox or radio
