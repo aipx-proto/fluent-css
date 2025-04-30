@@ -1,5 +1,5 @@
 dialog {
-  color:
+  color: inherit;
   border: 1px solid var(--colorBorder1);
   background-color: var(--colorBackground1);
   box-shadow: var(--shadow16);
