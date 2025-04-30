@@ -7,23 +7,22 @@
 - appearance: primary, outline, subtle
   - button: primary, outline, subtle, transparent
   - input: outline, underline, filled-darker, filled-lighter
-- intent: info, warning, error, success, primary
+- checkbox, radio, switch
 - button & anchor button
-- card & shadow
-- button/input group - split button
 - dialog element
+- input elements
+
+- anchor button
+- intent: info, warning, error, success, primary
+- classes: card & shadow
+- button/input group - split button
 - accordion details element
 - menu with html popover and css anchor
 - field: label + input (and message?)
-- inputs
-  - slider
-  - color
-  - file
-- checkbox, radio, switch
 - tabs
 - loading
   - skeleton?
-  - spinner 
+  - spinner
   - progress bar
 - 
 
