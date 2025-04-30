@@ -16,13 +16,14 @@
 - accordion details element
 - split button: button/input group - split button
 
+- popover, tooltip, menu - with html popover and css anchor
 - select button, file upload button
-- menu with html popover and css anchor
 - loading
   - skeleton?
   - spinner
   - progress bar
-- intent-color vars: info, warning, error, success, primary
+- intent: info, warning, error, success, brand
+  - applies to anything? like a theme?
 - tabs
 
 Examples

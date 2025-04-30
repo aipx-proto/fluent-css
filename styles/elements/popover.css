@@ -1,0 +1,160 @@
+[popover] {
+  border: 1px solid var(--colorBorder1);
+  background-color: var(--colorBackground1);
+  box-shadow: var(--shadow16);
+  padding: 8px 12px;
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+
+  --sizeOffset: 4px;
+  --marginOffsetAboveBelow: var(--sizeOffset) 0;
+  --marginOffsetBeforeAfter: 0 var(--sizeOffset);
+
+  inset: unset;
+  position: absolute;
+  margin: var(--sizeOffset);
+  /* top: calc(anchor(bottom) + 2px); */
+  /* justify-self: anchor; */
+
+  /* TODO?: each &.position-<side> could have a more specific fallback order... */
+  /* just goes clockwise for now */
+  position-try-fallbacks: --above-start, --above, --above-end, --after-top, --after, --after-bottom, --below-end,
+    --below, --below-start, --before-top, --before, --before-bottom;
+
+  &.position-force {
+    position-try-fallbacks: unset;
+  }
+
+  &,
+  &.position-above-start {
+    /* default */
+    position-area: var(--position-above-start);
+    margin: var(--marginOffsetAboveBelow);
+  }
+  &.position-above {
+    position-area: var(--position-above);
+    margin: var(--marginOffsetAboveBelow);
+  }
+  &.position-above-end {
+    position-area: var(--position-above-end);
+    margin: var(--marginOffsetAboveBelow);
+  }
+
+  &.position-below-end {
+    position-area: var(--position-below-end);
+    margin: var(--marginOffsetAboveBelow);
+  }
+  &.position-below {
+    position-area: var(--position-below);
+    margin: var(--marginOffsetAboveBelow);
+  }
+  &.position-below-start {
+    position-area: var(--position-below-start);
+    margin: var(--marginOffsetAboveBelow);
+  }
+
+  &.position-before-top {
+    position-area: var(--position-before-top);
+    margin: var(--marginOffsetBeforeAfter);
+  }
+  &.position-before {
+    position-area: var(--position-before);
+    margin: var(--marginOffsetBeforeAfter);
+  }
+  &.position-before-bottom {
+    position-area: var(--position-before-bottom);
+    margin: var(--marginOffsetBeforeAfter);
+  }
+
+  &.position-after-top {
+    position-area: var(--position-after-top);
+    margin: var(--marginOffsetBeforeAfter);
+  }
+  &.position-after {
+    position-area: var(--position-after);
+    margin: var(--marginOffsetBeforeAfter);
+  }
+  &.position-after-bottom {
+    position-area: var(--position-after-bottom);
+    margin: var(--marginOffsetBeforeAfter);
+  }
+}
+
+/* [popover="auto"] {} */
+
+/* tooltip / hint is experimental */
+/* [popover="hint"] {} */
+
+/* :popover-open {} */
+
+/* https://react.fluentui.dev/?path=/docs/components-tooltip--docs#positioning */
+
+:root {
+  --position-above-start: top span-right;
+  --position-above: top span-all;
+  --position-above-end: top span-left;
+
+  --position-below-start: bottom span-right;
+  --position-below: bottom span-all;
+  --position-below-end: bottom span-left;
+
+  --position-before-top: left span-bottom;
+  --position-before: left span-all;
+  --position-before-bottom: left span-top;
+
+  --position-after-top: right span-bottom;
+  --position-after: right span-all;
+  --position-after-bottom: right span-top;
+}
+
+@position-try --above-start {
+  position-area: var(--position-above-start);
+  margin: var(--marginOffsetAboveBelow);
+}
+@position-try --above {
+  position-area: var(--position-above);
+  margin: var(--marginOffsetAboveBelow);
+}
+@position-try --above-end {
+  position-area: var(--position-above-end);
+  margin: var(--marginOffsetAboveBelow);
+}
+
+@position-try --below-start {
+  position-area: var(--position-below-start);
+  margin: var(--marginOffsetAboveBelow);
+}
+@position-try --below {
+  position-area: var(--position-below);
+  margin: var(--marginOffsetAboveBelow);
+}
+@position-try --below-end {
+  position-area: var(--position-below-end);
+  margin: var(--marginOffsetAboveBelow);
+}
+
+@position-try --after-top {
+  position-area: var(--position-after-top);
+  margin: var(--marginOffsetBeforeAfter);
+}
+@position-try --after {
+  position-area: var(--position-after);
+  margin: var(--marginOffsetBeforeAfter);
+}
+@position-try --after-bottom {
+  position-area: var(--position-after-bottom);
+  margin: var(--marginOffsetBeforeAfter);
+}
+
+@position-try --before-top {
+  position-area: var(--position-before-top);
+  margin: var(--marginOffsetBeforeAfter);
+}
+@position-try --before {
+  position-area: var(--position-before);
+  margin: var(--marginOffsetBeforeAfter);
+}
+@position-try --before-bottom {
+  position-area: var(--position-before-bottom);
+  margin: var(--marginOffsetBeforeAfter);
+}

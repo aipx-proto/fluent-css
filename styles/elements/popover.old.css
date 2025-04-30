@@ -1,0 +1,64 @@
+[popover] {
+  border: 1px solid var(--colorBorder1);
+  background-color: var(--colorBackground1);
+  box-shadow: var(--shadow16);
+  padding: 12px;
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+
+  inset: unset;
+  position: absolute;
+  margin: 4px;
+  /* top: calc(anchor(bottom) + 2px); */
+  /* justify-self: anchor-center; */
+
+  position-area: --bottom-right;
+  position-try-fallbacks: --bottom-right, --bottom-center, --bottom-left, --right-center, --top-right, --top-center,
+    --top-left, --left-center;
+
+
+
+}
+
+@position-try --bottom-right {
+  position-area: bottom span-right;
+}
+
+@position-try --bottom-left {
+  position-area: bottom span-left;
+}
+
+@position-try --bottom-center {
+  position-area: bottom center;
+}
+
+@position-try --top-right {
+  position-area: top span-right;
+}
+
+@position-try --top-left {
+  position-area: top span-left;
+}
+
+@position-try --top-center {
+  position-area: top center;
+}
+
+@position-try --right-center {
+  position-area: right center;
+}
+
+@position-try --left-center {
+  position-area: left center;
+}
+
+[popover="auto"] {
+}
+
+/* tooltip / hint is experimental */
+[popover="hint"] {
+  inset: unset;
+  bottom: calc(anchor(top) + 2px);
+}
+
+/* :popover-open {} */

@@ -12,6 +12,7 @@
 @import "./elements/disabled.css";
 @import "./elements/input.css";
 @import "./elements/link.css";
+@import "./elements/popover.css";
 @import "./elements/table.css";
 @import "./elements/typography.css";
 @import "./elements/switch.css";
