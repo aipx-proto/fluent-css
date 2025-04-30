@@ -1,89 +1,31 @@
-/* Slider styles */
 input[type="range"] {
-  -webkit-appearance: none;
+  --sizeThumb: 20px;
+  --sizeTrack: 4px;
+
   appearance: none;
-  width: 100%;
-  height: 4px;
-  background: var(--colorNeutralBackground3);
-  border-radius: 2px;
-  outline: none;
-  margin: 10px 0;
-}
+  background: transparent;
+  padding: calc(var(--sizeThumb) / 2 - var(--sizeTrack) / 2) 0;
+  margin: 0;
 
-/* Thumb styles */
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: var(--colorBrandBackground);
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s ease, background-color 0.2s ease;
-}
+  /* &:after{} */
 
-input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: var(--colorBrandBackground);
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s ease, background-color 0.2s ease;
-}
+  &::-webkit-slider-container {
+    height: var(--sizeTrack);
+    background: var(--colorBorder1);
+    border-radius: var(--borderRadiusCircular);
+  }
 
-/* Track styles */
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 4px;
-  cursor: pointer;
-  background: var(--colorNeutralBackground3);
-  border-radius: 2px;
-}
+  /* &::-webkit-slider-runnable-track {} */
 
-input[type="range"]::-moz-range-track {
-  width: 100%;
-  height: 4px;
-  cursor: pointer;
-  background: var(--colorNeutralBackground3);
-  border-radius: 2px;
+  /* Thumb styles */
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: var(--sizeThumb);
+    height: var(--sizeThumb);
+    border: 1px solid var(--colorBorder1);
+    border-radius: var(--borderRadiusCircular);
+    cursor: ew-resize;
+    background: var(--colorBrandBase);
+    box-shadow: inset 0 0 0 3px var(--colorBackground1);
+  }
 }
-
-/* Hover states */
-input[type="range"]:hover::-webkit-slider-thumb {
-  transform: scale(1.1);
-  background: var(--colorBrandBackgroundHover);
-}
-
-input[type="range"]:hover::-moz-range-thumb {
-  transform: scale(1.1);
-  background: var(--colorBrandBackgroundHover);
-}
-
-/* Focus states */
-input[type="range"]:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px var(--colorBrandBackgroundSelected);
-}
-
-input[type="range"]:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 3px var(--colorBrandBackgroundSelected);
-}
-
-/* Disabled state */
-input[type="range"]:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-input[type="range"]:disabled::-webkit-slider-thumb {
-  background: var(--colorNeutralBackground4);
-  cursor: not-allowed;
-}
-
-input[type="range"]:disabled::-moz-range-thumb {
-  background: var(--colorNeutralBackground4);
-  cursor: not-allowed;
-} 

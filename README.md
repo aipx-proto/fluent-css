@@ -8,9 +8,10 @@
   - button: primary, outline, subtle, transparent
   - input: outline, underline, filled-darker, filled-lighter
 - checkbox, radio, switch
-- button & anchor button
+- button 
 - dialog element
 - input elements
+- slider
 
 - anchor button
 - intent: info, warning, error, success, primary
@@ -24,7 +25,11 @@
   - skeleton?
   - spinner
   - progress bar
-- 
+- firefox support (for input pseudo elements)
+
+Refactor
+- unify/simplify variable usage
+- namespace variables
 
 Later
 - icons with svg use external

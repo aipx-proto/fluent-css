@@ -197,7 +197,8 @@ function example() {
             <span>An example dialog</span>
           </header>
           <main>
-            <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user interaction.</p>
+            <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user
+              interaction.</p>
           </main>
           <footer>
             <button class="dialog-close appearance-transparent icon-only">X</button>
@@ -311,8 +312,9 @@ function example() {
         </div>
 
         <div class="form-group">
-          <label for="slider">Slider:</label>
-          <input type="range" id="slider" name="slider" min="0" max="100" value="50" />
+          <label for="slider">Slider: <span id="slider-value">50</span></label>
+          <input type="range" id="slider" name="slider" min="0" max="100" value="50"
+            oninput="document.getElementById('slider-value').textContent = this.value" />
         </div>
 
       </form>
