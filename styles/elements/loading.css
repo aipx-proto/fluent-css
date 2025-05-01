@@ -1,15 +1,45 @@
 progress.spinner {
-
   --sizeDimension: 20px;
+  --animationEasing: ease-in-out;
+  --animationDuration: 2.5s;
+
   appearance: none;
   width: var(--sizeDimension);
   height: var(--sizeDimension);
-  border-radius: var(--borderRadiusCircular);
+
 
   overflow: hidden;
-  border: 2px solid var(--colorBackground2);
-  border-top-color: var(--colorBrandBase);
-  animation: --progress-spin 1s linear infinite;
+
+  position: relative;
+  background: transparent;
+
+  animation: --progress-spin calc(var(--animationDuration)*.8) linear infinite;
+
+
+  &:before,
+  &:after {
+    /* use before so dimensions won't change when animating */
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--colorBackground2);
+    border-top-color: var(--colorBrandBase);
+    border-radius: var(--borderRadiusCircular);
+    animation: --progress-spin var(--animationDuration) var(--animationEasing) infinite;
+    pointer-events: none;
+  }
+  &:after {
+    border-color: transparent;
+    border-top-color: var(--colorBrandBase);
+    animation-delay: calc(var(--animationDuration)*0.075);
+  }
+
+  &::-webkit-progress-inner-element,
+  &::-webkit-progress-bar,
+  &::-webkit-progress-value {
+    display: none;
+    background: transparent;
+  }
 }
 
 progress:not(.spinner),
@@ -38,7 +68,6 @@ meter {
 }
 
 progress:not(.spinner):indeterminate {
-
   --gradientStepTransparent: color-mix(in srgb, var(--colorBrandBase) 0%, transparent);
   --gradientStepBrand: var(--colorBrandBase);
 
@@ -59,8 +88,6 @@ progress:not(.spinner):indeterminate {
     background: transparent;
   }
 }
-
-
 
 ::-webkit-meter-bar,
 ::-webkit-progress-bar {
@@ -115,6 +142,6 @@ progress:not(.spinner):indeterminate {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
   }
 }
