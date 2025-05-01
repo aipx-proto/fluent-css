@@ -1,8 +1,10 @@
 .control-group {
   display: flex;
-  gap: -1px;
+  gap: 1px;
 
-  & > :not(:first-child):not(:last-child)  {
+  /* TODO: exception for appearance-primary */
+
+  & > :not(:first-child):not(:last-child) {
     border-radius: 0;
   }
 
@@ -15,6 +17,13 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+
+  /* applies to button.css and input.css */
+  /* buttons and inputs with outline should share border rather than have a gap */
+  & > :not(:first-child) {
+    &:not([class*="appearance-"]),
+    &.appearance-outline {
+      margin-left: -2px;
+    }
+  }
 }
-
-

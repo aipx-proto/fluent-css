@@ -42,7 +42,7 @@ a.button,
 
   &.appearance-subtle,
   &.appearance-primary,
-  &.appearance-transparent {
+  &.appearance-transparent{
     border-color: transparent;
   }
 
@@ -51,8 +51,16 @@ a.button,
     width: var(--sizeHeight);
     height: var(--sizeHeight);
   }
-  
+
+  .menu & {
+    border-color: transparent;
+    --borderRadius: var(--borderRadiusSmall);
+    justify-content: flex-start;
+    font-weight: var(--fontWeightNormal);
+  }
+
 }
+
 
 a.button {
   text-decoration: none;

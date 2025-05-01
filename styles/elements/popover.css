@@ -16,10 +16,30 @@
   /* top: calc(anchor(bottom) + 2px); */
   /* justify-self: anchor; */
 
+}
+
+.menu {
+
+  /* see button.css for nested button styles */
+
+  hr {
+    margin: 0;
+  }
+
+  &:popover-open {
+    --sizeSpacing: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sizeSpacing);
+    padding: var(--sizeSpacing);
+  }
+}
+
+[popover] {
   /* TODO?: each &.position-<side> could have a more specific fallback order... */
   /* just goes clockwise for now */
-  position-try-fallbacks: --above-start, --above, --above-end, --after-top, --after, --after-bottom, --below-end,
-    --below, --below-start, --before-top, --before, --before-bottom;
+  /* position-try-fallbacks: --above-start, --above, --above-end, --after-top, --after, --after-bottom, --below-end,
+    --below, --below-start, --before-top, --before, --before-bottom; */
 
   &.position-force {
     position-try-fallbacks: unset;
@@ -40,7 +60,9 @@
     margin: var(--marginOffsetAboveBelow);
   }
 
+  &.menu,
   &.position-below-end {
+    /* .menu default */
     position-area: var(--position-below-end);
     margin: var(--marginOffsetAboveBelow);
   }

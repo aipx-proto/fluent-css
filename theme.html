@@ -387,6 +387,21 @@ function example() {
         <p>This is a Popover using the new popover API</p>
       </div>
 
+      <div class="control-group">
+        <button class="appearance-primary shape-rounded">Split Button</button>
+        <button class="appearance-primary icon-only shape-rounded" popovertarget="menu-example">
+          •••
+        </button>
+      </div>
+
+      <div class="menu" id="menu-example" popover>
+        <button>Add</button>
+        <button>Edit</button>
+        <button>Duplicate</button>
+        <hr />
+        <button class="intent-danger">Delete</button>
+      </div>
+
       <!-- hover popover is not possible without javascript? -->
       <!-- <button popovertarget="tooltip-example" 
         onmouseenter="document.getElementById('tooltip-example').showPopover({source: this})"
