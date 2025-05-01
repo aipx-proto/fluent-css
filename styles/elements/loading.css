@@ -1,0 +1,94 @@
+progress,
+meter {
+  --sizeHeight: 2px;
+  appearance: none;
+  width: 100%;
+  height: var(--sizeHeight);
+  border-radius: var(--borderRadiusRound);
+  background: var(--colorBackground2);
+  overflow: hidden;
+
+  &.size-small {
+    --sizeHeight: 1px;
+  }
+  &.size-medium {
+    --sizeHeight: 2px;
+  }
+  &.size-large {
+    --sizeHeight: 4px;
+  }
+
+  &.shape-square {
+    border-radius: 0;
+  }
+  
+}
+
+progress:indeterminate {
+  /* &::-webkit-progress-bar{ */
+    --gradientStepTransparent: color-mix(in srgb, var(--colorBrandBase) 0%, transparent);
+    --gradientStepBrand: var(--colorBrandBase);
+    /* background-color: var(--colorBorder1); */
+    background-image: linear-gradient(
+      to right,
+      var(--gradientStepTransparent) 0%,
+      var(--gradientStepBrand) 40%,
+      var(--gradientStepBrand) 60%,
+      var(--gradientStepTransparent) 100%
+    );
+    background-size: 30% 100%;
+    background-repeat: no-repeat;
+    animation: progress-indeterminate 4s linear infinite;
+  /* } */
+  &::-webkit-progress-value, &::-webkit-progress-inner-element, &::-webkit-progress-bar {
+    background: transparent;
+  }
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    background-position: -40% 0;
+  }
+  100% {
+    background-position: 140% 0;
+  }
+}
+
+::-webkit-meter-bar,
+::-webkit-progress-bar {
+  background: transparent;
+  height: var(--sizeHeight);
+}
+
+/* ::-webkit-meter-inner-element {
+  height: 100%;
+} */
+
+::-webkit-progress-value {
+  background: var(--colorBrandBase);
+}
+::-webkit-meter-optimum-value {
+  /* intent-success */
+  background: green;
+}
+::-webkit-meter-suboptimum-value {
+  /* intent-warning */
+  background: orange;
+}
+::-webkit-meter-even-less-good-value {
+  /* intent-danger */
+  background: red;
+}
+
+/* ::-webkit-meter-bar,
+::-webkit-meter-inner-element,
+::-webkit-meter-even-less-good-value,
+::-webkit-meter-optimum-value,
+::-webkit-meter-suboptimum-value {} */
+
+/* :indeterminate
+-moz-orient
+::-moz-progress-bar
+::-webkit-progress-bar
+::-webkit-progress-value
+::-webkit-progress-inner-element */
