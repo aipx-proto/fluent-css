@@ -1,105 +1,170 @@
-/* https://github.com/microsoft/fluentui/blob/master/packages/react-components/react-spinner/library/src/components/Spinner/useSpinnerStyles.styles.ts */
+/*
+Example HTML implementation:
 
+<div class="fui-Spinner">
+  <div class="fui-Spinner__spinner">
+    <div class="fui-Spinner__spinnerTail"></div>
+  </div>
+</div>
 
-.spinner{
+The spinner requires three nested divs:
+1. Root container (fui-Spinner)
+2. Main spinner element (fui-Spinner__spinner)
+3. Spinner tail element (fui-Spinner__spinnerTail)
 
-  /* vars */
-   --fui-Spinner--strokeWidth: 2px;
+You can also add a label or text next to the spinner by placing it as a sibling to the spinner element:
+<div class="fui-Spinner">
+  <div class="fui-Spinner__spinner">
+    <div class="fui-Spinner__spinnerTail"></div>
+  </div>
+  <span>Loading...</span>
+</div>
+*/
 
-  /* useRootBaseClassName */
+:root {
+  /* Spinner specific variables */
+  --fui-Spinner--strokeWidth: 2px;
+  
+  /* Color variables */
+  --colorBrandStroke2Contrast: var(--colorBrandBase);
+  --colorBrandStroke1: var(--colorBackground4);
+  
+  /* Animation timing */
+  --curveEasyEase: cubic-bezier(0.33, 0, 0.67, 1);
+}
+
+.fui-Spinner {
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 0;
+  /* line-height: 1; */
   gap: 8px;
   overflow: hidden; /* prevents height changes from rotating children */
+  /* height: 40px; */
+}
 
-  /* useSpinnerBaseClassName */
+.fui-Spinner__spinner {
+  position: relative;
+  flex-shrink: 0;
+  background-color: var(--colorBrandStroke2Contrast);
+  color: var(--colorBrandStroke1);
+  animation: spinner-rotate 1.5s infinite linear;
 
-  position: 'relative',
-  flexShrink: 0,
+  height: 20px;
+  width: 20px;
+}
 
-  /* Use a mask to create the ring shape of the spinner */
+/* Spinner mask for ring shape */
+.fui-Spinner__spinner {
   mask-image: radial-gradient(
     closest-side,
     transparent calc(100% - var(--fui-Spinner--strokeWidth) - 1px),
     white calc(100% - var(--fui-Spinner--strokeWidth)) calc(100% - 1px),
     transparent 100%
   );
-
-  background-color: var(--colorBrandStroke2Contrast);
-  color: var(--colorBrandStroke1);
-
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-name: spinner-rotate;
-
-
-  /* 
-  // The spinner tail is rendered using two 135deg arc segments, behind a 105deg arc mask.
-  // The segments are rotated out from behind the mask to expand the visible arc from
-  // 30deg (min) to 255deg (max), and then back behind the mask again to shrink the arc.
-  // The tail and spinner itself also have 360deg rotation animations for the spin. 
-  */
-  /* useSpinnerTailBaseClassName */
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  mask-image: conic-gradient(transparent 105deg, white 105deg);
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    animation: inherit;
-    background-image: conic-gradient(currentcolor 135deg, transparent 135deg);
-  }
-
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
-  animation-name: spinner-tail;
-
-  &::before {
-    animation-name: spinner-tail-before;
-  }
-
-  &::after {
-    animation-name: spinner-tail-after;
-  }
-
-  @media screen and (prefers-reduced-motion: reduce) {
-    animation-iteration-count: 0;
-    background-image: conic-gradient(transparent 120deg, currentcolor 360deg);
-
-    &::before,
-    &::after {
-      content: none;
-    }
-  }
-
 }
 
-@keyframes spinner-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
+/* High contrast mode */
 @media screen and (forced-colors: active) {
-  .useRootBaseClassName {
+  .fui-Spinner__spinner {
     background-color: HighlightText;
     color: Highlight;
     forced-color-adjust: none;
   }
 }
 
+/* Reduced motion */
 @media screen and (prefers-reduced-motion: reduce) {
-  .useRootBaseClassName {
+  .fui-Spinner__spinner {
     animation-duration: 1.8s;
+  }
+}
+
+/* Spinner rotation animation */
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Spinner tail styles */
+.fui-Spinner__spinnerTail {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  mask-image: conic-gradient(transparent 105deg, white 105deg);
+  animation: spinner-tail-rotate 1.5s infinite var(--curveEasyEase);
+}
+
+.fui-Spinner__spinnerTail::before,
+.fui-Spinner__spinnerTail::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: inherit;
+  background-image: conic-gradient(currentcolor 135deg, transparent 135deg);
+}
+
+.fui-Spinner__spinnerTail::before {
+  animation-name: spinner-tail-before;
+}
+
+.fui-Spinner__spinnerTail::after {
+  animation-name: spinner-tail-after;
+}
+
+/* Spinner tail animations */
+@keyframes spinner-tail-rotate {
+  0% {
+    transform: rotate(-135deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes spinner-tail-before {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(105deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinner-tail-after {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(225deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Reduced motion for spinner tail */
+@media screen and (prefers-reduced-motion: reduce) {
+  .fui-Spinner__spinnerTail {
+    animation-iteration-count: 0;
+    background-image: conic-gradient(transparent 120deg, currentcolor 360deg);
+  }
+  
+  .fui-Spinner__spinnerTail::before,
+  .fui-Spinner__spinnerTail::after {
+    content: none;
   }
 }
