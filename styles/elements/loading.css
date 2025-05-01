@@ -7,18 +7,15 @@ progress.spinner {
   width: var(--sizeDimension);
   height: var(--sizeDimension);
 
-
   overflow: hidden;
 
   position: relative;
   background: transparent;
 
-  animation: --progress-spin calc(var(--animationDuration)*.8) linear infinite;
-
+  animation: --progress-spin calc(var(--animationDuration) * 0.8) linear infinite;
 
   &:before,
   &:after {
-    /* use before so dimensions won't change when animating */
     content: "";
     position: absolute;
     inset: 0;
@@ -31,7 +28,7 @@ progress.spinner {
   &:after {
     border-color: transparent;
     border-top-color: var(--colorBrandBase);
-    animation-delay: calc(var(--animationDuration)*0.075);
+    animation-delay: calc(var(--animationDuration) * 0.075);
   }
 
   &::-webkit-progress-inner-element,
