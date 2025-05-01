@@ -1,4 +1,3 @@
-/* input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]), */
 input:not([type]),
 input[type="text"],
 input[type="email"],
@@ -9,7 +8,7 @@ input[type="search"],
 input[type="color"],
 input[type="url"],
 input[type="file"],
-select,
+select:not(.button),
 textarea {
   --interactiveRest: var(--colorBackground2);
   --underlineColor: var(--colorBrandBase);

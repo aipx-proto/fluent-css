@@ -15,9 +15,10 @@
 - anchor button
 - accordion details element
 - split button: button/input group - split button
-
 - popover, tooltip, menu - with html popover and css anchor
-- select button, file upload button
+- select button
+
+- input placeholder: color, type="date"
 - loading
   - skeleton?
   - spinner
@@ -25,6 +26,7 @@
 - intent: info, warning, error, success, brand
   - applies to anything? like a theme?
 - tabs
+- simple icon set: dismiss, chevron, checkmark, search
 
 Examples
 - field: label + input (and message?)

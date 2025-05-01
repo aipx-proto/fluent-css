@@ -4,6 +4,7 @@ input[type="submit"],
 input[type="reset"],
 ::-webkit-file-upload-button,
 a.button,
+select.button,
 .button {
   /* default circular */
   --borderRadius: var(--borderRadiusCircular);
@@ -25,13 +26,14 @@ a.button,
 
   background-color: var(--interactiveRest);
   transition: background-color var(--durationRest) ease-in-out;
-  
+
   &:not(:disabled) {
-    &:hover, &.checked {
+    &:hover,
+    &.checked {
       background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
     }
-    
+
     &:active {
       background-color: var(--interactiveActive);
       transition-duration: var(--durationActive);
@@ -42,7 +44,7 @@ a.button,
 
   &.appearance-subtle,
   &.appearance-primary,
-  &.appearance-transparent{
+  &.appearance-transparent {
     border-color: transparent;
   }
 
@@ -58,9 +60,7 @@ a.button,
     justify-content: flex-start;
     font-weight: var(--fontWeightNormal);
   }
-
 }
-
 
 a.button {
   text-decoration: none;
