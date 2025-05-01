@@ -1,0 +1,105 @@
+/* https://github.com/microsoft/fluentui/blob/master/packages/react-components/react-spinner/library/src/components/Spinner/useSpinnerStyles.styles.ts */
+
+
+.spinner{
+
+  /* vars */
+   --fui-Spinner--strokeWidth: 2px;
+
+  /* useRootBaseClassName */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  gap: 8px;
+  overflow: hidden; /* prevents height changes from rotating children */
+
+  /* useSpinnerBaseClassName */
+
+  position: 'relative',
+  flexShrink: 0,
+
+  /* Use a mask to create the ring shape of the spinner */
+  mask-image: radial-gradient(
+    closest-side,
+    transparent calc(100% - var(--fui-Spinner--strokeWidth) - 1px),
+    white calc(100% - var(--fui-Spinner--strokeWidth)) calc(100% - 1px),
+    transparent 100%
+  );
+
+  background-color: var(--colorBrandStroke2Contrast);
+  color: var(--colorBrandStroke1);
+
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: spinner-rotate;
+
+
+  /* 
+  // The spinner tail is rendered using two 135deg arc segments, behind a 105deg arc mask.
+  // The segments are rotated out from behind the mask to expand the visible arc from
+  // 30deg (min) to 255deg (max), and then back behind the mask again to shrink the arc.
+  // The tail and spinner itself also have 360deg rotation animations for the spin. 
+  */
+  /* useSpinnerTailBaseClassName */
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  mask-image: conic-gradient(transparent 105deg, white 105deg);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: inherit;
+    background-image: conic-gradient(currentcolor 135deg, transparent 135deg);
+  }
+
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-name: spinner-tail;
+
+  &::before {
+    animation-name: spinner-tail-before;
+  }
+
+  &::after {
+    animation-name: spinner-tail-after;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation-iteration-count: 0;
+    background-image: conic-gradient(transparent 120deg, currentcolor 360deg);
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+}
+
+@keyframes spinner-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (forced-colors: active) {
+  .useRootBaseClassName {
+    background-color: HighlightText;
+    color: Highlight;
+    forced-color-adjust: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .useRootBaseClassName {
+    animation-duration: 1.8s;
+  }
+}
