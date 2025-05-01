@@ -6,80 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Tabs</title>
   <style>
-    /* Hide radio buttons */
-    .tab-input {
-      display: none;
-    }
+    .tabs>.wrapper {
 
-    /* Tab container */
-    .tabs {
-      max-width: 600px;
-      margin: 20px auto;
-    }
+      &>.bar {
+        display: flex;
+        gap: 1rem;
 
-    /* Tab labels */
-    .tab-label {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #f0f0f0;
-      cursor: pointer;
-      border: 1px solid #ddd;
-      border-bottom: none;
-      margin-right: 5px;
+        &>input.tab {
+          display: none;
+        }
+      }
 
-      &:checked {
-        background: #fff;
-        border-bottom: 1px solid #fff;
-        margin-bottom: -1px;
+      &:not(:has(> .bar > .tab:checked)) {
+        display: none;
       }
     }
 
-    /* Tab content */
-    .tab-content {
+    .wrapper:has(> .bar > input:not(:checked)) {
       display: none;
-      padding: 20px;
-      border: 1px solid #ddd;
     }
 
-    /* Show content when radio is checked */
-    .tab-input:checked+.tab-label {
-      background: #fff;
-      border-bottom: 1px solid #fff;
-      margin-bottom: -1px;
-    }
+    .tabs>.wrapper>.bar {
+      border-bottom: 2px solid #99999966;
 
-    .tab-input:checked+.tab-content {
-      display: block;
+      &>.tab {
+        --line-width: 2px;
+        border-block: solid transparent var(--line-width);
+        margin-bottom: calc(var(--line-width) - 2px);
+        padding-block: .25em;
+        cursor: pointer;
+
+        &:is(:checked)+.tab {
+          border-bottom-color: #888888;
+        }
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="tabs">
-    <div class="tab-labels">
-      <label for="tab1" class="tab-label">Tab 1</label>
-      <label for="tab2" class="tab-label">Tab 2</label>
-      <label for="tab3" class="tab-label">Tab 3</label>
+  <div class='tabs'>
+
+    <div class='wrapper'>
+      <div class='bar'>
+        <input class='tab' id='tabs_0_tab_0' type='radio' name='tabs_0' checked />
+        <label class='tab' for='tabs_0_tab_0'>Tab 1</label>
+        <label class='tab' for='tabs_0_tab_1'>Second Tab</label>
+      </div>
+      <p>Lorem...</p>
+      <p>Ipsum...</p>
     </div>
 
-    <div class="tab-contents">
-      <input type="radio" name="tabs" id="tab1" class="tab-input" checked/>
-      <div class="tab-content">
-        <h2>First Tab Content</h2>
-        <p>This is the content of the first tab.</p>
+    <div class='wrapper'>
+      <div class='bar'>
+        <label class='tab' for='tabs_0_tab_0'>Tab 1</label>
+        <input class='tab' id='tabs_0_tab_1' type='radio' name='tabs_0' />
+        <label class='tab' for='tabs_0_tab_1'>Second Tab</label>
       </div>
-
-      <input type="radio" name="tabs" id="tab2" class="tab-input"/>
-      <div class="tab-content">
-        <h2>Second Tab Content</h2>
-        <p>This is the content of the second tab.</p>
-      </div>
-
-      <input type="radio" name="tabs" id="tab3" class="tab-input"/>
-      <div class="tab-content">
-        <h2>Third Tab Content</h2>
-        <p>This is the content of the third tab.</p>
-      </div>
+      <p>Ipsum...2</p>
+      <p>Lorem...</p>
     </div>
 
   </div>
