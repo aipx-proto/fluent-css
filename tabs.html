@@ -16,74 +16,117 @@
     }
 
     /* Tab container */
-    .tabs {
-      max-width: 600px;
+    .primary-tabs {
+      max-width: 800px;
       margin: 20px auto;
+      display: flex;
+      gap: 20px;
+    }
+
+    .primary-labels {
       display: flex;
       flex-direction: column;
       gap: 10px;
-    }
-
-    .tab-labels {
-      display: flex;
-      gap: 10px;
+      min-width: 120px;
+      border-right: 1px solid #ddd;
     }
 
     /* Tab labels */
     .tab-label {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 8px 16px;
       cursor: pointer;
-      border-bottom: 4px solid transparent;
+      border-left: 4px solid transparent;
 
       &:hover {
         border-color: gray;
+        background: #f0f0f0;
       }
     }
+
+    .secondary-labels {
+      .tab-label {
+        border: none;
+        border-bottom: 4px solid transparent;
+      }
+    }
+
 
     /* Tab content */
     .tab-content {
       display: none;
       padding: 20px;
-      border: 1px solid #ddd;
+      flex: 1;
     }
 
     /* Show content when radio is checked */
-    .tab-input:checked + .tab-content {
+    .tab-input:checked+.tab-content {
       display: block;
     }
 
-    .tabs:has(.tab-input[id="tab1"]:checked) .tab-label[for="tab1"],
-    .tabs:has(.tab-input[id="tab2"]:checked) .tab-label[for="tab2"],
-    .tabs:has(.tab-input[id="tab3"]:checked) .tab-label[for="tab3"] {
+    .tabs:has(.tab-input[id="tab1-1"]:checked) .tab-label[for="tab1-1"],
+    .tabs:has(.tab-input[id="tab2-1"]:checked) .tab-label[for="tab2-1"],
+    .tabs:has(.tab-input[id="tab3-1"]:checked) .tab-label[for="tab3-1"],
+    .tabs:has(.tab-input[id="tab1-2"]:checked) .tab-label[for="tab1-2"],
+    .tabs:has(.tab-input[id="tab2-2"]:checked) .tab-label[for="tab2-2"],
+    .tabs:has(.tab-input[id="tab3-2"]:checked) .tab-label[for="tab3-2"] {
       border-color: #000;
     }
-
   </style>
 </head>
 
 <body>
-  <div class="tabs">
-    <div class="tab-labels">
-      <label for="tab1" class="tab-label">Tab 1</label>
-      <label for="tab2" class="tab-label">Tab 2</label>
-      <label for="tab3" class="tab-label">Tab 3</label>
-    </div>
+  <div class="tabs primary-tabs">
+    <nav class="tab-labels primary-labels">
+      <label for="tab1-1" class="tab-label">Tab 1</label>
+      <label for="tab2-1" class="tab-label">Tab 2</label>
+      <label for="tab3-1" class="tab-label">Tab 3</label>
+    </nav>
 
     <div class="tab-contents">
-      <input type="radio" name="tabs" id="tab1" class="tab-input" checked/>
+      <input type="radio" name="tabs-1" id="tab1-1" class="tab-input" checked />
       <div class="tab-content">
         <h2>First Tab Content</h2>
         <p>This is the content of the first tab.</p>
+
+        <div class="tabs secondary-tabs">
+          <nav class="tab-labels secondary-labels">
+            <label for="tab1-2" class="tab-label">Tab 1</label>
+            <label for="tab2-2" class="tab-label">Tab 2</label>
+            <label for="tab3-2" class="tab-label">Tab 3</label>
+          </nav>
+
+          <div class="tab-contents">
+            <input type="radio" name="tabs-2" id="tab1-2" class="tab-input" checked />
+            <div class="tab-content">
+              <h2>First Tab Content</h2>
+              <p>This is the content of the first tab.</p>
+            </div>
+
+            <input type="radio" name="tabs-2" id="tab2-2" class="tab-input" />
+            <div class="tab-content">
+              <h2>Second Tab Content</h2>
+              <p>This is the content of the second tab.</p>
+            </div>
+
+            <input type="radio" name="tabs-2" id="tab3-2" class="tab-input" />
+            <div class="tab-content">
+              <h2>Third Tab Content</h2>
+              <p>This is the content of the third tab.</p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
-      <input type="radio" name="tabs" id="tab2" class="tab-input"/>
+      <input type="radio" name="tabs-1" id="tab2-1" class="tab-input" />
       <div class="tab-content">
         <h2>Second Tab Content</h2>
         <p>This is the content of the second tab.</p>
       </div>
 
-      <input type="radio" name="tabs" id="tab3" class="tab-input"/>
+      <input type="radio" name="tabs-1" id="tab3-1" class="tab-input" />
       <div class="tab-content">
         <h2>Third Tab Content</h2>
         <p>This is the content of the third tab.</p>
