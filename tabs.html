@@ -4,119 +4,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Tabs</title>
+  <title>CSS Only Tabs</title>
   <style>
+    /* Hide the data-tab when the corresponding radio is not checked */
+    :has([aria-controls="panel-1"] input[type="radio"]:not(:checked)) #panel-1,
+    :has([aria-controls="panel-2"] input[type="radio"]:not(:checked)) #panel-2,
+    :has([aria-controls="panel-3"] input[type="radio"]:not(:checked)) #panel-3,
+    :has([aria-controls="panel-4"] input[type="radio"]:not(:checked)) #panel-4,
+    :has([aria-controls="panel-5"] input[type="radio"]:not(:checked)) #panel-5,
+    :has([aria-controls="panel-6"] input[type="radio"]:not(:checked)) #panel-6,
+    :has([aria-controls="panel-7"] input[type="radio"]:not(:checked)) #panel-7,
+    :has([aria-controls="panel-8"] input[type="radio"]:not(:checked)) #panel-8,
+    :has([aria-controls="panel-9"] input[type="radio"]:not(:checked)) #panel-9,
+    /* ... add more panels as needed ... */
+    :has([aria-controls="panel-10"] input[type="radio"]:not(:checked)) #panel-10 {
+      display: none;
+    }
+
+    label[role="tab"] {
+      cursor: pointer;
+
+      /* hide the radio button */
+      & input[type="radio"] {
+        display: none;
+      }
+    }
+
+    /* // everything below is just styling // */
+
     html {
       font-family: sans-serif;
     }
 
-    /* Hide radio buttons */
-    .tab-input {
-      display: none;
+    body {
+      margin: 0 auto;
+      padding: 40px;
+      max-width: 500px;
     }
-
 
     /* Tab labels */
     .tab-label {
       display: inline-block;
-      padding: 8px 16px;
-      cursor: pointer;
-      border-left: 4px solid transparent;
-
-      /* Hide the radio button */
-      & input[type="radio"] {
-        display: none;
-      }
+      opacity: 0.7;
 
       &:hover {
-        border-color: gray;
-        background: #f0f0f0;
+        opacity: 1;
       }
 
-      /* Active tab */
       &:has(input[type="radio"]:checked) {
-        border-color: #000;
+        opacity: 1;
+        font-weight: bold;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
       }
-    }
-
-    .tab-content {
-      padding: 20px;
-      flex: 1;
-    }
-
-    /* Hide the data-tab when the corresponding radio is not checked */
-    :has(#tab-1:not(:checked)) [data-tab="tab-1"],
-    :has(#tab-2:not(:checked)) [data-tab="tab-2"],
-    :has(#tab-3:not(:checked)) [data-tab="tab-3"] {
-      display: none;
-    }
-
-    /* Tab container */
-    .primary-tabs {
-      max-width: 800px;
-      margin: 20px auto;
-      display: flex;
-      gap: 20px;
-    }
-
-    .primary-labels {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-width: 120px;
-      border-right: 1px solid #ddd;
-    }
-
-    /* Tab container */
-    .primary-tabs {
-      max-width: 800px;
-      margin: 20px auto;
-      display: flex;
-      gap: 20px;
-    }
-
-    .primary-labels {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-width: 120px;
-      border-right: 1px solid #ddd;
     }
   </style>
 </head>
 
 <body>
-  <div class="tabs primary-tabs">
-    <nav class="tab-labels primary-labels">
-      <label for="tab-1" class="tab-label">
-        <input type="radio" name="tab-group-1" id="tab-1"  checked />
+  <div>
+    <nav>
+      <!-- 
+        The aria-selected="true" and tabindex="0" attributes are omitted for this example
+        See: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role#example
+      -->
+      <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
+        <input type="radio" name="tab-group-1" id="tab-1" checked />
         Tab 1
       </label>
-      <label for="tab-2" class="tab-label">
-        <input type="radio" name="tab-group-1" id="tab-2"  />
-        Tab 2</label>
-      <label for="tab-3" class="tab-label">
-        <input type="radio" name="tab-group-1" id="tab-3"  />
-        Tab 3</label>
+      <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
+        <input type="radio" name="tab-group-1" id="tab-2" />
+        Tab 2
+      </label>
+      <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
+        <input type="radio" name="tab-group-1" id="tab-3" />
+        Tab 3
+      </label>
     </nav>
-
-    <div class="tab-contents">
-      <div class="tab-content" data-tab="tab-1">
+    <div>
+      <div id="panel-1" role="tabpanel" aria-labelledby="tab-1">
         <h2>First Tab Content</h2>
         <p>This is the content of the first tab.</p>
+        <hr />
+        <label role="tab" aria-controls="panel-4" for="tab-4" class="tab-label">
+          <input type="radio" name="tab-group-2" id="tab-4" checked />
+          Nested Tab 4
+        </label>
+        <label role="tab" aria-controls="panel-5" for="tab-5" class="tab-label">
+          <input type="radio" name="tab-group-2" id="tab-5" />
+          Nested Tab 5
+        </label>
+        <div id="panel-4" role="tabpanel" aria-labelledby="tab-4">
+          <h3>Fourth Tab Nested</h3>
+          <p>This is the content of the fourth tab.</p>
+        </div>
+        <div id="panel-5" role="tabpanel" aria-labelledby="tab-5">
+          <h3>Fifth Tab Nested</h3>
+          <p>This is the content of the fifth tab.</p>
+        </div>
       </div>
-
-      <div class="tab-content" data-tab="tab-2">
+      <div id="panel-2" role="tabpanel" aria-labelledby="tab-2">
         <h2>Second Tab Content</h2>
         <p>This is the content of the second tab.</p>
       </div>
-
-      <div class="tab-content" data-tab="tab-3">
+      <div id="panel-3" role="tabpanel" aria-labelledby="tab-3">
         <h2>Third Tab Content</h2>
         <p>This is the content of the third tab.</p>
       </div>
     </div>
-
   </div>
 </body>
 
