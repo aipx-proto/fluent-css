@@ -15,6 +15,42 @@
       display: none;
     }
 
+
+    /* Tab labels */
+    .tab-label {
+      display: inline-block;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-left: 4px solid transparent;
+
+      /* Hide the radio button */
+      & input[type="radio"] {
+        display: none;
+      }
+
+      &:hover {
+        border-color: gray;
+        background: #f0f0f0;
+      }
+
+      /* Active tab */
+      &:has(input[type="radio"]:checked) {
+        border-color: #000;
+      }
+    }
+
+    .tab-content {
+      padding: 20px;
+      flex: 1;
+    }
+
+    /* Hide the data-tab when the corresponding radio is not checked */
+    :has(#tab-1:not(:checked)) [data-tab="tab-1"],
+    :has(#tab-2:not(:checked)) [data-tab="tab-2"],
+    :has(#tab-3:not(:checked)) [data-tab="tab-3"] {
+      display: none;
+    }
+
     /* Tab container */
     .primary-tabs {
       max-width: 800px;
@@ -31,148 +67,20 @@
       border-right: 1px solid #ddd;
     }
 
-    /* Tab labels */
-    .tab-label {
-      display: inline-block;
-      padding: 8px 16px;
-      cursor: pointer;
-      border-left: 4px solid transparent;
-
-      &:hover {
-        border-color: gray;
-        background: #f0f0f0;
-      }
+    /* Tab container */
+    .primary-tabs {
+      max-width: 800px;
+      margin: 20px auto;
+      display: flex;
+      gap: 20px;
     }
 
-    .secondary-labels {
-      .tab-label {
-        border: none;
-        border-bottom: 4px solid transparent;
-      }
-    }
-
-
-    /* Tab content */
-    .tab-content {
-      display: none;
-      padding: 20px;
-      flex: 1;
-    }
-
-    /* Show content when radio is checked */
-    .tab-input:checked+.tab-content {
-      display: block;
-    }
-
-    
-    /* // run in js console to output all the selectors // 
-    [1,2,3,4,5,6,7,8,9]
-      .map(N=>['A','B','C','D','E','F','G','H','I','J','K']
-        .map(A=>`:has(.tab-input[id="tabs${N}${A}"]:checked) .tab-label[for="tabs${N}${A}"]`)
-        .join(', ')
-      )
-      .join(', ') 
-    */
-    :has(.tab-input[id="tabs1A"]:checked) .tab-label[for="tabs1A"],
-    :has(.tab-input[id="tabs1B"]:checked) .tab-label[for="tabs1B"],
-    :has(.tab-input[id="tabs1C"]:checked) .tab-label[for="tabs1C"],
-    :has(.tab-input[id="tabs1D"]:checked) .tab-label[for="tabs1D"],
-    :has(.tab-input[id="tabs1E"]:checked) .tab-label[for="tabs1E"],
-    :has(.tab-input[id="tabs1F"]:checked) .tab-label[for="tabs1F"],
-    :has(.tab-input[id="tabs1G"]:checked) .tab-label[for="tabs1G"],
-    :has(.tab-input[id="tabs1H"]:checked) .tab-label[for="tabs1H"],
-    :has(.tab-input[id="tabs1I"]:checked) .tab-label[for="tabs1I"],
-    :has(.tab-input[id="tabs1J"]:checked) .tab-label[for="tabs1J"],
-    :has(.tab-input[id="tabs1K"]:checked) .tab-label[for="tabs1K"],
-    :has(.tab-input[id="tabs2A"]:checked) .tab-label[for="tabs2A"],
-    :has(.tab-input[id="tabs2B"]:checked) .tab-label[for="tabs2B"],
-    :has(.tab-input[id="tabs2C"]:checked) .tab-label[for="tabs2C"],
-    :has(.tab-input[id="tabs2D"]:checked) .tab-label[for="tabs2D"],
-    :has(.tab-input[id="tabs2E"]:checked) .tab-label[for="tabs2E"],
-    :has(.tab-input[id="tabs2F"]:checked) .tab-label[for="tabs2F"],
-    :has(.tab-input[id="tabs2G"]:checked) .tab-label[for="tabs2G"],
-    :has(.tab-input[id="tabs2H"]:checked) .tab-label[for="tabs2H"],
-    :has(.tab-input[id="tabs2I"]:checked) .tab-label[for="tabs2I"],
-    :has(.tab-input[id="tabs2J"]:checked) .tab-label[for="tabs2J"],
-    :has(.tab-input[id="tabs2K"]:checked) .tab-label[for="tabs2K"],
-    :has(.tab-input[id="tabs3A"]:checked) .tab-label[for="tabs3A"],
-    :has(.tab-input[id="tabs3B"]:checked) .tab-label[for="tabs3B"],
-    :has(.tab-input[id="tabs3C"]:checked) .tab-label[for="tabs3C"],
-    :has(.tab-input[id="tabs3D"]:checked) .tab-label[for="tabs3D"],
-    :has(.tab-input[id="tabs3E"]:checked) .tab-label[for="tabs3E"],
-    :has(.tab-input[id="tabs3F"]:checked) .tab-label[for="tabs3F"],
-    :has(.tab-input[id="tabs3G"]:checked) .tab-label[for="tabs3G"],
-    :has(.tab-input[id="tabs3H"]:checked) .tab-label[for="tabs3H"],
-    :has(.tab-input[id="tabs3I"]:checked) .tab-label[for="tabs3I"],
-    :has(.tab-input[id="tabs3J"]:checked) .tab-label[for="tabs3J"],
-    :has(.tab-input[id="tabs3K"]:checked) .tab-label[for="tabs3K"],
-    :has(.tab-input[id="tabs4A"]:checked) .tab-label[for="tabs4A"],
-    :has(.tab-input[id="tabs4B"]:checked) .tab-label[for="tabs4B"],
-    :has(.tab-input[id="tabs4C"]:checked) .tab-label[for="tabs4C"],
-    :has(.tab-input[id="tabs4D"]:checked) .tab-label[for="tabs4D"],
-    :has(.tab-input[id="tabs4E"]:checked) .tab-label[for="tabs4E"],
-    :has(.tab-input[id="tabs4F"]:checked) .tab-label[for="tabs4F"],
-    :has(.tab-input[id="tabs4G"]:checked) .tab-label[for="tabs4G"],
-    :has(.tab-input[id="tabs4H"]:checked) .tab-label[for="tabs4H"],
-    :has(.tab-input[id="tabs4I"]:checked) .tab-label[for="tabs4I"],
-    :has(.tab-input[id="tabs4J"]:checked) .tab-label[for="tabs4J"],
-    :has(.tab-input[id="tabs4K"]:checked) .tab-label[for="tabs4K"],
-    :has(.tab-input[id="tabs5A"]:checked) .tab-label[for="tabs5A"],
-    :has(.tab-input[id="tabs5B"]:checked) .tab-label[for="tabs5B"],
-    :has(.tab-input[id="tabs5C"]:checked) .tab-label[for="tabs5C"],
-    :has(.tab-input[id="tabs5D"]:checked) .tab-label[for="tabs5D"],
-    :has(.tab-input[id="tabs5E"]:checked) .tab-label[for="tabs5E"],
-    :has(.tab-input[id="tabs5F"]:checked) .tab-label[for="tabs5F"],
-    :has(.tab-input[id="tabs5G"]:checked) .tab-label[for="tabs5G"],
-    :has(.tab-input[id="tabs5H"]:checked) .tab-label[for="tabs5H"],
-    :has(.tab-input[id="tabs5I"]:checked) .tab-label[for="tabs5I"],
-    :has(.tab-input[id="tabs5J"]:checked) .tab-label[for="tabs5J"],
-    :has(.tab-input[id="tabs5K"]:checked) .tab-label[for="tabs5K"],
-    :has(.tab-input[id="tabs6A"]:checked) .tab-label[for="tabs6A"],
-    :has(.tab-input[id="tabs6B"]:checked) .tab-label[for="tabs6B"],
-    :has(.tab-input[id="tabs6C"]:checked) .tab-label[for="tabs6C"],
-    :has(.tab-input[id="tabs6D"]:checked) .tab-label[for="tabs6D"],
-    :has(.tab-input[id="tabs6E"]:checked) .tab-label[for="tabs6E"],
-    :has(.tab-input[id="tabs6F"]:checked) .tab-label[for="tabs6F"],
-    :has(.tab-input[id="tabs6G"]:checked) .tab-label[for="tabs6G"],
-    :has(.tab-input[id="tabs6H"]:checked) .tab-label[for="tabs6H"],
-    :has(.tab-input[id="tabs6I"]:checked) .tab-label[for="tabs6I"],
-    :has(.tab-input[id="tabs6J"]:checked) .tab-label[for="tabs6J"],
-    :has(.tab-input[id="tabs6K"]:checked) .tab-label[for="tabs6K"],
-    :has(.tab-input[id="tabs7A"]:checked) .tab-label[for="tabs7A"],
-    :has(.tab-input[id="tabs7B"]:checked) .tab-label[for="tabs7B"],
-    :has(.tab-input[id="tabs7C"]:checked) .tab-label[for="tabs7C"],
-    :has(.tab-input[id="tabs7D"]:checked) .tab-label[for="tabs7D"],
-    :has(.tab-input[id="tabs7E"]:checked) .tab-label[for="tabs7E"],
-    :has(.tab-input[id="tabs7F"]:checked) .tab-label[for="tabs7F"],
-    :has(.tab-input[id="tabs7G"]:checked) .tab-label[for="tabs7G"],
-    :has(.tab-input[id="tabs7H"]:checked) .tab-label[for="tabs7H"],
-    :has(.tab-input[id="tabs7I"]:checked) .tab-label[for="tabs7I"],
-    :has(.tab-input[id="tabs7J"]:checked) .tab-label[for="tabs7J"],
-    :has(.tab-input[id="tabs7K"]:checked) .tab-label[for="tabs7K"],
-    :has(.tab-input[id="tabs8A"]:checked) .tab-label[for="tabs8A"],
-    :has(.tab-input[id="tabs8B"]:checked) .tab-label[for="tabs8B"],
-    :has(.tab-input[id="tabs8C"]:checked) .tab-label[for="tabs8C"],
-    :has(.tab-input[id="tabs8D"]:checked) .tab-label[for="tabs8D"],
-    :has(.tab-input[id="tabs8E"]:checked) .tab-label[for="tabs8E"],
-    :has(.tab-input[id="tabs8F"]:checked) .tab-label[for="tabs8F"],
-    :has(.tab-input[id="tabs8G"]:checked) .tab-label[for="tabs8G"],
-    :has(.tab-input[id="tabs8H"]:checked) .tab-label[for="tabs8H"],
-    :has(.tab-input[id="tabs8I"]:checked) .tab-label[for="tabs8I"],
-    :has(.tab-input[id="tabs8J"]:checked) .tab-label[for="tabs8J"],
-    :has(.tab-input[id="tabs8K"]:checked) .tab-label[for="tabs8K"],
-    :has(.tab-input[id="tabs9A"]:checked) .tab-label[for="tabs9A"],
-    :has(.tab-input[id="tabs9B"]:checked) .tab-label[for="tabs9B"],
-    :has(.tab-input[id="tabs9C"]:checked) .tab-label[for="tabs9C"],
-    :has(.tab-input[id="tabs9D"]:checked) .tab-label[for="tabs9D"],
-    :has(.tab-input[id="tabs9E"]:checked) .tab-label[for="tabs9E"],
-    :has(.tab-input[id="tabs9F"]:checked) .tab-label[for="tabs9F"],
-    :has(.tab-input[id="tabs9G"]:checked) .tab-label[for="tabs9G"],
-    :has(.tab-input[id="tabs9H"]:checked) .tab-label[for="tabs9H"],
-    :has(.tab-input[id="tabs9I"]:checked) .tab-label[for="tabs9I"],
-    :has(.tab-input[id="tabs9J"]:checked) .tab-label[for="tabs9J"],
-    :has(.tab-input[id="tabs9K"]:checked) .tab-label[for="tabs9K"] {
-      border-color: #000;
+    .primary-labels {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 120px;
+      border-right: 1px solid #ddd;
     }
   </style>
 </head>
@@ -180,56 +88,30 @@
 <body>
   <div class="tabs primary-tabs">
     <nav class="tab-labels primary-labels">
-      <label for="tab1-1" class="tab-label">Tab 1</label>
-      <label for="tab2-1" class="tab-label">Tab 2</label>
-      <label for="tab3-1" class="tab-label">Tab 3</label>
+      <label for="tab-1" class="tab-label">
+        <input type="radio" name="tab-group-1" id="tab-1"  checked />
+        Tab 1
+      </label>
+      <label for="tab-2" class="tab-label">
+        <input type="radio" name="tab-group-1" id="tab-2"  />
+        Tab 2</label>
+      <label for="tab-3" class="tab-label">
+        <input type="radio" name="tab-group-1" id="tab-3"  />
+        Tab 3</label>
     </nav>
 
     <div class="tab-contents">
-      <input type="radio" name="tabs-1" id="tab1-1" class="tab-input" checked />
-      <div class="tab-content">
+      <div class="tab-content" data-tab="tab-1">
         <h2>First Tab Content</h2>
         <p>This is the content of the first tab.</p>
-
-        <div class="tabs secondary-tabs">
-          <nav class="tab-labels secondary-labels">
-            <label for="tab1-2" class="tab-label">Tab 1</label>
-            <label for="tab2-2" class="tab-label">Tab 2</label>
-            <label for="tab3-2" class="tab-label">Tab 3</label>
-          </nav>
-
-          <div class="tab-contents">
-            <input type="radio" name="tabs-2" id="tab1-2" class="tab-input" checked />
-            <div class="tab-content">
-              <h2>First Tab Content</h2>
-              <p>This is the content of the first tab.</p>
-            </div>
-
-            <input type="radio" name="tabs-2" id="tab2-2" class="tab-input" />
-            <div class="tab-content">
-              <h2>Second Tab Content</h2>
-              <p>This is the content of the second tab.</p>
-            </div>
-
-            <input type="radio" name="tabs-2" id="tab3-2" class="tab-input" />
-            <div class="tab-content">
-              <h2>Third Tab Content</h2>
-              <p>This is the content of the third tab.</p>
-            </div>
-          </div>
-
-        </div>
-
       </div>
 
-      <input type="radio" name="tabs-1" id="tab2-1" class="tab-input" />
-      <div class="tab-content">
+      <div class="tab-content" data-tab="tab-2">
         <h2>Second Tab Content</h2>
         <p>This is the content of the second tab.</p>
       </div>
 
-      <input type="radio" name="tabs-1" id="tab3-1" class="tab-input" />
-      <div class="tab-content">
+      <div class="tab-content" data-tab="tab-3">
         <h2>Third Tab Content</h2>
         <p>This is the content of the third tab.</p>
       </div>
