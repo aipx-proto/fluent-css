@@ -44,7 +44,6 @@
 
     /* Tab labels */
     .tab-label {
-      display: inline-block;
       opacity: 0.7;
 
       &:hover {
@@ -63,57 +62,56 @@
 </head>
 
 <body>
-  <div>
-    <nav>
-      <!-- 
+  <nav>
+    <!-- 
         The aria-selected="true" and tabindex="0" attributes are omitted for this example
         See: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role#example
       -->
-      <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
-        <input type="radio" name="tab-group-1" id="tab-1" checked />
-        Tab 1
+    <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
+      <input type="radio" name="tab-group-1" id="tab-1" checked />
+      Tab 1
+    </label>
+    <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
+      <input type="radio" name="tab-group-1" id="tab-2" />
+      Tab 2
+    </label>
+    <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
+      <input type="radio" name="tab-group-1" id="tab-3" />
+      Tab 3
+    </label>
+  </nav>
+  <hr />
+  <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+    <h2>First Tab Content</h2>
+    <p>This is the content of the first tab.</p>
+    <nav>
+      <label role="tab" aria-controls="panel-4" for="tab-4" class="tab-label">
+        <input type="radio" name="tab-group-2" id="tab-4" checked />
+        Nested Tab 4
       </label>
-      <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
-        <input type="radio" name="tab-group-1" id="tab-2" />
-        Tab 2
-      </label>
-      <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
-        <input type="radio" name="tab-group-1" id="tab-3" />
-        Tab 3
+      <label role="tab" aria-controls="panel-5" for="tab-5" class="tab-label">
+        <input type="radio" name="tab-group-2" id="tab-5" />
+        Nested Tab 5
       </label>
     </nav>
-    <div>
-      <div id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-        <h2>First Tab Content</h2>
-        <p>This is the content of the first tab.</p>
-        <hr />
-        <label role="tab" aria-controls="panel-4" for="tab-4" class="tab-label">
-          <input type="radio" name="tab-group-2" id="tab-4" checked />
-          Nested Tab 4
-        </label>
-        <label role="tab" aria-controls="panel-5" for="tab-5" class="tab-label">
-          <input type="radio" name="tab-group-2" id="tab-5" />
-          Nested Tab 5
-        </label>
-        <div id="panel-4" role="tabpanel" aria-labelledby="tab-4">
-          <h3>Fourth Tab Nested</h3>
-          <p>This is the content of the fourth tab.</p>
-        </div>
-        <div id="panel-5" role="tabpanel" aria-labelledby="tab-5">
-          <h3>Fifth Tab Nested</h3>
-          <p>This is the content of the fifth tab.</p>
-        </div>
-      </div>
-      <div id="panel-2" role="tabpanel" aria-labelledby="tab-2">
-        <h2>Second Tab Content</h2>
-        <p>This is the content of the second tab.</p>
-      </div>
-      <div id="panel-3" role="tabpanel" aria-labelledby="tab-3">
-        <h2>Third Tab Content</h2>
-        <p>This is the content of the third tab.</p>
-      </div>
-    </div>
-  </div>
+    <hr />
+    <section id="panel-4" role="tabpanel" aria-labelledby="tab-4">
+      <h3>Fourth Tab Nested</h3>
+      <p>This is the content of the fourth tab.</p>
+    </section>
+    <section id="panel-5" role="tabpanel" aria-labelledby="tab-5">
+      <h3>Fifth Tab Nested</h3>
+      <p>This is the content of the fifth tab.</p>
+    </section>
+  </section>
+  <section id="panel-2" role="tabpanel" aria-labelledby="tab-2">
+    <h2>Second Tab Content</h2>
+    <p>This is the content of the second tab.</p>
+  </section>
+  <section id="panel-3" role="tabpanel" aria-labelledby="tab-3">
+    <h2>Third Tab Content</h2>
+    <p>This is the content of the third tab.</p>
+  </section>
 </body>
 
 </html>
