@@ -227,6 +227,86 @@ function example() {
       </dialog>
     </section>
 
+    <section id="tabs" class="section">
+      <h2 class="section-header">Tabs</h2>
+
+      <nav role="tablist" class="tab-list vertical appearance-subtle">
+        <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
+          <input type="radio" name="tab-group-1" id="tab-1" checked />
+          Tab 1
+        </label>
+        <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
+          <input type="radio" name="tab-group-1" id="tab-2" />
+          Tab 2
+        </label>
+        <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
+          <input type="radio" name="tab-group-1" id="tab-3" />
+          Tab 3
+        </label>
+      </nav>
+
+      <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+        <h2>First Tab Content</h2>
+        <p>This is the content of the first tab.</p>
+        <nav role="tablist">
+          <label role="tab" aria-controls="panel-4" for="tab-4" class="tab-label">
+            <input type="radio" name="tab-group-2" id="tab-4" checked />
+            Nested Tab 4
+          </label>
+          <label role="tab" aria-controls="panel-5" for="tab-5" class="tab-label">
+            <input type="radio" name="tab-group-2" id="tab-5" />
+            Nested Tab 5
+          </label>
+          <label role="tab" aria-controls="panel-6" for="tab-6" class="tab-label">
+            <input type="radio" name="tab-group-2" id="tab-6" />
+            Nested Tab 6
+          </label>
+        </nav>
+
+        <section id="panel-4" role="tabpanel" aria-labelledby="tab-4">
+          <h3>Fourth Tab Nested</h3>
+          <p>This is the content of the fourth tab.</p>
+        </section>
+        <section id="panel-5" role="tabpanel" aria-labelledby="tab-5">
+          <h3>Fifth Tab Nested</h3>
+          <p>This is the content of the fifth tab.</p>
+        </section>
+        <section id="panel-6" role="tabpanel" aria-labelledby="tab-6">
+          <h3>Sixth Tab Nested</h3>
+          <p>This is the content of the sixth tab.</p>
+        </section>
+      </section>
+      <section id="panel-2" role="tabpanel" aria-labelledby="tab-2">
+        <h2>Second Tab Content</h2>
+        <p>This is the content of the second tab.</p>
+
+        <nav role="tablist" class="tab-list appearance-toggle">
+          <label role="tab" aria-controls="panel-7" for="tab-7" class="tab-label">
+            <input type="radio" name="tab-group-2" id="tab-7" />
+            Nested Tab 7
+          </label>
+          <label role="tab" aria-controls="panel-8" for="tab-8" class="tab-label">
+            <input type="radio" name="tab-group-2" id="tab-8" />
+            Nested Tab 8
+          </label>  
+        </nav>
+
+        <section id="panel-7" role="tabpanel" aria-labelledby="tab-7">
+          <h3>Seventh Tab Nested</h3>
+          <p>This is the content of the seventh tab.</p>
+        </section>
+        <section id="panel-8" role="tabpanel" aria-labelledby="tab-8">
+          <h3>Eighth Tab Nested</h3>
+          <p>This is the content of the eighth tab.</p>
+        </section>
+
+      </section>
+      <section id="panel-3" role="tabpanel" aria-labelledby="tab-3">
+        <h2>Third Tab Content</h2>
+        <p>This is the content of the third tab.</p>
+      </section>
+    </section>
+
     <section id="forms" class="section">
       <h2 class="section-header">Form Elements</h2>
       <form action="/submit" method="post">

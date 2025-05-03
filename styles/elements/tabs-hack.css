@@ -1,0 +1,61 @@
+/*
+
+```html
+<nav role="tablist">
+  <label role="tab" aria-controls="panel-4" for="tab-4" class="tab-label">
+    <input type="radio" name="tab-group-2" id="tab-4" checked />
+    Nested Tab 4
+  </label>
+  <label role="tab" aria-controls="panel-5" for="tab-5" class="tab-label">
+    <input type="radio" name="tab-group-2" id="tab-5" />
+    Nested Tab 5
+  </label>
+</nav>
+
+<section id="panel-4" role="tabpanel" aria-labelledby="tab-4">
+  <h3>Fourth Tab Nested</h3>
+  <p>This is the content of the fourth tab.</p>
+</section>
+
+<section id="panel-5" role="tabpanel" aria-labelledby="tab-5">
+  <h3>Fifth Tab Nested</h3>
+  <p>This is the content of the fifth tab.</p>
+</section>
+```
+
+*/
+
+
+/** Hide the #panel-N when the corresponding radio is not checked */
+:has([aria-controls="panel-1"] input[type="radio"]:not(:checked)) #panel-1,
+:has([aria-controls="panel-2"] input[type="radio"]:not(:checked)) #panel-2,
+:has([aria-controls="panel-3"] input[type="radio"]:not(:checked)) #panel-3,
+:has([aria-controls="panel-4"] input[type="radio"]:not(:checked)) #panel-4,
+:has([aria-controls="panel-5"] input[type="radio"]:not(:checked)) #panel-5,
+:has([aria-controls="panel-6"] input[type="radio"]:not(:checked)) #panel-6,
+:has([aria-controls="panel-7"] input[type="radio"]:not(:checked)) #panel-7,
+:has([aria-controls="panel-8"] input[type="radio"]:not(:checked)) #panel-8,
+:has([aria-controls="panel-9"] input[type="radio"]:not(:checked)) #panel-9,
+:has([aria-controls="panel-10"] input[type="radio"]:not(:checked)) #panel-10,
+:has([aria-controls="panel-11"] input[type="radio"]:not(:checked)) #panel-11,
+:has([aria-controls="panel-12"] input[type="radio"]:not(:checked)) #panel-12,
+:has([aria-controls="panel-13"] input[type="radio"]:not(:checked)) #panel-13,
+:has([aria-controls="panel-14"] input[type="radio"]:not(:checked)) #panel-14,
+:has([aria-controls="panel-15"] input[type="radio"]:not(:checked)) #panel-15,
+:has([aria-controls="panel-16"] input[type="radio"]:not(:checked)) #panel-16,
+:has([aria-controls="panel-17"] input[type="radio"]:not(:checked)) #panel-17,
+:has([aria-controls="panel-18"] input[type="radio"]:not(:checked)) #panel-18,
+:has([aria-controls="panel-19"] input[type="radio"]:not(:checked)) #panel-19,
+:has([aria-controls="panel-20"] input[type="radio"]:not(:checked)) #panel-20 {
+  /* ... add more panel-20 as needed. 20 seems like enough */
+  display: none;
+}
+
+label[role="tab"] {
+  cursor: pointer;
+
+  /* hide the radio button */
+  & input[type="radio"] {
+    display: none;
+  }
+}

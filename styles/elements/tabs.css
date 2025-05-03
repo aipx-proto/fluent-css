@@ -1,0 +1,38 @@
+.tab-list,
+[role="tablist"] {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  &.vertical {
+    flex-direction: column;
+  }
+}
+
+/* .icon-only */
+/* .size-<size> */
+/* .disabled */
+/* .appearance-transparent */
+/* .appearance-subtle */
+/* .appearance-toggle */
+/* .vertical */
+/* button and a anchor exception */
+
+.tab,
+[role="tab"] {
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  /* selected tab */
+  &.active,
+  [aria-selected="true"],
+  &:has(input[type="radio"]:checked) {
+    opacity: 1;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+}
