@@ -40,7 +40,9 @@ Variables not listed here are internal and should not be used.
 
 ## Utility Class Names
 
-The following utility class names are available for use. These classes apply common sizing, shape, and theme variables to elements:
+### Theme Classes
+- `.theme-dark`: (default) Applies dark color scheme variables for backgrounds, borders, and text.
+- `.theme-light`: Applies light color scheme variables for backgrounds, borders, and text.
 
 ### Sizing Classes
 - `.size-small`: Applies small height, font size, padding, and icon size.
@@ -52,9 +54,7 @@ The following utility class names are available for use. These classes apply com
 - `.shape-rounded`: Applies a medium border radius for rounded corners.
 - `.shape-circular`: Applies a very large border radius for fully circular shapes.
 
-### Theme Classes
-- `.theme-dark`: Applies dark color scheme variables for backgrounds, borders, and text.
-- `.theme-light`: Applies light color scheme variables for backgrounds, borders, and text.
+### Appearance
 
-**Note:** These classes are designed to be used on container elements or components to quickly apply consistent sizing, shape, or theme styles using the defined CSS variables.
+
 
