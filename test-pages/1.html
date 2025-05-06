@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" class="theme-dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content writer - Azure AI Foundry</title>
+  <link rel="stylesheet" href="../styles/index.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">Azure AI Foundry</span>
+        <span class="sidebar-project">/ project-name123 / Parent page</span>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><span class="nav-section">Agents</span></li>
+          <li><span class="nav-section">Models</span></li>
+          <li><span class="nav-section">Workflow</span></li>
+          <li><span class="nav-section">Reports</span></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <span class="main-title">Content writer</span>
+        <nav class="main-tabs">
+          <button>Details</button>
+          <button>Build</button>
+          <button class="active">Threads</button>
+          <button>Monitor</button>
+          <button>Evaluation</button>
+          <button>API Docs</button>
+        </nav>
+        <div class="main-header-actions">
+          <input type="text" placeholder="Search with AI" class="search-bar" />
+          <button class="deploy-btn">Deploy agent</button>
+          <span class="user-menu">...</span>
+        </div>
+      </header>
+
+      <div class="content-area">
+        <!-- Thread List -->
+        <section class="thread-list">
+          <div class="thread-list-header">
+            <input type="text" placeholder="Search threads" />
+            <button>Prev</button>
+            <button>Next</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Thread ID</th>
+                <th>Created</th>
+                <th>Tools</th>
+                <th>Length</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>thread_3x6lc... </td>
+                <td>Mar 19, 2025 10:45 AM</td>
+                <td>N/A</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>thread_cUb42... </td>
+                <td>Mar 18, 2025 12:58 PM</td>
+                <td>N/A</td>
+                <td>12</td>
+              </tr>
+              <tr class="selected">
+                <td>thread_356b2... </td>
+                <td>Mar 18, 2025 12:51 PM</td>
+                <td>N/A</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>thread_OClfM... </td>
+                <td>Mar 18, 2025 11:58 PM</td>
+                <td>N/A</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>thread_ZSruX... </td>
+                <td>Mar 14, 2025 3:02 PM</td>
+                <td>N/A</td>
+                <td>15</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Conversation Panel -->
+        <section class="conversation-panel">
+          <div class="conversation-header">
+            <span>ID: thread_1f46YMajmK3bljMa0g4xPJXh</span>
+            <span>Feb 27, 2025 2:20 PM | 4 Messages | Tools: N/A</span>
+          </div>
+          <div class="conversation-messages">
+            <div class="message user">
+              <div class="message-role">User</div>
+              <div class="message-content">
+                What tools do I need on hand for common HVAC repairs?
+              </div>
+            </div>
+            <div class="message agent">
+              <div class="message-role">Field service agent</div>
+              <div class="message-content">
+                HVAC-Specific Tools:
+                <ol>
+                  <li>Manifold Gauge Set: For refrigerant system checks.</li>
+                  <li>Thermometer: Digital or infrared.</li>
+                  <li>Leak Detector: For refrigerant leaks.</li>
+                  <li>Refrigerant Scale: For measuring refrigerant.</li>
+                  <li>Vacuum Pump: For evacuating systems.</li>
+                  <li>Swaging Tools: For tubing adjustments.</li>
+                </ol>
+              </div>
+            </div>
+            <div class="message user">
+              <div class="message-role">User</div>
+              <div class="message-content">
+                I've run into a damaged capacitor, it looks like it'll need to be replaced. Do we have any extra inventory in the office I can pick up?
+              </div>
+            </div>
+            <div class="message agent">
+              <div class="message-role">Field service agent</div>
+              <div class="message-content">
+                Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.
+              </div>
+            </div>
+          </div>
+          <div class="conversation-actions">
+            <button>Open in build</button>
+            <button>Delete</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
