@@ -22,9 +22,9 @@
 - loading
   - spinner
   - progress bar
+- tabs
 
 ### Next
-- tabs
 - intent: info, warning, error, success, brand
   - applies to anything? like a theme?
 - input placeholder: color, type="date"
