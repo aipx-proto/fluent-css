@@ -41,6 +41,8 @@
   --shadow64: 0 0 8px var(--colorShadowAmbient), 0 32px 64px var(--colorShadowKey);
 
   --colorBackgroundOverlay: rgba(0, 0, 0, 0.5);
+
+  --opacityDisabled: 0.5;
 }
 
 .size-small {

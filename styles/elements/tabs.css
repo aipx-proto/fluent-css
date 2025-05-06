@@ -11,28 +11,105 @@
 /* .icon-only */
 /* .size-<size> */
 /* .disabled */
-/* .appearance-transparent */
-/* .appearance-subtle */
-/* .appearance-toggle */
+
 /* .vertical */
 /* button and a anchor exception */
 
 .tab,
 [role="tab"] {
-  opacity: 0.7;
+  cursor: pointer;
+  appearance: none;
+  line-height: 1;
 
-  &:hover {
-    opacity: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--borderRadius);
+  font-size: var(--sizeFont);
+  color: var(--colorText1);
+  min-height: var(--sizeHeight);
+  padding: 0 var(--sizePadding);
+
+  transition: background-color var(--durationRest) linear;
+
+  --sizeTabUnderline: 4px;
+  --colorTabUnderlineHover: var(--colorText4);
+  --colorTabUnderlineActive: var(--colorBrandBase);
+  --durationTabUnderline: 0.1s;
+
+  position: relative;
+
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: var(--borderRadiusCircular);
+    inset: auto var(--sizePadding) 0 var(--sizePadding);
+    height: var(--sizeTabUnderline);
+    transform-origin: center;
+    transition: transform var(--durationTabUnderline) ease-out, opacity var(--durationRest) linear;
+  }
+
+  &:before {
+    background-color: var(--colorTabUnderlineHover);
+    opacity: 0;
+  }
+
+  &:after {
+    background-color: var(--colorTabUnderlineActive);
+    transform: scaleX(0);
+  }
+
+  .vertical & {
+    --sizeTabUnderlinePadding: calc((var(--sizeHeight) - var(--sizeIcon)) / 2);
+    &:after,
+    &:before {
+      inset: var(--sizeTabUnderlinePadding) auto var(--sizeTabUnderlinePadding) 0;
+      height: auto;
+      width: var(--sizeTabUnderline);
+    }
+    &:after {
+      transform: scaleY(0);
+    }
+  }
+
+  /* .appearance-transparent */
+  /* .appearance-subtle */
+  /* .appearance-toggle */
+
+  &:has(input[type="radio"]:not(:disabled)) {
+    &:hover {
+      background-color: var(--interactiveHover);
+      transition-duration: var(--durationHover);
+
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    /* pressed */
+    &:active,
+    &.active,
+    &[aria-selected="true"],
+    &:has(input[type="radio"]:checked) {
+      background-color: var(--interactiveActive);
+      transition-duration: var(--durationActive);
+    }
   }
 
   /* selected tab */
   &.active,
-  [aria-selected="true"],
+  &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
-    opacity: 1;
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+    &:after {
+      transform: scale(1);
+    }
+  }
+
+  &:has(input[type="radio"]:disabled) {
+    cursor: not-allowed;
+    opacity: var(--opacityDisabled);
   }
 }

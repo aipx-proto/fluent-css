@@ -25,16 +25,17 @@ select.button,
   padding: 0 var(--sizePadding);
 
   background-color: var(--interactiveRest);
-  transition: background-color var(--durationRest) ease-in-out;
+  transition: background-color var(--durationRest) linear;
 
   &:not(:disabled) {
-    &:hover,
-    &.checked {
+    &:hover
+     {
       background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
     }
 
-    &:active {
+    &:active,
+    &.active {
       background-color: var(--interactiveActive);
       transition-duration: var(--durationActive);
     }
