@@ -1,0 +1,19 @@
+{
+  "name": "mirai-css",
+  "version": "0.0.1",
+  "description": "A mirai.css file to style native html components",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aipx-proto/mirai-css.git"
+  },
+  "license": "ISC",
+  "scripts": {
+    "build": "postcss styles/index.css -o mirai.build.css"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.0"
+  }
+}
