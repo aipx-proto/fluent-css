@@ -1,7 +1,8 @@
 @import "./font-aptos/font-aptos.css";
 @import "./font-monaspace-neon/font-monaspace-neon.css";
 
-@import "./mirai-theme.css";
+@import "./variables/mirai-theme.css";
+
 @import "./elements/icon-uri.css";
 @import "./elements/accordion.css";
 @import "./elements/base.css";
