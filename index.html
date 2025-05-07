@@ -73,6 +73,11 @@
     <style>
       .header {
 
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+
         ul,
         ol,
         li {
@@ -102,6 +107,7 @@
         font-weight: var(--fontWeightBold);
         color: var(--colorText3);
       }
+
     </style>
     <h1>mirai.css</h1>
     <nav class="nav">
@@ -148,6 +154,22 @@
         </li>
       </ul>
     </nav>
+    <script>
+      function toggleTheme(event) {
+        const btn = event.currentTarget || event.target;
+        const isLight = document.documentElement.classList.contains('theme-light');
+        if (isLight) {
+          document.documentElement.classList.add('theme-dark');
+          document.documentElement.classList.remove('theme-light');
+          btn.textContent = 'Dark';
+        } else {
+          document.documentElement.classList.add('theme-light');
+          document.documentElement.classList.remove('theme-dark');
+          btn.textContent = 'Light';
+        }
+      }
+    </script>
+    <button id="theme-toggle" class="appearance-transparent size-small shape-square" style="margin-inline:-8px" onclick="toggleTheme(event)">Dark</button>
   </header>
 
   <main class="main">
@@ -222,8 +244,8 @@
           </div>
         </div>
       </div>
-      <div class="section__content">
-        <h3 id="color" class="section__header">Color</h3>
+      <div class="section__content" id="color">
+        <h3 class="section__header">Color</h3>
         <style>
           .color__text-color {
             display: flex;
@@ -277,7 +299,7 @@
         </div>
 
       </div>
-      <div class="section__content">
+      <div class="section__content" id="layout">
         <style>
           .layout__border-radius,
           .layout__shadow {
@@ -298,7 +320,7 @@
             }
           }
         </style>
-        <h3 id="layout" class="section__header">Layout</h3>
+        <h3 class="section__header">Layout</h3>
         <div class="layout__border-radius">
           <span style="border-radius: var(--borderRadiusNone);">Radius None</span>
           <span style="border-radius: var(--borderRadiusSmall);">Radius Small</span>
@@ -358,7 +380,7 @@
           </select>
         </div>
       </div>
-      <div class="section__content">
+      <div id="control-group" class="section__content">
         <style>
           .control-group__samples {
             display: flex;
@@ -388,7 +410,7 @@
     </section>
 
     <section class="section">
-      <div class="section__content">
+      <div id="input" class="section__content">
         <h3 class="section__header">Input</h3>
         <div>
           <input type="text" placeholder="Default" />
@@ -412,7 +434,7 @@
           <input type="date" />
         </div>
       </div>
-      <div class="section__content">
+      <div id="select" class="section__content">
         <h3 class="section__header">Select</h3>
         <div>
           <select id="select" name="select">
@@ -423,30 +445,31 @@
           </select>
         </div>
       </div>
-      <div class="section__content">
+      <div id="textarea" class="section__content">
         <h3 class="section__header">Textarea</h3>
         <div>
           <textarea placeholder="Textarea"></textarea>
         </div>
       </div>
 
-      <div class="section__content">
-        <style>
-          .form__radios,
-          .form__checkboxes {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-          }
+      <style>
+        .form__radios,
+        .form__checkboxes {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
 
-          .form__switch {
-            display: flex;
-            flex-direction: row;
-            gap: 12px;
-            align-items: center;
-          }
-        </style>
-        <h3 class="section__header">Radio Buttons</h3>
+        .form__switch {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          align-items: center;
+        }
+      </style>
+
+      <div id="radio" class="section__content">
+        <h3 class="section__header">Radio</h3>
         <div class="section__columns">
 
           <div class="form__radios">
@@ -478,8 +501,8 @@
         </div>
       </div>
 
-      <div class="section__content">
-        <h3 class="section__header">Checkboxes</h3>
+      <div id="checkbox" class="section__content">
+        <h3 class="section__header">Checkbox</h3>
         <div class="section__columns">
 
           <div class="form__checkboxes">
@@ -517,7 +540,7 @@
         </div>
       </div>
 
-      <div class="section__content">
+      <div id="switch" class="section__content">
         <h3 class="section__header">Switch</h3>
         <div class="section__columns">
           <div class="form__switch">
@@ -543,15 +566,15 @@
         </div>
       </div>
 
-      <div class="section__content">
+      <div id="slider" class="section__content">
         <h3 class="section__header">Slider</h3>
         <div class="slider">
           <input type="range" min="0" max="100" value="50" />
         </div>
       </div>
 
-      <div class="section__content">
-        <h3 class="section__header">Progress </h3>
+      <div id="progress" class="section__content">
+        <h3 class="section__header">Progress</h3>
         <div>
           <progress value="33" max="100"></progress>
           <span>Value 33/100</span>
@@ -569,7 +592,7 @@
     </section>
 
     <section id="overlay" class="section">
-      <div class="section__content">
+      <div id="dialog" class="section__content">
         <h3 class="section__header">Dialog</h3>
         <div>
           <button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
@@ -593,7 +616,7 @@
         </div>
       </div>
 
-      <div class="section__content">
+      <div id="popover" class="section__content">
         <h3 class="section__header">Popover</h3>
         <div class="section__columns">
 
@@ -674,7 +697,7 @@
         </div>
       </div>
 
-      <div class="section__content">
+      <div id="menu" class="section__content">
         <h3 class="section__header">Menu & Split Button</h3>
         <div class="control-group">
           <button class="appearance-primary shape-rounded">Split Button</button>
@@ -836,9 +859,9 @@
       </div>
     </section>
 
-    <section id="tables" class="section">
+    <section id="table" class="section">
       <div class="section__content">
-        <h3 class="section__header">Tables</h3>
+        <h3 class="section__header">Table</h3>
         <table>
           <thead>
             <tr>
@@ -868,9 +891,8 @@
       </div>
     </section>
 
-    <section id="html-elements" class="section">
+    <section id="html-sample" class="section">
       <div class="section__content">
-
         <h2 class="section__header">HTML Elements</h2>
       </div>
 
