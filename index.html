@@ -13,7 +13,7 @@
     }
 
     body {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -31,7 +31,25 @@
   </style>
 </head>
 
-<body>
+<body class="wrapper">
+  <style>
+    .wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .header {
+      flex: 0 0 auto;
+      position: sticky;
+      top: 30px;
+    }
+
+    .main {
+      flex: 1 1 auto;
+    }
+  </style>
 
   <header class="header">
     <style>
@@ -53,13 +71,13 @@
       .nav__links {
         display: flex;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 4px;
       }
 
       .nav__categories {
         display: flex;
         flex-direction: column;
-        gap: 0.6rem;
+        gap: 16px;
       }
 
       .nav__categories span {
@@ -83,11 +101,6 @@
             <span>Forms</span>
             <li><a href="#button">Button</a></li>
             <li><a href="#control-group">Control Group</a></li>
-          </ul>
-        </li>
-        <li>
-          <ul class="nav__links">
-            <span>Forms</span>
             <li><a href="#input">Input</a></li>
             <li><a href="#radio">Radio</a></li>
             <li><a href="#checkbox">Checkbox</a></li>
@@ -136,14 +149,15 @@
         border-top: 1px solid var(--colorBorder2);
       }
 
-      /* .section__header {
-        font-size: var(--fontSize7);
+      .section__header {
+        scroll-margin-top: 32px;
+        /* font-size: var(--fontSize7);
         text-transform: uppercase;
         letter-spacing: 0.1em;
         font-weight: var(--fontWeightBold);
         color: var(--colorText3);
-        font-family: var(--fontFamilyMono);
-      } */
+        font-family: var(--fontFamilyMono); */
+      }
     </style>
     <h2>Core</h2>
     <section class="section">
@@ -285,7 +299,7 @@
 
     <section id="forms" class="section">
       <div id="button" class="section__content">
-        <h3 class="section__header">Buttons</h3>
+        <h3 class="section__header">Button</h3>
         <div class="button__appearance">
           <button class="appearance-primary">Primary</button>
           <button class="appearance-outline">Outline</button>
@@ -348,6 +362,17 @@
             <input type="email" placeholder="Your email" />
             <button>Subscribe</button>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__content">
+        <h3 class="section__header">Input</h3>
+        <div>
+          <input type="text" placeholder="Default" />
+          <input type="text" placeholder="Disabled" disabled />
+          <input type="text" placeholder="Readonly" readonly />
         </div>
       </div>
     </section>
@@ -466,322 +491,332 @@ function example() {
       <meter value="0.6">60%</meter>
     </section>
 
-    <section id="fluent-overlay" class="section">
-      <h2 class="section-header">Overlay Elements</h2>
-      <h3 class="component-header">Dialog</h3>
+    <section id="overlay" class="section">
+      <div class="section__content">
+        <h2 class="section-header">Overlay Elements</h2>
+      </div>
+      <div class="section__content">
+        <h3 class="component-header">Dialog</h3>
 
-      <button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
+        <button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
 
-      <dialog closedby="any" id="sampleDialog" class="dialog-large">
-        <form method="dialog">
-          <header>
-            <h3>Dialog Title</h3>
-            <span>An example dialog</span>
-          </header>
-          <main>
-            <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user
-              interaction.</p>
-          </main>
-          <footer>
-            <button class="dialog-close appearance-transparent icon-only">X</button>
-            <button class="appearance-subtle">Cancel</button>
-            <button class="appearance-primary">Primary</button>
-          </footer>
-        </form>
-      </dialog>
+        <dialog closedby="any" id="sampleDialog" class="dialog-large">
+          <form method="dialog">
+            <header>
+              <h3>Dialog Title</h3>
+              <span>An example dialog</span>
+            </header>
+            <main>
+              <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user
+                interaction.</p>
+            </main>
+            <footer>
+              <button class="dialog-close appearance-transparent icon-only">X</button>
+              <button class="appearance-subtle">Cancel</button>
+              <button class="appearance-primary">Primary</button>
+            </footer>
+          </form>
+        </dialog>
+      </div>
+
     </section>
 
     <section id="tabs" class="section">
-      <h2 class="section-header">Tabs</h2>
+      <div class="section__content">
 
-      <div style="display: flex; flex-direction: row; gap: 1rem; margin: 20px 0; min-height: 300px;">
-        <style>
-          @scope {
+        <h2 class="section-header">Tabs</h2>
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            p {
-              margin: 0;
+        <div style="display: flex; flex-direction: row; gap: 1rem; margin: 20px 0; min-height: 300px;">
+          <style>
+            @scope {
+
+              h1,
+              h2,
+              h3,
+              h4,
+              h5,
+              h6,
+              p {
+                margin: 0;
+              }
+
+              section {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+              }
             }
-
-            section {
-              display: flex;
-              flex-direction: column;
-              gap: 1rem;
-            }
-          }
-        </style>
-        <nav role="tablist" class="tab-list vertical appearance-subtle" style="flex: 0 0 auto;">
-          <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
-            <input type="radio" name="tab-group-1" id="tab-1" checked />
-            Tab 1
-          </label>
-          <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
-            <input type="radio" name="tab-group-1" id="tab-2" />
-            Tab 2
-          </label>
-          <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
-            <input type="radio" name="tab-group-1" id="tab-3" />
-            Tab 3
-          </label>
-        </nav>
-
-        <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-          <h3>First Tab Content</h3>
-          <p>This is the content of the first tab.</p>
-          <nav role="tablist">
-            <label role="tab" aria-controls="panel-4" for="tab-4">
-              <input type="radio" name="tab-group-2" id="tab-4" checked />
-              Nested Tab 4
+          </style>
+          <nav role="tablist" class="tab-list vertical appearance-subtle" style="flex: 0 0 auto;">
+            <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
+              <input type="radio" name="tab-group-1" id="tab-1" checked />
+              Tab 1
             </label>
-            <label role="tab" aria-controls="panel-5" for="tab-5">
-              <input type="radio" name="tab-group-2" id="tab-5" />
-              Nested Tab 5
+            <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
+              <input type="radio" name="tab-group-1" id="tab-2" />
+              Tab 2
             </label>
-            <label role="tab" aria-controls="panel-6" for="tab-6">
-              <input type="radio" name="tab-group-2" id="tab-6" disabled />
-              Nested Tab 6 (disabled)
+            <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
+              <input type="radio" name="tab-group-1" id="tab-3" />
+              Tab 3
             </label>
           </nav>
 
-          <section id="panel-4" role="tabpanel" aria-labelledby="tab-4">
-            <h4>Fourth Tab Nested</h4>
-            <p>This is the content of the fourth tab.</p>
-          </section>
-          <section id="panel-5" role="tabpanel" aria-labelledby="tab-5">
-            <h4>Fifth Tab Nested</h4>
-            <p>This is the content of the fifth tab.</p>
-          </section>
-          <section id="panel-6" role="tabpanel" aria-labelledby="tab-6">
-            <h4>Sixth Tab Nested</h4>
-            <p>This is the content of the sixth tab.</p>
-          </section>
-        </section>
-        <section id="panel-2" role="tabpanel" aria-labelledby="tab-2">
-          <h3>Second Tab Content</h3>
-          <p>This is the content of the second tab.</p>
+          <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+            <h3>First Tab Content</h3>
+            <p>This is the content of the first tab.</p>
+            <nav role="tablist">
+              <label role="tab" aria-controls="panel-4" for="tab-4">
+                <input type="radio" name="tab-group-2" id="tab-4" checked />
+                Nested Tab 4
+              </label>
+              <label role="tab" aria-controls="panel-5" for="tab-5">
+                <input type="radio" name="tab-group-2" id="tab-5" />
+                Nested Tab 5
+              </label>
+              <label role="tab" aria-controls="panel-6" for="tab-6">
+                <input type="radio" name="tab-group-2" id="tab-6" disabled />
+                Nested Tab 6 (disabled)
+              </label>
+            </nav>
 
-          <nav role="tablist" class="tab-list appearance-toggle">
-            <label role="tab" aria-controls="panel-7" for="tab-7" class="tab-label">
-              <input type="radio" name="tab-group-3" id="tab-7" />
-              Nested Tab 7
-            </label>
-            <label role="tab" aria-controls="panel-8" for="tab-8" class="tab-label">
-              <input type="radio" name="tab-group-3" id="tab-8" />
-              Nested Tab 8
-            </label>
-          </nav>
-
-          <section id="panel-7" role="tabpanel" aria-labelledby="tab-7">
-            <h4>Seventh Tab Nested</h4>
-            <p>This is the content of the seventh tab.</p>
+            <section id="panel-4" role="tabpanel" aria-labelledby="tab-4">
+              <h4>Fourth Tab Nested</h4>
+              <p>This is the content of the fourth tab.</p>
+            </section>
+            <section id="panel-5" role="tabpanel" aria-labelledby="tab-5">
+              <h4>Fifth Tab Nested</h4>
+              <p>This is the content of the fifth tab.</p>
+            </section>
+            <section id="panel-6" role="tabpanel" aria-labelledby="tab-6">
+              <h4>Sixth Tab Nested</h4>
+              <p>This is the content of the sixth tab.</p>
+            </section>
           </section>
-          <section id="panel-8" role="tabpanel" aria-labelledby="tab-8">
-            <h4>Eighth Tab Nested</h4>
-            <p>This is the content of the eighth tab.</p>
-          </section>
+          <section id="panel-2" role="tabpanel" aria-labelledby="tab-2">
+            <h3>Second Tab Content</h3>
+            <p>This is the content of the second tab.</p>
 
-        </section>
-        <section id="panel-3" role="tabpanel" aria-labelledby="tab-3">
-          <h4>Third Tab Content</h4>
-          <p>This is the content of the third tab.</p>
-        </section>
+            <nav role="tablist" class="tab-list appearance-toggle">
+              <label role="tab" aria-controls="panel-7" for="tab-7" class="tab-label">
+                <input type="radio" name="tab-group-3" id="tab-7" />
+                Nested Tab 7
+              </label>
+              <label role="tab" aria-controls="panel-8" for="tab-8" class="tab-label">
+                <input type="radio" name="tab-group-3" id="tab-8" />
+                Nested Tab 8
+              </label>
+            </nav>
+
+            <section id="panel-7" role="tabpanel" aria-labelledby="tab-7">
+              <h4>Seventh Tab Nested</h4>
+              <p>This is the content of the seventh tab.</p>
+            </section>
+            <section id="panel-8" role="tabpanel" aria-labelledby="tab-8">
+              <h4>Eighth Tab Nested</h4>
+              <p>This is the content of the eighth tab.</p>
+            </section>
+
+          </section>
+          <section id="panel-3" role="tabpanel" aria-labelledby="tab-3">
+            <h4>Third Tab Content</h4>
+            <p>This is the content of the third tab.</p>
+          </section>
+        </div>
       </div>
     </section>
 
     <section id="forms" class="section">
-      <h2 class="section-header">Form Elements</h2>
-      <form action="/submit" method="post">
-        <div class="form-group">
-          <input type="text" id="text-input" class="appearance-subtle" placeholder="Subtle / Default" />
-          <input type="text" id="text-input" class="appearance-outline" placeholder="Outline  " />
-          <input type="text" id="text-input" disabled class="appearance-subtle" placeholder="Disabled" />
-        </div>
+      <div class="section__content">
 
-        <div class="form-group">
-          <input type="text" id="text-input" class="size-small" placeholder="Small" />
-          <input type="text" id="text-input" class="size-medium" placeholder="Medium" />
-          <input type="text" id="text-input" class="size-large" placeholder="Large" />
-        </div>
+        <h2 class="section-header">Form Elements</h2>
+        <form action="/submit" method="post">
+          <div class="form-group">
+            <input type="text" id="text-input" class="appearance-subtle" placeholder="Subtle / Default" />
+            <input type="text" id="text-input" class="appearance-outline" placeholder="Outline  " />
+            <input type="text" id="text-input" disabled class="appearance-subtle" placeholder="Disabled" />
+          </div>
 
-        <div class="form-group">
-          <label for="text-input">Text Input:</label>
-          <input type="text" id="text-input" name="text-input" placeholder="Enter text" />
-        </div>
+          <div class="form-group">
+            <input type="text" id="text-input" class="size-small" placeholder="Small" />
+            <input type="text" id="text-input" class="size-medium" placeholder="Medium" />
+            <input type="text" id="text-input" class="size-large" placeholder="Large" />
+          </div>
 
-        <div class="form-group">
-          <label for="text-input">Search:</label>
-          <input type="text" id="search-input" name="search-input" placeholder="Enter text" />
-        </div>
+          <div class="form-group">
+            <label for="text-input">Text Input:</label>
+            <input type="text" id="text-input" name="text-input" placeholder="Enter text" />
+          </div>
 
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
+          <div class="form-group">
+            <label for="text-input">Search:</label>
+            <input type="text" id="search-input" name="search-input" placeholder="Enter text" />
+          </div>
 
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" />
-        </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-        <div class="form-group">
-          <label for="number">Number:</label>
-          <input type="number" id="number" name="number" min="0" max="100" />
-        </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" />
+          </div>
 
-        <div class="form-group">
-          <label for="date">Date:</label>
-          <input type="date" id="date" name="date" />
-        </div>
+          <div class="form-group">
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number" min="0" max="100" />
+          </div>
 
-        <div class="form-group">
-          <label for="color">Color:</label>
-          <input type="color" id="color" name="color" />
-        </div>
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" />
+          </div>
 
-        <div class="form-group">
-          <label for="file">File:</label>
-          <input type="file" id="file" name="file" />
-        </div>
+          <div class="form-group">
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color" />
+          </div>
 
-        <div class="form-group">
-          <label for="select">Select:</label>
-          <select id="select" name="select">
-            <option value="">Choose an option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-        </div>
+          <div class="form-group">
+            <label for="file">File:</label>
+            <input type="file" id="file" name="file" />
+          </div>
 
-        <div class="form-group">
-          <label>Checkboxes:</label>
-          <label>
-            <input type="checkbox" id="checkbox1" name="checkbox1" />
-            Option 1
-          </label>
-          <label>
-            <input type="checkbox" id="checkbox2" name="checkbox2" />
-            Option 2
-          </label>
-        </div>
+          <div class="form-group">
+            <label for="select">Select:</label>
+            <select id="select" name="select">
+              <option value="">Choose an option</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label>Switch:</label>
-          <label>
-            <input type="checkbox" class="switch" id="switch1" name="switch1" />
-            Switch
-          </label>
-        </div>
+          <div class="form-group">
+            <label>Checkboxes:</label>
+            <label>
+              <input type="checkbox" id="checkbox1" name="checkbox1" />
+              Option 1
+            </label>
+            <label>
+              <input type="checkbox" id="checkbox2" name="checkbox2" />
+              Option 2
+            </label>
+          </div>
 
-        <div class="form-group">
-          <label>Radio Buttons:</label>
-          <label>
-            <input type="radio" id="radio1" name="radio" value="1" />
-            Option 1
-          </label>
-          <label>
-            <input type="radio" id="radio2" name="radio" value="2" />
-            Option 2
-          </label>
-        </div>
+          <div class="form-group">
+            <label>Switch:</label>
+            <label>
+              <input type="checkbox" class="switch" id="switch1" name="switch1" />
+              Switch
+            </label>
+          </div>
 
-        <div class="form-group">
-          <label for="textarea">Textarea:</label>
-          <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
-        </div>
+          <div class="form-group">
+            <label>Radio Buttons:</label>
+            <label>
+              <input type="radio" id="radio1" name="radio" value="1" />
+              Option 1
+            </label>
+            <label>
+              <input type="radio" id="radio2" name="radio" value="2" />
+              Option 2
+            </label>
+          </div>
 
-        <div class="form-group">
-          <label for="slider">Slider: <span id="slider-value">50</span></label>
-          <input type="range" id="slider" name="slider" min="0" max="100" value="50"
-            oninput="document.getElementById('slider-value').textContent = this.value" />
-        </div>
+          <div class="form-group">
+            <label for="textarea">Textarea:</label>
+            <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
+          </div>
 
-      </form>
-      <hr />
+          <div class="form-group">
+            <label for="slider">Slider: <span id="slider-value">50</span></label>
+            <input type="range" id="slider" name="slider" min="0" max="100" value="50"
+              oninput="document.getElementById('slider-value').textContent = this.value" />
+          </div>
 
-      <button>Default</button>
-      <button disabled>Disabled</button>
-      <button class="checked">Checked</button>
-
-      <hr />
-
-      <button type="button" class="size-small">Small </button>
-      <button type="reset" class="size-medium">Medium</button>
-      <button type="submit" class="size-large">Large</button>
-
-      <hr />
-
-      <button class="shape-square">Square</button>
-      <button class="shape-rounded">Rounded</button>
-      <button class="shape-circular">Circular</button>
-
-      <hr />
-
-      <button class="appearance-primary">Primary</button>
-      <button class="appearance-outline">Outline</button>
-      <button class="appearance-subtle">Subtle</button>
-      <button class="appearance-transparent">Transparent</button>
-
-      <hr />
-
-      <div class="control-group">
-        <button>Primary</button>
-        <button>Outline</button>
-        <button>Subtle</button>
-        <button>Transparent</button>
-      </div>
-
-      <hr />
-
-      <div class="control-group">
-        <input type="email" placeholder="Your email" />
-        <button class="shape-rounded">Subscribe</button>
-      </div>
-
-      <hr />
-
-      <input type="reset" class="size-small" value="Input Reset" />
-      <input type="submit" class="size-small" value="Input Submit" />
-      <a href="#" class="size-small button">Anchor Button</a>
-      <select id="select-button" name="select-button" class="button size-small">
-        <option value="">Select Button</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-
-      <hr />
-
-      <button popovertarget="popover-example">
-        Click for popover
-      </button>
-      <div id="popover-example" popover>
-        <h3>Popover Title</h3>
-        <p>This is a Popover using the new popover API</p>
-      </div>
-
-      <div class="control-group">
-        <button class="appearance-primary shape-rounded">Split Button</button>
-        <button class="appearance-primary icon-only shape-rounded" popovertarget="menu-example">
-          •••
-        </button>
-      </div>
-
-      <div class="menu" id="menu-example" popover>
-        <button>Add</button>
-        <button>Edit</button>
-        <button>Duplicate</button>
+        </form>
         <hr />
-        <button class="intent-danger">Delete</button>
-      </div>
 
-      <!-- hover popover is not possible without javascript? -->
-      <!-- <button popovertarget="tooltip-example" 
+        <button>Default</button>
+        <button disabled>Disabled</button>
+        <button class="checked">Checked</button>
+
+        <hr />
+
+        <button type="button" class="size-small">Small </button>
+        <button type="reset" class="size-medium">Medium</button>
+        <button type="submit" class="size-large">Large</button>
+
+        <hr />
+
+        <button class="shape-square">Square</button>
+        <button class="shape-rounded">Rounded</button>
+        <button class="shape-circular">Circular</button>
+
+        <hr />
+
+        <button class="appearance-primary">Primary</button>
+        <button class="appearance-outline">Outline</button>
+        <button class="appearance-subtle">Subtle</button>
+        <button class="appearance-transparent">Transparent</button>
+
+        <hr />
+
+        <div class="control-group">
+          <button>Primary</button>
+          <button>Outline</button>
+          <button>Subtle</button>
+          <button>Transparent</button>
+        </div>
+
+        <hr />
+
+        <div class="control-group">
+          <input type="email" placeholder="Your email" />
+          <button class="shape-rounded">Subscribe</button>
+        </div>
+
+        <hr />
+
+        <input type="reset" class="size-small" value="Input Reset" />
+        <input type="submit" class="size-small" value="Input Submit" />
+        <a href="#" class="size-small button">Anchor Button</a>
+        <select id="select-button" name="select-button" class="button size-small">
+          <option value="">Select Button</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+
+        <hr />
+
+        <button popovertarget="popover-example">
+          Click for popover
+        </button>
+        <div id="popover-example" popover>
+          <h3>Popover Title</h3>
+          <p>This is a Popover using the new popover API</p>
+        </div>
+
+        <div class="control-group">
+          <button class="appearance-primary shape-rounded">Split Button</button>
+          <button class="appearance-primary icon-only shape-rounded" popovertarget="menu-example">
+            •••
+          </button>
+        </div>
+
+        <div class="menu" id="menu-example" popover>
+          <button>Add</button>
+          <button>Edit</button>
+          <button>Duplicate</button>
+          <hr />
+          <button class="intent-danger">Delete</button>
+        </div>
+
+        <!-- hover popover is not possible without javascript? -->
+        <!-- <button popovertarget="tooltip-example" 
         onmouseenter="document.getElementById('tooltip-example').showPopover({source: this})"
         onmouseleave="document.getElementById('tooltip-example').hidePopover()">
         Hover for tooltip
@@ -790,60 +825,58 @@ function example() {
         This is a tooltip using the new popover API
       </div> -->
 
-      <div
-        style="display:grid; justify-content: center; grid-template-columns: repeat(5, auto); grid-template-rows: repeat(5, auto); gap: 2px;">
-        <button class="icon-only shape-square" popovertarget="popover-above-start"
-          style="grid-column: 2; grid-row: 1;">AS</button>
-        <button class="icon-only shape-square" popovertarget="popover-above"
-          style="grid-column: 3; grid-row: 1;">A</button>
-        <button class="icon-only shape-square" popovertarget="popover-above-end"
-          style="grid-column: 4; grid-row: 1;">AE</button>
+        <div
+          style="display:grid; justify-content: center; grid-template-columns: repeat(5, auto); grid-template-rows: repeat(5, auto); gap: 2px;">
+          <button class="icon-only shape-square" popovertarget="popover-above-start"
+            style="grid-column: 2; grid-row: 1;">AS</button>
+          <button class="icon-only shape-square" popovertarget="popover-above"
+            style="grid-column: 3; grid-row: 1;">A</button>
+          <button class="icon-only shape-square" popovertarget="popover-above-end"
+            style="grid-column: 4; grid-row: 1;">AE</button>
 
-        <button class="icon-only shape-square" popovertarget="popover-before-top"
-          style="grid-column: 1; grid-row: 2;">BT</button>
-        <button class="icon-only shape-square" popovertarget="popover-before"
-          style="grid-column: 1; grid-row: 3;">B</button>
-        <button class="icon-only shape-square" popovertarget="popover-before-bottom"
-          style="grid-column: 1; grid-row: 4;">BB</button>
+          <button class="icon-only shape-square" popovertarget="popover-before-top"
+            style="grid-column: 1; grid-row: 2;">BT</button>
+          <button class="icon-only shape-square" popovertarget="popover-before"
+            style="grid-column: 1; grid-row: 3;">B</button>
+          <button class="icon-only shape-square" popovertarget="popover-before-bottom"
+            style="grid-column: 1; grid-row: 4;">BB</button>
 
-        <button class="icon-only shape-square" popovertarget="popover-after-top"
-          style="grid-column: 5; grid-row: 2;">AT</button>
-        <button class="icon-only shape-square" popovertarget="popover-after"
-          style="grid-column: 5; grid-row: 3;">A</button>
-        <button class="icon-only shape-square" popovertarget="popover-after-bottom"
-          style="grid-column: 5; grid-row: 4;">AB</button>
+          <button class="icon-only shape-square" popovertarget="popover-after-top"
+            style="grid-column: 5; grid-row: 2;">AT</button>
+          <button class="icon-only shape-square" popovertarget="popover-after"
+            style="grid-column: 5; grid-row: 3;">A</button>
+          <button class="icon-only shape-square" popovertarget="popover-after-bottom"
+            style="grid-column: 5; grid-row: 4;">AB</button>
 
-        <button class="icon-only shape-square" popovertarget="popover-below-start"
-          style="grid-column: 2; grid-row: 5;">BS</button>
-        <button class="icon-only shape-square" popovertarget="popover-below"
-          style="grid-column: 3; grid-row: 5;">B</button>
-        <button class="icon-only shape-square" popovertarget="popover-below-end"
-          style="grid-column: 4; grid-row: 5;">BE</button>
+          <button class="icon-only shape-square" popovertarget="popover-below-start"
+            style="grid-column: 2; grid-row: 5;">BS</button>
+          <button class="icon-only shape-square" popovertarget="popover-below"
+            style="grid-column: 3; grid-row: 5;">B</button>
+          <button class="icon-only shape-square" popovertarget="popover-below-end"
+            style="grid-column: 4; grid-row: 5;">BE</button>
+        </div>
+
+        <div id="popover-above-start" class="position-above-start" popover>position-above-start</div>
+        <div id="popover-above" class="position-above" popover>position-above</div>
+        <div id="popover-above-end" class="position-above-end" popover>position-above-end</div>
+
+        <div id="popover-before-top" class="position-before-top" popover>position-before-top</div>
+        <div id="popover-before" class="position-before" popover>position-before</div>
+        <div id="popover-before-bottom" class="position-before-bottom" popover>position-before-bottom</div>
+
+        <div id="popover-after-top" class="position-after-top" popover>position-after-top</div>
+        <div id="popover-after" class="position-after" popover>position-after</div>
+        <div id="popover-after-bottom" class="position-after-bottom" popover>position-after-bottom</div>
+
+        <div id="popover-below-start" class="position-below-start" popover>position-below-start</div>
+        <div id="popover-below" class="position-below" popover>position-below</div>
+        <div id="popover-below-end" class="position-below-end" popover>position-below-end</div>
+
       </div>
-
-      <div id="popover-above-start" class="position-above-start" popover>position-above-start</div>
-      <div id="popover-above" class="position-above" popover>position-above</div>
-      <div id="popover-above-end" class="position-above-end" popover>position-above-end</div>
-
-      <div id="popover-before-top" class="position-before-top" popover>position-before-top</div>
-      <div id="popover-before" class="position-before" popover>position-before</div>
-      <div id="popover-before-bottom" class="position-before-bottom" popover>position-before-bottom</div>
-
-      <div id="popover-after-top" class="position-after-top" popover>position-after-top</div>
-      <div id="popover-after" class="position-after" popover>position-after</div>
-      <div id="popover-after-bottom" class="position-after-bottom" popover>position-after-bottom</div>
-
-      <div id="popover-below-start" class="position-below-start" popover>position-below-start</div>
-      <div id="popover-below" class="position-below" popover>position-below</div>
-      <div id="popover-below-end" class="position-below-end" popover>position-below-end</div>
-
     </section>
 
   </main>
 
-  <footer class="footer">
-    <p>This is a footer with some <small>small text</small> and a <time datetime="2024-03-20">date</time>.</p>
-  </footer>
 </body>
 
 </html>
