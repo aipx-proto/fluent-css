@@ -102,9 +102,12 @@
             <li><a href="#button">Button</a></li>
             <li><a href="#control-group">Control Group</a></li>
             <li><a href="#input">Input</a></li>
+            <li><a href="#select">Select</a></li>
+            <li><a href="#textarea">Textarea</a></li>
             <li><a href="#radio">Radio</a></li>
             <li><a href="#checkbox">Checkbox</a></li>
             <li><a href="#switch">Switch</a></li>
+            <li><a href="#slider">Slider</a></li>
             <li><a href="#progress">Progress</a></li>
           </ul>
         </li>
@@ -118,10 +121,11 @@
         </li>
         <li>
           <ul class="nav__links">
-            <span>Navigation</span>
+            <span>Other</span>
             <li><a href="#accordion">Accordion</a></li>
             <li><a href="#tabs">Tabs</a></li>
             <li><a href="#table">Table</a></li>
+            <li><a href="#html-sample">Html Sample</a></li>
           </ul>
         </li>
       </ul>
@@ -158,17 +162,17 @@
         color: var(--colorText3);
         font-family: var(--fontFamilyMono); */
       }
+
+      .section__columns {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+      }
     </style>
     <h2>Core</h2>
     <section class="section">
       <div class="section__content" id="typography">
         <style>
-          .typography__samples {
-            display: flex;
-            flex-direction: row;
-            gap: 24px;
-          }
-
           .typography__font-size,
           .typography__font-family,
           .typography__font-weight {
@@ -178,7 +182,7 @@
           }
         </style>
         <h3 class="section__header">Typography</h3>
-        <div class="typography__samples">
+        <div class="section__columns">
           <div class="typography__font-size">
             <span style="font-size: var(--fontSize1);">Font Size 1</span>
             <span style="font-size: var(--fontSize2);">Font Size 2</span>
@@ -372,9 +376,179 @@
         <div>
           <input type="text" placeholder="Default" />
           <input type="text" placeholder="Disabled" disabled />
-          <input type="text" placeholder="Readonly" readonly />
+          <!-- <input type="text" placeholder="Readonly" value="Readonly" readonly /> -->
+          <input type="text" placeholder="Outline" class="appearance-outline" />
+        </div>
+        <div>
+          <input type="text" placeholder="Small" class="size-small" />
+          <input type="text" placeholder="Medium" class="size-medium" />
+          <input type="text" placeholder="Large" class="size-large" />
+        </div>
+        <div>
+          <input type="text" placeholder="Square" class="shape-square" />
+          <input type="text" placeholder="Rounded" class="shape-rounded" />
+          <input type="text" placeholder="Circular" class="shape-circular" />
+        </div>
+        <div>
+          <input type="number" placeholder="000" />
+          <input type="color" />
+          <input type="date" />
         </div>
       </div>
+      <div class="section__content">
+        <h3 class="section__header">Select</h3>
+        <div>
+          <select id="select" name="select">
+            <option value="">Select an option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="section__content">
+        <h3 class="section__header">Textarea</h3>
+        <div>
+          <textarea placeholder="Textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="section__content">
+        <style>
+          .form__radios,
+          .form__checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+          }
+
+          .form__switch {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+          }
+        </style>
+        <h3 class="section__header">Radio Buttons</h3>
+        <div class="section__columns">
+
+          <div class="form__radios">
+            <label>
+              <input type="radio" id="radio1" name="radio" value="1" checked />
+              Checked
+            </label>
+            <label>
+              <input type="radio" id="radio2" name="radio" value="2" />
+              Unchecked
+            </label>
+          </div>
+          <div class="form__radios">
+            <div class="form__radios">
+              <label class="size-large">
+                <input type="radio" id="radio1" name="radio2" value="1" />
+                Large
+              </label>
+              <label class="size-medium">
+                <input type="radio" id="radio2" name="radio2" value="2" />
+                Medium
+              </label>
+              <label class="size-small">
+                <input type="radio" id="radio3" name="radio2" value="3" />
+                Small
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__content">
+        <h3 class="section__header">Checkboxes</h3>
+        <div class="section__columns">
+
+          <div class="form__checkboxes">
+            <label>
+              <input type="checkbox" id="checkbox1" name="checkbox1" checked />
+              Checked
+            </label>
+            <label>
+              <input type="checkbox" id="checkbox2" name="checkbox2" onloa />
+              <script>
+                document.addEventListener('DOMContentLoaded', () => document.getElementById('checkbox2').indeterminate = true);
+              </script>
+              Indeterminate
+            </label>
+            <label>
+              <input type="checkbox" id="checkbox3" name="checkbox3" />
+              Unchecked
+            </label>
+          </div>
+          <div class="form__checkboxes">
+            <label class="size-large">
+              <input type="checkbox" id="checkbox-large" name="checkbox-large" />
+              Large
+            </label>
+            <label class="size-medium">
+              <input type="checkbox" id="checkbox-medium" name="checkbox-medium" />
+              Medium
+            </label>
+            <label class="size-small">
+              <input type="checkbox" id="checkbox-small" name="checkbox-small" />
+              Small
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section__content">
+        <h3 class="section__header">Switch</h3>
+        <div class="section__columns">
+          <div class="form__switch">
+            <label>
+              <input type="checkbox" class="switch" id="switch1" name="switch1" checked />
+              Default
+            </label>
+          </div>
+          <div class="form__switch">
+            <label>
+              <input type="checkbox" class="switch size-small" id="switch1" name="switch1" />
+              Small
+            </label>
+            <label>
+              <input type="checkbox" class="switch size-medium" id="switch1" name="switch1" />
+              Medium
+            </label>
+            <label>
+              <input type="checkbox" class="switch size-large" id="switch1" name="switch1" />
+              Large
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__content">
+        <h3 class="section__header">Slider</h3>
+        <div class="slider">
+          <input type="range" min="0" max="100" value="50" />
+        </div>
+      </div>
+
+      <div class="section__content">
+        <h3 class="section__header">Progress </h3>
+        <div>
+          <progress value="33" max="100"></progress>
+          <span>Value 33/100</span>
+        </div>
+        <div>
+          <progress indeterminate></progress>
+          <span>Indeterminate</span>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+          <progress class="spinner" indeterminate></progress>
+          <span>Spinner</span>
+        </div>
+      </div>
+
     </section>
 
     <section id="html-elements" class="section">

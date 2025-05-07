@@ -12,6 +12,7 @@
 ### Next
 - intent: info, warning, error, success, brand
   - applies to anything? like a theme?
+- size-small for checkbox, radio, and switch
 - input placeholder: color, type="date"
 - simple icon set: dismiss, chevron, checkmark, search
 

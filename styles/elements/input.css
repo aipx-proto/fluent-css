@@ -41,7 +41,7 @@ textarea {
   transition: 0.1s ease-in;
   transition-property: background-size, background-position, border-color;
 
-  &:not(:disabled) {
+  &:not(:disabled):not(:read-only) {
     &:hover {
       --hoverUnderlineBackground: var(--underlineBorderGradient) 50% 100%/100% 1px;
       transition-duration: 0.15s;

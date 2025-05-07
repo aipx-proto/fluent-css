@@ -49,7 +49,7 @@
   --sizeHeight: 24px;
   --sizeFont: var(--fontSize6);
   --sizePadding: 8px;
-  --sizeIcon: 16px
+  --sizeIcon: 12px
 }
 :root,
 .size-medium {

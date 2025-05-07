@@ -4,6 +4,9 @@ body {
   color: var(--colorText2);
   font-size: var(--fontSize5);
   /* line-height: normal; */
+
+  /* maybe? */
+  /* font-size: var(--sizeFont); */
 }
 
 h1,
