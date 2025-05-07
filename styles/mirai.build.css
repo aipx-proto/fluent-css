@@ -146,7 +146,7 @@
   --sizeHeight: 24px;
   --sizeFont: var(--fontSize6);
   --sizePadding: 8px;
-  --sizeIcon: 16px
+  --sizeIcon: 12px
 }
 
 :root,
@@ -310,9 +310,6 @@ input[type="reset"],
 a.button,
 select.button,
 .button {
-  /* default circular */
-  --borderRadius: var(--borderRadiusCircular);
-
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -321,7 +318,14 @@ select.button,
   align-items: center;
   justify-content: center;
 
-  border-radius: var(--borderRadius);
+  /* default circular */
+  --borderRadiusButton: var(--borderRadiusCircular);
+  [class*="shape-"] &,
+  &[class*="shape-"] {
+    --borderRadiusButton: var(--borderRadius);
+  }
+  border-radius: var(--borderRadiusButton, var(--borderRadius));
+
   font-weight: var(--fontWeightBold);
   font-size: var(--sizeFont);
   color: var(--colorText1);
@@ -332,8 +336,7 @@ select.button,
   transition: background-color var(--durationRest) linear;
 
   &:not(:disabled) {
-    &:hover
-     {
+    &:hover {
       background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
     }
@@ -646,7 +649,7 @@ textarea {
   transition: 0.1s ease-in;
   transition-property: background-size, background-position, border-color;
 
-  &:not(:disabled) {
+  &:not(:disabled):not(:read-only) {
     &:hover {
       --hoverUnderlineBackground: var(--underlineBorderGradient) 50% 100%/100% 1px;
       transition-duration: 0.15s;
@@ -1161,7 +1164,7 @@ table > :first-child tr:first-child {
 
   transition: background-color var(--durationRest) linear;
 
-  --sizeTabUnderline: 4px;
+  --sizeTabUnderline: 3px;
   --colorTabUnderlineHover: var(--colorText4);
   --colorTabUnderlineActive: var(--colorBrandBase);
   --durationTabUnderline: 0.1s;
@@ -1231,6 +1234,8 @@ table > :first-child tr:first-child {
   &.active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
+    font-weight: var(--fontWeightBold);
+    color: var(--colorText1);
     &:after {
       transform: scale(1);
     }
@@ -1310,6 +1315,9 @@ body {
   color: var(--colorText2);
   font-size: var(--fontSize5);
   /* line-height: normal; */
+
+  /* maybe? */
+  /* font-size: var(--sizeFont); */
 }
 
 h1,

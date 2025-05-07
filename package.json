@@ -9,7 +9,7 @@
   },
   "license": "ISC",
   "scripts": {
-    "build": "postcss styles/index.css -o mirai.build.css"
+    "build": "postcss styles/index.css -o styles/mirai.build.css"
   },
   "devDependencies": {
     "postcss": "^8.5.3",
