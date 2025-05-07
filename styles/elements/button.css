@@ -59,8 +59,8 @@ select.button,
   }
 
   .menu & {
+    --borderRadiusButton: var(--borderRadiusSmall);
     border-color: transparent;
-    --borderRadius: var(--borderRadiusSmall);
     justify-content: flex-start;
     font-weight: var(--fontWeightNormal);
   }

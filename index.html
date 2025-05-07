@@ -167,6 +167,8 @@
         display: flex;
         flex-direction: row;
         gap: 24px;
+        align-items: flex-start;
+        flex-wrap: wrap;
       }
     </style>
     <h2>Core</h2>
@@ -551,6 +553,130 @@
 
     </section>
 
+    <section id="overlay" class="section">
+      <div class="section__content">
+        <h3 class="section__header">Dialog</h3>
+        <div>
+          <button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
+          <dialog closedby="any" id="sampleDialog" class="dialog-large">
+            <form method="dialog">
+              <header>
+                <h3>Dialog Title</h3>
+                <span>An example dialog</span>
+              </header>
+              <main>
+                <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user
+                  interaction.</p>
+              </main>
+              <footer>
+                <button class="dialog-close appearance-transparent icon-only">X</button>
+                <button class="appearance-subtle">Cancel</button>
+                <button class="appearance-primary">Primary</button>
+              </footer>
+            </form>
+          </dialog>
+        </div>
+      </div>
+
+      <div class="section__content">
+        <h3 class="section__header">Popover</h3>
+        <div class="section__columns">
+
+          <button popovertarget="popover-example">
+            Click for popover
+          </button>
+          <div id="popover-example" popover>
+            <h3>Popover Title</h3>
+            <p>This is a Popover using the new popover API</p>
+          </div>
+
+          <!-- hover popover is not possible without javascript -->
+          <button popovertarget="tooltip-example"
+            onmouseenter="document.getElementById('tooltip-example').showPopover({source: this})"
+            onmouseleave="document.getElementById('tooltip-example').hidePopover()">
+            Hover for tooltip
+          </button>
+          <div id="tooltip-example" popover="hint">
+            This is a tooltip using the new popover API (and javascript)
+          </div>
+
+          <div class="popover__positions">
+            <style>
+              .popover__positions {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: repeat(5, auto);
+                grid-template-rows: repeat(5, auto);
+                gap: 2px;
+                flex: 1 1 auto;
+              }
+            </style>
+            <button class="icon-only shape-square" popovertarget="popover-above-start"
+              style="grid-column: 2; grid-row: 1;">AS</button>
+            <button class="icon-only shape-square" popovertarget="popover-above"
+              style="grid-column: 3; grid-row: 1;">A</button>
+            <button class="icon-only shape-square" popovertarget="popover-above-end"
+              style="grid-column: 4; grid-row: 1;">AE</button>
+
+            <button class="icon-only shape-square" popovertarget="popover-before-top"
+              style="grid-column: 1; grid-row: 2;">BT</button>
+            <button class="icon-only shape-square" popovertarget="popover-before"
+              style="grid-column: 1; grid-row: 3;">B</button>
+            <button class="icon-only shape-square" popovertarget="popover-before-bottom"
+              style="grid-column: 1; grid-row: 4;">BB</button>
+
+            <button class="icon-only shape-square" popovertarget="popover-after-top"
+              style="grid-column: 5; grid-row: 2;">AT</button>
+            <button class="icon-only shape-square" popovertarget="popover-after"
+              style="grid-column: 5; grid-row: 3;">A</button>
+            <button class="icon-only shape-square" popovertarget="popover-after-bottom"
+              style="grid-column: 5; grid-row: 4;">AB</button>
+
+            <button class="icon-only shape-square" popovertarget="popover-below-start"
+              style="grid-column: 2; grid-row: 5;">BS</button>
+            <button class="icon-only shape-square" popovertarget="popover-below"
+              style="grid-column: 3; grid-row: 5;">B</button>
+            <button class="icon-only shape-square" popovertarget="popover-below-end"
+              style="grid-column: 4; grid-row: 5;">BE</button>
+          </div>
+
+          <div id="popover-above-start" class="position-above-start" popover>position-above-start</div>
+          <div id="popover-above" class="position-above" popover>position-above</div>
+          <div id="popover-above-end" class="position-above-end" popover>position-above-end</div>
+
+          <div id="popover-before-top" class="position-before-top" popover>position-before-top</div>
+          <div id="popover-before" class="position-before" popover>position-before</div>
+          <div id="popover-before-bottom" class="position-before-bottom" popover>position-before-bottom</div>
+
+          <div id="popover-after-top" class="position-after-top" popover>position-after-top</div>
+          <div id="popover-after" class="position-after" popover>position-after</div>
+          <div id="popover-after-bottom" class="position-after-bottom" popover>position-after-bottom</div>
+
+          <div id="popover-below-start" class="position-below-start" popover>position-below-start</div>
+          <div id="popover-below" class="position-below" popover>position-below</div>
+          <div id="popover-below-end" class="position-below-end" popover>position-below-end</div>
+
+        </div>
+      </div>
+
+      <div class="section__content">
+        <h3 class="section__header">Menu & Split Button</h3>
+        <div class="control-group">
+          <button class="appearance-primary shape-rounded">Split Button</button>
+          <button class="appearance-primary icon-only shape-rounded" popovertarget="menu-example">
+            •••
+          </button>
+        </div>
+        <div class="menu" id="menu-example" popover>
+          <button>Add</button>
+          <button>Edit</button>
+          <button>Duplicate</button>
+          <hr />
+          <button class="intent-danger">Delete</button>
+        </div>
+      </div>
+    </section>
+
     <section id="html-elements" class="section">
       <h2 class="section__header">HTML Elements</h2>
       <h3 class="component-header">Text Elements</h3>
@@ -665,138 +791,110 @@ function example() {
       <meter value="0.6">60%</meter>
     </section>
 
-    <section id="overlay" class="section">
-      <div class="section__content">
-        <h2 class="section-header">Overlay Elements</h2>
-      </div>
-      <div class="section__content">
-        <h3 class="component-header">Dialog</h3>
-
-        <button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
-
-        <dialog closedby="any" id="sampleDialog" class="dialog-large">
-          <form method="dialog">
-            <header>
-              <h3>Dialog Title</h3>
-              <span>An example dialog</span>
-            </header>
-            <main>
-              <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user
-                interaction.</p>
-            </main>
-            <footer>
-              <button class="dialog-close appearance-transparent icon-only">X</button>
-              <button class="appearance-subtle">Cancel</button>
-              <button class="appearance-primary">Primary</button>
-            </footer>
-          </form>
-        </dialog>
-      </div>
-
-    </section>
-
     <section id="tabs" class="section">
       <div class="section__content">
+        <h3 class="section__header">Tabs</h3>
+      </div>
+      <div class="section__content tabs__sample">
+        <style>
+          .tabs__sample {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            min-height: 300px;
+            padding: 0;
 
-        <h2 class="section-header">Tabs</h2>
-
-        <div style="display: flex; flex-direction: row; gap: 1rem; margin: 20px 0; min-height: 300px;">
-          <style>
-            @scope {
-
-              h1,
-              h2,
-              h3,
-              h4,
-              h5,
-              h6,
-              p {
-                margin: 0;
-              }
-
-              section {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-              }
+            section {
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              padding: 16px;
             }
-          </style>
-          <nav role="tablist" class="tab-list vertical appearance-subtle" style="flex: 0 0 auto;">
-            <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
-              <input type="radio" name="tab-group-1" id="tab-1" checked />
-              Tab 1
+
+          }
+          .tabs__primary-nav {
+            flex: 0 0 auto;
+            border-right: 1px solid var(--colorBorder2);
+            padding: 8px;
+
+          }
+        </style>
+
+        <nav role="tablist" class="tabs__primary-nav tab-list vertical appearance-subtle" style="flex: 0 0 auto;">
+          <label role="tab" aria-controls="panel-1" for="tab-1" class="tab-label">
+            <input type="radio" name="tab-group-1" id="tab-1" checked />
+            Tab 1
+          </label>
+          <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
+            <input type="radio" name="tab-group-1" id="tab-2" />
+            Tab 2
+          </label>
+          <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
+            <input type="radio" name="tab-group-1" id="tab-3" />
+            Tab 3
+          </label>
+        </nav>
+
+        <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+          <h3>First Tab Content</h3>
+          <p>This is the content of the first tab.</p>
+          <nav role="tablist">
+            <label role="tab" aria-controls="panel-4" for="tab-4">
+              <input type="radio" name="tab-group-2" id="tab-4" checked />
+              Nested Tab 4
             </label>
-            <label role="tab" aria-controls="panel-2" for="tab-2" class="tab-label">
-              <input type="radio" name="tab-group-1" id="tab-2" />
-              Tab 2
+            <label role="tab" aria-controls="panel-5" for="tab-5">
+              <input type="radio" name="tab-group-2" id="tab-5" />
+              Nested Tab 5
             </label>
-            <label role="tab" aria-controls="panel-3" for="tab-3" class="tab-label">
-              <input type="radio" name="tab-group-1" id="tab-3" />
-              Tab 3
+            <label role="tab" aria-controls="panel-6" for="tab-6">
+              <input type="radio" name="tab-group-2" id="tab-6" disabled />
+              Nested Tab 6 (disabled)
             </label>
           </nav>
 
-          <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-            <h3>First Tab Content</h3>
-            <p>This is the content of the first tab.</p>
-            <nav role="tablist">
-              <label role="tab" aria-controls="panel-4" for="tab-4">
-                <input type="radio" name="tab-group-2" id="tab-4" checked />
-                Nested Tab 4
-              </label>
-              <label role="tab" aria-controls="panel-5" for="tab-5">
-                <input type="radio" name="tab-group-2" id="tab-5" />
-                Nested Tab 5
-              </label>
-              <label role="tab" aria-controls="panel-6" for="tab-6">
-                <input type="radio" name="tab-group-2" id="tab-6" disabled />
-                Nested Tab 6 (disabled)
-              </label>
-            </nav>
-
-            <section id="panel-4" role="tabpanel" aria-labelledby="tab-4">
-              <h4>Fourth Tab Nested</h4>
-              <p>This is the content of the fourth tab.</p>
-            </section>
-            <section id="panel-5" role="tabpanel" aria-labelledby="tab-5">
-              <h4>Fifth Tab Nested</h4>
-              <p>This is the content of the fifth tab.</p>
-            </section>
-            <section id="panel-6" role="tabpanel" aria-labelledby="tab-6">
-              <h4>Sixth Tab Nested</h4>
-              <p>This is the content of the sixth tab.</p>
-            </section>
+          <section id="panel-4" role="tabpanel" aria-labelledby="tab-4">
+            <h4>Fourth Tab Nested</h4>
+            <p>This is the content of the fourth tab.</p>
           </section>
-          <section id="panel-2" role="tabpanel" aria-labelledby="tab-2">
-            <h3>Second Tab Content</h3>
-            <p>This is the content of the second tab.</p>
-
-            <nav role="tablist" class="tab-list appearance-toggle">
-              <label role="tab" aria-controls="panel-7" for="tab-7" class="tab-label">
-                <input type="radio" name="tab-group-3" id="tab-7" />
-                Nested Tab 7
-              </label>
-              <label role="tab" aria-controls="panel-8" for="tab-8" class="tab-label">
-                <input type="radio" name="tab-group-3" id="tab-8" />
-                Nested Tab 8
-              </label>
-            </nav>
-
-            <section id="panel-7" role="tabpanel" aria-labelledby="tab-7">
-              <h4>Seventh Tab Nested</h4>
-              <p>This is the content of the seventh tab.</p>
-            </section>
-            <section id="panel-8" role="tabpanel" aria-labelledby="tab-8">
-              <h4>Eighth Tab Nested</h4>
-              <p>This is the content of the eighth tab.</p>
-            </section>
-
+          <section id="panel-5" role="tabpanel" aria-labelledby="tab-5">
+            <h4>Fifth Tab Nested</h4>
+            <p>This is the content of the fifth tab.</p>
           </section>
-          <section id="panel-3" role="tabpanel" aria-labelledby="tab-3">
-            <h4>Third Tab Content</h4>
-            <p>This is the content of the third tab.</p>
+          <section id="panel-6" role="tabpanel" aria-labelledby="tab-6">
+            <h4>Sixth Tab Nested</h4>
+            <p>This is the content of the sixth tab.</p>
           </section>
-        </div>
+        </section>
+        <section id="panel-2" role="tabpanel" aria-labelledby="tab-2">
+          <h3>Second Tab Content</h3>
+          <p>This is the content of the second tab.</p>
+
+          <nav role="tablist" class="tab-list appearance-toggle">
+            <label role="tab" aria-controls="panel-7" for="tab-7" class="tab-label">
+              <input type="radio" name="tab-group-3" id="tab-7" />
+              Nested Tab 7
+            </label>
+            <label role="tab" aria-controls="panel-8" for="tab-8" class="tab-label">
+              <input type="radio" name="tab-group-3" id="tab-8" />
+              Nested Tab 8
+            </label>
+          </nav>
+
+          <section id="panel-7" role="tabpanel" aria-labelledby="tab-7">
+            <h4>Seventh Tab Nested</h4>
+            <p>This is the content of the seventh tab.</p>
+          </section>
+          <section id="panel-8" role="tabpanel" aria-labelledby="tab-8">
+            <h4>Eighth Tab Nested</h4>
+            <p>This is the content of the eighth tab.</p>
+          </section>
+
+        </section>
+        <section id="panel-3" role="tabpanel" aria-labelledby="tab-3">
+          <h4>Third Tab Content</h4>
+          <p>This is the content of the third tab.</p>
+        </section>
       </div>
     </section>
 

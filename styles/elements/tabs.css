@@ -1,7 +1,7 @@
 .tab-list,
 [role="tablist"] {
   display: flex;
-  gap: 1rem;
+  gap: 2px;
   flex-direction: row;
   &.vertical {
     flex-direction: column;
