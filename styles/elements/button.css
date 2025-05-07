@@ -6,9 +6,6 @@ input[type="reset"],
 a.button,
 select.button,
 .button {
-  /* default circular */
-  --borderRadius: var(--borderRadiusCircular);
-
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -17,7 +14,14 @@ select.button,
   align-items: center;
   justify-content: center;
 
-  border-radius: var(--borderRadius);
+  /* default circular */
+  --borderRadiusButton: var(--borderRadiusCircular);
+  [class*="shape-"] &,
+  &[class*="shape-"] {
+    --borderRadiusButton: var(--borderRadius);
+  }
+  border-radius: var(--borderRadiusButton, var(--borderRadius));
+
   font-weight: var(--fontWeightBold);
   font-size: var(--sizeFont);
   color: var(--colorText1);
@@ -28,8 +32,7 @@ select.button,
   transition: background-color var(--durationRest) linear;
 
   &:not(:disabled) {
-    &:hover
-     {
+    &:hover {
       background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
     }

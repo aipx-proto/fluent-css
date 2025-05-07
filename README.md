@@ -1,6 +1,19 @@
 # Mirai CSS Library
 
+## Refactor
+- namespace variables & classes (and everything)
+- delete appearance vars, they are different for each component applied
+- create docs
+- firefox support (for input pseudo elements)
+- unify/simplify variable usage
+
 ## Ambition
+
+### Next
+- intent: info, warning, error, success, brand
+  - applies to anything? like a theme?
+- input placeholder: color, type="date"
+- simple icon set: dismiss, chevron, checkmark, search
 
 ### Done
 - interaction vars
@@ -24,18 +37,6 @@
   - progress bar
 - tabs
 
-### Next
-- intent: info, warning, error, success, brand
-  - applies to anything? like a theme?
-- input placeholder: color, type="date"
-- simple icon set: dismiss, chevron, checkmark, search
-
-
-## Refactor
-- firefox support (for input pseudo elements)
-- unify/simplify variable usage
-- namespace variables
-- create docs
 
 ## Examples
 - field: label + input (and message?)

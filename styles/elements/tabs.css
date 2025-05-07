@@ -33,7 +33,7 @@
 
   transition: background-color var(--durationRest) linear;
 
-  --sizeTabUnderline: 4px;
+  --sizeTabUnderline: 3px;
   --colorTabUnderlineHover: var(--colorText4);
   --colorTabUnderlineActive: var(--colorBrandBase);
   --durationTabUnderline: 0.1s;
