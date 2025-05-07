@@ -103,6 +103,8 @@
   &.active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
+    font-weight: var(--fontWeightBold);
+    color: var(--colorText1);
     &:after {
       transform: scale(1);
     }
