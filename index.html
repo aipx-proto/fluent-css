@@ -7,89 +7,278 @@
   <title>Fluent Mirai Theme Styles</title>
   <link rel="stylesheet" href="./styles/index.css" />
   <style>
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
     }
 
-    .section {
-      margin-bottom: 30px;
-      padding: 20px;
-      border-radius: var(--borderRadiusLarge);
-      background-color: var(--colorBackground1);
-    }
-
-    .section-header {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      /* to make flex style easier */
       margin: 0;
-      text-transform: uppercase;
-    }
-
-    .section-header,
-    .component-header {
-      font-size: 10px;
-      line-height: normal;
-      letter-spacing: 0.1em;
-      font-family: var(--fontFamilyMono);
-    }
-
-    .component-header {
-      margin-top: 3em;
-      opacity: 0.3;
-    }
-
-    .icon {
-      width: 1em;
-      height: 1em;
-      fill: currentColor;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: flex-start;
-    }
-
-    .footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--Border);
-      color: var(--colorNeutralForeground3);
-    }
-
-    .nav ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .nav ul li {
-      display: inline;
-      margin-right: 20px;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Fluent Mirai Theme Styles</h1>
+  <header class="header">
+    <style>
+      .header {
+
+        ul,
+        ol,
+        li {
+          list-style: none;
+          padding: 0;
+        }
+
+        h1 {
+          font-size: var(--fontSize4);
+          margin: 0;
+        }
+      }
+
+      .nav__links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .nav__categories {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .nav__categories span {
+        font-weight: var(--fontWeightBold);
+        color: var(--colorText3);
+      }
+    </style>
+    <h1>mirai.css</h1>
     <nav class="nav">
-      <ul>
-        <li><a href="#html-elements">HTML Elements</a></li>
-        <li><a href="#fluent-basic">Basic</a></li>
-        <li><a href="#fluent-form">Forms</a></li>
-        <li><a href="#fluent-feedback">Feedback</a></li>
-        <li><a href="#fluent-navigation">Navigation</a></li>
-        <li><a href="#fluent-overlay">Overlay</a></li>
+      <ul class="nav__categories">
+        <li>
+          <ul class="nav__links">
+            <span>Core</span>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#color">Color</a></li>
+            <li><a href="#layout">Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul class="nav__links">
+            <span>Forms</span>
+            <li><a href="#button">Button</a></li>
+            <li><a href="#control-group">Control Group</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul class="nav__links">
+            <span>Forms</span>
+            <li><a href="#input">Input</a></li>
+            <li><a href="#radio">Radio</a></li>
+            <li><a href="#checkbox">Checkbox</a></li>
+            <li><a href="#switch">Switch</a></li>
+            <li><a href="#progress">Progress</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul class="nav__links">
+            <span>Overlay</span>
+            <li><a href="#dialog">Dialog</a></li>
+            <li><a href="#popover">Popover</a></li>
+            <li><a href="#menu">Menu</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul class="nav__links">
+            <span>Navigation</span>
+            <li><a href="#accordion">Accordion</a></li>
+            <li><a href="#tabs">Tabs</a></li>
+            <li><a href="#table">Table</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="main">
+    <style>
+      .main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .section {
+        border-radius: var(--borderRadiusMedium);
+        background-color: var(--colorBackground1);
+      }
+
+      .section__content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+        border-top: 1px solid var(--colorBorder2);
+      }
+    </style>
+    <h2>Core</h2>
+    <section class="section">
+      <div class="section__content" id="typography">
+        <style>
+          #typography {}
+
+          .typography__samples {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+
+          }
+
+          .typography__font-size,
+          .typography__font-family,
+          .typography__font-weight {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          }
+        </style>
+        <h3 class="section__header">Typography</h3>
+        <div class="typography__samples">
+          <div class="typography__font-size">
+            <span style="font-size: var(--fontSize1);">Font Size 1</span>
+            <span style="font-size: var(--fontSize2);">Font Size 2</span>
+            <span style="font-size: var(--fontSize3);">Font Size 3</span>
+            <span style="font-size: var(--fontSize4);">Font Size 4</span>
+            <span style="font-size: var(--fontSize5);">Font Size 5</span>
+            <span style="font-size: var(--fontSize6);">Font Size 6</span>
+            <span style="font-size: var(--fontSize7);">Font Size 7</span>
+          </div>
+          <div class="typography__font-family">
+            <span style="font-family: var(--fontFamilySans);">Font Family Sans</span>
+            <span style="font-family: var(--fontFamilyMono);">Font Family Mono</span>
+          </div>
+          <div class="typography__font-weight">
+            <span style="font-weight: var(--fontWeightRegular);">Font Weight Regular</span>
+            <span style="font-weight: var(--fontWeightBold);">Font Weight Bold</span>
+          </div>
+        </div>
+      </div>
+      <div class="section__content">
+        <h3 id="color" class="section__header">Color</h3>
+        <style>
+          .color__text-color {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .color__background-color,
+          .color__border-color {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            span {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+              height: 60px;
+              flex: 1 1 auto;
+              border-radius: var(--borderRadiusMedium);
+              border: 1px solid var(--colorBorder2);
+              padding: 8px;
+
+            }
+          }
+        </style>
+        <div class="color__text-color">
+          <p style="color: var(--colorText1);"><strong>Text 1: </strong>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p style="color: var(--colorText2);"><strong>Text 2: </strong>Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p style="color: var(--colorText3);"><strong>Text 3: </strong>Sed ut perspiciatis unde omnis iste natus error
+            sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+            veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <p style="color: var(--colorText4);"><strong>Text 4: </strong>Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+            nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+        </div>
+        <div class="color__background-color">
+          <span style="background-color: var(--colorBackground1);">Background 1</span>
+          <span style="background-color: var(--colorBackground2);">Background 2</span>
+          <span style="background-color: var(--colorBackground3);">Background 3</span>
+          <span style="background-color: var(--colorBackground4);">Background 4</span>
+        </div>
+        <div class="color__border-color">
+          <span style="border: 1px solid var(--colorBorder1);">Border 1</span>
+          <span style="border: 1px solid var(--colorBorder2);">Border 2</span>
+        </div>
+
+      </div>
+      <div class="section__content">
+        <style>
+          .layout__border-radius,
+          .layout__shadow {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            span {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+              height: 60px;
+              flex: 1 1 auto;
+              border-radius: var(--borderRadiusMedium);
+              border: 1px solid var(--colorBorder1);
+              padding: 8px;
+            }
+          }
+        </style>
+        <h3 id="layout" class="section__header">Layout</h3>
+        <div class="layout__border-radius">
+          <span style="border-radius: var(--borderRadiusNone);">Radius None</span>
+          <span style="border-radius: var(--borderRadiusSmall);">Radius Small</span>
+          <span style="border-radius: var(--borderRadiusMedium);">Radius Medium</span>
+          <span style="border-radius: var(--borderRadiusLarge);">Radius Large</span>
+          <span style="border-radius: var(--borderRadiusXLarge);">Radius XLarge</span>
+          <span style="border-radius: var(--borderRadiusCircular);">Radius Circular</span>
+        </div>
+        <div class="layout__shadow">
+          <span style="box-shadow: var(--shadow2);">Shadow 2</span>
+          <span style="box-shadow: var(--shadow4);">Shadow 4</span>
+          <span style="box-shadow: var(--shadow8);">Shadow 8</span>
+          <span style="box-shadow: var(--shadow16);">Shadow 16</span>
+          <span style="box-shadow: var(--shadow28);">Shadow 28</span>
+          <span style="box-shadow: var(--shadow64);">Shadow 64</span>
+        </div>
+      </div>
+    </section>
+
+
+
+
     <section id="html-elements" class="section">
-      <h2 class="section-header">HTML Elements</h2>
+      <h2 class="section__header">HTML Elements</h2>
       <h3 class="component-header">Text Elements</h3>
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
