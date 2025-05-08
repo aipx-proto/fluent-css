@@ -1,150 +1,16 @@
 <!doctype html>
 <html lang="en" class="theme-dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Writer - Test Layout</title>
+  <title>Test Layout</title>
   <link rel="stylesheet" href="../styles/index.css" />
 </head>
+
 <body>
-  <div style="display: flex; flex-direction: row;">
-    <!-- Sidebar -->
-    <aside style="width: 220px; flex-shrink: 0; display: flex; flex-direction: column; border-right: 1px solid var(--Border);">
-      <nav style="padding: 24px 0 0 0;">
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="padding: 12px 24px; font-weight: bold;">Agents</li>
-          <li style="padding: 12px 24px;">Models</li>
-          <li style="padding: 12px 24px;">Workflow</li>
-          <li style="padding: 12px 24px;">Reports</li>
-        </ul>
-      </nav>
-    </aside>
-    <!-- Main Content -->
-    <div style="flex: 1; display: flex; flex-direction: column; min-width: 0;">
-      <!-- Header -->
-      <header style="padding: 20px 32px 0 32px; display: flex; flex-direction: column; gap: 8px;">
-        <nav style="font-size: 13px; color: var(--colorNeutralForeground3);">
-          Azure AI Foundry / <span style="color: var(--colorNeutralForeground2);">project-name123</span> / <span style="color: var(--colorNeutralForeground1); font-weight: bold;">Parent page</span>
-        </nav>
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-          <h2 style="margin: 0; font-size: 1.3em;">Content writer</h2>
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <input type="text" placeholder="Search with AI" style="min-width: 260px;" />
-            <button>Deploy agent</button>
-          </div>
-        </div>
-        <nav style="display: flex; gap: 24px; margin-top: 8px;">
-          <a href="#" style="font-weight: 500;">Details</a>
-          <a href="#">Build</a>
-          <a href="#" style="font-weight: 500; color: var(--colorBrandForeground1);">Threads</a>
-          <a href="#">Monitor</a>
-          <a href="#">Evaluation</a>
-          <a href="#">API Docs</a>
-        </nav>
-      </header>
-      <!-- Split Panel -->
-      <main style="flex: 1; display: flex; min-height: 0; padding: 24px 32px 0 32px; gap: 32px;">
-        <!-- Threads List -->
-        <section style="width: 340px; flex-shrink: 0; display: flex; flex-direction: column; border-right: 1px solid var(--Border); min-width: 220px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-            <span style="font-weight: 500;">Threads</span>
-            <input type="text" placeholder="Search threads" style="width: 120px;" />
-          </div>
-          <div style="flex: 1; overflow-y: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
-              <thead>
-                <tr>
-                  <th style="text-align: left; font-weight: 400; color: var(--colorNeutralForeground3);">Thread ID</th>
-                  <th style="text-align: left; font-weight: 400; color: var(--colorNeutralForeground3);">Created</th>
-                  <th style="text-align: left; font-weight: 400; color: var(--colorNeutralForeground3);">Tools</th>
-                  <th style="text-align: left; font-weight: 400; color: var(--colorNeutralForeground3);">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="background: var(--colorSubtleBackground);">
-                  <td>thread_3x6lcKACR...</td>
-                  <td>Mar 19, 2025 10:45 AM</td>
-                  <td>N/A</td>
-                  <td>8</td>
-                </tr>
-                <tr>
-                  <td>thread_cUb42WJby...</td>
-                  <td>Mar 18, 2025 12:58 PM</td>
-                  <td>N/A</td>
-                  <td>12</td>
-                </tr>
-                <tr style="background: var(--colorBrandBackground2);">
-                  <td>thread_356b2KczCZ...</td>
-                  <td>Mar 18, 2025 12:51 PM</td>
-                  <td>N/A</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>thread_OClfMFmm...</td>
-                  <td>Mar 18, 2025 11:58 PM</td>
-                  <td>N/A</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>thread_ZSruYxEfgM...</td>
-                  <td>Mar 14, 2025 3:02 PM</td>
-                  <td>N/A</td>
-                  <td>15</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="margin-top: 12px; display: flex; justify-content: flex-end; gap: 8px;">
-            <button>Prev</button>
-            <button>Next</button>
-          </div>
-        </section>
-        <!-- Thread Details -->
-        <section style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
-          <div style="font-size: 13px; color: var(--colorNeutralForeground3); margin-bottom: 8px;">
-            ID: thread_1f46YMajmK3bljMa0g4xPJXh
-            <span style="margin-left: 16px;">Feb 27, 2025 2:20 PM</span>
-            <span style="margin-left: 16px;">4 Messages</span>
-            <span style="margin-left: 16px;">Tools: N/A</span>
-          </div>
-          <div style="background: var(--colorBackground1); border-radius: var(--borderRadiusLarge); padding: 20px; flex: 1; display: flex; flex-direction: column;">
-            <div style="font-weight: 500; margin-bottom: 12px;">Content writer</div>
-            <div style="margin-bottom: 16px;">
-              <div style="margin-bottom: 12px;">
-                <div style="font-weight: 500;">User</div>
-                <div style="margin-left: 12px;">
-                  What tools do I need on hand for common HVAC repairs?
-                  <pre style="background: none; border: none; padding: 0; margin: 4px 0 0 0; font-size: 12px; color: var(--colorNeutralForeground3);">Field service agent
-HVAC-Specific Tools:
-1. Manifold Gauge Set: For refrigerant system checks.
-2. Thermometer: Digital or infrared.
-3. Leak Detector: For refrigerant leaks.
-4. Refrigerant Scale: For measuring refrigerant.
-5. Vacuum Pump: For evacuating systems.
-6. Swaging Tools: For tubing adjustments.</pre>
-                </div>
-              </div>
-              <div style="margin-bottom: 12px;">
-                <div style="font-weight: 500;">User</div>
-                <div style="margin-left: 12px;">
-                  I've run into a damaged capacitor, it looks like it'll need to be replaced. Do we have any extra inventory in the office I can pick up?
-                  <pre style="background: none; border: none; padding: 0; margin: 4px 0 0 0; font-size: 12px; color: var(--colorNeutralForeground3);">Field service agent
-Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.</pre>
-                </div>
-              </div>
-            </div>
-            <div style="margin-top: auto; display: flex; gap: 8px;">
-              <button>Open in build</button>
-              <button>Delete</button>
-            </div>
-          </div>
-        </section>
-      </main>
-      <!-- Footer -->
-      <footer style="padding: 16px 32px; font-size: 12px; color: var(--colorNeutralForeground3); border-top: 1px solid var(--Border);">
-        &copy; 2025 Azure AI Foundry. All rights reserved.
-      </footer>
-    </div>
-  </div>
+
+
 </body>
+
 </html>
