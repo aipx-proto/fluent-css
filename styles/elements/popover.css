@@ -121,11 +121,11 @@
   --position-below-end: bottom span-left;
 
   --position-before-top: left span-bottom;
-  --position-before: left span-all;
+  --position-before: left center;
   --position-before-bottom: left span-top;
 
   --position-after-top: right span-bottom;
-  --position-after: right span-all;
+  --position-after: right center;
   --position-after-bottom: right span-top;
 }
 
