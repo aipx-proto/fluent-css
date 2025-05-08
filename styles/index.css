@@ -19,5 +19,6 @@
 @import "./elements/tabs.css";
 @import "./elements/tabs-hack.css";
 @import "./elements/typography.css";
+@import "./elements/scrollbar.css";
 @import "./elements/switch.css";
 @import "./elements/slider.css";
