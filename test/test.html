@@ -8,6 +8,113 @@
   <link rel="stylesheet" href="../styles/index.css" />
 </head>
 
-<body></body>
+<body class="wrapper">
+  <nav class="sidebar" style="min-width: 220px; max-width: 260px; background: var(--colorBackground2); border-radius: var(--borderRadiusLarge); padding: 20px; display: flex; flex-direction: column; gap: 24px; height: 90vh;">
+    <h2 style="font-size: var(--fontSize3); color: var(--colorText2); font-weight: var(--fontWeightBold);">Agents</h2>
+    <ul style="display: flex; flex-direction: column; gap: 8px;">
+      <li><a href="#" class="appearance-primary">Content writer</a></li>
+      <li><a href="#">Other agent</a></li>
+    </ul>
+    <hr />
+    <ul style="display: flex; flex-direction: column; gap: 8px;">
+      <li><a href="#" class="appearance-subtle">Models</a></li>
+      <li><a href="#" class="appearance-subtle">Workflow</a></li>
+      <li><a href="#" class="appearance-subtle">Reports</a></li>
+    </ul>
+  </nav>
+  <main class="main" style="display: flex; flex-direction: row; gap: 24px; flex: 1 1 auto; align-items: flex-start;">
+    <section style="flex: 2 1 0; display: flex; flex-direction: column; gap: 24px;">
+      <header style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="color: var(--colorText3); font-size: var(--fontSize7);">Azure AI Foundry / project-name123 / <strong>Parent page</strong></span>
+        <h1 style="font-size: var(--fontSize2); font-weight: var(--fontWeightBold);">Content writer</h1>
+      </header>
+      <nav style="display: flex; flex-direction: row; gap: 16px; border-bottom: 1px solid var(--colorBorder2);">
+        <button class="appearance-transparent active">Details</button>
+        <button class="appearance-transparent">Build</button>
+        <button class="appearance-transparent">Threads</button>
+        <button class="appearance-transparent">Monitor</button>
+        <button class="appearance-transparent">Evaluation</button>
+        <button class="appearance-transparent">API Docs</button>
+      </nav>
+      <section style="margin-top: 16px;">
+        <h3 style="font-size: var(--fontSize4); color: var(--colorText2); margin-bottom: 12px;">Threads</h3>
+        <table style="width: 100%; background: var(--colorBackground2); border-radius: var(--borderRadiusMedium);">
+          <thead>
+            <tr>
+              <th>Thread ID</th>
+              <th>Created</th>
+              <th>Tools</th>
+              <th>Length</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>thread_3x6lcikACR...</td>
+              <td>Mar 19, 2025 10:45 AM</td>
+              <td>N/A</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>thread_cUb42WJby...</td>
+              <td>Mar 18, 2025 12:58 PM</td>
+              <td>N/A</td>
+              <td>12</td>
+            </tr>
+            <tr style="background: var(--colorBackground1);">
+              <td><strong>thread_356b2KczCZ0...</strong></td>
+              <td><strong>Mar 18, 2025 12:51 PM</strong></td>
+              <td><strong>N/A</strong></td>
+              <td><strong>4</strong></td>
+            </tr>
+            <tr>
+              <td>thread_OClfMFmm...</td>
+              <td>Mar 18, 2025 11:58 PM</td>
+              <td>N/A</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>thread_ZSruYxEfgM...</td>
+              <td>Mar 14, 2025 3:02 PM</td>
+              <td>N/A</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <aside style="flex: 1 1 0; background: var(--colorBackground2); border-radius: var(--borderRadiusLarge); padding: 24px; min-width: 340px; max-width: 400px; display: flex; flex-direction: column; gap: 16px;">
+      <header style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
+        <span style="font-size: var(--fontSize6); color: var(--colorText3);">ID: thread_1f46YMajmK3bljMa0g4xPJXh</span>
+        <span style="font-size: var(--fontSize7); color: var(--colorText4);">Feb 27, 2025 2:20 PM</span>
+      </header>
+      <h3 style="font-size: var(--fontSize4); font-weight: var(--fontWeightBold);">Content writer</h3>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="background: var(--colorBackground1); border-radius: var(--borderRadiusMedium); padding: 16px;">
+          <span style="color: var(--colorText3); font-size: var(--fontSize7);">User</span>
+          <p style="margin-top: 4px;">What tools do I need on hand for common HVAC repairs?</p>
+          <span style="color: var(--colorText3); font-size: var(--fontSize7);">Field service agent</span>
+          <ul style="margin-top: 4px;">
+            <li>Manifold Gauge Set: For refrigerant system checks.</li>
+            <li>Thermometer: Digital or infrared.</li>
+            <li>Leak Detector: For refrigerant leaks.</li>
+            <li>Refrigerant Scale: For measuring refrigerant.</li>
+            <li>Vacuum Pump: For evacuating systems.</li>
+            <li>Swaging Tools: For tubing adjustments.</li>
+          </ul>
+        </div>
+        <div style="background: var(--colorBackground1); border-radius: var(--borderRadiusMedium); padding: 16px;">
+          <span style="color: var(--colorText3); font-size: var(--fontSize7);">User</span>
+          <p style="margin-top: 4px;">I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra inventory in the office I can pick up?</p>
+          <span style="color: var(--colorText3); font-size: var(--fontSize7);">Field service agent</span>
+          <p style="margin-top: 4px;">Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.</p>
+        </div>
+      </div>
+      <footer style="margin-top: auto; display: flex; flex-direction: row; gap: 8px;">
+        <button class="appearance-subtle">Open in build</button>
+        <button class="appearance-transparent intent-danger">Delete</button>
+      </footer>
+    </aside>
+  </main>
+</body>
 
 </html>
