@@ -1,12 +1,12 @@
 .fluent-vars {
   /* just for a reference, no need to include */
 
-  --mri-border-radius-none: 0;
-  --mri-border-radius-small: 2px;
-  --mri-border-radius-medium: 4px;
-  --mri-border-radius-large: 6px;
-  --mri-border-radius-xlarge: 8px;
-  --mri-border-radius-circular: 10000px;
+  --borderRadiusNone: 0;
+  --borderRadiusSmall: 2px;
+  --borderRadiusMedium: 4px;
+  --borderRadiusLarge: 6px;
+  --borderRadiusXLarge: 8px;
+  --borderRadiusCircular: 10000px;
 
   --fontSizeBase100: 10px;
   --fontSizeBase200: 12px;
@@ -32,14 +32,14 @@
 
   --fontFamilyBase: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
     "Helvetica Neue", sans-serif;
-  --mri-font-family-monospace: Consolas, "Courier New", Courier, monospace;
+  --fontFamilyMonospace: Consolas, "Courier New", Courier, monospace;
   --fontFamilyNumeric: Bahnschrift, "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont,
     Roboto, "Helvetica Neue", sans-serif;
 
-  --mri-font-weight-regular: 400;
+  --fontWeightRegular: 400;
   --fontWeightMedium: 500;
   --fontWeightSemibold: 600;
-  --mri-font-weight-bold: 700;
+  --fontWeightBold: 700;
 
   --strokeWidthThin: 1px;
   --strokeWidthThick: 2px;
@@ -200,7 +200,7 @@
   --colorNeutralStencil1Alpha: rgba(255, 255, 255, 0.1);
   --colorNeutralStencil2Alpha: rgba(255, 255, 255, 0.05);
   
-  --mri-color-background-overlay: rgba(0, 0, 0, 0.5);
+  --colorBackgroundOverlay: rgba(0, 0, 0, 0.5);
   --colorScrollbarOverlay: rgba(255, 255, 255, 0.6);
   --colorBrandBackground: #115ea3;
   --colorBrandBackgroundHover: #0f6cbd;
@@ -461,16 +461,16 @@
   --colorStatusDangerBackground3Hover: #b10e1c;
   --colorStatusDangerBackground3Pressed: #960b18;
 
-  --mri-shadow-2: 0 0 2px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.28);
-  --mri-shadow-4: 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.28);
-  --mri-shadow-8: 0 0 2px rgba(0, 0, 0, 0.24), 0 4px 8px rgba(0, 0, 0, 0.28);
-  --mri-shadow-16: 0 0 2px rgba(0, 0, 0, 0.24), 0 8px 16px rgba(0, 0, 0, 0.28);
-  --mri-shadow-28: 0 0 8px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.28);
-  --mri-shadow-64: 0 0 8px rgba(0, 0, 0, 0.24), 0 32px 64px rgba(0, 0, 0, 0.28);
-  --mri-shadow-2Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.25);
-  --mri-shadow-4Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.25);
-  --mri-shadow-8Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.25);
-  --mri-shadow-16Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.25);
-  --mri-shadow-28Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 14px 28px rgba(0, 0, 0, 0.25);
-  --mri-shadow-64Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 32px 64px rgba(0, 0, 0, 0.25);
+  --shadow2: 0 0 2px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.28);
+  --shadow4: 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.28);
+  --shadow8: 0 0 2px rgba(0, 0, 0, 0.24), 0 4px 8px rgba(0, 0, 0, 0.28);
+  --shadow16: 0 0 2px rgba(0, 0, 0, 0.24), 0 8px 16px rgba(0, 0, 0, 0.28);
+  --shadow28: 0 0 8px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.28);
+  --shadow64: 0 0 8px rgba(0, 0, 0, 0.24), 0 32px 64px rgba(0, 0, 0, 0.28);
+  --shadow2Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow4Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow8Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow16Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.25);
+  --shadow28Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 14px 28px rgba(0, 0, 0, 0.25);
+  --shadow64Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 32px 64px rgba(0, 0, 0, 0.25);
 }
