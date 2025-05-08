@@ -38,7 +38,7 @@ select.button,
       transition-duration: var(--durationHover);
       &.appearance-transparent,
       &.appearance-subtle {
-        color: var(--colorBrandBase);
+        color: var(--colorBrandText);
       }
     }
 
@@ -48,7 +48,7 @@ select.button,
       transition-duration: var(--durationActive);
       &.appearance-transparent,
       &.appearance-subtle {
-        color: var(--colorBrandBase);
+        color: var(--colorBrandText);
       }
     }
   }

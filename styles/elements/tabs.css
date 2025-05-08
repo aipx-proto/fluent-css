@@ -35,7 +35,7 @@
 
   --sizeTabUnderline: 3px;
   --colorTabUnderlineHover: var(--colorText4);
-  --colorTabUnderlineActive: var(--colorBrandBase);
+  --colorTabUnderlineActive: var(--colorBrandText);
   --durationTabUnderline: 0.1s;
 
   position: relative;
@@ -75,7 +75,12 @@
     }
   }
 
-  /* .appearance-transparent */
+  &.icon-only {
+    padding: 0;
+    width: var(--sizeHeight);
+    height: var(--sizeHeight);
+  }
+
   /* .appearance-subtle */
   /* .appearance-toggle */
 
@@ -84,18 +89,23 @@
       background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
 
+      &.appearance-transparent {
+        background-color: transparent;
+      }
+
       &:before {
         opacity: 1;
       }
     }
 
     /* pressed */
-    &:active,
-    &.active,
-    &[aria-selected="true"],
-    &:has(input[type="radio"]:checked) {
+    &:active {
       background-color: var(--interactiveActive);
       transition-duration: var(--durationActive);
+
+      &.appearance-transparent {
+        background-color: transparent;
+      }
     }
   }
 
@@ -103,8 +113,14 @@
   &.active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
+    background-color: var(--colorBackground2);
     font-weight: var(--fontWeightBold);
     color: var(--colorText1);
+
+    &.appearance-transparent {
+      background-color: transparent;
+    }
+
     &:after {
       transform: scale(1);
     }
