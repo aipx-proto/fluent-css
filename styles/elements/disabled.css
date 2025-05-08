@@ -1,9 +1,9 @@
 :disabled, [disabled], .mri-disabled {
   cursor: not-allowed;
-  opacity: var(--opacityDisabled);
+  opacity: var(--mri-opacity-disabled);
 
   label:has(&) {
-    opacity: var(--opacityDisabled);
+    opacity: var(--mri-opacity-disabled);
   }
   label:has(&) & {
     opacity: 1;

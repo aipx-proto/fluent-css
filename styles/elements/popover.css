@@ -1,9 +1,9 @@
 [popover] {
-  border: 1px solid var(--colorBorder1);
-  background-color: var(--colorBackground1);
-  box-shadow: var(--shadow16);
+  border: 1px solid var(--mri-color-border-1);
+  background-color: var(--mri-color-background-1);
+  box-shadow: var(--mri-shadow-16);
   padding: 8px 12px;
-  border-radius: var(--borderRadius);
+  border-radius: var(--mri-border-radius);
   overflow: hidden;
 
   --sizeOffset: 4px;

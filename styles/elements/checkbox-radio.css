@@ -1,9 +1,9 @@
 input[type="checkbox"]:not(.mri-switch),
 input[type="radio"] {
-  --borderColor: var(--colorBorder1);
-  --interactiveRest: var(--colorBackground2);
-  --sizeDimension: var(--sizeIcon);
-  --checkedColor: var(--colorBrandBase);
+  --borderColor: var(--mri-color-border-1);
+  --mri-interactive-rest: var(--mri-color-background-2);
+  --sizeDimension: var(--mri-size-icon);
+  --checkedColor: var(--mri-color-brand-base);
 
   appearance: none;
   margin: 0;
@@ -13,8 +13,8 @@ input[type="radio"] {
   cursor: pointer;
 
   border: 1px solid var(--borderColor);
-  border-radius: var(--borderRadius);
-  background-color: var(--interactiveRest);
+  border-radius: var(--mri-border-radius);
+  background-color: var(--mri-interactive-rest);
 
   label & {
     vertical-align: middle;
@@ -27,7 +27,7 @@ input[type="radio"] {
     display: block;
     position: absolute;
     inset: 2px;
-    border-radius: var(--borderRadius);
+    border-radius: var(--mri-border-radius);
     background-color: var(--checkedColor);
     opacity: 0;
   }
@@ -42,9 +42,9 @@ input[type="radio"] {
 }
 
 input[type="radio"] {
-  --borderRadius: var(--borderRadiusCircular);
+  --mri-border-radius: var(--mri-border-radius-circular);
   &:after {
-    border-radius: var(--borderRadius);
+    border-radius: var(--mri-border-radius);
   }
   &:checked:after {
     opacity: 1;
@@ -52,10 +52,10 @@ input[type="radio"] {
 }
 
 input[type="checkbox"]:not(.mri-switch) {
-  --borderRadius: var(--borderRadiusSmall);
+  --mri-border-radius: var(--mri-border-radius-small);
 
   &:after {
-    border-radius: calc(var(--borderRadius) - 2px);
+    border-radius: calc(var(--mri-border-radius) - 2px);
   }
 
   &:checked:after {

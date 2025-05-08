@@ -1,11 +1,11 @@
 dialog {
   color: inherit;
   
-  border: 1px solid var(--colorBorder1);
-  background-color: var(--colorBackground1);
-  box-shadow: var(--shadow16);
+  border: 1px solid var(--mri-color-border-1);
+  background-color: var(--mri-color-background-1);
+  box-shadow: var(--mri-shadow-16);
   padding: 0;
-  border-radius: var(--borderRadiusLarge);
+  border-radius: var(--mri-border-radius-large);
   overflow: hidden;
 
   header {
@@ -28,7 +28,7 @@ dialog {
   }
   footer {
     padding: 12px 24px;
-    border-top: 1px solid var(--colorBorder2);
+    border-top: 1px solid var(--mri-color-border-2);
     display: flex;
     justify-content: flex-end;
     gap: 12px;
@@ -55,7 +55,7 @@ dialog {
 
   transform: scale(0.8);
   &::backdrop {
-    background-color: var(--colorBackgroundOverlay);
+    background-color: var(--mri-color-background-overlay);
   }
 
   &[open] {
@@ -83,7 +83,7 @@ dialog {
   transition: opacity 0.2s ease-in-out allow-discrete;
 
   &::backdrop {
-    background-color: var(--colorBackgroundOverlay);
+    background-color: var(--mri-color-background-overlay);
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
   }

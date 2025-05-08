@@ -25,17 +25,17 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: var(--borderRadius);
-  font-size: var(--sizeFont);
-  /* color: var(--colorText1); */
-  min-height: var(--sizeHeight);
-  padding: 0 var(--sizePadding);
+  border-radius: var(--mri-border-radius);
+  font-size: var(--mri-size-font);
+  /* color: var(--mri-color-text-1); */
+  min-height: var(--mri-size-height);
+  padding: 0 var(--mri-size-padding);
 
-  transition: background-color var(--durationRest) linear;
+  transition: background-color var(--mri-duration-rest) linear;
 
   --sizeTabUnderline: 3px;
-  --colorTabUnderlineHover: var(--colorText4);
-  --colorTabUnderlineActive: var(--colorBrandText);
+  --colorTabUnderlineHover: var(--mri-color-text-4);
+  --colorTabUnderlineActive: var(--mri-color-brand-text);
   --durationTabUnderline: 0.1s;
 
   position: relative;
@@ -45,11 +45,11 @@
     content: "";
     display: block;
     position: absolute;
-    border-radius: var(--borderRadiusCircular);
-    inset: auto var(--sizePadding) 0 var(--sizePadding);
+    border-radius: var(--mri-border-radius-circular);
+    inset: auto var(--mri-size-padding) 0 var(--mri-size-padding);
     height: var(--sizeTabUnderline);
     transform-origin: center;
-    transition: transform var(--durationTabUnderline) ease-out, opacity var(--durationRest) linear;
+    transition: transform var(--durationTabUnderline) ease-out, opacity var(--mri-duration-rest) linear;
   }
 
   &:before {
@@ -63,7 +63,7 @@
   }
 
   .mri-vertical & {
-    --sizeTabUnderlinePadding: calc((var(--sizeHeight) - var(--sizeIcon)) / 2);
+    --sizeTabUnderlinePadding: calc((var(--mri-size-height) - var(--mri-size-icon)) / 2);
     &:after,
     &:before {
       inset: var(--sizeTabUnderlinePadding) auto var(--sizeTabUnderlinePadding) 0;
@@ -77,8 +77,8 @@
 
   &.mri-icon-only {
     padding: 0;
-    width: var(--sizeHeight);
-    height: var(--sizeHeight);
+    width: var(--mri-size-height);
+    height: var(--mri-size-height);
   }
 
   /* .mri-appearance-subtle */
@@ -86,11 +86,11 @@
 
   &:has(input[type="radio"]:not(:disabled)) {
     &:hover {
-      transition-duration: var(--durationHover);
+      transition-duration: var(--mri-duration-hover);
 
       /* .mri-appearance-transparent & { background-color: transparent; } */
       .mri-appearance-subtle & {
-        background-color: var(--interactiveHover);
+        background-color: var(--mri-interactive-hover);
       }
 
       &:before {
@@ -100,11 +100,11 @@
 
     /* pressed */
     &:active {
-      transition-duration: var(--durationActive);
+      transition-duration: var(--mri-duration-hover);
 
       /* .mri-appearance-transparent & { background-color: transparent; } */
       .mri-appearance-subtle & {
-        background-color: var(--interactiveActive);
+        background-color: var(--mri-interactive-pressed);
       }
     }
   }
@@ -113,12 +113,12 @@
   &.mri-active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
-    font-weight: var(--fontWeightBold);
-    color: var(--colorText1);
+    font-weight: var(--mri-font-weight-bold);
+    color: var(--mri-color-text-1);
 
     /* .mri-appearance-transparent & { background-color: transparent; } */
     .mri-appearance-subtle & {
-      background-color: var(--colorBackground2);
+      background-color: var(--mri-color-background-2);
     }
 
     &:after {
@@ -128,6 +128,6 @@
 
   &:has(input[type="radio"]:disabled) {
     cursor: not-allowed;
-    opacity: var(--opacityDisabled);
+    opacity: var(--mri-opacity-disabled);
   }
 }

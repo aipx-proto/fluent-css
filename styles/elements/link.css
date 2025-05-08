@@ -1,11 +1,11 @@
 a:not(.mri-button) {
-  color: var(--colorBrandText);
+  color: var(--mri-color-brand-text);
   text-decoration: none;
   &:hover {
-    color: oklch(from var(--colorBrandText) calc(l * 0.9) c h);
+    color: oklch(from var(--mri-color-brand-text) calc(l * 0.9) c h);
     text-decoration: underline;
   }
   &:active {
-    color: var(--colorBrandText);
+    color: var(--mri-color-brand-text);
   }
 }

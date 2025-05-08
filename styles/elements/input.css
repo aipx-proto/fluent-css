@@ -10,8 +10,8 @@ input[type="url"],
 input[type="file"],
 select:not(.mri-button),
 textarea {
-  --interactiveRest: var(--colorBackground2);
-  --underlineColor: var(--colorBrandBase);
+  --mri-interactive-rest: var(--mri-color-background-2);
+  --underlineColor: var(--mri-color-brand-base);
   --borderColor: transparent;
 
   /* appearance: none; */
@@ -21,21 +21,21 @@ textarea {
   align-items: center;
   justify-content: start;
 
-  border-radius: var(--borderRadius);
-  font-size: var(--sizeFont);
-  color: var(--colorText1);
-  min-height: var(--sizeHeight);
-  padding: 0 var(--sizePadding);
-  background-color: var(--interactiveRest);
+  border-radius: var(--mri-border-radius);
+  font-size: var(--mri-size-font);
+  color: var(--mri-color-text-1);
+  min-height: var(--mri-size-height);
+  padding: 0 var(--mri-size-padding);
+  background-color: var(--mri-interactive-rest);
   border: 1px solid var(--borderColor);
 
   --underlineColorGradient: linear-gradient(to bottom, var(--underlineColor), var(--underlineColor));
-  --underlineBorderGradient: linear-gradient(to bottom, var(--colorBorder1), var(--colorBorder1));
+  --underlineBorderGradient: linear-gradient(to bottom, var(--mri-color-border-1), var(--mri-color-border-1));
 
   --focusUnderlineBackground: var(--underlineColorGradient) 50% 100%/0% 2px;
   --hoverUnderlineBackground: var(--underlineBorderGradient) 50% 100%/100% 0px;
 
-  background: var(--focusUnderlineBackground), var(--hoverUnderlineBackground), var(--interactiveRest);
+  background: var(--focusUnderlineBackground), var(--hoverUnderlineBackground), var(--mri-interactive-rest);
   background-repeat: no-repeat;
 
   transition: 0.1s ease-in;
@@ -59,14 +59,14 @@ textarea {
   outline: transparent solid 2px;
 
   &.mri-appearance-outline {
-    --borderColor: var(--colorBorder1);
+    --borderColor: var(--mri-color-border-1);
   }
 }
 
 input[type="number"],
 input[type="date"] {
-  font-family: var(--fontFamilyMono);
-  font-size: var(--fontFamilyMonoScale);
+  font-family: var(--mri-font-family-mono);
+  font-size: var(--mri-font-family-mono-scale);
 }
 
 input[type="number"] {
@@ -74,27 +74,27 @@ input[type="number"] {
   padding-right: 0;
 
   &::-webkit-inner-spin-button {
-    height: calc(var(--sizeHeight) - var(--spinButtonGap));
+    height: calc(var(--mri-size-height) - var(--spinButtonGap));
     margin-bottom: var(--spinButtonGap);
   }
 }
 
 textarea {
   padding-block: 0.5em;
-  font-family: var(--fontFamilySans);
+  font-family: var(--mri-font-family-sans);
 }
 
 input[type="color"] {
   padding: 0;
-  height: var(--sizeHeight);
-  width: var(--sizeHeight);
+  height: var(--mri-size-height);
+  width: var(--mri-size-height);
 
   &::-webkit-color-swatch-wrapper {
     padding: 4px;
   }
   &::-webkit-color-swatch {
     border: none;
-    border-radius: calc(var(--borderRadius) - 4px);
+    border-radius: calc(var(--mri-border-radius) - 4px);
   }
 }
 

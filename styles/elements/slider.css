@@ -9,8 +9,8 @@ input[type="range"] {
 
   &::-webkit-slider-container {
     height: var(--sizeTrack);
-    background: var(--colorBorder1);
-    border-radius: var(--borderRadiusCircular);
+    background: var(--mri-color-border-1);
+    border-radius: var(--mri-border-radius-circular);
   }
 
   /* &::-webkit-slider-runnable-track {} */
@@ -20,10 +20,10 @@ input[type="range"] {
     appearance: none;
     width: var(--sizeThumb);
     height: var(--sizeThumb);
-    border: 1px solid var(--colorBorder1);
-    border-radius: var(--borderRadiusCircular);
+    border: 1px solid var(--mri-color-border-1);
+    border-radius: var(--mri-border-radius-circular);
     cursor: ew-resize;
-    background: var(--colorBrandBase);
-    box-shadow: inset 0 0 0 3px var(--colorBackground1);
+    background: var(--mri-color-brand-base);
+    box-shadow: inset 0 0 0 3px var(--mri-color-background-1);
   }
 }

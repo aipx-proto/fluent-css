@@ -18,15 +18,15 @@ progress.mri-spinner {
     content: "";
     position: absolute;
     inset: 0;
-    border: 2px solid var(--colorBackground2);
-    border-top-color: var(--colorBrandBase);
-    border-radius: var(--borderRadiusCircular);
+    border: 2px solid var(--mri-color-background-2);
+    border-top-color: var(--mri-color-brand-base);
+    border-radius: var(--mri-border-radius-circular);
     animation: --progress-spin var(--animationDuration) var(--animationEasing) infinite;
     pointer-events: none;
   }
   &:after {
     border-color: transparent;
-    border-top-color: var(--colorBrandBase);
+    border-top-color: var(--mri-color-brand-base);
     animation-delay: calc(var(--animationDuration) * 0.075);
   }
 
@@ -40,22 +40,22 @@ progress.mri-spinner {
 
 progress:not(.mri-spinner),
 meter {
-  --sizeHeight: 2px;
+  --mri-size-height: 2px;
   appearance: none;
   width: 100%;
-  height: var(--sizeHeight);
-  border-radius: var(--borderRadiusRound);
-  background: var(--colorBackground2);
+  height: var(--mri-size-height);
+  border-radius: var(--mri-border-radiusRound);
+  background: var(--mri-color-background-2);
   overflow: hidden;
 
   &.mri-size-small {
-    --sizeHeight: 1px;
+    --mri-size-height: 1px;
   }
   &.mri-size-medium {
-    --sizeHeight: 2px;
+    --mri-size-height: 2px;
   }
   &.mri-size-large {
-    --sizeHeight: 4px;
+    --mri-size-height: 4px;
   }
 
   &.mri-shape-square {
@@ -64,8 +64,8 @@ meter {
 }
 
 progress:not(.mri-spinner):indeterminate {
-  --gradientStepTransparent: color-mix(in srgb, var(--colorBrandBase) 0%, transparent);
-  --gradientStepBrand: var(--colorBrandBase);
+  --gradientStepTransparent: color-mix(in srgb, var(--mri-color-brand-base) 0%, transparent);
+  --gradientStepBrand: var(--mri-color-brand-base);
 
   background-image: linear-gradient(
     to right,
@@ -88,10 +88,10 @@ progress:not(.mri-spinner):indeterminate {
 ::-webkit-meter-bar,
 ::-webkit-progress-bar {
   background: transparent;
-  height: var(--sizeHeight);
+  height: var(--mri-size-height);
 }
 ::-webkit-progress-value {
-  background: var(--colorBrandBase);
+  background: var(--mri-color-brand-base);
 }
 
 /* ::-webkit-meter-inner-element {

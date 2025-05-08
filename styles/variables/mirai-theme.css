@@ -1,152 +1,151 @@
 :root {
-  --fontSize1: 40px;
-  --fontSize2: 28px;
-  --fontSize3: 20px;
-  --fontSize4: 16px;
-  --fontSize5: 14px;
-  --fontSize6: 12px;
-  --fontSize7: 10px;
+  --mri-font-size-1: 40px;
+  --mri-font-size-2: 28px;
+  --mri-font-size-3: 20px;
+  --mri-font-size-4: 16px;
+  --mri-font-size-5: 14px;
+  --mri-font-size-6: 12px;
+  --mri-font-size-7: 10px;
 
-  --fontFamilySans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
+  --mri-font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
     "Helvetica Neue", sans-serif;
-  --fontFamilyMono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
+  --mri-font-family-mono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
   /* smaller font size optically aligns the x-height of Monaspace Neon and Aptos */
-  --fontFamilyMonoScale: 0.9em;
+  --mri-font-family-mono-scale: 0.9em;
 
-  --fontWeightRegular: 400;
-  --fontWeightBold: 600;
+  --mri-font-weight-regular: 400;
+  --mri-font-weight-bold: 600;
 
-  --borderRadiusNone: 0;
-  --borderRadiusSmall: 4px;
-  --borderRadiusMedium: 8px;
-  --borderRadiusLarge: 12px;
-  --borderRadiusXLarge: 16px;
-  --borderRadiusCircular: 10000px;
+  --mri-border-radius-small: 4px;
+  --mri-border-radius-medium: 8px;
+  --mri-border-radius-large: 12px;
+  --mri-border-radius-xlarge: 16px;
+  --mri-border-radius-circular: 10000px;
 
-  --durationRest: 100ms;
-  --durationHover: 150ms;
-  --durationActive: 50ms;
+  --mri-duration-rest: 100ms;
+  --mri-duration-hover: 150ms;
+  --mri-duration-hover: 50ms;
 
-  --colorShadowAmbient: rgba(0, 0, 0, 0.24);
-  --colorShadowKey: rgba(0, 0, 0, 0.28);
+  --mri-color-shadow-ambient: rgba(0, 0, 0, 0.24);
+  --mri-color-shadow-key: rgba(0, 0, 0, 0.28);
 
-  --shadow2: 0 0 2px var(--colorShadowAmbient), 0 1px 2px var(--colorShadowKey);
-  --shadow4: 0 0 2px var(--colorShadowAmbient), 0 2px 4px var(--colorShadowKey);
-  --shadow8: 0 0 2px var(--colorShadowAmbient), 0 4px 8px var(--colorShadowKey);
-  --shadow16: 0 0 2px var(--colorShadowAmbient), 0 8px 16px var(--colorShadowKey);
-  --shadow28: 0 0 8px var(--colorShadowAmbient), 0 14px 28px var(--colorShadowKey);
-  --shadow64: 0 0 8px var(--colorShadowAmbient), 0 32px 64px var(--colorShadowKey);
+  --mri-shadow-2: 0 0 2px var(--mri-color-shadow-ambient), 0 1px 2px var(--mri-color-shadow-key);
+  --mri-shadow-4: 0 0 2px var(--mri-color-shadow-ambient), 0 2px 4px var(--mri-color-shadow-key);
+  --mri-shadow-8: 0 0 2px var(--mri-color-shadow-ambient), 0 4px 8px var(--mri-color-shadow-key);
+  --mri-shadow-16: 0 0 2px var(--mri-color-shadow-ambient), 0 8px 16px var(--mri-color-shadow-key);
+  --mri-shadow-28: 0 0 8px var(--mri-color-shadow-ambient), 0 14px 28px var(--mri-color-shadow-key);
+  --mri-shadow-64: 0 0 8px var(--mri-color-shadow-ambient), 0 32px 64px var(--mri-color-shadow-key);
 
-  --colorBackgroundOverlay: rgba(0, 0, 0, 0.5);
+  --mri-color-background-overlay: rgba(0, 0, 0, 0.5);
 
-  --opacityDisabled: 0.5;
+  --mri-opacity-disabled: 0.5;
 }
 
 .mri-size-small {
-  --sizeHeight: 24px;
-  --sizeFont: var(--fontSize6);
-  --sizePadding: 8px;
-  --sizeIcon: 12px;
+  --mri-size-height: 24px;
+  --mri-size-font: var(--mri-font-size-6);
+  --mri-size-padding: 8px;
+  --mri-size-icon: 12px;
 }
 :root,
 .mri-size-medium {
-  --sizeHeight: 32px;
-  --sizeFont: var(--fontSize5);
-  --sizePadding: 12px;
-  --sizeIcon: 16px;
+  --mri-size-height: 32px;
+  --mri-size-font: var(--mri-font-size-5);
+  --mri-size-padding: 12px;
+  --mri-size-icon: 16px;
 }
 .mri-size-large {
-  --sizeHeight: 40px;
-  --sizeFont: var(--fontSize4);
-  --sizePadding: 16px;
-  --sizeIcon: 20px;
+  --mri-size-height: 40px;
+  --mri-size-font: var(--mri-font-size-4);
+  --mri-size-padding: 16px;
+  --mri-size-icon: 20px;
 }
 
 .mri-shape-square {
-  --borderRadius: var(--borderRadiusSmall);
+  --mri-border-radius: var(--mri-border-radius-small);
 }
 :root,
 .mri-shape-rounded {
-  --borderRadius: var(--borderRadiusMedium);
+  --mri-border-radius: var(--mri-border-radius-medium);
 }
 .mri-shape-circular {
-  --borderRadius: var(--borderRadiusCircular);
+  --mri-border-radius: var(--mri-border-radius-circular);
 }
 
 :root,
 .mri-theme-dark {
   color-scheme: dark;
 
-  --colorBackground1: #1f1f1f;
-  --colorBackground2: #141414;
-  --colorBackground3: #0a0a0a;
-  --colorBackground4: #000000;
+  --mri-color-background-1: #1f1f1f;
+  --mri-color-background-2: #141414;
+  --mri-color-background-3: #0a0a0a;
+  --mri-color-background-4: #000000;
 
-  --colorBorder1: #666666;
-  --colorBorder2: var(--colorBackground3);
+  --mri-color-border-1: #666666;
+  --mri-color-border-2: var(--mri-color-background-3);
 
-  --colorText1: #ffffff;
-  --colorText2: #d6d6d6;
-  --colorText3: #999999;
-  --colorText4: #5c5c5c;
+  --mri-color-text-1: #ffffff;
+  --mri-color-text-2: #d6d6d6;
+  --mri-color-text-3: #999999;
+  --mri-color-text-4: #5c5c5c;
 
-  --colorBrandBase: #005E8B;
-  --colorBrandText: #008AC9;
+  --mri-color-brand-base: #005E8B;
+  --mri-color-brand-text: #008AC9;
 
 
   &,
   .mri-appearance-outline {
-    --interactiveRest: var(--colorBackground1);
-    --interactiveHover: oklch(from var(--colorBackground1) calc(l * 0.8) c h);
-    --interactiveActive: oklch(from var(--colorBackground1) calc(l * 0.65) c h);
+    --mri-interactive-rest: var(--mri-color-background-1);
+    --mri-interactive-hover: oklch(from var(--mri-color-background-1) calc(l * 0.8) c h);
+    --mri-interactive-pressed: oklch(from var(--mri-color-background-1) calc(l * 0.65) c h);
   }
   .mri-appearance-primary {
-    --interactiveRest: var(--colorBrandBase);
-    --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
-    --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
+    --mri-interactive-rest: var(--mri-color-brand-base);
+    --mri-interactive-hover: oklch(from var(--mri-color-brand-base) calc(l * 0.85) c h);
+    --mri-interactive-pressed: oklch(from var(--mri-color-brand-base) calc(l * 0.7) c h);
   }
   .mri-appearance-subtle {
-    --interactiveRest: var(--colorBackground2);
+    --mri-interactive-rest: var(--mri-color-background-2);
   }
   .mri-appearance-transparent {
-    --interactiveRest: transparent;
+    --mri-interactive-rest: transparent;
   }
 }
 
 .mri-theme-light {
   color-scheme: light;
 
-  --colorBackground1: lch(100% 0 0); /* white */
-  --colorBackground2: #f5f5f5;
-  --colorBackground3: #f0f0f0;
-  --colorBackground4: #e6e6e6;
+  --mri-color-background-1: lch(100% 0 0); /* white */
+  --mri-color-background-2: #f5f5f5;
+  --mri-color-background-3: #f0f0f0;
+  --mri-color-background-4: #e6e6e6;
 
-  --colorBorder1: #d1d1d1;
-  --colorBorder2: var(--colorBackground3);
+  --mri-color-border-1: #d1d1d1;
+  --mri-color-border-2: var(--mri-color-background-3);
 
-  --colorText1: #000000;
-  --colorText2: #424242;
-  --colorText3: #707070;
-  --colorText4: #bdbdbd;
+  --mri-color-text-1: #000000;
+  --mri-color-text-2: #424242;
+  --mri-color-text-3: #707070;
+  --mri-color-text-4: #bdbdbd;
 
-  --colorBrandBase: #0074cd;
-  --colorBrandText: #007BB4;
+  --mri-color-brand-base: #0074cd;
+  --mri-color-brand-text: #007BB4;
 
   &,
   .mri-appearance-outline {
-    --interactiveRest: var(--colorBackground1);
-    --interactiveHover: oklch(from var(--colorBackground1) calc(l * 0.92) c h);
-    --interactiveActive: oklch(from var(--colorBackground1) calc(l * 0.88) c h);
+    --mri-interactive-rest: var(--mri-color-background-1);
+    --mri-interactive-hover: oklch(from var(--mri-color-background-1) calc(l * 0.92) c h);
+    --mri-interactive-pressed: oklch(from var(--mri-color-background-1) calc(l * 0.88) c h);
   }
   .mri-appearance-primary {
-    --interactiveRest: var(--colorBrandBase);
-    --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
-    --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
+    --mri-interactive-rest: var(--mri-color-brand-base);
+    --mri-interactive-hover: oklch(from var(--mri-color-brand-base) calc(l * 0.85) c h);
+    --mri-interactive-pressed: oklch(from var(--mri-color-brand-base) calc(l * 0.7) c h);
   }
   .mri-appearance-subtle {
-    --interactiveRest: var(--colorBackground2);
+    --mri-interactive-rest: var(--mri-color-background-2);
   }
   .mri-appearance-transparent {
-    --interactiveRest: transparent;
+    --mri-interactive-rest: transparent;
   }
 }

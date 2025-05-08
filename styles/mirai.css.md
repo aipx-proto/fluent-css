@@ -30,35 +30,35 @@ Variables not listed here are internal and should not be used.
 
 ### Font
 
-- `--fontSize1` to `--fontSize7`: Font sizes (e.g., 40px, 28px, 20px, 16px, 14px, 12px, 10px)- 1 is largest, 7 is smallest
-- `--fontFamilySans`: Main sans-serif font stack
-- `--fontFamilyMono`: Monospace font stack
-- `--fontWeightRegular`: Regular font weight (e.g., 400)
-- `--fontWeightBold`: Bold font weight (e.g., 700)
+- `--mri-font-size-1` to `--mri-font-size-7`: Font sizes (e.g., 40px, 28px, 20px, 16px, 14px, 12px, 10px)- 1 is largest, 7 is smallest
+- `--mri-font-family-sans`: Main sans-serif font stack
+- `--mri-font-family-mono`: Monospace font stack
+- `--mri-font-weight-regular`: Regular font weight (e.g., 400)
+- `--mri-font-weight-bold`: Bold font weight (e.g., 700)
 
 ### Border Radius
 
-- `--borderRadiusNone`: 0
-- `--borderRadiusSmall`: 4px
-- `--borderRadiusMedium`: 8px
-- `--borderRadiusLarge`: 12px
-- `--borderRadiusXLarge`: 16px
-- `--borderRadiusCircular`: 10000px (for fully rounded elements)
+- `--mri-border-radius-none`: 0
+- `--mri-border-radius-small`: 4px
+- `--mri-border-radius-medium`: 8px
+- `--mri-border-radius-large`: 12px
+- `--mri-border-radius-xlarge`: 16px
+- `--mri-border-radius-circular`: 10000px (for fully rounded elements)
 
 ### Colors
 
-- `--colorBrandBase`: Primary brand color (e.g., #0091ff)
-- `--colorBackground1` to `--colorBackground4`: Background colors for different surfaces
+- `--mri-color-brand-base`: Primary brand color (e.g., #0091ff)
+- `--mri-color-background-1` to `--mri-color-background-4`: Background colors for different surfaces
   - 1 is the background for primary panels
   - 2 is the background for inputs and controls inside a primary panel
   - 3 is the darker page background
   - 4 is the darkest, not often used
-- `--colorBorder1`, `--colorBorder2`: Border colors - 1 is a divider, 2 is the same as background 3
-- `--colorText1` to `--colorText4`: Text colors for different emphasis - 1 is most intense, 4 is least intense
+- `--mri-color-border-1`, `--mri-color-border-2`: Border colors - 1 is a divider, 2 is the same as background 3
+- `--mri-color-text-1` to `--mri-color-text-4`: Text colors for different emphasis - 1 is most intense, 4 is least intense
 
 ### Shadows
 
-- `--shadow2`, `--shadow4`, `--shadow8`, `--shadow16`, `--shadow28`, `--shadow64`: Predefined box shadow styles. 2 is least, 64 is most
+- `--mri-shadow-2`, `--mri-shadow-4`, `--mri-shadow-8`, `--mri-shadow-16`, `--mri-shadow-28`, `--mri-shadow-64`: Predefined box shadow styles. 2 is least, 64 is most
 
 ## Utility Class Names
 
