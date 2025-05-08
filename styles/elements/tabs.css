@@ -27,7 +27,7 @@
 
   border-radius: var(--borderRadius);
   font-size: var(--sizeFont);
-  color: var(--colorText1);
+  /* color: var(--colorText1); */
   min-height: var(--sizeHeight);
   padding: 0 var(--sizePadding);
 
@@ -86,11 +86,11 @@
 
   &:has(input[type="radio"]:not(:disabled)) {
     &:hover {
-      background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
 
-      &.appearance-transparent {
-        background-color: transparent;
+      /* .appearance-transparent & { background-color: transparent; } */
+      .appearance-subtle & {
+        background-color: var(--interactiveHover);
       }
 
       &:before {
@@ -100,11 +100,11 @@
 
     /* pressed */
     &:active {
-      background-color: var(--interactiveActive);
       transition-duration: var(--durationActive);
 
-      &.appearance-transparent {
-        background-color: transparent;
+      /* .appearance-transparent & { background-color: transparent; } */
+      .appearance-subtle & {
+        background-color: var(--interactiveActive);
       }
     }
   }
@@ -113,12 +113,12 @@
   &.active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
-    background-color: var(--colorBackground2);
     font-weight: var(--fontWeightBold);
     color: var(--colorText1);
 
-    &.appearance-transparent {
-      background-color: transparent;
+    /* .appearance-transparent & { background-color: transparent; } */
+    .appearance-subtle & {
+      background-color: var(--colorBackground2);
     }
 
     &:after {
