@@ -30,17 +30,26 @@ select.button,
 
   background-color: var(--interactiveRest);
   transition: background-color var(--durationRest) linear;
+  transition-property: background-color, color, border-color;
 
   &:not(:disabled) {
     &:hover {
       background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
+      &.appearance-transparent,
+      &.appearance-subtle {
+        color: var(--colorBrandBase);
+      }
     }
 
     &:active,
     &.active {
       background-color: var(--interactiveActive);
       transition-duration: var(--durationActive);
+      &.appearance-transparent,
+      &.appearance-subtle {
+        color: var(--colorBrandBase);
+      }
     }
   }
 
@@ -50,6 +59,10 @@ select.button,
   &.appearance-primary,
   &.appearance-transparent {
     border-color: transparent;
+  }
+
+  &.appearance-primary {
+    color: white;
   }
 
   &.icon-only {

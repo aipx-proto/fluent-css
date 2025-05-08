@@ -8,7 +8,6 @@ progress.spinner {
   height: var(--sizeDimension);
 
   overflow: hidden;
-
   position: relative;
   background: transparent;
 
@@ -46,7 +45,7 @@ meter {
   width: 100%;
   height: var(--sizeHeight);
   border-radius: var(--borderRadiusRound);
-  background: var(--colorBackground2);
+  background: var(--colorBorder1);
   overflow: hidden;
 
   &.size-small {

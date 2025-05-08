@@ -7,10 +7,9 @@
   --fontSize6: 12px;
   --fontSize7: 10px;
 
-  --fontFamilySans: "Aptos", "Segoe UI", "Segoe UI Web (West European)",
-    -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  --fontFamilyMono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier,
-    monospace;
+  --fontFamilySans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  --fontFamilyMono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
   /* smaller font size optically aligns the x-height of Monaspace Neon and Aptos */
   --fontFamilyMonoScale: 0.9em;
 
@@ -33,10 +32,10 @@
   --colorShadowAmbient: rgba(0, 0, 0, 0.24);
   --colorShadowKey: rgba(0, 0, 0, 0.28);
 
-  --shadow2:  0 0 2px var(--colorShadowAmbient), 0 1px 2px   var(--colorShadowKey);
-  --shadow4:  0 0 2px var(--colorShadowAmbient), 0 2px 4px   var(--colorShadowKey);
-  --shadow8:  0 0 2px var(--colorShadowAmbient), 0 4px 8px   var(--colorShadowKey);
-  --shadow16: 0 0 2px var(--colorShadowAmbient), 0 8px 16px  var(--colorShadowKey);
+  --shadow2: 0 0 2px var(--colorShadowAmbient), 0 1px 2px var(--colorShadowKey);
+  --shadow4: 0 0 2px var(--colorShadowAmbient), 0 2px 4px var(--colorShadowKey);
+  --shadow8: 0 0 2px var(--colorShadowAmbient), 0 4px 8px var(--colorShadowKey);
+  --shadow16: 0 0 2px var(--colorShadowAmbient), 0 8px 16px var(--colorShadowKey);
   --shadow28: 0 0 8px var(--colorShadowAmbient), 0 14px 28px var(--colorShadowKey);
   --shadow64: 0 0 8px var(--colorShadowAmbient), 0 32px 64px var(--colorShadowKey);
 
@@ -49,20 +48,20 @@
   --sizeHeight: 24px;
   --sizeFont: var(--fontSize6);
   --sizePadding: 8px;
-  --sizeIcon: 12px
+  --sizeIcon: 12px;
 }
 :root,
 .size-medium {
   --sizeHeight: 32px;
   --sizeFont: var(--fontSize5);
   --sizePadding: 12px;
-  --sizeIcon: 16px
+  --sizeIcon: 16px;
 }
 .size-large {
   --sizeHeight: 40px;
   --sizeFont: var(--fontSize4);
   --sizePadding: 16px;
-  --sizeIcon: 20px
+  --sizeIcon: 20px;
 }
 
 .shape-square {
@@ -88,10 +87,10 @@
   --colorBorder1: #666666;
   --colorBorder2: var(--colorBackground3);
 
-  --colorText1: #FFFFFF;
-  --colorText2: #D6D6D6;
+  --colorText1: #ffffff;
+  --colorText2: #d6d6d6;
   --colorText3: #999999;
-  --colorText4: #5C5C5C;
+  --colorText4: #5c5c5c;
 
   &,
   .appearance-outline {
@@ -100,26 +99,22 @@
     --interactiveActive: #141414;
   }
   .appearance-primary {
-    --interactiveRest: #0091ff;
-    --interactiveHover: #0077cc;
-    --interactiveActive: #005599;
+    --interactiveRest: var(--colorBrandBase);
+    --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
+    --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
   }
   .appearance-subtle {
     --interactiveRest: var(--colorBackground2);
-    --interactiveHover: #3d3d3d;
-    --interactiveActive: #141414;
   }
   .appearance-transparent {
     --interactiveRest: transparent;
-    --interactiveHover: #3d3d3d;
-    --interactiveActive: #141414;
   }
 }
 
 .theme-light {
   color-scheme: light;
 
-  --colorBackground1: #ffffff;
+  --colorBackground1: lch(100% 0 0); /* white */
   --colorBackground2: #f5f5f5;
   --colorBackground3: #f0f0f0;
   --colorBackground4: #e6e6e6;
@@ -131,4 +126,24 @@
   --colorText2: #424242;
   --colorText3: #707070;
   --colorText4: #bdbdbd;
+
+  --colorBrandBase: #0074cd;
+
+  &,
+  .appearance-outline {
+    --interactiveRest: var(--colorBackground1);
+    --interactiveHover: var(--colorBackground2);
+    --interactiveActive: var(--colorBackground3);
+  }
+  .appearance-primary {
+    --interactiveRest: var(--colorBrandBase);
+    --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
+    --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
+  }
+  .appearance-subtle {
+    --interactiveRest: var(--colorBackground2);
+  }
+  .appearance-transparent {
+    --interactiveRest: transparent;
+  }
 }
