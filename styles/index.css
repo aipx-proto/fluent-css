@@ -13,8 +13,8 @@
 @import "./elements/disabled.css";
 @import "./elements/input.css";
 @import "./elements/link.css";
-@import "./elements/loading.css";
 @import "./elements/popover.css";
+@import "./elements/progress.css";
 @import "./elements/table.css";
 @import "./elements/tabs.css";
 @import "./elements/tabs-hack.css";
