@@ -91,7 +91,8 @@
   --colorText4: #5c5c5c;
 
   --colorBrandBase: #005E8B;
-  --colorBrandText: oklch(from var(--colorBrandBase) .7 c h);
+  --colorBrandText: #008AC9;
+
 
   &,
   .appearance-outline {
@@ -129,7 +130,7 @@
   --colorText4: #bdbdbd;
 
   --colorBrandBase: #0074cd;
-  --colorBrandText: oklch(from var(--colorBrandBase) .5 c h);
+  --colorBrandText: #007BB4;
 
   &,
   .appearance-outline {

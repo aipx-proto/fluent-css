@@ -2,7 +2,7 @@ a:not(.button) {
   color: var(--colorBrandText);
   text-decoration: none;
   &:hover {
-    color: oklch(from var(--colorBrandText) calc(l * 0.8) c h);
+    color: oklch(from var(--colorBrandText) calc(l * 0.9) c h);
     text-decoration: underline;
   }
   &:active {
