@@ -121,7 +121,7 @@
   --_position-below-end: bottom span-left;
 
   --_position-before-top: left span-bottom;
-  --_position-before-center: left span-all;
+  --_position-before-center: left center;
   --_position-before-bottom: left span-top;
 
   --_position-after-top: right span-bottom;
