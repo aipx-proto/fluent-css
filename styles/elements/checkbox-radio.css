@@ -1,4 +1,4 @@
-input[type="checkbox"]:not(.switch),
+input[type="checkbox"]:not(.mri-switch),
 input[type="radio"] {
   --borderColor: var(--colorBorder1);
   --interactiveRest: var(--colorBackground2);
@@ -51,7 +51,7 @@ input[type="radio"] {
   }
 }
 
-input[type="checkbox"]:not(.switch) {
+input[type="checkbox"]:not(.mri-switch) {
   --borderRadius: var(--borderRadiusSmall);
 
   &:after {

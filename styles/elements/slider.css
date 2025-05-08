@@ -7,8 +7,6 @@ input[type="range"] {
   padding: calc(var(--sizeThumb) / 2 - var(--sizeTrack) / 2) 0;
   margin: 0;
 
-  /* &:after{} */
-
   &::-webkit-slider-container {
     height: var(--sizeTrack);
     background: var(--colorBorder1);

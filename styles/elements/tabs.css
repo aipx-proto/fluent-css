@@ -1,21 +1,21 @@
-.tab-list,
+.mri-tab-list,
 [role="tablist"] {
   display: flex;
   gap: 2px;
   flex-direction: row;
-  &.vertical {
+  &.mri-vertical {
     flex-direction: column;
   }
 }
 
-/* .icon-only */
-/* .size-<size> */
-/* .disabled */
+/* .mri-icon-only */
+/* .mri-size-<size> */
+/* .mri-disabled */
 
-/* .vertical */
+/* .mri-vertical */
 /* button and a anchor exception */
 
-.tab,
+.mri-tab,
 [role="tab"] {
   cursor: pointer;
   appearance: none;
@@ -62,7 +62,7 @@
     transform: scaleX(0);
   }
 
-  .vertical & {
+  .mri-vertical & {
     --sizeTabUnderlinePadding: calc((var(--sizeHeight) - var(--sizeIcon)) / 2);
     &:after,
     &:before {
@@ -75,21 +75,21 @@
     }
   }
 
-  &.icon-only {
+  &.mri-icon-only {
     padding: 0;
     width: var(--sizeHeight);
     height: var(--sizeHeight);
   }
 
-  /* .appearance-subtle */
-  /* .appearance-toggle */
+  /* .mri-appearance-subtle */
+  /* .mri-appearance-toggle */
 
   &:has(input[type="radio"]:not(:disabled)) {
     &:hover {
       transition-duration: var(--durationHover);
 
-      /* .appearance-transparent & { background-color: transparent; } */
-      .appearance-subtle & {
+      /* .mri-appearance-transparent & { background-color: transparent; } */
+      .mri-appearance-subtle & {
         background-color: var(--interactiveHover);
       }
 
@@ -102,22 +102,22 @@
     &:active {
       transition-duration: var(--durationActive);
 
-      /* .appearance-transparent & { background-color: transparent; } */
-      .appearance-subtle & {
+      /* .mri-appearance-transparent & { background-color: transparent; } */
+      .mri-appearance-subtle & {
         background-color: var(--interactiveActive);
       }
     }
   }
 
   /* selected tab */
-  &.active,
+  &.mri-active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
     font-weight: var(--fontWeightBold);
     color: var(--colorText1);
 
-    /* .appearance-transparent & { background-color: transparent; } */
-    .appearance-subtle & {
+    /* .mri-appearance-transparent & { background-color: transparent; } */
+    .mri-appearance-subtle & {
       background-color: var(--colorBackground2);
     }
 

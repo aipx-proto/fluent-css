@@ -34,7 +34,7 @@ dialog {
     gap: 12px;
   }
 
-  .dialog-close {
+  .mri-dialog-close {
     position: absolute;
     top: 0;
     right: 0;

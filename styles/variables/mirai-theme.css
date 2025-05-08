@@ -42,39 +42,39 @@
   --opacityDisabled: 0.5;
 }
 
-.size-small {
+.mri-size-small {
   --sizeHeight: 24px;
   --sizeFont: var(--fontSize6);
   --sizePadding: 8px;
   --sizeIcon: 12px;
 }
 :root,
-.size-medium {
+.mri-size-medium {
   --sizeHeight: 32px;
   --sizeFont: var(--fontSize5);
   --sizePadding: 12px;
   --sizeIcon: 16px;
 }
-.size-large {
+.mri-size-large {
   --sizeHeight: 40px;
   --sizeFont: var(--fontSize4);
   --sizePadding: 16px;
   --sizeIcon: 20px;
 }
 
-.shape-square {
+.mri-shape-square {
   --borderRadius: var(--borderRadiusSmall);
 }
 :root,
-.shape-rounded {
+.mri-shape-rounded {
   --borderRadius: var(--borderRadiusMedium);
 }
-.shape-circular {
+.mri-shape-circular {
   --borderRadius: var(--borderRadiusCircular);
 }
 
 :root,
-.theme-dark {
+.mri-theme-dark {
   color-scheme: dark;
 
   --colorBackground1: #1f1f1f;
@@ -95,25 +95,25 @@
 
 
   &,
-  .appearance-outline {
+  .mri-appearance-outline {
     --interactiveRest: var(--colorBackground1);
     --interactiveHover: oklch(from var(--colorBackground1) calc(l * 0.8) c h);
     --interactiveActive: oklch(from var(--colorBackground1) calc(l * 0.65) c h);
   }
-  .appearance-primary {
+  .mri-appearance-primary {
     --interactiveRest: var(--colorBrandBase);
     --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
     --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
   }
-  .appearance-subtle {
+  .mri-appearance-subtle {
     --interactiveRest: var(--colorBackground2);
   }
-  .appearance-transparent {
+  .mri-appearance-transparent {
     --interactiveRest: transparent;
   }
 }
 
-.theme-light {
+.mri-theme-light {
   color-scheme: light;
 
   --colorBackground1: lch(100% 0 0); /* white */
@@ -133,20 +133,20 @@
   --colorBrandText: #007BB4;
 
   &,
-  .appearance-outline {
+  .mri-appearance-outline {
     --interactiveRest: var(--colorBackground1);
     --interactiveHover: oklch(from var(--colorBackground1) calc(l * 0.92) c h);
     --interactiveActive: oklch(from var(--colorBackground1) calc(l * 0.88) c h);
   }
-  .appearance-primary {
+  .mri-appearance-primary {
     --interactiveRest: var(--colorBrandBase);
     --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
     --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
   }
-  .appearance-subtle {
+  .mri-appearance-subtle {
     --interactiveRest: var(--colorBackground2);
   }
-  .appearance-transparent {
+  .mri-appearance-transparent {
     --interactiveRest: transparent;
   }
 }

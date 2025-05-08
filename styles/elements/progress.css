@@ -1,4 +1,4 @@
-progress.spinner {
+progress.mri-spinner {
   --sizeDimension: 20px;
   --animationEasing: ease-in-out;
   --animationDuration: 2.5s;
@@ -38,7 +38,7 @@ progress.spinner {
   }
 }
 
-progress:not(.spinner),
+progress:not(.mri-spinner),
 meter {
   --sizeHeight: 2px;
   appearance: none;
@@ -48,22 +48,22 @@ meter {
   background: var(--colorBackground2);
   overflow: hidden;
 
-  &.size-small {
+  &.mri-size-small {
     --sizeHeight: 1px;
   }
-  &.size-medium {
+  &.mri-size-medium {
     --sizeHeight: 2px;
   }
-  &.size-large {
+  &.mri-size-large {
     --sizeHeight: 4px;
   }
 
-  &.shape-square {
+  &.mri-shape-square {
     border-radius: 0;
   }
 }
 
-progress:not(.spinner):indeterminate {
+progress:not(.mri-spinner):indeterminate {
   --gradientStepTransparent: color-mix(in srgb, var(--colorBrandBase) 0%, transparent);
   --gradientStepBrand: var(--colorBrandBase);
 

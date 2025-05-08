@@ -1,4 +1,4 @@
-input[type="checkbox"].switch {
+input[type="checkbox"].mri-switch {
 
   --borderColor: var(--colorBorder1);
   --interactiveRest: var(--colorBackground2);

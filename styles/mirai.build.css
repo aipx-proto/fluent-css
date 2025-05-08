@@ -139,7 +139,7 @@
   --opacityDisabled: 0.5;
 }
 
-.size-small {
+.mri-size-small {
   --sizeHeight: 24px;
   --sizeFont: var(--fontSize6);
   --sizePadding: 8px;
@@ -147,35 +147,35 @@
 }
 
 :root,
-.size-medium {
+.mri-size-medium {
   --sizeHeight: 32px;
   --sizeFont: var(--fontSize5);
   --sizePadding: 12px;
   --sizeIcon: 16px;
 }
 
-.size-large {
+.mri-size-large {
   --sizeHeight: 40px;
   --sizeFont: var(--fontSize4);
   --sizePadding: 16px;
   --sizeIcon: 20px;
 }
 
-.shape-square {
+.mri-shape-square {
   --borderRadius: var(--borderRadiusSmall);
 }
 
 :root,
-.shape-rounded {
+.mri-shape-rounded {
   --borderRadius: var(--borderRadiusMedium);
 }
 
-.shape-circular {
+.mri-shape-circular {
   --borderRadius: var(--borderRadiusCircular);
 }
 
 :root,
-.theme-dark {
+.mri-theme-dark {
   color-scheme: dark;
 
   --colorBackground1: #1f1f1f;
@@ -196,25 +196,25 @@
 
 
   &,
-  .appearance-outline {
+  .mri-appearance-outline {
     --interactiveRest: var(--colorBackground1);
     --interactiveHover: oklch(from var(--colorBackground1) calc(l * 0.8) c h);
     --interactiveActive: oklch(from var(--colorBackground1) calc(l * 0.65) c h);
   }
-  .appearance-primary {
+  .mri-appearance-primary {
     --interactiveRest: var(--colorBrandBase);
     --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
     --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
   }
-  .appearance-subtle {
+  .mri-appearance-subtle {
     --interactiveRest: var(--colorBackground2);
   }
-  .appearance-transparent {
+  .mri-appearance-transparent {
     --interactiveRest: transparent;
   }
 }
 
-.theme-light {
+.mri-theme-light {
   color-scheme: light;
 
   --colorBackground1: lch(100% 0 0); /* white */
@@ -234,39 +234,38 @@
   --colorBrandText: #007BB4;
 
   &,
-  .appearance-outline {
+  .mri-appearance-outline {
     --interactiveRest: var(--colorBackground1);
     --interactiveHover: oklch(from var(--colorBackground1) calc(l * 0.92) c h);
     --interactiveActive: oklch(from var(--colorBackground1) calc(l * 0.88) c h);
   }
-  .appearance-primary {
+  .mri-appearance-primary {
     --interactiveRest: var(--colorBrandBase);
     --interactiveHover: oklch(from var(--colorBrandBase) calc(l * 0.85) c h);
     --interactiveActive: oklch(from var(--colorBrandBase) calc(l * 0.7) c h);
   }
-  .appearance-subtle {
+  .mri-appearance-subtle {
     --interactiveRest: var(--colorBackground2);
   }
-  .appearance-transparent {
+  .mri-appearance-transparent {
     --interactiveRest: transparent;
   }
 }
 
-:root, .theme-dark {
+:root, .mri-theme-dark {
   --iconCheck: url('data:image/svg+xml,<svg style="fill:black;" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z"></path></svg>');
   --iconChevronRight: url('data:image/svg+xml,<svg style="fill:white;" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7.65 4.15c.2-.2.5-.2.7 0l5.49 5.46c.21.22.21.57 0 .78l-5.49 5.46a.5.5 0 0 1-.7-.7L12.8 10 7.65 4.85a.5.5 0 0 1 0-.7Z"></path></svg>');
 }
 
-.theme-light {
+.mri-theme-light {
   --iconCheck: url('data:image/svg+xml,<svg style="fill:white;" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z"></path></svg>');
   --iconChevronRight: url('data:image/svg+xml,<svg style="fill:black;" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7.65 4.15c.2-.2.5-.2.7 0l5.49 5.46c.21.22.21.57 0 .78l-5.49 5.46a.5.5 0 0 1-.7-.7L12.8 10 7.65 4.85a.5.5 0 0 1 0-.7Z"></path></svg>');
 }
 
 details {
-  --timingOpen: 0.2s;
-  --timingClose: 0.07s;
-
-  --sizeMarker: 20px;
+  --_timingOpen: 0.2s;
+  --_timingClose: 0.07s;
+  --_sizeMarker: 20px;
 
   summary {
     display: flex;
@@ -282,12 +281,12 @@ details {
     list-style: none;
     &:before {
       content: var(--iconChevronRight);
-      height: var(--sizeMarker);
-      width:  var(--sizeMarker);
+      height: var(--_sizeMarker);
+      width:  var(--_sizeMarker);
       display: inline-block;
       transform: rotate(0deg);
       transform-origin: center;
-      transition: transform var(--timingOpen) ease-in-out;
+      transition: transform var(--_timingOpen) ease-in-out;
     }
   }
 
@@ -303,7 +302,7 @@ details {
     opacity: 0.2;
     transform: translateY(-4px);
     transition-property: opacity, transform, content-visibility, max-height;
-    transition-duration: var(--timingClose);
+    transition-duration: var(--_timingClose);
     transition-timing-function: ease-out;
     transition-behavior: allow-discrete;
   }
@@ -311,7 +310,7 @@ details {
   &[open]::details-content {
     opacity: 1;
     transform: translateY(0);
-    transition-duration: var(--timingOpen);
+    transition-duration: var(--_timingOpen);
     transition-timing-function: ease-in;
   }
 }
@@ -325,9 +324,9 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 ::-webkit-file-upload-button,
-a.button,
-select.button,
-.button {
+a.mri-button,
+select.mri-button,
+.mri-button {
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -338,8 +337,8 @@ select.button,
 
   /* default circular */
   --borderRadiusButton: var(--borderRadiusCircular);
-  [class*="shape-"] &,
-  &[class*="shape-"] {
+  [class*="mri-shape-"] &,
+  &[class*="mri-shape-"] {
     --borderRadiusButton: var(--borderRadius);
   }
   border-radius: var(--borderRadiusButton, var(--borderRadius));
@@ -358,18 +357,18 @@ select.button,
     &:hover {
       background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
-      &.appearance-transparent,
-      &.appearance-subtle {
+      &.mri-appearance-transparent,
+      &.mri-appearance-subtle {
         color: var(--colorBrandText);
       }
     }
 
     &:active,
-    &.active {
+    &.mri-active {
       background-color: var(--interactiveActive);
       transition-duration: var(--durationActive);
-      &.appearance-transparent,
-      &.appearance-subtle {
+      &.mri-appearance-transparent,
+      &.mri-appearance-subtle {
         color: var(--colorBrandText);
       }
     }
@@ -377,23 +376,23 @@ select.button,
 
   border: 1px solid var(--colorBorder1);
 
-  &.appearance-subtle,
-  &.appearance-primary,
-  &.appearance-transparent {
+  &.mri-appearance-subtle,
+  &.mri-appearance-primary,
+  &.mri-appearance-transparent {
     border-color: transparent;
   }
 
-  &.appearance-primary {
+  &.mri-appearance-primary {
     color: white;
   }
 
-  &.icon-only {
+  &.mri-icon-only {
     padding: 0;
     width: var(--sizeHeight);
     height: var(--sizeHeight);
   }
 
-  .menu & {
+  .mri-menu & {
     --borderRadiusButton: var(--borderRadiusSmall);
     border-color: transparent;
     justify-content: flex-start;
@@ -401,11 +400,11 @@ select.button,
   }
 }
 
-a.button {
+a.mri-button {
   text-decoration: none;
 }
 
-/* .size-small, */
+/* .mri-size-small, */
 
 ::-webkit-file-upload-button {
   --sizeHeight: 24px;
@@ -413,7 +412,7 @@ a.button {
   --sizePadding: 8px;
 }
 
-input[type="checkbox"]:not(.switch),
+input[type="checkbox"]:not(.mri-switch),
 input[type="radio"] {
   --borderColor: var(--colorBorder1);
   --interactiveRest: var(--colorBackground2);
@@ -466,7 +465,7 @@ input[type="radio"] {
   }
 }
 
-input[type="checkbox"]:not(.switch) {
+input[type="checkbox"]:not(.mri-switch) {
   --borderRadius: var(--borderRadiusSmall);
 
   &:after {
@@ -495,11 +494,11 @@ input[type="checkbox"]:not(.switch) {
   }
 }
 
-.control-group {
+.mri-control-group {
   display: flex;
   gap: 1px;
 
-  /* TODO: exception for appearance-primary */
+  /* TODO: exception for mri-appearance-primary */
 
   & > :not(:first-child):not(:last-child) {
     border-radius: 0;
@@ -518,8 +517,8 @@ input[type="checkbox"]:not(.switch) {
   /* applies to button.css and input.css */
   /* buttons and inputs with outline should share border rather than have a gap */
   & > :not(:first-child) {
-    &:not([class*="appearance-"]),
-    &.appearance-outline {
+    &:not([class*="mri-appearance-"]),
+    &.mri-appearance-outline {
       margin-left: -2px;
     }
   }
@@ -561,7 +560,7 @@ dialog {
     gap: 12px;
   }
 
-  .dialog-close {
+  .mri-dialog-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -625,7 +624,7 @@ dialog {
   } */
 }
 
-:disabled, [disabled], .disabled {
+:disabled, [disabled], .mri-disabled {
   cursor: not-allowed;
   opacity: var(--opacityDisabled);
 
@@ -647,7 +646,7 @@ input[type="search"],
 input[type="color"],
 input[type="url"],
 input[type="file"],
-select:not(.button),
+select:not(.mri-button),
 textarea {
   --interactiveRest: var(--colorBackground2);
   --underlineColor: var(--colorBrandBase);
@@ -697,7 +696,7 @@ textarea {
 
   outline: transparent solid 2px;
 
-  &.appearance-outline {
+  &.mri-appearance-outline {
     --borderColor: var(--colorBorder1);
   }
 }
@@ -760,7 +759,7 @@ select {
   cursor: pointer;
 }
 
-a:not(.button) {
+a:not(.mri-button) {
   color: var(--colorBrandText);
   text-decoration: none;
   &:hover {
@@ -792,7 +791,7 @@ a:not(.button) {
 
 }
 
-.menu {
+.mri-menu {
 
   /* see button.css for nested button styles */
 
@@ -810,67 +809,67 @@ a:not(.button) {
 }
 
 [popover] {
-  /* TODO?: each &.position-<side> could have a more specific fallback order... */
+  /* TODO?: each &.mri-position-<side> could have a more specific fallback order... */
   /* just goes clockwise for now */
   /* position-try-fallbacks: --above-start, --above, --above-end, --after-top, --after, --after-bottom, --below-end,
     --below, --below-start, --before-top, --before, --before-bottom; */
 
-  &.position-force {
+  &.mri-position-force {
     position-try-fallbacks: unset;
   }
 
   &,
-  &.position-above-start {
+  &.mri-position-above-start {
     /* default */
     position-area: var(--position-above-start);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-above {
+  &.mri-position-above {
     position-area: var(--position-above);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-above-end {
+  &.mri-position-above-end {
     position-area: var(--position-above-end);
     margin: var(--marginOffsetAboveBelow);
   }
 
-  &.menu,
-  &.position-below-end {
-    /* .menu default */
+  &.mri-menu,
+  &.mri-position-below-end {
+    /* .mri-menu default */
     position-area: var(--position-below-end);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-below {
+  &.mri-position-below {
     position-area: var(--position-below);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-below-start {
+  &.mri-position-below-start {
     position-area: var(--position-below-start);
     margin: var(--marginOffsetAboveBelow);
   }
 
-  &.position-before-top {
+  &.mri-position-before-top {
     position-area: var(--position-before-top);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-before {
+  &.mri-position-before {
     position-area: var(--position-before);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-before-bottom {
+  &.mri-position-before-bottom {
     position-area: var(--position-before-bottom);
     margin: var(--marginOffsetBeforeAfter);
   }
 
-  &.position-after-top {
+  &.mri-position-after-top {
     position-area: var(--position-after-top);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-after {
+  &.mri-position-after {
     position-area: var(--position-after);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-after-bottom {
+  &.mri-position-after-bottom {
     position-area: var(--position-after-bottom);
     margin: var(--marginOffsetBeforeAfter);
   }
@@ -964,7 +963,7 @@ a:not(.button) {
   margin: var(--marginOffsetBeforeAfter);
 }
 
-progress.spinner {
+progress.mri-spinner {
   --sizeDimension: 20px;
   --animationEasing: ease-in-out;
   --animationDuration: 2.5s;
@@ -1004,7 +1003,7 @@ progress.spinner {
   }
 }
 
-progress:not(.spinner),
+progress:not(.mri-spinner),
 meter {
   --sizeHeight: 2px;
   appearance: none;
@@ -1014,22 +1013,22 @@ meter {
   background: var(--colorBackground2);
   overflow: hidden;
 
-  &.size-small {
+  &.mri-size-small {
     --sizeHeight: 1px;
   }
-  &.size-medium {
+  &.mri-size-medium {
     --sizeHeight: 2px;
   }
-  &.size-large {
+  &.mri-size-large {
     --sizeHeight: 4px;
   }
 
-  &.shape-square {
+  &.mri-shape-square {
     border-radius: 0;
   }
 }
 
-progress:not(.spinner):indeterminate {
+progress:not(.mri-spinner):indeterminate {
   --gradientStepTransparent: color-mix(in srgb, var(--colorBrandBase) 0%, transparent);
   --gradientStepBrand: var(--colorBrandBase);
 
@@ -1156,27 +1155,27 @@ table > :first-child tr:first-child {
   }
 }
 
-.tab-list,
+.mri-tab-list,
 [role="tablist"] {
   display: flex;
   gap: 2px;
   flex-direction: row;
-  &.vertical {
+  &.mri-vertical {
     flex-direction: column;
   }
 }
 
-/* .icon-only */
+/* .mri-icon-only */
 
-/* .size-<size> */
+/* .mri-size-<size> */
 
-/* .disabled */
+/* .mri-disabled */
 
-/* .vertical */
+/* .mri-vertical */
 
 /* button and a anchor exception */
 
-.tab,
+.mri-tab,
 [role="tab"] {
   cursor: pointer;
   appearance: none;
@@ -1188,7 +1187,7 @@ table > :first-child tr:first-child {
 
   border-radius: var(--borderRadius);
   font-size: var(--sizeFont);
-  color: var(--colorText1);
+  /* color: var(--colorText1); */
   min-height: var(--sizeHeight);
   padding: 0 var(--sizePadding);
 
@@ -1223,7 +1222,7 @@ table > :first-child tr:first-child {
     transform: scaleX(0);
   }
 
-  .vertical & {
+  .mri-vertical & {
     --sizeTabUnderlinePadding: calc((var(--sizeHeight) - var(--sizeIcon)) / 2);
     &:after,
     &:before {
@@ -1236,22 +1235,22 @@ table > :first-child tr:first-child {
     }
   }
 
-  &.icon-only {
+  &.mri-icon-only {
     padding: 0;
     width: var(--sizeHeight);
     height: var(--sizeHeight);
   }
 
-  /* .appearance-subtle */
-  /* .appearance-toggle */
+  /* .mri-appearance-subtle */
+  /* .mri-appearance-toggle */
 
   &:has(input[type="radio"]:not(:disabled)) {
     &:hover {
-      background-color: var(--interactiveHover);
       transition-duration: var(--durationHover);
 
-      &.appearance-transparent {
-        background-color: transparent;
+      /* .mri-appearance-transparent & { background-color: transparent; } */
+      .mri-appearance-subtle & {
+        background-color: var(--interactiveHover);
       }
 
       &:before {
@@ -1261,25 +1260,25 @@ table > :first-child tr:first-child {
 
     /* pressed */
     &:active {
-      background-color: var(--interactiveActive);
       transition-duration: var(--durationActive);
 
-      &.appearance-transparent {
-        background-color: transparent;
+      /* .mri-appearance-transparent & { background-color: transparent; } */
+      .mri-appearance-subtle & {
+        background-color: var(--interactiveActive);
       }
     }
   }
 
   /* selected tab */
-  &.active,
+  &.mri-active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
-    background-color: var(--colorBackground2);
     font-weight: var(--fontWeightBold);
     color: var(--colorText1);
 
-    &.appearance-transparent {
-      background-color: transparent;
+    /* .mri-appearance-transparent & { background-color: transparent; } */
+    .mri-appearance-subtle & {
+      background-color: var(--colorBackground2);
     }
 
     &:after {
@@ -1481,7 +1480,7 @@ hr {
   scrollbar-color: var(--colorText3) transparent;
 }
 
-input[type="checkbox"].switch {
+input[type="checkbox"].mri-switch {
 
   --borderColor: var(--colorBorder1);
   --interactiveRest: var(--colorBackground2);
@@ -1547,8 +1546,6 @@ input[type="range"] {
   background: transparent;
   padding: calc(var(--sizeThumb) / 2 - var(--sizeTrack) / 2) 0;
   margin: 0;
-
-  /* &:after{} */
 
   &::-webkit-slider-container {
     height: var(--sizeTrack);

@@ -8,7 +8,7 @@ input[type="search"],
 input[type="color"],
 input[type="url"],
 input[type="file"],
-select:not(.button),
+select:not(.mri-button),
 textarea {
   --interactiveRest: var(--colorBackground2);
   --underlineColor: var(--colorBrandBase);
@@ -58,7 +58,7 @@ textarea {
 
   outline: transparent solid 2px;
 
-  &.appearance-outline {
+  &.mri-appearance-outline {
     --borderColor: var(--colorBorder1);
   }
 }

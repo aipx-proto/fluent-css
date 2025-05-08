@@ -18,7 +18,7 @@
 
 }
 
-.menu {
+.mri-menu {
 
   /* see button.css for nested button styles */
 
@@ -36,67 +36,67 @@
 }
 
 [popover] {
-  /* TODO?: each &.position-<side> could have a more specific fallback order... */
+  /* TODO?: each &.mri-position-<side> could have a more specific fallback order... */
   /* just goes clockwise for now */
   /* position-try-fallbacks: --above-start, --above, --above-end, --after-top, --after, --after-bottom, --below-end,
     --below, --below-start, --before-top, --before, --before-bottom; */
 
-  &.position-force {
+  &.mri-position-force {
     position-try-fallbacks: unset;
   }
 
   &,
-  &.position-above-start {
+  &.mri-position-above-start {
     /* default */
     position-area: var(--position-above-start);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-above {
+  &.mri-position-above {
     position-area: var(--position-above);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-above-end {
+  &.mri-position-above-end {
     position-area: var(--position-above-end);
     margin: var(--marginOffsetAboveBelow);
   }
 
-  &.menu,
-  &.position-below-end {
-    /* .menu default */
+  &.mri-menu,
+  &.mri-position-below-end {
+    /* .mri-menu default */
     position-area: var(--position-below-end);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-below {
+  &.mri-position-below {
     position-area: var(--position-below);
     margin: var(--marginOffsetAboveBelow);
   }
-  &.position-below-start {
+  &.mri-position-below-start {
     position-area: var(--position-below-start);
     margin: var(--marginOffsetAboveBelow);
   }
 
-  &.position-before-top {
+  &.mri-position-before-top {
     position-area: var(--position-before-top);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-before {
+  &.mri-position-before {
     position-area: var(--position-before);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-before-bottom {
+  &.mri-position-before-bottom {
     position-area: var(--position-before-bottom);
     margin: var(--marginOffsetBeforeAfter);
   }
 
-  &.position-after-top {
+  &.mri-position-after-top {
     position-area: var(--position-after-top);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-after {
+  &.mri-position-after {
     position-area: var(--position-after);
     margin: var(--marginOffsetBeforeAfter);
   }
-  &.position-after-bottom {
+  &.mri-position-after-bottom {
     position-area: var(--position-after-bottom);
     margin: var(--marginOffsetBeforeAfter);
   }

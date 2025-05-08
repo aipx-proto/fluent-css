@@ -63,23 +63,23 @@ Variables not listed here are internal and should not be used.
 ## Utility Class Names
 
 ### Theme Classes
-- `.theme-dark`: (default) Applies dark color scheme variables for backgrounds, borders, and text.
-- `.theme-light`: Applies light color scheme variables for backgrounds, borders, and text.
+- `.mri-theme-dark`: (default) Applies dark color scheme variables for backgrounds, borders, and text.
+- `.mri-theme-light`: Applies light color scheme variables for backgrounds, borders, and text.
 
 ### Sizing Classes
-- `.size-small`: Applies small height, font size, padding, and icon size.
-- `.size-medium`: Applies medium height, font size, padding, and icon size. (Default)
-- `.size-large`: Applies large height, font size, padding, and icon size.
+- `.mri-size-small`: Applies small height, font size, padding, and icon size.
+- `.mri-size-medium`: Applies medium height, font size, padding, and icon size. (Default)
+- `.mri-size-large`: Applies large height, font size, padding, and icon size.
 
 ### Shape Classes
-- `.shape-square`: Applies a small border radius for square corners.
-- `.shape-rounded`: Applies a medium border radius for rounded corners.
-- `.shape-circular`: Applies a very large border radius for fully circular shapes.
+- `.mri-shape-square`: Applies a small border radius for square corners.
+- `.mri-shape-rounded`: Applies a medium border radius for rounded corners.
+- `.mri-shape-circular`: Applies a very large border radius for fully circular shapes.
 
 ### Appearance
 
-- `button.appearance-primary` for primary buttons
-- `button.appearance-transparent` for primary buttons without an outline or background
-- `input.appearance-outline` for inputs with a border
+- `button.mri-appearance-primary` for primary buttons
+- `button.mri-appearance-transparent` for primary buttons without an outline or background
+- `input.mri-appearance-outline` for inputs with a border
 
 

@@ -1,4 +1,4 @@
-a:not(.button) {
+a:not(.mri-button) {
   color: var(--colorBrandText);
   text-decoration: none;
   &:hover {
