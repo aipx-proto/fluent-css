@@ -15,7 +15,7 @@ When writing HTML and CSS with Mirai CSS, follow these guidelines:
   - Shadows
   - Background and border colors
   - Sizing (height, padding, etc.)
-- **Do not use or reference internal variables** not listed in the "Public Variables" section.
+- **Do not use or reference internal variables** all public variables follow the naming convention `--mri-<variable-name>`. Do not use any 'private' variables prefixed with an underscore like `--_<variable-name>`.
 - **Compose layouts using semantic containers** (e.g., `<div>`, `<section>`, `<nav>`) and use the provided CSS variables to style layout-level elements (such as spacing, sizing, and shape).
 - **No visual overrides**: Do not use inline styles or custom CSS to change the appearance of core interactive native html elements. Only use the public variables for layout and theming.
 
@@ -61,7 +61,9 @@ Variables not listed here are internal and should not be used.
 - `--mri-shadow-2`, `--mri-shadow-4`, `--mri-shadow-8`, `--mri-shadow-16`, `--mri-shadow-28`, `--mri-shadow-64`: Predefined box shadow styles. 2 is least, 64 is most
 
 ## Utility Class Names
-
+**Note:**  
+All mirai.css utility classes follow the naming convention `.mir-<class-name>`. 
+  
 ### Theme Classes
 - `.mri-theme-dark`: (default) Applies dark color scheme variables for backgrounds, borders, and text.
 - `.mri-theme-light`: Applies light color scheme variables for backgrounds, borders, and text.
