@@ -6,11 +6,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Writer Dashboard</title>
   <link rel="stylesheet" href="../styles/index.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      display: flex;
+      gap: 24px;
+    }
+
+    .sidebar {
+      flex: 0 0 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 2px;
+      border-bottom: 1px solid var(--mri-color-border-2);
+    }
+
+    .thread-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px;
+      background-color: var(--mri-color-background-1);
+      border-radius: var(--mri-border-radius-medium);
+    }
+
+    .message {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px;
+      background-color: var(--mri-color-background-2);
+      border-radius: var(--mri-border-radius-medium);
+    }
+
+    .message-header {
+      color: var(--mri-color-text-3);
+      font-size: var(--mri-font-size-6);
+    }
+
+    .tools-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  </style>
 </head>
 
 <body>
+  <nav class="sidebar">
+    <button class="mri-appearance-transparent">
+      <span style="font-size: var(--mri-font-size-5);">Agents</span>
+    </button>
+    <button class="mri-appearance-transparent">
+      <span style="font-size: var(--mri-font-size-5);">Models</span>
+    </button>
+    <button class="mri-appearance-transparent">
+      <span style="font-size: var(--mri-font-size-5);">Workflow</span>
+    </button>
+    <button class="mri-appearance-transparent">
+      <span style="font-size: var(--mri-font-size-5);">Reports</span>
+    </button>
+  </nav>
 
-  
+  <main class="main-content">
+    <header class="header">
+      <h2>Content writer</h2>
+      <nav role="tablist" class="tabs">
+        <button class="mri-appearance-transparent">Details</button>
+        <button class="mri-appearance-transparent">Build</button>
+        <button class="mri-appearance-transparent mri-active">Threads</button>
+        <button class="mri-appearance-transparent">Monitor</button>
+        <button class="mri-appearance-transparent">Evaluation</button>
+        <button class="mri-appearance-transparent">API Docs</button>
+      </nav>
+    </header>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Thread ID</th>
+          <th>Created</th>
+          <th>Length</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="radio" name="thread" /></td>
+          <td>thread_3x6lciKACR...</td>
+          <td>Mar 19, 2025 10:45 AM</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="thread" /></td>
+          <td>thread_cUb42WJby...</td>
+          <td>Mar 18, 2025 12:58 PM</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="thread" checked /></td>
+          <td>thread_356b2KczCZ0...</td>
+          <td>Mar 18, 2025 12:51 PM</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="thread" /></td>
+          <td>thread_QCltMFmm...</td>
+          <td>Mar 18, 2025 11:58 PM</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="thread" /></td>
+          <td>thread_ZSruYxEfgM...</td>
+          <td>Mar 14, 2025 3:02 PM</td>
+          <td>15</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="thread-details">
+      <div class="message">
+        <div class="message-header">User</div>
+        <p>What tools do I need on hand for common HVAC repairs?</p>
+      </div>
+      <div class="message">
+        <div class="message-header">Field service agent</div>
+        <p>HVAC-Specific Tools:</p>
+        <div class="tools-list">
+          <p>1. Manifold Gauge Set: For refrigerant system checks.</p>
+          <p>2. Thermometer: Digital or infrared.</p>
+          <p>3. Leak Detector: For refrigerant leaks.</p>
+          <p>4. Refrigerant Scale: For measuring refrigerant.</p>
+          <p>5. Vacuum Pump: For evacuating systems.</p>
+          <p>6. Swaging Tools: For tubing adjustments.</p>
+        </div>
+      </div>
+      <div class="message">
+        <div class="message-header">User</div>
+        <p>I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra inventory in the office I can pick up?</p>
+      </div>
+      <div class="message">
+        <div class="message-header">Field service agent</div>
+        <p>Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.</p>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

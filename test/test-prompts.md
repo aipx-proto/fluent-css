@@ -31,4 +31,6 @@ Using @index.html as baseline examples of html with the mirai.css library, pleas
 
 <!-- Result: Individual component usage is really good. Layout is totally wonky, model does not know what classes from index.html example are from mirai and what are not... -->
 
+<!-- Result 2: Claude-3.5-sonnet - less good than last time somehow... -->
+
 ---
