@@ -1,20 +1,21 @@
 input[type="checkbox"]:not(.mri-switch),
 input[type="radio"] {
-  --borderColor: var(--mri-color-border-1);
-  --mri-interactive-rest: var(--mri-color-background-2);
-  --sizeDimension: var(--mri-size-icon);
-  --checkedColor: var(--mri-color-brand-base);
+  --_color-border: var(--mri-color-border-1);
+  --_color-background: var(--mri-color-background-2);
+  --_color-checked: var(--mri-color-brand-base);
+
+  --_size-dimension: var(--mri-size-icon);
 
   appearance: none;
   margin: 0;
-  width: var(--sizeDimension);
-  height: var(--sizeDimension);
+  width: var(--_size-dimension);
+  height: var(--_size-dimension);
 
   cursor: pointer;
 
-  border: 1px solid var(--borderColor);
-  border-radius: var(--mri-border-radius);
-  background-color: var(--mri-interactive-rest);
+  border: 1px solid var(--_color-border);
+  border-radius: var(--_border-radius);
+  background-color: var(--_color-background);
 
   label & {
     vertical-align: middle;
@@ -27,24 +28,24 @@ input[type="radio"] {
     display: block;
     position: absolute;
     inset: 2px;
-    border-radius: var(--mri-border-radius);
-    background-color: var(--checkedColor);
+    border-radius: var(--_border-radius);
+    background-color: var(--_color-checked);
     opacity: 0;
   }
 
   &:checked {
-    border-color: var(--checkedColor);
+    border-color: var(--_color-checked);
   }
 
   &:disabled {
-    --checkedColor: var(--borderColor);
+    --_color-checked: var(--_color-border);
   }
 }
 
 input[type="radio"] {
-  --mri-border-radius: var(--mri-border-radius-circular);
+  --_border-radius: var(--mri-border-radius-circular);
   &:after {
-    border-radius: var(--mri-border-radius);
+    border-radius: var(--_border-radius);
   }
   &:checked:after {
     opacity: 1;
@@ -52,23 +53,23 @@ input[type="radio"] {
 }
 
 input[type="checkbox"]:not(.mri-switch) {
-  --mri-border-radius: var(--mri-border-radius-small);
+  --_border-radius: var(--mri-border-radius-small);
 
   &:after {
-    border-radius: calc(var(--mri-border-radius) - 2px);
+    border-radius: calc(var(--_border-radius) - 2px);
   }
 
   &:checked:after {
     inset: 0;
     opacity: 1;
-    background-image: var(--iconCheck);
+    background-image: var(--mri-icon-check);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: calc(var(--sizeDimension) - 4px);
+    background-size: calc(var(--_size-dimension) - 4px);
   }
 
   &:indeterminate {
-    border-color: var(--checkedColor);
+    border-color: var(--_color-checked);
   }
   &:indeterminate:after {
     inset: 4px;

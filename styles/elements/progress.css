@@ -1,17 +1,17 @@
 progress.mri-spinner {
-  --sizeDimension: 20px;
-  --animationEasing: ease-in-out;
-  --animationDuration: 2.5s;
+  --_size-dimension: 20px;
+  --_easing-spin: ease-in-out;
+  --_duration-spin: 2.5s;
 
   appearance: none;
-  width: var(--sizeDimension);
-  height: var(--sizeDimension);
+  width: var(--_size-dimension);
+  height: var(--_size-dimension);
 
   overflow: hidden;
   position: relative;
   background: transparent;
 
-  animation: --progress-spin calc(var(--animationDuration) * 0.8) linear infinite;
+  animation: --_keyframes-progress-spin calc(var(--_duration-spin) * 0.8) linear infinite;
 
   &:before,
   &:after {
@@ -21,13 +21,13 @@ progress.mri-spinner {
     border: 2px solid var(--mri-color-background-2);
     border-top-color: var(--mri-color-brand-base);
     border-radius: var(--mri-border-radius-circular);
-    animation: --progress-spin var(--animationDuration) var(--animationEasing) infinite;
+    animation: --_keyframes-progress-spin var(--_duration-spin) var(--_easing-spin) infinite;
     pointer-events: none;
   }
   &:after {
     border-color: transparent;
     border-top-color: var(--mri-color-brand-base);
-    animation-delay: calc(var(--animationDuration) * 0.075);
+    animation-delay: calc(var(--_duration-spin) * 0.075);
   }
 
   &::-webkit-progress-inner-element,
@@ -40,22 +40,22 @@ progress.mri-spinner {
 
 progress:not(.mri-spinner),
 meter {
-  --mri-size-height: 2px;
+  --_size-height: 2px;
   appearance: none;
   width: 100%;
-  height: var(--mri-size-height);
+  height: var(--_size-height);
   border-radius: var(--mri-border-radiusRound);
   background: var(--mri-color-background-2);
   overflow: hidden;
 
   &.mri-size-small {
-    --mri-size-height: 1px;
+    --_size-height: 1px;
   }
   &.mri-size-medium {
-    --mri-size-height: 2px;
+    --_size-height: 2px;
   }
   &.mri-size-large {
-    --mri-size-height: 4px;
+    --_size-height: 4px;
   }
 
   &.mri-shape-square {
@@ -64,19 +64,20 @@ meter {
 }
 
 progress:not(.mri-spinner):indeterminate {
-  --gradientStepTransparent: color-mix(in srgb, var(--mri-color-brand-base) 0%, transparent);
-  --gradientStepBrand: var(--mri-color-brand-base);
+  /* --_color-brand-transparent: color-mix(in srgb, var(--mri-color-brand-base) 0%, transparent); */
+  --_color-brand-transparent: oklch(from var(--mri-color-brand-base) l c h / 0);
+  --_color-brand: var(--mri-color-brand-base);
 
   background-image: linear-gradient(
     to right,
-    var(--gradientStepTransparent) 0%,
-    var(--gradientStepBrand) 40%,
-    var(--gradientStepBrand) 60%,
-    var(--gradientStepTransparent) 100%
+    var(--_color-brand-transparent) 0%,
+    var(--_color-brand) 40%,
+    var(--_color-brand) 60%,
+    var(--_color-brand-transparent) 100%
   );
   background-size: 30% 100%;
   background-repeat: no-repeat;
-  animation: --progress-indeterminate 4s linear infinite;
+  animation: --_keyframes-progress-indeterminate 4s linear infinite;
 
   &::-webkit-progress-value,
   &::-webkit-progress-inner-element,
@@ -88,7 +89,7 @@ progress:not(.mri-spinner):indeterminate {
 ::-webkit-meter-bar,
 ::-webkit-progress-bar {
   background: transparent;
-  height: var(--mri-size-height);
+  height: var(--_size-height);
 }
 ::-webkit-progress-value {
   background: var(--mri-color-brand-base);
@@ -124,7 +125,7 @@ progress:not(.mri-spinner):indeterminate {
 ::-webkit-progress-value
 ::-webkit-progress-inner-element */
 
-@keyframes --progress-indeterminate {
+@keyframes --_keyframes-progress-indeterminate {
   0% {
     background-position: -40% 0;
   }
@@ -133,7 +134,7 @@ progress:not(.mri-spinner):indeterminate {
   }
 }
 
-@keyframes --progress-spin {
+@keyframes --_keyframes-progress-spin {
   0% {
     transform: rotate(0deg);
   }

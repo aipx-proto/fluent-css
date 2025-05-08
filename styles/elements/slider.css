@@ -1,14 +1,14 @@
 input[type="range"] {
-  --sizeThumb: 20px;
-  --sizeTrack: 4px;
+  --_size-thumb: 20px;
+  --_size-track: 4px;
 
   appearance: none;
   background: transparent;
-  padding: calc(var(--sizeThumb) / 2 - var(--sizeTrack) / 2) 0;
+  padding: calc(var(--_size-thumb) / 2 - var(--_size-track) / 2) 0;
   margin: 0;
 
   &::-webkit-slider-container {
-    height: var(--sizeTrack);
+    height: var(--_size-track);
     background: var(--mri-color-border-1);
     border-radius: var(--mri-border-radius-circular);
   }
@@ -18,8 +18,8 @@ input[type="range"] {
   /* Thumb styles */
   &::-webkit-slider-thumb {
     appearance: none;
-    width: var(--sizeThumb);
-    height: var(--sizeThumb);
+    width: var(--_size-thumb);
+    height: var(--_size-thumb);
     border: 1px solid var(--mri-color-border-1);
     border-radius: var(--mri-border-radius-circular);
     cursor: ew-resize;

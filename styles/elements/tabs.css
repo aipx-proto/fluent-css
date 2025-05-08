@@ -8,12 +8,7 @@
   }
 }
 
-/* .mri-icon-only */
-/* .mri-size-<size> */
-/* .mri-disabled */
-
-/* .mri-vertical */
-/* button and a anchor exception */
+/* TODO: button and a anchor variant & exception */
 
 .mri-tab,
 [role="tab"] {
@@ -33,10 +28,10 @@
 
   transition: background-color var(--mri-duration-rest) linear;
 
-  --sizeTabUnderline: 3px;
-  --colorTabUnderlineHover: var(--mri-color-text-4);
-  --colorTabUnderlineActive: var(--mri-color-brand-text);
-  --durationTabUnderline: 0.1s;
+  --_size-tab-underline: 3px;
+  --_color-tab-underline-hover: var(--mri-color-text-4);
+  --_color-tab-underline-active: var(--mri-color-brand-text);
+  --_duration-tab-underline: 0.1s;
 
   position: relative;
 
@@ -47,28 +42,28 @@
     position: absolute;
     border-radius: var(--mri-border-radius-circular);
     inset: auto var(--mri-size-padding) 0 var(--mri-size-padding);
-    height: var(--sizeTabUnderline);
+    height: var(--_size-tab-underline);
     transform-origin: center;
-    transition: transform var(--durationTabUnderline) ease-out, opacity var(--mri-duration-rest) linear;
+    transition: transform var(--_duration-tab-underline) ease-out, opacity var(--mri-duration-rest) linear;
   }
 
   &:before {
-    background-color: var(--colorTabUnderlineHover);
+    background-color: var(--_color-tab-underline-hover);
     opacity: 0;
   }
 
   &:after {
-    background-color: var(--colorTabUnderlineActive);
+    background-color: var(--_color-tab-underline-active);
     transform: scaleX(0);
   }
 
   .mri-vertical & {
-    --sizeTabUnderlinePadding: calc((var(--mri-size-height) - var(--mri-size-icon)) / 2);
+    --_size-tab-underline-padding: calc((var(--mri-size-height) - var(--mri-size-icon)) / 2);
     &:after,
     &:before {
-      inset: var(--sizeTabUnderlinePadding) auto var(--sizeTabUnderlinePadding) 0;
+      inset: var(--_size-tab-underline-padding) auto var(--_size-tab-underline-padding) 0;
       height: auto;
-      width: var(--sizeTabUnderline);
+      width: var(--_size-tab-underline);
     }
     &:after {
       transform: scaleY(0);
@@ -80,9 +75,6 @@
     width: var(--mri-size-height);
     height: var(--mri-size-height);
   }
-
-  /* .mri-appearance-subtle */
-  /* .mri-appearance-toggle */
 
   &:has(input[type="radio"]:not(:disabled)) {
     &:hover {

@@ -15,12 +15,12 @@ select.mri-button,
   justify-content: center;
 
   /* default circular */
-  --mri-border-radiusButton: var(--mri-border-radius-circular);
+  --_border-radius: var(--mri-border-radius-circular);
   [class*="mri-shape-"] &,
   &[class*="mri-shape-"] {
-    --mri-border-radiusButton: var(--mri-border-radius);
+    --_border-radius: var(--mri-border-radius);
   }
-  border-radius: var(--mri-border-radiusButton, var(--mri-border-radius));
+  border-radius: var(--_border-radius, var(--mri-border-radius));
 
   font-weight: var(--mri-font-weight-bold);
   font-size: var(--mri-size-font);
@@ -72,7 +72,7 @@ select.mri-button,
   }
 
   .mri-menu & {
-    --mri-border-radiusButton: var(--mri-border-radius-small);
+    --_border-radius: var(--mri-border-radius-small);
     border-color: transparent;
     justify-content: flex-start;
     font-weight: var(--fontWeightNormal);

@@ -1,6 +1,6 @@
 dialog {
   color: inherit;
-  
+
   border: 1px solid var(--mri-color-border-1);
   background-color: var(--mri-color-background-1);
   box-shadow: var(--mri-shadow-16);
@@ -10,6 +10,7 @@ dialog {
 
   header {
     padding: 24px 24px 12px 24px;
+
     h1,
     h2,
     h3,
@@ -41,15 +42,14 @@ dialog {
     margin: 12px;
   }
 
-
   /* Open/Close Animation */
 
-  --duration: 0.2s;
+  --_duration: 0.2s;
 
   &,
   &::backdrop {
-    transition: opacity var(--duration) ease-in-out, transform var(--duration) ease-in-out,
-      overlay var(--duration) allow-discrete, display var(--duration) allow-discrete;
+    transition: opacity var(--_duration) ease-in-out, transform var(--_duration) ease-in-out,
+      overlay var(--_duration) allow-discrete, display var(--_duration) allow-discrete;
     opacity: 0;
   }
 
