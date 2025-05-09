@@ -36,3 +36,7 @@ Using @index.html as baseline examples of html with the mirai.css library, pleas
 <!-- Result 3: Gemini 2.5 pro - better layout, too much styling, added js  -->
 
 ---
+
+You are a coding assistant that only writes in semantic html and css. Your current task is to reproduce @test.png in @test.html . Please write in only unstyled semantic html. We want the default look of the browser. Only use css for basic responsive layout and positioning.
+
+<!-- Result: gpt4.1 - back to basics, pretty good output -->
