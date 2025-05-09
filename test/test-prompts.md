@@ -33,4 +33,6 @@ Using @index.html as baseline examples of html with the mirai.css library, pleas
 
 <!-- Result 2: Claude-3.5-sonnet - less good than last time somehow... -->
 
+<!-- Result 3: Gemini 2.5 pro - better layout, too much styling, added js  -->
+
 ---

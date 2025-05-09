@@ -6,8 +6,661 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Writer Dashboard</title>
   <link rel="stylesheet" href="../styles/index.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: var(--mri-font-family-sans);
+      color: var(--mri-color-text-1);
+      background-color: var(--mri-color-background-3);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .global-header {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      background-color: var(--mri-color-background-1);
+      border-bottom: 1px solid var(--mri-color-border-1);
+      height: 48px;
+      /* Approximate height from image */
+      box-sizing: border-box;
+    }
+
+    .global-header .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: var(--mri-font-size-4);
+      /* Adjusted for prominence */
+      color: var(--mri-color-text-2);
+    }
+
+    .global-header .breadcrumb-link {
+      color: var(--mri-color-text-2);
+      text-decoration: none;
+    }
+
+    .global-header .breadcrumb-link:hover {
+      color: var(--mri-color-text-1);
+    }
+
+    .global-header .breadcrumb-current {
+      color: var(--mri-color-text-1);
+      font-weight: var(--mri-font-weight-bold);
+    }
+
+
+    .global-header .search-bar {
+      margin-left: 40px;
+      /* Increased spacing */
+      flex-grow: 1;
+      max-width: 400px;
+      /* Approximate width */
+    }
+
+    .global-header .search-bar input {
+      width: 100%;
+      padding-left: 30px;
+      /* Space for icon */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238a8a8a'%3E%3Cpath fill-rule='evenodd' d='M10.742 9.258a5.5 5.5 0 10-1.484 1.484l3.693 3.693a1.06 1.06 0 001.499-1.499l-3.692-3.692zM5.5 10a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      /* Simple search icon */
+      background-repeat: no-repeat;
+      background-position: 8px center;
+      background-size: 16px;
+    }
+
+
+    .global-header .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: auto;
+    }
+
+    .global-header .nav-actions a,
+    .global-header .nav-actions button {
+      font-size: var(--mri-font-size-5);
+      /* Standard nav link size */
+      text-decoration: none;
+      color: var(--mri-color-text-2);
+    }
+
+    .global-header .nav-actions a:hover,
+    .global-header .nav-actions button:hover {
+      color: var(--mri-color-text-1);
+    }
+
+    .global-header .nav-actions .icon-button {
+      font-size: 20px;
+      /* Larger for icons */
+    }
+
+
+    .app-container {
+      display: flex;
+      flex-grow: 1;
+      overflow: hidden;
+      /* Prevent app container from causing scroll */
+    }
+
+    .sidebar {
+      width: 200px;
+      /* Approximate width from image */
+      background-color: var(--mri-color-background-1);
+      padding: 16px 8px;
+      border-right: 1px solid var(--mri-color-border-1);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: var(--mri-border-radius-medium);
+      text-decoration: none;
+      color: var(--mri-color-text-2);
+      font-size: var(--mri-font-size-5);
+    }
+
+    .sidebar .nav-item:hover {
+      background-color: var(--mri-color-background-2);
+      color: var(--mri-color-text-1);
+    }
+
+    .sidebar .nav-item.active {
+      background-color: var(--mri-color-brand-base);
+      color: white;
+      /* Assuming brand color has good contrast with white */
+    }
+
+    .sidebar .nav-item .icon {
+      font-size: 18px;
+      /* Icon size */
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--mri-color-background-3);
+      /* Page background */
+      overflow-y: auto;
+      /* Scroll for main content only */
+    }
+
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background-color: var(--mri-color-background-1);
+      /* Header background */
+      border-bottom: 1px solid var(--mri-color-border-1);
+    }
+
+    .content-header h1 {
+      font-size: var(--mri-font-size-3);
+      font-weight: var(--mri-font-weight-bold);
+      margin: 0;
+    }
+
+    .tab-nav {
+      display: flex;
+      padding: 0 24px;
+      background-color: var(--mri-color-background-1);
+      /* Tabs background */
+      border-bottom: 1px solid var(--mri-color-border-1);
+    }
+
+    .tab-nav .mri-tab-list label {
+      /* Style the label as it acts as the tab button */
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+
+    .tab-content {
+      padding: 0;
+      /* Remove padding from tab-content, handle in panel */
+      flex-grow: 1;
+      display: flex;
+      /* Ensure tab panels can fill height */
+    }
+
+    .tab-panel {
+      width: 100%;
+      display: none;
+      /* Hidden by default */
+      flex-direction: column;
+      /* For vertical layout within a panel */
+      overflow: hidden;
+      /* Prevent panel from causing outer scroll */
+    }
+
+    .tab-panel.active {
+      display: flex;
+      /* Show active tab */
+    }
+
+    /* Threads specific layout */
+    .threads-layout {
+      display: flex;
+      flex-grow: 1;
+      overflow: hidden;
+      /* Prevent threads layout from causing scroll */
+      height: 100%;
+      /* Fill tab panel height */
+    }
+
+    .threads-list-pane {
+      width: 350px;
+      /* Approximate from image */
+      border-right: 1px solid var(--mri-color-border-1);
+      display: flex;
+      flex-direction: column;
+      background-color: var(--mri-color-background-1);
+    }
+
+    .threads-list-pane .search-threads {
+      padding: 12px;
+      border-bottom: 1px solid var(--mri-color-border-1);
+    }
+
+    .threads-list-pane .search-threads input {
+      width: 100%;
+    }
+
+    .threads-list-pane table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .threads-list-pane th,
+    .threads-list-pane td {
+      padding: 10px 12px;
+      text-align: left;
+      font-size: var(--mri-font-size-5);
+      border-bottom: 1px solid var(--mri-color-border-1);
+    }
+
+    .threads-list-pane th {
+      color: var(--mri-color-text-3);
+      font-weight: var(--mri-font-weight-regular);
+    }
+
+    .threads-list-pane td {
+      color: var(--mri-color-text-2);
+    }
+
+    .threads-list-pane tbody tr:hover td {
+      background-color: var(--mri-color-background-2);
+    }
+
+    .threads-list-pane tbody tr.selected td {
+      background-color: var(--mri-color-background-2);
+      /* Using background 2 for selected */
+      color: var(--mri-color-text-1);
+    }
+
+    .threads-list-pane tbody tr.selected input[type="radio"] {
+      /* Hide radio button visually */
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .threads-list-pane tbody tr.selected td:first-child {
+      position: relative;
+    }
+
+    .threads-list-pane tbody tr.selected td:first-child::before {
+      /* Blue selection indicator */
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background-color: var(--mri-color-brand-base);
+    }
+
+
+    .threads-list-pane .pagination {
+      padding: 12px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      border-top: 1px solid var(--mri-color-border-1);
+      margin-top: auto;
+      /* Push to bottom */
+    }
+
+    .thread-detail-pane {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--mri-color-background-base);
+      /* Or background-3 if it should be darker */
+      overflow-y: auto;
+    }
+
+    .thread-detail-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--mri-color-border-1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--mri-color-background-1);
+    }
+
+    .thread-detail-header .id-section {
+      font-size: var(--mri-font-size-5);
+      color: var(--mri-color-text-2);
+    }
+
+    .thread-detail-header .id-section span {
+      color: var(--mri-color-text-1);
+      font-weight: var(--mri-font-weight-bold);
+    }
+
+    .thread-detail-header .id-section .copy-icon {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+    .thread-detail-header .info-section {
+      font-size: var(--mri-font-size-6);
+      color: var(--mri-color-text-3);
+    }
+
+    .thread-content-writer-info {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--mri-color-border-1);
+      font-size: var(--mri-font-size-5);
+      background-color: var(--mri-color-background-1);
+    }
+
+    .thread-content-writer-info span {
+      color: var(--mri-color-text-2);
+    }
+
+    .thread-content-writer-info .copy-icon {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+
+    .chat-history {
+      padding: 16px;
+      flex-grow: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background-color: var(--mri-color-background-base);
+      /* Matches main chat area in image */
+    }
+
+    .chat-message {
+      font-size: var(--mri-font-size-5);
+    }
+
+    .chat-message .role {
+      font-weight: var(--mri-font-weight-bold);
+      color: var(--mri-color-text-1);
+      margin-bottom: 4px;
+    }
+
+    .chat-message .message-content {
+      color: var(--mri-color-text-2);
+      line-height: 1.5;
+    }
+
+    .chat-message .message-content ul {
+      padding-left: 20px;
+      margin-top: 8px;
+      list-style-type: disc;
+      /* Or none if using custom bullets */
+    }
+
+    .chat-message .message-content li {
+      margin-bottom: 4px;
+    }
+
+    .thread-detail-footer {
+      padding: 12px 16px;
+      border-top: 1px solid var(--mri-color-border-1);
+      display: flex;
+      gap: 8px;
+      background-color: var(--mri-color-background-1);
+      /* Footer background */
+    }
+  </style>
 </head>
 
-<body></body>
+<body>
+  <header class="global-header">
+    <div class="breadcrumb">
+      <span><a href="#" class="breadcrumb-link">Azure AI Foundry</a></span>
+      <span>/</span>
+      <span><a href="#" class="breadcrumb-link">project-name123</a></span>
+      <span>/</span>
+      <span class="breadcrumb-current">Parent page</span>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Search with AI" class="mri-size-small mri-shape-rounded" />
+      <!-- K icon could be background image or ::after pseudo-element on input container if needed -->
+    </div>
+    <nav class="nav-actions">
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">Science</a>
+      <a href="#">Labs <span class="icon">🔗</span></a> <!-- Placeholder for external link icon -->
+      <button class="mri-appearance-transparent mri-icon-only icon-button">⚙️</button> <!-- Settings Icon -->
+      <button class="mri-appearance-transparent mri-icon-only icon-button">👤</button> <!-- Profile Icon -->
+    </nav>
+  </header>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <a href="#" class="nav-item active">
+        <span class="icon">🤖</span> Agents <!-- Placeholder Icon -->
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">Ⓜ️</span> Models <!-- Placeholder Icon -->
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">🛠️</span> Workflow <!-- Placeholder Icon -->
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">📊</span> Reports <!-- Placeholder Icon -->
+      </a>
+      <!-- Collapse icon -->
+      <button class="mri-appearance-transparent mri-icon-only"
+        style="margin-top: auto; align-self: flex-start; font-size: 20px;">⬅️</button>
+    </aside>
+
+    <main class="main-content">
+      <div class="content-header">
+        <h1>Content writer</h1>
+        <button class="mri-appearance-primary mri-size-small">Deploy agent <span
+            style="font-size: 0.8em;">▼</span></button>
+      </div>
+
+      <nav role="tablist" class="tab-nav mri-tab-list mri-appearance-subtle">
+        <label role="tab" aria-controls="panel-details" for="tab-details">
+          <input type="radio" name="agent-tabs" id="tab-details" /> Details
+        </label>
+        <label role="tab" aria-controls="panel-build" for="tab-build">
+          <input type="radio" name="agent-tabs" id="tab-build" /> Build
+        </label>
+        <label role="tab" aria-controls="panel-threads" for="tab-threads" aria-selected="true">
+          <input type="radio" name="agent-tabs" id="tab-threads" checked /> Threads
+        </label>
+        <label role="tab" aria-controls="panel-monitor" for="tab-monitor">
+          <input type="radio" name="agent-tabs" id="tab-monitor" /> Monitor
+        </label>
+        <label role="tab" aria-controls="panel-evaluation" for="tab-evaluation">
+          <input type="radio" name="agent-tabs" id="tab-evaluation" /> Evaluation
+        </label>
+        <label role="tab" aria-controls="panel-api-docs" for="tab-api-docs">
+          <input type="radio" name="agent-tabs" id="tab-api-docs" /> API Docs
+        </label>
+      </nav>
+
+      <div class="tab-content">
+        <section id="panel-details" role="tabpanel" aria-labelledby="tab-details" class="tab-panel"
+          style="padding:24px;">Details Content</section>
+        <section id="panel-build" role="tabpanel" aria-labelledby="tab-build" class="tab-panel" style="padding:24px;">
+          Build Content</section>
+
+        <section id="panel-threads" role="tabpanel" aria-labelledby="tab-threads" class="tab-panel active">
+          <div class="threads-layout">
+            <div class="threads-list-pane">
+              <div class="search-threads">
+                <input type="search" placeholder="Search threads" class="mri-size-small" />
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 50px;"></th><!-- For radio button / selection indicator -->
+                    <th>Thread ID</th>
+                    <th>Created</th>
+                    <th>Tools</th>
+                    <th>Length</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="radio" name="thread-select" value="1" /></td>
+                    <td>thread_3x6IciKACR...</td>
+                    <td>Mar 19, 2025 10:45 AM</td>
+                    <td>N/A</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="thread-select" value="2" /></td>
+                    <td>thread_cUb42WJby...</td>
+                    <td>Mar 18, 2025 12:58 PM</td>
+                    <td>N/A</td>
+                    <td>12</td>
+                  </tr>
+                  <tr class="selected">
+                    <td><input type="radio" name="thread-select" value="3" checked /></td>
+                    <td>thread_356b2KczC0...</td>
+                    <td>Mar 18, 2025 12:51 PM</td>
+                    <td>N/A</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="thread-select" value="4" /></td>
+                    <td>thread_OCtfMFmm...</td>
+                    <td>Mar 18, 2025 11:58 PM</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="thread-select" value="5" /></td>
+                    <td>thread_ZSruYxEfgM...</td>
+                    <td>Mar 14, 2025 3:02 PM</td>
+                    <td>N/A</td>
+                    <td>15</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination">
+                <button class="mri-appearance-subtle mri-size-small">&lt; Prev</button>
+                <button class="mri-appearance-subtle mri-size-small">Next &gt;</button>
+              </div>
+            </div>
+            <div class="thread-detail-pane">
+              <div class="thread-detail-header">
+                <div class="id-section">
+                  ID: <span>thread_1f46YMajmK3bljMa0g4xPJXh</span> <span class="copy-icon">📋</span>
+                </div>
+                <div class="info-section">
+                  🕒 Feb 27, 2025 2:20 PM &nbsp;&nbsp; 4 Messages &nbsp;&nbsp; Tools: N/A
+                </div>
+              </div>
+              <div class="thread-content-writer-info">
+                Content writer &nbsp;&nbsp; ID: <span>asst_gGHL8TYIQtT6NzQnS6o1Qp2X</span> <span
+                  class="copy-icon">📋</span>
+              </div>
+              <div class="chat-history">
+                <div class="chat-message">
+                  <div class="role">User</div>
+                  <div class="message-content">
+                    What tools do I need on hand for common HVAC repairs?
+                  </div>
+                </div>
+                <div class="chat-message">
+                  <div class="role">Field servc=ice agent</div>
+                  <div class="message-content">
+                    HVAC-Specific Tools:
+                    <ul>
+                      <li>Manifold Gauge Set: For refrigerant system checks.</li>
+                      <li>Thermometer: Digital or infrared.</li>
+                      <li>Leak Detector: For refrigerant leaks.</li>
+                      <li>Refrigerant Scale: For measuring refrigerant.</li>
+                      <li>Vacuum Pump: For evacuating systems.</li>
+                      <li>Swaging Tools: For tubing adjustments.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="chat-message">
+                  <div class="role">User</div>
+                  <div class="message-content">
+                    I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra
+                    inventory in the office I can pick up?
+                  </div>
+                </div>
+                <div class="chat-message">
+                  <div class="role">Field servc=ice agent</div>
+                  <div class="message-content">
+                    Yes, there are 4 capacitors available that match your requirements. You can pick it up from the
+                    supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.
+                  </div>
+                </div>
+              </div>
+              <div class="thread-detail-footer">
+                <button class="mri-appearance-outline mri-size-small">Open in build</button>
+                <button class="mri-appearance-subtle mri-size-small">Delete</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-monitor" role="tabpanel" aria-labelledby="tab-monitor" class="tab-panel"
+          style="padding:24px;">Monitor Content</section>
+        <section id="panel-evaluation" role="tabpanel" aria-labelledby="tab-evaluation" class="tab-panel"
+          style="padding:24px;">Evaluation Content</section>
+        <section id="panel-api-docs" role="tabpanel" aria-labelledby="tab-api-docs" class="tab-panel"
+          style="padding:24px;">API Docs Content</section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('nav[role="tablist"] input[type="radio"]');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('change', () => {
+          panels.forEach(panel => {
+            panel.classList.remove('active');
+            if (panel.id === tab.getAttribute('aria-controls')) {
+              panel.classList.add('active');
+            }
+          });
+          // Special handling for Threads tab to ensure its flex layout is active
+          if (tab.getAttribute('aria-controls') === 'panel-threads') {
+            const threadsPanel = document.getElementById('panel-threads');
+            if (threadsPanel) threadsPanel.style.display = 'flex'; // Ensure flex is re-applied
+          }
+        });
+      });
+
+      // Ensure initially checked tab's panel is visible
+      const initiallyCheckedTab = document.querySelector('nav[role="tablist"] input[type="radio"]:checked');
+      if (initiallyCheckedTab) {
+        const initialPanelId = initiallyCheckedTab.getAttribute('aria-controls');
+        const initialPanel = document.getElementById(initialPanelId);
+        if (initialPanel) {
+          initialPanel.classList.add('active');
+          if (initialPanelId === 'panel-threads') {
+            initialPanel.style.display = 'flex';
+          }
+        }
+      }
+
+      // Thread selection in the list
+      const threadRadioButtons = document.querySelectorAll('.threads-list-pane tbody input[type="radio"]');
+      threadRadioButtons.forEach(radio => {
+        radio.addEventListener('change', (event) => {
+          // Remove 'selected' class from all rows
+          document.querySelectorAll('.threads-list-pane tbody tr').forEach(row => {
+            row.classList.remove('selected');
+          });
+          // Add 'selected' class to the parent row of the checked radio
+          if (event.target.checked) {
+            event.target.closest('tr').classList.add('selected');
+          }
+          // Here you would typically load the details for the selected thread ID.
+          // For this static example, no actual data loading happens.
+          console.log('Selected thread ID (simulated):', event.target.parentElement.nextElementSibling.textContent);
+        });
+      });
+
+    });
+  </script>
+</body>
 
 </html>
