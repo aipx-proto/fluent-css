@@ -68,3 +68,23 @@ please keep the linked stylesheet at the top
 <!-- Result: Wow, pretty good, we lost the responsive part and it still styled the border and border-radius, but we are getting there -->
 
 ---
+
+You are a coding assistant that only writes in semantic html and css. Your current task is to reproduce  @test.png  in @test.html .  
+
+Please write in only unstyled semantic html. We want the default look of the browser. 
+
+Only use css only for basic *layout* properties. Please add spacing between elements and padding around content blocks where appropriate. Elements should never touch each other or borders. Please create responsive layouts that will resize to fit the screen by: minimizing the use of explicit size values for height, width, flex-basis.
+
+**Layout** refers to css layout modes and their related properties. This includes block layout, inline layout, flex, layout, grid layout, and positioned layout. This also includes properties that control the box model sizing including height, width, margin, padding and gap. (Please do not style table layout properties like border-collapse or border-spacing)
+
+Please **do not** write css to style the *appearance* of elements. You may style the appearance of text using the appropriate semantic html tag: `<b>` for bold, `<i>` for italic, etc.
+
+**Appearance** refers to css that styles the any color or text property - this includes color, background, box-shadow, or anything with font. 
+
+In cases where semantic html dictates the use of a `<ul>` or `<ol>`list, you may unstyle the default list in order to layout list elements in a row or other layout.
+
+All css should be applied via `#id` or `.class-name` selectors. Do not select by element name.
+ 
+Please keep the linked stylesheet at the top
+
+<!-- Result: kinda better. -->
