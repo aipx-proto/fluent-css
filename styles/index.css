@@ -2,6 +2,7 @@
 @import "./font-monaspace-neon/font-monaspace-neon.css";
 
 @import "./variables/mirai-theme.css";
+@import "./elements/reset.css";
 
 @import "./elements/icon-uri.css";
 @import "./elements/accordion.css";
