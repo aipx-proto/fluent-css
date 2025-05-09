@@ -6,158 +6,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Writer Dashboard</title>
   <link rel="stylesheet" href="../styles/index.css" />
-  <style>
-    main {
-      display: flex;
-      flex-direction: row;
-      min-height: 100vh;
-    }
-    nav {
-      min-width: 200px;
-      border-right: 1px solid #ccc;
-    }
-    aside {
-      min-width: 300px;
-      border-right: 1px solid #ccc;
-    }
-    section {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    header, footer {
-      padding: 1rem;
-      border-bottom: 1px solid #ccc;
-    }
-    @media (max-width: 900px) {
-      main {
-        flex-direction: column;
-      }
-      nav, aside {
-        min-width: unset;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
-      }
-    }
-  </style>
 </head>
 
 <body>
   <header>
-    <nav aria-label="Breadcrumb">
-      <ol>
-        <li><a href="#">Azure AI Foundry</a></li>
-        <li><a href="#">project-name123</a></li>
-        <li>Parent page</li>
-      </ol>
+    <nav style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span><b>Azure AI Foundry</b></span>
+        <span>/</span>
+        <span>project-name123</span>
+        <span>/</span>
+        <span>Parent page</span>
+      </div>
+      <form style="flex: 1; display: flex; justify-content: center;">
+        <input type="search" placeholder="Search with AI" style="width: 60%; min-width: 200px; max-width: 400px; padding: 0.5rem;" />
+      </form>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Science</a>
+        <a href="#">Labs</a>
+        <button type="button">&#9881;</button>
+        <button type="button">&#128100;</button>
+      </div>
     </nav>
-    <form>
-      <input type="search" placeholder="Search with AI" aria-label="Search" />
-      <button type="submit">Search</button>
-    </form>
   </header>
-  <main>
-    <nav aria-label="Sidebar">
-      <ul>
-        <li><a href="#">Agents</a></li>
-        <li><a href="#">Models</a></li>
-        <li><a href="#">Workflow</a></li>
-        <li><a href="#">Reports</a></li>
-      </ul>
-    </nav>
-    <aside>
-      <h2>Content writer</h2>
+  <main style="display: flex; gap: 2rem; padding: 2rem;">
+    <aside style="min-width: 200px;">
       <nav>
-        <ul>
-          <li><a href="#">Details</a></li>
-          <li><a href="#">Build</a></li>
-          <li><a href="#">Threads</a></li>
-          <li><a href="#">Monitor</a></li>
-          <li><a href="#">Evaluation</a></li>
-          <li><a href="#">API Docs</a></li>
+        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none; padding: 0; margin: 0;">
+          <li><b>Agents</b></li>
+          <li>Models</li>
+          <li>Workflow</li>
+          <li>Reports</li>
         </ul>
       </nav>
-      <form>
-        <input type="search" placeholder="Search threads" aria-label="Search threads" />
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <th>Thread ID</th>
-            <th>Created</th>
-            <th>Tools</th>
-            <th>Length</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>thread_3x6lc...</td>
-            <td>Mar 19, 2025 10:45 AM</td>
-            <td>N/A</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>thread_cUb42...</td>
-            <td>Mar 18, 2025 12:58 PM</td>
-            <td>N/A</td>
-            <td>12</td>
-          </tr>
-          <tr>
-            <td>thread_356b2...</td>
-            <td>Mar 18, 2025 12:51 PM</td>
-            <td>N/A</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>thread_OClfM...</td>
-            <td>Mar 18, 2025 11:58 PM</td>
-            <td>N/A</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>thread_ZSruX...</td>
-            <td>Mar 14, 2025 3:02 PM</td>
-            <td>N/A</td>
-            <td>15</td>
-          </tr>
-        </tbody>
-      </table>
-      <nav>
-        <button type="button">Prev</button>
-        <button type="button">Next</button>
-      </nav>
     </aside>
-    <section>
-      <article>
-        <header>
-          <h3>ID: thread_1f46YMajmK3bljMa0g4xPJXh</h3>
-          <time datetime="2025-02-27T14:20">Feb 27, 2025 2:20 PM</time>
-          <span>4 Messages</span>
-          <span>Tools: N/A</span>
-        </header>
-        <h4>Content writer</h4>
-        <div>
-          <p><strong>User</strong></p>
-          <p>What tools do I need on hand for common HVAC repairs?</p>
-          <p><strong>Field service agent</strong></p>
-          <ul>
-            <li>Manifold Gauge Set: For refrigerant system checks.</li>
-            <li>Thermometer: Digital or infrared.</li>
-            <li>Leak Detector: For refrigerant leaks.</li>
-            <li>Refrigerant Scale: For measuring refrigerant.</li>
-            <li>Vacuum Pump: For evacuating systems.</li>
-            <li>Swaging Tools: For tubing adjustments.</li>
-          </ul>
-          <p><strong>User</strong></p>
-          <p>I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra inventory in the office I can pick up?</p>
-          <p><strong>Field service agent</strong></p>
-          <p>Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.</p>
-        </div>
-      </article>
-      <footer>
-        <button type="button">Open in build</button>
-        <button type="button">Delete</button>
-      </footer>
+    <section style="flex: 1; display: flex; flex-direction: column; gap: 2rem;">
+      <header style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem;">
+        <h1 style="margin: 0;">Content writer</h1>
+        <button type="button">Deploy agent</button>
+      </header>
+      <nav style="display: flex; gap: 2rem;">
+        <a href="#">Details</a>
+        <a href="#"><b>Build</b></a>
+        <a href="#"><b>Threads</b></a>
+        <a href="#">Monitor</a>
+        <a href="#">Evaluation</a>
+        <a href="#">API Docs</a>
+      </nav>
+      <div style="display: flex; gap: 2rem;">
+        <section style="flex: 1; min-width: 300px;">
+          <form>
+            <input type="search" placeholder="Search threads" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" />
+          </form>
+          <table style="width: 100%; border-spacing: 0 0.5rem;">
+            <thead>
+              <tr>
+                <th>Thread ID</th>
+                <th>Created</th>
+                <th>Tools</th>
+                <th>Length</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>thread_3x6lcikACR...</td>
+                <td>Mar 19, 2025 10:45 AM</td>
+                <td>N/A</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>thread_cUb42WJby...</td>
+                <td>Mar 18, 2025 12:58 PM</td>
+                <td>N/A</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td><b>thread_356b2KczCZ0...</b></td>
+                <td>Mar 18, 2025 12:51 PM</td>
+                <td>N/A</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>thread_OClfMFmm...</td>
+                <td>Mar 18, 2025 11:58 PM</td>
+                <td>N/A</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>thread_ZSruYxEfgM...</td>
+                <td>Mar 14, 2025 3:02 PM</td>
+                <td>N/A</td>
+                <td>15</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section style="flex: 2; min-width: 350px; display: flex; flex-direction: column; gap: 1rem;">
+          <header style="display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <span><b>ID: thread_1f46YMajmK3bljMa0g4xPJXh</b></span>
+              <span>Feb 27, 2025 2:20 PM</span>
+              <span>4 Messages</span>
+              <span>Tools: N/A</span>
+            </div>
+          </header>
+          <section style="padding: 1rem; border: 1px solid #ccc; border-radius: 0.5rem; display: flex; flex-direction: column; gap: 1rem;">
+            <article>
+              <b>User</b>
+              <p>What tools do I need on hand for common HVAC repairs?</p>
+              <b>Field service agent</b>
+              <ul>
+                <li>Manifold Gauge Set: For refrigerant system checks.</li>
+                <li>Thermometer: Digital or infrared.</li>
+                <li>Leak Detector: For refrigerant leaks.</li>
+                <li>Refrigerant Scale: For measuring refrigerant.</li>
+                <li>Vacuum Pump: For evacuating systems.</li>
+                <li>Swaging Tools: For tubing adjustments.</li>
+              </ul>
+            </article>
+            <article>
+              <b>User</b>
+              <p>I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra inventory in the office I can pick up?</p>
+              <b>Field service agent</b>
+              <p>Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.</p>
+            </article>
+          </section>
+          <footer style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <button type="button">Open in build</button>
+            <button type="button">Delete</button>
+          </footer>
+        </section>
+      </div>
     </section>
   </main>
 </body>
