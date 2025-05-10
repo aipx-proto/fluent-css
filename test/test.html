@@ -1,63 +1,186 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test page</title>
-  <link rel="stylesheet" href="../styles/index.css" />
+  <link rel="stylesheet" href="../styles/index.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 48px;
+      min-height: 48px;
+      padding: 0 16px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #333;
+    }
+    .container {
+      flex: 1 1 auto;
+      display: flex;
+      min-height: 0;
+    }
+    aside {
+      width: 220px;
+      min-width: 180px;
+      max-width: 260px;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #333;
+      box-sizing: border-box;
+      padding: 16px 0 0 0;
+    }
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 24px;
+      padding-left: 16px;
+    }
+    main {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 0;
+    }
+    .main-header {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      min-height: 48px;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+    .tabs {
+      display: flex;
+      gap: 24px;
+      margin-left: 32px;
+    }
+    .content-area {
+      flex: 1 1 0;
+      display: flex;
+      min-height: 0;
+      border-bottom: 1px solid #333;
+    }
+    .thread-list-panel {
+      width: 340px;
+      min-width: 260px;
+      max-width: 400px;
+      border-right: 1px solid #333;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 0 0;
+    }
+    .thread-list-header {
+      padding: 16px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #333;
+    }
+    .thread-list {
+      flex: 1 1 0;
+      overflow-y: auto;
+      padding: 0 0 0 0;
+    }
+    .thread-list-table {
+      width: 100%;
+      border-spacing: 0;
+    }
+    .thread-list-table th,
+    .thread-list-table td {
+      padding: 8px 12px;
+      box-sizing: border-box;
+    }
+    .thread-details-panel {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 0 0 0 0;
+    }
+    .thread-details-header {
+      padding: 16px 24px 8px 24px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #333;
+    }
+    .thread-messages {
+      flex: 1 1 0;
+      overflow-y: auto;
+      padding: 16px 24px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 48px;
+      min-height: 48px;
+      padding: 0 24px;
+      box-sizing: border-box;
+      border-top: 1px solid #333;
+      gap: 16px;
+    }
+    /* Panel borders */
+    header, aside, .main-header, .content-area, .thread-list-panel, .thread-details-panel, footer {
+      border-color: #333;
+    }
+  </style>
 </head>
-
 <body>
-  <div class="app-layout">
-    <nav class="sidebar" aria-label="Main navigation">
-      <ul class="sidebar-list">
-        <li><b>Agents</b></li>
-        <li>Models</li>
-        <li>Workflow</li>
-        <li>Reports</li>
-      </ul>
+  <header>
+    <nav style="display: flex; align-items: center; gap: 16px;">
+      <span>Logo</span>
+      <span>Azure AI Foundry / project-name123 / Parent page</span>
     </nav>
-    <main class="main-content">
-      <header class="header">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol class="breadcrumb-list">
-            <li>Azure AI Foundry</li>
-            <li>project-name123</li>
-            <li><b>Parent page</b></li>
-          </ol>
+    <div style="flex: 1 1 0; display: flex; justify-content: center;">
+      <input type="text" placeholder="Search with AI" style="width: 320px; min-width: 120px; max-width: 480px; height: 28px;"/>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span>Icons</span>
+    </div>
+  </header>
+  <div class="container">
+    <aside>
+      <div style="padding-left: 16px; font-weight: bold;">Agents</div>
+      <nav class="sidebar-nav">
+        <a href="#">Models</a>
+        <a href="#">Workflow</a>
+        <a href="#">Reports</a>
+      </nav>
+    </aside>
+    <main>
+      <div class="main-header">
+        <h1 style="margin: 0; font-size: 1.2em;">Content writer</h1>
+        <nav class="tabs">
+          <span>Details</span>
+          <span>Build</span>
+          <span style="font-weight: bold;">Threads</span>
+          <span>Monitor</span>
+          <span>Evaluation</span>
+          <span>API Docs</span>
         </nav>
-        <form class="search-form" role="search">
-          <input type="search" placeholder="Search with AI" aria-label="Search" />
-        </form>
-        <div class="header-actions">
-          <span>Home</span>
-          <span>Explore</span>
-          <span>Science</span>
-          <span>Labs</span>
-          <span>Profile</span>
-        </div>
-      </header>
-      <section class="content-writer">
-        <header class="content-header">
-          <h1>Content writer</h1>
-          <nav class="content-tabs" aria-label="Content writer tabs">
-            <ul class="tabs-list">
-              <li>Details</li>
-              <li>Build</li>
-              <li><b>Threads</b></li>
-              <li>Monitor</li>
-              <li>Evaluation</li>
-              <li>API Docs</li>
-            </ul>
-          </nav>
-        </header>
-        <div class="content-layout">
-          <section class="thread-list-section">
-            <form class="thread-search-form" role="search">
-              <input type="search" placeholder="Search threads" aria-label="Search threads" />
-            </form>
-            <table class="thread-table">
+      </div>
+      <div class="content-area">
+        <section class="thread-list-panel">
+          <div class="thread-list-header">
+            <input type="text" placeholder="Search threads" style="width: 100%;"/>
+          </div>
+          <div class="thread-list">
+            <table class="thread-list-table">
               <thead>
                 <tr>
                   <th>Thread ID</th>
@@ -67,29 +190,55 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>thread_3x6lcik...</td><td>Mar 19, 2025 10:45 AM</td><td>N/A</td><td>8</td></tr>
-                <tr><td>thread_cUb42W...</td><td>Mar 18, 2025 12:58 PM</td><td>N/A</td><td>12</td></tr>
-                <tr><td><b>thread_356b2K...</b></td><td>Mar 18, 2025 12:51 PM</td><td>N/A</td><td>4</td></tr>
-                <tr><td>thread_OClfMF...</td><td>Mar 18, 2025 11:58 PM</td><td>N/A</td><td>1</td></tr>
-                <tr><td>thread_ZSruYx...</td><td>Mar 14, 2025 3:02 PM</td><td>N/A</td><td>15</td></tr>
+                <tr>
+                  <td>thread_3x6lc... </td>
+                  <td>Mar 19, 2025 10:45 AM</td>
+                  <td>N/A</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>thread_cUb42... </td>
+                  <td>Mar 18, 2025 12:58 PM</td>
+                  <td>N/A</td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <td>thread_356b2... </td>
+                  <td>Mar 18, 2025 12:51 PM</td>
+                  <td>N/A</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>thread_OClfM... </td>
+                  <td>Mar 18, 2025 11:58 PM</td>
+                  <td>N/A</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>thread_ZSruX... </td>
+                  <td>Mar 14, 2025 3:02 PM</td>
+                  <td>N/A</td>
+                  <td>15</td>
+                </tr>
               </tbody>
             </table>
-            <div class="thread-pagination">
-              <button type="button">Prev</button>
-              <button type="button">Next</button>
+          </div>
+        </section>
+        <section class="thread-details-panel">
+          <div class="thread-details-header">
+            <div>ID: thread_1f46YMajmK3bljMa0g4xPJXh</div>
+            <div>Feb 27, 2025 2:20 PM | 4 Messages | Tools: N/A</div>
+            <div>Content writer | ID: asst_gHL8YTIQ...</div>
+          </div>
+          <div class="thread-messages">
+            <div>
+              <strong>User</strong>
+              <div>What tools do I need on hand for common HVAC repairs?</div>
             </div>
-          </section>
-          <section class="thread-detail-section">
-            <header class="thread-detail-header">
-              <div>ID: thread_1f46YMajmK3bljMa0g4xPJXh</div>
-              <div>Feb 27, 2025 2:20 PM | 4 Messages | Tools: N/A</div>
-            </header>
-            <div class="thread-detail-content">
-              <article class="message">
-                <header>User</header>
-                <p>What tools do I need on hand for common HVAC repairs?</p>
-                <header>Field service agent</header>
-                <p>HVAC-Specific Tools:</p>
+            <div>
+              <strong>Field service agent</strong>
+              <div>
+                HVAC-Specific Tools:
                 <ol>
                   <li>Manifold Gauge Set: For refrigerant system checks.</li>
                   <li>Thermometer: Digital or infrared.</li>
@@ -98,180 +247,28 @@
                   <li>Vacuum Pump: For evacuating systems.</li>
                   <li>Swaging Tools: For tubing adjustments.</li>
                 </ol>
-              </article>
-              <article class="message">
-                <header>User</header>
-                <p>I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra inventory in the office I can pick up?</p>
-                <header>Field service agent</header>
-                <p>Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.</p>
-              </article>
+              </div>
             </div>
-            <footer class="thread-detail-footer">
-              <button type="button">Open in build</button>
-              <button type="button">Delete</button>
-            </footer>
-          </section>
-        </div>
-      </section>
+            <div>
+              <strong>User</strong>
+              <div>
+                I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra inventory in the office I can pick up?
+              </div>
+            </div>
+            <div>
+              <strong>Field service agent</strong>
+              <div>
+                Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <button type="button">Open in build</button>
+        <button type="button">Delete</button>
+      </footer>
     </main>
   </div>
-  <style>
-    .app-layout {
-      display: flex;
-      min-height: 100vh;
-    }
-    .sidebar {
-      flex: 0 0 auto;
-      padding: 1rem;
-      min-width: 180px;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .sidebar-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .main-content {
-      flex: 1 1 0;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      padding: 1rem;
-      gap: 1rem;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      padding-bottom: 1rem;
-    }
-    .breadcrumb-list {
-      display: flex;
-      flex-direction: row;
-      gap: 0.5rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .search-form {
-      flex: 1 1 200px;
-      display: flex;
-      justify-content: center;
-    }
-    .header-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .content-writer {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .content-header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .content-tabs .tabs-list {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .content-layout {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      min-width: 0;
-    }
-    .thread-list-section {
-      flex: 0 0 320px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      min-width: 0;
-    }
-    .thread-search-form {
-      padding-bottom: 0.5rem;
-    }
-    .thread-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-    }
-    .thread-table th, .thread-table td {
-      padding: 0.5rem 0.5rem;
-      text-align: left;
-    }
-    .thread-pagination {
-      display: flex;
-      gap: 1rem;
-      justify-content: flex-end;
-      padding-top: 0.5rem;
-    }
-    .thread-detail-section {
-      flex: 1 1 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      min-width: 0;
-      padding: 1rem;
-    }
-    .thread-detail-header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .thread-detail-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .message {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0.5rem 0;
-    }
-    .thread-detail-footer {
-      display: flex;
-      gap: 1rem;
-      justify-content: flex-end;
-      padding-top: 1rem;
-    }
-    @media (max-width: 900px) {
-      .content-layout {
-        flex-direction: column;
-      }
-      .thread-list-section {
-        flex: 1 1 0;
-      }
-    }
-    @media (max-width: 600px) {
-      .app-layout {
-        flex-direction: column;
-      }
-      .main-content {
-        padding: 0.5rem;
-      }
-      .content-writer {
-        padding: 0.5rem;
-      }
-      .thread-detail-section {
-        padding: 0.5rem;
-      }
-    }
-  </style>
 </body>
-
 </html>
