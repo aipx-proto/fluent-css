@@ -2,8 +2,10 @@
 table {
   --_border-radius: var(--mri-border-radius-medium);
 
-  border-collapse: separate;
-  border-spacing: 0;
+  /* these are !important because LLMs will always try to override them */
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+
   border-radius: var(--_border-radius);
   border: solid 1px var(--mri-color-border-1);
   width: 100%;
