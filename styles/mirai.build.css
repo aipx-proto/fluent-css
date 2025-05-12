@@ -1,3 +1,10 @@
+/**! 
+ * Mirai CSS
+ * GitHub: https://github.com/aipx-proto/mirai-css
+ * Demo: https://aipx-proto.github.io/mirai-css
+ * LLMs.txt: https://github.com/aipx-proto/mirai-css/blob/main/styles/mirai.css.md
+!*/
+
 @font-face {
   font-family: "Aptos";
   src: url("./Aptos-Light.ttf") format("truetype");
@@ -249,6 +256,18 @@
   .mri-appearance-transparent {
     --mri-interactive-rest: transparent;
   }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 :root, .mri-theme-dark {
@@ -1111,9 +1130,13 @@ progress:not(.mri-spinner):indeterminate {
 }
 
 table {
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: var(--mri-border-radius-medium);
+  --_border-radius: var(--mri-border-radius-medium);
+
+  /* these are !important because LLMs will always try to override them */
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+
+  border-radius: var(--_border-radius);
   border: solid 1px var(--mri-color-border-1);
   width: 100%;
 }
@@ -1135,10 +1158,10 @@ table > :last-child tr:last-child {
   & td {
     border-bottom: none;
     &:first-child {
-      border-bottom-left-radius: var(--mri-border-radius-large);
+      border-bottom-left-radius: var(--_border-radius);
     }
     &:last-child {
-      border-bottom-right-radius: var(--mri-border-radius-large);
+      border-bottom-right-radius: var(--_border-radius);
     }
   }
 }
@@ -1147,10 +1170,10 @@ table > :first-child tr:first-child {
   & th,
   & td {
     &:first-child {
-      border-top-left-radius: var(--mri-border-radius-large);
+      border-top-left-radius: var(--_border-radius);
     }
     &:last-child {
-      border-top-right-radius: var(--mri-border-radius-large);
+      border-top-right-radius: var(--_border-radius);
     }
   }
 }

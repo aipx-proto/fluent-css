@@ -1,20 +1,52 @@
-# Mirai CSS Library
+# Mirai CSS Library - Alpha
+
+**An attempt at an LLM-first design system**
+
+Mirai CSS is a lightweight, CSS-only design system inspired by Microsoft Fluent, built for rapid prototyping, clean default styles, and seamless integration with AI and LLM code generation. 
+
+- **LLM-First:** Designed so its documentation and usage can be easily included in AI prompts or code generation contexts.
+- **Smart Defaults:** Styles all standard HTML elements for a polished, accessible baseline—unstyled markup still looks great, and is easier for an LLM to use for code generation.
+- **Zero JS, Pure CSS:** Leverages modern CSS features (currently Chromium-focused) to provide interactive components and utilities that previously required JavaScript.
+- **Utility Classes & Variables:** Offers a minimal, consistent set of utility classes and CSS variables to style additional markup.
+- **Component Coverage:** Includes buttons, inputs, dialogs, overlays, menus, tabs, and more—ready to use out of the box - in just css
+
+[Sample Page](https://aipx-proto.github.io/mirai-css)
+
+## Usage
+
+**Download** the [`mirai.build.css`](./styles/mirai.build.css) stylesheet and include it manually
+
+Or **link** the esm.sh version:
+```html
+  <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/mirai-css/styles/mirai.build.css?raw" />
+```
+
+**Fonts** - (working on it)
+
+**LLM.txt instructions** are currently incomplete and bad, but you can download [`mirai.css.md`](./styles/mirai.css.md) to give it a go
+
+## Development
+
+A browser will render the `index.html` file from your filesystem. I prefer to run [`live-server`](https://www.npmjs.com/package/live-server) in my repo for live updates.
+
+`npm run build` to run post css and create `mirai.build.css` which contains a merge of all the css files
+
+---
+
+# TODOs
 
 ## Refactor
-- namespace variables & classes (and everything)
-- delete appearance vars, they are different for each component applied
 - create docs
 - firefox support (for input pseudo elements)
-- unify/simplify variable usage
+- unify/simplify variable usage - delete appearance vars, they are different for each component applied
 
 ## Ambition
 
 ### Next
 - intent: info, warning, error, success, brand
   - applies to anything? like a theme?
-- size-small for checkbox, radio, and switch
-- input placeholder: color, type="date"
 - simple icon set: dismiss, chevron, checkmark, search
+- input placeholder: color, type="date"
 
 ### Done
 - interaction vars
@@ -37,7 +69,6 @@
   - spinner
   - progress bar
 - tabs
-
 
 ## Examples
 - field: label + input (and message?)
