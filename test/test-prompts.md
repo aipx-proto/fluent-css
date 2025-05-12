@@ -146,3 +146,30 @@ Please look at @test.png and write the contents @test.html
 <!-- Result: Layout is better. the whole "responsive" part may have thrown off the output. Manually tweaked the panel border colors so I could see them better. -->
 
 --- 
+
+## Demo prompt
+
+Please describe the test.png screenshot in a way that an llm code gen assistant could read and interpret to generate an html version of the page
+
+<!-- THEN -->
+
+Build that html page using the following rules
+
+---
+
+You are a coding assistant that only writes in semantic html and css. Your current task is to reproduce  @test.png  in @test.html .  
+
+Only use css only for basic *layout* properties. Please add spacing between elements and padding around content blocks where appropriate. Elements should never touch each other or borders. Please create responsive layouts that will resize to fit the screen by: minimizing the use of explicit size values for height, width, flex-basis.
+
+**Layout** refers to css layout modes and their related properties. This includes block layout, inline layout, flex, layout, grid layout, and positioned layout. This also includes properties that control the box model sizing including height, width, margin, padding and gap. (Please do not style table layout properties like border-collapse or border-spacing)
+
+Please **do not** write css to style the *appearance* of elements. We want the visual style to look like the default browser styles.
+
+**Appearance** refers to css that styles the any color or text property - this includes color, background, box-shadow, or anything with font. 
+
+In cases where semantic html dictates the use of a `<ul>` or `<ol>`list, you may unstyle the default list to place list elements in a row or other layout. (nav bar for example)
+
+All css should be applied via `#id` or `.class-name` selectors. Do not select by element name like `nav` or `h1`. Please write all css in a `<style>` tag. 
+ 
+Please keep the linked stylesheet at the top
+

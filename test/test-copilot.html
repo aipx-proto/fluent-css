@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test page</title>
+  <link rel="stylesheet" href="../styles/index.css" />
+</head>
+
+<body>
+  <div id="app-layout">
+    <aside id="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="sidebar-list">
+          <li><strong>Agents</strong></li>
+          <li>Models</li>
+          <li>Workflow</li>
+          <li>Reports</li>
+        </ul>
+      </nav>
+    </aside>
+    <main id="main-content">
+      <header class="main-header">
+        <div class="breadcrumbs">Azure AI Foundry / project-name123 / Parent page</div>
+        <div class="topbar">
+          <ul class="topbar-list">
+            <li>Home</li>
+            <li>Explore</li>
+            <li>Science</li>
+            <li>Labs</li>
+          </ul>
+          <div class="search-profile">
+            <input type="search" placeholder="Search with AI" aria-label="Search" />
+            <button type="button">Deploy agent</button>
+            <span class="profile-icon" aria-label="User profile"></span>
+          </div>
+        </div>
+      </header>
+      <section class="content-section">
+        <div class="content-header">
+          <h1>Content writer</h1>
+          <ul class="tabs-list">
+            <li>Details</li>
+            <li>Build</li>
+            <li class="active">Threads</li>
+            <li>Monitor</li>
+            <li>Evaluation</li>
+            <li>API Docs</li>
+          </ul>
+        </div>
+        <div class="content-body">
+          <section class="threads-panel">
+            <form class="search-form">
+              <input type="search" placeholder="Search threads" aria-label="Search threads" />
+            </form>
+            <table class="threads-table">
+              <thead>
+                <tr>
+                  <th>Thread ID</th>
+                  <th>Created</th>
+                  <th>Tools</th>
+                  <th>Length</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected">
+                  <td>thread_356b2KczCZ0...</td>
+                  <td>Mar 18, 2025 12:51 PM</td>
+                  <td>N/A</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>thread_3x6lcIKACR...</td>
+                  <td>Mar 19, 2025 10:45 AM</td>
+                  <td>N/A</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>thread_cUb42WJby...</td>
+                  <td>Mar 18, 2025 12:58 PM</td>
+                  <td>N/A</td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <td>thread_OCIfMFmm...</td>
+                  <td>Mar 18, 2025 11:58 PM</td>
+                  <td>N/A</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>thread_ZSruXfEgM...</td>
+                  <td>Mar 14, 2025 3:02 PM</td>
+                  <td>N/A</td>
+                  <td>15</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="threads-pagination">
+              <button type="button">Prev</button>
+              <button type="button">Next</button>
+            </div>
+          </section>
+          <aside class="thread-details-panel">
+            <div class="thread-details-header">
+              <div>ID: thread_1f46YMajmK3bljMa0g4xPJXh</div>
+              <div>Feb 27, 2025 2:20 PM</div>
+            </div>
+            <section class="chat-section">
+              <div class="chat-message user">
+                <div class="chat-label">User</div>
+                <div class="chat-content">What tools do I need on hand for common HVAC repairs?</div>
+              </div>
+              <div class="chat-message agent">
+                <div class="chat-label">Field service agent</div>
+                <div class="chat-content">
+                  HVAC-Specific Tools:
+                  <ol>
+                    <li>Manifold Gauge Set: For refrigerant system checks.</li>
+                    <li>Thermometer: Digital or infrared.</li>
+                    <li>Leak Detector: For refrigerant leaks.</li>
+                    <li>Refrigerant Scale: For measuring refrigerant.</li>
+                    <li>Vacuum Pump: For evacuating systems.</li>
+                    <li>Swaging Tools: For tubing adjustments.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="chat-message user">
+                <div class="chat-label">User</div>
+                <div class="chat-content">I've run into a damaged capacitor, it looks like it'll need to be replaced. do we have any extra inventory in the office I can pick up?</div>
+              </div>
+              <div class="chat-message agent">
+                <div class="chat-label">Field service agent</div>
+                <div class="chat-content">Yes, there are 4 capacitors available that match your requirements. You can pick it up from the supply room 342. Make sure to sign it out in the inventory log to keep our records up to date.</div>
+              </div>
+            </section>
+            <div class="thread-actions">
+              <button type="button">Open in build</button>
+              <button type="button">Delete</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+  <style>
+    #app-layout {
+      display: flex;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    #sidebar {
+      flex: 0 0 auto;
+      min-width: 160px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .sidebar-nav {
+      width: 100%;
+    }
+    .sidebar-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #main-content {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .main-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 1.5rem 0 1.5rem;
+    }
+    .breadcrumbs {
+      margin-bottom: 0.5rem;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-list {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .search-profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .profile-icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+    }
+    .content-section {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      min-width: 0;
+    }
+    .content-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .tabs-list {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .tabs-list .active {
+      font-weight: bold;
+    }
+    .content-body {
+      display: flex;
+      gap: 2rem;
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .threads-panel {
+      flex: 0 0 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 220px;
+      max-width: 400px;
+    }
+    .search-form {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    .threads-table {
+      width: 100%;
+      border-collapse: separate;
+      margin-bottom: 1rem;
+    }
+    .threads-table th,
+    .threads-table td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+    .threads-table .selected {
+      font-weight: bold;
+
+    }
+    .threads-pagination {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+    .thread-details-panel {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 0;
+      padding: 1rem;
+    }
+    .thread-details-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .chat-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .chat-message {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.75rem 1rem;
+    }
+    .chat-label {
+      font-weight: bold;
+    }
+    .thread-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 900px) {
+      #app-layout {
+        flex-direction: column;
+      }
+      .content-body {
+        flex-direction: column;
+      }
+      .threads-panel {
+        max-width: none;
+        width: 100%;
+      }
+      .thread-details-panel {
+        width: 100%;
+      }
+    }
+  </style>
+</body>
+
+</html>
