@@ -7,28 +7,28 @@
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-Light.ttf") format("truetype");
+  src: url("./Aptos-Light.ttf?raw") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-Light-Italic.ttf") format("truetype");
+  src: url("./Aptos-Light-Italic.ttf?raw") format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos.ttf") format("truetype");
+  src: url("./Aptos.ttf?raw") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-Italic.ttf") format("truetype");
+  src: url("./Aptos-Italic.ttf?raw") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
@@ -37,56 +37,56 @@
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-SemiBold.ttf") format("truetype");
+  src: url("./Aptos-SemiBold.ttf?raw") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-SemiBold-Italic.ttf") format("truetype");
+  src: url("./Aptos-SemiBold-Italic.ttf?raw") format("truetype");
   font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-Bold.ttf") format("truetype");
+  src: url("./Aptos-Bold.ttf?raw") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-Bold-Italic.ttf") format("truetype");
+  src: url("./Aptos-Bold-Italic.ttf?raw") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-ExtraBold.ttf") format("truetype");
+  src: url("./Aptos-ExtraBold.ttf?raw") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-ExtraBold-Italic.ttf") format("truetype");
+  src: url("./Aptos-ExtraBold-Italic.ttf?raw") format("truetype");
   font-weight: 800;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-Black.ttf") format("truetype");
+  src: url("./Aptos-Black.ttf?raw") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aptos";
-  src: url("./Aptos-Black-Italic.ttf") format("truetype");
+  src: url("./Aptos-Black-Italic.ttf?raw") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
@@ -99,7 +99,7 @@
   font-stretch: 75% 125%;
   font-style: oblique 0deg 12deg;
   font-display: swap;
-  src: url("./MonaspaceNeonVarVF[wght,wdth,slnt].woff2") format("woff2-variations");
+  src: url("./MonaspaceNeonVarVF[wght,wdth,slnt].woff2?raw") format("woff2-variations");
 }
 
 :root {
@@ -661,10 +661,15 @@ input[type="email"],
 input[type="password"],
 input[type="number"],
 input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
 input[type="search"],
 input[type="color"],
 input[type="url"],
 input[type="file"],
+input[type="tel"],
 select:not(.mri-button),
 textarea {
   --_color-background: var(--mri-color-background-2);
