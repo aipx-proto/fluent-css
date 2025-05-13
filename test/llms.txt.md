@@ -7,34 +7,29 @@
 - Avoid additional javascript and css libraries and frameworks
 - Write as little CSS as possible. 
 
-How to write CSS:
-- Prefer using semantic HTML element as is, and if needed additional customization
-- If you have to write new CSS, co-locate the `<style>` next to the element they apply to. Do NOT combine all the styles into a single stylesheet. Localize them to the elements they affect
-- Only use css only for basic *Layout* properties. Please add spacing between elements and padding around content blocks where appropriate. Elements should never touch each other or borders. Please create responsive layouts that will resize to fit the screen by: minimizing the use of explicit size values for height, width, flex-basis.
-- **Layout** refers to css layout modes and their related properties. This includes block layout, inline layout, flex, layout, grid layout, and positioned layout. This also includes properties that control the box model sizing including height, width, margin, padding and gap. (Please do not style table layout properties like border-collapse or border-spacing)
-- Please **do not** write css to style the *Appearance* of elements. The framework already styles visual appearance of semantic HTML elements.
-- **Appearance** refers to css that styles the any color or text property - this includes color, background, box-shadow, or anything with font.
-- Use css variables to override semantic HTML elements, and additional customization if needed
+**How to write HTML and CSS with Mirai CSS:**
 
-When writing HTML and CSS with Mirai CSS, follow these guidelines:
+- Use semantic HTML - Always use the most appropriate HTML elements for your content (e.g., `<nav>`, `<main>`, `<section>`, `<header>`, `<footer>`, `<ul>`, `<li>`, `<form>`, `<label>`, `<input>`, `<button>`, `<dialog>`, etc.).
+- Style elements with BEM (`block__element--modifier`) class names. 
+- Style all repeating content with class names.
+- Only use inline styles only for elements that are one-off.
+- Co-locate `<style>` with related container element blocks. Do **not** combine all styles into a single stylesheet.
+- Primarily use css for *Layout* properties: block/inline/flex/grid/positioned layout, and box model properties (height, width, margin, padding, gap).
+  - Add spacing between elements and padding around content blocks so elements never touch each other or borders.
+  - Create responsive and fluid layouts by minimizing explicit size values (height, width, flex-basis, etc.).
+  - Do **not** style table layout properties like `border-collapse` or `border-spacing`. The framework handles table layout styles.
+- **Never** use CSS to style the *Appearance* of *Component* elements. The framework already provides visual appearance for HTML elements.
+  - *Appearance* includes any color, background, box-shadow, or font/text property.
+  - *Component* elements include any element with a default visual appearance or interactivity: `<a>`, `<button>`, `<input>`, `<dialog>`, `<progress>`, `<select>`, `<textarea>`, `<details>`, `<summary>`, `<table> `popover`,  etc.
+  - Instead, customize the appearance of component HTML elements using the utility class names provided by the framework.
+- Use provided css `--mri-variable`s to style *Appearance* of *Container* elements
+  - *Appearance* includes any color, background, box-shadow, or font/text property.
+  - *Container* elements include any element meant to group, wrap, or structure content: `<div>`, `<section>`, `<nav>`, `<main>`, `<aside>`, `<header>`, `<footer>`, `<article>`, `<ul>`, `<ol>`, `<li>`, `<form>`, etc.
 
-- **Use semantic HTML**: Always use the most appropriate HTML elements for your content (e.g., `<nav>`, `<main>`, `<section>`, `<header>`, `<footer>`, `<ul>`, `<li>`, `<form>`, `<label>`, `<input>`, `<button>`, `<dialog>`, etc.).
-- **Do not apply custom styles directly to interactive elements**:  
-  - **Links (`<a>`)**, **inputs (`<input>`, `<textarea>`, etc.)**, **buttons (`<button>`)**, and **dialogs (`<dialog>`)** should not have custom styles applied to them, except for layout purposes (such as spacing, alignment, or flex/grid placement).
-  - Do not override their colors, borders, padding, or other appearance properties.  
-- **Use the provided CSS variables** for:
-  - Text color
-  - Border radius
-  - Font size and family
-  - Shadows
-  - Background and border colors
-  - Sizing (height, padding, etc.)
-- **Do not use or reference internal variables** all public variables follow the naming convention `--mri-<variable-name>`. Do not use any 'private' variables prefixed with an underscore like `--_<variable-name>`.
-- **Compose layouts using semantic containers** (e.g., `<div>`, `<section>`, `<nav>`) and use the provided CSS variables to style layout-level elements (such as spacing, sizing, and shape).
-- **No visual overrides**: Do not use inline styles or custom CSS to change the appearance of core interactive native html elements. Only use the public variables for layout and theming.
-
-**Summary:**  
-Write clean, semantic HTML. Use the public CSS variables for layout and theming of container elements. Never restyle links, inputs, buttons, or dialogs beyond layout/placement (unless explicitly asked to).
+- **Summary:**  
+  - Write clean, semantic HTML.
+  - Use public CSS variables for layout and theming of container elements.
+  - Never restyle links, inputs, buttons, or dialogs beyond layout/placement (unless explicitly asked to).
 
 </requirements>
 
@@ -322,7 +317,7 @@ A button with `mri-dialog-close` button will appear in the top right of the dial
 ```
 
 ### Popover
-Use the native html `popover` attribute and API to create a popover
+Use the native html `popover` attribute and API to create a popover. Any element with the `popover` attribute will have a default popover style applied.
 
 ```html
 <button popovertarget="popover-example">Click for popover</button>
@@ -370,10 +365,10 @@ The "accordion" element is the native `details` and `summary` html elements
 ```
 
 ### Tabs
-The mirai tabs component consists of 2 parts: tab styles, and a css `:checked` hack to create tab functionality
+The mirai tabs component consists of 2 parts: tab styles, and a css `:checked` hack to create tab functionality.
 
 #### Tabs style
-...
+Tabs have a default style applied and need no css classes or custom styling
 
 #### Tabs Functionality
 *How it works:*
