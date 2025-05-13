@@ -132,7 +132,8 @@
 ```
 
 ### Control Group
-An element with the `mri-control-group` class renders multiple `button`s and `input`s as one unit. A modifier class (like `mri-size-large`) placed on the control group will apply to all its children.
+An element with the `mri-control-group` class renders multiple `button`s and `input`s as one unit. 
+A modifier class (like `mri-size-large`) placed on the control group will apply to all its children.
 
 ```html
 <div class="mri-control-group">
@@ -274,8 +275,8 @@ For the "switch" variant of a standalone checkbox, add the `mri-switch` class
   Checked
 </label>
 <label>
-  <input type="checkbox" class="mri-switch" checked />
-  Checked
+  <input type="checkbox" class="mri-switch" />
+  Unchecked
 </label>
 ```
 
@@ -320,7 +321,7 @@ The native `dialog` element will style child `header`, `main`, and `footer` elem
 A button with `mri-dialog-close` button will appear in the top right of the dialog
 
 ```html
-<button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
+<button onclick="document.getElementById('sample-dialog').showModal()">Open Dialog</button>
 
 <dialog id="sample-dialog" closedby="any">
   <header>

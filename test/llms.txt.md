@@ -8,20 +8,13 @@
 - Write as little CSS as possible. 
 
 How to write CSS:
-- Prefer using Semantic HTML element as is, and if need additional customization
-- If you have to write new CSS, co-locate the `<style>` next to the element they apply to. Do NOT combine all the styles into a single stylesheet. Distribute them to the elements
-- Only use css only for basic *layout* properties. Please add spacing between elements and padding around content blocks where appropriate. Elements should never touch each other or borders. Please create responsive layouts that will resize to fit the screen by: minimizing the use of explicit size values for height, width, flex-basis.
+- Prefer using semantic HTML element as is, and if needed additional customization
+- If you have to write new CSS, co-locate the `<style>` next to the element they apply to. Do NOT combine all the styles into a single stylesheet. Localize them to the elements they affect
+- Only use css only for basic *Layout* properties. Please add spacing between elements and padding around content blocks where appropriate. Elements should never touch each other or borders. Please create responsive layouts that will resize to fit the screen by: minimizing the use of explicit size values for height, width, flex-basis.
 - **Layout** refers to css layout modes and their related properties. This includes block layout, inline layout, flex, layout, grid layout, and positioned layout. This also includes properties that control the box model sizing including height, width, margin, padding and gap. (Please do not style table layout properties like border-collapse or border-spacing)
-- Please **do not** write css to style the *appearance* of elements. The framework already styles visual appearance of semantic HTML elements.
+- Please **do not** write css to style the *Appearance* of elements. The framework already styles visual appearance of semantic HTML elements.
 - **Appearance** refers to css that styles the any color or text property - this includes color, background, box-shadow, or anything with font.
-- Use css variables to override Semantic HTML elements, and additional customization if needed
-- 
-</requirements>
-
-<context>
-# Mirai CSS – Usage Guide
-
-## Code Authoring Guidelines
+- Use css variables to override semantic HTML elements, and additional customization if needed
 
 When writing HTML and CSS with Mirai CSS, follow these guidelines:
 
@@ -43,14 +36,25 @@ When writing HTML and CSS with Mirai CSS, follow these guidelines:
 **Summary:**  
 Write clean, semantic HTML. Use the public CSS variables for layout and theming of container elements. Never restyle links, inputs, buttons, or dialogs beyond layout/placement (unless explicitly asked to).
 
-## Public Variables
+</requirements>
 
-**Only use the variables listed below.**
-Variables not listed here are internal and should not be used.
+<documentation>
+
+## CSS Variables
+
+**Note:**  
+All mirai.css variables follow the naming convention `.--mir-<variable-name>`. 
 
 ### Font
 
-- `--mri-font-size-1` to `--mri-font-size-7`: Font sizes (e.g., 40px, 28px, 20px, 16px, 14px, 12px, 10px)- 1 is largest, 7 is smallest
+- Font Sizes - numbers roughly corrospond to default h tag sizes - ex: `h1` defaults to `--mri-font-size-1`;
+  - `--mri-font-size-1`: (e.g., 40px) – largest.  
+  - `--mri-font-size-2`: (e.g., 28px)  
+  - `--mri-font-size-3`: (e.g., 20px)  
+  - `--mri-font-size-4`: (e.g., 16px)  
+  - `--mri-font-size-5`: (e.g., 14px)  *(default)*
+  - `--mri-font-size-6`: (e.g., 12px)  
+  - `--mri-font-size-7`: (e.g., 10px) – smallest.  
 - `--mri-font-family-sans`: Main sans-serif font stack
 - `--mri-font-family-mono`: Monospace font stack
 - `--mri-font-weight-regular`: Regular font weight (e.g., 400)
@@ -83,10 +87,16 @@ Variables not listed here are internal and should not be used.
   - `--mri-color-text-3` - Very faint, used for disabled or placeholder text
 
 ### Shadows
-
-- `--mri-shadow-2`, `--mri-shadow-4`, `--mri-shadow-8`, `--mri-shadow-16`, `--mri-shadow-28`, `--mri-shadow-64`: Predefined box shadow styles. 2 is least, 64 is most
+Values for `box-shadow`. 
+- `--mri-shadow-2`: Lowest, smallest, least intense
+- `--mri-shadow-4`: 
+- `--mri-shadow-8`: 
+- `--mri-shadow-16`:
+- `--mri-shadow-28`:
+- `--mri-shadow-64`: Highest, largest, most intense
 
 ## Utility Class Names
+
 **Note:**  
 All mirai.css utility classes follow the naming convention `.mir-<class-name>`. 
   
@@ -116,8 +126,6 @@ can be applied to `button` and `input`
   - `.mri-appearance-outline` - 
   - `.mir-appearance-subtle` *(default)* - 
 
-
-
 ### Icons
 - Use emoji for icons
 
@@ -125,14 +133,10 @@ can be applied to `button` and `input`
 - In instances where a button or icon exists inside an input, Use a .mri-control-group instead.
 
 ## Layout guidelines
+... forthcoming
 
 
-</context>
-
-<documentation>
-# Mirai.css
-
-## Forms
+## Components
 
 ### Button
 
@@ -144,20 +148,6 @@ can be applied to `button` and `input`
 <button class="mri-appearance-transparent">Transparent</button>
 ```
 
-#### Sizes
-```html
-<button class="mri-size-small">Small</button>
-<button class="mri-size-medium">Medium</button>
-<button class="mri-size-large">Large</button>
-```
-
-#### Shapes
-```html
-<button class="mri-shape-square">Square</button>
-<button class="mri-shape-rounded">Rounded</button>
-<button class="mri-shape-circular">Circular</button>
-```
-
 #### States
 ```html
 <button>Default</button>
@@ -167,6 +157,7 @@ can be applied to `button` and `input`
 ```
 
 #### Elements
+All the following elements will appear as buttons. Using the `.mir-button` class will display an `a` anchor or `select` element as a button instead of its default
 ```html
 <input type="reset" value="Input Reset" />
 <input type="submit" value="Input Submit" />
@@ -188,7 +179,7 @@ A modifier class (like `mri-size-large`) placed on the control group will apply 
 </div>
 ```
 
-#### Example with size, shape, active, and icon-only
+Example with size, shape, active, and icon-only
 ```html
 <div class="mri-control-group mri-size-small mri-shape-square">
   <button>Size Small</button>
@@ -198,7 +189,7 @@ A modifier class (like `mri-size-large`) placed on the control group will apply 
 </div>
 ```
 
-#### Standalone Form
+Standalone Form
 ```html
 <form class="mri-control-group mri-shape-rounded">
   <input type="email" placeholder="Your email" />
@@ -214,21 +205,7 @@ A modifier class (like `mri-size-large`) placed on the control group will apply 
 <input type="text" placeholder="Outline" class="mri-appearance-outline" />
 ```
 
-#### Sizes
-```html
-<input type="text" placeholder="Small" class="mri-size-small" />
-<input type="text" placeholder="Medium" class="mri-size-medium" />
-<input type="text" placeholder="Large" class="mri-size-large" />
-```
-
-#### Shapes
-```html
-<input type="text" placeholder="Square" class="mri-shape-square" />
-<input type="text" placeholder="Rounded" class="mri-shape-rounded" />
-<input type="text" placeholder="Circular" class="mri-shape-circular" />
-```
-
-#### Non-Text Types
+Non-Text Types
 ```html
 <input type="number" placeholder="000" />
 <input type="color" />
@@ -236,6 +213,7 @@ A modifier class (like `mri-size-large`) placed on the control group will apply 
 ```
 
 ### Select
+By default, this element has a very similar appearance to an `input`
 ```html
 <select>
   <option value="">Select an option</option>
@@ -244,6 +222,16 @@ A modifier class (like `mri-size-large`) placed on the control group will apply 
   <option value="3">Option 3</option>
 </select>
 ```
+
+However, it can be styled to appear like a button by using the `mri-button` class
+```html
+<select class="mri-button">
+  <option value="">Pick a value</option>
+  <option value="1">Value 1</option>
+  <option value="2">Value 2</option>
+</select>
+```
+
 
 ### Textarea
 ```html
@@ -301,7 +289,7 @@ For the "switch" variant of a standalone checkbox, add the `mri-switch` class
 ```
 
 #### Spinner
-The `mri-spinner` variation displays a round spinning loader instead of a loading par
+The `.mri-spinner` variation displays a round spinning loader instead of a progress bar
 ```html
 <progress class="mri-spinner" indeterminate></progress>
 ```
