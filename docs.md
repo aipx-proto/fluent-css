@@ -5,14 +5,16 @@
 ### Typography
 
 #### Font Sizes
+- `--mri-font-size-1` to `--mri-font-size-7`: Font sizes (e.g., 40px, 28px, 20px, 16px, 14px, 12px, 10px)- 1 is largest, 7 is smallest
+
 ```html
-<span style="font-size: var(--mri-font-size-1);">Font Size 1</span>
-<span style="font-size: var(--mri-font-size-2);">Font Size 2</span>
-<span style="font-size: var(--mri-font-size-3);">Font Size 3</span>
-<span style="font-size: var(--mri-font-size-4);">Font Size 4</span>
-<span style="font-size: var(--mri-font-size-5);">Font Size 5</span>
-<span style="font-size: var(--mri-font-size-6);">Font Size 6</span>
-<span style="font-size: var(--mri-font-size-7);">Font Size 7</span>
+<span style="font-size: var(--mri-font-size-1);">Font Size 1 - 40px</span>
+<span style="font-size: var(--mri-font-size-2);">Font Size 2 - 28px</span>
+<span style="font-size: var(--mri-font-size-3);">Font Size 3 - 20px</span>
+<span style="font-size: var(--mri-font-size-4);">Font Size 4 - 16px</span>
+<span style="font-size: var(--mri-font-size-5);">Font Size 5 - 14px</span>
+<span style="font-size: var(--mri-font-size-6);">Font Size 6 - 12px</span>
+<span style="font-size: var(--mri-font-size-7);">Font Size 7 - 10px</span>
 ```
 
 #### Font Families
@@ -30,6 +32,8 @@
 ### Color
 
 #### Text Colors
+- `--mri-color-text-1` to `--mri-color-text-4`: Text colors for different emphasis - 1 is most intense, 4 is least intense
+
 ```html
 <p style="color: var(--mri-color-text-1);">Text 1</p>
 <p style="color: var(--mri-color-text-2);">Text 2</p>
@@ -38,6 +42,12 @@
 ```
 
 #### Background Colors
+- `--mri-color-background-1` to `--mri-color-background-4`: Background colors for different surfaces
+  - 1 is the background for primary panels
+  - 2 is the background for inputs and controls inside a primary panel
+  - 3 is the darker page background
+  - 4 is the darkest, not often used
+
 ```html
 <div style="background-color: var(--mri-color-background-1);">Background 1</div>
 <div style="background-color: var(--mri-color-background-2);">Background 2</div>
@@ -46,6 +56,8 @@
 ```
 
 #### Border Colors
+- `--mri-color-border-1`, `--mri-color-border-2`: Border colors - border-1 is a divider, border-2 is the same as background-3
+
 ```html
 <div style="border: 1px solid var(--mri-color-border-1);">Border 1</div>
 <div style="border: 1px solid var(--mri-color-border-2);">Border 2</div>
@@ -55,15 +67,17 @@
 
 #### Border Radius
 ```html
-<div style="border-radius: 0">Radius None</div>
-<div style="border-radius: var(--mri-border-radius-small);">Radius Small</div>
-<div style="border-radius: var(--mri-border-radius-medium);">Radius Medium</div>
-<div style="border-radius: var(--mri-border-radius-large);">Radius Large</div>
-<div style="border-radius: var(--mri-border-radius-xlarge);">Radius XLarge</div>
-<div style="border-radius: var(--mri-border-radius-circular);">Radius Circular</div>
+<div style="border-radius: 0">Radius None - 0px</div>
+<div style="border-radius: var(--mri-border-radius-small);">Radius Small - 4px</div>
+<div style="border-radius: var(--mri-border-radius-medium);">Radius Medium - 8px</div>
+<div style="border-radius: var(--mri-border-radius-large);">Radius Large - 12px</div>
+<div style="border-radius: var(--mri-border-radius-xlarge);">Radius XLarge - 16px</div>
+<div style="border-radius: var(--mri-border-radius-circular);">Radius Circular - 999px</div>
 ```
 
 #### Shadows
+- `--mri-shadow-2` is the lowest visual z-index, and `--mri-shadow-64` is the highest visual z-index
+
 ```html
 <div style="box-shadow: var(--mri-shadow-2);">Shadow 2</div>
 <div style="box-shadow: var(--mri-shadow-4);">Shadow 4</div>
@@ -118,18 +132,28 @@
 ```
 
 ### Control Group
+An element with the `mri-control-group` class renders multiple `button`s and `input`s as one unit. A modifier class (like `mri-size-large`) placed on the control group will apply to all its children.
+
 ```html
 <div class="mri-control-group">
   <button>Button 1</button>
   <button>Button 2</button>
   <button>Button 3</button>
 </div>
+```
+
+#### Example with size, shape, active, and icon-only
+```html
 <div class="mri-control-group mri-size-small mri-shape-square">
   <button>Size Small</button>
   <button>Shape Square</button>
   <button class="mri-active">Selected</button>
   <button class="mri-icon-only">•••</button>
 </div>
+```
+
+#### Standalone Form
+```html
 <form class="mri-control-group mri-shape-rounded">
   <input type="email" placeholder="Your email" />
   <button>Subscribe</button>
@@ -137,16 +161,29 @@
 ```
 
 ### Input
+
 ```html
 <input type="text" placeholder="Default" />
 <input type="text" placeholder="Disabled" disabled />
 <input type="text" placeholder="Outline" class="mri-appearance-outline" />
+```
+
+#### Sizes
+```html
 <input type="text" placeholder="Small" class="mri-size-small" />
 <input type="text" placeholder="Medium" class="mri-size-medium" />
 <input type="text" placeholder="Large" class="mri-size-large" />
+```
+
+#### Shapes
+```html
 <input type="text" placeholder="Square" class="mri-shape-square" />
 <input type="text" placeholder="Rounded" class="mri-shape-rounded" />
 <input type="text" placeholder="Circular" class="mri-shape-circular" />
+```
+
+#### Non-Text Types
+```html
 <input type="number" placeholder="000" />
 <input type="color" />
 <input type="date" />
@@ -168,6 +205,8 @@
 ```
 
 ### Radio
+
+#### States
 ```html
 <label>
   <input type="radio" name="radio" value="1" checked />
@@ -177,6 +216,10 @@
   <input type="radio" name="radio" value="2" />
   Unchecked
 </label>
+```
+
+#### Sizes
+```html
 <label class="mri-size-large">
   <input type="radio" name="radio2" value="1" />
   Large
@@ -192,19 +235,21 @@
 ```
 
 ### Checkbox
+
+#### States
 ```html
 <label>
   <input type="checkbox" name="checkbox1" checked />
   Checked
 </label>
 <label>
-  <input type="checkbox" name="checkbox2" />
-  Indeterminate
-</label>
-<label>
   <input type="checkbox" name="checkbox3" />
   Unchecked
 </label>
+```
+
+#### Sizes
+```html
 <label class="mri-size-large">
   <input type="checkbox" name="checkbox-large" />
   Large
@@ -220,11 +265,22 @@
 ```
 
 ### Switch
+For the "switch" variant of a standalone checkbox, add the `mri-switch` class
+
+#### States
 ```html
 <label>
   <input type="checkbox" class="mri-switch" checked />
-  Default
+  Checked
 </label>
+<label>
+  <input type="checkbox" class="mri-switch" checked />
+  Checked
+</label>
+```
+
+#### Sizes
+```html
 <label>
   <input type="checkbox" class="mri-switch mri-size-small" />
   Small
@@ -248,32 +304,44 @@
 ```html
 <progress value="33" max="100"></progress>
 <progress indeterminate></progress>
+```
+
+#### Spinner
+The `mri-spinner` variation displays a round spinning loader instead of a loading par
+```html
 <progress class="mri-spinner" indeterminate></progress>
 ```
 
 ## Overlay
 
 ### Dialog
+The native `dialog` element will style child `header`, `main`, and `footer` elements with layout properties
+
+A button with `mri-dialog-close` button will appear in the top right of the dialog
+
 ```html
-<dialog class="mri-dialog-large">
-  <form method="dialog">
-    <header>
-      <h3>Dialog Title</h3>
-      <span>An example dialog</span>
-    </header>
-    <main>
-      <p>This is a sample dialog window with some content.</p>
-    </main>
-    <footer>
-      <button class="mri-dialog-close mri-appearance-transparent mri-icon-only">X</button>
-      <button class="mri-appearance-subtle">Cancel</button>
-      <button class="mri-appearance-primary">Primary</button>
-    </footer>
-  </form>
+<button onclick="document.getElementById('sampleDialog').showModal()">Open Dialog</button>
+
+<dialog id="sample-dialog" closedby="any">
+  <header>
+    <h3>Dialog Title</h3>
+    <span>An example dialog</span>
+  </header>
+  <main>
+    <p>This is a sample dialog window with some content.</p>
+  </main>
+  <footer>
+    <!-- the mri-dialog-close button will appear in the top right  -->
+    <button class="mri-dialog-close mri-appearance-transparent mri-icon-only">X</button>
+    <button class="mri-appearance-subtle">Cancel</button>
+    <button class="mri-appearance-primary">Primary</button>
+  </footer>
 </dialog>
 ```
 
 ### Popover
+Use the native html `popover` attribute and API to create a popover
+
 ```html
 <button popovertarget="popover-example">Click for popover</button>
 <div id="popover-example" popover>
@@ -283,6 +351,8 @@
 ```
 
 ### Menu & Split Button
+The `mri-menu` displays a vertically stacked menu of buttons. This should be used in a `popover`, and is commonly used with a "split button": a Control group that combines a main button with a icon-only overflow button that opens a popover menu
+
 ```html
 <div class="mri-control-group">
   <button class="mri-appearance-primary mri-shape-rounded">Split Button</button>
@@ -293,13 +363,15 @@
   <button>Edit</button>
   <button>Duplicate</button>
   <hr />
-  <button class="mri-intent-danger">Delete</button>
+  <button class="mri-intent-primary">Delete</button>
 </div>
 ```
 
 ## Other
 
 ### Accordion
+The "accordion" element is the native `details` and `summary` html elements
+
 ```html
 <details>
   <summary>Accordion Item 1</summary>
@@ -316,8 +388,27 @@
 ```
 
 ### Tabs
+The mirai tabs component consists of 2 parts: tab styles, and a css `:checked` hack to create tab functionality
+
+#### Tabs style
+
+
+#### Tabs Functionality
+*How it works:*
+An `input` `type="radio"` with `id="tab-N"` sits inside its `label` with `for="tab-N"` and `aria-controls="panel-N"`. When that `input` is `checked`, the corresponding element with `id="panel=N` ***anywhere in the dom*** will be displayed. 
+
+The css-only tabs navigation uses `input[type="radio"]:checked` selector to  corresponding tab panel.
+
+There are 20 available tab/panel ids hard-coded into the css file in the format `tab-<number>` and `panel-<number>` like: `tab-1`, `tab-2`, ... `tab-20` and `panel-1`, `panel-2`, ... `panel-20`
+
+
+
+The `label` must have the `aria-controls`
+The input is visually hidden with `display:none;`, but the `label` still interacts with this `input`.
+When an `input` is `checked`
+
 ```html
-<nav role="tablist" class="mri-tab-list mri-vertical mri-appearance-subtle">
+<nav role="tablist">
   <label role="tab" aria-controls="panel-1" for="tab-1">
     <input type="radio" name="tab-group-1" id="tab-1" checked />
     Tab 1
