@@ -1,3 +1,8 @@
+* {
+  /* for button, input and other things that don't inherit by default */
+  font-family: inherit;
+}
+
 html,
 body {
   font-family: var(--mri-font-family-sans);
