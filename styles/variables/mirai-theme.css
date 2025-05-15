@@ -89,8 +89,8 @@
   --mri-color-text-3: #999999;
   --mri-color-text-4: #5c5c5c;
 
-  --mri-color-brand-base: #005E8B;
-  --mri-color-brand-text: #008AC9;
+  --mri-color-brand-base: #115ea3;
+  --mri-color-brand-text: #479ef5;
 
 
   &,
@@ -128,8 +128,8 @@
   --mri-color-text-3: #707070;
   --mri-color-text-4: #bdbdbd;
 
-  --mri-color-brand-base: #0074cd;
-  --mri-color-brand-text: #007BB4;
+  --mri-color-brand-base: #0f6cbd;
+  --mri-color-brand-text: #115ea3;
 
   &,
   .mri-appearance-outline {
