@@ -197,7 +197,7 @@
   --mri-color-text-3: #999999;
   --mri-color-text-4: #5c5c5c;
 
-  --mri-color-brand-base: #115ea3;
+  --mri-color-brand-base: #479ef5;
   --mri-color-brand-text: #479ef5;
 
 
@@ -401,7 +401,7 @@ select.mri-button,
   }
 
   &.mri-appearance-primary {
-    color: white;
+    color: var(--mri-color-background-4);
   }
 
   &.mri-icon-only {

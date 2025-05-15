@@ -62,7 +62,7 @@ select.mri-button,
   }
 
   &.mri-appearance-primary {
-    color: white;
+    color: var(--mri-color-background-4);
   }
 
   &.mri-icon-only {
