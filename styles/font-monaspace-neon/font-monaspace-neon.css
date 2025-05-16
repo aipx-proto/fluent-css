@@ -5,5 +5,5 @@
   font-stretch: 75% 125%;
   font-style: oblique 0deg 12deg;
   font-display: swap;
-  src: url("./MonaspaceNeonVarVF[wght,wdth,slnt].woff2?raw") format("woff2-variations");
+  src: url("./MonaspaceNeonVarVF[wght,wdth,slnt].woff2") format("woff2-variations");
 }
