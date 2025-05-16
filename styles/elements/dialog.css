@@ -4,35 +4,41 @@ dialog {
   border: 1px solid var(--mri-color-border-1);
   background-color: var(--mri-color-background-1);
   box-shadow: var(--mri-shadow-16);
-  padding: 0;
   border-radius: var(--mri-border-radius-large);
   overflow: hidden;
 
-  header {
-    padding: 24px 24px 12px 24px;
+  padding: 12px 24px;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 0;
+  &:has(main, footer, header) {
+    padding: 0;
+
+    header {
+      padding: 24px 24px 12px 24px;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
     }
-  }
-  main {
-    padding: 12px 24px;
 
-    /* the main content should be scrollable */
-    max-height: 60vh;
-    overflow-y: auto;
-  }
-  footer {
-    padding: 12px 24px;
-    border-top: 1px solid var(--mri-color-border-2);
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
+    main {
+      padding: 12px 24px;
+      /* the main content should be scrollable */
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+    
+    footer {
+      padding: 12px 24px;
+      border-top: 1px solid var(--mri-color-border-2);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
   }
 
   .mri-dialog-close {
@@ -78,22 +84,4 @@ dialog {
     }
   }
 
-  /* opacity: 0;
-  transform: scale(0.5);
-  transition: opacity 0.2s ease-in-out allow-discrete;
-
-  &::backdrop {
-    background-color: var(--mri-color-background-overlay);
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  &[open] {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  &[open]::backdrop {
-    opacity: 1;
-  } */
 }
