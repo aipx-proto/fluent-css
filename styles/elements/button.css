@@ -83,9 +83,20 @@ a.mri-button {
   text-decoration: none;
 }
 
-/* .mri-size-small, */
-::-webkit-file-upload-button {
-  --mri-size-height: 24px;
-  --mri-size-font: var(--mri-font-size-6);
-  --mri-size-padding: 8px;
+input[type="file"] {
+  &::-webkit-file-upload-button {
+    font-family: inherit;
+  }
+  &:hover {
+    &::-webkit-file-upload-button {
+      background-color: var(--mri-interactive-hover);
+      transition-duration: var(--mri-duration-hover);
+    }
+  }
+  &:active {
+    &::-webkit-file-upload-button {
+      background-color: var(--mri-interactive-pressed);
+      transition-duration: var(--mri-duration-hover);
+    }
+  }
 }

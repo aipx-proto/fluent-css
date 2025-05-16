@@ -11,15 +11,12 @@ input[type="time"],
 input[type="search"],
 input[type="color"],
 input[type="url"],
-input[type="file"],
+/* input[type="file"], */
 input[type="tel"],
 select:not(.mri-button),
 textarea {
   --_color-background: var(--mri-color-background-2);
   --_color-border: transparent;
-
-  /* appearance: none; */
-  /* line-height: 1.4; */
 
   display: inline-flex;
   align-items: center;
@@ -101,9 +98,6 @@ input[type="color"] {
     border-radius: calc(var(--mri-border-radius) - 4px);
   }
 }
-
-/* I cannot figure out how to vertically center this input's content */
-/* input[type="file"] {} */
 
 input[type="email"],
 input[type="password"],
