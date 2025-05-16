@@ -1,4 +1,6 @@
-# Mirai CSS Library - Alpha
+![mirai.css cover art](./assets/Mirai-未来-css-Cover.svg)
+
+# Mirai CSS • 未来
 
 **An attempt at an LLM-first design system**
 
