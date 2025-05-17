@@ -738,6 +738,9 @@ input[type="number"] {
 textarea {
   padding-block: 0.5em;
   font-family: var(--mri-font-family-sans);
+  /* resize: vertical;
+  field-sizing: content;
+  width: 100%; */
 }
 
 input[type="color"] {
