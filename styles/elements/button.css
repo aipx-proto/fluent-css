@@ -2,10 +2,11 @@
   input[type="button"],
   input[type="submit"],
   input[type="reset"],
-  input[type="file"]::-webkit-file-upload-button,
+
   a.mri-button,
   select.mri-button,
-  .mri-button) {
+  .mri-button),
+::-webkit-file-upload-button {
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -64,12 +65,15 @@
   .mri-input & {
     border: none;
     background-color: transparent;
+
     &:hover {
       background-color: var(--mri-interactive-rest);
     }
+
     &:active {
       background-color: var(--mri-interactive-active);
     }
+
     --_border-radius: var(--mri-border-radius);
   }
 
