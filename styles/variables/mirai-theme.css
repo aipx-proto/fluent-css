@@ -96,8 +96,8 @@
   &,
   .mri-appearance-outline {
     --mri-interactive-rest: var(--mri-color-background-1);
-    --mri-interactive-hover: oklch(from var(--mri-color-background-1) calc(l * 0.8) c h);
-    --mri-interactive-pressed: oklch(from var(--mri-color-background-1) calc(l * 0.65) c h);
+    --mri-interactive-hover: oklch(from var(--mri-interactive-rest) calc(l * 0.8) c h);
+    --mri-interactive-pressed: oklch(from var(--mri-interactive-rest) calc(l * 0.65) c h);
   }
   .mri-appearance-primary {
     --mri-interactive-rest: var(--mri-color-brand-base);

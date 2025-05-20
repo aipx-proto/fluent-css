@@ -258,6 +258,17 @@ Non-Text Types
 <input type="date" />
 ```
 
+### Input Group
+In the below example the wrapping `.mri-input` element will appear as the input (with the input unstyled). This pattern should be used to include buttons, icons or other content inside of an input
+
+```html
+<div class="mri-input">
+  <i class="mri-emojicon">🔍</i>
+  <input type="text" placeholder="Search" />
+  <button class="mri-size-small">Submit</button>
+</div>
+```
+
 ### Select
 By default, this element has a very similar appearance to an `input`
 ```html

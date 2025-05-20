@@ -9,6 +9,7 @@
   },
   "license": "ISC",
   "scripts": {
+    "dev": "npm run build -- --watch",
     "build": "postcss styles/index.css -o styles/mirai.build.css"
   },
   "devDependencies": {
