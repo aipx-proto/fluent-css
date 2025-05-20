@@ -702,15 +702,14 @@ dialog {
   font-size: var(--mri-size-font);
   color: var(--mri-color-text-1);
 
-
-  .mri-input>& {
+  :where(.mri-input>&) {
     appearance: none;
     background: none;
     border: none;
     outline: none;
   }
 
-  :not(.mri-input)>& {
+  :where(:not(.mri-input)>&) {
     --_color-background: var(--mri-color-background-2);
     --_color-border: transparent;
 
