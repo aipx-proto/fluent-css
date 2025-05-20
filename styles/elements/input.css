@@ -25,6 +25,7 @@
     background: none;
     border: none;
     outline: none;
+    flex: 1 1 auto
   }
 
   :where(:not(.mri-input)>&) {
@@ -81,9 +82,14 @@
 }
 
 .mri-input {
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
   align-items: baseline;
   padding: 4px;
   gap: 4px;
+
+
 }
 
 input[type="number"],
