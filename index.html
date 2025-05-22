@@ -913,6 +913,42 @@
           <p>This is the content of the third tab.</p>
         </section>
       </div>
+      <!-- <div class="section__content tabs__elements">
+        <style>
+          .tabs__elements {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: start;
+          }
+        </style>
+
+        <nav class="mri-tab-list mri-vertical jsTabs">
+          <a href="#" class="mri-tab mri-active">Link Tab 1</a>
+          <a href="#" class="mri-tab">Link Tab 2</a>
+          <a href="#" class="mri-tab mri-disabled">Link Tab 3</a>
+        </nav>
+        <nav class="mri-tab-list mri-appearance-subtle jsTabs">
+          <button class="mri-tab mri-active">Button Tab 1</button>
+          <button class="mri-tab">Button Tab 2</button>
+          <button class="mri-tab" disabled>Button Tab 3</button>
+        </nav>
+        <script>
+          function setupTabNav(tabListSelector, callback) {
+            document.querySelectorAll(tabListSelector).forEach(tabList => {
+              tabList.addEventListener('click', function (e) {
+                e.preventDefault();
+                let tab = e.target.closest('.mri-tab');
+                if (!tab || tab.classList.contains('mri-disabled') || tab.disabled) return;
+                tabList.querySelectorAll('.mri-tab').forEach(t => t.classList.remove('mri-active'));
+                tab.classList.add('mri-active');
+                if (callback) callback(tab);
+              });
+            });
+          }
+          setupTabNav('.jsTabs', (tab)=>console.log(`Tab clicked: ${tab.textContent}`));
+        </script>
+      </div> -->
     </section>
 
     <section id="table" class="section">

@@ -3,9 +3,16 @@
   display: flex;
   gap: 2px;
   flex-direction: row;
+
   &.mri-vertical {
     flex-direction: column;
   }
+    &:not(.mri-vertical){
+      --_negative-margin: calc(var(--mri-size-padding) * -1);
+      margin-left: var(--_negative-margin);
+      margin-right: var(--_negative-margin);
+    }
+
 }
 
 /* TODO: button and a anchor variant & exception */
@@ -59,12 +66,14 @@
 
   .mri-vertical & {
     --_size-tab-underline-padding: calc((var(--mri-size-height) - var(--mri-size-icon)) / 2);
+
     &:after,
     &:before {
       inset: var(--_size-tab-underline-padding) auto var(--_size-tab-underline-padding) 0;
       height: auto;
       width: var(--_size-tab-underline);
     }
+
     &:after {
       transform: scaleY(0);
     }
@@ -76,27 +85,41 @@
     height: var(--mri-size-height);
   }
 
-  &:has(input[type="radio"]:not(:disabled)) {
-    &:hover {
-      transition-duration: var(--mri-duration-hover);
+  &:hover {
+    transition-duration: var(--mri-duration-hover);
 
-      /* .mri-appearance-transparent & { background-color: transparent; } */
+    .mri-appearance-subtle & {
+      background-color: var(--mri-interactive-hover);
+    }
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  /* pressed */
+  &:active {
+    transition-duration: var(--mri-duration-hover);
+
+    .mri-appearance-subtle & {
+      background-color: var(--mri-interactive-pressed);
+    }
+  }
+
+  /* disabled */
+  &:disabled,
+  &.mri-disabled,
+  &:has(input[type="radio"]:disabled) {
+    cursor: not-allowed;
+
+    &:hover {
+
       .mri-appearance-subtle & {
-        background-color: var(--mri-interactive-hover);
+        background-color: unset;
       }
 
       &:before {
-        opacity: 1;
-      }
-    }
-
-    /* pressed */
-    &:active {
-      transition-duration: var(--mri-duration-hover);
-
-      /* .mri-appearance-transparent & { background-color: transparent; } */
-      .mri-appearance-subtle & {
-        background-color: var(--mri-interactive-pressed);
+        opacity: 0;
       }
     }
   }
@@ -108,7 +131,6 @@
     font-weight: var(--mri-font-weight-bold);
     color: var(--mri-color-text-1);
 
-    /* .mri-appearance-transparent & { background-color: transparent; } */
     .mri-appearance-subtle & {
       background-color: var(--mri-color-background-2);
     }
@@ -122,4 +144,15 @@
     cursor: not-allowed;
     opacity: var(--mri-opacity-disabled);
   }
+
+}
+
+a.mri-tab {
+  text-decoration: none;
+  color: inherit;
+}
+
+button.mri-tab {
+  background: none;
+  border: none;
 }
