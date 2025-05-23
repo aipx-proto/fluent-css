@@ -6,6 +6,7 @@ progress.mri-spinner {
   appearance: none;
   width: var(--_size-dimension);
   height: var(--_size-dimension);
+  flex: 0 0 auto; 
 
   overflow: hidden;
   position: relative;
