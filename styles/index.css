@@ -9,6 +9,7 @@
 @import "./font-monaspace-neon/font-monaspace-neon.css";
 
 @import "./variables/mirai-theme.css";
+@import "./variables/tailwind-var-overrides.css";
 @import "./elements/reset.css";
 
 @import "./elements/icons.css";

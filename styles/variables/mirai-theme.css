@@ -72,7 +72,8 @@
   --mri-border-radius: var(--mri-border-radius-circular);
 }
 
-:root,
+:root, /*default*/
+.dark, /*tailwind*/
 .mri-theme-dark {
   color-scheme: dark;
 
@@ -91,7 +92,6 @@
 
   --mri-color-brand-base: #479ef5;
   --mri-color-brand-text: #479ef5;
-
 
   &,
   .mri-appearance-outline {
@@ -112,6 +112,7 @@
   }
 }
 
+.light, /*tailwind*/
 .mri-theme-light {
   color-scheme: light;
 
