@@ -37,6 +37,9 @@ A browser will render the `index.html` file from your filesystem. I prefer to ru
 
 # TODOs
 
+## Bugs
+- button.mri-appearance-primary doesn't work in .mir-input-group
+
 ## Refactor
 - create docs
 - firefox support (for input pseudo elements)

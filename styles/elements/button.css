@@ -1,10 +1,10 @@
-:where(button:not(.mri-tab),
+button:not(.mri-tab),
   input[type="button"],
   input[type="submit"],
   input[type="reset"],
   a.mri-button,
   select.mri-button,
-  .mri-button),
+  .mri-button,
 ::-webkit-file-upload-button {
   cursor: pointer;
   appearance: none;

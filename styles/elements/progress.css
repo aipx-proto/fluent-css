@@ -39,7 +39,7 @@ progress.mri-spinner {
   }
 }
 
-progress:not(.mri-spinner),
+progress:where(:not(.mri-spinner)),
 meter {
   --_size-height: 2px;
   appearance: none;
@@ -64,7 +64,7 @@ meter {
   }
 }
 
-progress:not(.mri-spinner):indeterminate {
+progress:where(:not(.mri-spinner)):indeterminate {
   /* --_color-brand-transparent: color-mix(in srgb, var(--mri-color-brand-base) 0%, transparent); */
   --_color-brand-transparent: oklch(from var(--mri-color-brand-base) l c h / 0);
   --_color-brand: var(--mri-color-brand-base);

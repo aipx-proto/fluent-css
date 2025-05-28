@@ -1,4 +1,4 @@
-:where(a:not(.mri-button):not(.mri-tab)) {
+a:where(:not(.mri-button):not(.mri-tab)) {
   color: var(--mri-color-brand-text);
   text-decoration: none;
   &:hover {

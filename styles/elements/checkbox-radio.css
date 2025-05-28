@@ -1,4 +1,4 @@
-input[type="checkbox"]:not(.mri-switch),
+input[type="checkbox"]:where(:not(.mri-switch)),
 input[type="radio"] {
   --_color-border: var(--mri-color-border-1);
   --_color-background: var(--mri-color-background-2);
@@ -52,7 +52,7 @@ input[type="radio"] {
   }
 }
 
-input[type="checkbox"]:not(.mri-switch) {
+input[type="checkbox"]:where(:not(.mri-switch)) {
   --_border-radius: var(--mri-border-radius-small);
 
   &:after {
