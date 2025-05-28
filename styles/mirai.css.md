@@ -2,19 +2,6 @@
 
 Mirai.css is a CSS component library designed to integrate with Tailwind, but can also be used independently.
 
-To use Mirai.css and Tailwind, they must be imported:
-
-Mirai.css In html head:
-```html
-<link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/mirai-css@main/styles/mirai.build.css?raw" />
-```
-or `@import` in css
-```css
-@import url(https://esm.sh/gh/aipx-proto/mirai-css@main/styles/mirai.build.css?raw);
-```
-
-Import tailwind via the cdn
-
 **Mirai.css** is responsible to for the appearance of native HTML components like like `a`, `button`, `input`, `details`, etc...
 Do **NOT** apply interactive or appearance styles to these elements because they are already styled by the imported `mirai.css`.
 
@@ -58,7 +45,7 @@ For all icons, use emoji wrapped in a span: `<span class="mri-emojicon">❤️</
 <button class="mri-appearance-transparent">Transparent</button>
 
 <!-- displays a icon button with 1:1 aspect ratio -->
-<button class="mri-icon-only">X</button>
+<button class="mri-icon-only"><span class="mri-emojicon">✖️</span></button>
 
 <!-- All the following elements will appear as buttons -->
 <input type="reset" value="Input Reset" />

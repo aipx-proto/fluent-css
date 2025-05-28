@@ -44,6 +44,7 @@ A browser will render the `index.html` file from your filesystem. I prefer to ru
 - create docs
 - firefox support (for input pseudo elements)
 - unify/simplify variable usage - delete appearance vars, they are different for each component applied
+- transparent backgrounds? Maybe they would be better as they'd work in more random scenarios?
 
 ## Ambition
 
