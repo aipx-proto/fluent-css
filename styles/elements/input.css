@@ -70,10 +70,11 @@ input:where(:not([type])),
     appearance: none;
     background: none;
     border: none;
+    border-radius: 0;
     outline: none;
     flex: 1 1 auto;
     padding: 0;
-    height: auto;
+    /* height: auto; */
     min-height: unset;
   }
 }
@@ -83,8 +84,11 @@ input:where(:not([type])),
   align-items: center;
   justify-content: start;
   align-items: baseline;
-  padding: 4px;
   gap: 4px;
+  padding: 4px;
+  &:where(:has(input:first-child, textarea:first-child, select:first-child)) {
+    padding-left: var(--mri-size-padding);
+  }
 }
 
 input[type="number"],
