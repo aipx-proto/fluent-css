@@ -39,6 +39,8 @@ A browser will render the `index.html` file from your filesystem. I prefer to ru
 
 ## Bugs
 - button.mri-appearance-primary doesn't work in .mir-input-group
+- add default flex size to radio checkbox spinner icon and other things that are a fixed size
+- fix label > disabled in disabled.css
 
 ## Refactor
 - create docs

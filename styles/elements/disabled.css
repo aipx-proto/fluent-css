@@ -2,11 +2,12 @@
   cursor: not-allowed;
   opacity: var(--mri-opacity-disabled);
 
-  label:has(&) {
+  /* this exception doesn't work for select option:disabled */
+  /* label:has(&) {
     opacity: var(--mri-opacity-disabled);
-  }
-  label:has(&) & {
+  } */
+  /* label:has(&) & {
     opacity: 1;
-  }
+  } */
 }
 
