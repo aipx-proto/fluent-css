@@ -291,6 +291,8 @@ Colors rules:
   ...currently unsupported
 } */
 
+/* @import "./variables/shadcn.css"; */
+
 html,
 body {
   margin: 0;
