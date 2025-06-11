@@ -74,7 +74,10 @@
 
   .mri-vertical & {
     --_size-tab-underline-padding: calc((var(--mri-size-height) - var(--mri-size-icon)) / 2);
-    justify-content: start;
+    
+    &:not(.mri-icon-only) {
+      justify-content: start;
+    }
 
     &:after,
     &:before {
