@@ -103,6 +103,15 @@ a.mri-button {
   text-decoration: none;
 }
 
+select.mri-button {
+  appearance: none;
+  background-image: var(--mri-icon-chevron-down);
+  background-position: right var(--mri-size-padding) center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: calc(var(--mri-size-padding) + 16px + 4px);
+}
+
 input[type="file"] {
   &::-webkit-file-upload-button {
     font-family: inherit;
