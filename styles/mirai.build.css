@@ -1294,11 +1294,18 @@ table > :first-child tr:first-child {
   &.mri-vertical {
     flex-direction: column;
   }
-  
+
   &:not(.mri-vertical) {
-    --_negative-margin: calc(var(--mri-size-padding) * -1);
-    margin-left: var(--_negative-margin);
-    margin-right: var(--_negative-margin);
+    & .mri-tab,
+    & [role="tab"] {
+      --_negative-margin: calc(var(--mri-size-padding) * -1);
+      &:first-child {
+        margin-left: var(--_negative-margin);
+      }
+      &:last-child {
+        margin-right: var(--_negative-margin);
+      }
+    }
   }
 }
 
