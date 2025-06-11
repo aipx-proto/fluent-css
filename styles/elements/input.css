@@ -83,7 +83,6 @@ input:where(:not([type])),
   display: inline-flex;
   align-items: center;
   justify-content: start;
-  align-items: baseline;
   gap: 4px;
   padding: 4px;
   &:where(:has(input:first-child, textarea:first-child, select:first-child)) {
