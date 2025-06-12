@@ -1,15 +1,11 @@
-/**! 
- * Mirai CSS - 未来
- * GitHub: https://github.com/aipx-proto/mirai-css
- * Demo: https://aipx-proto.github.io/mirai-css
- * LLMs.txt: https://github.com/aipx-proto/mirai-css/blob/main/styles/mirai.css.md
-!*/
+@import "tailwindcss";
 
 @import "./font-aptos/font-aptos.css";
 @import "./font-monaspace-neon/font-monaspace-neon.css";
 
 @import "./variables/mirai-theme.css";
 @import "./variables/tailwind-var-overrides.css";
+
 @import "./elements/reset.css";
 
 @import "./elements/icons.css";
@@ -32,3 +28,5 @@
 @import "./elements/scrollbar.css";
 @import "./elements/switch.css";
 @import "./elements/slider.css";
+
+@tailwind utilities;
