@@ -10,7 +10,6 @@
 
 @import "./variables/mirai-theme.css";
 @import "./variables/tailwind-var-overrides.css";
-/* @import "./variables/shadcn.css"; */
 @import "./elements/reset.css";
 
 @import "./elements/icons.css";
