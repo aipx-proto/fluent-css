@@ -39,12 +39,12 @@ A browser will render the `index.html` file from your filesystem. I prefer to ru
 
 ## Bugs
 - `.mri-icon-only` should apply to all children of groups...
-- revert to the original primary button colors
 - `button.mri-appearance-primary` doesn't work in `.mir-input-group`
 - `select.mri-button` needs the arrow on the right
 - add default flex size to radio checkbox spinner icon and other things that are a fixed size
 - fix label > disabled in disabled.css
 - default inline-flex for more things like `label:has(input[type=checkbox], input[type=radio])`
+- use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`? 
 
 ## Refactor
 - create docs
