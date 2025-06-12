@@ -200,7 +200,7 @@
 
   --mri-color-brand-base: #005E8B;
   --mri-color-on-brand-text: #FFFFFF;
-  --mri-color-brand-text: #007BB4;
+  --mri-color-brand-text: #0090d3;
 
   &,
   .mri-appearance-outline {
@@ -1351,7 +1351,7 @@ table > :first-child tr:first-child {
 
   transition: background-color var(--mri-duration-rest) linear;
 
-  --_size-tab-underline: 3px;
+  --_size-tab-underline: 2px;
   --_color-tab-underline-hover: var(--mri-color-text-4);
   --_color-tab-underline-active: var(--mri-color-brand-text);
   --_duration-tab-underline: 0.1s;
