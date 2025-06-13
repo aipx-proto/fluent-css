@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" class="mri-theme-dark">
+<html lang="en" class="theme-dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mirai.css Theme Styles</title>
-  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/mirai.build.css" />
   <link rel="icon" type="image/svg+xml" href="assets/Mirai-未来-union.svg" />
   <style>
     html {
@@ -128,9 +128,9 @@
         }
 
         h1 {
-          font-size: var(--mri-font-size-5);
-          font-family: var(--mri-font-family-mono);
-          font-weight: var(--mri-font-weight-normal);
+          font-size: var(--font-size-5);
+          font-family: var(--font-family-mono);
+          font-weight: var(--font-weight-normal);
           margin: 0;
           display: flex;
           flex-direction: column;
@@ -160,8 +160,8 @@
 
       .nav__categories span,
       .nav__sub-header {
-        font-weight: var(--mri-font-weight-bold);
-        color: var(--mri-color-text-3);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-3);
       }
     </style>
     <h1>
@@ -216,7 +216,7 @@
     </nav>
     <span class="header__metadata">
       <span>Theme</span>
-      <button id="theme-toggle" class="mri-appearance-transparent mri-size-small mri-shape-square"
+      <button id="theme-toggle" class="appearance-transparent size-small shape-square"
         style="margin-left:-8px" onclick="toggleTheme()">Dark</button>
 
     </span>
@@ -243,8 +243,8 @@
       }
 
       .section {
-        border-radius: var(--mri-border-radius-medium);
-        background-color: var(--mri-color-background-1);
+        border-radius: var(--border-radius-medium);
+        background-color: var(--color-background-1);
       }
 
       .section__content {
@@ -252,17 +252,17 @@
         flex-direction: column;
         gap: 24px;
         padding: 24px;
-        border-top: 1px solid var(--mri-color-border-2);
+        border-top: 1px solid var(--color-border-2);
       }
 
       .section__header {
         scroll-margin-top: 32px;
-        /* font-size: var(--mri-font-size-7);
+        /* font-size: var(--font-size-7);
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        font-weight: var(--mri-font-weight-bold);
-        color: var(--mri-color-text-3);
-        font-family: var(--mri-font-family-mono); */
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-3);
+        font-family: var(--font-family-mono); */
       }
 
       .section__columns {
@@ -288,21 +288,21 @@
         <h3 class="section__header">Typography</h3>
         <div class="section__columns">
           <div class="typography__font-size">
-            <span style="font-size: var(--mri-font-size-1);">Font Size 1</span>
-            <span style="font-size: var(--mri-font-size-2);">Font Size 2</span>
-            <span style="font-size: var(--mri-font-size-3);">Font Size 3</span>
-            <span style="font-size: var(--mri-font-size-4);">Font Size 4</span>
-            <span style="font-size: var(--mri-font-size-5);">Font Size 5</span>
-            <span style="font-size: var(--mri-font-size-6);">Font Size 6</span>
-            <span style="font-size: var(--mri-font-size-7);">Font Size 7</span>
+            <span style="font-size: var(--font-size-1);">Font Size 1</span>
+            <span style="font-size: var(--font-size-2);">Font Size 2</span>
+            <span style="font-size: var(--font-size-3);">Font Size 3</span>
+            <span style="font-size: var(--font-size-4);">Font Size 4</span>
+            <span style="font-size: var(--font-size-5);">Font Size 5</span>
+            <span style="font-size: var(--font-size-6);">Font Size 6</span>
+            <span style="font-size: var(--font-size-7);">Font Size 7</span>
           </div>
           <div class="typography__font-family">
-            <span style="font-family: var(--mri-font-family-sans);">Font Family Sans</span>
-            <span style="font-family: var(--mri-font-family-mono);">Font Family Mono</span>
+            <span style="font-family: var(--font-family-sans);">Font Family Sans</span>
+            <span style="font-family: var(--font-family-mono);">Font Family Mono</span>
           </div>
           <div class="typography__font-weight">
-            <span style="font-weight: var(--mri-font-weight-regular);">Font Weight Regular</span>
-            <span style="font-weight: var(--mri-font-weight-bold);">Font Weight Bold</span>
+            <span style="font-weight: var(--font-weight-regular);">Font Weight Regular</span>
+            <span style="font-weight: var(--font-weight-bold);">Font Weight Bold</span>
           </div>
         </div>
       </div>
@@ -328,38 +328,38 @@
               justify-content: center;
               height: 60px;
               flex: 1 1 auto;
-              border-radius: var(--mri-border-radius-medium);
-              border: 1px solid var(--mri-color-border-2);
+              border-radius: var(--border-radius-medium);
+              border: 1px solid var(--color-border-2);
               padding: 8px;
 
             }
           }
         </style>
         <div class="color__text-color">
-          <p style="color: var(--mri-color-text-1);"><strong>Text 1: </strong>Lorem ipsum dolor sit amet, consectetur
+          <p style="color: var(--color-text-1);"><strong>Text 1: </strong>Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p style="color: var(--mri-color-text-2);"><strong>Text 2: </strong>Duis aute irure dolor in reprehenderit in
+          <p style="color: var(--color-text-2);"><strong>Text 2: </strong>Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p style="color: var(--mri-color-text-3);"><strong>Text 3: </strong>Sed ut perspiciatis unde omnis iste natus
+          <p style="color: var(--color-text-3);"><strong>Text 3: </strong>Sed ut perspiciatis unde omnis iste natus
             error
             sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          <p style="color: var(--mri-color-text-4);"><strong>Text 4: </strong>Nemo enim ipsam voluptatem quia voluptas
+          <p style="color: var(--color-text-4);"><strong>Text 4: </strong>Nemo enim ipsam voluptatem quia voluptas
             sit
             aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
             nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
         </div>
         <div class="color__background-color">
-          <span style="background-color: var(--mri-color-background-1);">Background 1</span>
-          <span style="background-color: var(--mri-color-background-2);">Background 2</span>
-          <span style="background-color: var(--mri-color-background-3);">Background 3</span>
-          <span style="background-color: var(--mri-color-background-4);">Background 4</span>
+          <span style="background-color: var(--color-background-1);">Background 1</span>
+          <span style="background-color: var(--color-background-2);">Background 2</span>
+          <span style="background-color: var(--color-background-3);">Background 3</span>
+          <span style="background-color: var(--color-background-4);">Background 4</span>
         </div>
         <div class="color__border-color">
-          <span style="border: 1px solid var(--mri-color-border-1);">Border 1</span>
-          <span style="border: 1px solid var(--mri-color-border-2);">Border 2</span>
+          <span style="border: 1px solid var(--color-border-1);">Border 1</span>
+          <span style="border: 1px solid var(--color-border-2);">Border 2</span>
         </div>
 
       </div>
@@ -378,8 +378,8 @@
               justify-content: center;
               height: 60px;
               flex: 1 1 auto;
-              border-radius: var(--mri-border-radius-medium);
-              border: 1px solid var(--mri-color-border-1);
+              border-radius: var(--border-radius-medium);
+              border: 1px solid var(--color-border-1);
               padding: 8px;
             }
           }
@@ -387,19 +387,19 @@
         <h3 class="section__header">Layout</h3>
         <div class="layout__border-radius">
           <span style="border-radius: 0">Radius None</span>
-          <span style="border-radius: var(--mri-border-radius-small);">Radius Small</span>
-          <span style="border-radius: var(--mri-border-radius-medium);">Radius Medium</span>
-          <span style="border-radius: var(--mri-border-radius-large);">Radius Large</span>
-          <span style="border-radius: var(--mri-border-radius-xlarge);">Radius XLarge</span>
-          <span style="border-radius: var(--mri-border-radius-circular);">Radius Circular</span>
+          <span style="border-radius: var(--border-radius-small);">Radius Small</span>
+          <span style="border-radius: var(--border-radius-medium);">Radius Medium</span>
+          <span style="border-radius: var(--border-radius-large);">Radius Large</span>
+          <span style="border-radius: var(--border-radius-xlarge);">Radius XLarge</span>
+          <span style="border-radius: var(--border-radius-circular);">Radius Circular</span>
         </div>
         <div class="layout__shadow">
-          <span style="box-shadow: var(--mri-shadow-2);">Shadow 2</span>
-          <span style="box-shadow: var(--mri-shadow-4);">Shadow 4</span>
-          <span style="box-shadow: var(--mri-shadow-8);">Shadow 8</span>
-          <span style="box-shadow: var(--mri-shadow-16);">Shadow 16</span>
-          <span style="box-shadow: var(--mri-shadow-28);">Shadow 28</span>
-          <span style="box-shadow: var(--mri-shadow-64);">Shadow 64</span>
+          <span style="box-shadow: var(--shadow-2);">Shadow 2</span>
+          <span style="box-shadow: var(--shadow-4);">Shadow 4</span>
+          <span style="box-shadow: var(--shadow-8);">Shadow 8</span>
+          <span style="box-shadow: var(--shadow-16);">Shadow 16</span>
+          <span style="box-shadow: var(--shadow-28);">Shadow 28</span>
+          <span style="box-shadow: var(--shadow-64);">Shadow 64</span>
         </div>
       </div>
     </section>
@@ -408,35 +408,35 @@
       <div id="button" class="section__content">
         <h3 class="section__header">Button</h3>
         <div class="button__appearance">
-          <button class="mri-appearance-primary">Primary</button>
-          <button class="mri-appearance-outline">Outline</button>
-          <button class="mri-appearance-subtle">Subtle</button>
-          <button class="mri-appearance-transparent">Transparent</button>
+          <button class="appearance-primary">Primary</button>
+          <button class="appearance-outline">Outline</button>
+          <button class="appearance-subtle">Subtle</button>
+          <button class="appearance-transparent">Transparent</button>
         </div>
         <div class="button__size">
-          <button class="mri-size-small">Small</button>
-          <button class="mri-size-medium">Medium</button>
-          <button class="mri-size-large">Large</button>
+          <button class="size-small">Small</button>
+          <button class="size-medium">Medium</button>
+          <button class="size-large">Large</button>
         </div>
         <div class="button__shape">
-          <button class="mri-shape-square">Square</button>
-          <button class="mri-shape-rounded">Rounded</button>
-          <button class="mri-shape-circular">Circular</button>
+          <button class="shape-square">Square</button>
+          <button class="shape-rounded">Rounded</button>
+          <button class="shape-circular">Circular</button>
         </div>
         <div class="button__states">
           <button>Default</button>
           <button disabled>Disabled</button>
-          <button class="mri-active">Active</button>
+          <button class="active">Active</button>
           <span style=" margin: 0 16px">
-            <button class="mri-icon-only">X</button>
-            <span style="margin-left: 4px; color: var(--mri-color-text-3);">Icon Only</span>
+            <button class="icon-only">X</button>
+            <span style="margin-left: 4px; color: var(--color-text-3);">Icon Only</span>
           </span>
         </div>
         <div class="button__elements">
           <input type="reset" value="Input Reset" />
           <input type="submit" value="Input Submit" />
-          <a href="#button" class="mri-button">Anchor Button</a>
-          <select id="select-button" name="select-button" class="mri-button">
+          <a href="#button" class="button">Anchor Button</a>
+          <select id="select-button" name="select-button" class="button">
             <option value="" disabled>Select Button</option>
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
@@ -457,19 +457,19 @@
         </style>
         <h3 class="section__header">Control Group</h3>
         <div class="control-group__samples">
-          <div class="mri-control-group">
+          <div class="control-group">
             <button>Button 1</button>
             <button>Button 2</button>
             <button>Button 3</button>
           </div>
-          <div class="mri-control-group mri-size-small mri-shape-square">
+          <div class="control-group size-small shape-square">
             <button>Size Small</button>
             <button>Shape Square</button>
-            <button class="mri-active">Selected</button>
-            <button class="mri-icon-only">•••</button>
+            <button class="active">Selected</button>
+            <button class="icon-only">•••</button>
           </div>
-          <form class="mri-control-group mri-shape-rounded">
-            <input type="email" placeholder="Your email" class="mri-appearance-outline" />
+          <form class="control-group shape-rounded">
+            <input type="email" placeholder="Your email" class="appearance-outline" />
             <button>Subscribe</button>
           </form>
         </div>
@@ -483,17 +483,17 @@
           <input type="text" placeholder="Default" />
           <input type="text" placeholder="Disabled" disabled />
           <!-- <input type="text" placeholder="Readonly" value="Readonly" readonly /> -->
-          <input type="text" placeholder="Outline" class="mri-appearance-outline" />
+          <input type="text" placeholder="Outline" class="appearance-outline" />
         </div>
         <div>
-          <input type="text" placeholder="Small" class="mri-size-small" />
-          <input type="text" placeholder="Medium" class="mri-size-medium" />
-          <input type="text" placeholder="Large" class="mri-size-large" />
+          <input type="text" placeholder="Small" class="size-small" />
+          <input type="text" placeholder="Medium" class="size-medium" />
+          <input type="text" placeholder="Large" class="size-large" />
         </div>
         <div>
-          <input type="text" placeholder="Square" class="mri-shape-square" />
-          <input type="text" placeholder="Rounded" class="mri-shape-rounded" />
-          <input type="text" placeholder="Circular" class="mri-shape-circular" />
+          <input type="text" placeholder="Square" class="shape-square" />
+          <input type="text" placeholder="Rounded" class="shape-rounded" />
+          <input type="text" placeholder="Circular" class="shape-circular" />
         </div>
         <div>
           <input type="number" placeholder="000" />
@@ -504,13 +504,13 @@
       <div id="input-group" class="section__content">
         <h3 class="section__header">Input Group</h3>
         <div>
-          <div class="mri-input">
-            <i class="mri-emojicon">🔍</i>
+          <div class="input">
+            <i class="emojicon">🔍</i>
             <input type="text" placeholder="Input" />
-            <button class="mri-size-small">Submit</button>
+            <button class="size-small">Submit</button>
           </div>
-          <!-- <div class="mri-input">
-            <i class="mri-emojicon">🔍</i>
+          <!-- <div class="input">
+            <i class="emojicon">🔍</i>
             <textarea type="text" placeholder="Input"></textarea>
             <button>Send</button>
           </div> -->
@@ -566,15 +566,15 @@
           </div>
           <div class="form__radios">
             <div class="form__radios">
-              <label class="mri-size-large">
+              <label class="size-large">
                 <input type="radio" id="radio1" name="radio2" value="1" />
                 Large
               </label>
-              <label class="mri-size-medium">
+              <label class="size-medium">
                 <input type="radio" id="radio2" name="radio2" value="2" />
                 Medium
               </label>
-              <label class="mri-size-small">
+              <label class="size-small">
                 <input type="radio" id="radio3" name="radio2" value="3" />
                 Small
               </label>
@@ -605,15 +605,15 @@
             </label>
           </div>
           <div class="form__checkboxes">
-            <label class="mri-size-large">
+            <label class="size-large">
               <input type="checkbox" id="checkbox-large" name="checkbox-large" />
               Large
             </label>
-            <label class="mri-size-medium">
+            <label class="size-medium">
               <input type="checkbox" id="checkbox-medium" name="checkbox-medium" />
               Medium
             </label>
-            <label class="mri-size-small">
+            <label class="size-small">
               <input type="checkbox" id="checkbox-small" name="checkbox-small" />
               Small
             </label>
@@ -627,21 +627,21 @@
         <div class="section__columns">
           <div class="form__switch">
             <label>
-              <input type="checkbox" class="mri-switch" id="switch1" name="switch1" checked />
+              <input type="checkbox" class="switch" id="switch1" name="switch1" checked />
               Default
             </label>
           </div>
           <div class="form__switch">
             <label>
-              <input type="checkbox" class="mri-switch mri-size-small" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-small" id="switch1" name="switch1" />
               Small
             </label>
             <label>
-              <input type="checkbox" class="mri-switch mri-size-medium" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-medium" id="switch1" name="switch1" />
               Medium
             </label>
             <label>
-              <input type="checkbox" class="mri-switch mri-size-large" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-large" id="switch1" name="switch1" />
               Large
             </label>
           </div>
@@ -666,7 +666,7 @@
           <span>Indeterminate</span>
         </div>
         <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
-          <progress class="mri-spinner" indeterminate></progress>
+          <progress class="spinner" indeterminate></progress>
           <span>Spinner</span>
         </div>
       </div>
@@ -703,9 +703,9 @@
                   interaction.</p>
               </main>
               <footer>
-                <button class="mri-dialog-close mri-appearance-transparent mri-icon-only">X</button>
-                <button class="mri-appearance-subtle">Cancel</button>
-                <button class="mri-appearance-primary">Primary</button>
+                <button class="dialog-close appearance-transparent icon-only">X</button>
+                <button class="appearance-subtle">Cancel</button>
+                <button class="appearance-primary">Primary</button>
               </footer>
             </form>
           </dialog>
@@ -745,68 +745,68 @@
                 flex: 1 1 auto;
               }
             </style>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-above-start"
+            <button class="icon-only shape-square" popovertarget="popover-above-start"
               style="grid-column: 2; grid-row: 1;">AS</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-above"
+            <button class="icon-only shape-square" popovertarget="popover-above"
               style="grid-column: 3; grid-row: 1;">A</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-above-end"
+            <button class="icon-only shape-square" popovertarget="popover-above-end"
               style="grid-column: 4; grid-row: 1;">AE</button>
 
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-before-top"
+            <button class="icon-only shape-square" popovertarget="popover-before-top"
               style="grid-column: 1; grid-row: 2;">BT</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-before"
+            <button class="icon-only shape-square" popovertarget="popover-before"
               style="grid-column: 1; grid-row: 3;">B</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-before-bottom"
+            <button class="icon-only shape-square" popovertarget="popover-before-bottom"
               style="grid-column: 1; grid-row: 4;">BB</button>
 
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-after-top"
+            <button class="icon-only shape-square" popovertarget="popover-after-top"
               style="grid-column: 5; grid-row: 2;">AT</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-after"
+            <button class="icon-only shape-square" popovertarget="popover-after"
               style="grid-column: 5; grid-row: 3;">A</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-after-bottom"
+            <button class="icon-only shape-square" popovertarget="popover-after-bottom"
               style="grid-column: 5; grid-row: 4;">AB</button>
 
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-below-start"
+            <button class="icon-only shape-square" popovertarget="popover-below-start"
               style="grid-column: 2; grid-row: 5;">BS</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-below"
+            <button class="icon-only shape-square" popovertarget="popover-below"
               style="grid-column: 3; grid-row: 5;">B</button>
-            <button class="mri-icon-only mri-shape-square" popovertarget="popover-below-end"
+            <button class="icon-only shape-square" popovertarget="popover-below-end"
               style="grid-column: 4; grid-row: 5;">BE</button>
           </div>
 
-          <div id="popover-above-start" class="mri-position-above-start" popover>Above start</div>
-          <div id="popover-above" class="mri-position-above" popover>Above</div>
-          <div id="popover-above-end" class="mri-position-above-end" popover>Above end</div>
+          <div id="popover-above-start" class="position-above-start" popover>Above start</div>
+          <div id="popover-above" class="position-above" popover>Above</div>
+          <div id="popover-above-end" class="position-above-end" popover>Above end</div>
 
-          <div id="popover-before-top" class="mri-position-before-top" popover>Before top</div>
-          <div id="popover-before" class="mri-position-before" popover>Before</div>
-          <div id="popover-before-bottom" class="mri-position-before-bottom" popover>Before bottom</div>
+          <div id="popover-before-top" class="position-before-top" popover>Before top</div>
+          <div id="popover-before" class="position-before" popover>Before</div>
+          <div id="popover-before-bottom" class="position-before-bottom" popover>Before bottom</div>
 
-          <div id="popover-after-top" class="mri-position-after-top" popover>After top</div>
-          <div id="popover-after" class="mri-position-after" popover>After</div>
-          <div id="popover-after-bottom" class="mri-position-after-bottom" popover>After bottom</div>
+          <div id="popover-after-top" class="position-after-top" popover>After top</div>
+          <div id="popover-after" class="position-after" popover>After</div>
+          <div id="popover-after-bottom" class="position-after-bottom" popover>After bottom</div>
 
-          <div id="popover-below-start" class="mri-position-below-start" popover>Below start</div>
-          <div id="popover-below" class="mri-position-below" popover>Below</div>
-          <div id="popover-below-end" class="mri-position-below-end" popover>Below end</div>
+          <div id="popover-below-start" class="position-below-start" popover>Below start</div>
+          <div id="popover-below" class="position-below" popover>Below</div>
+          <div id="popover-below-end" class="position-below-end" popover>Below end</div>
 
         </div>
       </div>
 
       <div id="menu" class="section__content">
         <h3 class="section__header">Menu & Split Button</h3>
-        <div class="mri-control-group">
-          <button class="mri-appearance-primary mri-shape-rounded">Split Button</button>
-          <button class="mri-appearance-primary mri-icon-only mri-shape-rounded" popovertarget="menu-example">
+        <div class="control-group">
+          <button class="appearance-primary shape-rounded">Split Button</button>
+          <button class="appearance-primary icon-only shape-rounded" popovertarget="menu-example">
             •••
           </button>
         </div>
-        <div class="mri-menu" id="menu-example" popover>
+        <div class="menu" id="menu-example" popover>
           <button>Add</button>
           <button>Edit</button>
           <button>Duplicate</button>
           <hr />
-          <button class="mri-intent-danger">Delete</button>
+          <button class="intent-danger">Delete</button>
         </div>
       </div>
     </section>
@@ -847,7 +847,7 @@
       </div>
       <div class="section__content keep-default-margins">
         <details>
-          <summary class="mri-marker-end">Accordion Marker End</summary>
+          <summary class="marker-end">Accordion Marker End</summary>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus,
             nisl erat dictum enim, nec facilisis enim erat nec urna.</p>
           <ul>
@@ -883,12 +883,12 @@
 
           .tabs__primary-nav {
             flex: 0 0 auto;
-            border-right: 1px solid var(--mri-color-border-2);
+            border-right: 1px solid var(--color-border-2);
             padding: 8px;
           }
         </style>
 
-        <nav role="tablist" class="tabs__primary-nav mri-tab-list mri-vertical mri-appearance-subtle"
+        <nav role="tablist" class="tabs__primary-nav tab-list vertical appearance-subtle"
           style="flex: 0 0 auto;">
           <label role="tab" aria-controls="panel-1" for="tab-1">
             <input type="radio" name="tab-group-1" id="tab-1" checked />
@@ -939,7 +939,7 @@
           <h3>Second Tab Content</h3>
           <p>This is the content of the second tab.</p>
 
-          <nav role="tablist" class="mri-tab-list">
+          <nav role="tablist" class="tab-list">
             <label role="tab" aria-controls="panel-7" for="tab-7">
               <input type="radio" name="tab-group-3" id="tab-7" />
               Nested Tab 7
@@ -975,25 +975,25 @@
           }
         </style>
 
-        <nav class="mri-tab-list mri-vertical jsTabs">
-          <a href="#" class="mri-tab mri-active">Link Tab 1</a>
-          <a href="#" class="mri-tab">Link Tab 2</a>
-          <a href="#" class="mri-tab mri-disabled">Link Tab 3</a>
+        <nav class="tab-list vertical jsTabs">
+          <a href="#" class="tab active">Link Tab 1</a>
+          <a href="#" class="tab">Link Tab 2</a>
+          <a href="#" class="tab disabled">Link Tab 3</a>
         </nav>
-        <nav class="mri-tab-list mri-appearance-subtle jsTabs">
-          <button class="mri-tab mri-active">Button Tab 1</button>
-          <button class="mri-tab">Button Tab 2</button>
-          <button class="mri-tab" disabled>Button Tab 3</button>
+        <nav class="tab-list appearance-subtle jsTabs">
+          <button class="tab active">Button Tab 1</button>
+          <button class="tab">Button Tab 2</button>
+          <button class="tab" disabled>Button Tab 3</button>
         </nav>
         <script>
           function setupTabNav(tabListSelector, callback) {
             document.querySelectorAll(tabListSelector).forEach(tabList => {
               tabList.addEventListener('click', function (e) {
                 e.preventDefault();
-                let tab = e.target.closest('.mri-tab');
-                if (!tab || tab.classList.contains('mri-disabled') || tab.disabled) return;
-                tabList.querySelectorAll('.mri-tab').forEach(t => t.classList.remove('mri-active'));
-                tab.classList.add('mri-active');
+                let tab = e.target.closest('.tab');
+                if (!tab || tab.classList.contains('disabled') || tab.disabled) return;
+                tabList.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
                 if (callback) callback(tab);
               });
             });

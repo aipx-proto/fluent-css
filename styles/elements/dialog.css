@@ -1,10 +1,10 @@
 dialog {
   color: inherit;
 
-  border: 1px solid var(--mri-color-border-1);
-  background-color: var(--mri-color-background-1);
-  box-shadow: var(--mri-shadow-16);
-  border-radius: var(--mri-border-radius-large);
+  border: 1px solid var(--color-border-1);
+  background-color: var(--color-background-1);
+  box-shadow: var(--shadow-16);
+  border-radius: var(--border-radius-large);
   overflow: hidden;
 
   padding: 12px 24px;
@@ -34,14 +34,14 @@ dialog {
     
     footer {
       padding: 12px 24px;
-      border-top: 1px solid var(--mri-color-border-2);
+      border-top: 1px solid var(--color-border-2);
       display: flex;
       justify-content: flex-end;
       gap: 12px;
     }
   }
 
-  .mri-dialog-close {
+  .dialog-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -61,7 +61,7 @@ dialog {
 
   transform: scale(0.8);
   &::backdrop {
-    background-color: var(--mri-color-background-overlay);
+    background-color: var(--color-background-overlay);
   }
 
   &[open] {

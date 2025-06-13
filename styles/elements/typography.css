@@ -5,13 +5,13 @@
 
 html,
 body {
-  font-family: var(--mri-font-family-sans);
-  color: var(--mri-color-text-2);
-  font-size: var(--mri-font-size-5);
+  font-family: var(--font-family-sans);
+  color: var(--color-text-2);
+  font-size: var(--font-size-5);
   /* line-height: normal; */
 
   /* maybe? */
-  /* font-size: var(--mri-size-font); */
+  /* font-size: var(--size-font); */
 }
 
 h1,
@@ -23,7 +23,7 @@ h6,
 b,
 strong,
 th {
-  font-weight: var(--mri-font-weight-bold);
+  font-weight: var(--font-weight-bold);
 }
 
 h1,
@@ -36,7 +36,7 @@ strong,
 em,
 th,
 summary {
-  color: var(--mri-color-text-1);
+  color: var(--color-text-1);
 }
 
 i,
@@ -49,40 +49,40 @@ em {
 } */
 
 h1 {
-  font-size: var(--mri-font-size-1);
+  font-size: var(--font-size-1);
 }
 
 h2 {
-  font-size: var(--mri-font-size-2);
+  font-size: var(--font-size-2);
 }
 
 h3 {
-  font-size: var(--mri-font-size-3);
+  font-size: var(--font-size-3);
 }
 
 h4 {
-  font-size: var(--mri-font-size-4);
+  font-size: var(--font-size-4);
 }
 
 h5 {
-  font-size: var(--mri-font-size-5);
+  font-size: var(--font-size-5);
 }
 
 h6,
 small {
-  font-size: var(--mri-font-size-6);
+  font-size: var(--font-size-6);
 }
 
 blockquote {
-  border-left: 2px solid var(--mri-color-border-1);
+  border-left: 2px solid var(--color-border-1);
   margin: 0;
   padding-left: 8px;
-  color: var(--mri-color-text-1);
+  color: var(--color-text-1);
   font-style: italic;
 }
 q {
   font-style: italic;
-  color: var(--mri-color-text-1);
+  color: var(--color-text-1);
 }
 
 ul,
@@ -95,25 +95,25 @@ kbd,
 pre,
 samp,
 tt {
-  font-family: var(--mri-font-family-mono);
-  font-size: var(--mri-font-family-mono-scale);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-family-mono-scale);
 }
 
 kbd {
   padding: 2px 4px;
   border-radius: 3px;
-  background-color: var(--mri-color-background-2);
+  background-color: var(--color-background-2);
 }
 
 pre {
-  background-color: var(--mri-color-background-2);
+  background-color: var(--color-background-2);
   padding: 16px;
-  border-radius: var(--mri-border-radius-medium);
+  border-radius: var(--border-radius-medium);
   overflow-x: auto;
 }
 
 hr {
   border: none;
-  border-top: 1px solid var(--mri-color-border-1);
+  border-top: 1px solid var(--color-border-1);
   margin: 20px 0;
 }

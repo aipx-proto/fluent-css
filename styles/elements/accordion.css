@@ -16,7 +16,7 @@ details {
 
     list-style: none;
     &:before {
-      content: var(--mri-icon-chevron-down);
+      content: var(--icon-chevron-down);
       height: var(--_size-marker);
       width:  var(--_size-marker);
       display: inline-block;
@@ -25,7 +25,7 @@ details {
       transition: transform var(--_timing-open) ease-in-out;
     }
 
-    &.mri-marker-end {
+    &.marker-end {
       justify-content: space-between;
       &:before {
         order: 99;

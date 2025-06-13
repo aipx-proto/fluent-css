@@ -9,8 +9,8 @@ input[type="range"] {
 
   &::-webkit-slider-container {
     height: var(--_size-track);
-    background: var(--mri-color-border-1);
-    border-radius: var(--mri-border-radius-circular);
+    background: var(--color-border-1);
+    border-radius: var(--border-radius-circular);
   }
 
   /* &::-webkit-slider-runnable-track {} */
@@ -20,10 +20,10 @@ input[type="range"] {
     appearance: none;
     width: var(--_size-thumb);
     height: var(--_size-thumb);
-    border: 1px solid var(--mri-color-border-1);
-    border-radius: var(--mri-border-radius-circular);
+    border: 1px solid var(--color-border-1);
+    border-radius: var(--border-radius-circular);
     cursor: ew-resize;
-    background: var(--mri-color-brand-base);
-    box-shadow: inset 0 0 0 3px var(--mri-color-background-1);
+    background: var(--color-brand-base);
+    box-shadow: inset 0 0 0 3px var(--color-background-1);
   }
 }

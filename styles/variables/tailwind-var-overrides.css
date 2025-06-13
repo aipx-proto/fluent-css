@@ -9,21 +9,21 @@ Colors rules:
 
 :root,
 .dark {
-  --color-black: var(--mri-color-background-4);
-  --color-neutral-950: color-mix(in oklch, var(--mri-color-background-4), var(--mri-color-background-3));
-  --color-neutral-900: var(--mri-color-background-3, var(--mri-color-border-1));
-  --color-neutral-800: var(--mri-color-background-2);
-  --color-neutral-700: var(--mri-color-background-1);
-  --color-neutral-600: var(--mri-color-border-1);
-  --color-neutral-500: color-mix(in oklch, var(--mri-color-border-1), var(--mri-color-text-3));
-  --color-neutral-400: var(--mri-color-text-3);
-  --color-neutral-300: color-mix(in oklch, var(--mri-color-text-3), var(--mri-color-text-2));
-  --color-neutral-200: var(--mri-color-text-2);
-  --color-neutral-100: color-mix(in oklch, var(--mri-color-text-2), var(--mri-color-text-1));
-  --color-white: var(--mri-color-text-1);
+  --color-black: var(--color-background-4);
+  --color-neutral-950: color-mix(in oklch, var(--color-background-4), var(--color-background-3));
+  --color-neutral-900: var(--color-background-3, var(--color-border-1));
+  --color-neutral-800: var(--color-background-2);
+  --color-neutral-700: var(--color-background-1);
+  --color-neutral-600: var(--color-border-1);
+  --color-neutral-500: color-mix(in oklch, var(--color-border-1), var(--color-text-3));
+  --color-neutral-400: var(--color-text-3);
+  --color-neutral-300: color-mix(in oklch, var(--color-text-3), var(--color-text-2));
+  --color-neutral-200: var(--color-text-2);
+  --color-neutral-100: color-mix(in oklch, var(--color-text-2), var(--color-text-1));
+  --color-white: var(--color-text-1);
 
-  --font-sans: var(--mri-font-family-sans);
-  --font-mono: var(--mri-font-family-mono);
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
 }
 
 /* .light {

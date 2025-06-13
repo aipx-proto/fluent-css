@@ -1,16 +1,16 @@
-input[type="checkbox"].mri-switch {
+input[type="checkbox"].switch {
 
-  --_color-background: var(--mri-color-background-2);
-  --_color-border: var(--mri-color-border-1);
-  --_color-checked: var(--mri-color-brand-base);
+  --_color-background: var(--color-background-2);
+  --_color-border: var(--color-border-1);
+  --_color-checked: var(--color-brand-base);
   
-  --_size-thumb: var(--mri-size-icon);
+  --_size-thumb: var(--size-icon);
   --_size-offset: 2px;
   --_size-dimension: calc(var(--_size-thumb) + (var(--_size-offset) * 2) + 2px);
 
-  border: 1px solid var(--mri-color-border-1);
+  border: 1px solid var(--color-border-1);
   background-color: var(--_color-background);
-  border-radius: var(--mri-border-radius-circular);
+  border-radius: var(--border-radius-circular);
 
   appearance: none;
   position: relative;
@@ -30,8 +30,8 @@ input[type="checkbox"].mri-switch {
     display: block;
     height: var(--_size-thumb);
     width:  var(--_size-thumb);
-    border-radius: var(--mri-border-radius-circular);
-    background-color: var(--mri-color-border-1);
+    border-radius: var(--border-radius-circular);
+    background-color: var(--color-border-1);
 
     position: absolute;
     top: var(--_size-offset);

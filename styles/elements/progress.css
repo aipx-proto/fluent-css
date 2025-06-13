@@ -1,4 +1,4 @@
-progress.mri-spinner {
+progress.spinner {
   --_size-dimension: 20px;
   --_easing-spin: ease-in-out;
   --_duration-spin: 2.5s;
@@ -19,15 +19,15 @@ progress.mri-spinner {
     content: "";
     position: absolute;
     inset: 0;
-    border: 2px solid var(--mri-color-background-2);
-    border-top-color: var(--mri-color-brand-base);
-    border-radius: var(--mri-border-radius-circular);
+    border: 2px solid var(--color-background-2);
+    border-top-color: var(--color-brand-base);
+    border-radius: var(--border-radius-circular);
     animation: --_keyframes-progress-spin var(--_duration-spin) var(--_easing-spin) infinite;
     pointer-events: none;
   }
   &:after {
     border-color: transparent;
-    border-top-color: var(--mri-color-brand-base);
+    border-top-color: var(--color-brand-base);
     animation-delay: calc(var(--_duration-spin) * 0.075);
   }
 
@@ -39,35 +39,35 @@ progress.mri-spinner {
   }
 }
 
-progress:where(:not(.mri-spinner)),
+progress:where(:not(.spinner)),
 meter {
   --_size-height: 2px;
   appearance: none;
   width: 100%;
   height: var(--_size-height);
-  border-radius: var(--mri-border-radiusRound);
-  background: var(--mri-color-background-2);
+  border-radius: var(--border-radiusRound);
+  background: var(--color-background-2);
   overflow: hidden;
 
-  &.mri-size-small {
+  &.size-small {
     --_size-height: 1px;
   }
-  &.mri-size-medium {
+  &.size-medium {
     --_size-height: 2px;
   }
-  &.mri-size-large {
+  &.size-large {
     --_size-height: 4px;
   }
 
-  &.mri-shape-square {
+  &.shape-square {
     border-radius: 0;
   }
 }
 
-progress:where(:not(.mri-spinner)):indeterminate {
-  /* --_color-brand-transparent: color-mix(in srgb, var(--mri-color-brand-base) 0%, transparent); */
-  --_color-brand-transparent: oklch(from var(--mri-color-brand-base) l c h / 0);
-  --_color-brand: var(--mri-color-brand-base);
+progress:where(:not(.spinner)):indeterminate {
+  /* --_color-brand-transparent: color-mix(in srgb, var(--color-brand-base) 0%, transparent); */
+  --_color-brand-transparent: oklch(from var(--color-brand-base) l c h / 0);
+  --_color-brand: var(--color-brand-base);
 
   background-image: linear-gradient(
     to right,
@@ -93,7 +93,7 @@ progress:where(:not(.mri-spinner)):indeterminate {
   height: var(--_size-height);
 }
 ::-webkit-progress-value {
-  background: var(--mri-color-brand-base);
+  background: var(--color-brand-base);
 }
 
 /* ::-webkit-meter-inner-element {
