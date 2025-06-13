@@ -42,7 +42,6 @@
   --opacity-disabled: 0.5;
 }
 
-
 @theme {
   --color-background-1: #ffffff;
   --color-background-2: #f5f5f5;
@@ -92,39 +91,40 @@
   }
   .shape-circular {
     --border-radius: var(--border-radius-circular);
-  } 
+  }
 }
 
-
 @layer theme {
-  
-  .dark {
+  .dark,
+  .dark * {
     --color-background-1: #1f1f1f;
     --color-background-2: #141414;
     --color-background-3: #0a0a0a;
     --color-background-4: #000000;
-  
+
     --color-border-1: #666666;
     --color-border-2: var(--color-background-3);
-  
+
     --color-text-1: #ffffff;
     --color-text-2: #d6d6d6;
     --color-text-3: #999999;
     --color-text-4: #5c5c5c;
-  
+
     --color-brand-base: #005e8b;
     --color-on-brand-text: #ffffff;
     --color-brand-text: #0090d3;
   }
 
-  .dark {
-    color-scheme: dark;
+  *,
+  .light,
+  .light * {
+    color-scheme: light;
 
     &,
     .appearance-outline {
       --interactive-rest: var(--color-background-1);
-      --interactive-hover: oklch(from var(--interactive-rest) calc(l * 0.8) c h);
-      --interactive-pressed: oklch(from var(--interactive-rest) calc(l * 0.65) c h);
+      --interactive-hover: oklch(from var(--color-background-1) calc(l * 0.92) c h);
+      --interactive-pressed: oklch(from var(--color-background-1) calc(l * 0.88) c h);
     }
     .appearance-primary {
       --interactive-rest: var(--color-brand-base);
@@ -139,14 +139,14 @@
     }
   }
 
-  .light {
-    color-scheme: light;
+  @variant dark {
+    color-scheme: dark;
 
     &,
     .appearance-outline {
       --interactive-rest: var(--color-background-1);
-      --interactive-hover: oklch(from var(--color-background-1) calc(l * 0.92) c h);
-      --interactive-pressed: oklch(from var(--color-background-1) calc(l * 0.88) c h);
+      --interactive-hover: oklch(from var(--interactive-rest) calc(l * 0.8) c h);
+      --interactive-pressed: oklch(from var(--interactive-rest) calc(l * 0.65) c h);
     }
     .appearance-primary {
       --interactive-rest: var(--color-brand-base);

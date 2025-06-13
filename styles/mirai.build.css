@@ -402,7 +402,8 @@
   }
 }
 @layer theme {
-  .dark {
+  .dark,
+  .dark * {
     --color-background-1: #1f1f1f;
     --color-background-2: #141414;
     --color-background-3: #0a0a0a;
@@ -417,13 +418,15 @@
     --color-on-brand-text: #ffffff;
     --color-brand-text: #0090d3;
   }
-  .dark {
-    color-scheme: dark;
+  *,
+  .light,
+  .light * {
+    color-scheme: light;
     &,
     .appearance-outline {
       --interactive-rest: var(--color-background-1);
-      --interactive-hover: oklch(from var(--interactive-rest) calc(l * 0.8) c h);
-      --interactive-pressed: oklch(from var(--interactive-rest) calc(l * 0.65) c h);
+      --interactive-hover: oklch(from var(--color-background-1) calc(l * 0.92) c h);
+      --interactive-pressed: oklch(from var(--color-background-1) calc(l * 0.88) c h);
     }
     .appearance-primary {
       --interactive-rest: var(--color-brand-base);
@@ -437,13 +440,13 @@
       --interactive-rest: transparent;
     }
   }
-  .light {
-    color-scheme: light;
+  &:where(.dark, .dark *) {
+    color-scheme: dark;
     &,
     .appearance-outline {
       --interactive-rest: var(--color-background-1);
-      --interactive-hover: oklch(from var(--color-background-1) calc(l * 0.92) c h);
-      --interactive-pressed: oklch(from var(--color-background-1) calc(l * 0.88) c h);
+      --interactive-hover: oklch(from var(--interactive-rest) calc(l * 0.8) c h);
+      --interactive-pressed: oklch(from var(--interactive-rest) calc(l * 0.65) c h);
     }
     .appearance-primary {
       --interactive-rest: var(--color-brand-base);
