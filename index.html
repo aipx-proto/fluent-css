@@ -41,6 +41,44 @@
       }
     }
   </style>
+
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+
+    function initializeTheme() {  
+    const theme = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", theme === "dark");
+      document.documentElement.classList.toggle("light", theme === "light");
+    }
+
+    initializeTheme();
+
+    function setButtonText() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const themeBtn = document.getElementById("theme-toggle");
+      if (themeBtn) {
+        themeBtn.textContent = isDark ? "Dark" : "Light";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", setButtonText);
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      setButtonText();
+    }
+
+
+  </script>
 </head>
 
 <body class="wrapper">
@@ -178,23 +216,9 @@
     </nav>
     <span class="header__metadata">
       <span>Theme</span>
-      <script>
-        function toggleTheme(event) {
-          const btn = event.currentTarget || event.target;
-          const isLight = document.documentElement.classList.contains('mri-theme-light');
-          if (isLight) {
-            document.documentElement.classList.add('mri-theme-dark');
-            document.documentElement.classList.remove('mri-theme-light');
-            btn.textContent = 'Dark';
-          } else {
-            document.documentElement.classList.add('mri-theme-light');
-            document.documentElement.classList.remove('mri-theme-dark');
-            btn.textContent = 'Light';
-          }
-        }
-      </script>
       <button id="theme-toggle" class="mri-appearance-transparent mri-size-small mri-shape-square"
-        style="margin-left:-8px" onclick="toggleTheme(event)">Dark</button>
+        style="margin-left:-8px" onclick="toggleTheme()">Dark</button>
+
     </span>
 
     <hr />
