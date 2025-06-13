@@ -3,8 +3,8 @@
 @import "./font-aptos/font-aptos.css";
 @import "./font-monaspace-neon/font-monaspace-neon.css";
 
-@import "./variables/mirai-theme.css";
-/* @import "./variables/tailwind-var-overrides.css"; */
+@import "./theme/mirai-theme.css";
+/* @import "./theme/tailwind-var-overrides.css"; */
 
 @import "./elements/reset.css";
 
