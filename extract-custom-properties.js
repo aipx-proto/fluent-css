@@ -47,8 +47,9 @@ async function processFiles() {
             properties.forEach(prop => customProperties.add(prop));
         }
 
+        const comment =`/*built by extract-custom-properties.js, don't edit this file manually.\nThis file is used to trick tailwind into using all custom properties in the codebase.*/`
         // Create the CSS content with reflexive structure
-        const cssContent = `.ensure-tailwind-import {\n${Array.from(customProperties)
+        const cssContent = `${comment}\n\n.ensure-tailwind-import {\n${Array.from(customProperties)
             .map(prop => `  ${prop}: var(${prop});`)
             .join('\n')}\n}`;
 
