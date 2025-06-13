@@ -18,6 +18,28 @@
   --color-brand-text: #007bb4;
 }
 
+@variant dark {
+  color-scheme: dark;
+
+  --color-background-1: #1f1f1f;
+  --color-background-2: #141414;
+  --color-background-3: #0a0a0a;
+  --color-background-4: #000000;
+
+  --color-border-1: #666666;
+  --color-border-2: var(--color-background-3);
+
+  --color-text-1: #ffffff;
+  --color-text-2: #d6d6d6;
+  --color-text-3: #999999;
+  --color-text-4: #5c5c5c;
+
+  --color-brand-base: #005e8b;
+  --color-on-brand-text: #ffffff;
+  --color-brand-text: #0090d3;
+}
+
+
 @variant light {
   color-scheme: light;
 
@@ -41,24 +63,6 @@
 }
 
 @variant dark {
-  color-scheme: dark;
-
-  --color-background-1: #1f1f1f;
-  --color-background-2: #141414;
-  --color-background-3: #0a0a0a;
-  --color-background-4: #000000;
-
-  --color-border-1: #666666;
-  --color-border-2: var(--color-background-3);
-
-  --color-text-1: #ffffff;
-  --color-text-2: #d6d6d6;
-  --color-text-3: #999999;
-  --color-text-4: #5c5c5c;
-
-  --color-brand-base: #005e8b;
-  --color-on-brand-text: #ffffff;
-  --color-brand-text: #0090d3;
 
   &,
   .appearance-outline {

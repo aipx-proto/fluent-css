@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* @import "tailwindcss/preflight"; */
+@import "tailwindcss/preflight";
 /* @import "./elements/reset.css"; */
 
 @import "./font-segoe/font-segoe.css";
@@ -14,7 +14,7 @@
 
 @import "./theme/mirai-theme.css";
 
-/* @import "./elements/icons.css";
+@import "./elements/icons.css";
 @import "./elements/accordion.css";
 @import "./elements/base.css";
 @import "./elements/button.css";
@@ -33,4 +33,4 @@
 @import "./elements/typography.css";
 @import "./elements/scrollbar.css";
 @import "./elements/switch.css";
-@import "./elements/slider.css"; */
+@import "./elements/slider.css";

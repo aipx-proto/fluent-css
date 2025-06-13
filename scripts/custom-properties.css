@@ -48,7 +48,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --text-5xl--line-height: var(--text-5xl--line-height);
   --text-6xl: var(--text-6xl);
   --text-6xl--line-height: var(--text-6xl--line-height);
-  --change: var(--change);
   --text-7xl: var(--text-7xl);
   --text-7xl--line-height: var(--text-7xl--line-height);
   --text-8xl: var(--text-8xl);
@@ -93,7 +92,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --sizeOffset: var(--sizeOffset);
   --border-radiusRound: var(--border-radiusRound);
   --icon-check: var(--icon-check);
-  --icon-chevron-right: var(--icon-chevron-right);
   --icon-chevron-down: var(--icon-chevron-down);
   --sizeIcon: var(--sizeIcon);
   --font-normal: var(--font-normal);
