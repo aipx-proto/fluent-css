@@ -92,8 +92,8 @@ input:where(:not([type])),
 
 input[type="number"],
 input[type="date"] {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-family-mono-scale);
+  font-family: var(--font-mono);
+  /* font-size: var(--font-mono-scale); */
 }
 
 input[type="number"] {
@@ -108,7 +108,7 @@ input[type="number"] {
 
 textarea {
   padding-block: 0.5em;
-  font-family: var(--font-family-sans);
+  font-family: var(--font-sans);
   /* resize: vertical;
   field-sizing: content;
   width: 100%; */

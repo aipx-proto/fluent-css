@@ -3,10 +3,8 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
+    --font-sans: "Segoe UI", system-ui, Roboto, Helvetica Neue, ui-sans-serif, sans-serif;
+    --font-mono: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
     --text-xs: 10px;
     --text-xs--line-height: 14px;
     --text-sm: 12px;
@@ -29,16 +27,11 @@
     --text-6xl--line-height: 68px;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
-    --font-weight-bold: 600;
+    --font-weight-bold: 700;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-    --font-family-mono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
-    --font-family-mono-scale: 0.9em;
-    --font-weight-regular: 400;
     --border-radius-small: 4px;
     --border-radius-medium: 8px;
     --border-radius-large: 12px;
@@ -350,85 +343,46 @@
   }
 }
 @font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
+  font-family: "Segoe UI";
+  src: local("Segoe UI Light"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+  font-weight: 100;
 }
 @font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-Light-Italic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
+  font-family: "Segoe UI";
+  src: local("Segoe UI Semilight"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+  font-weight: 200;
 }
 @font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos.ttf") format("truetype");
+  font-family: "Segoe UI";
+  src: local("Segoe UI"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
   font-weight: 400;
-  font-style: normal;
 }
 @font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-SemiBold.ttf") format("truetype");
+  font-family: "Segoe UI";
+  src: local("Segoe UI Semibold"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
   font-weight: 600;
-  font-style: normal;
 }
 @font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-SemiBold-Italic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-Bold.ttf") format("truetype");
+  font-family: "Segoe UI";
+  src: local("Segoe UI Bold"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),
+    url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
   font-weight: 700;
-  font-style: normal;
 }
-@font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-Bold-Italic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-ExtraBold-Italic.ttf") format("truetype");
-  font-weight: 800;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Aptos";
-  src: url("font-aptos/Aptos-Black-Italic.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Monaspace Neon";
-  font-weight: 200 800;
-  font-stretch: 75% 125%;
-  font-style: oblique 0deg 12deg;
-  font-display: swap;
-  src: url("font-monaspace-neon/MonaspaceNeonVarVF[wght,wdth,slnt].woff2") format("woff2-variations");
-}
+@layer theme;
 @layer utilities {
   .size-small {
     --size-height: 24px;
@@ -622,7 +576,7 @@ select.button,
     --_border-radius: var(--border-radius);
   }
   border-radius: var(--_border-radius, var(--border-radius));
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-semibold);
   font-size: var(--size-font);
   color: var(--color-text-1);
   min-height: var(--size-height);
@@ -879,7 +833,7 @@ legend {
   padding: 0 4px;
   margin: 0 -4px;
   font-size: inherit;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-semibold);
   color: var(--color-text-1);
 }
 input:where(:not([type])),
@@ -961,8 +915,7 @@ input:where(:not([type])),
 }
 input[type="number"],
 input[type="date"] {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-family-mono-scale);
+  font-family: var(--font-mono);
 }
 input[type="number"] {
   --_size-spin-button-gap: 2px;
@@ -974,7 +927,7 @@ input[type="number"] {
 }
 textarea {
   padding-block: 0.5em;
-  font-family: var(--font-family-sans);
+  font-family: var(--font-sans);
 }
 input[type="color"] {
   padding: 0;
@@ -1419,7 +1372,7 @@ table > :first-child tr:first-child {
   &.active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-semibold);
     color: var(--color-text-1);
     .appearance-subtle & {
       background-color: var(--color-background-2);
@@ -1474,7 +1427,7 @@ label[role="tab"] {
 }
 html,
 body {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-sans);
   color: var(--color-text-2);
   font-size: var(--text-sm);
 }
@@ -1487,7 +1440,7 @@ h6,
 b,
 strong,
 th {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-semibold);
 }
 h1,
 h2,
@@ -1544,8 +1497,7 @@ kbd,
 pre,
 samp,
 tt {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-family-mono-scale);
+  font-family: var(--font-mono);
 }
 kbd {
   padding: 2px 4px;

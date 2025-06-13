@@ -22,8 +22,8 @@ Colors rules:
   --color-neutral-100: color-mix(in oklch, var(--color-text-2), var(--color-text-1));
   --color-white: var(--color-text-1);
 
-  --font-sans: var(--font-family-sans);
-  --font-mono: var(--font-family-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 /* .light {

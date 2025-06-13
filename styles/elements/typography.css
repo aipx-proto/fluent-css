@@ -5,7 +5,7 @@
 
 html,
 body {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-sans);
   color: var(--color-text-2);
   font-size: var(--text-sm);
   /* line-height: normal; */
@@ -23,7 +23,7 @@ h6,
 b,
 strong,
 th {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-semibold);
 }
 
 h1,
@@ -95,8 +95,8 @@ kbd,
 pre,
 samp,
 tt {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-family-mono-scale);
+  font-family: var(--font-mono);
+  /* font-size: var(--font-mono-scale); */
 }
 
 kbd {

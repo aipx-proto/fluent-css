@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
-@import "./font-aptos/font-aptos.css";
-@import "./font-monaspace-neon/font-monaspace-neon.css";
+@import "./font-segoe/font-segoe.css";
+
+@import "./theme/font.css" layer(theme);
 
 @import "./theme/mirai-theme.css";
 /* @import "./theme/tailwind-var-overrides.css"; */
