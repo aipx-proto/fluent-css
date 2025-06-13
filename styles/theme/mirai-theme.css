@@ -1,22 +1,5 @@
 
 @theme {
-
-  --duration-rest: 100ms;
-  --duration-hover: 150ms;
-  --duration-hover: 50ms;
-
-  --color-shadow-ambient: rgba(0, 0, 0, 0.24);
-  --color-shadow-key: rgba(0, 0, 0, 0.28);
-
-  --shadow-xs: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
-  --shadow-sm: 0 0 2px var(--color-shadow-ambient), 0 2px 4px var(--color-shadow-key);
-  --shadow-md: 0 0 2px var(--color-shadow-ambient), 0 4px 8px var(--color-shadow-key);
-  --shadow-lg: 0 0 2px var(--color-shadow-ambient), 0 8px 16px var(--color-shadow-key);
-  --shadow-xl: 0 0 8px var(--color-shadow-ambient), 0 14px 28px var(--color-shadow-key);
-  --shadow-2xl: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
-
-  --color-background-overlay: rgba(0, 0, 0, 0.5);
-
   --opacity-disabled: 0.5;
 }
 

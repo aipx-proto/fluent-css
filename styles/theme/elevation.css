@@ -3,6 +3,8 @@
   /* https://react.fluentui.dev/?path=/docs/theme-shadows--docs ; */
   /* https://tailwindcss.com/docs/box-shadow ; */
 
+  --color-shadow-overlay: oklch(0% 0 0 / 0.5);
+
   --color-shadow-ambient: oklch(0% 0 0 / 0.12);
   --color-shadow-key: oklch(0% 0 0 / 0.14);
 

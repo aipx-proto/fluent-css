@@ -61,7 +61,7 @@ dialog {
 
   transform: scale(0.8);
   &::backdrop {
-    background-color: var(--color-background-overlay);
+    background-color: var(--color-shadow-overlay);
   }
 
   &[open] {
