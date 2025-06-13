@@ -9,7 +9,7 @@
   },
   "license": "ISC",
   "scripts": {
-    "dev": "npm run extract-custom-properties -- --watch && npm run tailwind -- --watch",
+    "dev": "concurrently \"npm run extract-custom-properties -- --watch\" \"npm run tailwind -- --watch\"",
     "tailwind": "npx @tailwindcss/cli -i ./styles/index.css -o ./styles/fluent.css",
     "extract-custom-properties": "node extract-custom-properties.js styles/**/*.css custom-properties.css **/fluent*.css",
     "build": "npm run extract-custom-properties && npm run tailwind"
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.10",
     "tailwindcss": "^4.1.10",
-    "glob": "^11.0.3"
+    "glob": "^11.0.3",
+    "concurrently": "^9.1.2"
   }
 }

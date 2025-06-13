@@ -67,6 +67,7 @@
   --text-5xl--line-height: var(--text-5xl--line-height);
   --text-6xl: var(--text-6xl);
   --text-6xl--line-height: var(--text-6xl--line-height);
+  --change: var(--change);
   --text-7xl: var(--text-7xl);
   --text-7xl--line-height: var(--text-7xl--line-height);
   --text-8xl: var(--text-8xl);
