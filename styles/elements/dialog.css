@@ -3,8 +3,8 @@ dialog {
 
   border: 1px solid var(--color-border-1);
   background-color: var(--color-background-1);
-  box-shadow: var(--shadow-16);
-  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
   overflow: hidden;
 
   padding: 12px 24px;

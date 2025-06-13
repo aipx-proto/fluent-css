@@ -1,7 +1,8 @@
-/* Fluent 2 https://fluent2.microsoft.design/typography */
-/* Tailwind https://tailwindcss.com/docs/font-size */
 
 @theme {
+  /* Fluent 2 https://fluent2.microsoft.design/typography ; */
+  /* Tailwind https://tailwindcss.com/docs/font-size ; */
+
   /* Caption 2 */
   --text-xs: 10px;
   --text-xs--line-height: 14px;
@@ -58,6 +59,7 @@
 
   --font-sans: "Segoe UI", system-ui, Roboto, Helvetica Neue, ui-sans-serif, sans-serif;
   --font-mono: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
+  --font-serif: Georgia, Cambria, ui-serif, serif;
   --font-numeric: var(--font-mono);
 
   /* smaller font size optically aligns the x-height of monospace fonts with sans-serif fonts */

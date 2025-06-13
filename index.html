@@ -45,8 +45,8 @@
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 
-    function initializeTheme() {  
-    const theme = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    function initializeTheme() {
+      const theme = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.classList.toggle("dark", theme === "dark");
       document.documentElement.classList.toggle("light", theme === "light");
     }
@@ -216,8 +216,8 @@
     </nav>
     <span class="header__metadata">
       <span>Theme</span>
-      <button id="theme-toggle" class="appearance-transparent size-small shape-square"
-        style="margin-left:-8px" onclick="toggleTheme()">Dark</button>
+      <button id="theme-toggle" class="appearance-transparent size-small shape-square" style="margin-left:-8px"
+        onclick="toggleTheme()">Dark</button>
 
     </span>
 
@@ -243,7 +243,7 @@
       }
 
       .section {
-        border-radius: var(--border-radius-medium);
+        border-radius: var(--radius-md);
         background-color: var(--color-background-1);
       }
 
@@ -325,7 +325,7 @@
               justify-content: center;
               height: 60px;
               flex: 1 1 auto;
-              border-radius: var(--border-radius-medium);
+              border-radius: var(--radius-md);
               border: 1px solid var(--color-border-2);
               padding: 8px;
 
@@ -367,6 +367,9 @@
             display: flex;
             flex-direction: row;
             gap: 8px;
+            padding: 16px;
+            border-radius: var(--radius-lg);
+            background-color: var(--color-background-2);
 
             span {
               display: flex;
@@ -375,28 +378,46 @@
               justify-content: center;
               height: 60px;
               flex: 1 1 auto;
-              border-radius: var(--border-radius-medium);
+              /* border-radius: var(--radius-md); */
               border: 1px solid var(--color-border-1);
               padding: 8px;
+              background-color: var(--color-background-1);
+              text-align: center;
+            }
+          }
+
+          .layout__shadow {
+            gap: 0;
+            span{
+              border: 0;
+            }
+            span:first-child {
+              border-top-left-radius: var(--radius-md);
+              border-bottom-left-radius: var(--radius-md);
+            }
+            span:last-child {
+              border-bottom-right-radius: var(--radius-md);
+              border-top-right-radius: var(--radius-md);
             }
           }
         </style>
         <h3 class="section__header">Layout</h3>
         <div class="layout__border-radius">
           <span style="border-radius: 0">Radius None</span>
-          <span style="border-radius: var(--border-radius-small);">Radius Small</span>
-          <span style="border-radius: var(--border-radius-medium);">Radius Medium</span>
-          <span style="border-radius: var(--border-radius-large);">Radius Large</span>
-          <span style="border-radius: var(--border-radius-xlarge);">Radius XLarge</span>
-          <span style="border-radius: var(--border-radius-circular);">Radius Circular</span>
+          <span style="border-radius: var(--radius-sm);">Radius Small</span>
+          <span style="border-radius: var(--radius-md);">Radius Medium</span>
+          <span style="border-radius: var(--radius-lg);">Radius Large</span>
+          <span style="border-radius: var(--radius-xl);">Radius XLarge</span>
+          <span style="border-radius: var(--radius-4xl);">Radius Circular</span>
         </div>
         <div class="layout__shadow">
-          <span style="box-shadow: var(--shadow-2);">Shadow 2</span>
-          <span style="box-shadow: var(--shadow-4);">Shadow 4</span>
-          <span style="box-shadow: var(--shadow-8);">Shadow 8</span>
-          <span style="box-shadow: var(--shadow-16);">Shadow 16</span>
-          <span style="box-shadow: var(--shadow-28);">Shadow 28</span>
-          <span style="box-shadow: var(--shadow-64);">Shadow 64</span>
+          <span style="box-shadow: var(--shadow-2xs);">Shadow 0</span>
+          <span style="box-shadow: var(--shadow-xs);">Shadow 2</span>
+          <span style="box-shadow: var(--shadow-sm);">Shadow 4</span>
+          <span style="box-shadow: var(--shadow-md);">Shadow 8</span>
+          <span style="box-shadow: var(--shadow-lg);">Shadow 16</span>
+          <span style="box-shadow: var(--shadow-xl);">Shadow 28</span>
+          <span style="box-shadow: var(--shadow-2xl);">Shadow 64</span>
         </div>
       </div>
     </section>
@@ -885,8 +906,7 @@
           }
         </style>
 
-        <nav role="tablist" class="tabs__primary-nav tab-list vertical appearance-subtle"
-          style="flex: 0 0 auto;">
+        <nav role="tablist" class="tabs__primary-nav tab-list vertical appearance-subtle" style="flex: 0 0 auto;">
           <label role="tab" aria-controls="panel-1" for="tab-1">
             <input type="radio" name="tab-group-1" id="tab-1" checked />
             Tab 1

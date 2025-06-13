@@ -1,6 +1,6 @@
 
 table {
-  --_border-radius: var(--border-radius-medium);
+  --_border-radius: var(--radius-md);
 
   /* these are !important because LLMs will always try to override them */
   border-collapse: separate !important;

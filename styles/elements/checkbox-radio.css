@@ -43,7 +43,7 @@ input[type="radio"] {
 }
 
 input[type="radio"] {
-  --_border-radius: var(--border-radius-circular);
+  --_border-radius: var(--radius-4xl);
   &:after {
     border-radius: var(--_border-radius);
   }
@@ -53,7 +53,7 @@ input[type="radio"] {
 }
 
 input[type="checkbox"]:where(:not(.switch)) {
-  --_border-radius: var(--border-radius-small);
+  --_border-radius: var(--radius-sm);
 
   &:after {
     border-radius: calc(var(--_border-radius) - 2px);

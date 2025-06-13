@@ -16,7 +16,7 @@ select.button,
   gap: 4px;
 
   /* default circular */
-  --_border-radius: var(--border-radius-circular);
+  --_border-radius: var(--radius-4xl);
 
   [class*="shape-"] &,
   &[class*="shape-"] {
@@ -92,7 +92,7 @@ select.button,
   }
 
   .menu & {
-    --_border-radius: var(--border-radius-small);
+    --_border-radius: var(--radius-sm);
     border-color: transparent;
     justify-content: flex-start;
     font-weight: var(--fontWeightNormal);

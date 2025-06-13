@@ -21,7 +21,7 @@ progress.spinner {
     inset: 0;
     border: 2px solid var(--color-background-2);
     border-top-color: var(--color-brand-base);
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
     animation: --_keyframes-progress-spin var(--_duration-spin) var(--_easing-spin) infinite;
     pointer-events: none;
   }

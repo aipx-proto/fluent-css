@@ -55,7 +55,7 @@
     content: "";
     display: block;
     position: absolute;
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
     inset: auto var(--size-padding) 0 var(--size-padding);
     height: var(--_size-tab-underline);
     transform-origin: center;

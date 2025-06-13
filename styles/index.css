@@ -2,7 +2,10 @@
 
 @import "./font-segoe/font-segoe.css";
 
+@import "./theme/variants.css";
 @import "./theme/font.css" layer(theme);
+@import "./theme/elevation.css" layer(theme);
+@import "./theme/sizes.css" layer(theme);
 
 @import "./theme/mirai-theme.css";
 /* @import "./theme/tailwind-var-overrides.css"; */

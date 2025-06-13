@@ -27,26 +27,26 @@
     --text-6xl--line-height: 68px;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-4xl: 32px;
+    --shadow-2xs: 0 0 1px var(--color-shadow-ambient), 0px 0px 1px 0.25px var(--color-shadow-key);
+    --shadow-xs: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
+    --shadow-sm: 0 0 2px var(--color-shadow-ambient), 0 2px 4px var(--color-shadow-key);
+    --shadow-md: 0 0 2px var(--color-shadow-ambient), 0 4px 8px var(--color-shadow-key);
+    --shadow-lg: 0 0 2px var(--color-shadow-ambient), 0 8px 16px var(--color-shadow-key);
+    --shadow-xl: 0 0 8px var(--color-shadow-ambient), 0 14px 28px var(--color-shadow-key);
+    --shadow-2xl: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --border-radius-small: 4px;
-    --border-radius-medium: 8px;
-    --border-radius-large: 12px;
-    --border-radius-xlarge: 16px;
-    --border-radius-circular: 10000px;
-    --duration-rest: 100ms;
-    --duration-hover: 50ms;
     --color-shadow-ambient: rgba(0, 0, 0, 0.24);
     --color-shadow-key: rgba(0, 0, 0, 0.28);
-    --shadow-2: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
-    --shadow-4: 0 0 2px var(--color-shadow-ambient), 0 2px 4px var(--color-shadow-key);
-    --shadow-8: 0 0 2px var(--color-shadow-ambient), 0 4px 8px var(--color-shadow-key);
-    --shadow-16: 0 0 2px var(--color-shadow-ambient), 0 8px 16px var(--color-shadow-key);
-    --shadow-28: 0 0 8px var(--color-shadow-ambient), 0 14px 28px var(--color-shadow-key);
-    --shadow-64: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
+    --duration-rest: 100ms;
+    --duration-hover: 50ms;
     --color-background-overlay: rgba(0, 0, 0, 0.5);
     --opacity-disabled: 0.5;
     --color-background-1: #ffffff;
@@ -383,6 +383,13 @@
   font-weight: 700;
 }
 @layer theme;
+@layer theme {
+  :where(.dark, .dark *) {
+    --color-shadow-ambient: oklch(0% 0 0 / 0.24);
+    --color-shadow-key: oklch(0% 0 0 / 0.28);
+  }
+}
+@layer theme;
 @layer utilities {
   .size-small {
     --size-height: 24px;
@@ -404,14 +411,14 @@
     --size-icon: 20px;
   }
   .shape-square {
-    --border-radius: var(--border-radius-small);
+    --border-radius: var(--radius-sm);
   }
   :root,
   .shape-rounded {
-    --border-radius: var(--border-radius-medium);
+    --border-radius: var(--radius-md);
   }
   .shape-circular {
-    --border-radius: var(--border-radius-circular);
+    --border-radius: var(--radius-4xl);
   }
 }
 @layer theme {
@@ -570,7 +577,7 @@ select.button,
   align-items: center;
   justify-content: center;
   gap: 4px;
-  --_border-radius: var(--border-radius-circular);
+  --_border-radius: var(--radius-4xl);
   [class*="shape-"] &,
   &[class*="shape-"] {
     --_border-radius: var(--border-radius);
@@ -629,7 +636,7 @@ select.button,
     height: var(--size-height);
   }
   .menu & {
-    --_border-radius: var(--border-radius-small);
+    --_border-radius: var(--radius-sm);
     border-color: transparent;
     justify-content: flex-start;
     font-weight: var(--fontWeightNormal);
@@ -698,7 +705,7 @@ input[type="radio"] {
   }
 }
 input[type="radio"] {
-  --_border-radius: var(--border-radius-circular);
+  --_border-radius: var(--radius-4xl);
   &:after {
     border-radius: var(--_border-radius);
   }
@@ -707,7 +714,7 @@ input[type="radio"] {
   }
 }
 input[type="checkbox"]:where(:not(.switch)) {
-  --_border-radius: var(--border-radius-small);
+  --_border-radius: var(--radius-sm);
   &:after {
     border-radius: calc(var(--_border-radius) - 2px);
   }
@@ -755,8 +762,8 @@ dialog {
   color: inherit;
   border: 1px solid var(--color-border-1);
   background-color: var(--color-background-1);
-  box-shadow: var(--shadow-16);
-  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 12px 24px;
   &:has(main, footer, header) {
@@ -972,7 +979,7 @@ a:where(:not(.button):not(.tab)) {
 [popover] {
   border: 1px solid var(--color-border-1);
   background-color: var(--color-background-1);
-  box-shadow: var(--shadow-16);
+  box-shadow: var(--shadow-lg);
   padding: 8px 12px;
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -1131,7 +1138,7 @@ progress.spinner {
     inset: 0;
     border: 2px solid var(--color-background-2);
     border-top-color: var(--color-brand-base);
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
     animation: --_keyframes-progress-spin var(--_duration-spin) var(--_easing-spin) infinite;
     pointer-events: none;
   }
@@ -1222,7 +1229,7 @@ progress:where(:not(.spinner)):indeterminate {
   }
 }
 table {
-  --_border-radius: var(--border-radius-medium);
+  --_border-radius: var(--radius-md);
   border-collapse: separate !important;
   border-spacing: 0 !important;
   border-radius: var(--_border-radius);
@@ -1307,7 +1314,7 @@ table > :first-child tr:first-child {
     content: "";
     display: block;
     position: absolute;
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
     inset: auto var(--size-padding) 0 var(--size-padding);
     height: var(--_size-tab-underline);
     transform-origin: center;
@@ -1507,7 +1514,7 @@ kbd {
 pre {
   background-color: var(--color-background-2);
   padding: 16px;
-  border-radius: var(--border-radius-medium);
+  border-radius: var(--radius-md);
   overflow-x: auto;
 }
 hr {
@@ -1528,7 +1535,7 @@ input[type="checkbox"].switch {
   --_size-dimension: calc(var(--_size-thumb) + (var(--_size-offset) * 2) + 2px);
   border: 1px solid var(--color-border-1);
   background-color: var(--_color-background);
-  border-radius: var(--border-radius-circular);
+  border-radius: var(--radius-4xl);
   appearance: none;
   position: relative;
   margin: 0;
@@ -1543,7 +1550,7 @@ input[type="checkbox"].switch {
     display: block;
     height: var(--_size-thumb);
     width: var(--_size-thumb);
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
     background-color: var(--color-border-1);
     position: absolute;
     top: var(--_size-offset);
@@ -1573,14 +1580,14 @@ input[type="range"] {
   &::-webkit-slider-container {
     height: var(--_size-track);
     background: var(--color-border-1);
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
   }
   &::-webkit-slider-thumb {
     appearance: none;
     width: var(--_size-thumb);
     height: var(--_size-thumb);
     border: 1px solid var(--color-border-1);
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
     cursor: ew-resize;
     background: var(--color-brand-base);
     box-shadow: inset 0 0 0 3px var(--color-background-1);

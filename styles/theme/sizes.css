@@ -1,0 +1,13 @@
+@theme {
+  /* https://fluent2.microsoft.design/shapes#corner-radius-tokens ; */
+  /* https://tailwindcss.com/docs/border-radius ; */
+  
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+}

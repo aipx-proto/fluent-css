@@ -10,7 +10,7 @@ input[type="checkbox"].switch {
 
   border: 1px solid var(--color-border-1);
   background-color: var(--_color-background);
-  border-radius: var(--border-radius-circular);
+  border-radius: var(--radius-4xl);
 
   appearance: none;
   position: relative;
@@ -30,7 +30,7 @@ input[type="checkbox"].switch {
     display: block;
     height: var(--_size-thumb);
     width:  var(--_size-thumb);
-    border-radius: var(--border-radius-circular);
+    border-radius: var(--radius-4xl);
     background-color: var(--color-border-1);
 
     position: absolute;
