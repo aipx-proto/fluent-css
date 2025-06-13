@@ -4,7 +4,20 @@
 @layer theme {
   :root, :host {
     --font-sans: "Segoe UI", system-ui, Roboto, Helvetica Neue, ui-sans-serif, sans-serif;
+    --font-serif: Georgia, Cambria, ui-serif, serif;
     --font-mono: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
+    --color-neutral-100: oklch(97% 0 0);
+    --color-neutral-200: oklch(92.2% 0 0);
+    --color-neutral-300: oklch(87% 0 0);
+    --color-neutral-400: oklch(70.8% 0 0);
+    --color-neutral-500: oklch(55.6% 0 0);
+    --color-neutral-600: oklch(43.9% 0 0);
+    --color-neutral-700: oklch(37.1% 0 0);
+    --color-neutral-800: oklch(26.9% 0 0);
+    --color-neutral-900: oklch(20.5% 0 0);
+    --color-neutral-950: oklch(14.5% 0 0);
+    --color-black: #000;
+    --color-white: #fff;
     --text-xs: 10px;
     --text-xs--line-height: 14px;
     --text-sm: 12px;
@@ -25,11 +38,20 @@
     --text-5xl--line-height: 52px;
     --text-6xl: 52px;
     --text-6xl--line-height: 68px;
+    --text-7xl: 68px;
+    --text-7xl--line-height: 92px;
+    --text-8xl: 96px;
+    --text-8xl--line-height: 116px;
+    --text-9xl: 128px;
+    --text-9xl--line-height: 140px;
     --font-weight-semibold: 600;
+    --radius-xs: 1px;
     --radius-sm: 2px;
     --radius-md: 4px;
     --radius-lg: 8px;
     --radius-xl: 12px;
+    --radius-2xl: 16px;
+    --radius-3xl: 24px;
     --radius-4xl: 32px;
     --shadow-2xs: 0 0 1px var(--color-shadow-ambient), 0px 0px 1px 0.25px var(--color-shadow-key);
     --shadow-xs: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
@@ -42,14 +64,27 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --text-md: var(--text-base);
+    --font-numeric: var(--font-mono);
     --color-shadow-overlay: oklch(0% 0 0 / 0.5);
     --color-shadow-ambient: oklch(0% 0 0 / 0.12);
     --color-shadow-key: oklch(0% 0 0 / 0.14);
     --duration-rest: 100ms;
     --duration-hover: 100ms;
+    --duration-active: 100ms;
+    --ease-accelerate-max: cubic-bezier(0.9, 0.1, 1, 0.2);
+    --ease-accelerate-mid: cubic-bezier(1, 0, 1, 1);
+    --ease-accelerate-min: cubic-bezier(0.8, 0, 0.78, 1);
+    --ease-decelerate-max: cubic-bezier(0.1, 0.9, 0.2, 1);
+    --ease-decelerate-mid: cubic-bezier(0, 0, 0, 1);
+    --ease-decelerate-min: cubic-bezier(0.33, 0, 0.1, 1);
+    --ease-ease-max: cubic-bezier(0.8, 0, 0.2, 1);
+    --ease-ease-mid: cubic-bezier(0.33, 0, 0.67, 1);
+    --ease-ease-min: cubic-bezier(0.17, 0, 0.67, 1);
     --color-background-1: #ffffff;
     --color-background-2: #f5f5f5;
     --color-background-3: #f0f0f0;
+    --color-best: #f0f0f0;
     --color-background-4: #e6e6e6;
     --color-border-1: #d1d1d1;
     --color-border-2: var(--color-background-3);
@@ -230,14 +265,8 @@
   .table {
     display: table;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .resize {
-    resize: both;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -295,13 +324,6 @@
   }
   .italic {
     font-style: italic;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
@@ -454,11 +476,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -469,7 +486,6 @@
       --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }

@@ -10,10 +10,14 @@
   "license": "ISC",
   "scripts": {
     "dev": "npm run tailwind",
-    "tailwind": "npx @tailwindcss/cli -i ./styles/index.css -o ./styles/fluent.css --watch"
+    "tailwind": "npx @tailwindcss/cli -i ./styles/index.css -o ./styles/fluent.css --watch",
+    "extract-custom-properties": "node extract-custom-properties.js styles/**/*.css custom-properties.css **/fluent*.css"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.10",
     "tailwindcss": "^4.1.10"
+  },
+  "dependencies": {
+    "glob": "^11.0.3"
   }
 }

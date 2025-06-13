@@ -69,7 +69,7 @@ select.button,
     }
 
     &:active {
-      background-color: var(--interactive-active);
+      background-color: var(--interactive-pressed);
     }
 
     --_border-radius: var(--border-radius);
