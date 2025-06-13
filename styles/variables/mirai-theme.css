@@ -1,12 +1,47 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-size-1: 40px;
-  --font-size-2: 28px;
-  --font-size-3: 20px;
-  --font-size-4: 16px;
-  --font-size-5: 14px;
-  --font-size-6: 12px;
+
+  --text-xs: 10px;                /* original: 0.75rem (12px) */
+  --text-xs--line-height: 14px;   /* original: calc(1 / 0.75) = 1.333... (16px) */
+
+  --text-sm: 12px;                /* original: 0.875rem (14px) */
+  --text-sm--line-height: 16px;   /* original: calc(1.25 / 0.875) = 1.428... (20px) */
+
+  --text-base: 14px;              /* original: 1rem (16px) */
+  --text-base--line-height: 20px; /* original: calc(1.5 / 1) = 1.5 (24px) */
+
+  --text-lg: 16px;                /* original: 1.125rem (18px) */
+  --text-lg--line-height: 22px;   /* original: calc(1.75 / 1.125) = 1.555... (28px) */
+
+  --text-xl: 20px;                /* original: 1.25rem (20px) */
+  --text-xl--line-height: 26px;   /* original: calc(1.75 / 1.25) = 1.4 (28px) */
+
+  --text-2xl: 24px;               /* original: 1.5rem (24px) */
+  --text-2xl--line-height: 32px;  /* original: calc(2 / 1.5) = 1.333... (32px) */
+
+  --text-3xl: 28px;               /* original: 1.875rem (30px) */
+  --text-3xl--line-height: 36px;  /* original: calc(2.25 / 1.875) = 1.2 (36px) */
+
+  --text-4xl: 32px;               /* original: 2.25rem (36px) */
+  --text-4xl--line-height: 40px;  /* original: calc(2.5 / 2.25) = 1.111... (40px) */
+
+  --text-5xl: 40px;               /* original: 3rem (48px) */
+  --text-5xl--line-height: 52px;  /* original: 1 (48px) */
+
+  --text-6xl: 52px;               /* original: 3.75rem (60px) */
+  --text-6xl--line-height: 68px;  /* original: 1 (60px) */
+
+  --text-7xl: 68px;               /* original: 4.5rem (72px) */
+  --text-7xl--line-height: 92px;  /* original: 1 (72px) */
+
+  --text-8xl: 96px;               /* original: 6rem (96px) */
+  --text-8xl--line-height: 116px; /* original: 1 (96px) */
+
+  --text-9xl: 128px;              /* original: 8rem (128px) */
+  --text-9xl--line-height: 140px; /* original: 1 (128px) */
+
+  --text-md: var(--text-base); /* alias for consistency */
 
   --font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
     "Helvetica Neue", sans-serif;
@@ -64,20 +99,20 @@
 @layer utilities {
   .size-small {
     --size-height: 24px;
-    --size-font: var(--font-size-6);
+    --size-font: var(--text-xs);
     --size-padding: 8px;
     --size-icon: 12px;
   }
   :root,
   .size-medium {
     --size-height: 32px;
-    --size-font: var(--font-size-5);
+    --size-font: var(--text-sm);
     --size-padding: 12px;
     --size-icon: 16px;
   }
   .size-large {
     --size-height: 40px;
-    --size-font: var(--font-size-4);
+    --size-font: var(--text-base);
     --size-padding: 16px;
     --size-icon: 20px;
   }

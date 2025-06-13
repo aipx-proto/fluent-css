@@ -7,7 +7,7 @@ html,
 body {
   font-family: var(--font-family-sans);
   color: var(--color-text-2);
-  font-size: var(--font-size-5);
+  font-size: var(--text-sm);
   /* line-height: normal; */
 
   /* maybe? */
@@ -53,24 +53,24 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-size-2);
+  font-size: var(--text-3xl);
 }
 
 h3 {
-  font-size: var(--font-size-3);
+  font-size: var(--text-xl);
 }
 
 h4 {
-  font-size: var(--font-size-4);
+  font-size: var(--text-base);
 }
 
 h5 {
-  font-size: var(--font-size-5);
+  font-size: var(--text-sm);
 }
 
 h6,
 small {
-  font-size: var(--font-size-6);
+  font-size: var(--text-xs);
 }
 
 blockquote {

@@ -7,18 +7,33 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --text-xs: 10px;
+    --text-xs--line-height: 14px;
+    --text-sm: 12px;
+    --text-sm--line-height: 16px;
+    --text-base: 14px;
+    --text-base--line-height: 20px;
+    --text-lg: 16px;
+    --text-lg--line-height: 22px;
+    --text-xl: 20px;
+    --text-xl--line-height: 26px;
+    --text-2xl: 24px;
+    --text-2xl--line-height: 32px;
+    --text-3xl: 28px;
+    --text-3xl--line-height: 36px;
+    --text-4xl: 32px;
+    --text-4xl--line-height: 40px;
+    --text-5xl: 40px;
+    --text-5xl--line-height: 52px;
+    --text-6xl: 52px;
+    --text-6xl--line-height: 68px;
     --font-weight-normal: 400;
+    --font-weight-semibold: 600;
     --font-weight-bold: 600;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --font-size-1: 40px;
-    --font-size-2: 28px;
-    --font-size-3: 20px;
-    --font-size-4: 16px;
-    --font-size-5: 14px;
-    --font-size-6: 12px;
     --font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
     "Helvetica Neue", sans-serif;
     --font-family-mono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
@@ -281,6 +296,50 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
   .italic {
     font-style: italic;
   }
@@ -373,20 +432,20 @@
 @layer utilities {
   .size-small {
     --size-height: 24px;
-    --size-font: var(--font-size-6);
+    --size-font: var(--text-xs);
     --size-padding: 8px;
     --size-icon: 12px;
   }
   :root,
   .size-medium {
     --size-height: 32px;
-    --size-font: var(--font-size-5);
+    --size-font: var(--text-sm);
     --size-padding: 12px;
     --size-icon: 16px;
   }
   .size-large {
     --size-height: 40px;
-    --size-font: var(--font-size-4);
+    --size-font: var(--text-base);
     --size-padding: 16px;
     --size-icon: 20px;
   }
@@ -1417,7 +1476,7 @@ html,
 body {
   font-family: var(--font-family-sans);
   color: var(--color-text-2);
-  font-size: var(--font-size-5);
+  font-size: var(--text-sm);
 }
 h1,
 h2,
@@ -1450,20 +1509,20 @@ h1 {
   font-size: var(--font-size-1);
 }
 h2 {
-  font-size: var(--font-size-2);
+  font-size: var(--text-3xl);
 }
 h3 {
-  font-size: var(--font-size-3);
+  font-size: var(--text-xl);
 }
 h4 {
-  font-size: var(--font-size-4);
+  font-size: var(--text-base);
 }
 h5 {
-  font-size: var(--font-size-5);
+  font-size: var(--text-sm);
 }
 h6,
 small {
-  font-size: var(--font-size-6);
+  font-size: var(--text-xs);
 }
 blockquote {
   border-left: 2px solid var(--color-border-1);
@@ -1600,6 +1659,10 @@ input[type="range"] {
   inherits: false;
   initial-value: solid;
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -1609,6 +1672,7 @@ input[type="range"] {
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-border-style: solid;
+      --tw-font-weight: initial;
     }
   }
 }
