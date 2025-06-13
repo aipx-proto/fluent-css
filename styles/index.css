@@ -3,7 +3,6 @@
 /* @import "tailwindcss/preflight"; */
 /* @import "./elements/reset.css"; */
 
-@import "./font-aptos/font-aptos.css";
 @import "./font-segoe/font-segoe.css";
 
 @import "./theme/variants.css";
