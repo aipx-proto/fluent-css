@@ -95,7 +95,7 @@ select.button,
     --_border-radius: var(--radius-sm);
     border-color: transparent;
     justify-content: flex-start;
-    font-weight: var(--fontWeightNormal);
+    font-weight: var(--font-normal);
   }
 }
 

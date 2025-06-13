@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
-@import "./font-segoe/font-segoe.css";
+/* @import "./font-segoe/font-segoe.css"; */
 
-@import "./theme/variants.css";
-@import "./theme/font.css" layer(theme);
-@import "./theme/elevation.css" layer(theme);
-@import "./theme/sizes.css" layer(theme);
+/* @import "./theme/variants.css"; */
+/* @import "./theme/font.css" layer(theme); */
+/* @import "./theme/elevation.css" layer(theme);
+@import "./theme/shapes.css" layer(theme);
+@import "./theme/transition.css" layer(theme); */
+/* @import "./theme/color.css" layer(theme); */
 
-@import "./theme/mirai-theme.css";
-/* @import "./theme/tailwind-var-overrides.css"; */
+/* @import "./theme/mirai-theme.css";
 
 @import "./elements/reset.css";
 
@@ -33,4 +34,6 @@
 @import "./elements/switch.css";
 @import "./elements/slider.css";
 
+*/
+@import "tailwindcss/preflight";
 @tailwind utilities;
