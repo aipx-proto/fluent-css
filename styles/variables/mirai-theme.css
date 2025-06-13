@@ -1,49 +1,69 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer theme {
-  :root {
-    --font-size-1: 40px;
-    --font-size-2: 28px;
-    --font-size-3: 20px;
-    --font-size-4: 16px;
-    --font-size-5: 14px;
-    --font-size-6: 12px;
-    --font-size-7: 10px;
+@theme {
+  --font-size-1: 40px;
+  --font-size-2: 28px;
+  --font-size-3: 20px;
+  --font-size-4: 16px;
+  --font-size-5: 14px;
+  --font-size-6: 12px;
+  --font-size-7: 10px;
 
-    --font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
-      "Helvetica Neue", sans-serif;
-    --font-family-mono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
-    /* smaller font size optically aligns the x-height of Monaspace Neon and Aptos */
-    --font-family-mono-scale: 0.9em;
+  --font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  --font-family-mono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
+  /* smaller font size optically aligns the x-height of Monaspace Neon and Aptos */
+  --font-family-mono-scale: 0.9em;
 
-    --font-weight-regular: 400;
-    --font-weight-bold: 600;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
 
-    --border-radius-small: 4px;
-    --border-radius-medium: 8px;
-    --border-radius-large: 12px;
-    --border-radius-xlarge: 16px;
-    --border-radius-circular: 10000px;
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+  --border-radius-xlarge: 16px;
+  --border-radius-circular: 10000px;
 
-    --duration-rest: 100ms;
-    --duration-hover: 150ms;
-    --duration-hover: 50ms;
+  --duration-rest: 100ms;
+  --duration-hover: 150ms;
+  --duration-hover: 50ms;
 
-    --color-shadow-ambient: rgba(0, 0, 0, 0.24);
-    --color-shadow-key: rgba(0, 0, 0, 0.28);
+  --color-shadow-ambient: rgba(0, 0, 0, 0.24);
+  --color-shadow-key: rgba(0, 0, 0, 0.28);
 
-    --shadow-2: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
-    --shadow-4: 0 0 2px var(--color-shadow-ambient), 0 2px 4px var(--color-shadow-key);
-    --shadow-8: 0 0 2px var(--color-shadow-ambient), 0 4px 8px var(--color-shadow-key);
-    --shadow-16: 0 0 2px var(--color-shadow-ambient), 0 8px 16px var(--color-shadow-key);
-    --shadow-28: 0 0 8px var(--color-shadow-ambient), 0 14px 28px var(--color-shadow-key);
-    --shadow-64: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
+  --shadow-2: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
+  --shadow-4: 0 0 2px var(--color-shadow-ambient), 0 2px 4px var(--color-shadow-key);
+  --shadow-8: 0 0 2px var(--color-shadow-ambient), 0 4px 8px var(--color-shadow-key);
+  --shadow-16: 0 0 2px var(--color-shadow-ambient), 0 8px 16px var(--color-shadow-key);
+  --shadow-28: 0 0 8px var(--color-shadow-ambient), 0 14px 28px var(--color-shadow-key);
+  --shadow-64: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
 
-    --color-background-overlay: rgba(0, 0, 0, 0.5);
+  --color-background-overlay: rgba(0, 0, 0, 0.5);
 
-    --opacity-disabled: 0.5;
-  }
+  --opacity-disabled: 0.5;
+}
 
+
+@theme {
+  --color-background-1: #ffffff;
+  --color-background-2: #f5f5f5;
+  --color-background-3: #f0f0f0;
+  --color-background-4: #e6e6e6;
+
+  --color-border-1: #d1d1d1;
+  --color-border-2: var(--color-background-3);
+
+  --color-text-1: #000000;
+  --color-text-2: #424242;
+  --color-text-3: #707070;
+  --color-text-4: #bdbdbd;
+
+  --color-brand-base: #007bb4;
+  --color-on-brand-text: #ffffff;
+  --color-brand-text: #007bb4;
+}
+
+@layer utilities {
   .size-small {
     --size-height: 24px;
     --size-font: var(--font-size-6);
@@ -73,42 +93,26 @@
   }
   .shape-circular {
     --border-radius: var(--border-radius-circular);
-  }
+  } 
+}
 
 
-  @theme {
-    --color-background-1: #ffffff;
-    --color-background-2: #f5f5f5;
-    --color-background-3: #f0f0f0;
-    --color-background-4: #e6e6e6;
-
-    --color-border-1: #d1d1d1;
-    --color-border-2: var(--color-background-3);
-
-    --color-text-1: #000000;
-    --color-text-2: #424242;
-    --color-text-3: #707070;
-    --color-text-4: #bdbdbd;
-
-    --color-brand-base: #007bb4;
-    --color-on-brand-text: #ffffff;
-    --color-brand-text: #007bb4;
-  }
-
+@layer theme {
+  
   .dark {
     --color-background-1: #1f1f1f;
     --color-background-2: #141414;
     --color-background-3: #0a0a0a;
     --color-background-4: #000000;
-
+  
     --color-border-1: #666666;
     --color-border-2: var(--color-background-3);
-
+  
     --color-text-1: #ffffff;
     --color-text-2: #d6d6d6;
     --color-text-3: #999999;
     --color-text-4: #5c5c5c;
-
+  
     --color-brand-base: #005e8b;
     --color-on-brand-text: #ffffff;
     --color-brand-text: #0090d3;

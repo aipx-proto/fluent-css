@@ -9,11 +9,40 @@
       "Courier New", monospace;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    --font-weight-bold: 600;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-size-1: 40px;
+    --font-size-2: 28px;
+    --font-size-3: 20px;
+    --font-size-4: 16px;
+    --font-size-5: 14px;
+    --font-size-6: 12px;
+    --font-size-7: 10px;
+    --font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+    --font-family-mono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
+    --font-family-mono-scale: 0.9em;
+    --font-weight-regular: 400;
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --border-radius-large: 12px;
+    --border-radius-xlarge: 16px;
+    --border-radius-circular: 10000px;
+    --duration-rest: 100ms;
+    --duration-hover: 50ms;
+    --color-shadow-ambient: rgba(0, 0, 0, 0.24);
+    --color-shadow-key: rgba(0, 0, 0, 0.28);
+    --shadow-2: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
+    --shadow-4: 0 0 2px var(--color-shadow-ambient), 0 2px 4px var(--color-shadow-key);
+    --shadow-8: 0 0 2px var(--color-shadow-ambient), 0 4px 8px var(--color-shadow-key);
+    --shadow-16: 0 0 2px var(--color-shadow-ambient), 0 8px 16px var(--color-shadow-key);
+    --shadow-28: 0 0 8px var(--color-shadow-ambient), 0 14px 28px var(--color-shadow-key);
+    --shadow-64: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
+    --color-background-overlay: rgba(0, 0, 0, 0.5);
+    --opacity-disabled: 0.5;
     --color-background-1: #ffffff;
     --color-background-2: #f5f5f5;
     --color-background-3: #f0f0f0;
@@ -363,40 +392,7 @@
   font-display: swap;
   src: url("font-monaspace-neon/MonaspaceNeonVarVF[wght,wdth,slnt].woff2") format("woff2-variations");
 }
-@layer theme {
-  :root {
-    --font-size-1: 40px;
-    --font-size-2: 28px;
-    --font-size-3: 20px;
-    --font-size-4: 16px;
-    --font-size-5: 14px;
-    --font-size-6: 12px;
-    --font-size-7: 10px;
-    --font-family-sans: "Aptos", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto,
-      "Helvetica Neue", sans-serif;
-    --font-family-mono: "Monaspace Neon", Consolas, Menlo, "Courier New", Courier, monospace;
-    --font-family-mono-scale: 0.9em;
-    --font-weight-regular: 400;
-    --font-weight-bold: 600;
-    --border-radius-small: 4px;
-    --border-radius-medium: 8px;
-    --border-radius-large: 12px;
-    --border-radius-xlarge: 16px;
-    --border-radius-circular: 10000px;
-    --duration-rest: 100ms;
-    --duration-hover: 150ms;
-    --duration-hover: 50ms;
-    --color-shadow-ambient: rgba(0, 0, 0, 0.24);
-    --color-shadow-key: rgba(0, 0, 0, 0.28);
-    --shadow-2: 0 0 2px var(--color-shadow-ambient), 0 1px 2px var(--color-shadow-key);
-    --shadow-4: 0 0 2px var(--color-shadow-ambient), 0 2px 4px var(--color-shadow-key);
-    --shadow-8: 0 0 2px var(--color-shadow-ambient), 0 4px 8px var(--color-shadow-key);
-    --shadow-16: 0 0 2px var(--color-shadow-ambient), 0 8px 16px var(--color-shadow-key);
-    --shadow-28: 0 0 8px var(--color-shadow-ambient), 0 14px 28px var(--color-shadow-key);
-    --shadow-64: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
-    --color-background-overlay: rgba(0, 0, 0, 0.5);
-    --opacity-disabled: 0.5;
-  }
+@layer utilities {
   .size-small {
     --size-height: 24px;
     --size-font: var(--font-size-6);
@@ -426,6 +422,8 @@
   .shape-circular {
     --border-radius: var(--border-radius-circular);
   }
+}
+@layer theme {
   .dark {
     --color-background-1: #1f1f1f;
     --color-background-2: #141414;
