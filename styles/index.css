@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
-/* @import "./font-segoe/font-segoe.css"; */
+/* @import "tailwindcss/preflight"; */
+/* @import "./elements/reset.css"; */
 
-/* @import "./theme/variants.css"; */
-/* @import "./theme/font.css" layer(theme); */
-/* @import "./theme/elevation.css" layer(theme);
+@import "./font-aptos/font-aptos.css";
+@import "./font-segoe/font-segoe.css";
+
+@import "./theme/variants.css";
+@import "./theme/font.css" layer(theme);
+@import "./theme/elevation.css" layer(theme);
 @import "./theme/shapes.css" layer(theme);
-@import "./theme/transition.css" layer(theme); */
-/* @import "./theme/color.css" layer(theme); */
+@import "./theme/transition.css" layer(theme);
+@import "./theme/color.css" layer(theme);
 
-/* @import "./theme/mirai-theme.css";
+@import "./theme/mirai-theme.css";
 
-@import "./elements/reset.css";
-
-@import "./elements/icons.css";
+/* @import "./elements/icons.css";
 @import "./elements/accordion.css";
 @import "./elements/base.css";
 @import "./elements/button.css";
@@ -32,8 +34,4 @@
 @import "./elements/typography.css";
 @import "./elements/scrollbar.css";
 @import "./elements/switch.css";
-@import "./elements/slider.css";
-
-*/
-@import "tailwindcss/preflight";
-@tailwind utilities;
+@import "./elements/slider.css"; */
