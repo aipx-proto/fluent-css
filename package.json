@@ -17,8 +17,6 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.10",
     "tailwindcss": "^4.1.10",
-    "chokidar": "^4.0.3",
     "glob": "^11.0.3"
   }
-
 }
