@@ -72,27 +72,50 @@
   --mri-border-radius: var(--mri-border-radius-circular);
 }
 
-:root, /*default*/
-.dark, /*tailwind*/
-.mri-theme-dark {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer theme {
+  @theme {
+    --mri-color-background-1: #ffffff;
+    --mri-color-background-2: #f5f5f5;
+    --mri-color-background-3: #f0f0f0;
+    --mri-color-background-4: #e6e6e6;
+
+    --mri-color-border-1: #d1d1d1;
+    --mri-color-border-2: var(--mri-color-background-3);
+
+    --mri-color-text-1: #000000;
+    --mri-color-text-2: #424242;
+    --mri-color-text-3: #707070;
+    --mri-color-text-4: #bdbdbd;
+
+    --mri-color-brand-base: #007bb4;
+    --mri-color-on-brand-text: #ffffff;
+    --mri-color-brand-text: #007bb4;
+  }
+
+  .dark {
+    --mri-color-background-1: #1f1f1f;
+    --mri-color-background-2: #141414;
+    --mri-color-background-3: #0a0a0a;
+    --mri-color-background-4: #000000;
+
+    --mri-color-border-1: #666666;
+    --mri-color-border-2: var(--mri-color-background-3);
+
+    --mri-color-text-1: #ffffff;
+    --mri-color-text-2: #d6d6d6;
+    --mri-color-text-3: #999999;
+    --mri-color-text-4: #5c5c5c;
+
+    --mri-color-brand-base: #005e8b;
+    --mri-color-on-brand-text: #ffffff;
+    --mri-color-brand-text: #0090d3;
+  }
+}
+
+.dark {
   color-scheme: dark;
-
-  --mri-color-background-1: #1f1f1f;
-  --mri-color-background-2: #141414;
-  --mri-color-background-3: #0a0a0a;
-  --mri-color-background-4: #000000;
-
-  --mri-color-border-1: #666666;
-  --mri-color-border-2: var(--mri-color-background-3);
-
-  --mri-color-text-1: #ffffff;
-  --mri-color-text-2: #d6d6d6;
-  --mri-color-text-3: #999999;
-  --mri-color-text-4: #5c5c5c;
-
-  --mri-color-brand-base: #005E8B;
-  --mri-color-on-brand-text: #FFFFFF;
-  --mri-color-brand-text: #0090d3;
 
   &,
   .mri-appearance-outline {
@@ -113,26 +136,8 @@
   }
 }
 
-.light, /*tailwind*/
-.mri-theme-light {
+.light {
   color-scheme: light;
-
-  --mri-color-background-1: lch(100% 0 0); /* white */
-  --mri-color-background-2: #f5f5f5;
-  --mri-color-background-3: #f0f0f0;
-  --mri-color-background-4: #e6e6e6;
-
-  --mri-color-border-1: #d1d1d1;
-  --mri-color-border-2: var(--mri-color-background-3);
-
-  --mri-color-text-1: #000000;
-  --mri-color-text-2: #424242;
-  --mri-color-text-3: #707070;
-  --mri-color-text-4: #bdbdbd;
-
-  --mri-color-brand-base: #007BB4;
-  --mri-color-on-brand-text: #FFFFFF;
-  --mri-color-brand-text: #007BB4;
 
   &,
   .mri-appearance-outline {

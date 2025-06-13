@@ -13,6 +13,19 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --mri-color-background-1: #ffffff;
+    --mri-color-background-2: #f5f5f5;
+    --mri-color-background-3: #f0f0f0;
+    --mri-color-background-4: #e6e6e6;
+    --mri-color-border-1: #d1d1d1;
+    --mri-color-border-2: var(--mri-color-background-3);
+    --mri-color-text-1: #000000;
+    --mri-color-text-2: #424242;
+    --mri-color-text-3: #707070;
+    --mri-color-text-4: #bdbdbd;
+    --mri-color-brand-base: #007bb4;
+    --mri-color-on-brand-text: #ffffff;
+    --mri-color-brand-text: #007bb4;
   }
 }
 @layer base {
@@ -411,23 +424,25 @@
 .mri-shape-circular {
   --mri-border-radius: var(--mri-border-radius-circular);
 }
-:root, 
-.dark, 
-.mri-theme-dark {
+@layer theme {
+  .dark {
+    --mri-color-background-1: #1f1f1f;
+    --mri-color-background-2: #141414;
+    --mri-color-background-3: #0a0a0a;
+    --mri-color-background-4: #000000;
+    --mri-color-border-1: #666666;
+    --mri-color-border-2: var(--mri-color-background-3);
+    --mri-color-text-1: #ffffff;
+    --mri-color-text-2: #d6d6d6;
+    --mri-color-text-3: #999999;
+    --mri-color-text-4: #5c5c5c;
+    --mri-color-brand-base: #005e8b;
+    --mri-color-on-brand-text: #ffffff;
+    --mri-color-brand-text: #0090d3;
+  }
+}
+.dark {
   color-scheme: dark;
-  --mri-color-background-1: #1f1f1f;
-  --mri-color-background-2: #141414;
-  --mri-color-background-3: #0a0a0a;
-  --mri-color-background-4: #000000;
-  --mri-color-border-1: #666666;
-  --mri-color-border-2: var(--mri-color-background-3);
-  --mri-color-text-1: #ffffff;
-  --mri-color-text-2: #d6d6d6;
-  --mri-color-text-3: #999999;
-  --mri-color-text-4: #5c5c5c;
-  --mri-color-brand-base: #005E8B;
-  --mri-color-on-brand-text: #FFFFFF;
-  --mri-color-brand-text: #0090d3;
   &,
   .mri-appearance-outline {
     --mri-interactive-rest: var(--mri-color-background-1);
@@ -446,22 +461,8 @@
     --mri-interactive-rest: transparent;
   }
 }
-.light, 
-.mri-theme-light {
+.light {
   color-scheme: light;
-  --mri-color-background-1: lch(100% 0 0);
-  --mri-color-background-2: #f5f5f5;
-  --mri-color-background-3: #f0f0f0;
-  --mri-color-background-4: #e6e6e6;
-  --mri-color-border-1: #d1d1d1;
-  --mri-color-border-2: var(--mri-color-background-3);
-  --mri-color-text-1: #000000;
-  --mri-color-text-2: #424242;
-  --mri-color-text-3: #707070;
-  --mri-color-text-4: #bdbdbd;
-  --mri-color-brand-base: #007BB4;
-  --mri-color-on-brand-text: #FFFFFF;
-  --mri-color-brand-text: #007BB4;
   &,
   .mri-appearance-outline {
     --mri-interactive-rest: var(--mri-color-background-1);
@@ -480,35 +481,6 @@
     --mri-interactive-rest: transparent;
   }
 }
-:root,
-.dark {
-  --color-black: var(--mri-color-background-4);
-  --color-neutral-950: var(--mri-color-background-4);
-  @supports (color: color-mix(in lab, red, red)) {
-    --color-neutral-950: color-mix(in oklch, var(--mri-color-background-4), var(--mri-color-background-3));
-  }
-  --color-neutral-900: var(--mri-color-background-3, var(--mri-color-border-1));
-  --color-neutral-800: var(--mri-color-background-2);
-  --color-neutral-700: var(--mri-color-background-1);
-  --color-neutral-600: var(--mri-color-border-1);
-  --color-neutral-500: var(--mri-color-border-1);
-  @supports (color: color-mix(in lab, red, red)) {
-    --color-neutral-500: color-mix(in oklch, var(--mri-color-border-1), var(--mri-color-text-3));
-  }
-  --color-neutral-400: var(--mri-color-text-3);
-  --color-neutral-300: var(--mri-color-text-3);
-  @supports (color: color-mix(in lab, red, red)) {
-    --color-neutral-300: color-mix(in oklch, var(--mri-color-text-3), var(--mri-color-text-2));
-  }
-  --color-neutral-200: var(--mri-color-text-2);
-  --color-neutral-100: var(--mri-color-text-2);
-  @supports (color: color-mix(in lab, red, red)) {
-    --color-neutral-100: color-mix(in oklch, var(--mri-color-text-2), var(--mri-color-text-1));
-  }
-  --color-white: var(--mri-color-text-1);
-  --font-sans: var(--mri-font-family-sans);
-  --font-mono: var(--mri-font-family-mono);
-}
 html,
 body {
   margin: 0;
@@ -519,12 +491,12 @@ body {
 *::after {
   box-sizing: border-box;
 }
-:root, .mri-theme-dark, .dark {
+:root, .dark {
   --mri-icon-check: url('data:image/svg+xml,<svg style="fill:black;" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z"></path></svg>');
   --mri-icon-chevron-right: url('data:image/svg+xml,<svg style="fill:white;" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7.65 4.15c.2-.2.5-.2.7 0l5.49 5.46c.21.22.21.57 0 .78l-5.49 5.46a.5.5 0 0 1-.7-.7L12.8 10 7.65 4.85a.5.5 0 0 1 0-.7Z"></path></svg>');
   --mri-icon-chevron-down: url('data:image/svg+xml,<svg style="fill:white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.21 8.46C4.51 8.17 4.98 8.17 5.28 8.46L12 15.18L18.71 8.46C19.01 8.17 19.48 8.17 19.78 8.46C20.07 8.76 20.07 9.23 19.78 9.53L12.53 16.78C12.23 17.07 11.76 17.07 11.46 16.78L4.21 9.53C3.92 9.23 3.92 8.76 4.21 8.46Z"></path></svg>');
 }
-.mri-theme-light, .light {
+.light {
   --mri-icon-check: url('data:image/svg+xml,<svg style="fill:white;" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z"></path></svg>');
   --mri-icon-chevron-right: url('data:image/svg+xml,<svg style="fill:black;" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7.65 4.15c.2-.2.5-.2.7 0l5.49 5.46c.21.22.21.57 0 .78l-5.49 5.46a.5.5 0 0 1-.7-.7L12.8 10 7.65 4.85a.5.5 0 0 1 0-.7Z"></path></svg>');
   --mri-icon-chevron-down: url('data:image/svg+xml,<svg style="fill:black;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.21 8.46C4.51 8.17 4.98 8.17 5.28 8.46L12 15.18L18.71 8.46C19.01 8.17 19.48 8.17 19.78 8.46C20.07 8.76 20.07 9.23 19.78 9.53L12.53 16.78C12.23 17.07 11.76 17.07 11.46 16.78L4.21 9.53C3.92 9.23 3.92 8.76 4.21 8.46Z"></path></svg>');
