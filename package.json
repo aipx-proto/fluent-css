@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "concurrently \"npm run extract-custom-properties -- --watch\" \"npm run tailwind -- --watch\"",
     "tailwind": "npx @tailwindcss/cli -i ./styles/index.css -o ./build/fluent.css",
-    "extract-custom-properties": "node extract-custom-properties.js styles/**/*.css custom-properties.css **/fluent*.css --watch",
+    "extract-custom-properties": "node scripts/extract-custom-properties.js styles/**/*.css scripts/custom-properties.css **/fluent*.css",
     "build": "npm run extract-custom-properties && npm run tailwind"
   },
   "devDependencies": {
