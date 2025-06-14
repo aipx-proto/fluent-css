@@ -6,7 +6,7 @@
 html,
 body {
   font-family: var(--font-sans);
-  color: var(--color-text-2);
+  color: var(--color-body);
   font-size: var(--text-sm);
   /* line-height: normal; */
 
@@ -36,7 +36,7 @@ strong,
 em,
 th,
 summary {
-  color: var(--color-text-1);
+  color: var(--color-heading);
 }
 
 i,
@@ -74,15 +74,15 @@ small {
 }
 
 blockquote {
-  border-left: 2px solid var(--color-border-1);
+  border-left: 2px solid var(--color-border);
   margin: 0;
   padding-left: 8px;
-  color: var(--color-text-1);
+  color: var(--color-heading);
   font-style: italic;
 }
 q {
   font-style: italic;
-  color: var(--color-text-1);
+  color: var(--color-heading);
 }
 
 ul,
@@ -102,11 +102,11 @@ tt {
 kbd {
   padding: 2px 4px;
   border-radius: 3px;
-  background-color: var(--color-background-2);
+  background-color: var(--color-control);
 }
 
 pre {
-  background-color: var(--color-background-2);
+  background-color: var(--color-control);
   padding: 16px;
   border-radius: var(--radius-md);
   overflow-x: auto;
@@ -114,6 +114,6 @@ pre {
 
 hr {
   border: none;
-  border-top: 1px solid var(--color-border-1);
+  border-top: 1px solid var(--color-border);
   margin: 20px 0;
 }

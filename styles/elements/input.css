@@ -17,9 +17,9 @@ input:where(:not([type])),
   textarea,
   .input {
   font-size: var(--size-font);
-  color: var(--color-text-1);
+  color: var(--color-heading);
 
-  --_color-background: var(--color-background-2);
+  --_color-background: var(--color-control);
   --_color-border: transparent;
 
   display: inline-flex;
@@ -32,8 +32,8 @@ input:where(:not([type])),
   background-color: var(--_color-background);
   border: 1px solid var(--_color-border);
 
-  --_gradient-underline-focus: linear-gradient(to bottom, var(--color-brand-base), var(--color-brand-base));
-  --_gradient-underline-hover: linear-gradient(to bottom, var(--color-border-1), var(--color-border-1));
+  --_gradient-underline-focus: linear-gradient(to bottom, var(--color-brand-bg), var(--color-brand-bg));
+  --_gradient-underline-hover: linear-gradient(to bottom, var(--color-border), var(--color-border));
 
   --_background-underline-focus: var(--_gradient-underline-focus) 50% 100%/0% 2px;
   --_background-underline-hover: var(--_gradient-underline-hover) 50% 100%/100% 0px;
@@ -63,7 +63,7 @@ input:where(:not([type])),
   outline: transparent solid 2px;
 
   &.appearance-outline {
-    --_color-border: var(--color-border-1);
+    --_color-border: var(--color-border);
   }
 
   .input > & {

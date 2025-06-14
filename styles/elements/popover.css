@@ -1,6 +1,6 @@
 [popover] {
-  border: 1px solid var(--color-border-1);
-  background-color: var(--color-background-1);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-page);
   box-shadow: var(--shadow-lg);
   padding: 8px 12px;
   border-radius: var(--border-radius);

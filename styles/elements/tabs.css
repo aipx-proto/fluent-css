@@ -37,15 +37,15 @@
 
   border-radius: var(--border-radius);
   font-size: var(--size-font);
-  /* color: var(--color-text-1); */
+  /* color: var(--color-heading); */
   min-height: var(--size-height);
   padding: 0 var(--size-padding);
 
   transition: background-color var(--duration-rest) linear;
 
   --_size-tab-underline: 2px;
-  --_color-tab-underline-hover: var(--color-text-4);
-  --_color-tab-underline-active: var(--color-brand-text);
+  --_color-tab-underline-hover: var(--color-faint);
+  --_color-tab-underline-active: var(--color-brand-fg);
   --_duration-tab-underline: 0.1s;
 
   position: relative;
@@ -101,7 +101,7 @@
     transition-duration: var(--duration-hover);
 
     .appearance-subtle & {
-      background-color: var(--interactive-hover);
+      background-color: var(--color-hover);
     }
 
     &:before {
@@ -114,7 +114,7 @@
     transition-duration: var(--duration-hover);
 
     .appearance-subtle & {
-      background-color: var(--interactive-pressed);
+      background-color: var(--color-pressed);
     }
   }
 
@@ -140,10 +140,10 @@
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
     font-weight: var(--font-semibold);
-    color: var(--color-text-1);
+    color: var(--color-heading);
 
     .appearance-subtle & {
-      background-color: var(--color-background-2);
+      background-color: var(--color-control);
     }
 
     &:after {

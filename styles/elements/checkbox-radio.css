@@ -1,8 +1,8 @@
 input[type="checkbox"]:where(:not(.switch)),
 input[type="radio"] {
-  --_color-border: var(--color-border-1);
-  --_color-background: var(--color-background-2);
-  --_color-checked: var(--color-brand-base);
+  --_color-border: var(--color-border);
+  --_color-background: var(--color-control);
+  --_color-checked: var(--color-brand-bg);
 
   --_size-dimension: var(--size-icon);
 

@@ -161,7 +161,7 @@
       .nav__categories span,
       .nav__sub-header {
         font-weight: var(--font-semibold);
-        color: var(--color-text-3);
+        color: var(--color-muted);
       }
 
       .any{}
@@ -246,7 +246,7 @@
 
       .section {
         border-radius: var(--radius-md);
-        background-color: var(--color-background-1);
+        background-color: var(--color-page);
       }
 
       .section__content {
@@ -254,7 +254,7 @@
         flex-direction: column;
         gap: 24px;
         padding: 24px;
-        border-top: 1px solid var(--color-border-2);
+        border-top: 1px solid var(--color-shell);
       }
 
       .section__header {
@@ -328,37 +328,36 @@
               height: 60px;
               flex: 1 1 auto;
               border-radius: var(--radius-md);
-              border: 1px solid var(--color-border-2);
+              border: 1px solid var(--color-shell);
               padding: 8px;
 
             }
           }
         </style>
         <div class="color__text-color">
-          <p style="color: var(--color-text-1);"><strong>Text 1: </strong>Lorem ipsum dolor sit amet, consectetur
+          <p style="color: var(--color-heading);"><strong>Text 1: </strong>Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p style="color: var(--color-text-2);"><strong>Text 2: </strong>Duis aute irure dolor in reprehenderit in
+          <p style="color: var(--color-body);"><strong>Text 2: </strong>Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p style="color: var(--color-text-3);"><strong>Text 3: </strong>Sed ut perspiciatis unde omnis iste natus
+          <p style="color: var(--color-muted);"><strong>Text 3: </strong>Sed ut perspiciatis unde omnis iste natus
             error
             sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          <p style="color: var(--color-text-4);"><strong>Text 4: </strong>Nemo enim ipsam voluptatem quia voluptas
+          <p style="color: var(--color-faint);"><strong>Text 4: </strong>Nemo enim ipsam voluptatem quia voluptas
             sit
             aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
             nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
         </div>
         <div class="color__background-color">
-          <span style="background-color: var(--color-background-1);">Background 1</span>
-          <span style="background-color: var(--color-background-2);">Background 2</span>
-          <span style="background-color: var(--color-background-3);">Background 3</span>
-          <span style="background-color: var(--color-background-4);">Background 4</span>
+          <span style="background-color: var(--color-page);">Background 1</span>
+          <span style="background-color: var(--color-control);">Background 2</span>
+          <span style="background-color: var(--color-shell);">Background 3</span>
         </div>
         <div class="color__border-color">
-          <span style="border: 1px solid var(--color-border-1);">Border 1</span>
-          <span style="border: 1px solid var(--color-border-2);">Border 2</span>
+          <span style="border: 1px solid var(--color-border);">Border 1</span>
+          <span style="border: 1px solid var(--color-shell);">Border 2</span>
         </div>
 
       </div>
@@ -371,7 +370,7 @@
             gap: 8px;
             padding: 16px;
             border-radius: var(--radius-lg);
-            background-color: var(--color-background-2);
+            background-color: var(--color-control);
 
             span {
               display: flex;
@@ -381,9 +380,9 @@
               height: 60px;
               flex: 1 1 auto;
               /* border-radius: var(--radius-md); */
-              border: 1px solid var(--color-border-1);
+              border: 1px solid var(--color-border);
               padding: 8px;
-              background-color: var(--color-background-1);
+              background-color: var(--color-page);
               text-align: center;
             }
           }
@@ -452,7 +451,7 @@
           <button class="active">Active</button>
           <span style=" margin: 0 16px">
             <button class="icon-only">X</button>
-            <span style="margin-left: 4px; color: var(--color-text-3);">Icon Only</span>
+            <span style="margin-left: 4px; color: var(--color-muted);">Icon Only</span>
           </span>
         </div>
         <div class="button__elements">
@@ -906,7 +905,7 @@
 
           .tabs__primary-nav {
             flex: 0 0 auto;
-            border-right: 1px solid var(--color-border-2);
+            border-right: 1px solid var(--color-shell);
             padding: 8px;
           }
         </style>

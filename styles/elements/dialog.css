@@ -1,8 +1,8 @@
 dialog {
   color: inherit;
 
-  border: 1px solid var(--color-border-1);
-  background-color: var(--color-background-1);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-page);
   box-shadow: var(--shadow-lg);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -34,7 +34,7 @@ dialog {
     
     footer {
       padding: 12px 24px;
-      border-top: 1px solid var(--color-border-2);
+      border-top: 1px solid var(--color-shell);
       display: flex;
       justify-content: flex-end;
       gap: 12px;

@@ -1,5 +1,5 @@
 fieldset{
-    border: 1px solid var(--color-border-1);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     padding: var(--size-padding);
     margin: 0px;
@@ -10,5 +10,5 @@ legend {
     margin: 0 -4px;
     font-size: inherit;
     font-weight: var(--font-semibold);
-    color: var(--color-text-1);
+    color: var(--color-heading);
 }

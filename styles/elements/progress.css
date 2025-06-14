@@ -19,15 +19,15 @@ progress.spinner {
     content: "";
     position: absolute;
     inset: 0;
-    border: 2px solid var(--color-background-2);
-    border-top-color: var(--color-brand-base);
+    border: 2px solid var(--color-control);
+    border-top-color: var(--color-brand-bg);
     border-radius: var(--radius-4xl);
     animation: --_keyframes-progress-spin var(--_duration-spin) var(--_easing-spin) infinite;
     pointer-events: none;
   }
   &:after {
     border-color: transparent;
-    border-top-color: var(--color-brand-base);
+    border-top-color: var(--color-brand-bg);
     animation-delay: calc(var(--_duration-spin) * 0.075);
   }
 
@@ -46,7 +46,7 @@ meter {
   width: 100%;
   height: var(--_size-height);
   border-radius: var(--border-radiusRound);
-  background: var(--color-background-2);
+  background: var(--color-control);
   overflow: hidden;
 
   &.size-small {
@@ -65,9 +65,9 @@ meter {
 }
 
 progress:where(:not(.spinner)):indeterminate {
-  /* --_color-brand-transparent: color-mix(in srgb, var(--color-brand-base) 0%, transparent); */
-  --_color-brand-transparent: oklch(from var(--color-brand-base) l c h / 0);
-  --_color-brand: var(--color-brand-base);
+  /* --_color-brand-transparent: color-mix(in srgb, var(--color-brand-bg) 0%, transparent); */
+  --_color-brand-transparent: oklch(from var(--color-brand-bg) l c h / 0);
+  --_color-brand: var(--color-brand-bg);
 
   background-image: linear-gradient(
     to right,
@@ -93,7 +93,7 @@ progress:where(:not(.spinner)):indeterminate {
   height: var(--_size-height);
 }
 ::-webkit-progress-value {
-  background: var(--color-brand-base);
+  background: var(--color-brand-bg);
 }
 
 /* ::-webkit-meter-inner-element {

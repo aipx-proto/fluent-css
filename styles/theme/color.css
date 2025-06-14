@@ -1,84 +1,85 @@
 @theme {
-  --color-background-1: #ffffff;
-  --color-background-2: #f5f5f5;
-  --color-background-3: #f0f0f0;
-  --color-best: #f0f0f0;
-  --color-background-4: #e6e6e6;
+  --color-page: #ffffff;
+  --color-control: #f5f5f5;
+  --color-shell: #f0f0f0;
 
-  --color-border-1: #d1d1d1;
-  --color-border-2: var(--color-background-3);
+  --color-border: #d1d1d1;
 
-  --color-text-1: #000000;
-  --color-text-2: #424242;
-  --color-text-3: #707070;
-  --color-text-4: #bdbdbd;
+  --color-faint: #bdbdbd;
+  --color-muted: #707070;
+  --color-body: #424242;
+  --color-heading: #000000;
 
-  --color-brand-base: #007bb4;
-  --color-on-brand-text: #ffffff;
-  --color-brand-text: #007bb4;
+  --color-brand-bg: #007bb4;
+  --color-brand-contrast: hwb(
+    from oklch(from var(--color-brand-bg) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
+  );
+  --color-brand-fg: #007bb4;
+
+  --color-rest: var(--color-control);
+  --color-hover: oklch(from var(--color-rest) calc(l * 0.92) c h);
+  --color-pressed: oklch(from var(--color-rest) calc(l * 0.88) c h);
 }
 
 @variant dark {
   color-scheme: dark;
 
-  --color-background-1: #1f1f1f;
-  --color-background-2: #141414;
-  --color-background-3: #0a0a0a;
-  --color-background-4: #000000;
+  --color-page: #1f1f1f;
+  --color-control: #141414;
+  --color-shell: #0a0a0a;
 
-  --color-border-1: #666666;
-  --color-border-2: var(--color-background-3);
+  --color-border: #666666;
 
-  --color-text-1: #ffffff;
-  --color-text-2: #d6d6d6;
-  --color-text-3: #999999;
-  --color-text-4: #5c5c5c;
+  --color-heading: #ffffff;
+  --color-body: #d6d6d6;
+  --color-muted: #999999;
+  --color-faint: #5c5c5c;
 
-  --color-brand-base: #005e8b;
-  --color-on-brand-text: #ffffff;
-  --color-brand-text: #0090d3;
+  --color-brand-bg: #005e8b;
+  --color-brand-contrast: hwb(
+    from oklch(from var(--color-brand-bg) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
+  );
+  --color-brand-fg: #0090d3;
+
+  --color-rest: var(--color-control);
+  --color-hover: oklch(from var(--color-rest) calc(l * 0.8) c h);
+  --color-pressed: oklch(from var(--color-rest) calc(l * 0.65) c h);
 }
-
 
 @variant light {
   color-scheme: light;
 
   &,
   .appearance-outline {
-    --interactive-rest: var(--color-background-1);
-    --interactive-hover: oklch(from var(--color-background-1) calc(l * 0.92) c h);
-    --interactive-pressed: oklch(from var(--color-background-1) calc(l * 0.88) c h);
+    /* default */
   }
   .appearance-primary {
-    --interactive-rest: var(--color-brand-base);
-    --interactive-hover: oklch(from var(--color-brand-base) calc(l * 0.85) c h);
-    --interactive-pressed: oklch(from var(--color-brand-base) calc(l * 0.7) c h);
+    --color-rest: var(--color-brand-bg);
+    --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
+    --color-pressed: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
   }
   .appearance-subtle {
-    --interactive-rest: var(--color-background-2);
+    --color-rest: var(--color-control);
   }
   .appearance-transparent {
-    --interactive-rest: transparent;
+    --color-rest: transparent;
   }
 }
 
 @variant dark {
-
   &,
   .appearance-outline {
-    --interactive-rest: var(--color-background-1);
-    --interactive-hover: oklch(from var(--interactive-rest) calc(l * 0.8) c h);
-    --interactive-pressed: oklch(from var(--interactive-rest) calc(l * 0.65) c h);
+    /* default */
   }
   .appearance-primary {
-    --interactive-rest: var(--color-brand-base);
-    --interactive-hover: oklch(from var(--color-brand-base) calc(l * 0.85) c h);
-    --interactive-pressed: oklch(from var(--color-brand-base) calc(l * 0.7) c h);
+    --color-rest: var(--color-brand-bg);
+    --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
+    --color-pressed: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
   }
   .appearance-subtle {
-    --interactive-rest: var(--color-background-2);
+    --color-rest: var(--color-control);
   }
   .appearance-transparent {
-    --interactive-rest: transparent;
+    --color-rest: transparent;
   }
 }
