@@ -430,8 +430,8 @@
         <style>
           .color-grid {
             display: grid;
-            grid-template-columns: auto repeat(11, 1fr);
-            gap: 1px;
+            grid-template-columns: auto repeat(13, 1fr);
+            gap: 1px 0;
             border-radius: var(--radius-md);
             overflow: hidden;
             font-size: var(--text-xs);
@@ -478,15 +478,20 @@
             // Header row
             grid.innerHTML = [
               '<div class="color-grid__header"></div>',
+              '<div class="color-grid__header">W</div>',
               ...shades.map(s => `<div class="color-grid__header">${s}</div>`),
+              '<div class="color-grid__header">B</div>',
               ...colors.flatMap(color => [
                 `<div class="color-grid__label">${color}</div>`,
+                `<div class="color-grid__color b" style="background-color: var(--color-white);">W</div>`,
                 ...shades.map(shade => {
                   // Use black text for light shades (<=400), white for others
                   const isLight = shade <= 400;
                   const b = isLight ? " b" : "";
                   return `<div class="color-grid__color${b}" style="background-color: var(--color-${color}-${shade});">${shade}</div>`;
-                })
+                }),
+                `<div class="color-grid__color" style="background-color: var(--color-black);">B</div>`,
+
               ])
             ].join('');
           })();
@@ -495,7 +500,7 @@
         <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
           <span style="min-width: 120px;">Hue Torsion</span>
           <input
-            id="hue-torsion-slider"
+            id="hue-x-slider"
             type="range"
             min="-50"
             max="50"
@@ -503,13 +508,13 @@
             step="1"
             style="flex: 1;"
           />
-          <span id="hue-torsion-value" style="width: 48px; text-align: right;">0</span>
-          <button type="button" id="hue-torsion-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
+          <span id="hue-x-value" style="width: 48px; text-align: right;">0</span>
+          <button type="button" id="hue-x-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
         </label>
         <label style="display: flex; align-items: center; gap: 12px;">
-          <span style="min-width: 120px;">Chroma Bump</span>
+          <span style="min-width: 120px;">Chroma Reduction</span>
           <input
-            id="chroma-bump-slider"
+            id="chroma-x-slider"
             type="range"
             min="0"
             max="100"
@@ -517,8 +522,8 @@
             step="1"
             style="flex: 1;"
           />
-          <span id="chroma-bump-value" style="width: 48px; text-align: right;">0</span>
-          <button type="button" id="chroma-bump-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
+          <span id="chroma-x-value" style="width: 48px; text-align: right;">0</span>
+          <button type="button" id="chroma-x-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
         </label>
       </div>
       <script>
@@ -536,12 +541,12 @@
         document.documentElement.style.setProperty('--h-x', initialHue);
         document.documentElement.style.setProperty('--c-x', initialChroma);
 
-        const hueSlider = document.getElementById('hue-torsion-slider');
-        const chromaSlider = document.getElementById('chroma-bump-slider');
-        const hueValue = document.getElementById('hue-torsion-value');
-        const chromaValue = document.getElementById('chroma-bump-value');
-        const hueReset = document.getElementById('hue-torsion-reset');
-        const chromaReset = document.getElementById('chroma-bump-reset');
+        const hueSlider = document.getElementById('hue-x-slider');
+        const chromaSlider = document.getElementById('chroma-x-slider');
+        const hueValue = document.getElementById('hue-x-value');
+        const chromaValue = document.getElementById('chroma-x-value');
+        const hueReset = document.getElementById('hue-x-reset');
+        const chromaReset = document.getElementById('chroma-x-reset');
 
         // Set slider values to match initial CSS var values
         hueSlider.value = initialHue;
