@@ -39,11 +39,9 @@
   --stone: #79716b;
 
   /* Fluent primary colors */
-  --fluent-darkred: #750b1c;
-  --fluent-burgundy: #a4262c;
+  
   --fluent-cranberry: #c50f1f;
   --fluent-red: #d13438;
-  --fluent-darkorange: #da3b01;
   --fluent-bronze: #a74109;
   --fluent-pumpkin: #ca5010;
   --fluent-orange: #f7630c;
@@ -51,29 +49,20 @@
   --fluent-marigold: #eaa300;
   --fluent-yellow: #fde300;
   --fluent-gold: #c19c00;
-  --fluent-brass: #986f0b;
-  --fluent-brown: #8e562e;
-  --fluent-darkbrown: #4d291c;
   --fluent-lime: #73aa24;
   --fluent-forest: #498205;
   --fluent-seafoam: #00cc6a;
-  --fluent-lightgreen: #13a10e;
   --fluent-green: #107c10;
-  --fluent-darkgreen: #0b6a0b;
-  --fluent-lightteal: #00b7c3;
   --fluent-teal: #038387;
-  --fluent-darkteal: #006666;
   --fluent-cyan: #0099bc;
   --fluent-steel: #005b70;
   --fluent-lightblue: #3a96dd;
   --fluent-blue: #0078d4;
   --fluent-royalblue: #004e8c;
-  --fluent-darkblue: #003966;
   --fluent-cornflower: #4f6bed;
   --fluent-navy: #0027b4;
   --fluent-lavender: #7160e8;
   --fluent-purple: #5c2e91;
-  --fluent-darkpurple: #401b6c;
   --fluent-orchid: #8764b8;
   --fluent-grape: #881798;
   --fluent-berry: #c239b3;
@@ -82,6 +71,7 @@
   --fluent-hotpink: #e3008c;
   --fluent-magenta: #bf0077;
   --fluent-plum: #77004d;
+
   --fluent-beige: #7a7574;
   --fluent-mink: #5d5a58;
   --fluent-silver: #859599;
