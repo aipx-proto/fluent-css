@@ -164,7 +164,7 @@
         color: var(--color-muted);
       }
 
-      .any{}
+      .any {}
     </style>
     <h1>
       <img src="assets/Mirai-未来-union.svg" alt="mirai.css logotype of japanese characters 未来" width="52" />
@@ -177,6 +177,7 @@
             <span>Core</span>
             <li><a href="#typography">Typography</a></li>
             <li><a href="#color">Color</a></li>
+            <li><a href="#color-grid">Color Grid</a></li>
             <li><a href="#layout">Layout</a></li>
           </ul>
         </li>
@@ -423,6 +424,73 @@
           <span style="box-shadow: var(--shadow-xl);">Shadow 28</span>
           <span style="box-shadow: var(--shadow-2xl);">Shadow 64</span>
         </div>
+      </div>
+      <div class="section__content" id="color-grid">
+        <h3 class="section__header">Color Palette Grid</h3>
+        <style>
+          .color-grid {
+            display: grid;
+            grid-template-columns: auto repeat(11, 1fr);
+            gap: 1px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            font-size: var(--text-xs);
+            font-family: var(--font-mono);
+          }
+
+          .color-grid__header {
+            background-color: var(--color-control);
+            padding: 8px 4px;
+            text-align: center;
+            font-weight: var(--font-semibold);
+            color: var(--color-muted);
+          }
+
+          .color-grid__color {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-semibold);
+
+            color: white;
+            &.b {
+              color: black;
+            }
+          }
+
+          .color-grid__label {
+            background-color: var(--color-control);
+            padding: 8px;
+            font-weight: var(--font-semibold);
+            color: var(--color-body);
+            display: flex;
+            align-items: center;
+          }
+        </style>
+        <div class="color-grid" id="color-grid-js"></div>
+        <script>
+          (function () {
+            const colors = [
+              "red", "orange", "amber", "yellow", "lime", "green", "emerald", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "fuchsia", "pink", "rose", "slate", "gray", "zinc", "neutral", "stone"
+            ];
+            const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+            const grid = document.getElementById('color-grid-js');
+            // Header row
+            grid.innerHTML = [
+              '<div class="color-grid__header"></div>',
+              ...shades.map(s => `<div class="color-grid__header">${s}</div>`),
+              ...colors.flatMap(color => [
+                `<div class="color-grid__label">${color}</div>`,
+                ...shades.map(shade => {
+                  // Use black text for light shades (<=400), white for others
+                  const isLight = shade <= 400;
+                  const b = isLight ? " b" : "";
+                  return `<div class="color-grid__color${b}" style="background-color: var(--color-${color}-${shade});">${shade}</div>`;
+                })
+              ])
+            ].join('');
+          })();
+        </script>
       </div>
     </section>
 

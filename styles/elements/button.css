@@ -48,7 +48,7 @@ select.button,
 
     &:active,
     &.active {
-      background-color: var(--color-pressed);
+      background-color: var(--color-selected);
       transition-duration: var(--duration-hover);
 
       &.appearance-transparent,
@@ -69,7 +69,7 @@ select.button,
     }
 
     &:active {
-      background-color: var(--color-pressed);
+      background-color: var(--color-selected);
     }
 
     --_border-radius: var(--border-radius);
@@ -126,7 +126,7 @@ input[type="file"] {
 
   &:active {
     &::-webkit-file-upload-button {
-      background-color: var(--color-pressed);
+      background-color: var(--color-selected);
       transition-duration: var(--duration-hover);
     }
   }

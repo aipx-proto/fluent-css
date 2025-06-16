@@ -18,7 +18,7 @@
 
   --color-rest: var(--color-control);
   --color-hover: oklch(from var(--color-rest) calc(l * 0.92) c h);
-  --color-pressed: oklch(from var(--color-rest) calc(l * 0.88) c h);
+  --color-selected: oklch(from var(--color-rest) calc(l * 0.88) c h);
 }
 
 @variant dark {
@@ -43,7 +43,7 @@
 
   --color-rest: var(--color-control);
   --color-hover: oklch(from var(--color-rest) calc(l * 0.8) c h);
-  --color-pressed: oklch(from var(--color-rest) calc(l * 0.65) c h);
+  --color-selected: oklch(from var(--color-rest) calc(l * 0.65) c h);
 }
 
 @variant light {
@@ -56,7 +56,7 @@
   .appearance-primary {
     --color-rest: var(--color-brand-bg);
     --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
-    --color-pressed: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
+    --color-selected: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
   }
   .appearance-subtle {
     --color-rest: var(--color-control);
@@ -74,7 +74,7 @@
   .appearance-primary {
     --color-rest: var(--color-brand-bg);
     --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
-    --color-pressed: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
+    --color-selected: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
   }
   .appearance-subtle {
     --color-rest: var(--color-control);
