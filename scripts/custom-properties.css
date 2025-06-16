@@ -98,6 +98,8 @@ This file is used to trick tailwind into using all custom properties in the code
   --l-900: var(--l-900);
   --l-950: var(--l-950);
   --l-1000: var(--l-1000);
+  --h-x: var(--h-x);
+  --c-x: var(--c-x);
   --red: var(--red);
   --orange: var(--orange);
   --amber: var(--amber);

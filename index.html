@@ -491,6 +491,91 @@
             ].join('');
           })();
         </script>
+      <div style="margin: 32px 0;">
+        <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <span style="min-width: 120px;">Hue Torsion</span>
+          <input
+            id="hue-torsion-slider"
+            type="range"
+            min="-50"
+            max="50"
+            value="0"
+            step="1"
+            style="flex: 1;"
+          />
+          <span id="hue-torsion-value" style="width: 48px; text-align: right;">0</span>
+          <button type="button" id="hue-torsion-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
+        </label>
+        <label style="display: flex; align-items: center; gap: 12px;">
+          <span style="min-width: 120px;">Chroma Bump</span>
+          <input
+            id="chroma-bump-slider"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="1"
+            style="flex: 1;"
+          />
+          <span id="chroma-bump-value" style="width: 48px; text-align: right;">0</span>
+          <button type="button" id="chroma-bump-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
+        </label>
+      </div>
+      <script>
+        // Get initial CSS var values for --h-x and --c-x
+        function getInitialCSSVar(name, fallback = 0) {
+          const val = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+          // If not set or not a number, fallback to 0
+          return val === "" ? fallback : val;
+        }
+
+        const initialHue = getInitialCSSVar('--h-x', 0);
+        const initialChroma = getInitialCSSVar('--c-x', 0);
+
+        // Set initial CSS vars to their current values (in case not set inline)
+        document.documentElement.style.setProperty('--h-x', initialHue);
+        document.documentElement.style.setProperty('--c-x', initialChroma);
+
+        const hueSlider = document.getElementById('hue-torsion-slider');
+        const chromaSlider = document.getElementById('chroma-bump-slider');
+        const hueValue = document.getElementById('hue-torsion-value');
+        const chromaValue = document.getElementById('chroma-bump-value');
+        const hueReset = document.getElementById('hue-torsion-reset');
+        const chromaReset = document.getElementById('chroma-bump-reset');
+
+        // Set slider values to match initial CSS var values
+        hueSlider.value = initialHue;
+        chromaSlider.value = initialChroma;
+
+        function updateHueTortion() {
+          const val = hueSlider.value;
+          document.documentElement.style.setProperty('--h-x', val);
+          hueValue.textContent = val;
+        }
+        function updateChromaBump() {
+          const val = chromaSlider.value;
+          document.documentElement.style.setProperty('--c-x', val);
+          chromaValue.textContent = val;
+        }
+
+        hueSlider.addEventListener('input', updateHueTortion);
+        chromaSlider.addEventListener('input', updateChromaBump);
+
+        // Reset buttons
+        hueReset.addEventListener('click', function() {
+          hueSlider.value = initialHue;
+          updateHueTortion();
+        });
+        chromaReset.addEventListener('click', function() {
+          chromaSlider.value = initialChroma;
+          updateChromaBump();
+        });
+
+        // Set initial display
+        updateHueTortion();
+        updateChromaBump();
+      </script>
+
       </div>
     </section>
 

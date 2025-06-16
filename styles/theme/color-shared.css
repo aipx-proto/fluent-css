@@ -15,6 +15,9 @@
   --l-950: 14.5%;
   --l-1000: 0%;
 
+  --h-x: 10;
+  --c-x: 3;
+
   --red: #d13438; /* fluent-red */
   --orange: #f7630c; /* fluent-orange */
   --amber: #eaa300; /* fluent-marigold */
