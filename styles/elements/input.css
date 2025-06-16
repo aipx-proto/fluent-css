@@ -34,38 +34,45 @@ input:where(:not([type])),
   background-color: var(--_color-background);
   border: 1px solid var(--_color-border);
   border-bottom-color: var(--_color-border-bottom);
-  border-bottom-width: 0px;
+  /* border-bottom-width: 0px; */
+  /* border-width: 0px; */
 
+
+  --_background-position: 50% calc(100% + 2px);
   --_gradient-underline-focus: linear-gradient(to bottom, var(--_color-border-focus), var(--_color-border-focus));
   --_gradient-underline-hover: linear-gradient(to bottom, var(--_color-border-bottom), var(--_color-border-bottom));
 
-  --_background-underline-focus: var(--_gradient-underline-focus) 50% 100%/0% 2px;
-  --_background-underline-hover: var(--_gradient-underline-hover) 50% 100%/100%  1px;
+  --_background-underline-focus: var(--_gradient-underline-focus) var(--_background-position) / 0% 3px;
+  --_background-underline-hover: var(--_gradient-underline-hover) var(--_background-position) / 100% 1px;
 
   background: var(--_background-underline-focus), var(--_background-underline-hover), var(--_color-background);
   background-repeat: no-repeat;
 
-  transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in;
   transition-property: background-size, background-position, border-color;
 
   &:not(:disabled):not([readonly]):not(.disabled) {
     &:hover {
-      --_background-underline-hover: var(--_gradient-underline-hover) 50% 100%/100% 1px;
+      --_background-underline-hover: var(--_gradient-underline-hover) var(--_background-position) / 100% 1px;
       transition-duration: 0.15s;
       transition-timing-function: ease-out;
-      border-bottom-color: transparent;
+      border-bottom-color: var(--_color-subtle);
+      /* border-bottom-color: transparent; */
     }
 
     &:focus,
     &:has(input:focus, textarea:focus, select:focus) {
-      --_background-underline-focus: var(--_gradient-underline-focus) 50% 100%/100% 2px;
+      --_background-underline-focus: var(--_gradient-underline-focus) var(--_background-position) / 100% 3px;
       transition-duration: 0.15s;
       transition-timing-function: ease-out;
       border-bottom-color: var(--_color-border-focus);
+      /* border-bottom-color: transparent; */
     }
   }
 
   outline: transparent solid 2px;
+  background-clip: border-box;
+
 
 
 
