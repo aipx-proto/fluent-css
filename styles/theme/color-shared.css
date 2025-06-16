@@ -15,67 +15,28 @@
   --l-950: 14.5%;
   --l-1000: 0%;
 
-  --red: #fb2c36;
-  --orange: #ff6900;
-  --amber: #fe9a00;
-  --yellow: #f0b100;
-  --lime: #7ccf00;
-  --green: #00c950;
-  --emerald: #00bc7d;
-  --teal: #00bba7;
-  --cyan: #00b8db;
-  --sky: #00a6f4;
-  --blue: #2b7fff;
-  --indigo: #615fff;
-  --violet: #8e51ff;
-  --purple: #ad46ff;
-  --fuchsia: #e12afb;
-  --pink: #f6339a;
-  --rose: #ff2056;
-  --slate: #62748e;
-  --gray: #6a7282;
-  --zinc: #71717b;
-  --neutral: #636363;
-  --stone: #79716b;
+  --red: #d13438; /* fluent-red */
+  --orange: #f7630c; /* fluent-orange */
+  --amber: #eaa300; /* fluent-marigold */
+  --yellow: #fde300; /* fluent-yellow */
+  --lime: #73aa24; /* fluent-lime */
+  --green: #107c10; /* fluent-green */
+  --emerald: #00cc6a; /* fluent-seafoam */
+  --teal: #038387; /* fluent-teal */
+  --cyan: #0099bc; /* fluent-cyan */
+  --sky: #3a96dd; /* fluent-lightblue */
+  --blue: #0078d4; /* fluent-blue */
+  --indigo: #004e8c; /* fluent-royalblue */
+  --violet: #4f6bed; /* fluent-cornflower */
+  --purple: #5c2e91; /* fluent-purple */
+  --fuchsia: #c239b3; /* fluent-berry */
+  --pink: #e43ba6; /* fluent-pink */
+  --rose: #c50f1f; /* fluent-cranberry */
 
-  /* Fluent primary colors */
+  --slate: #859599; /* fluent-silver */
+  --gray: #69797e; /* fluent-platinum */
+  --zinc: #394146; /* fluent-anchor */
+  --neutral: #393939; /* fluent-charcoal */
+  --stone: #7a7574; /* fluent-beige */
   
-  --fluent-cranberry: #c50f1f;
-  --fluent-red: #d13438;
-  --fluent-bronze: #a74109;
-  --fluent-pumpkin: #ca5010;
-  --fluent-orange: #f7630c;
-  --fluent-peach: #ff8c00;
-  --fluent-marigold: #eaa300;
-  --fluent-yellow: #fde300;
-  --fluent-gold: #c19c00;
-  --fluent-lime: #73aa24;
-  --fluent-forest: #498205;
-  --fluent-seafoam: #00cc6a;
-  --fluent-green: #107c10;
-  --fluent-teal: #038387;
-  --fluent-cyan: #0099bc;
-  --fluent-steel: #005b70;
-  --fluent-lightblue: #3a96dd;
-  --fluent-blue: #0078d4;
-  --fluent-royalblue: #004e8c;
-  --fluent-cornflower: #4f6bed;
-  --fluent-navy: #0027b4;
-  --fluent-lavender: #7160e8;
-  --fluent-purple: #5c2e91;
-  --fluent-orchid: #8764b8;
-  --fluent-grape: #881798;
-  --fluent-berry: #c239b3;
-  --fluent-lilac: #b146c2;
-  --fluent-pink: #e43ba6;
-  --fluent-hotpink: #e3008c;
-  --fluent-magenta: #bf0077;
-  --fluent-plum: #77004d;
-
-  --fluent-beige: #7a7574;
-  --fluent-mink: #5d5a58;
-  --fluent-silver: #859599;
-  --fluent-platinum: #69797e;
-  --fluent-anchor: #394146;
-  --fluent-charcoal: #393939;
 }
