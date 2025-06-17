@@ -4,8 +4,8 @@
   --color-shell: var(--color-neutral-100);
 
   --color-border: var(--color-neutral-300);
+  --color-input: var(--color-neutral-400);
 
-  --color-faint: var(--color-neutral-500);
   --color-muted: var(--color-neutral-600);
   --color-body: var(--color-neutral-800);
   --color-heading: var(--color-blue-900);
@@ -30,7 +30,7 @@
 
   --color-border: var(--color-neutral-700);
 
-  --color-faint: var(--color-neutral-600);
+  --color-input: var(--color-neutral-600);
   --color-muted: var(--color-neutral-500);
   --color-body: var(--color-neutral-300);
   --color-heading: var(--color-white);

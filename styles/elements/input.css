@@ -16,13 +16,14 @@ input:where(:not([type])),
   select:where(:not(.button)),
   textarea,
   .input {
-  font-size: var(--size-font);
-  color: var(--color-heading);
 
   --_color-background: var(--color-control);
   --_color-border: var(--color-border);
-  --_color-border-bottom: var(--color-faint);
+  --_color-border-bottom: var(--color-input);
   --_color-border-focus: var(--color-brand-bg);
+
+  font-size: var(--size-font);
+  color: var(--color-heading);
 
   display: inline-flex;
   align-items: center;
@@ -34,47 +35,42 @@ input:where(:not([type])),
   background-color: var(--_color-background);
   border: 1px solid var(--_color-border);
   border-bottom-color: var(--_color-border-bottom);
-  /* border-bottom-width: 0px; */
-  /* border-width: 0px; */
+
+  --_icon-background-image: none;
+  --_icon-background-position: right var(--size-padding) center;
+  --_icon-background-size: var(--size-icon);
+  --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
+    no-repeat;
+  --_icon-padding-right: calc(var(--size-padding) * 1 + var(--size-icon));
 
 
-  --_background-position: 50% calc(100% + 2px);
-  --_gradient-underline-focus: linear-gradient(to bottom, var(--_color-border-focus), var(--_color-border-focus));
-  --_gradient-underline-hover: linear-gradient(to bottom, var(--_color-border-bottom), var(--_color-border-bottom));
+  --_focus-underline-background-position: 50% calc(100% + 2px);
+  --_focus-underline-background-size-x: 0%;
+  --_focus-underline-linear-gradient: linear-gradient(
+    to bottom,
+    var(--_color-border-focus),
+    var(--_color-border-focus)
+  );
+  --_focus-underline-background: var(--_focus-underline-linear-gradient) var(--_focus-underline-background-position) /
+    var(--_focus-underline-background-size-x) 3px;
 
-  --_background-underline-focus: var(--_gradient-underline-focus) var(--_background-position) / 0% 3px;
-  --_background-underline-hover: var(--_gradient-underline-hover) var(--_background-position) / 100% 1px;
-
-  background: var(--_background-underline-focus), var(--_background-underline-hover), var(--_color-background);
+  background: var(--_focus-underline-background), var(--_icon-background), var(--_color-background);
   background-repeat: no-repeat;
 
   transition: 0.15s ease-in;
   transition-property: background-size, background-position, border-color;
 
   &:not(:disabled):not([readonly]):not(.disabled) {
-    &:hover {
-      --_background-underline-hover: var(--_gradient-underline-hover) var(--_background-position) / 100% 1px;
-      transition-duration: 0.15s;
-      transition-timing-function: ease-out;
-      border-bottom-color: var(--_color-subtle);
-      /* border-bottom-color: transparent; */
-    }
-
     &:focus,
     &:has(input:focus, textarea:focus, select:focus) {
-      --_background-underline-focus: var(--_gradient-underline-focus) var(--_background-position) / 100% 3px;
+      --_focus-underline-background-size-x: 100%;
       transition-duration: 0.15s;
       transition-timing-function: ease-out;
       border-bottom-color: var(--_color-border-focus);
-      /* border-bottom-color: transparent; */
     }
   }
 
   outline: transparent solid 2px;
-  background-clip: border-box;
-
-
-
 
   .input > & {
     appearance: none;
@@ -137,6 +133,12 @@ input[type="color"] {
     border: none;
     border-radius: calc(var(--border-radius) - 4px);
   }
+}
+
+select:where(:not(.button)) {
+  --_icon-background-image: var(--icon-chevron-down);
+  padding-right: calc(var(--size-padding) + 16px + 4px);
+  appearance: none;
 }
 
 input[type="email"],

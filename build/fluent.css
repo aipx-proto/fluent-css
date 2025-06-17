@@ -300,7 +300,7 @@
     --color-control: var(--color-white);
     --color-shell: var(--color-neutral-100);
     --color-border: var(--color-neutral-300);
-    --color-faint: var(--color-neutral-500);
+    --color-input: var(--color-neutral-400);
     --color-muted: var(--color-neutral-600);
     --color-body: var(--color-neutral-800);
     --color-heading: var(--color-blue-900);
@@ -799,7 +799,7 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
     --color-control: var(--color-neutral-900);
     --color-shell: var(--color-neutral-950);
     --color-border: var(--color-neutral-700);
-    --color-faint: var(--color-neutral-600);
+    --color-input: var(--color-neutral-600);
     --color-muted: var(--color-neutral-500);
     --color-body: var(--color-neutral-300);
     --color-heading: var(--color-white);
@@ -1204,12 +1204,12 @@ legend {
   color: var(--color-heading);
 }
 input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.button)), textarea, .input {
-  font-size: var(--size-font);
-  color: var(--color-heading);
   --_color-background: var(--color-control);
   --_color-border: var(--color-border);
-  --_color-border-bottom: var(--color-faint);
+  --_color-border-bottom: var(--color-input);
   --_color-border-focus: var(--color-brand-bg);
+  font-size: var(--size-font);
+  color: var(--color-heading);
   display: inline-flex;
   align-items: center;
   justify-content: start;
@@ -1219,31 +1219,34 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
   background-color: var(--_color-background);
   border: 1px solid var(--_color-border);
   border-bottom-color: var(--_color-border-bottom);
-  --_background-position: 50% calc(100% + 2px);
-  --_gradient-underline-focus: linear-gradient(to bottom, var(--_color-border-focus), var(--_color-border-focus));
-  --_gradient-underline-hover: linear-gradient(to bottom, var(--_color-border-bottom), var(--_color-border-bottom));
-  --_background-underline-focus: var(--_gradient-underline-focus) var(--_background-position) / 0% 3px;
-  --_background-underline-hover: var(--_gradient-underline-hover) var(--_background-position) / 100% 1px;
-  background: var(--_background-underline-focus), var(--_background-underline-hover), var(--_color-background);
+  --_icon-background-image: none;
+  --_icon-background-position: right var(--size-padding) center;
+  --_icon-background-size: var(--size-icon);
+  --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
+    no-repeat;
+  --_icon-padding-right: calc(var(--size-padding) * 1 + var(--size-icon));
+  --_focus-underline-background-position: 50% calc(100% + 2px);
+  --_focus-underline-background-size-x: 0%;
+  --_focus-underline-linear-gradient: linear-gradient(
+    to bottom,
+    var(--_color-border-focus),
+    var(--_color-border-focus)
+  );
+  --_focus-underline-background: var(--_focus-underline-linear-gradient) var(--_focus-underline-background-position) /
+    var(--_focus-underline-background-size-x) 3px;
+  background: var(--_focus-underline-background), var(--_icon-background), var(--_color-background);
   background-repeat: no-repeat;
   transition: 0.15s ease-in;
   transition-property: background-size, background-position, border-color;
   &:not(:disabled):not([readonly]):not(.disabled) {
-    &:hover {
-      --_background-underline-hover: var(--_gradient-underline-hover) var(--_background-position) / 100% 1px;
-      transition-duration: 0.15s;
-      transition-timing-function: ease-out;
-      border-bottom-color: var(--_color-subtle);
-    }
     &:focus, &:has(input:focus, textarea:focus, select:focus) {
-      --_background-underline-focus: var(--_gradient-underline-focus) var(--_background-position) / 100% 3px;
+      --_focus-underline-background-size-x: 100%;
       transition-duration: 0.15s;
       transition-timing-function: ease-out;
       border-bottom-color: var(--_color-border-focus);
     }
   }
   outline: transparent solid 2px;
-  background-clip: border-box;
   .input > & {
     appearance: none;
     background: none;
@@ -1291,6 +1294,11 @@ input[type="color"] {
     border: none;
     border-radius: calc(var(--border-radius) - 4px);
   }
+}
+select:where(:not(.button)) {
+  --_icon-background-image: var(--icon-chevron-down);
+  padding-right: calc(var(--size-padding) + 16px + 4px);
+  appearance: none;
 }
 input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"] {
   cursor: text;
@@ -1617,7 +1625,7 @@ table > :first-child tr:first-child {
   padding: 0 var(--size-padding);
   transition: background-color var(--duration-rest) linear;
   --_size-tab-underline: 2px;
-  --_color-tab-underline-hover: var(--color-faint);
+  --_color-tab-underline-hover: var(--color-input);
   --_color-tab-underline-active: var(--color-brand-fg);
   --_duration-tab-underline: 0.1s;
   position: relative;

@@ -44,7 +44,7 @@
   transition: background-color var(--duration-rest) linear;
 
   --_size-tab-underline: 2px;
-  --_color-tab-underline-hover: var(--color-faint);
+  --_color-tab-underline-hover: var(--color-input);
   --_color-tab-underline-active: var(--color-brand-fg);
   --_duration-tab-underline: 0.1s;
 
