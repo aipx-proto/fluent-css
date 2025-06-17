@@ -1,5 +1,5 @@
-.tab-list,
-[role="tablist"] {
+/* [role="tablist"], */
+.tablist {
   display: flex;
   gap: 2px;
   flex-direction: row;
@@ -9,8 +9,8 @@
   }
 
   &:not(.vertical) {
-    & .tab,
-    & [role="tab"] {
+    /* & [role="tab"], */
+    & .tab {
       --_negative-margin: calc(var(--size-padding) * -1);
       &:first-child {
         margin-left: var(--_negative-margin);
@@ -22,10 +22,13 @@
   }
 }
 
-/* TODO: button and a anchor variant & exception */
+/* [role="tab"], */
+.tab {
+  --_size-tab-underline: 3px;
+  --_color-tab-underline-hover: var(--color-border);
+  --_color-tab-underline-active: var(--text-brand);
+  --_duration-tab-underline: 0.1s;
 
-.tab,
-[role="tab"] {
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -37,16 +40,10 @@
 
   border-radius: var(--border-radius);
   font-size: var(--size-font);
-  /* color: var(--color-heading); */
   min-height: var(--size-height);
   padding: 0 var(--size-padding);
 
   transition: background-color var(--duration-rest) linear;
-
-  --_size-tab-underline: 2px;
-  --_color-tab-underline-hover: var(--color-input);
-  --_color-tab-underline-active: var(--color-brand-fg);
-  --_duration-tab-underline: 0.1s;
 
   position: relative;
 
@@ -74,7 +71,7 @@
 
   .vertical & {
     --_size-tab-underline-padding: calc((var(--size-height) - var(--size-icon)) / 2);
-    
+
     &:not(.icon-only) {
       justify-content: start;
     }
@@ -136,8 +133,8 @@
   }
 
   /* selected tab */
+  /* &[aria-selected="true"], */
   &.active,
-  &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
     font-weight: var(--font-heavyweight);
     color: var(--color-heading);
@@ -151,10 +148,10 @@
     }
   }
 
-  &:has(input[type="radio"]:disabled) {
+  /* &:has(input[type="radio"]:disabled) {
     cursor: not-allowed;
     opacity: var(--opacity-disabled);
-  }
+  } */
 }
 
 a.tab {

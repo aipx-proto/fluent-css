@@ -3,7 +3,7 @@ progress.spinner {
   --_easing-spin: ease-in-out;
   --_duration-spin: 2.5s;
   --_color-track: var(--color-border);
-  --_color-value: var(--color-brand-bg);
+  --_color-value: var(--color-brand);
 
   appearance: none;
   width: var(--_size-dimension);

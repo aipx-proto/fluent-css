@@ -1068,16 +1068,16 @@
           }
         </style>
 
-        <nav role="tablist" class="tabs__primary-nav tab-list vertical appearance-subtle" style="flex: 0 0 auto;">
-          <label role="tab" aria-controls="panel-1" for="tab-1">
+        <nav class="tabs__primary-nav tablist vertical appearance-subtle" style="flex: 0 0 auto;">
+          <label class="tab" role="tab" aria-controls="panel-1" for="tab-1">
             <input type="radio" name="tab-group-1" id="tab-1" checked />
             Tab 1
           </label>
-          <label role="tab" aria-controls="panel-2" for="tab-2">
+          <label class="tab" role="tab" aria-controls="panel-2" for="tab-2">
             <input type="radio" name="tab-group-1" id="tab-2" />
             Tab 2
           </label>
-          <label role="tab" aria-controls="panel-3" for="tab-3">
+          <label class="tab" role="tab" aria-controls="panel-3" for="tab-3">
             <input type="radio" name="tab-group-1" id="tab-3" />
             Tab 3
           </label>
@@ -1086,16 +1086,16 @@
         <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
           <h3>First Tab Content</h3>
           <p>This is the content of the first tab.</p>
-          <nav role="tablist">
-            <label role="tab" aria-controls="panel-4" for="tab-4">
+          <nav class="tablist" role="tablist">
+            <label class="tab" role="tab" aria-controls="panel-4" for="tab-4">
               <input type="radio" name="tab-group-2" id="tab-4" checked />
               Nested Tab 4
             </label>
-            <label role="tab" aria-controls="panel-5" for="tab-5">
+            <label class="tab" role="tab" aria-controls="panel-5" for="tab-5">
               <input type="radio" name="tab-group-2" id="tab-5" />
               Nested Tab 5
             </label>
-            <label role="tab" aria-controls="panel-6" for="tab-6">
+            <label class="tab" role="tab" aria-controls="panel-6" for="tab-6">
               <input type="radio" name="tab-group-2" id="tab-6" disabled />
               Nested Tab 6 (disabled)
             </label>
@@ -1118,12 +1118,12 @@
           <h3>Second Tab Content</h3>
           <p>This is the content of the second tab.</p>
 
-          <nav role="tablist" class="tab-list">
-            <label role="tab" aria-controls="panel-7" for="tab-7">
+          <nav class="tablist" role="tablist" class="tablist">
+            <label class="tab" role="tab" aria-controls="panel-7" for="tab-7">
               <input type="radio" name="tab-group-3" id="tab-7" />
               Nested Tab 7
             </label>
-            <label role="tab" aria-controls="panel-8" for="tab-8">
+            <label class="tab" role="tab" aria-controls="panel-8" for="tab-8">
               <input type="radio" name="tab-group-3" id="tab-8" />
               Nested Tab 8
             </label>
@@ -1154,12 +1154,12 @@
           }
         </style>
 
-        <nav class="tab-list vertical jsTabs">
+        <nav class="tablist vertical jsTabs">
           <a href="#" class="tab active">Link Tab 1</a>
           <a href="#" class="tab">Link Tab 2</a>
           <a href="#" class="tab disabled">Link Tab 3</a>
         </nav>
-        <nav class="tab-list appearance-subtle jsTabs">
+        <nav class="tablist appearance-subtle jsTabs">
           <button class="tab active">Button Tab 1</button>
           <button class="tab">Button Tab 2</button>
           <button class="tab" disabled>Button Tab 3</button>

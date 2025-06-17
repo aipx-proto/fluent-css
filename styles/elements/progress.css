@@ -2,7 +2,7 @@ progress:where(:not(.spinner)),
 meter {
   --_size-height: 2px;
   --_color-track: var(--color-border);
-  --_color-value: var(--color-brand-bg);
+  --_color-value: var(--color-brand);
 
   appearance: none;
   width: 100%;
@@ -53,7 +53,7 @@ progress:where(:not(.spinner)):indeterminate {
   height: var(--_size-height);
 }
 ::-webkit-progress-value {
-  background: var(--color-brand-bg);
+  background: var(--_color-value);
 }
 
 ::-webkit-meter-optimum-value {

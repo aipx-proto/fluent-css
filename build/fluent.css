@@ -305,14 +305,14 @@
     --color-muted: var(--color-neutral-600);
     --color-body: var(--color-neutral-800);
     --color-heading: var(--color-neutral-900);
-    --color-brand-bg: var(--color-blue-500);
-    --color-brand-contrast: hwb(
-    from oklch(from var(--color-brand-bg) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
+    --color-brand: var(--color-blue-500);
+    --text-onbrand: hwb(
+    from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-    --color-brand-fg: var(--color-blue-500);
+    --text-brand: var(--color-blue-500);
     --color-rest: var(--color-control);
-    --color-hover: oklch(from var(--color-rest) calc(l * 0.92) c h);
-    --color-selected: oklch(from var(--color-rest) calc(l * 0.88) c h);
+    --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
+    --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
     --l-0: 100%;
     --l-50: 98.5%;
     --l-100: 97%;
@@ -793,11 +793,11 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
     --color-muted: var(--color-neutral-500);
     --color-body: var(--color-neutral-300);
     --color-heading: var(--color-white);
-    --color-brand-bg: var(--color-blue-500);
-    --color-brand-contrast: hwb(
-    from oklch(from var(--color-brand-bg) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
+    --color-brand: var(--color-blue-500);
+    --text-onbrand: hwb(
+    from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-    --color-brand-fg: var(--color-blue-600);
+    --text-brand: var(--color-blue-600);
     --color-rest: var(--color-control);
     --color-hover: oklch(from var(--color-rest) calc(l * 0.8) c h);
     --color-selected: oklch(from var(--color-rest) calc(l * 0.65) c h);
@@ -805,9 +805,9 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   .light, .light * {
     color-scheme: light;
     .appearance-primary {
-      --color-rest: var(--color-brand-bg);
-      --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
-      --color-selected: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
+      --color-rest: var(--color-brand);
+      --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+      --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
     }
     .appearance-subtle {
       --color-rest: var(--color-control);
@@ -818,9 +818,9 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   }
   .dark, .dark * {
     .appearance-primary {
-      --color-rest: var(--color-brand-bg);
-      --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
-      --color-selected: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
+      --color-rest: var(--color-brand);
+      --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+      --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
     }
     .appearance-subtle {
       --color-rest: var(--color-control);
@@ -977,14 +977,14 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
       background-color: var(--color-hover);
       transition-duration: var(--duration-hover);
       &.appearance-transparent, &.appearance-subtle {
-        color: var(--color-brand-fg);
+        color: var(--text-brand);
       }
     }
     &:active, &.active {
       background-color: var(--color-selected);
       transition-duration: var(--duration-hover);
       &.appearance-transparent, &.appearance-subtle {
-        color: var(--color-brand-fg);
+        color: var(--text-brand);
       }
     }
   }
@@ -1004,7 +1004,7 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
     border-color: transparent;
   }
   &.appearance-primary {
-    color: var(--color-brand-contrast);
+    color: var(--text-onbrand);
   }
   &.icon-only {
     padding: 0;
@@ -1047,20 +1047,20 @@ input[type="file"] {
   }
 }
 a:where(:not(.button):not(.tab)) {
-  color: var(--color-brand-fg);
+  color: var(--text-brand);
   text-decoration: none;
   &:hover {
-    color: oklch(from var(--color-brand-fg) calc(l * 0.9) c h);
+    color: oklch(from var(--text-brand) calc(l * 0.9) c h);
     text-decoration: underline;
   }
   &:active {
-    color: var(--color-brand-fg);
+    color: var(--text-brand);
   }
 }
 input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
   --_color-border: var(--color-input);
   --_color-background: var(--color-control);
-  --_color-checked: var(--color-brand-bg);
+  --_color-checked: var(--color-brand);
   --_size-dimension: var(--size-icon);
   appearance: none;
   margin: 0;
@@ -1125,7 +1125,7 @@ input[type="checkbox"]:where(:not(.switch)) {
 input[type="checkbox"].switch {
   --_color-background: var(--color-control);
   --_color-border: var(--color-input);
-  --_color-checked: var(--color-brand-bg);
+  --_color-checked: var(--color-brand);
   --_size-thumb: var(--size-icon);
   --_size-offset: 2px;
   --_size-dimension: calc(var(--_size-thumb) + (var(--_size-offset) * 2) + 2px);
@@ -1170,7 +1170,7 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
   --_color-background: var(--color-control);
   --_color-border: var(--color-border);
   --_color-border-bottom: var(--color-input);
-  --_color-border-focus: var(--color-brand-bg);
+  --_color-border-focus: var(--color-brand);
   font-size: var(--size-font);
   color: var(--color-heading);
   display: inline-flex;
@@ -1182,6 +1182,10 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
   background-color: var(--_color-background);
   border: 1px solid var(--_color-border);
   border-bottom-color: var(--_color-border-bottom);
+  &::placeholder {
+    color: var(--color-input);
+    opacity: 1;
+  }
   --_icon-background-image: none;
   --_icon-background-position: right var(--size-padding) center;
   --_icon-background-size: var(--size-icon);
@@ -1293,6 +1297,7 @@ input[type="range"] {
   --_size-thumb: 20px;
   --_size-track: 4px;
   --_color-border: var(--color-border);
+  --_color-thumb: var(--color-brand);
   --_color-track: var(--color-input);
   appearance: none;
   background: transparent;
@@ -1310,7 +1315,7 @@ input[type="range"] {
     border: 1px solid var(--_color-border);
     border-radius: var(--radius-4xl);
     cursor: ew-resize;
-    background: var(--color-brand-bg);
+    background: var(--_color-thumb);
     box-shadow: inset 0 0 0 3px var(--color-page);
   }
 }
@@ -1330,7 +1335,7 @@ legend {
 progress:where(:not(.spinner)), meter {
   --_size-height: 2px;
   --_color-track: var(--color-border);
-  --_color-value: var(--color-brand-bg);
+  --_color-value: var(--color-brand);
   appearance: none;
   width: 100%;
   height: var(--_size-height);
@@ -1365,7 +1370,7 @@ progress:where(:not(.spinner)):indeterminate {
   height: var(--_size-height);
 }
 ::-webkit-progress-value {
-  background: var(--color-brand-bg);
+  background: var(--_color-value);
 }
 ::-webkit-meter-optimum-value {
   background: green;
@@ -1397,7 +1402,7 @@ progress.spinner {
   --_easing-spin: ease-in-out;
   --_duration-spin: 2.5s;
   --_color-track: var(--color-border);
-  --_color-value: var(--color-brand-bg);
+  --_color-value: var(--color-brand);
   appearance: none;
   width: var(--_size-dimension);
   height: var(--_size-dimension);
@@ -1718,7 +1723,7 @@ table > :first-child tr:first-child {
     }
   }
 }
-.tab-list, [role="tablist"] {
+.tablist {
   display: flex;
   gap: 2px;
   flex-direction: row;
@@ -1726,7 +1731,7 @@ table > :first-child tr:first-child {
     flex-direction: column;
   }
   &:not(.vertical) {
-    & .tab, & [role="tab"] {
+    & .tab {
       --_negative-margin: calc(var(--size-padding) * -1);
       &:first-child {
         margin-left: var(--_negative-margin);
@@ -1737,7 +1742,11 @@ table > :first-child tr:first-child {
     }
   }
 }
-.tab, [role="tab"] {
+.tab {
+  --_size-tab-underline: 3px;
+  --_color-tab-underline-hover: var(--color-border);
+  --_color-tab-underline-active: var(--text-brand);
+  --_duration-tab-underline: 0.1s;
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -1750,10 +1759,6 @@ table > :first-child tr:first-child {
   min-height: var(--size-height);
   padding: 0 var(--size-padding);
   transition: background-color var(--duration-rest) linear;
-  --_size-tab-underline: 2px;
-  --_color-tab-underline-hover: var(--color-input);
-  --_color-tab-underline-active: var(--color-brand-fg);
-  --_duration-tab-underline: 0.1s;
   position: relative;
   &:after, &:before {
     content: "";
@@ -1818,7 +1823,7 @@ table > :first-child tr:first-child {
       }
     }
   }
-  &.active, &[aria-selected="true"], &:has(input[type="radio"]:checked) {
+  &.active, &:has(input[type="radio"]:checked) {
     font-weight: var(--font-heavyweight);
     color: var(--color-heading);
     .appearance-subtle & {
@@ -1827,10 +1832,6 @@ table > :first-child tr:first-child {
     &:after {
       transform: scale(1);
     }
-  }
-  &:has(input[type="radio"]:disabled) {
-    cursor: not-allowed;
-    opacity: var(--opacity-disabled);
   }
 }
 a.tab {

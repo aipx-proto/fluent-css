@@ -10,15 +10,15 @@
   --color-body: var(--color-neutral-800);
   --color-heading: var(--color-neutral-900);
 
-  --color-brand-bg: var(--color-blue-500);
-  --color-brand-contrast: hwb(
-    from oklch(from var(--color-brand-bg) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
+  --color-brand: var(--color-blue-500);
+  --text-onbrand: hwb(
+    from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-  --color-brand-fg: var(--color-blue-500);
+  --text-brand: var(--color-blue-500);
 
   --color-rest: var(--color-control);
-  --color-hover: oklch(from var(--color-rest) calc(l * 0.92) c h);
-  --color-selected: oklch(from var(--color-rest) calc(l * 0.88) c h);
+  --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
+  --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
 }
 
 @variant dark {
@@ -35,11 +35,11 @@
   --color-body: var(--color-neutral-300);
   --color-heading: var(--color-white);
 
-  --color-brand-bg: var(--color-blue-500);
-  --color-brand-contrast: hwb(
-    from oklch(from var(--color-brand-bg) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
+  --color-brand: var(--color-blue-500);
+  --text-onbrand: hwb(
+    from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-  --color-brand-fg: var(--color-blue-600);
+  --text-brand: var(--color-blue-600);
 
   --color-rest: var(--color-control);
   --color-hover: oklch(from var(--color-rest) calc(l * 0.8) c h);
@@ -54,9 +54,9 @@
     /* default */
   }
   .appearance-primary {
-    --color-rest: var(--color-brand-bg);
-    --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
-    --color-selected: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
+    --color-rest: var(--color-brand);
+    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
   }
   .appearance-subtle {
     --color-rest: var(--color-control);
@@ -72,9 +72,9 @@
     /* default */
   }
   .appearance-primary {
-    --color-rest: var(--color-brand-bg);
-    --color-hover: oklch(from var(--color-brand-bg) calc(l * 0.85) c h);
-    --color-selected: oklch(from var(--color-brand-bg) calc(l * 0.7) c h);
+    --color-rest: var(--color-brand);
+    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
   }
   .appearance-subtle {
     --color-rest: var(--color-control);

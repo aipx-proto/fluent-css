@@ -2,6 +2,7 @@ input[type="range"] {
   --_size-thumb: 20px;
   --_size-track: 4px;
   --_color-border: var(--color-border);
+  --_color-thumb: var(--color-brand);
   --_color-track: var(--color-input);
 
   appearance: none;
@@ -25,7 +26,7 @@ input[type="range"] {
     border: 1px solid var(--_color-border);
     border-radius: var(--radius-4xl);
     cursor: ew-resize;
-    background: var(--color-brand-bg);
+    background: var(--_color-thumb);
     box-shadow: inset 0 0 0 3px var(--color-page);
   }
 }

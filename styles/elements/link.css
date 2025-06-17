@@ -1,11 +1,11 @@
 a:where(:not(.button):not(.tab)) {
-  color: var(--color-brand-fg);
+  color: var(--text-brand);
   text-decoration: none;
   &:hover {
-    color: oklch(from var(--color-brand-fg) calc(l * 0.9) c h);
+    color: oklch(from var(--text-brand) calc(l * 0.9) c h);
     text-decoration: underline;
   }
   &:active {
-    color: var(--color-brand-fg);
+    color: var(--text-brand);
   }
 }

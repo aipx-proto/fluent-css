@@ -20,7 +20,7 @@ input:where(:not([type])),
   --_color-background: var(--color-control);
   --_color-border: var(--color-border);
   --_color-border-bottom: var(--color-input);
-  --_color-border-focus: var(--color-brand-bg);
+  --_color-border-focus: var(--color-brand);
 
   font-size: var(--size-font);
   color: var(--color-heading);
@@ -35,6 +35,11 @@ input:where(:not([type])),
   background-color: var(--_color-background);
   border: 1px solid var(--_color-border);
   border-bottom-color: var(--_color-border-bottom);
+
+  &::placeholder {
+    color: var(--color-input);
+    opacity: 1;
+  }
 
   --_icon-background-image: none;
   --_icon-background-position: right var(--size-padding) center;

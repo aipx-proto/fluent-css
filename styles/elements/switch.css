@@ -2,7 +2,7 @@ input[type="checkbox"].switch {
 
   --_color-background: var(--color-control);
   --_color-border: var(--color-input);
-  --_color-checked: var(--color-brand-bg);
+  --_color-checked: var(--color-brand);
   
   --_size-thumb: var(--size-icon);
   --_size-offset: 2px;
