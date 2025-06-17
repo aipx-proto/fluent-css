@@ -18,7 +18,6 @@
 
 ## Transition to Fluent
 
-- rename control-group
 - size
 - intent 
 - disabled
