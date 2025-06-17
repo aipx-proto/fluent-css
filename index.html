@@ -592,7 +592,7 @@
         </div>
         <div class="button__states">
           <button>Default</button>
-          <button disabled >Disabled</button>
+          <button disabled>Disabled</button>
           <button class="selected">Selected</button>
           <span style=" margin: 0 16px">
             <button class="icon-only">×</button>
@@ -895,8 +895,8 @@
       <div id="dialog" class="section__content">
         <h3 class="section__header">Dialog</h3>
         <div>
-          <button onclick="document.getElementById('dialog-example').showModal()">Open Dialog</button>
-          <dialog id="dialog-example" closedby="any">
+          <button onclick="document.getElementById('dialog-modal').showModal()">Open Dialog</button>
+          <dialog id="dialog-modal" closedby="any">
             <form method="dialog">
               <header>
                 <h3>Dialog Title</h3>
@@ -906,9 +906,9 @@
                   interaction.</p>
               </main>
               <footer>
-                <button class="dialog-close appearance-transparent icon-only">×</button>
-                <button class="appearance-subtle">Cancel</button>
+                <button class="dialog-close appearance-subtle icon-only">×</button>
                 <button class="appearance-primary">Primary</button>
+                <button>Cancel</button>
               </footer>
             </form>
           </dialog>

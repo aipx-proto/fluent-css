@@ -18,7 +18,6 @@
 
 ## Transition to Fluent
 
-- dialog is broken
 - add default flex size to radio checkbox spinner icon and other things that are a fixed size
 - default inline-flex for more things like `label:has(input[type=checkbox], input[type=radio])`
 - create docs page
