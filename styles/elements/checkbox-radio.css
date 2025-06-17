@@ -1,6 +1,6 @@
 input[type="checkbox"]:where(:not(.switch)),
 input[type="radio"] {
-  --_size-dimension: var(--size-icon);
+  --_size-dimension: var(--h-icon);
 
   --_color-background: var(--color-input);
   --_color-border: var(--color-outline);

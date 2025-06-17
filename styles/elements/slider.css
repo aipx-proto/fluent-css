@@ -2,6 +2,19 @@ input[type="range"] {
   --_size-thumb: 20px;
   --_size-track: 4px;
 
+  &.size-sm {
+    --_size-thumb: 16px;
+    --_size-track: 2px;
+  }
+  &.size-md {
+    --_size-thumb: 20px;
+    --_size-track: 4px;
+  }
+  &.size-lg {
+    --_size-thumb: 24px;
+    --_size-track: 6px;
+  }
+
   --_color-track: var(--color-outline);
   --_color-border: var(--color-border);
   --_color-thumb: var(--color-brand);

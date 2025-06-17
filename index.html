@@ -169,7 +169,7 @@
       <span>Fluent.css</span>
     </h1>
     <nav>
-      <ul class="nav__categories">
+      <ul class="nav__categories size-sm">
         <li>
           <ul class="nav__links">
             <span>Core</span>
@@ -215,9 +215,9 @@
         </li>
       </ul>
     </nav>
-    <span class="header__metadata">
+    <span class="header__metadata size-sm">
       <span>Theme</span>
-      <button id="theme-toggle" class="appearance-subtle size-small" style="margin-left:-8px"
+      <button id="theme-toggle" class="appearance-subtle size-sm" style="margin-left:-8px"
         onclick="toggleTheme()">Dark</button>
 
     </span>
@@ -339,20 +339,16 @@
           }
         </style>
         <div class="color__text-color">
-          <p style="color: var(--color-heading);"><strong>Text 1: </strong>Lorem ipsum dolor sit amet, consectetur
+          <p style="color: var(--color-heading);"><strong>Text Heading: </strong>Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p style="color: var(--color-body);"><strong>Text 2: </strong>Duis aute irure dolor in reprehenderit in
+          <p style="color: var(--color-body);"><strong>Text Body: </strong>Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p style="color: var(--color-muted);"><strong>Text 3: </strong>Sed ut perspiciatis unde omnis iste natus
+          <p style="color: var(--color-muted);"><strong>Text Muted: </strong>Sed ut perspiciatis unde omnis iste natus
             error
             sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          <p style="color: var(--color-outline);"><strong>Text 4: </strong>Nemo enim ipsam voluptatem quia voluptas
-            sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-            nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
         </div>
         <div class="color__background-color">
           <span style="background-color: var(--color-card);">Background Card </span>
@@ -372,9 +368,9 @@
             display: flex;
             flex-direction: row;
             gap: 8px;
-            padding: 16px;
-            border-radius: var(--radius-lg);
-            background-color: var(--color-card);
+            /* padding: 16px; */
+            /* border-radius: var(--radius-lg); */
+            /* background-color: var(--color-page); */
 
             span {
               display: flex;
@@ -386,7 +382,7 @@
               /* border-radius: var(--radius-md); */
               border: 1px solid var(--color-border);
               padding: 8px;
-              background-color: var(--color-panel);
+              background-color: var(--color-card);
               text-align: center;
             }
           }
@@ -505,14 +501,14 @@
             <span style="min-width: 120px;">Hue Torsion</span>
             <input id="hue-x-slider" type="range" min="-50" max="50" value="0" step="1" style="flex: 1;" />
             <span id="hue-x-value" style="width: 48px; text-align: right;">0</span>
-            <button type="button" id="hue-x-reset" class="appearance-transparent size-small"
+            <button type="button" id="hue-x-reset" class="appearance-transparent size-sm"
               style="margin-left: 8px;">Reset</button>
           </label>
           <label style="display: flex; align-items: center; gap: 12px;">
             <span style="min-width: 120px;">Chroma Reduction</span>
             <input id="chroma-x-slider" type="range" min="0" max="100" value="0" step="1" style="flex: 1;" />
             <span id="chroma-x-value" style="width: 48px; text-align: right;">0</span>
-            <button type="button" id="chroma-x-reset" class="appearance-transparent size-small"
+            <button type="button" id="chroma-x-reset" class="appearance-transparent size-sm"
               style="margin-left: 8px;">Reset</button>
           </label>
         </div>
@@ -585,9 +581,9 @@
           <button class="appearance-transparent">Transparent</button>
         </div>
         <div class="button__size">
-          <button class="size-small">Small</button>
-          <button class="size-medium">Medium</button>
-          <button class="size-large">Large</button>
+          <button class="size-sm">Small</button>
+          <button class="size-md">Medium</button>
+          <button class="size-lg">Large</button>
         </div>
         <div class="button__shape">
           <button class="rounded-none">Square</button>
@@ -633,7 +629,7 @@
             <button>Button 2</button>
             <button>Button 3</button>
           </div>
-          <div class="button-group size-small appearance-outline">
+          <div class="button-group size-sm appearance-outline">
             <button>Size Small</button>
             <button>Appearance Outline</button>
             <button class="selected">Selected</button>
@@ -661,9 +657,9 @@
           <input type="text" placeholder="Readonly" value="Readonly" readonly />
         </div>
         <div>
-          <input type="text" placeholder="Small" class="size-small" />
-          <input type="text" placeholder="Medium" class="size-medium" />
-          <input type="text" placeholder="Large" class="size-large" />
+          <input type="text" placeholder="Small" class="size-sm" />
+          <input type="text" placeholder="Medium" class="size-md" />
+          <input type="text" placeholder="Large" class="size-lg" />
         </div>
         <div>
           <input type="text" placeholder="Square" class="rounded-none" />
@@ -682,7 +678,7 @@
           <div class="input">
             <i class="emojicon">🔍</i>
             <input type="text" placeholder="Input" />
-            <button class="size-small">Submit</button>
+            <button class="size-sm">Submit</button>
           </div>
           <!-- <div class="input">
             <i class="emojicon">🔍</i>
@@ -741,15 +737,15 @@
           </div>
           <div class="form__radios">
             <div class="form__radios">
-              <label class="size-large">
+              <label class="size-lg">
                 <input type="radio" id="radio1" name="radio2" value="1" />
                 Large
               </label>
-              <label class="size-medium">
+              <label class="size-md">
                 <input type="radio" id="radio2" name="radio2" value="2" />
                 Medium
               </label>
-              <label class="size-small">
+              <label class="size-sm">
                 <input type="radio" id="radio3" name="radio2" value="3" />
                 Small
               </label>
@@ -780,15 +776,15 @@
             </label>
           </div>
           <div class="form__checkboxes">
-            <label class="size-large">
+            <label class="size-lg">
               <input type="checkbox" id="checkbox-large" name="checkbox-large" />
               Large
             </label>
-            <label class="size-medium">
+            <label class="size-md">
               <input type="checkbox" id="checkbox-medium" name="checkbox-medium" />
               Medium
             </label>
-            <label class="size-small">
+            <label class="size-sm">
               <input type="checkbox" id="checkbox-small" name="checkbox-small" />
               Small
             </label>
@@ -808,15 +804,15 @@
           </div>
           <div class="form__switch">
             <label>
-              <input type="checkbox" class="switch size-small" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-sm" id="switch1" name="switch1" />
               Small
             </label>
             <label>
-              <input type="checkbox" class="switch size-medium" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-md" id="switch1" name="switch1" />
               Medium
             </label>
             <label>
-              <input type="checkbox" class="switch size-large" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-lg" id="switch1" name="switch1" />
               Large
             </label>
           </div>

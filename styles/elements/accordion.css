@@ -1,7 +1,8 @@
 details {
-  --_timing-open: 0.2s;
-  --_timing-close: 0.07s;
-  --_size-marker: 20px;
+  --_duration-open: 0.2s;
+  --_duration-close: 0.07s;
+
+  --_size-marker: var(--h-icon);
 
   summary {
     display: flex;
@@ -22,7 +23,7 @@ details {
       display: inline-block;
       transform: rotate(-90deg);
       transform-origin: center;
-      transition: transform var(--_timing-open) ease-in-out;
+      transition: transform var(--_duration-open) ease-in-out;
     }
 
     &.marker-end {
@@ -46,7 +47,7 @@ details {
     opacity: 0.2;
     transform: translateY(-4px);
     transition-property: opacity, transform, content-visibility, max-height;
-    transition-duration: var(--_timing-close);
+    transition-duration: var(--_duration-close);
     transition-timing-function: ease-out;
     transition-behavior: allow-discrete;
   }
@@ -54,7 +55,7 @@ details {
   &[open]::details-content {
     opacity: 1;
     transform: translateY(0);
-    transition-duration: var(--_timing-open);
+    transition-duration: var(--_duration-open);
     transition-timing-function: ease-in;
   }
 }

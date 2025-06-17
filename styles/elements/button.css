@@ -16,6 +16,11 @@ select.button,
     --_color-text: var(--color-heading);
   }
 
+  border-radius: var(--rounded-default);
+  font-size: var(--text-default);
+  min-height: var(--h-default);
+  padding: 0 var(--p-default);
+
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -23,14 +28,10 @@ select.button,
   align-items: center;
   justify-content: center;
   gap: 4px;
-  border-radius: var(--border-radius);
   font-weight: var(--font-heavyweight);
-  font-size: var(--size-font);
   color: var(--_color-text);
   background-color: var(--_color-background);
   border: 1px solid var(--_color-border);
-  min-height: var(--size-height);
-  padding: 0 var(--size-padding);
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
 
@@ -96,8 +97,8 @@ select.button,
   &.icon-only,
   .icon-only & {
     padding: 0;
-    width: var(--size-height);
-    height: var(--size-height);
+    width: var(--h-default);
+    height: var(--h-default);
   }
 
   .menu & {
@@ -115,11 +116,11 @@ a.button {
 select.button,
 .button.select {
   --_icon-background-image: var(--icon-chevron-down);
-  --_icon-background-position: right calc(var(--size-padding) - 4px) center;
-  --_icon-background-size: var(--size-icon);
+  --_icon-background-position: right calc(var(--p-default) - 4px) center;
+  --_icon-background-size: var(--h-icon);
   --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
     no-repeat;
-  --_icon-padding-right: calc(var(--size-icon) + var(--size-padding));
+  --_icon-padding-right: calc(var(--h-icon) + var(--p-default));
 
   appearance: none;
   background-image: var(--_icon-background-image);
@@ -132,6 +133,12 @@ select.button,
 input[type="file"] {
   &::-webkit-file-upload-button {
     font-family: inherit;
+
+    /* css vars don't inherit through the shadow dom? */
+    background-color: var(--color-input);
+    border-color: var(--color-border);
+    border: 1px solid var(--color-border);
+    color: var(--color-heading);
   }
 
   &:hover {

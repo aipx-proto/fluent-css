@@ -7,11 +7,8 @@ html,
 body {
   font-family: var(--font-sans);
   color: var(--color-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-default);
   /* line-height: normal; */
-
-  /* maybe? */
-  /* font-size: var(--size-font); */
 }
 
 h1,
@@ -87,7 +84,7 @@ q {
 
 ul,
 ol {
-  padding-left: 16px;
+  padding-left: var(--p-default);
 }
 
 code,
@@ -102,12 +99,12 @@ tt {
 kbd {
   padding: 2px 4px;
   border-radius: 3px;
-  background-color: var(--color-panel);
+  background-color: var(--color-selected);
 }
 
 pre {
-  background-color: var(--color-panel);
-  padding: 16px;
+  background-color: var(--color-selected);
+  padding: var(--p-default);
   border-radius: var(--radius-md);
   overflow-x: auto;
 }
@@ -116,4 +113,10 @@ hr {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: 20px 0;
+}
+
+mark, ::selection {
+  background-color: oklch(from var(--color-brand) l c h / 0.3);
+  color: var(--color-heading);
+  border-radius: 2px;
 }

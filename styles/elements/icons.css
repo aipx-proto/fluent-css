@@ -9,8 +9,8 @@
 }
 
 .emojicon {
-  height: var(--sizeIcon);
-  width: var(--sizeIcon);
+  height: var(--h-icon);
+  width: var(--h-icon);
   font-style: normal;
   filter: grayscale(1);
 }

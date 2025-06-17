@@ -1,7 +1,7 @@
 fieldset{
     border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    padding: var(--size-padding);
+    border-radius: var(--rounded-default);
+    padding: var(--p-default);
     margin: 0px;
 }
 

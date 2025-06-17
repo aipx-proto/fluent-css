@@ -4,24 +4,6 @@
 }
 
 @layer utilities {
-  .size-small {
-    --size-height: 24px;
-    --size-font: var(--text-xs);
-    --size-padding: 8px;
-    --size-icon: 12px;
-  }
-  :root,
-  .size-medium {
-    --size-height: 32px;
-    --size-font: var(--text-sm);
-    --size-padding: 12px;
-    --size-icon: 16px;
-  }
-  .size-large {
-    --size-height: 40px;
-    --size-font: var(--text-base);
-    --size-padding: 16px;
-    --size-icon: 20px;
-  }
+
 }
 

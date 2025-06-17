@@ -18,6 +18,6 @@ th,
 td {
   text-align: left;
   border-bottom: solid 1px var(--color-border);
-  padding: 12px var(--size-padding);
+  padding: var(--p-default);
 }
 

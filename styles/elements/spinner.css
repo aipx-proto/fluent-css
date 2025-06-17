@@ -1,7 +1,28 @@
 progress.spinner {
   --_size-dimension: 20px;
+
+  &.size-xs {
+    --_size-dimension: 12px;
+  }
+  &.size-sm {
+    --_size-dimension: 16px;
+  }
+  &.size-md {
+    --_size-dimension: 20px;
+  }
+  &.size-lg {
+    --_size-dimension: 24px;
+  }
+  &.size-xl {
+    --_size-dimension: 32px;
+  }
+  &.size-2xl {
+    --_size-dimension: 40px;
+  }
+
   --_easing-spin: ease-in-out;
   --_duration-spin: 2.5s;
+
   --_color-track: var(--color-border);
   --_color-value: var(--color-brand);
 
@@ -23,7 +44,7 @@ progress.spinner {
     inset: 0;
     border: 2px solid var(--_color-track);
     border-top-color: var(--_color-value);
-    border-radius: var(--radius-4xl);
+    border-radius: 999px;
     animation: --_keyframes-progress-spin var(--_duration-spin) var(--_easing-spin) infinite;
     pointer-events: none;
   }

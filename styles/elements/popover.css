@@ -2,8 +2,8 @@
   border: 1px solid var(--color-border);
   background-color: var(--color-card);
   box-shadow: var(--shadow-lg);
-  padding: 8px 12px;
-  border-radius: var(--border-radius);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  border-radius: var(--rounded-default);
   overflow: hidden;
 
   --_size-offset: 4px;

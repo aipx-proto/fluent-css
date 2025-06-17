@@ -1,8 +1,8 @@
 input[type="checkbox"].switch {
-  --_size-thumb: var(--size-icon);
-  --_size-offset: 2px;
+  --_size-thumb: var(--h-icon);
+  --_size-padding: 2px;
   --_size-radius: 99px;
-  --_size-dimension: calc(var(--_size-thumb) + (var(--_size-offset) * 2) + 2px);
+  --_size-dimension: calc(var(--_size-thumb) + (var(--_size-padding) * 2) + 2px);
 
   --_color-background: var(--color-input);
   --_color-border: var(--color-outline);
@@ -32,13 +32,13 @@ input[type="checkbox"].switch {
     display: block;
     height: var(--_size-thumb);
     width: var(--_size-thumb);
-    border-radius: calc(var(--_size-radius) - var(--_size-offset));
+    border-radius: calc(var(--_size-radius) - var(--_size-padding));
     background-color: var(--_color-thumb);
 
     position: absolute;
-    top: var(--_size-offset);
-    left: var(--_size-offset);
-    /* margin: var(--sizeOffset); */
+    top: var(--_size-padding);
+    left: var(--_size-padding);
+    /* margin: var(--_size-padding); */
 
     transition: 0.1s ease-in-out;
     transition-property: inset, background-color;
@@ -67,7 +67,7 @@ input[type="checkbox"].switch {
     /* background-color: var(--_color-checked); */
     /* border-color: var(--_color-checked); */
     &:after {
-      left: calc(100% - var(--_size-thumb) - var(--_size-offset));
+      left: calc(100% - var(--_size-thumb) - var(--_size-padding));
       /* background-color: var(--_color-background); */
     }
   }

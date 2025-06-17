@@ -40,7 +40,8 @@
 
 @import "./elements/table.css" layer(components);
 @import "./elements/tabs.css" layer(components);
-@import "./elements/tabs-hack.css" layer(components);
 
 @import "./elements/disabled.css" layer(components);
 @import "./elements/focus.css" layer(components);
+
+@import "./elements/tabs-hack.css";

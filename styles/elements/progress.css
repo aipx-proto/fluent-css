@@ -7,17 +7,17 @@ meter {
   appearance: none;
   width: 100%;
   height: var(--_size-height);
-  border-radius: var(--border-radiusRound);
+  border-radius: var(--rounded-defaultRound);
   background-color: var(--_color-track);
   overflow: hidden;
 
-  &.size-small {
+  &.size-sm {
     --_size-height: 1px;
   }
-  &.size-medium {
+  &.size-md {
     --_size-height: 2px;
   }
-  &.size-large {
+  &.size-lg {
     --_size-height: 4px;
   }
 }

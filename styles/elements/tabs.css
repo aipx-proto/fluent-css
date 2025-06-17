@@ -9,7 +9,7 @@
 
   &:not(.vertical) {
     & .tab {
-      --_negative-margin: calc(var(--size-padding) * -1);
+      --_negative-margin: calc(var(--p-default) * -1);
       &:first-child {
         margin-left: var(--_negative-margin);
       }
@@ -35,10 +35,10 @@
   justify-content: center;
   gap: 4px;
 
-  border-radius: var(--border-radius);
-  font-size: var(--size-font);
-  min-height: var(--size-height);
-  padding: 0 var(--size-padding);
+  border-radius: var(--rounded-default);
+  font-size: var(--text-default);
+  min-height: var(--h-default);
+  padding: 0 var(--p-default);
 
   transition: background-color var(--duration-rest) linear;
 
@@ -50,7 +50,7 @@
     display: block;
     position: absolute;
     border-radius: var(--radius-4xl);
-    inset: auto var(--size-padding) 0 var(--size-padding);
+    inset: auto var(--p-default) 0 var(--p-default);
     height: var(--_size-tab-underline);
     transform-origin: center;
     transition: transform var(--_duration-tab-underline) ease-out, opacity var(--duration-rest) linear;
@@ -67,7 +67,7 @@
   }
 
   .vertical & {
-    --_size-tab-underline-padding: calc((var(--size-height) - var(--size-icon)) / 2);
+    --_size-tab-underline-padding: calc((var(--h-default) - var(--h-icon)) / 2);
 
     &:after,
     &:before {
@@ -89,8 +89,8 @@
   &.icon-only,
   .icon-only & {
     padding: 0;
-    width: var(--size-height);
-    height: var(--size-height);
+    width: var(--h-default);
+    height: var(--h-default);
   }
 
   &:hover {
