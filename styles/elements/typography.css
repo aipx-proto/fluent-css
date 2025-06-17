@@ -23,7 +23,7 @@ h6,
 b,
 strong,
 th {
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-heavyweight);
 }
 
 h1,

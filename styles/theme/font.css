@@ -65,4 +65,7 @@
   /* smaller font size optically aligns the x-height of monospace fonts with sans-serif fonts */
   /* --font-mono-scale: 0.9em; */
 
+  /* headings, buttons, selected tab, etc... */
+  --font-heavyweight: 600;
+
 }

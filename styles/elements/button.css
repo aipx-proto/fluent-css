@@ -15,17 +15,9 @@ select.button,
   justify-content: center;
   gap: 4px;
 
-  /* default circular */
-  --_border-radius: var(--radius-4xl);
+  border-radius: var(--border-radius);
 
-  [class*="shape-"] &,
-  &[class*="shape-"] {
-    --_border-radius: var(--border-radius);
-  }
-
-  border-radius: var(--_border-radius, var(--border-radius));
-
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-heavyweight);
   font-size: var(--size-font);
   color: var(--color-heading);
   min-height: var(--size-height);

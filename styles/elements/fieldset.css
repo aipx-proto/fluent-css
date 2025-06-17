@@ -9,6 +9,6 @@ legend {
     padding: 0 4px;
     margin: 0 -4px;
     font-size: inherit;
-    font-weight: var(--font-semibold);
+    font-weight: var(--font-heavyweight);
     color: var(--color-heading);
 }

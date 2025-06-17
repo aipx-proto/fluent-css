@@ -1,6 +1,8 @@
 input[type="range"] {
   --_size-thumb: 20px;
   --_size-track: 4px;
+  --_color-border: var(--color-border);
+  --_color-track: var(--color-input);
 
   appearance: none;
   background: transparent;
@@ -9,7 +11,7 @@ input[type="range"] {
 
   &::-webkit-slider-container {
     height: var(--_size-track);
-    background: var(--color-border);
+    background: var(--_color-track);
     border-radius: var(--radius-4xl);
   }
 
@@ -20,7 +22,7 @@ input[type="range"] {
     appearance: none;
     width: var(--_size-thumb);
     height: var(--_size-thumb);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--_color-border);
     border-radius: var(--radius-4xl);
     cursor: ew-resize;
     background: var(--color-brand-bg);

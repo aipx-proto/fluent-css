@@ -139,7 +139,7 @@
   &.active,
   &[aria-selected="true"],
   &:has(input[type="radio"]:checked) {
-    font-weight: var(--font-semibold);
+    font-weight: var(--font-heavyweight);
     color: var(--color-heading);
 
     .appearance-subtle & {

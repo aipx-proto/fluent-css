@@ -17,23 +17,29 @@
 
 @import "./theme/mirai-theme.css";
 
-@import "./elements/icons.css";
-@import "./elements/accordion.css";
 @import "./elements/base.css";
+@import "./elements/typography.css";
+@import "./elements/icons.css";
+@import "./elements/scrollbar.css";
+
 @import "./elements/button.css";
-@import "./elements/checkbox-radio.css";
-@import "./elements/control-group.css";
-@import "./elements/dialog.css";
-@import "./elements/disabled.css";
-@import "./elements/fieldset.css";
-@import "./elements/input.css";
 @import "./elements/link.css";
-@import "./elements/popover.css";
+@import "./elements/checkbox-radio.css";
+@import "./elements/switch.css";
+@import "./elements/input.css";
+@import "./elements/control-group.css";
+@import "./elements/slider.css";
+@import "./elements/fieldset.css";
+
 @import "./elements/progress.css";
+@import "./elements/spinner.css";
+
+@import "./elements/accordion.css";
+@import "./elements/dialog.css";
+@import "./elements/popover.css";
+
 @import "./elements/table.css";
 @import "./elements/tabs.css";
 @import "./elements/tabs-hack.css";
-@import "./elements/typography.css";
-@import "./elements/scrollbar.css";
-@import "./elements/switch.css";
-@import "./elements/slider.css";
+
+@import "./elements/disabled.css";

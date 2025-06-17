@@ -87,9 +87,10 @@ This file is used to trick tailwind into using all custom properties in the code
   --color-heading: var(--color-heading);
   --color-blue-900: var(--color-blue-900);
   --color-brand-bg: var(--color-brand-bg);
-  --color-blue-500: var(--color-blue-500);
+  --color-blue-400: var(--color-blue-400);
   --color-brand-contrast: var(--color-brand-contrast);
   --color-brand-fg: var(--color-brand-fg);
+  --color-blue-500: var(--color-blue-500);
   --color-rest: var(--color-rest);
   --color-hover: var(--color-hover);
   --color-selected: var(--color-selected);
@@ -250,7 +251,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --color-blue-100: var(--color-blue-100);
   --color-blue-200: var(--color-blue-200);
   --color-blue-300: var(--color-blue-300);
-  --color-blue-400: var(--color-blue-400);
   --color-blue-700: var(--color-blue-700);
   --color-blue-800: var(--color-blue-800);
   --color-blue-950: var(--color-blue-950);

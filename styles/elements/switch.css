@@ -1,14 +1,14 @@
 input[type="checkbox"].switch {
 
   --_color-background: var(--color-control);
-  --_color-border: var(--color-border);
+  --_color-border: var(--color-input);
   --_color-checked: var(--color-brand-bg);
   
   --_size-thumb: var(--size-icon);
   --_size-offset: 2px;
   --_size-dimension: calc(var(--_size-thumb) + (var(--_size-offset) * 2) + 2px);
 
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--_color-border);
   background-color: var(--_color-background);
   border-radius: var(--radius-4xl);
 
@@ -31,7 +31,7 @@ input[type="checkbox"].switch {
     height: var(--_size-thumb);
     width:  var(--_size-thumb);
     border-radius: var(--radius-4xl);
-    background-color: var(--color-border);
+    background-color: var(--_color-border);
 
     position: absolute;
     top: var(--_size-offset);
