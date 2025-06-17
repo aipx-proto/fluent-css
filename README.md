@@ -19,11 +19,16 @@
 ## Transition to Fluent
 
 - appearance - through vars
-- intent 
+- nested appearance instances
 - size
+- intent 
 - disabled
 - dialog is broken
 - create docs page
+
+## Tailwind config
+- proper `@sources`
+- proper `@layers`
 
 ## Naming `@component` classes & `@utilities`
 

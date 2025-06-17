@@ -69,10 +69,6 @@
   .vertical & {
     --_size-tab-underline-padding: calc((var(--size-height) - var(--size-icon)) / 2);
 
-    &:not(.icon-only) {
-      justify-content: start;
-    }
-
     &:after,
     &:before {
       inset: var(--_size-tab-underline-padding) auto var(--_size-tab-underline-padding) 0;
@@ -85,7 +81,13 @@
     }
   }
 
-  &.icon-only {
+  .vertical &:not(.icon-only),
+  .vertical:not(.icon-only) & {
+    justify-content: start;
+  }
+
+  &.icon-only,
+  .icon-only & {
     padding: 0;
     width: var(--size-height);
     height: var(--size-height);

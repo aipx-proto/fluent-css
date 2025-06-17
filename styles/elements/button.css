@@ -6,90 +6,91 @@ a.button,
 select.button,
 .button,
 ::-webkit-file-upload-button {
+  &,
+  &.appearance-default {
+    --_color-background: var(--color-input);
+    --_color-border: var(--color-border);
+    --_color-hover: var(--color-hover);
+    --_color-active: var(--color-active);
+    --_color-selected: var(--color-selected);
+    --_color-text: var(--color-heading);
+  }
+
   cursor: pointer;
   appearance: none;
   line-height: 1;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-
   border-radius: var(--border-radius);
-
   font-weight: var(--font-heavyweight);
   font-size: var(--size-font);
-  color: var(--color-heading);
+  color: var(--_color-text);
+  background-color: var(--_color-background);
+  border: 1px solid var(--_color-border);
   min-height: var(--size-height);
   padding: 0 var(--size-padding);
-
-  background-color: var(--color-input);
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
 
   &:not(:disabled):not(.disabled) {
     &:hover {
-      background-color: var(--color-hover);
+      background-color: var(--_color-hover);
       transition-duration: var(--duration-hover);
     }
 
     &:active {
-      background-color: var(--color-active);
+      background-color: var(--_color-active);
       transition-duration: var(--duration-hover);
     }
   }
 
   &.selected {
-    background-color: var(--color-selected);
-    /* &.appearance-primary { TODO } */
-  }
-
-  border: 1px solid var(--color-border);
-
-  .input & {
-    border: none;
-    background-color: transparent;
-
-    &:hover {
-      background-color: var(--color-selected);
-    }
-
-    &:active {
-      background-color: var(--color-active);
-    }
-
-    --_border-radius: var(--border-radius);
+    background-color: var(--_color-selected);
   }
 
   &.appearance-primary {
-    --color-input: var(--color-brand);
-    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
-    --color-active: oklch(from var(--color-brand) calc(l * 0.7) c h);
-    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
-    color: var(--color-onbrand);
-    border-color: transparent;
-    /* @variant dark {} */
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-selected: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-text: var(--color-onbrand);
+    --_color-border: transparent;
   }
-  &.appearance-outline {
-    background-color: transparent;
-  }
-  &.appearance-subtle {
-    border-color: transparent;
-    background-color: transparent;
-  }
-  &.appearance-transparent {
-    border-color: transparent;
-    --color-selected: transparent;
-    --color-hover: transparent;
-    --color-active: transparent;
 
-    padding: 0;
-    &:hover {
-      color: var(--color-link);
+  &.appearance-outline {
+    --_color-background: transparent;
+  }
+
+  .menu &,
+  .input &,
+  &.appearance-subtle {
+    --_color-border: transparent;
+    --_color-background: transparent;
+  }
+
+  &.appearance-transparent {
+    --_color-border: transparent;
+    --_color-background: transparent;
+    --_color-hover: transparent;
+    --_color-active: transparent;
+    --_color-selected: transparent;
+
+    padding: 2px;
+    min-height: auto;
+    &:hover,
+    &.selected {
+      --_color-text: var(--color-link);
+    }
+    &:active,
+    &.selected:hover {
+      --_color-text: oklch(from var(--color-link) calc(l - 0.1) c h);
     }
   }
 
-  &.icon-only {
+  &.icon-only,
+  .icon-only & {
     padding: 0;
     width: var(--size-height);
     height: var(--size-height);

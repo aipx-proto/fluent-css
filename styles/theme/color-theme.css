@@ -18,8 +18,8 @@
   );
 
   --color-input: var(--color-white);
-  --color-selected: oklch(0 0 0 / 0.04);
-  --color-hover: oklch(0 0 0 / 0.06);
+  --color-selected: oklch(0 0 0 / 0.05);
+  --color-hover: oklch(0 0 0 / 0.065);
   --color-active: oklch(0 0 0 / 0.12);
 }
 
@@ -44,8 +44,8 @@
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
 
-  --color-input: var(--color-neutral-900);
-  --color-selected: oklch(0 0 0 / 0.15);
-  --color-hover: oklch(0 0 0 / 0.25);
-  --color-active: oklch(0 0 0 / 0.35);
+  --color-input: var(--color-neutral-800);
+  --color-selected: oklch(0 0 0 / 0.25);
+  --color-hover: oklch(0 0 0 / 0.35);
+  --color-active: oklch(0 0 0 / 0.45);
 }

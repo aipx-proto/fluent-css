@@ -1,34 +1,38 @@
 input[type="checkbox"].switch {
 
-  --_color-background: var(--color-input);
-  --_color-border: var(--color-outline);
-  --_color-checked: var(--color-brand);
-  
   --_size-thumb: var(--size-icon);
   --_size-offset: 2px;
+  --_size-radius: 99px;
   --_size-dimension: calc(var(--_size-thumb) + (var(--_size-offset) * 2) + 2px);
+
+  --_color-background: var(--color-input);
+  --_color-border: var(--color-outline);
+  --_color-hover: var(--color-hover);
+  --_color-active: var(--color-active);
+  
+  --_color-thumb: var(--color-outline);
 
   border: 1px solid var(--_color-border);
   background-color: var(--_color-background);
-  border-radius: var(--radius-4xl);
+  border-radius: var(--_size-radius);
   appearance: none;
   margin: 0;
   cursor: pointer;
   height: var(--_size-dimension);
   width: calc(var(--_size-dimension) * 2);
-  
+
   label & {
     vertical-align: middle;
   }
-  
+
   position: relative;
   &:after {
     content: "";
     display: block;
     height: var(--_size-thumb);
-    width:  var(--_size-thumb);
-    border-radius: var(--radius-4xl);
-    background-color: var(--_color-border);
+    width: var(--_size-thumb);
+    border-radius: calc(var(--_size-radius) - var(--_size-offset));
+    background-color: var(--_color-thumb);
 
     position: absolute;
     top: var(--_size-offset);
@@ -37,15 +41,34 @@ input[type="checkbox"].switch {
 
     transition: 0.1s ease-in-out;
     transition-property: inset, background-color;
-    
+  }
+
+  &:not(:disabled):not(.disabled) {
+    &:hover {
+      background-color: var(--_color-hover);
+      transition-duration: var(--duration-hover);
+    }
+
+    &:active {
+      background-color: var(--_color-active);
+      transition-duration: var(--duration-active);
+    }
   }
 
   &:checked {
-    background-color: var(--_color-checked);
-    border-color: var(--_color-checked);
+    
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-thumb: var(--color-input);
+    /* --_color-border: var(--color-brand); */
+    --_color-border: transparent;
+
+    /* background-color: var(--_color-checked); */
+    /* border-color: var(--_color-checked); */
     &:after {
       left: calc(100% - var(--_size-thumb) - var(--_size-offset));
-      background-color: var(--_color-background);
+      /* background-color: var(--_color-background); */
     }
   }
 
@@ -53,6 +76,3 @@ input[type="checkbox"].switch {
     --_color-checked: var(--_color-border);
   }
 }
-
-
-

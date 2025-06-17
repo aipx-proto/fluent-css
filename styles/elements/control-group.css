@@ -2,7 +2,7 @@
   display: flex;
   gap: 1px;
 
-  /* TODO: exception for appearance-primary */
+  /* TODO: exception for .appearance-primary */
 
   & > :not(:first-child):not(:last-child) {
     border-radius: 0;

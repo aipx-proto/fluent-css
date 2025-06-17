@@ -1,9 +1,14 @@
 input[type="checkbox"]:where(:not(.switch)),
 input[type="radio"] {
-  --_color-border: var(--color-outline);
-  --_color-background: var(--color-input);
-  --_color-checked: var(--color-brand);
   --_size-dimension: var(--size-icon);
+
+  &,
+  &.appearance-default {
+    --_color-background: var(--color-input);
+    --_color-border: var(--color-outline);
+    --_color-hover: var(--color-hover);
+    --_color-active: var(--color-active);
+  }
 
   appearance: none;
   margin: 0;
@@ -25,12 +30,39 @@ input[type="radio"] {
     position: absolute;
     inset: 2px;
     border-radius: var(--_border-radius);
-    background-color: var(--_color-checked);
+    background-color: var(--_color-background);
     opacity: 0;
   }
 
+  &,
+  &:after {
+    transition: 0.1s ease-in-out;
+    transition-property: background-color, border-color;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &:hover:after {
+      background-color: var(--_color-hover);
+      transition-duration: var(--duration-hover);
+    }
+
+    &:active,
+    &:active:after {
+      background-color: var(--_color-active);
+      transition-duration: var(--duration-active);
+    }
+  }
+
   &:checked {
-    border-color: var(--_color-checked);
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-border: var(--color-brand);
+
+    &:after {
+      opacity: 1;
+    }
   }
 
   &:disabled {
@@ -39,12 +71,17 @@ input[type="radio"] {
 }
 
 input[type="radio"] {
+  &:checked {
+    &,
+    &:hover,
+    &:active {
+      background-color: transparent !important;
+    }
+  }
+
   --_border-radius: var(--radius-4xl);
   &:after {
     border-radius: var(--_border-radius);
-  }
-  &:checked:after {
-    opacity: 1;
   }
 }
 
@@ -53,11 +90,8 @@ input[type="checkbox"]:where(:not(.switch)) {
 
   &:after {
     border-radius: calc(var(--_border-radius) - 2px);
-  }
 
-  &:checked:after {
     inset: 0;
-    opacity: 1;
     background-image: var(--icon-check);
     background-position: center;
     background-repeat: no-repeat;
@@ -65,10 +99,22 @@ input[type="checkbox"]:where(:not(.switch)) {
   }
 
   &:indeterminate {
-    border-color: var(--_color-checked);
-  }
-  &:indeterminate:after {
-    inset: 4px;
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-border: var(--color-brand);
+
+    &,
+    &:hover,
+    &:active {
+      background-color: transparent !important;
+    }
+
+    &:after {
+      inset: 4px;
+      background-image: none;
+      background-color: var(--_color-background);
+    }
   }
 
   &:indeterminate:after,

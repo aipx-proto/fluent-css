@@ -349,8 +349,8 @@
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
     --color-input: var(--color-white);
-    --color-selected: oklch(0 0 0 / 0.04);
-    --color-hover: oklch(0 0 0 / 0.06);
+    --color-selected: oklch(0 0 0 / 0.05);
+    --color-hover: oklch(0 0 0 / 0.065);
     --color-active: oklch(0 0 0 / 0.12);
     --text-md: var(--text-base);
     --font-numeric: var(--font-mono);
@@ -795,10 +795,10 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
     --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-    --color-input: var(--color-neutral-900);
-    --color-selected: oklch(0 0 0 / 0.15);
-    --color-hover: oklch(0 0 0 / 0.25);
-    --color-active: oklch(0 0 0 / 0.35);
+    --color-input: var(--color-neutral-800);
+    --color-selected: oklch(0 0 0 / 0.25);
+    --color-hover: oklch(0 0 0 / 0.35);
+    --color-active: oklch(0 0 0 / 0.45);
   }
 }
 @layer theme;
@@ -925,6 +925,14 @@ hr {
   scrollbar-color: var(--color-muted) transparent;
 }
 button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type="reset"], a.button, select.button, .button, ::-webkit-file-upload-button {
+  &, &.appearance-default {
+    --_color-background: var(--color-input);
+    --_color-border: var(--color-border);
+    --_color-hover: var(--color-hover);
+    --_color-active: var(--color-active);
+    --_color-selected: var(--color-selected);
+    --_color-text: var(--color-heading);
+  }
   cursor: pointer;
   appearance: none;
   line-height: 1;
@@ -935,63 +943,57 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
   border-radius: var(--border-radius);
   font-weight: var(--font-heavyweight);
   font-size: var(--size-font);
-  color: var(--color-heading);
+  color: var(--_color-text);
+  background-color: var(--_color-background);
+  border: 1px solid var(--_color-border);
   min-height: var(--size-height);
   padding: 0 var(--size-padding);
-  background-color: var(--color-input);
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
   &:not(:disabled):not(.disabled) {
     &:hover {
-      background-color: var(--color-hover);
+      background-color: var(--_color-hover);
       transition-duration: var(--duration-hover);
     }
     &:active {
-      background-color: var(--color-active);
+      background-color: var(--_color-active);
       transition-duration: var(--duration-hover);
     }
   }
   &.selected {
-    background-color: var(--color-selected);
-  }
-  border: 1px solid var(--color-border);
-  .input & {
-    border: none;
-    background-color: transparent;
-    &:hover {
-      background-color: var(--color-selected);
-    }
-    &:active {
-      background-color: var(--color-active);
-    }
-    --_border-radius: var(--border-radius);
+    background-color: var(--_color-selected);
   }
   &.appearance-primary {
-    --color-input: var(--color-brand);
-    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
-    --color-active: oklch(from var(--color-brand) calc(l * 0.7) c h);
-    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
-    color: var(--color-onbrand);
-    border-color: transparent;
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-selected: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-text: var(--color-onbrand);
+    --_color-border: transparent;
   }
   &.appearance-outline {
-    background-color: transparent;
+    --_color-background: transparent;
   }
-  &.appearance-subtle {
-    border-color: transparent;
-    background-color: transparent;
+  .menu &, .input &, &.appearance-subtle {
+    --_color-border: transparent;
+    --_color-background: transparent;
   }
   &.appearance-transparent {
-    border-color: transparent;
-    --color-selected: transparent;
-    --color-hover: transparent;
-    --color-active: transparent;
-    padding: 0;
-    &:hover {
-      color: var(--color-link);
+    --_color-border: transparent;
+    --_color-background: transparent;
+    --_color-hover: transparent;
+    --_color-active: transparent;
+    --_color-selected: transparent;
+    padding: 2px;
+    min-height: auto;
+    &:hover, &.selected {
+      --_color-text: var(--color-link);
+    }
+    &:active, &.selected:hover {
+      --_color-text: oklch(from var(--color-link) calc(l - 0.1) c h);
     }
   }
-  &.icon-only {
+  &.icon-only, .icon-only & {
     padding: 0;
     width: var(--size-height);
     height: var(--size-height);
@@ -1038,21 +1040,27 @@ input[type="file"] {
   }
 }
 a:where(:not(.button):not(.tab)) {
-  color: var(--color-link);
+  --_color-text: var(--color-link);
+  --_color-hover: oklch(from var(--_color-text) calc(l - 0.2) c h);
+  --_color-active: var(--color-link);
+  color: var(--_color-text);
   text-decoration: none;
   &:hover {
-    color: oklch(from var(--color-link) calc(l * 0.9) c h);
+    color: var(--_color-hover);
     text-decoration: underline;
   }
   &:active {
-    color: var(--color-link);
+    color: var(--_color-active);
   }
 }
 input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
-  --_color-border: var(--color-outline);
-  --_color-background: var(--color-input);
-  --_color-checked: var(--color-brand);
   --_size-dimension: var(--size-icon);
+  &, &.appearance-default {
+    --_color-background: var(--color-input);
+    --_color-border: var(--color-outline);
+    --_color-hover: var(--color-hover);
+    --_color-active: var(--color-active);
+  }
   appearance: none;
   margin: 0;
   width: var(--_size-dimension);
@@ -1071,58 +1079,88 @@ input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
     position: absolute;
     inset: 2px;
     border-radius: var(--_border-radius);
-    background-color: var(--_color-checked);
+    background-color: var(--_color-background);
     opacity: 0;
   }
+  &, &:after {
+    transition: 0.1s ease-in-out;
+    transition-property: background-color, border-color;
+  }
+  &:not(:disabled):not(.disabled) {
+    &:hover, &:hover:after {
+      background-color: var(--_color-hover);
+      transition-duration: var(--duration-hover);
+    }
+    &:active, &:active:after {
+      background-color: var(--_color-active);
+      transition-duration: var(--duration-active);
+    }
+  }
   &:checked {
-    border-color: var(--_color-checked);
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-border: var(--color-brand);
+    &:after {
+      opacity: 1;
+    }
   }
   &:disabled {
     --_color-checked: var(--_color-border);
   }
 }
 input[type="radio"] {
+  &:checked {
+    &, &:hover, &:active {
+      background-color: transparent !important;
+    }
+  }
   --_border-radius: var(--radius-4xl);
   &:after {
     border-radius: var(--_border-radius);
-  }
-  &:checked:after {
-    opacity: 1;
   }
 }
 input[type="checkbox"]:where(:not(.switch)) {
   --_border-radius: var(--radius-sm);
   &:after {
     border-radius: calc(var(--_border-radius) - 2px);
-  }
-  &:checked:after {
     inset: 0;
-    opacity: 1;
     background-image: var(--icon-check);
     background-position: center;
     background-repeat: no-repeat;
     background-size: calc(var(--_size-dimension) - 4px);
   }
   &:indeterminate {
-    border-color: var(--_color-checked);
-  }
-  &:indeterminate:after {
-    inset: 4px;
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-border: var(--color-brand);
+    &, &:hover, &:active {
+      background-color: transparent !important;
+    }
+    &:after {
+      inset: 4px;
+      background-image: none;
+      background-color: var(--_color-background);
+    }
   }
   &:indeterminate:after, &:checked:after {
     opacity: 1;
   }
 }
 input[type="checkbox"].switch {
-  --_color-background: var(--color-input);
-  --_color-border: var(--color-outline);
-  --_color-checked: var(--color-brand);
   --_size-thumb: var(--size-icon);
   --_size-offset: 2px;
+  --_size-radius: 99px;
   --_size-dimension: calc(var(--_size-thumb) + (var(--_size-offset) * 2) + 2px);
+  --_color-background: var(--color-input);
+  --_color-border: var(--color-outline);
+  --_color-hover: var(--color-hover);
+  --_color-active: var(--color-active);
+  --_color-thumb: var(--color-outline);
   border: 1px solid var(--_color-border);
   background-color: var(--_color-background);
-  border-radius: var(--radius-4xl);
+  border-radius: var(--_size-radius);
   appearance: none;
   margin: 0;
   cursor: pointer;
@@ -1137,20 +1175,32 @@ input[type="checkbox"].switch {
     display: block;
     height: var(--_size-thumb);
     width: var(--_size-thumb);
-    border-radius: var(--radius-4xl);
-    background-color: var(--_color-border);
+    border-radius: calc(var(--_size-radius) - var(--_size-offset));
+    background-color: var(--_color-thumb);
     position: absolute;
     top: var(--_size-offset);
     left: var(--_size-offset);
     transition: 0.1s ease-in-out;
     transition-property: inset, background-color;
   }
+  &:not(:disabled):not(.disabled) {
+    &:hover {
+      background-color: var(--_color-hover);
+      transition-duration: var(--duration-hover);
+    }
+    &:active {
+      background-color: var(--_color-active);
+      transition-duration: var(--duration-active);
+    }
+  }
   &:checked {
-    background-color: var(--_color-checked);
-    border-color: var(--_color-checked);
+    --_color-background: var(--color-brand);
+    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-thumb: var(--color-input);
+    --_color-border: transparent;
     &:after {
       left: calc(100% - var(--_size-thumb) - var(--_size-offset));
-      background-color: var(--_color-background);
     }
   }
   &:disabled {
@@ -1158,10 +1208,12 @@ input[type="checkbox"].switch {
   }
 }
 input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.button)), textarea, .input {
-  --_color-background: var(--color-input);
-  --_color-border: var(--color-border);
-  --_color-border-bottom: var(--color-outline);
-  --_color-border-focus: var(--color-brand);
+  &, &.appearance-default {
+    --_color-background: var(--color-input);
+    --_color-border: var(--color-border);
+    --_color-border-bottom: var(--color-outline);
+    --_color-border-focus: var(--color-brand);
+  }
   font-size: var(--size-font);
   color: var(--color-heading);
   display: inline-flex;
@@ -1205,11 +1257,22 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
     }
   }
   &.appearance-outline {
-    background-color: transparent;
+    --_color-background: transparent;
+    &:focus {
+      --_color-background: var(--color-input);
+    }
   }
   &.appearance-subtle {
-    border-color: transparent;
-    background-color: var(--color-selected);
+    --_color-border: transparent;
+    --_color-border-bottom: transparent;
+    --_color-background: var(--color-selected);
+  }
+  &.appearance-transparent {
+    --_color-background: transparent;
+    --_color-border: transparent;
+    padding: 2px;
+    min-height: auto;
+    border-radius: 1px;
   }
   &:focus {
     outline: none;
@@ -1297,9 +1360,11 @@ input[type="color"], input[type="file"], ::-webkit-calendar-picker-indicator, ::
 input[type="range"] {
   --_size-thumb: 20px;
   --_size-track: 4px;
+  --_color-track: var(--color-outline);
   --_color-border: var(--color-border);
   --_color-thumb: var(--color-brand);
-  --_color-track: var(--color-outline);
+  --_color-hover: oklch(from var(--color-brand) calc(l - 0.1) c h);
+  --_color-active: oklch(from var(--color-brand) calc(l - 0.2) c h);
   appearance: none;
   background: transparent;
   padding: calc(var(--_size-thumb) / 2 - var(--_size-track) / 2) 0;
@@ -1319,6 +1384,15 @@ input[type="range"] {
     cursor: ew-resize;
     background: var(--_color-thumb);
     box-shadow: inset 0 0 0 3px var(--color-input);
+    transition: background-color var(--duration-rest) linear;
+  }
+  &:hover {
+    transition-duration: var(--duration-hover);
+    --_color-thumb: var(--_color-hover);
+  }
+  &:active {
+    transition-duration: var(--duration-hover);
+    --_color-thumb: var(--_color-active);
   }
   &:focus-visible {
     &::-webkit-slider-thumb {
@@ -1765,9 +1839,6 @@ th, td {
   }
   .vertical & {
     --_size-tab-underline-padding: calc((var(--size-height) - var(--size-icon)) / 2);
-    &:not(.icon-only) {
-      justify-content: start;
-    }
     &:after, &:before {
       inset: var(--_size-tab-underline-padding) auto var(--_size-tab-underline-padding) 0;
       height: auto;
@@ -1777,7 +1848,10 @@ th, td {
       transform: scaleY(0);
     }
   }
-  &.icon-only {
+  .vertical &:not(.icon-only), .vertical:not(.icon-only) & {
+    justify-content: start;
+  }
+  &.icon-only, .icon-only & {
     padding: 0;
     width: var(--size-height);
     height: var(--size-height);

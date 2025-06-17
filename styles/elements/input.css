@@ -16,11 +16,13 @@ input:where(:not([type])),
   select:where(:not(.button)),
   textarea,
   .input {
-
-  --_color-background: var(--color-input);
-  --_color-border: var(--color-border);
-  --_color-border-bottom: var(--color-outline);
-  --_color-border-focus: var(--color-brand);
+  &,
+  &.appearance-default {
+    --_color-background: var(--color-input);
+    --_color-border: var(--color-border);
+    --_color-border-bottom: var(--color-outline);
+    --_color-border-focus: var(--color-brand);
+  }
 
   font-size: var(--size-font);
   color: var(--color-heading);
@@ -75,11 +77,26 @@ input:where(:not([type])),
   }
 
   &.appearance-outline {
-    background-color: transparent;
+    --_color-background: transparent;
+
+    &:focus {
+      --_color-background: var(--color-input);
+    }
   }
+
   &.appearance-subtle {
-    border-color: transparent;
-    background-color: var(--color-selected);
+    --_color-border: transparent;
+    --_color-border-bottom: transparent;
+    --_color-background: var(--color-selected);
+  }
+
+  /* &.appearance-underline,*/
+  &.appearance-transparent {
+    --_color-background: transparent;
+    --_color-border: transparent;
+    padding: 2px;
+    min-height: auto;
+    border-radius: 1px;
   }
 
   &:focus {

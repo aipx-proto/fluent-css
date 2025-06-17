@@ -163,7 +163,6 @@
         font-weight: var(--font-heavyweight);
         color: var(--color-muted);
       }
-
     </style>
     <h1>
       <img src="assets/Fluent-logo.svg" alt="Fluent.css logotype" width="16" />
@@ -257,6 +256,7 @@
         gap: 24px;
         padding: 24px;
         border-bottom: 1px solid var(--color-border);
+
         &:last-child {
           border-bottom: none;
         }
@@ -456,6 +456,7 @@
             font-weight: var(--font-heavyweight);
 
             color: white;
+
             &.b {
               color: black;
             }
@@ -499,90 +500,76 @@
             ].join('');
           })();
         </script>
-      <div style="margin: 32px 0;">
-        <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-          <span style="min-width: 120px;">Hue Torsion</span>
-          <input
-            id="hue-x-slider"
-            type="range"
-            min="-50"
-            max="50"
-            value="0"
-            step="1"
-            style="flex: 1;"
-          />
-          <span id="hue-x-value" style="width: 48px; text-align: right;">0</span>
-          <button type="button" id="hue-x-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
-        </label>
-        <label style="display: flex; align-items: center; gap: 12px;">
-          <span style="min-width: 120px;">Chroma Reduction</span>
-          <input
-            id="chroma-x-slider"
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            step="1"
-            style="flex: 1;"
-          />
-          <span id="chroma-x-value" style="width: 48px; text-align: right;">0</span>
-          <button type="button" id="chroma-x-reset" class="appearance-transparent size-small" style="margin-left: 8px;">Reset</button>
-        </label>
-      </div>
-      <script>
-        // Get initial CSS var values for --h-x and --c-x
-        function getInitialCSSVar(name, fallback = 0) {
-          const val = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-          // If not set or not a number, fallback to 0
-          return val === "" ? fallback : val;
-        }
+        <div style="margin: 32px 0;">
+          <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <span style="min-width: 120px;">Hue Torsion</span>
+            <input id="hue-x-slider" type="range" min="-50" max="50" value="0" step="1" style="flex: 1;" />
+            <span id="hue-x-value" style="width: 48px; text-align: right;">0</span>
+            <button type="button" id="hue-x-reset" class="appearance-transparent size-small"
+              style="margin-left: 8px;">Reset</button>
+          </label>
+          <label style="display: flex; align-items: center; gap: 12px;">
+            <span style="min-width: 120px;">Chroma Reduction</span>
+            <input id="chroma-x-slider" type="range" min="0" max="100" value="0" step="1" style="flex: 1;" />
+            <span id="chroma-x-value" style="width: 48px; text-align: right;">0</span>
+            <button type="button" id="chroma-x-reset" class="appearance-transparent size-small"
+              style="margin-left: 8px;">Reset</button>
+          </label>
+        </div>
+        <script>
+          // Get initial CSS var values for --h-x and --c-x
+          function getInitialCSSVar(name, fallback = 0) {
+            const val = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+            // If not set or not a number, fallback to 0
+            return val === "" ? fallback : val;
+          }
 
-        const initialHue = getInitialCSSVar('--h-x', 0);
-        const initialChroma = getInitialCSSVar('--c-x', 0);
+          const initialHue = getInitialCSSVar('--h-x', 0);
+          const initialChroma = getInitialCSSVar('--c-x', 0);
 
-        // Set initial CSS vars to their current values (in case not set inline)
-        document.documentElement.style.setProperty('--h-x', initialHue);
-        document.documentElement.style.setProperty('--c-x', initialChroma);
+          // Set initial CSS vars to their current values (in case not set inline)
+          document.documentElement.style.setProperty('--h-x', initialHue);
+          document.documentElement.style.setProperty('--c-x', initialChroma);
 
-        const hueSlider = document.getElementById('hue-x-slider');
-        const chromaSlider = document.getElementById('chroma-x-slider');
-        const hueValue = document.getElementById('hue-x-value');
-        const chromaValue = document.getElementById('chroma-x-value');
-        const hueReset = document.getElementById('hue-x-reset');
-        const chromaReset = document.getElementById('chroma-x-reset');
+          const hueSlider = document.getElementById('hue-x-slider');
+          const chromaSlider = document.getElementById('chroma-x-slider');
+          const hueValue = document.getElementById('hue-x-value');
+          const chromaValue = document.getElementById('chroma-x-value');
+          const hueReset = document.getElementById('hue-x-reset');
+          const chromaReset = document.getElementById('chroma-x-reset');
 
-        // Set slider values to match initial CSS var values
-        hueSlider.value = initialHue;
-        chromaSlider.value = initialChroma;
-
-        function updateHueTortion() {
-          const val = hueSlider.value;
-          document.documentElement.style.setProperty('--h-x', val);
-          hueValue.textContent = val;
-        }
-        function updateChromaBump() {
-          const val = chromaSlider.value;
-          document.documentElement.style.setProperty('--c-x', val);
-          chromaValue.textContent = val;
-        }
-
-        hueSlider.addEventListener('input', updateHueTortion);
-        chromaSlider.addEventListener('input', updateChromaBump);
-
-        // Reset buttons
-        hueReset.addEventListener('click', function() {
+          // Set slider values to match initial CSS var values
           hueSlider.value = initialHue;
-          updateHueTortion();
-        });
-        chromaReset.addEventListener('click', function() {
           chromaSlider.value = initialChroma;
-          updateChromaBump();
-        });
 
-        // Set initial display
-        updateHueTortion();
-        updateChromaBump();
-      </script>
+          function updateHueTortion() {
+            const val = hueSlider.value;
+            document.documentElement.style.setProperty('--h-x', val);
+            hueValue.textContent = val;
+          }
+          function updateChromaBump() {
+            const val = chromaSlider.value;
+            document.documentElement.style.setProperty('--c-x', val);
+            chromaValue.textContent = val;
+          }
+
+          hueSlider.addEventListener('input', updateHueTortion);
+          chromaSlider.addEventListener('input', updateChromaBump);
+
+          // Reset buttons
+          hueReset.addEventListener('click', function () {
+            hueSlider.value = initialHue;
+            updateHueTortion();
+          });
+          chromaReset.addEventListener('click', function () {
+            chromaSlider.value = initialChroma;
+            updateChromaBump();
+          });
+
+          // Set initial display
+          updateHueTortion();
+          updateChromaBump();
+        </script>
 
       </div>
     </section>
@@ -612,7 +599,7 @@
           <button disabled>Disabled</button>
           <button class="selected">Selected</button>
           <span style=" margin: 0 16px">
-            <button class="icon-only">X</button>
+            <button class="icon-only">×</button>
             <span style="margin-left: 4px; color: var(--color-muted);">Icon Only</span>
           </span>
         </div>
@@ -653,8 +640,8 @@
             <button class="icon-only">•••</button>
           </div>
           <form class="control-group shape-rounded">
-            <input type="email" placeholder="Your email" class="appearance-outline" />
-            <button>Subscribe</button>
+            <input type="email" placeholder="Your email" />
+            <button class="appearance-outline">Subscribe</button>
           </form>
         </div>
       </div>
@@ -665,10 +652,13 @@
         <h3 class="section__header">Input</h3>
         <div>
           <input type="text" placeholder="Default" />
-          <input type="text" placeholder="Disabled" disabled />
-          <input type="text" placeholder="Readonly" value="Readonly" readonly />
           <input type="text" placeholder="Outline" class="appearance-outline" />
           <input type="text" placeholder="Subtle" class="appearance-subtle" />
+          <input type="text" placeholder="Transparent" class="appearance-transparent" />
+        </div>
+        <div>
+          <input type="text" placeholder="Disabled" disabled />
+          <input type="text" placeholder="Readonly" value="Readonly" readonly />
         </div>
         <div>
           <input type="text" placeholder="Small" class="size-small" />
@@ -888,7 +878,7 @@
                   interaction.</p>
               </main>
               <footer>
-                <button class="dialog-close appearance-transparent icon-only">X</button>
+                <button class="dialog-close appearance-transparent icon-only">×</button>
                 <button class="appearance-subtle">Cancel</button>
                 <button class="appearance-primary">Primary</button>
               </footer>
