@@ -18,8 +18,7 @@
 
 ## Transition to Fluent
 
-- appearance - through vars
-- nested appearance instances
+- rename control-group
 - size
 - intent 
 - disabled

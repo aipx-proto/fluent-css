@@ -2,13 +2,13 @@ input[type="checkbox"]:where(:not(.switch)),
 input[type="radio"] {
   --_size-dimension: var(--size-icon);
 
-  &,
-  &.appearance-default {
-    --_color-background: var(--color-input);
-    --_color-border: var(--color-outline);
-    --_color-hover: var(--color-hover);
-    --_color-active: var(--color-active);
-  }
+  --_color-background: var(--color-input);
+  --_color-border: var(--color-outline);
+  --_color-hover: var(--color-hover);
+  --_color-active: var(--color-active);
+
+  /* &.appearance-subtle { TODO } */
+  /* &.appearance-outline { TODO } */
 
   appearance: none;
   margin: 0;

@@ -50,6 +50,7 @@ select.button,
     background-color: var(--_color-selected);
   }
 
+  .control-group.appearance-primary &,
   &.appearance-primary {
     --_color-background: var(--color-brand);
     --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
@@ -58,18 +59,21 @@ select.button,
     --_color-text: var(--color-onbrand);
     --_color-border: transparent;
   }
-
+  
+  .control-group.appearance-outline &,
   &.appearance-outline {
     --_color-background: transparent;
   }
 
   .menu &,
   .input &,
+  .control-group.appearance-subtle &,
   &.appearance-subtle {
     --_color-border: transparent;
     --_color-background: transparent;
   }
 
+  .control-group.appearance-transparent &,
   &.appearance-transparent {
     --_color-border: transparent;
     --_color-background: transparent;

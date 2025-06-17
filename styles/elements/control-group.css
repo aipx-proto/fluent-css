@@ -2,8 +2,6 @@
   display: flex;
   gap: 1px;
 
-  /* TODO: exception for .appearance-primary */
-
   & > :not(:first-child):not(:last-child) {
     border-radius: 0;
   }
@@ -20,9 +18,10 @@
 
   /* applies to button.css and input.css */
   /* buttons and inputs with outline should share border rather than have a gap */
-  & > :not(:first-child) {
-    &:not([class*="appearance-"]),
-    &.appearance-outline {
+  &:not([class*="appearance-"]),
+  &.appearance-default,
+  &.appearance-outline {
+    & > :not(:first-child) {
       margin-left: -2px;
     }
   }

@@ -796,9 +796,9 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
     --color-input: var(--color-neutral-800);
-    --color-selected: oklch(0 0 0 / 0.25);
-    --color-hover: oklch(0 0 0 / 0.35);
-    --color-active: oklch(0 0 0 / 0.45);
+    --color-selected: oklch(0 0 0 / 0.4);
+    --color-hover: oklch(0 0 0 / 0.5);
+    --color-active: oklch(0 0 0 / 0.6);
   }
 }
 @layer theme;
@@ -963,7 +963,7 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
   &.selected {
     background-color: var(--_color-selected);
   }
-  &.appearance-primary {
+  .control-group.appearance-primary &, &.appearance-primary {
     --_color-background: var(--color-brand);
     --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
     --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
@@ -971,14 +971,14 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
     --_color-text: var(--color-onbrand);
     --_color-border: transparent;
   }
-  &.appearance-outline {
+  .control-group.appearance-outline &, &.appearance-outline {
     --_color-background: transparent;
   }
-  .menu &, .input &, &.appearance-subtle {
+  .menu &, .input &, .control-group.appearance-subtle &, &.appearance-subtle {
     --_color-border: transparent;
     --_color-background: transparent;
   }
-  &.appearance-transparent {
+  .control-group.appearance-transparent &, &.appearance-transparent {
     --_color-border: transparent;
     --_color-background: transparent;
     --_color-hover: transparent;
@@ -1055,12 +1055,10 @@ a:where(:not(.button):not(.tab)) {
 }
 input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
   --_size-dimension: var(--size-icon);
-  &, &.appearance-default {
-    --_color-background: var(--color-input);
-    --_color-border: var(--color-outline);
-    --_color-hover: var(--color-hover);
-    --_color-active: var(--color-active);
-  }
+  --_color-background: var(--color-input);
+  --_color-border: var(--color-outline);
+  --_color-hover: var(--color-hover);
+  --_color-active: var(--color-active);
   appearance: none;
   margin: 0;
   width: var(--_size-dimension);
@@ -1351,8 +1349,8 @@ input[type="color"], input[type="file"], ::-webkit-calendar-picker-indicator, ::
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  & > :not(:first-child) {
-    &:not([class*="appearance-"]), &.appearance-outline {
+  &:not([class*="appearance-"]), &.appearance-default, &.appearance-outline {
+    & > :not(:first-child) {
       margin-left: -2px;
     }
   }
