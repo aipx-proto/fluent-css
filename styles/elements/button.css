@@ -33,11 +33,15 @@ select.button,
       transition-duration: var(--duration-hover);
     }
 
-    &:active,
-    &.selected {
-      background-color: var(--color-selected);
+    &:active {
+      background-color: var(--color-active);
       transition-duration: var(--duration-hover);
     }
+  }
+
+  &.selected {
+    background-color: var(--color-selected);
+    /* &.appearance-primary { TODO } */
   }
 
   border: 1px solid var(--color-border);
@@ -47,19 +51,20 @@ select.button,
     background-color: transparent;
 
     &:hover {
-      background-color: var(--color-rest);
+      background-color: var(--color-selected);
     }
 
     &:active {
-      background-color: var(--color-selected);
+      background-color: var(--color-active);
     }
 
     --_border-radius: var(--border-radius);
   }
 
   &.appearance-primary {
-    --color-rest: var(--color-brand);
+    --color-input: var(--color-brand);
     --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+    --color-active: oklch(from var(--color-brand) calc(l * 0.7) c h);
     --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
     color: var(--color-onbrand);
     border-color: transparent;
@@ -74,9 +79,9 @@ select.button,
   }
   &.appearance-transparent {
     border-color: transparent;
-    --color-rest: transparent;
-    --color-hover: transparent;
     --color-selected: transparent;
+    --color-hover: transparent;
+    --color-active: transparent;
 
     padding: 0;
     &:hover {
@@ -125,7 +130,7 @@ input[type="file"] {
 
   &:active {
     &::-webkit-file-upload-button {
-      background-color: var(--color-selected);
+      background-color: var(--color-active);
       transition-duration: var(--duration-hover);
     }
   }

@@ -311,9 +311,9 @@
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
     --color-input: var(--color-white);
-    --color-rest: oklch(0 0 0 / 0.04);
+    --color-selected: oklch(0 0 0 / 0.04);
     --color-hover: oklch(0 0 0 / 0.06);
-    --color-selected: oklch(0 0 0 / 0.12);
+    --color-active: oklch(0 0 0 / 0.12);
     --l-0: 100%;
     --l-50: 98.5%;
     --l-100: 97%;
@@ -794,9 +794,9 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
     --color-input: var(--color-neutral-900);
-    --color-rest: oklch(0 0 0 / 0.15);
+    --color-selected: oklch(0 0 0 / 0.15);
     --color-hover: oklch(0 0 0 / 0.25);
-    --color-selected: oklch(0 0 0 / 0.35);
+    --color-active: oklch(0 0 0 / 0.35);
   }
 }
 @layer theme;
@@ -946,26 +946,30 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
       background-color: var(--color-hover);
       transition-duration: var(--duration-hover);
     }
-    &:active, &.selected {
-      background-color: var(--color-selected);
+    &:active {
+      background-color: var(--color-active);
       transition-duration: var(--duration-hover);
     }
+  }
+  &.selected {
+    background-color: var(--color-selected);
   }
   border: 1px solid var(--color-border);
   .input & {
     border: none;
     background-color: transparent;
     &:hover {
-      background-color: var(--color-rest);
+      background-color: var(--color-selected);
     }
     &:active {
-      background-color: var(--color-selected);
+      background-color: var(--color-active);
     }
     --_border-radius: var(--border-radius);
   }
   &.appearance-primary {
-    --color-rest: var(--color-brand);
+    --color-input: var(--color-brand);
     --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+    --color-active: oklch(from var(--color-brand) calc(l * 0.7) c h);
     --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
     color: var(--color-onbrand);
     border-color: transparent;
@@ -979,9 +983,9 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
   }
   &.appearance-transparent {
     border-color: transparent;
-    --color-rest: transparent;
-    --color-hover: transparent;
     --color-selected: transparent;
+    --color-hover: transparent;
+    --color-active: transparent;
     padding: 0;
     &:hover {
       color: var(--color-link);
@@ -1022,7 +1026,7 @@ input[type="file"] {
   }
   &:active {
     &::-webkit-file-upload-button {
-      background-color: var(--color-selected);
+      background-color: var(--color-active);
       transition-duration: var(--duration-hover);
     }
   }
@@ -1199,7 +1203,7 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
   }
   &.appearance-subtle {
     border-color: transparent;
-    background-color: var(--color-rest);
+    background-color: var(--color-selected);
   }
   outline: transparent solid 2px;
   .input > & {
@@ -1776,7 +1780,7 @@ th, td {
     transition-duration: var(--duration-hover);
     color: var(--color-heading);
     .appearance-subtle & {
-      background-color: var(--color-selected);
+      background-color: var(--color-active);
     }
   }
   &:disabled, &.disabled, &:has(input[type="radio"]:disabled) {
@@ -1794,7 +1798,7 @@ th, td {
     font-weight: var(--font-heavyweight);
     color: var(--color-heading);
     .appearance-subtle & {
-      background-color: var(--color-rest);
+      background-color: var(--color-selected);
     }
     &:after {
       transform: scale(1);

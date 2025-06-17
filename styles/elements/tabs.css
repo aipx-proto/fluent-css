@@ -110,7 +110,7 @@
     color: var(--color-heading);
 
     .appearance-subtle & {
-      background-color: var(--color-selected);
+      background-color: var(--color-active);
     }
   }
 
@@ -138,7 +138,7 @@
     color: var(--color-heading);
 
     .appearance-subtle & {
-      background-color: var(--color-rest);
+      background-color: var(--color-selected);
     }
 
     &:after {
