@@ -18,9 +18,10 @@
 
 ## Transition to Fluent
 
-- intent 
 - disabled
 - dialog is broken
+- add default flex size to radio checkbox spinner icon and other things that are a fixed size
+- default inline-flex for more things like `label:has(input[type=checkbox], input[type=radio])`
 - create docs page
 
 ## Tailwind config
@@ -66,14 +67,12 @@
 
 ## Bugs & Improvements
 
-- `.icon-only` should apply to all children of groups...
-- `button.appearance-primary` doesn't work in `.input-group`
-- add default flex size to radio checkbox spinner icon and other things that are a fixed size
+
 - fix label > disabled in disabled.css
-- default inline-flex for more things like `label:has(input[type=checkbox], input[type=radio])`
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
 - transparent backgrounds? Maybe they would be better as they'd work in more random scenarios?
+- intent - info, brand, success, warning, danger
 - icons for input types - search, date, numeric
 
 ## Icons?
