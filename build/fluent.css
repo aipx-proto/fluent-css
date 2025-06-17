@@ -298,18 +298,19 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-card: var(--color-white);
-    --color-panel: var(--color-white);
+    --color-panel: var(--color-neutral-50);
     --color-page: var(--color-neutral-100);
     --color-border: var(--color-neutral-300);
-    --color-input: var(--color-neutral-500);
+    --color-outline: var(--color-neutral-500);
     --color-muted: var(--color-neutral-600);
     --color-body: var(--color-neutral-800);
     --color-heading: var(--color-neutral-900);
+    --color-link: var(--color-blue-500);
     --color-brand: var(--color-blue-500);
     --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-    --color-link: var(--color-blue-500);
+    --color-input: var(--color-white);
     --color-rest: var(--color-panel);
     --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
     --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
@@ -779,19 +780,20 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 @layer theme {
   .dark, .dark * {
     color-scheme: dark;
-    --color-card: var(--color-neutral-900);
-    --color-panel: var(--color-neutral-800);
+    --color-card: var(--color-neutral-800);
+    --color-panel: var(--color-neutral-900);
     --color-page: var(--color-neutral-950);
     --color-border: var(--color-neutral-700);
-    --color-input: var(--color-neutral-500);
+    --color-outline: var(--color-neutral-500);
     --color-muted: var(--color-neutral-500);
     --color-body: var(--color-neutral-300);
     --color-heading: var(--color-white);
+    --color-link: var(--color-blue-400);
     --color-brand: var(--color-blue-500);
     --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-    --color-link: var(--color-blue-400);
+    --color-input: var(--color-neutral-900);
     --color-rest: var(--color-panel);
     --color-hover: oklch(from var(--color-rest) calc(l * 1.1) c h);
     --color-selected: oklch(from var(--color-rest) calc(l * 0.9) c h);
@@ -1036,7 +1038,7 @@ a:where(:not(.button):not(.tab)) {
   }
 }
 input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
-  --_color-border: var(--color-input);
+  --_color-border: var(--color-outline);
   --_color-background: var(--color-card);
   --_color-checked: var(--color-brand);
   --_size-dimension: var(--size-icon);
@@ -1102,7 +1104,7 @@ input[type="checkbox"]:where(:not(.switch)) {
 }
 input[type="checkbox"].switch {
   --_color-background: var(--color-card);
-  --_color-border: var(--color-input);
+  --_color-border: var(--color-outline);
   --_color-checked: var(--color-brand);
   --_size-thumb: var(--size-icon);
   --_size-offset: 2px;
@@ -1147,7 +1149,7 @@ input[type="checkbox"].switch {
 input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.button)), textarea, .input {
   --_color-background: var(--color-card);
   --_color-border: var(--color-border);
-  --_color-border-bottom: var(--color-input);
+  --_color-border-bottom: var(--color-outline);
   --_color-border-focus: var(--color-brand);
   font-size: var(--size-font);
   color: var(--color-heading);
@@ -1161,7 +1163,7 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
   border: 1px solid var(--_color-border);
   border-bottom-color: var(--_color-border-bottom);
   &::placeholder {
-    color: var(--color-input);
+    color: var(--color-outline);
     opacity: 1;
   }
   --_icon-background-image: none;
@@ -1283,7 +1285,7 @@ input[type="range"] {
   --_size-track: 4px;
   --_color-border: var(--color-border);
   --_color-thumb: var(--color-brand);
-  --_color-track: var(--color-input);
+  --_color-track: var(--color-outline);
   appearance: none;
   background: transparent;
   padding: calc(var(--_size-thumb) / 2 - var(--_size-track) / 2) 0;

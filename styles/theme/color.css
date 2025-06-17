@@ -1,21 +1,23 @@
 @theme {
   --color-card: var(--color-white);
-  --color-panel: var(--color-white);
+  --color-panel: var(--color-neutral-50);
   --color-page: var(--color-neutral-100);
 
   --color-border: var(--color-neutral-300);
-  --color-input: var(--color-neutral-500);
+  --color-outline: var(--color-neutral-500);
 
   --color-muted: var(--color-neutral-600);
   --color-body: var(--color-neutral-800);
   --color-heading: var(--color-neutral-900);
 
+  --color-link: var(--color-blue-500);
   --color-brand: var(--color-blue-500);
+  /* this complex color function produces either black or white based on the brand color */
   --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-  --color-link: var(--color-blue-500);
 
+  --color-input: var(--color-white);
   --color-rest: var(--color-panel);
   --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
   --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
@@ -24,23 +26,25 @@
 @variant dark {
   color-scheme: dark;
 
-  --color-card: var(--color-neutral-900);
-  --color-panel: var(--color-neutral-800);
+  --color-card: var(--color-neutral-800);
+  --color-panel: var(--color-neutral-900);
   --color-page: var(--color-neutral-950);
 
   --color-border: var(--color-neutral-700);
-  --color-input: var(--color-neutral-500);
+  --color-outline: var(--color-neutral-500);
 
   --color-muted: var(--color-neutral-500);
   --color-body: var(--color-neutral-300);
   --color-heading: var(--color-white);
 
+  --color-link: var(--color-blue-400);
   --color-brand: var(--color-blue-500);
+  /* this complex color function produces either black or white based on the brand color */
   --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-  --color-link: var(--color-blue-400);
 
+  --color-input: var(--color-neutral-900);
   --color-rest: var(--color-panel);
   --color-hover: oklch(from var(--color-rest) calc(l * 1.1) c h);
   --color-selected: oklch(from var(--color-rest) calc(l * 0.9) c h);

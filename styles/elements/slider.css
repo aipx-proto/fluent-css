@@ -3,7 +3,7 @@ input[type="range"] {
   --_size-track: 4px;
   --_color-border: var(--color-border);
   --_color-thumb: var(--color-brand);
-  --_color-track: var(--color-input);
+  --_color-track: var(--color-outline);
 
   appearance: none;
   background: transparent;
