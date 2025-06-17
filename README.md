@@ -18,7 +18,6 @@
 
 ## Transition to Fluent
 
-- size
 - intent 
 - disabled
 - dialog is broken

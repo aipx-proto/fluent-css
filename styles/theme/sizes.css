@@ -12,7 +12,7 @@
   --radius-4xl: 32px;
 
   --rounded-default: var(--radius-md);
-  
+
   --spacing: 4px;
 
   --h-default: calc(var(--spacing) * 8);
@@ -30,7 +30,8 @@
   font-size: var(--text-default);
 }
 .size-md {
-  /* Default */
+  /* Default @theme */
+  font-size: var(--text-default);
 }
 .size-lg {
   --h-default: calc(var(--spacing) * 10);

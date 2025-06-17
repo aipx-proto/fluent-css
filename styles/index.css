@@ -12,7 +12,7 @@
 
 @import "./theme/font.css" layer(theme);
 @import "./theme/elevation.css" layer(theme);
-@import "./theme/shapes.css" layer(theme);
+@import "./theme/sizes.css" layer(theme);
 @import "./theme/transition.css" layer(theme);
 
 @import "./theme/mirai-theme.css" layer(theme);

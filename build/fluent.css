@@ -852,6 +852,9 @@
     --h-icon: calc(var(--spacing) * 3);
     font-size: var(--text-default);
   }
+  .size-md {
+    font-size: var(--text-default);
+  }
   .size-lg {
     --h-default: calc(var(--spacing) * 10);
     --text-default: var(--text-lg);
