@@ -30,7 +30,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --size-icon: var(--size-icon);
   --text-sm: var(--text-sm);
   --text-base: var(--text-base);
-  --border-radius: var(--border-radius);
   --text-xs--line-height: var(--text-xs--line-height);
   --text-sm--line-height: var(--text-sm--line-height);
   --text-base--line-height: var(--text-base--line-height);
@@ -368,6 +367,7 @@ This file is used to trick tailwind into using all custom properties in the code
   --color-stone-800: var(--color-stone-800);
   --color-stone-900: var(--color-stone-900);
   --color-stone-950: var(--color-stone-950);
+  --border-radius: var(--border-radius);
   --color-background: var(--color-background);
   --sizeOffset: var(--sizeOffset);
   --border-radiusRound: var(--border-radiusRound);

@@ -217,7 +217,7 @@
     </nav>
     <span class="header__metadata">
       <span>Theme</span>
-      <button id="theme-toggle" class="appearance-subtle size-small shape-square" style="margin-left:-8px"
+      <button id="theme-toggle" class="appearance-subtle size-small" style="margin-left:-8px"
         onclick="toggleTheme()">Dark</button>
 
     </span>
@@ -590,9 +590,9 @@
           <button class="size-large">Large</button>
         </div>
         <div class="button__shape">
-          <button class="shape-square">Square</button>
-          <button class="shape-rounded">Rounded</button>
-          <button class="shape-circular">Circular</button>
+          <button class="rounded-none">Square</button>
+          <button>Rounded</button>
+          <button class="rounded-full">Circular</button>
         </div>
         <div class="button__states">
           <button>Default</button>
@@ -633,7 +633,7 @@
             <button>Button 2</button>
             <button>Button 3</button>
           </div>
-          <div class="button-group size-small shape-square appearance-outline">
+          <div class="button-group size-small appearance-outline">
             <button>Size Small</button>
             <button>Appearance Outline</button>
             <button class="selected">Selected</button>
@@ -666,9 +666,9 @@
           <input type="text" placeholder="Large" class="size-large" />
         </div>
         <div>
-          <input type="text" placeholder="Square" class="shape-square" />
-          <input type="text" placeholder="Rounded" class="shape-rounded" />
-          <input type="text" placeholder="Circular" class="shape-circular" />
+          <input type="text" placeholder="Square" class="rounded-none" />
+          <input type="text" placeholder="Rounded" class="rounded-md" />
+          <input type="text" placeholder="Circular" class="rounded-full" />
         </div>
         <div>
           <input type="number" placeholder="000" />
@@ -920,33 +920,26 @@
                 flex: 1 1 auto;
               }
             </style>
-            <button class="icon-only shape-square" popovertarget="popover-above-start"
+            <button class="icon-only" popovertarget="popover-above-start"
               style="grid-column: 2; grid-row: 1;">AS</button>
-            <button class="icon-only shape-square" popovertarget="popover-above"
-              style="grid-column: 3; grid-row: 1;">A</button>
-            <button class="icon-only shape-square" popovertarget="popover-above-end"
-              style="grid-column: 4; grid-row: 1;">AE</button>
+            <button class="icon-only" popovertarget="popover-above" style="grid-column: 3; grid-row: 1;">A</button>
+            <button class="icon-only" popovertarget="popover-above-end" style="grid-column: 4; grid-row: 1;">AE</button>
 
-            <button class="icon-only shape-square" popovertarget="popover-before-top"
+            <button class="icon-only" popovertarget="popover-before-top"
               style="grid-column: 1; grid-row: 2;">BT</button>
-            <button class="icon-only shape-square" popovertarget="popover-before"
-              style="grid-column: 1; grid-row: 3;">B</button>
-            <button class="icon-only shape-square" popovertarget="popover-before-bottom"
+            <button class="icon-only" popovertarget="popover-before" style="grid-column: 1; grid-row: 3;">B</button>
+            <button class="icon-only" popovertarget="popover-before-bottom"
               style="grid-column: 1; grid-row: 4;">BB</button>
 
-            <button class="icon-only shape-square" popovertarget="popover-after-top"
-              style="grid-column: 5; grid-row: 2;">AT</button>
-            <button class="icon-only shape-square" popovertarget="popover-after"
-              style="grid-column: 5; grid-row: 3;">A</button>
-            <button class="icon-only shape-square" popovertarget="popover-after-bottom"
+            <button class="icon-only" popovertarget="popover-after-top" style="grid-column: 5; grid-row: 2;">AT</button>
+            <button class="icon-only" popovertarget="popover-after" style="grid-column: 5; grid-row: 3;">A</button>
+            <button class="icon-only" popovertarget="popover-after-bottom"
               style="grid-column: 5; grid-row: 4;">AB</button>
 
-            <button class="icon-only shape-square" popovertarget="popover-below-start"
+            <button class="icon-only" popovertarget="popover-below-start"
               style="grid-column: 2; grid-row: 5;">BS</button>
-            <button class="icon-only shape-square" popovertarget="popover-below"
-              style="grid-column: 3; grid-row: 5;">B</button>
-            <button class="icon-only shape-square" popovertarget="popover-below-end"
-              style="grid-column: 4; grid-row: 5;">BE</button>
+            <button class="icon-only" popovertarget="popover-below" style="grid-column: 3; grid-row: 5;">B</button>
+            <button class="icon-only" popovertarget="popover-below-end" style="grid-column: 4; grid-row: 5;">BE</button>
           </div>
 
           <div id="popover-above-start" class="position-above-start" popover>Above start</div>

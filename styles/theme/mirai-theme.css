@@ -23,16 +23,5 @@
     --size-padding: 16px;
     --size-icon: 20px;
   }
-
-  .shape-square {
-    --border-radius: var(--radius-sm);
-  }
-  :root,
-  .shape-rounded {
-    --border-radius: var(--radius-md);
-  }
-  .shape-circular {
-    --border-radius: var(--radius-4xl);
-  }
 }
 

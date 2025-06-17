@@ -860,15 +860,6 @@
       --size-padding: 16px;
       --size-icon: 20px;
     }
-    .shape-square {
-      --border-radius: var(--radius-sm);
-    }
-    :root, .shape-rounded {
-      --border-radius: var(--radius-md);
-    }
-    .shape-circular {
-      --border-radius: var(--radius-4xl);
-    }
   }
 }
 @layer components {
@@ -1487,9 +1478,6 @@
     }
     &.size-large {
       --_size-height: 4px;
-    }
-    &.shape-square {
-      border-radius: 0;
     }
   }
   progress:where(:not(.spinner)):indeterminate {

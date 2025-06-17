@@ -20,10 +20,6 @@ meter {
   &.size-large {
     --_size-height: 4px;
   }
-
-  &.shape-square {
-    border-radius: 0;
-  }
 }
 
 progress:where(:not(.spinner)):indeterminate {
