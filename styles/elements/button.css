@@ -23,7 +23,7 @@ select.button,
   min-height: var(--size-height);
   padding: 0 var(--size-padding);
 
-  background-color: var(--color-rest);
+  background-color: var(--color-input);
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
 
@@ -77,6 +77,8 @@ select.button,
     --color-rest: transparent;
     --color-hover: transparent;
     --color-selected: transparent;
+
+    padding: 0;
     &:hover {
       color: var(--color-link);
     }

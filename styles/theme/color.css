@@ -18,9 +18,9 @@
   );
 
   --color-input: var(--color-white);
-  --color-rest: var(--color-panel);
-  --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
-  --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
+  --color-rest: oklch(0 0 0 / 0.04);
+  --color-hover: oklch(0 0 0 / 0.06);
+  --color-selected: oklch(0 0 0 / 0.12);
 }
 
 @variant dark {
@@ -45,7 +45,7 @@
   );
 
   --color-input: var(--color-neutral-900);
-  --color-rest: var(--color-panel);
-  --color-hover: oklch(from var(--color-rest) calc(l * 1.1) c h);
-  --color-selected: oklch(from var(--color-rest) calc(l * 0.9) c h);
+  --color-rest: oklch(0 0 0 / 0.15);
+  --color-hover: oklch(0 0 0 / 0.25);
+  --color-selected: oklch(0 0 0 / 0.35);
 }

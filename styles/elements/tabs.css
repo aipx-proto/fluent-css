@@ -138,7 +138,7 @@
     color: var(--color-heading);
 
     .appearance-subtle & {
-      background-color: var(--color-panel);
+      background-color: var(--color-rest);
     }
 
     &:after {
