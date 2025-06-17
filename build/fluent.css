@@ -297,23 +297,6 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-card: var(--color-white);
-    --color-panel: var(--color-neutral-50);
-    --color-page: var(--color-neutral-100);
-    --color-border: var(--color-neutral-300);
-    --color-outline: var(--color-neutral-500);
-    --color-muted: var(--color-neutral-600);
-    --color-body: var(--color-neutral-800);
-    --color-heading: var(--color-neutral-900);
-    --color-link: var(--color-blue-500);
-    --color-brand: var(--color-blue-500);
-    --color-onbrand: hwb(
-    from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
-  );
-    --color-input: var(--color-white);
-    --color-selected: oklch(0 0 0 / 0.04);
-    --color-hover: oklch(0 0 0 / 0.06);
-    --color-active: oklch(0 0 0 / 0.12);
     --l-0: 100%;
     --l-50: 98.5%;
     --l-100: 97%;
@@ -352,6 +335,23 @@
     --zinc: #394146;
     --neutral: #393939;
     --stone: #7a7574;
+    --color-card: var(--color-white);
+    --color-panel: var(--color-neutral-50);
+    --color-page: var(--color-neutral-100);
+    --color-border: var(--color-neutral-300);
+    --color-outline: var(--color-neutral-500);
+    --color-muted: var(--color-neutral-600);
+    --color-body: var(--color-neutral-800);
+    --color-heading: var(--color-neutral-900);
+    --color-link: var(--color-blue-500);
+    --color-brand: var(--color-blue-500);
+    --color-onbrand: hwb(
+    from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
+  );
+    --color-input: var(--color-white);
+    --color-selected: oklch(0 0 0 / 0.04);
+    --color-hover: oklch(0 0 0 / 0.06);
+    --color-active: oklch(0 0 0 / 0.12);
     --text-md: var(--text-base);
     --font-numeric: var(--font-mono);
     --font-heavyweight: 600;
@@ -777,6 +777,8 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   src: local("Segoe UI Bold"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
   font-weight: 700;
 }
+@layer theme;
+@layer theme;
 @layer theme {
   .dark, .dark * {
     color-scheme: dark;
@@ -799,8 +801,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
     --color-active: oklch(0 0 0 / 0.35);
   }
 }
-@layer theme;
-@layer theme;
 @layer theme;
 @layer theme {
   :where(.dark, .dark *) {
@@ -1128,7 +1128,6 @@ input[type="checkbox"].switch {
   cursor: pointer;
   height: var(--_size-dimension);
   width: calc(var(--_size-dimension) * 2);
-  outline: none !important;
   label & {
     vertical-align: middle;
   }

@@ -6,9 +6,9 @@
 
 @import "./font-segoe/font-segoe.css";
 
-@import "./theme/color.css" layer(theme);
-@import "./theme/color-shared.css" layer(theme);
+@import "./theme/color-palette.css" layer(theme);
 @import "./theme/color-generated.css" layer(theme);
+@import "./theme/color-theme.css" layer(theme);
 
 @import "./theme/font.css" layer(theme);
 @import "./theme/elevation.css" layer(theme);
