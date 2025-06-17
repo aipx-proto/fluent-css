@@ -108,12 +108,19 @@ a.button {
 }
 
 select.button {
+  --_icon-background-image: var(--icon-chevron-down);
+  --_icon-background-position: right calc(var(--size-padding) - 4px) center;
+  --_icon-background-size: var(--size-icon);
+  --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
+    no-repeat;
+  --_icon-padding-right: calc(var(--size-icon) + var(--size-padding));
+
   appearance: none;
-  background-image: var(--icon-chevron-down);
-  background-position: right var(--size-padding) center;
+  background-image: var(--_icon-background-image);
+  background-position: var(--_icon-background-position);
+  background-size: var(--_icon-background-size);
   background-repeat: no-repeat;
-  background-size: 16px;
-  padding-right: calc(var(--size-padding) + 16px + 4px);
+  padding-right: var(--_icon-padding-right);
 }
 
 input[type="file"] {

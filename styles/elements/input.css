@@ -42,12 +42,11 @@ input:where(:not([type])),
   }
 
   --_icon-background-image: none;
-  --_icon-background-position: right var(--size-padding) center;
+  --_icon-background-position: right calc(var(--size-padding) - 4px) center;
   --_icon-background-size: var(--size-icon);
   --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
     no-repeat;
-  --_icon-padding-right: calc(var(--size-padding) * 1 + var(--size-icon));
-
+  --_icon-padding-right: calc(var(--size-icon) + var(--size-padding));
 
   --_focus-underline-background-position: 50% calc(100% + 2px);
   --_focus-underline-background-size-x: 0%;
@@ -150,7 +149,7 @@ input[type="color"] {
 
 select:where(:not(.button)) {
   --_icon-background-image: var(--icon-chevron-down);
-  padding-right: calc(var(--size-padding) + 16px + 4px);
+  padding-right: var(--_icon-padding-right);
   appearance: none;
 }
 

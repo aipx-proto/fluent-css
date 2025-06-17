@@ -1007,12 +1007,18 @@ a.button {
   text-decoration: none;
 }
 select.button {
+  --_icon-background-image: var(--icon-chevron-down);
+  --_icon-background-position: right calc(var(--size-padding) - 4px) center;
+  --_icon-background-size: var(--size-icon);
+  --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
+    no-repeat;
+  --_icon-padding-right: calc(var(--size-icon) + var(--size-padding));
   appearance: none;
-  background-image: var(--icon-chevron-down);
-  background-position: right var(--size-padding) center;
+  background-image: var(--_icon-background-image);
+  background-position: var(--_icon-background-position);
+  background-size: var(--_icon-background-size);
   background-repeat: no-repeat;
-  background-size: 16px;
-  padding-right: calc(var(--size-padding) + 16px + 4px);
+  padding-right: var(--_icon-padding-right);
 }
 input[type="file"] {
   &::-webkit-file-upload-button {
@@ -1172,11 +1178,11 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
     opacity: 1;
   }
   --_icon-background-image: none;
-  --_icon-background-position: right var(--size-padding) center;
+  --_icon-background-position: right calc(var(--size-padding) - 4px) center;
   --_icon-background-size: var(--size-icon);
   --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
     no-repeat;
-  --_icon-padding-right: calc(var(--size-padding) * 1 + var(--size-icon));
+  --_icon-padding-right: calc(var(--size-icon) + var(--size-padding));
   --_focus-underline-background-position: 50% calc(100% + 2px);
   --_focus-underline-background-size-x: 0%;
   --_focus-underline-linear-gradient: linear-gradient(
@@ -1256,7 +1262,7 @@ input[type="color"] {
 }
 select:where(:not(.button)) {
   --_icon-background-image: var(--icon-chevron-down);
-  padding-right: calc(var(--size-padding) + 16px + 4px);
+  padding-right: var(--_icon-padding-right);
   appearance: none;
 }
 input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"] {

@@ -18,8 +18,11 @@
 
 ## Transition to Fluent
 
-- color background layering
 - appearance - through vars
+- intent 
+- size
+- focus
+- disabled
 - dialog is broken
 - create docs page
 
