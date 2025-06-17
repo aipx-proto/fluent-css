@@ -3,16 +3,13 @@ input[type="radio"] {
   --_color-border: var(--color-outline);
   --_color-background: var(--color-input);
   --_color-checked: var(--color-brand);
-
   --_size-dimension: var(--size-icon);
 
   appearance: none;
   margin: 0;
   width: var(--_size-dimension);
   height: var(--_size-dimension);
-
   cursor: pointer;
-
   border: 1px solid var(--_color-border);
   border-radius: var(--_border-radius);
   background-color: var(--_color-background);
@@ -22,7 +19,6 @@ input[type="radio"] {
   }
 
   position: relative;
-
   &:after {
     content: "";
     display: block;

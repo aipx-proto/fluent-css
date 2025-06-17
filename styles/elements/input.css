@@ -82,7 +82,9 @@ input:where(:not([type])),
     background-color: var(--color-selected);
   }
 
-  outline: transparent solid 2px;
+  &:focus {
+    outline: none;
+  }
 
   .input > & {
     appearance: none;
@@ -127,6 +129,8 @@ input[type="number"] {
 textarea {
   padding-block: 0.5em;
   font-family: var(--font-sans);
+  outline: none;
+
   /* resize: vertical;
   field-sizing: content;
   width: 100%; */

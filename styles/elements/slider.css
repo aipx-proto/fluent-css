@@ -9,6 +9,7 @@ input[type="range"] {
   background: transparent;
   padding: calc(var(--_size-thumb) / 2 - var(--_size-track) / 2) 0;
   margin: 0;
+  outline: none !important;
 
   &::-webkit-slider-container {
     height: var(--_size-track);
@@ -28,5 +29,12 @@ input[type="range"] {
     cursor: ew-resize;
     background: var(--_color-thumb);
     box-shadow: inset 0 0 0 3px var(--color-input);
+  }
+
+  &:focus-visible {
+    &::-webkit-slider-thumb {
+      outline: 2px solid var(--color-body);
+      outline-offset: -1px;
+    }
   }
 }

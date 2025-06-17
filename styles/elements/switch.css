@@ -11,20 +11,17 @@ input[type="checkbox"].switch {
   border: 1px solid var(--_color-border);
   background-color: var(--_color-background);
   border-radius: var(--radius-4xl);
-
   appearance: none;
-  position: relative;
   margin: 0;
-
   cursor: pointer;
-
   height: var(--_size-dimension);
   width: calc(var(--_size-dimension) * 2);
-
+  
   label & {
     vertical-align: middle;
   }
-
+  
+  position: relative;
   &:after {
     content: "";
     display: block;
