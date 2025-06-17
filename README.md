@@ -1,4 +1,3 @@
-
 # Fluent.css
 
 **An attempt at an LLM-first design system**
@@ -18,14 +17,15 @@
 # TODOs
 
 ## Transition to Fluent
-- table
-- color background layering 
+
+- color background layering
 - appearance - through vars
-- table interactive
+- dialog is broken
 
 ## Naming `@component` classes & `@utilities`
-- Naming conventions from tailwind component libraries 
-  - tailwind v3 components (which i can find no record of) 
+
+- Naming conventions from tailwind component libraries
+  - tailwind v3 components (which i can find no record of)
   - [Daisy UI](https://daisyui.com/)
   - Fluent: [React](https://react.fluentui.dev/), [General](https://fluent2.microsoft.design/), [Web Component](https://web-components.fluentui.dev/), [Theme](https://react.fluentui.dev/iframe.html?viewMode=docs&id=theme-theme-designer--docs)
 - Format - .component .component-variant .utility-variant
@@ -41,7 +41,7 @@
   - input range - (aka slider)
   - .switch - input[type="checkbox"] (aka toggle)
   - .spinner - progress[indeterminate] (aka progress bar)
-  - .dialog - dialog - .dialog-dismiss-btn  (aka modal)
+  - .dialog - dialog - .dialog-dismiss-btn (aka modal)
   - .select - select select.btn select.input (aka dropdown)
   - details, summary (aka accordion) .marker-end
   - [popover] (.tooltip) .popover-position
@@ -57,20 +57,22 @@
     - .message (aka message bar, notice)
     - .skeleton
     - .dialog-drawer
+    - table interactive
 
-## Bugs
+## Bugs & Improvements
+
 - `.icon-only` should apply to all children of groups...
 - `button.appearance-primary` doesn't work in `.input-group`
 - add default flex size to radio checkbox spinner icon and other things that are a fixed size
 - fix label > disabled in disabled.css
 - default inline-flex for more things like `label:has(input[type=checkbox], input[type=radio])`
-- use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`? 
+- use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
 - transparent backgrounds? Maybe they would be better as they'd work in more random scenarios?
 - icons for input types - search, date, numeric
 
 ## Icons?
+
 - icons with svg use external
 - with [fluent icons font and css file](https://github.com/microsoft/fluentui-system-icons/blob/cd860cfdb9c60f6b731f6164b21e04909b23178e/fonts/FluentSystemIcons-Resizable.css)?
 - Icons in input: wrapper element that z-indexes input at the back and a before and after element for icons and buttons
-

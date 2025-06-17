@@ -544,14 +544,8 @@
   .table {
     display: table;
   }
-  .transform {
-    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
   .flex-wrap {
     flex-wrap: wrap;
-  }
-  .rounded {
-    border-radius: 0.25rem;
   }
   .border {
     border-style: var(--tw-border-style);
@@ -1678,41 +1672,18 @@ dialog {
 }
 table {
   --_border-radius: var(--radius-md);
+  --_color-border: var(--color-border);
+  --_color-background: var(--color-background);
   border-collapse: separate !important;
   border-spacing: 0 !important;
   border-radius: var(--_border-radius);
-  border: solid 1px var(--color-border);
+  background-color: var(--_color-background);
   width: 100%;
 }
 th, td {
   text-align: left;
   border-bottom: solid 1px var(--color-border);
-  padding: 12px 16px;
-}
-th {
-  background-color: var(--color-control);
-  padding: 8px 16px;
-}
-table > :last-child tr:last-child {
-  & th, & td {
-    border-bottom: none;
-    &:first-child {
-      border-bottom-left-radius: var(--_border-radius);
-    }
-    &:last-child {
-      border-bottom-right-radius: var(--_border-radius);
-    }
-  }
-}
-table > :first-child tr:first-child {
-  & th, & td {
-    &:first-child {
-      border-top-left-radius: var(--_border-radius);
-    }
-    &:last-child {
-      border-top-right-radius: var(--_border-radius);
-    }
-  }
+  padding: 12px var(--size-padding);
 }
 .tablist {
   display: flex;
@@ -1848,26 +1819,6 @@ label[role="tab"] {
   cursor: not-allowed;
   opacity: var(--opacity-disabled);
 }
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -1880,11 +1831,6 @@ label[role="tab"] {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
     }
