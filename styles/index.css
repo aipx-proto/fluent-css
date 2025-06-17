@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "./theme/variants.css";
 
-@import "tailwindcss/preflight";
-/* @import "./elements/reset.css"; */
+@import "tailwindcss/preflight" layer(base);
+/* @import "./elements/reset.css" layer(base);  */
 
 @import "./font-segoe/font-segoe.css";
 
@@ -15,32 +15,32 @@
 @import "./theme/shapes.css" layer(theme);
 @import "./theme/transition.css" layer(theme);
 
-@import "./theme/mirai-theme.css";
+@import "./theme/mirai-theme.css" layer(theme);
 
-@import "./elements/base.css";
-@import "./elements/typography.css";
-@import "./elements/icons.css";
-@import "./elements/scrollbar.css";
+@import "./elements/base.css" layer(components);
+@import "./elements/typography.css" layer(components);
+@import "./elements/icons.css" layer(components);
+@import "./elements/scrollbar.css" layer(components);
 
-@import "./elements/button.css";
-@import "./elements/link.css";
-@import "./elements/checkbox-radio.css";
-@import "./elements/switch.css";
-@import "./elements/input.css";
-@import "./elements/button-group.css";
-@import "./elements/slider.css";
-@import "./elements/fieldset.css";
+@import "./elements/button.css" layer(components);
+@import "./elements/link.css" layer(components);
+@import "./elements/checkbox-radio.css" layer(components);
+@import "./elements/switch.css" layer(components);
+@import "./elements/input.css" layer(components);
+@import "./elements/button-group.css" layer(components);
+@import "./elements/slider.css" layer(components);
+@import "./elements/fieldset.css" layer(components);
 
-@import "./elements/progress.css";
-@import "./elements/spinner.css";
+@import "./elements/progress.css" layer(components);
+@import "./elements/spinner.css" layer(components);
 
-@import "./elements/accordion.css";
-@import "./elements/dialog.css";
-@import "./elements/popover.css";
+@import "./elements/accordion.css" layer(components);
+@import "./elements/dialog.css" layer(components);
+@import "./elements/popover.css" layer(components);
 
-@import "./elements/table.css";
-@import "./elements/tabs.css";
-@import "./elements/tabs-hack.css";
+@import "./elements/table.css" layer(components);
+@import "./elements/tabs.css" layer(components);
+@import "./elements/tabs-hack.css" layer(components);
 
-@import "./elements/disabled.css";
-@import "./elements/focus.css";
+@import "./elements/disabled.css" layer(components);
+@import "./elements/focus.css" layer(components);
