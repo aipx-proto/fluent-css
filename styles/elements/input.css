@@ -17,7 +17,7 @@ input:where(:not([type])),
   textarea,
   .input {
 
-  --_color-background: var(--color-page);
+  --_color-background: var(--color-card);
   --_color-border: var(--color-border);
   --_color-border-bottom: var(--color-input);
   --_color-border-focus: var(--color-brand);
@@ -80,7 +80,7 @@ input:where(:not([type])),
   }
   &.appearance-subtle {
     border-color: transparent;
-    background-color: var(--color-control);
+    background-color: var(--color-panel);
   }
 
   outline: transparent solid 2px;

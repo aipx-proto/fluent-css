@@ -2,7 +2,7 @@ dialog {
   color: inherit;
 
   border: 1px solid var(--color-border);
-  background-color: var(--color-page);
+  background-color: var(--color-card);
   box-shadow: var(--shadow-lg);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -34,7 +34,7 @@ dialog {
     
     footer {
       padding: 12px 24px;
-      border-top: 1px solid var(--color-shell);
+      border-top: 1px solid var(--color-page);
       display: flex;
       justify-content: flex-end;
       gap: 12px;

@@ -297,9 +297,9 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-page: var(--color-white);
-    --color-control: var(--color-white);
-    --color-shell: var(--color-neutral-100);
+    --color-card: var(--color-white);
+    --color-panel: var(--color-white);
+    --color-page: var(--color-neutral-100);
     --color-border: var(--color-neutral-300);
     --color-input: var(--color-neutral-500);
     --color-muted: var(--color-neutral-600);
@@ -310,7 +310,7 @@
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
     --color-link: var(--color-blue-500);
-    --color-rest: var(--color-control);
+    --color-rest: var(--color-panel);
     --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
     --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
     --l-0: 100%;
@@ -779,9 +779,9 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 @layer theme {
   .dark, .dark * {
     color-scheme: dark;
-    --color-page: var(--color-neutral-900);
-    --color-control: var(--color-neutral-800);
-    --color-shell: var(--color-neutral-950);
+    --color-card: var(--color-neutral-900);
+    --color-panel: var(--color-neutral-800);
+    --color-page: var(--color-neutral-950);
     --color-border: var(--color-neutral-700);
     --color-input: var(--color-neutral-500);
     --color-muted: var(--color-neutral-500);
@@ -792,7 +792,7 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
     --color-link: var(--color-blue-400);
-    --color-rest: var(--color-control);
+    --color-rest: var(--color-panel);
     --color-hover: oklch(from var(--color-rest) calc(l * 1.1) c h);
     --color-selected: oklch(from var(--color-rest) calc(l * 0.9) c h);
   }
@@ -838,7 +838,7 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   }
 }
 html {
-  background-color: var(--color-shell);
+  background-color: var(--color-page);
 }
 * {
   font-family: inherit;
@@ -895,10 +895,10 @@ code, kbd, pre, samp, tt {
 kbd {
   padding: 2px 4px;
   border-radius: 3px;
-  background-color: var(--color-control);
+  background-color: var(--color-panel);
 }
 pre {
-  background-color: var(--color-control);
+  background-color: var(--color-panel);
   padding: 16px;
   border-radius: var(--radius-md);
   overflow-x: auto;
@@ -1037,7 +1037,7 @@ a:where(:not(.button):not(.tab)) {
 }
 input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
   --_color-border: var(--color-input);
-  --_color-background: var(--color-page);
+  --_color-background: var(--color-card);
   --_color-checked: var(--color-brand);
   --_size-dimension: var(--size-icon);
   appearance: none;
@@ -1101,7 +1101,7 @@ input[type="checkbox"]:where(:not(.switch)) {
   }
 }
 input[type="checkbox"].switch {
-  --_color-background: var(--color-page);
+  --_color-background: var(--color-card);
   --_color-border: var(--color-input);
   --_color-checked: var(--color-brand);
   --_size-thumb: var(--size-icon);
@@ -1145,7 +1145,7 @@ input[type="checkbox"].switch {
   }
 }
 input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.button)), textarea, .input {
-  --_color-background: var(--color-page);
+  --_color-background: var(--color-card);
   --_color-border: var(--color-border);
   --_color-border-bottom: var(--color-input);
   --_color-border-focus: var(--color-brand);
@@ -1196,7 +1196,7 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
   }
   &.appearance-subtle {
     border-color: transparent;
-    background-color: var(--color-control);
+    background-color: var(--color-panel);
   }
   outline: transparent solid 2px;
   .input > & {
@@ -1301,7 +1301,7 @@ input[type="range"] {
     border-radius: var(--radius-4xl);
     cursor: ew-resize;
     background: var(--_color-thumb);
-    box-shadow: inset 0 0 0 3px var(--color-page);
+    box-shadow: inset 0 0 0 3px var(--color-card);
   }
 }
 fieldset {
@@ -1471,7 +1471,7 @@ details {
 dialog {
   color: inherit;
   border: 1px solid var(--color-border);
-  background-color: var(--color-page);
+  background-color: var(--color-card);
   box-shadow: var(--shadow-lg);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -1491,7 +1491,7 @@ dialog {
     }
     footer {
       padding: 12px 24px;
-      border-top: 1px solid var(--color-shell);
+      border-top: 1px solid var(--color-page);
       display: flex;
       justify-content: flex-end;
       gap: 12px;
@@ -1531,7 +1531,7 @@ dialog {
 }
 [popover] {
   border: 1px solid var(--color-border);
-  background-color: var(--color-page);
+  background-color: var(--color-card);
   box-shadow: var(--shadow-lg);
   padding: 8px 12px;
   border-radius: var(--border-radius);
@@ -1791,7 +1791,7 @@ th, td {
     font-weight: var(--font-heavyweight);
     color: var(--color-heading);
     .appearance-subtle & {
-      background-color: var(--color-control);
+      background-color: var(--color-panel);
     }
     &:after {
       transform: scale(1);

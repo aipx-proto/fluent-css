@@ -1,7 +1,7 @@
 @theme {
-  --color-page: var(--color-white);
-  --color-control: var(--color-white);
-  --color-shell: var(--color-neutral-100);
+  --color-card: var(--color-white);
+  --color-panel: var(--color-white);
+  --color-page: var(--color-neutral-100);
 
   --color-border: var(--color-neutral-300);
   --color-input: var(--color-neutral-500);
@@ -16,7 +16,7 @@
   );
   --color-link: var(--color-blue-500);
 
-  --color-rest: var(--color-control);
+  --color-rest: var(--color-panel);
   --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
   --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
 }
@@ -24,9 +24,9 @@
 @variant dark {
   color-scheme: dark;
 
-  --color-page: var(--color-neutral-900);
-  --color-control: var(--color-neutral-800);
-  --color-shell: var(--color-neutral-950);
+  --color-card: var(--color-neutral-900);
+  --color-panel: var(--color-neutral-800);
+  --color-page: var(--color-neutral-950);
 
   --color-border: var(--color-neutral-700);
   --color-input: var(--color-neutral-500);
@@ -41,7 +41,7 @@
   );
   --color-link: var(--color-blue-400);
 
-  --color-rest: var(--color-control);
+  --color-rest: var(--color-panel);
   --color-hover: oklch(from var(--color-rest) calc(l * 1.1) c h);
   --color-selected: oklch(from var(--color-rest) calc(l * 0.9) c h);
 }

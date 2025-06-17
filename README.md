@@ -21,6 +21,7 @@
 - color background layering
 - appearance - through vars
 - dialog is broken
+- create docs page
 
 ## Naming `@component` classes & `@utilities`
 

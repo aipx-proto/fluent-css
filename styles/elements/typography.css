@@ -102,11 +102,11 @@ tt {
 kbd {
   padding: 2px 4px;
   border-radius: 3px;
-  background-color: var(--color-control);
+  background-color: var(--color-panel);
 }
 
 pre {
-  background-color: var(--color-control);
+  background-color: var(--color-panel);
   padding: 16px;
   border-radius: var(--radius-md);
   overflow-x: auto;
