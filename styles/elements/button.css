@@ -27,26 +27,16 @@ select.button,
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
 
-  &:not(:disabled) {
+  &:not(:disabled):not(.disabled)  {
     &:hover {
       background-color: var(--color-hover);
       transition-duration: var(--duration-hover);
-
-      &.appearance-transparent,
-      &.appearance-subtle {
-        color: var(--text-brand);
-      }
     }
 
     &:active,
     &.selected {
       background-color: var(--color-selected);
       transition-duration: var(--duration-hover);
-
-      &.appearance-transparent,
-      &.appearance-subtle {
-        color: var(--text-brand);
-      }
     }
   }
 
@@ -67,14 +57,29 @@ select.button,
     --_border-radius: var(--border-radius);
   }
 
-  &.appearance-subtle,
-  &.appearance-primary,
+  &.appearance-primary {
+    --color-rest: var(--color-brand);
+    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
+    color: var(--color-onbrand);
+    border-color: transparent;
+    /* @variant dark {} */
+  }
+  &.appearance-outline {
+    background-color: transparent;
+  }
+  &.appearance-subtle {
+    border-color: transparent;
+    background-color: transparent;
+  }
   &.appearance-transparent {
     border-color: transparent;
-  }
-
-  &.appearance-primary {
-    color: var(--text-onbrand);
+    --color-rest: transparent;
+    --color-hover: transparent;
+    --color-selected: transparent;
+    &:hover {
+      color: var(--color-link);
+    }
   }
 
   &.icon-only {

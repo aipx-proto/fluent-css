@@ -306,10 +306,10 @@
     --color-body: var(--color-neutral-800);
     --color-heading: var(--color-neutral-900);
     --color-brand: var(--color-blue-500);
-    --text-onbrand: hwb(
+    --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-    --text-brand: var(--color-blue-500);
+    --color-link: var(--color-blue-500);
     --color-rest: var(--color-control);
     --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
     --color-selected: oklch(from var(--color-rest) calc(l * 0.95) c h);
@@ -785,49 +785,22 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 @layer theme {
   .dark, .dark * {
     color-scheme: dark;
-    --color-page: var(--color-neutral-800);
-    --color-control: var(--color-neutral-900);
+    --color-page: var(--color-neutral-900);
+    --color-control: var(--color-neutral-800);
     --color-shell: var(--color-neutral-950);
     --color-border: var(--color-neutral-700);
-    --color-input: var(--color-neutral-600);
+    --color-input: var(--color-neutral-500);
     --color-muted: var(--color-neutral-500);
     --color-body: var(--color-neutral-300);
     --color-heading: var(--color-white);
     --color-brand: var(--color-blue-500);
-    --text-onbrand: hwb(
+    --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-    --text-brand: var(--color-blue-600);
+    --color-link: var(--color-blue-400);
     --color-rest: var(--color-control);
-    --color-hover: oklch(from var(--color-rest) calc(l * 0.8) c h);
-    --color-selected: oklch(from var(--color-rest) calc(l * 0.65) c h);
-  }
-  .light, .light * {
-    color-scheme: light;
-    .appearance-primary {
-      --color-rest: var(--color-brand);
-      --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
-      --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
-    }
-    .appearance-subtle {
-      --color-rest: var(--color-control);
-    }
-    .appearance-transparent {
-      --color-rest: transparent;
-    }
-  }
-  .dark, .dark * {
-    .appearance-primary {
-      --color-rest: var(--color-brand);
-      --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
-      --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
-    }
-    .appearance-subtle {
-      --color-rest: var(--color-control);
-    }
-    .appearance-transparent {
-      --color-rest: transparent;
-    }
+    --color-hover: oklch(from var(--color-rest) calc(l * 1.1) c h);
+    --color-selected: oklch(from var(--color-rest) calc(l * 0.9) c h);
   }
 }
 @layer theme;
@@ -972,20 +945,14 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
   background-color: var(--color-rest);
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
-  &:not(:disabled) {
+  &:not(:disabled):not(.disabled) {
     &:hover {
       background-color: var(--color-hover);
       transition-duration: var(--duration-hover);
-      &.appearance-transparent, &.appearance-subtle {
-        color: var(--text-brand);
-      }
     }
     &:active, &.selected {
       background-color: var(--color-selected);
       transition-duration: var(--duration-hover);
-      &.appearance-transparent, &.appearance-subtle {
-        color: var(--text-brand);
-      }
     }
   }
   border: 1px solid var(--color-border);
@@ -1000,11 +967,28 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
     }
     --_border-radius: var(--border-radius);
   }
-  &.appearance-subtle, &.appearance-primary, &.appearance-transparent {
+  &.appearance-primary {
+    --color-rest: var(--color-brand);
+    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
+    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
+    color: var(--color-onbrand);
     border-color: transparent;
   }
-  &.appearance-primary {
-    color: var(--text-onbrand);
+  &.appearance-outline {
+    background-color: transparent;
+  }
+  &.appearance-subtle {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  &.appearance-transparent {
+    border-color: transparent;
+    --color-rest: transparent;
+    --color-hover: transparent;
+    --color-selected: transparent;
+    &:hover {
+      color: var(--color-link);
+    }
   }
   &.icon-only {
     padding: 0;
@@ -1047,19 +1031,19 @@ input[type="file"] {
   }
 }
 a:where(:not(.button):not(.tab)) {
-  color: var(--text-brand);
+  color: var(--color-link);
   text-decoration: none;
   &:hover {
-    color: oklch(from var(--text-brand) calc(l * 0.9) c h);
+    color: oklch(from var(--color-link) calc(l * 0.9) c h);
     text-decoration: underline;
   }
   &:active {
-    color: var(--text-brand);
+    color: var(--color-link);
   }
 }
 input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
   --_color-border: var(--color-input);
-  --_color-background: var(--color-control);
+  --_color-background: var(--color-page);
   --_color-checked: var(--color-brand);
   --_size-dimension: var(--size-icon);
   appearance: none;
@@ -1123,7 +1107,7 @@ input[type="checkbox"]:where(:not(.switch)) {
   }
 }
 input[type="checkbox"].switch {
-  --_color-background: var(--color-control);
+  --_color-background: var(--color-page);
   --_color-border: var(--color-input);
   --_color-checked: var(--color-brand);
   --_size-thumb: var(--size-icon);
@@ -1167,7 +1151,7 @@ input[type="checkbox"].switch {
   }
 }
 input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.button)), textarea, .input {
-  --_color-background: var(--color-control);
+  --_color-background: var(--color-page);
   --_color-border: var(--color-border);
   --_color-border-bottom: var(--color-input);
   --_color-border-focus: var(--color-brand);
@@ -1212,6 +1196,13 @@ input:where(:not([type])), input[type="text"], input[type="email"], input[type="
       transition-timing-function: ease-out;
       border-bottom-color: var(--_color-border-focus);
     }
+  }
+  &.appearance-outline {
+    background-color: transparent;
+  }
+  &.appearance-subtle {
+    border-color: transparent;
+    background-color: var(--color-control);
   }
   outline: transparent solid 2px;
   .input > & {
@@ -1340,7 +1331,7 @@ progress:where(:not(.spinner)), meter {
   width: 100%;
   height: var(--_size-height);
   border-radius: var(--border-radiusRound);
-  x: var(--_color-track);
+  background-color: var(--_color-track);
   overflow: hidden;
   &.size-small {
     --_size-height: 1px;
@@ -1745,7 +1736,7 @@ table > :first-child tr:first-child {
 .tab {
   --_size-tab-underline: 3px;
   --_color-tab-underline-hover: var(--color-border);
-  --_color-tab-underline-active: var(--text-brand);
+  --_color-tab-underline-active: var(--color-link);
   --_duration-tab-underline: 0.1s;
   cursor: pointer;
   appearance: none;
@@ -1799,6 +1790,7 @@ table > :first-child tr:first-child {
   }
   &:hover {
     transition-duration: var(--duration-hover);
+    color: var(--color-heading);
     .appearance-subtle & {
       background-color: var(--color-hover);
     }
@@ -1808,6 +1800,7 @@ table > :first-child tr:first-child {
   }
   &:active {
     transition-duration: var(--duration-hover);
+    color: var(--color-heading);
     .appearance-subtle & {
       background-color: var(--color-selected);
     }

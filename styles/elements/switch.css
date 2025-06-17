@@ -1,6 +1,6 @@
 input[type="checkbox"].switch {
 
-  --_color-background: var(--color-control);
+  --_color-background: var(--color-page);
   --_color-border: var(--color-input);
   --_color-checked: var(--color-brand);
   

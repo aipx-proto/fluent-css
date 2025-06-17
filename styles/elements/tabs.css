@@ -23,7 +23,7 @@
 .tab {
   --_size-tab-underline: 3px;
   --_color-tab-underline-hover: var(--color-border);
-  --_color-tab-underline-active: var(--text-brand);
+  --_color-tab-underline-active: var(--color-link);
   --_duration-tab-underline: 0.1s;
 
   cursor: pointer;
@@ -93,6 +93,7 @@
 
   &:hover {
     transition-duration: var(--duration-hover);
+    color: var(--color-heading);
 
     .appearance-subtle & {
       background-color: var(--color-hover);
@@ -106,6 +107,7 @@
   /* pressed */
   &:active {
     transition-duration: var(--duration-hover);
+    color: var(--color-heading);
 
     .appearance-subtle & {
       background-color: var(--color-selected);

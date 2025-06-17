@@ -11,10 +11,10 @@
   --color-heading: var(--color-neutral-900);
 
   --color-brand: var(--color-blue-500);
-  --text-onbrand: hwb(
+  --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-  --text-brand: var(--color-blue-500);
+  --color-link: var(--color-blue-500);
 
   --color-rest: var(--color-control);
   --color-hover: oklch(from var(--color-rest) calc(l * 0.975) c h);
@@ -24,62 +24,24 @@
 @variant dark {
   color-scheme: dark;
 
-  --color-page: var(--color-neutral-800);
-  --color-control: var(--color-neutral-900);
+  --color-page: var(--color-neutral-900);
+  --color-control: var(--color-neutral-800);
   --color-shell: var(--color-neutral-950);
 
   --color-border: var(--color-neutral-700);
+  --color-input: var(--color-neutral-500);
 
-  --color-input: var(--color-neutral-600);
   --color-muted: var(--color-neutral-500);
   --color-body: var(--color-neutral-300);
   --color-heading: var(--color-white);
 
   --color-brand: var(--color-blue-500);
-  --text-onbrand: hwb(
+  --color-onbrand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
-  --text-brand: var(--color-blue-600);
+  --color-link: var(--color-blue-400);
 
   --color-rest: var(--color-control);
-  --color-hover: oklch(from var(--color-rest) calc(l * 0.8) c h);
-  --color-selected: oklch(from var(--color-rest) calc(l * 0.65) c h);
-}
-
-@variant light {
-  color-scheme: light;
-
-  &,
-  .appearance-outline {
-    /* default */
-  }
-  .appearance-primary {
-    --color-rest: var(--color-brand);
-    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
-    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
-  }
-  .appearance-subtle {
-    --color-rest: var(--color-control);
-  }
-  .appearance-transparent {
-    --color-rest: transparent;
-  }
-}
-
-@variant dark {
-  &,
-  .appearance-outline {
-    /* default */
-  }
-  .appearance-primary {
-    --color-rest: var(--color-brand);
-    --color-hover: oklch(from var(--color-brand) calc(l * 0.85) c h);
-    --color-selected: oklch(from var(--color-brand) calc(l * 0.7) c h);
-  }
-  .appearance-subtle {
-    --color-rest: var(--color-control);
-  }
-  .appearance-transparent {
-    --color-rest: transparent;
-  }
+  --color-hover: oklch(from var(--color-rest) calc(l * 1.1) c h);
+  --color-selected: oklch(from var(--color-rest) calc(l * 0.9) c h);
 }
