@@ -1,4 +1,4 @@
-.tablist {
+.tabs {
   display: flex;
   gap: 2px;
   flex-direction: row;
@@ -93,47 +93,30 @@
     height: var(--h-default);
   }
 
-  &:hover {
-    transition-duration: var(--duration-hover);
-    color: var(--color-heading);
-
-    .appearance-subtle & {
-      background-color: var(--color-hover);
-    }
-
-    &:before {
-      opacity: 1;
-    }
-  }
-
-  /* pressed */
-  &:active {
-    transition-duration: var(--duration-hover);
-    color: var(--color-heading);
-
-    .appearance-subtle & {
-      background-color: var(--color-active);
-    }
-  }
-
-  /* disabled */
-  &:disabled,
-  &.disabled,
-  &:has(input[type="radio"]:disabled) {
-    cursor: not-allowed;
-
+  &:not(:disabled):not(.disabled):not(:has(input[type="radio"]:disabled)) {
     &:hover {
+      transition-duration: var(--duration-hover);
+      color: var(--color-heading);
+
       .appearance-subtle & {
-        background-color: unset;
+        background-color: var(--color-hover);
       }
 
       &:before {
-        opacity: 0;
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      transition-duration: var(--duration-hover);
+      color: var(--color-heading);
+
+      .appearance-subtle & {
+        background-color: var(--color-active);
       }
     }
   }
 
-  /* selected tab */
   &.selected,
   &:has(input[type="radio"]:checked) {
     font-weight: var(--font-heavyweight);
@@ -148,10 +131,16 @@
     }
   }
 
-  /* &:has(input[type="radio"]:disabled) {
+  &:disabled,
+  &.disabled,
+  &:has(input[type="radio"]:disabled) {
     cursor: not-allowed;
     opacity: var(--opacity-disabled);
-  } */
+
+    &:before {
+      opacity: 0;
+    }
+  }
 }
 
 a.tab {

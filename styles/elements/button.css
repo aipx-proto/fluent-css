@@ -51,6 +51,12 @@ select.button,
     background-color: var(--_color-selected);
   }
 
+  &:disabled, &.disabled {
+    background-color: var(--color-selected);
+    border-color: transparent;
+    color: inherit;
+  }
+
   .button-group.appearance-primary &,
   &.appearance-primary {
     --_color-background: var(--color-brand);

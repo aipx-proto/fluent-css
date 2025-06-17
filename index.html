@@ -592,7 +592,7 @@
         </div>
         <div class="button__states">
           <button>Default</button>
-          <button disabled>Disabled</button>
+          <button disabled >Disabled</button>
           <button class="selected">Selected</button>
           <span style=" margin: 0 16px">
             <button class="icon-only">×</button>
@@ -697,11 +697,20 @@
             <option value="3">Option 3</option>
           </select>
         </div>
+        <div>
+          <select id="select" name="select" disabled>
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
       </div>
       <div id="textarea" class="section__content">
         <h3 class="section__header">Textarea</h3>
         <div>
           <textarea placeholder="Textarea"></textarea>
+          <textarea placeholder="Textarea" disabled></textarea>
         </div>
       </div>
 
@@ -751,6 +760,16 @@
               </label>
             </div>
           </div>
+          <div class="form__radios">
+            <label>
+              <input type="radio" id="radio1" name="radio" value="1" checked disabled />
+              Checked Disabled
+            </label>
+            <label>
+              <input type="radio" id="radio2" name="radio" value="2" disabled />
+              Unchecked Disabled
+            </label>
+          </div>
         </div>
       </div>
 
@@ -789,7 +808,16 @@
               Small
             </label>
           </div>
-
+          <div class="form__checkboxes">
+            <label>
+              <input type="checkbox" id="checkbox1" name="checkbox1" checked disabled />
+              Checked Disabled
+            </label>
+            <label>
+              <input type="checkbox" id="checkbox3" name="checkbox3" disabled />
+              Unchecked Disabled
+            </label>
+          </div>
         </div>
       </div>
 
@@ -816,6 +844,20 @@
               Large
             </label>
           </div>
+          <div class="form__switch">
+            <label>
+              <input type="checkbox" class="switch size-sm" id="switch1" name="switch1" />
+              Small
+            </label>
+            <label>
+              <input type="checkbox" class="switch size-md" id="switch1" name="switch1" />
+              Medium
+            </label>
+            <label>
+              <input type="checkbox" class="switch size-lg" id="switch1" name="switch1" disabled/>
+              Disabled
+            </label>
+          </div>
         </div>
       </div>
 
@@ -823,6 +865,7 @@
         <h3 class="section__header">Slider</h3>
         <div>
           <input type="range" min="0" max="100" value="50" />
+          <input type="range" min="0" max="100" value="50" disabled />
         </div>
       </div>
 
@@ -1052,7 +1095,7 @@
           }
         </style>
 
-        <nav class="tabs__primary-nav tablist vertical appearance-subtle" style="flex: 0 0 auto;">
+        <nav class="tabs__primary-nav tabs vertical appearance-subtle" style="flex: 0 0 auto;">
           <label class="tab" role="tab" aria-controls="panel-1" for="tab-1">
             <input type="radio" name="tab-group-1" id="tab-1" checked />
             Tab 1
@@ -1065,12 +1108,16 @@
             <input type="radio" name="tab-group-1" id="tab-3" />
             Tab 3
           </label>
+          <label class="tab selected" role="tab" aria-controls="panel-X" for="tab-X">
+            <input type="radio" name="tab-group-1" id="tab-X" disabled />
+            Tab X
+          </label>
         </nav>
 
         <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
           <h3>First Tab Content</h3>
           <p>This is the content of the first tab.</p>
-          <nav class="tablist" role="tablist">
+          <nav class="tabs" role="tablist">
             <label class="tab" role="tab" aria-controls="panel-4" for="tab-4">
               <input type="radio" name="tab-group-2" id="tab-4" checked />
               Nested Tab 4
@@ -1102,7 +1149,7 @@
           <h3>Second Tab Content</h3>
           <p>This is the content of the second tab.</p>
 
-          <nav class="tablist" role="tablist" class="tablist">
+          <nav class="tabs" role="tablist" class="tabs">
             <label class="tab" role="tab" aria-controls="panel-7" for="tab-7">
               <input type="radio" name="tab-group-3" id="tab-7" />
               Nested Tab 7
@@ -1138,12 +1185,12 @@
           }
         </style>
 
-        <nav class="tablist vertical jsTabs">
+        <nav class="tabs vertical jsTabs">
           <a href="#" class="tab selected">Link Tab 1</a>
           <a href="#" class="tab">Link Tab 2</a>
           <a href="#" class="tab disabled">Link Tab 3</a>
         </nav>
-        <nav class="tablist appearance-subtle jsTabs">
+        <nav class="tabs appearance-subtle jsTabs">
           <button class="tab selected">Button Tab 1</button>
           <button class="tab">Button Tab 2</button>
           <button class="tab" disabled>Button Tab 3</button>

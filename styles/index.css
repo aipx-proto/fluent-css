@@ -15,8 +15,6 @@
 @import "./theme/sizes.css" layer(theme);
 @import "./theme/transition.css" layer(theme);
 
-@import "./theme/mirai-theme.css" layer(theme);
-
 @import "./elements/base.css" layer(components);
 @import "./elements/typography.css" layer(components);
 @import "./elements/icons.css" layer(components);

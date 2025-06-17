@@ -52,8 +52,6 @@
 }
 
 label[role="tab"] {
-  cursor: pointer;
-
   /* hide the radio button */
   & input[type="radio"] {
     display: none;

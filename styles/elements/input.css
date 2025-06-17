@@ -75,6 +75,11 @@ input:where(:not([type])),
       border-bottom-color: var(--_color-border-focus);
     }
   }
+  
+  &:disabled, &.disabled, &[readonly] {
+    background-color: transparent;
+    border-color: var(--color-border);
+  }
 
   &.appearance-outline {
     --_color-background: transparent;

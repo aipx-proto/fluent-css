@@ -72,7 +72,12 @@ input[type="checkbox"].switch {
     }
   }
 
-  &:disabled {
-    --_color-checked: var(--_color-border);
+  &:disabled, &.disabled {
+    background-color: var(--color-selected);
+    cursor: not-allowed;
+  }
+
+  label:has(&:disabled, &.disabled) {
+    opacity: var(--opacity-disabled);
   }
 }

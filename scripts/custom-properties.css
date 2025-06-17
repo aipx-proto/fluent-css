@@ -31,7 +31,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --h-icon: var(--h-icon);
   --text-sm: var(--text-sm);
   --text-lg: var(--text-lg);
-  --opacity-disabled: var(--opacity-disabled);
   --text-xs: var(--text-xs);
   --text-xs--line-height: var(--text-xs--line-height);
   --text-sm--line-height: var(--text-sm--line-height);
@@ -97,6 +96,7 @@ This file is used to trick tailwind into using all custom properties in the code
   --color-selected: var(--color-selected);
   --color-hover: var(--color-hover);
   --color-active: var(--color-active);
+  --opacity-disabled: var(--opacity-disabled);
   --color-neutral-950: var(--color-neutral-950);
   --color-neutral-700: var(--color-neutral-700);
   --color-blue-400: var(--color-blue-400);

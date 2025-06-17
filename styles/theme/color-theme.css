@@ -21,6 +21,8 @@
   --color-selected: oklch(0 0 0 / 0.05);
   --color-hover: oklch(0 0 0 / 0.065);
   --color-active: oklch(0 0 0 / 0.12);
+
+  --opacity-disabled: 0.6;
 }
 
 @variant dark {
@@ -48,4 +50,6 @@
   --color-selected: oklch(0 0 0 / 0.4);
   --color-hover: oklch(0 0 0 / 0.5);
   --color-active: oklch(0 0 0 / 0.6);
+
+  --opacity-disabled: 0.6;
 }
