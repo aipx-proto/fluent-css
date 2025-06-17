@@ -697,20 +697,17 @@
             <option value="3">Option 3</option>
           </select>
         </div>
-        <div>
-          <select id="select" name="select" disabled>
-            <option value="" disabled selected>Select an option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+        <!-- <div>
+          <select id="select-disabled" name="select-disabled" disabled>
+            <option value="1">Disabled</option>
           </select>
-        </div>
+        </div> -->
       </div>
       <div id="textarea" class="section__content">
         <h3 class="section__header">Textarea</h3>
         <div>
           <textarea placeholder="Textarea"></textarea>
-          <textarea placeholder="Textarea" disabled></textarea>
+          <!-- <textarea placeholder="Textarea Disabled" disabled></textarea> -->
         </div>
       </div>
 
@@ -760,16 +757,16 @@
               </label>
             </div>
           </div>
-          <div class="form__radios">
+          <!-- <div class="form__radios">
             <label>
-              <input type="radio" id="radio1" name="radio" value="1" checked disabled />
+              <input type="radio" id="radio1-disabled" name="radio" value="1" checked disabled />
               Checked Disabled
             </label>
             <label>
-              <input type="radio" id="radio2" name="radio" value="2" disabled />
+              <input type="radio" id="radio2-disabled" name="radio" value="2" disabled />
               Unchecked Disabled
             </label>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -808,16 +805,16 @@
               Small
             </label>
           </div>
-          <div class="form__checkboxes">
+          <!-- <div class="form__checkboxes">
             <label>
-              <input type="checkbox" id="checkbox1" name="checkbox1" checked disabled />
+              <input type="checkbox" id="checkbox1-disabled" name="checkbox1" checked disabled />
               Checked Disabled
             </label>
             <label>
-              <input type="checkbox" id="checkbox3" name="checkbox3" disabled />
+              <input type="checkbox" id="checkbox3-disabled" name="checkbox3" disabled />
               Unchecked Disabled
             </label>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -832,32 +829,24 @@
           </div>
           <div class="form__switch">
             <label>
-              <input type="checkbox" class="switch size-sm" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-sm" id="switch-small" name="switch-small" />
               Small
             </label>
             <label>
-              <input type="checkbox" class="switch size-md" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-md" id="switch-medium" name="switch-medium" />
               Medium
             </label>
             <label>
-              <input type="checkbox" class="switch size-lg" id="switch1" name="switch1" />
+              <input type="checkbox" class="switch size-lg" id="switch-large" name="switch-large" />
               Large
             </label>
           </div>
-          <div class="form__switch">
+          <!-- <div class="form__switch">
             <label>
-              <input type="checkbox" class="switch size-sm" id="switch1" name="switch1" />
-              Small
-            </label>
-            <label>
-              <input type="checkbox" class="switch size-md" id="switch1" name="switch1" />
-              Medium
-            </label>
-            <label>
-              <input type="checkbox" class="switch size-lg" id="switch1" name="switch1" disabled/>
+              <input type="checkbox" class="switch size-lg" id="switch-disabled" name="switch-disabled" disabled/>
               Disabled
             </label>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -865,7 +854,7 @@
         <h3 class="section__header">Slider</h3>
         <div>
           <input type="range" min="0" max="100" value="50" />
-          <input type="range" min="0" max="100" value="50" disabled />
+          <!-- <input type="range" min="0" max="100" value="50" disabled /> -->
         </div>
       </div>
 
@@ -1108,10 +1097,10 @@
             <input type="radio" name="tab-group-1" id="tab-3" />
             Tab 3
           </label>
-          <label class="tab selected" role="tab" aria-controls="panel-X" for="tab-X">
+          <!-- <label class="tab selected" role="tab" aria-controls="panel-X" for="tab-X">
             <input type="radio" name="tab-group-1" id="tab-X" disabled />
             Tab X
-          </label>
+          </label> -->
         </nav>
 
         <section id="panel-1" role="tabpanel" aria-labelledby="tab-1">
