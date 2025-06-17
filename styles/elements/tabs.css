@@ -1,4 +1,3 @@
-/* [role="tablist"], */
 .tablist {
   display: flex;
   gap: 2px;
@@ -9,7 +8,6 @@
   }
 
   &:not(.vertical) {
-    /* & [role="tab"], */
     & .tab {
       --_negative-margin: calc(var(--size-padding) * -1);
       &:first-child {
@@ -22,7 +20,6 @@
   }
 }
 
-/* [role="tab"], */
 .tab {
   --_size-tab-underline: 3px;
   --_color-tab-underline-hover: var(--color-border);
@@ -133,8 +130,7 @@
   }
 
   /* selected tab */
-  /* &[aria-selected="true"], */
-  &.active,
+  &.selected,
   &:has(input[type="radio"]:checked) {
     font-weight: var(--font-heavyweight);
     color: var(--color-heading);

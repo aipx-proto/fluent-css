@@ -980,7 +980,7 @@ button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type
         color: var(--text-brand);
       }
     }
-    &:active, &.active {
+    &:active, &.selected {
       background-color: var(--color-selected);
       transition-duration: var(--duration-hover);
       &.appearance-transparent, &.appearance-subtle {
@@ -1823,7 +1823,7 @@ table > :first-child tr:first-child {
       }
     }
   }
-  &.active, &:has(input[type="radio"]:checked) {
+  &.selected, &:has(input[type="radio"]:checked) {
     font-weight: var(--font-heavyweight);
     color: var(--color-heading);
     .appearance-subtle & {

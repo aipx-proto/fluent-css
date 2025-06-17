@@ -39,7 +39,7 @@ select.button,
     }
 
     &:active,
-    &.active {
+    &.selected {
       background-color: var(--color-selected);
       transition-duration: var(--duration-hover);
 
