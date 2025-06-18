@@ -1,5 +1,6 @@
 @import "tailwindcss" source(none);
 
+@source "../index.html";
 @source "../build/custom-properties.css";
 @source inline("text-{xs,sm,md,base,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl}");
 @source inline("font-{sans,mono,serif,numeric,normal,semibold,bold}");
@@ -14,8 +15,7 @@
 
 @import "./font-segoe/font-segoe.css";
 
-@import "./theme/color-palette.css" layer(theme);
-@import "./theme/color-generated.css" layer(theme);
+@import "./theme/color-tailwind.css" layer(theme);
 @import "./theme/color-theme.css" layer(theme);
 
 @import "./theme/font.css" layer(theme);
