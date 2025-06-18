@@ -13,7 +13,7 @@ input:where(:not([type])),
   input[type="url"],
   /* input[type="file"], */
   input[type="tel"],
-  select:where(:not(.button)),
+  select:where(:not(.btn)),
   textarea,
   .input {
   &,
@@ -139,12 +139,12 @@ input[type="date"] {
 }
 
 input[type="number"] {
-  --_size-spin-button-gap: 2px;
+  --_size-spin-btn-gap: 2px;
   padding-right: 0;
 
   &::-webkit-inner-spin-button {
-    height: calc(var(--h-default) - var(--_size-spin-button-gap));
-    margin-bottom: var(--_size-spin-button-gap);
+    height: calc(var(--h-default) - var(--_size-spin-btn-gap));
+    margin-bottom: var(--_size-spin-btn-gap);
   }
 }
 
@@ -173,7 +173,7 @@ input[type="color"] {
   }
 }
 
-select:where(:not(.button)) {
+select:where(:not(.btn)) {
   --_icon-background-image: var(--icon-chevron-down);
   padding-right: var(--_icon-padding-right);
   appearance: none;

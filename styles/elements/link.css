@@ -1,4 +1,4 @@
-a:where(:not(.button):not(.tab)) {
+a:where(:not(.btn):not(.tab)) {
   --_color-text: var(--color-link);
   --_color-hover: oklch(from var(--_color-text) calc(l - 0.2) c h);
   --_color-active: var(--color-link);

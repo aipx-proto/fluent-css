@@ -965,7 +965,7 @@
   }
 }
 @layer components {
-  button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type="reset"], a.button, select.button, .button, ::-webkit-file-upload-button {
+  button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type="reset"], a.btn, select.btn, .btn, ::-webkit-file-upload-button {
     &, &.appearance-default {
       --_color-background: var(--color-input);
       --_color-border: var(--color-border);
@@ -1009,7 +1009,7 @@
       border-color: transparent;
       color: inherit;
     }
-    .button-group.appearance-primary &, &.appearance-primary {
+    .btn-group.appearance-primary &, &.appearance-primary {
       --_color-background: var(--color-brand);
       --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
       --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
@@ -1017,17 +1017,17 @@
       --_color-text: var(--color-onbrand);
       --_color-border: transparent;
     }
-    .button-group.appearance-outline &, &.appearance-outline {
+    .btn-group.appearance-outline &, &.appearance-outline {
       --_color-background: transparent;
     }
-    .menu &, .input &, .button-group.appearance-subtle &, &.appearance-subtle {
+    .menu &, .input &, .btn-group.appearance-subtle &, &.appearance-subtle {
       --_color-border: transparent;
       --_color-background: transparent;
       &:hover .icon {
         color: var(--color-brand);
       }
     }
-    .button-group.appearance-transparent &, &.appearance-transparent {
+    .btn-group.appearance-transparent &, &.appearance-transparent {
       --_color-border: transparent;
       --_color-background: transparent;
       --_color-hover: transparent;
@@ -1055,10 +1055,10 @@
       font-weight: var(--font-normal);
     }
   }
-  a.button {
+  a.btn {
     text-decoration: none;
   }
-  select.button, .button.select {
+  select.btn, .btn.select {
     --_icon-background-image: var(--icon-chevron-down);
     --_icon-background-position: right calc(var(--p-default) - 4px) center;
     --_icon-background-size: var(--h-icon);
@@ -1095,7 +1095,7 @@
   }
 }
 @layer components {
-  a:where(:not(.button):not(.tab)) {
+  a:where(:not(.btn):not(.tab)) {
     --_color-text: var(--color-link);
     --_color-hover: oklch(from var(--_color-text) calc(l - 0.2) c h);
     --_color-active: var(--color-link);
@@ -1281,7 +1281,7 @@
   }
 }
 @layer components {
-  input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.button)), textarea, .input {
+  input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.btn)), textarea, .input {
     &, &.appearance-default {
       --_color-background: var(--color-input);
       --_color-border: var(--color-border);
@@ -1380,11 +1380,11 @@
     font-family: var(--font-mono);
   }
   input[type="number"] {
-    --_size-spin-button-gap: 2px;
+    --_size-spin-btn-gap: 2px;
     padding-right: 0;
     &::-webkit-inner-spin-button {
-      height: calc(var(--h-default) - var(--_size-spin-button-gap));
-      margin-bottom: var(--_size-spin-button-gap);
+      height: calc(var(--h-default) - var(--_size-spin-btn-gap));
+      margin-bottom: var(--_size-spin-btn-gap);
     }
   }
   textarea {
@@ -1404,7 +1404,7 @@
       border-radius: calc(var(--rounded-default) - 4px);
     }
   }
-  select:where(:not(.button)) {
+  select:where(:not(.btn)) {
     --_icon-background-image: var(--icon-chevron-down);
     padding-right: var(--_icon-padding-right);
     appearance: none;
@@ -1417,7 +1417,7 @@
   }
 }
 @layer components {
-  .button-group {
+  .btn-group {
     display: flex;
     gap: 1px;
     & > :not(:first-child):not(:last-child) {

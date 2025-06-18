@@ -18,7 +18,6 @@
 
 ## Transition to Fluent
 
-- proper `@layers`
 - proper `@sources`
 - create docs page
 - icon support

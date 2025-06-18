@@ -2,9 +2,9 @@ button:where(:not(.tab)),
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
-a.button,
-select.button,
-.button,
+a.btn,
+select.btn,
+.btn,
 ::-webkit-file-upload-button {
   &,
   &.appearance-default {
@@ -58,7 +58,7 @@ select.button,
     color: inherit;
   }
 
-  .button-group.appearance-primary &,
+  .btn-group.appearance-primary &,
   &.appearance-primary {
     --_color-background: var(--color-brand);
     --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
@@ -68,14 +68,14 @@ select.button,
     --_color-border: transparent;
   }
 
-  .button-group.appearance-outline &,
+  .btn-group.appearance-outline &,
   &.appearance-outline {
     --_color-background: transparent;
   }
 
   .menu &,
   .input &,
-  .button-group.appearance-subtle &,
+  .btn-group.appearance-subtle &,
   &.appearance-subtle {
     --_color-border: transparent;
     --_color-background: transparent;
@@ -85,7 +85,7 @@ select.button,
     }
   }
 
-  .button-group.appearance-transparent &,
+  .btn-group.appearance-transparent &,
   &.appearance-transparent {
     --_color-border: transparent;
     --_color-background: transparent;
@@ -121,12 +121,12 @@ select.button,
   }
 }
 
-a.button {
+a.btn {
   text-decoration: none;
 }
 
-select.button,
-.button.select {
+select.btn,
+.btn.select {
   --_icon-background-image: var(--icon-chevron-down);
   --_icon-background-position: right calc(var(--p-default) - 4px) center;
   --_icon-background-size: var(--h-icon);
