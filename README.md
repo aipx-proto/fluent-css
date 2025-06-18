@@ -18,6 +18,7 @@
 
 ## Transition to Fluent
 
+- my insane color-palette.css is crushing the browser dev tools...
 - proper `@sources`
 - create docs page
 - icon support

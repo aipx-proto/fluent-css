@@ -55,7 +55,9 @@
   --text-9xl: 128px;
   --text-9xl--line-height: 140px;
 
-  --text-md: var(--text-base); /* alias for consistency */
+  /* alias for consistency */
+  --text-md: var(--text-base);
+  --text-md--line-height: var(--text-base--line-height);
 
   --font-sans: "Segoe UI", system-ui, Roboto, Helvetica Neue, ui-sans-serif, sans-serif;
   --font-mono: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", ui-monospace, monospace;

@@ -5,15 +5,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --duration-rest: var(--duration-rest);
   --duration-hover: var(--duration-hover);
   --duration-active: var(--duration-active);
-  --ease-accelerate-max: var(--ease-accelerate-max);
-  --ease-accelerate-mid: var(--ease-accelerate-mid);
-  --ease-accelerate-min: var(--ease-accelerate-min);
-  --ease-decelerate-max: var(--ease-decelerate-max);
-  --ease-decelerate-mid: var(--ease-decelerate-mid);
-  --ease-decelerate-min: var(--ease-decelerate-min);
-  --ease-ease-max: var(--ease-ease-max);
-  --ease-ease-mid: var(--ease-ease-mid);
-  --ease-ease-min: var(--ease-ease-min);
   --radius-xs: var(--radius-xs);
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
@@ -55,6 +46,7 @@ This file is used to trick tailwind into using all custom properties in the code
   --text-9xl: var(--text-9xl);
   --text-9xl--line-height: var(--text-9xl--line-height);
   --text-md: var(--text-md);
+  --text-md--line-height: var(--text-md--line-height);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
@@ -115,7 +107,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --l-1000: var(--l-1000);
   --h-x: var(--h-x);
   --c-x: var(--c-x);
-  --test: var(--test);
   --red: var(--red);
   --orange: var(--orange);
   --amber: var(--amber);
@@ -138,6 +129,7 @@ This file is used to trick tailwind into using all custom properties in the code
   --zinc: var(--zinc);
   --neutral: var(--neutral);
   --stone: var(--stone);
+  --color-black: var(--color-black);
   --color-red-50: var(--color-red-50);
   --color-red-100: var(--color-red-100);
   --color-red-200: var(--color-red-200);

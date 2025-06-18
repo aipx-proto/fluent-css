@@ -15,6 +15,7 @@
 
   --spacing: 4px;
 
+  /* .size-md */
   --h-default: calc(var(--spacing) * 8);
   --text-default: var(--text-base);
   --p-default: calc(var(--spacing) * 3);
@@ -29,10 +30,6 @@
 
   font-size: var(--text-default);
 }
-.size-md {
-  /* Default @theme */
-  font-size: var(--text-default);
-}
 .size-lg {
   --h-default: calc(var(--spacing) * 10);
   --text-default: var(--text-lg);
@@ -40,4 +37,7 @@
   --h-icon: calc(var(--spacing) * 5);
 
   font-size: var(--text-default);
+}
+.size-md {
+  /* Default @theme */
 }

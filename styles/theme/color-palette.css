@@ -18,8 +18,6 @@
   --h-x: 0;
   --c-x: 50;
 
-  --test: oklch(97.015% 0.00011 271.152);
-
   --red: #d13438; /* fluent-red */
   --orange: #f7630c; /* fluent-orange */
   --amber: #eaa300; /* fluent-marigold */
@@ -43,5 +41,8 @@
   --zinc: #394146; /* fluent-anchor */
   --neutral: #393939; /* fluent-charcoal */
   --stone: #7a7574; /* fluent-beige */
+
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
   
 }
