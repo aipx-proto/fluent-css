@@ -21,6 +21,7 @@
 - proper `@layers`
 - proper `@sources`
 - create docs page
+- icon support
 
 ## Naming `@component` classes & `@utilities`
 
