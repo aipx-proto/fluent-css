@@ -27,9 +27,9 @@ progress.spinner {
   --_color-value: var(--color-brand);
 
   appearance: none;
+  flex: 0 0 auto; 
   width: var(--_size-dimension);
   height: var(--_size-dimension);
-  flex: 0 0 auto; 
 
   overflow: hidden;
   position: relative;

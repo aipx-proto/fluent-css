@@ -21,9 +21,12 @@ input[type="checkbox"].switch {
   cursor: pointer;
   height: var(--_size-dimension);
   width: calc(var(--_size-dimension) * 2);
+  flex: 0 0 auto;
 
-  label & {
-    vertical-align: middle;
+  label:has(&) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
   }
 
   position: relative;

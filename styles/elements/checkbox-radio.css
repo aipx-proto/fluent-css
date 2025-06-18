@@ -12,6 +12,7 @@ input[type="radio"] {
 
   appearance: none;
   margin: 0;
+  flex: 0 0 auto;
   width: var(--_size-dimension);
   height: var(--_size-dimension);
   cursor: pointer;
@@ -19,8 +20,10 @@ input[type="radio"] {
   border-radius: var(--_border-radius);
   background-color: var(--_color-background);
 
-  label & {
-    vertical-align: middle;
+  label:has(&) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
   }
 
   position: relative;
@@ -65,7 +68,8 @@ input[type="radio"] {
     }
   }
 
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     background-color: var(--color-selected);
     cursor: not-allowed;
   }

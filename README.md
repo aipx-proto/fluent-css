@@ -18,13 +18,9 @@
 
 ## Transition to Fluent
 
-- add default flex size to radio checkbox spinner icon and other things that are a fixed size
-- default inline-flex for more things like `label:has(input[type=checkbox], input[type=radio])`
-- create docs page
-
-## Tailwind config
-- proper `@sources`
 - proper `@layers`
+- proper `@sources`
+- create docs page
 
 ## Naming `@component` classes & `@utilities`
 
