@@ -83,7 +83,7 @@ This file is used to trick tailwind into using all custom properties in the code
   --color-link: var(--color-link);
   --color-blue-500: var(--color-blue-500);
   --color-brand: var(--color-brand);
-  --color-onbrand: var(--color-onbrand);
+  --color-contrast-brand: var(--color-contrast-brand);
   --color-input: var(--color-input);
   --color-selected: var(--color-selected);
   --color-hover: var(--color-hover);

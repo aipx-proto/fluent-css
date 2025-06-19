@@ -424,158 +424,16 @@
           <span style="box-shadow: var(--shadow-2xl);">Shadow 64</span>
         </div>
       </div>
-      <div class="section__content" id="color-grid">
-        <h3 class="section__header">Color Palette Grid</h3>
-        <style>
-          .color-grid {
-            display: grid;
-            grid-template-columns: auto repeat(13, 1fr);
-            gap: 1px 0;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            font-size: var(--text-xs);
-            font-family: var(--font-mono);
-          }
 
-          .color-grid__header {
-            background-color: var(--color-card);
-            padding: 8px 4px;
-            text-align: center;
-            font-weight: var(--font-heavyweight);
-            color: var(--color-muted);
-          }
-
-          .color-grid__color {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: var(--font-heavyweight);
-
-            color: white;
-
-            &.b {
-              color: black;
-            }
-          }
-
-          .color-grid__label {
-            background-color: var(--color-card);
-            padding: 8px;
-            font-weight: var(--font-heavyweight);
-            color: var(--color-body);
-            display: flex;
-            align-items: center;
-          }
-        </style>
-        <div class="color-grid" id="color-grid-js"></div>
-        <script>
-          (function () {
-            const colors = [
-              "red", "orange", "amber", "yellow", "lime", "green", "emerald", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "fuchsia", "pink", "rose", "slate", "gray", "zinc", "neutral", "stone"
-            ];
-            const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
-            const grid = document.getElementById('color-grid-js');
-            // Header row
-            grid.innerHTML = [
-              '<div class="color-grid__header"></div>',
-              '<div class="color-grid__header">W</div>',
-              ...shades.map(s => `<div class="color-grid__header">${s}</div>`),
-              '<div class="color-grid__header">B</div>',
-              ...colors.flatMap(color => [
-                `<div class="color-grid__label">${color}</div>`,
-                `<div class="color-grid__color b" style="background-color: var(--color-white);">W</div>`,
-                ...shades.map(shade => {
-                  // Use black text for light shades (<=400), white for others
-                  const isLight = shade <= 400;
-                  const b = isLight ? " b" : "";
-                  return `<div class="color-grid__color${b}" style="background-color: var(--color-${color}-${shade});">${shade}</div>`;
-                }),
-                `<div class="color-grid__color" style="background-color: var(--color-black);">B</div>`,
-
-              ])
-            ].join('');
-          })();
-        </script>
-        <div style="margin: 32px 0;">
-          <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-            <span style="min-width: 120px;">Hue Torsion</span>
-            <input id="hue-x-slider" type="range" min="-50" max="50" value="0" step="1" style="flex: 1;" />
-            <span id="hue-x-value" style="width: 48px; text-align: right;">0</span>
-            <button type="button" id="hue-x-reset" class="appearance-transparent size-sm"
-              style="margin-left: 8px;">Reset</button>
-          </label>
-          <label style="display: flex; align-items: center; gap: 12px;">
-            <span style="min-width: 120px;">Chroma Reduction</span>
-            <input id="chroma-x-slider" type="range" min="0" max="100" value="0" step="1" style="flex: 1;" />
-            <span id="chroma-x-value" style="width: 48px; text-align: right;">0</span>
-            <button type="button" id="chroma-x-reset" class="appearance-transparent size-sm"
-              style="margin-left: 8px;">Reset</button>
-          </label>
-        </div>
-        <script>
-          // Get initial CSS var values for --h-x and --c-x
-          function getInitialCSSVar(name, fallback = 0) {
-            const val = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-            // If not set or not a number, fallback to 0
-            return val === "" ? fallback : val;
-          }
-
-          const initialHue = getInitialCSSVar('--h-x', 0);
-          const initialChroma = getInitialCSSVar('--c-x', 0);
-
-          // Set initial CSS vars to their current values (in case not set inline)
-          document.documentElement.style.setProperty('--h-x', initialHue);
-          document.documentElement.style.setProperty('--c-x', initialChroma);
-
-          const hueSlider = document.getElementById('hue-x-slider');
-          const chromaSlider = document.getElementById('chroma-x-slider');
-          const hueValue = document.getElementById('hue-x-value');
-          const chromaValue = document.getElementById('chroma-x-value');
-          const hueReset = document.getElementById('hue-x-reset');
-          const chromaReset = document.getElementById('chroma-x-reset');
-
-          // Set slider values to match initial CSS var values
-          hueSlider.value = initialHue;
-          chromaSlider.value = initialChroma;
-
-          function updateHueTortion() {
-            const val = hueSlider.value;
-            document.documentElement.style.setProperty('--h-x', val);
-            hueValue.textContent = val;
-          }
-          function updateChromaBump() {
-            const val = chromaSlider.value;
-            document.documentElement.style.setProperty('--c-x', val);
-            chromaValue.textContent = val;
-          }
-
-          hueSlider.addEventListener('input', updateHueTortion);
-          chromaSlider.addEventListener('input', updateChromaBump);
-
-          // Reset buttons
-          hueReset.addEventListener('click', function () {
-            hueSlider.value = initialHue;
-            updateHueTortion();
-          });
-          chromaReset.addEventListener('click', function () {
-            chromaSlider.value = initialChroma;
-            updateChromaBump();
-          });
-
-          // Set initial display
-          updateHueTortion();
-          updateChromaBump();
-        </script>
-
-      </div>
     </section>
 
     <section id="btns" class="section">
       <div id="btn" class="section__content">
         <h3 class="section__header">Button</h3>
         <div class="btn__appearance">
-          <button class="">Default</button>
           <button class="appearance-primary">Primary</button>
+          <button>Default</button>
+          <!-- <button class="appearance-default">Default</button> -->
           <button class="appearance-outline">Outline</button>
           <button class="appearance-subtle">Subtle</button>
           <button class="appearance-transparent">Transparent</button>
