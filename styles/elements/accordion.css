@@ -19,13 +19,14 @@ details {
     &:before {
       content: var(--icon-chevron-down);
       height: var(--_size-marker);
-      width:  var(--_size-marker);
+      width: var(--_size-marker);
       display: inline-block;
       transform: rotate(-90deg);
       transform-origin: center;
       transition: transform var(--_duration-open) ease-in-out;
     }
-
+    
+    .marker-end &,
     &.marker-end {
       justify-content: space-between;
       &:before {
@@ -51,7 +52,7 @@ details {
     transition-timing-function: ease-out;
     transition-behavior: allow-discrete;
   }
-  
+
   &[open]::details-content {
     opacity: 1;
     transform: translateY(0);

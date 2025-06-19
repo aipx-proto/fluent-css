@@ -1736,7 +1736,7 @@
         transform-origin: center;
         transition: transform var(--_duration-open) ease-in-out;
       }
-      &.marker-end {
+      .marker-end &, &.marker-end {
         justify-content: space-between;
         &:before {
           order: 99;

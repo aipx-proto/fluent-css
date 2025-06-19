@@ -6,7 +6,19 @@
 
 ## Usage
 
-...
+Fluent.css is based on the tailwind syntax, and integrates as a tailwind component library. However, *Tailwind is not a required dependency*. This library can be used as a standalone with zero dependencies.
+
+### Components
+
+Fluent.css styles all default html elements into Microsoft Fluent styled components. This includes
+- Button - `<button/>`, `<a class="btn"/>`, `<select class="btn"/>`
+- Button Group - `<div>
+- Input - `<input />`, `<textarea/>`, `<select/>`, `<div class="input"><i class="icon">🔍</i><input/><button>Submit</button></div>`
+- Accordion - `<details/>` & `<summary/>` together (`<details class="marker-end"/>` will place the arrow marker on the right side)
+- 
+
+### Component Utilities
+These class sets apply
 
 ## Development
 
