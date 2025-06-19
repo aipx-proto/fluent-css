@@ -1039,7 +1039,7 @@
 }
 @layer components {
   button:where(:not(.tab)), input[type="button"], input[type="submit"], input[type="reset"], a.btn, select.btn, .btn, ::-webkit-file-upload-button {
-    &, &.appearance-default {
+    &, &.type-default {
       --_color-background: var(--color-input);
       --_color-border: var(--color-border);
       --_color-hover: var(--color-hover);
@@ -1082,7 +1082,7 @@
       border-color: transparent;
       color: inherit;
     }
-    .btn-group.appearance-primary &, &.appearance-primary {
+    .btn-group.type-primary &, &.type-primary {
       --_color-background: var(--color-brand);
       --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
       --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
@@ -1090,17 +1090,17 @@
       --_color-text: var(--color-contrast-brand);
       --_color-border: transparent;
     }
-    .btn-group.appearance-outline &, &.appearance-outline {
+    .btn-group.type-outline &, &.type-outline {
       --_color-background: transparent;
     }
-    .menu &, .input &, .btn-group.appearance-subtle &, &.appearance-subtle {
+    .menu &, .input &, .btn-group.type-subtle &, &.type-subtle {
       --_color-border: transparent;
       --_color-background: transparent;
       &:hover .icon {
         color: var(--color-brand);
       }
     }
-    .btn-group.appearance-transparent &, &.appearance-transparent {
+    .btn-group.type-transparent &, &.type-transparent {
       --_color-border: transparent;
       --_color-background: transparent;
       --_color-hover: transparent;
@@ -1355,7 +1355,7 @@
 }
 @layer components {
   input:where(:not([type])), input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="search"], input[type="color"], input[type="url"],  input[type="tel"], select:where(:not(.btn)), textarea, .input {
-    &, &.appearance-default {
+    &, &.type-default {
       --_color-background: var(--color-input);
       --_color-border: var(--color-border);
       --_color-border-bottom: var(--color-outline);
@@ -1407,18 +1407,18 @@
       background-color: transparent;
       border-color: var(--color-border);
     }
-    &.appearance-outline {
+    &.type-outline {
       --_color-background: transparent;
       &:focus {
         --_color-background: var(--color-input);
       }
     }
-    &.appearance-subtle {
+    &.type-subtle {
       --_color-border: transparent;
       --_color-border-bottom: transparent;
       --_color-background: var(--color-selected);
     }
-    &.appearance-transparent {
+    &.type-transparent {
       --_color-background: transparent;
       --_color-border: transparent;
       padding: 2px;
@@ -1504,7 +1504,7 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    &:not([class*="appearance-"]), &.appearance-default, &.appearance-outline {
+    &:not([class*="type-"]), &.type-default, &.type-outline {
       & > :not(:first-child) {
         margin-left: -2px;
       }
@@ -2070,7 +2070,7 @@
       &:hover {
         transition-duration: var(--duration-hover);
         color: var(--color-heading);
-        .appearance-subtle & {
+        .type-subtle & {
           background-color: var(--color-hover);
         }
         &:before {
@@ -2080,7 +2080,7 @@
       &:active {
         transition-duration: var(--duration-hover);
         color: var(--color-heading);
-        .appearance-subtle & {
+        .type-subtle & {
           background-color: var(--color-active);
         }
       }
@@ -2088,7 +2088,7 @@
     &.selected, &:has(input[type="radio"]:checked) {
       font-weight: var(--font-heavyweight);
       color: var(--color-heading);
-      .appearance-subtle & {
+      .type-subtle & {
         background-color: var(--color-selected);
       }
       &:after {

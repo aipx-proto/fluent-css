@@ -17,7 +17,7 @@ input:where(:not([type])),
   textarea,
   .input {
   &,
-  &.appearance-default {
+  &.type-default {
     --_color-background: var(--color-input);
     --_color-border: var(--color-border);
     --_color-border-bottom: var(--color-outline);
@@ -81,7 +81,7 @@ input:where(:not([type])),
     border-color: var(--color-border);
   }
 
-  &.appearance-outline {
+  &.type-outline {
     --_color-background: transparent;
 
     &:focus {
@@ -89,14 +89,14 @@ input:where(:not([type])),
     }
   }
 
-  &.appearance-subtle {
+  &.type-subtle {
     --_color-border: transparent;
     --_color-border-bottom: transparent;
     --_color-background: var(--color-selected);
   }
 
-  /* &.appearance-underline,*/
-  &.appearance-transparent {
+  /* &.type-underline,*/
+  &.type-transparent {
     --_color-background: transparent;
     --_color-border: transparent;
     padding: 2px;

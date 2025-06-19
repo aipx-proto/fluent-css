@@ -10,8 +10,8 @@ input[type="checkbox"].switch {
   --_color-active: var(--color-active);
   --_color-thumb: var(--color-outline);
 
-  /* &.appearance-subtle { TODO } */
-  /* &.appearance-outline { TODO } */
+  /* &.type-subtle { TODO } */
+  /* &.type-outline { TODO } */
 
   border: 1px solid var(--_color-border);
   background-color: var(--_color-background);

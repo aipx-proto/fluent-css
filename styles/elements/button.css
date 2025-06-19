@@ -7,7 +7,7 @@ select.btn,
 .btn,
 ::-webkit-file-upload-button {
   &,
-  &.appearance-default {
+  &.type-default {
     --_color-background: var(--color-input);
     --_color-border: var(--color-border);
     --_color-hover: var(--color-hover);
@@ -58,8 +58,8 @@ select.btn,
     color: inherit;
   }
 
-  .btn-group.appearance-primary &,
-  &.appearance-primary {
+  .btn-group.type-primary &,
+  &.type-primary {
     --_color-background: var(--color-brand);
     --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
     --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
@@ -68,15 +68,15 @@ select.btn,
     --_color-border: transparent;
   }
 
-  .btn-group.appearance-outline &,
-  &.appearance-outline {
+  .btn-group.type-outline &,
+  &.type-outline {
     --_color-background: transparent;
   }
 
   .menu &,
   .input &,
-  .btn-group.appearance-subtle &,
-  &.appearance-subtle {
+  .btn-group.type-subtle &,
+  &.type-subtle {
     --_color-border: transparent;
     --_color-background: transparent;
 
@@ -85,8 +85,8 @@ select.btn,
     }
   }
 
-  .btn-group.appearance-transparent &,
-  &.appearance-transparent {
+  .btn-group.type-transparent &,
+  &.type-transparent {
     --_color-border: transparent;
     --_color-background: transparent;
     --_color-hover: transparent;

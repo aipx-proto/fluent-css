@@ -18,9 +18,9 @@
 
   /* applies to button.css and input.css */
   /* buttons and inputs with outline should share border rather than have a gap */
-  &:not([class*="appearance-"]),
-  &.appearance-default,
-  &.appearance-outline {
+  &:not([class*="type-"]),
+  &.type-default,
+  &.type-outline {
     & > :not(:first-child) {
       margin-left: -2px;
     }
