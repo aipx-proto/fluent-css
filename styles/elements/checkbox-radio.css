@@ -88,7 +88,7 @@ input[type="radio"] {
     }
   }
 
-  --_border-radius: var(--radius-4xl);
+  --_border-radius: 999px;
   &:after {
     border-radius: var(--_border-radius);
   }

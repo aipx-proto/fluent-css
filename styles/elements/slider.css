@@ -30,7 +30,7 @@ input[type="range"] {
   &::-webkit-slider-container {
     height: var(--_size-track);
     background-color: var(--_color-track);
-    border-radius: var(--radius-4xl);
+    border-radius: 999px;
   }
 
   /* &::-webkit-slider-runnable-track {} */
@@ -41,7 +41,7 @@ input[type="range"] {
     width: var(--_size-thumb);
     height: var(--_size-thumb);
     border: 1px solid var(--_color-border);
-    border-radius: var(--radius-4xl);
+    border-radius: 999px;
     cursor: ew-resize;
     background-color: var(--_color-thumb);
     box-shadow: inset 0 0 0 3px var(--color-input);

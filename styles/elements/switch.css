@@ -1,7 +1,7 @@
 input[type="checkbox"].switch {
   --_size-thumb: var(--h-icon);
   --_size-padding: 2px;
-  --_size-radius: 99px;
+  --_size-radius: 999px;
   --_size-dimension: calc(var(--_size-thumb) + (var(--_size-padding) * 2) + 2px);
 
   --_color-background: var(--color-input);

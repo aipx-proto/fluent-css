@@ -49,7 +49,7 @@
     content: "";
     display: block;
     position: absolute;
-    border-radius: var(--radius-4xl);
+    border-radius: 999px;
     inset: auto var(--p-default) 0 var(--p-default);
     height: var(--_size-tab-underline);
     transform-origin: center;

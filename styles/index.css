@@ -1,10 +1,14 @@
 @import "tailwindcss" source(none);
 
-@source "../index.html";
-@source "../build/custom-properties.css";
+/* @source "../index.html"; */
+/* @source "../build/custom-properties.css"; */
+
 @source inline("text-{xs,sm,md,base,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl}");
 @source inline("font-{sans,mono,serif,numeric,normal,semibold,bold}");
 @source inline("{text,bg,border}-{card,panel,page,border,outline,muted,body,heading,link,brand,contrast-brand,input,selected,hover,active}");
+@source inline("{text,bg,border}-{blue,neutral}-{50,100,200,300,400,500,600,700,800,900,950}");
+@source inline("{text,bg,border}-{black,white}");
+
 @source inline("opacity-disabled");
 @source inline("shadow-{2xs,xs,sm,md,lg,xl,2xl}");
 @source inline("radius-{none,xs,sm,md,lg,xl,2xl,3xl,4xl,full}");
@@ -51,3 +55,5 @@
 @import "./elements/focus.css" layer(components);
 
 @import "./elements/tabs-hack.css";
+
+

@@ -1,4 +1,4 @@
-@theme {
+@theme inline {
   /* https://tailwindcss.com/docs/transition-duration ; */
   --duration-rest: 100ms;
   --duration-hover: 100ms;
