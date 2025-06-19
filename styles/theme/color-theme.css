@@ -13,7 +13,7 @@
   --color-link: var(--color-blue-500);
   --color-brand: var(--color-blue-500);
   /* this complex color function produces either black or white based on the brand color */
-  --color-onbrand: hwb(
+  --color-contrast-brand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
 
@@ -42,7 +42,7 @@
   --color-link: var(--color-blue-400);
   --color-brand: var(--color-blue-500);
   /* this complex color function produces either black or white based on the brand color */
-  --color-onbrand: hwb(
+  --color-contrast-brand: hwb(
     from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
   );
 

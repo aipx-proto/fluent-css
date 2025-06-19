@@ -64,7 +64,7 @@ select.btn,
     --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
     --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
     --_color-selected: oklch(from var(--_color-background) calc(l - 0.1) c h);
-    --_color-text: var(--color-onbrand);
+    --_color-text: var(--color-contrast-brand);
     --_color-border: transparent;
   }
 
