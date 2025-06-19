@@ -1,4 +1,4 @@
-@theme inline {
+@theme {
   --color-card: var(--color-white);
   --color-panel: var(--color-neutral-50);
   --color-page: var(--color-neutral-100);
