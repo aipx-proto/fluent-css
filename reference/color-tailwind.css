@@ -131,9 +131,9 @@
   --color-blue-900: oklch(37.9% 0.146 265.522);
   --color-blue-950: oklch(28.2% 0.091 267.935);
 
-  --color-indigo-50: oklch(96.2% 0.018 272.314);
-  --color-indigo-100: oklch(93% 0.034 272.788);
-  --color-indigo-200: oklch(87% 0.065 274.039);
+  --color-indigo-50:  oklch(96.2% 0.018 272.314);
+  --color-indigo-100: oklch(93%   0.034 272.788);
+  --color-indigo-200: oklch(87%   0.065 274.039);
   --color-indigo-300: oklch(78.5% 0.115 274.713);
   --color-indigo-400: oklch(67.3% 0.182 276.935);
   --color-indigo-500: oklch(58.5% 0.233 277.117);

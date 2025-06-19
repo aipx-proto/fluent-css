@@ -15,7 +15,7 @@
 
 @import "./font-segoe/font-segoe.css";
 
-@import "./theme/color-tailwind.css" layer(theme);
+@import "./theme/color-palette.css" layer(theme);
 @import "./theme/color-theme.css" layer(theme);
 
 @import "./theme/font.css" layer(theme);
