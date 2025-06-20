@@ -1,5 +1,6 @@
 /*! 
-  Fluent.css - https://github.com/aipx-proto/fluent-css 
+  Fluent.css - An LLM-friendly CSS framework
+  Repo: https://github.com/aipx-proto/fluent-css 
   Demo: https://aipx-proto.github.io/fluent-css/
   CDN: https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw
   LLMs.txt: https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw
@@ -54,7 +55,11 @@
 
 @source inline("text-{xs,sm,md,base,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl}");
 
-@source inline("font-{sans,mono,serif,numeric,normal,semibold,bold}");
+@source inline("font-{sans,mono,serif,numeric}");
+
+/* override inline the .font-{weight} classes to avoid adding --tw-font-weight in properties @layer*/
+/* @source inline("font-{normal,semibold,bold}"); */
+@import "./utilities/font-weight.css" layer(utilities.fluent);
 
 @source inline("{text,bg,border}-{card,panel,page,border,outline,muted,body,heading,link,brand,contrast-brand,input,selected,hover,active}");
 
@@ -65,8 +70,8 @@
 
 @source inline("rounded-{none,xs,sm,md,lg,xl,2xl,3xl,4xl,full}");
 
-/* override inline the .shadow-* classes - or it does some funky --tw-shadow-color things */
-@source inline("shadow-{2xs,xs,sm,md,lg,xl,2xl}");
-/* @import "./theme/box-shadow.css" layer(utilities); */
+/* override inline the .shadow-* classes to avoid adding --tw-shadow-* in properties @layer*/
+/* @source inline("shadow-{2xs,xs,sm,md,lg,xl,2xl}"); */
+@import "./utilities/box-shadow.css" layer(utilities.fluent);
 
 @source inline("opacity-disabled");

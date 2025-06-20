@@ -2,7 +2,18 @@
 This file is used to trick tailwind into using all custom properties in the codebase.*/
 
 .ensure-tailwind-import {
-  --tw-shadow-color: var(--tw-shadow-color);
+  --tw-font-weight: var(--tw-font-weight);
+  --tw-shadow-: var(--tw-shadow-);
+  --font-weight-bold: var(--font-weight-bold);
+  --font-weight-normal: var(--font-weight-normal);
+  --font-weight-semibold: var(--font-weight-semibold);
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
   --duration-rest: var(--duration-rest);
   --duration-hover: var(--duration-hover);
   --duration-active: var(--duration-active);
@@ -59,13 +70,6 @@ This file is used to trick tailwind into using all custom properties in the code
   --color-shadow-ambient: var(--color-shadow-ambient);
   --color-shadow-key: var(--color-shadow-key);
   --color-shadow: var(--color-shadow);
-  --shadow-2xs: var(--shadow-2xs);
-  --shadow-xs: var(--shadow-xs);
-  --shadow-sm: var(--shadow-sm);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
   --color-card: var(--color-card);
   --color-white: var(--color-white);
   --color-panel: var(--color-panel);
