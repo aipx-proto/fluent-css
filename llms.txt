@@ -1,3 +1,9 @@
+# Fluent.css
+
+A css-only implementation of Microsoft's Fluent Design Language.
+
+{..summary}
+
 ## Import
 
 Import the fluent.css file from CDN hosting via one of the 2 options:
@@ -16,24 +22,17 @@ Import the fluent.css file from CDN hosting via one of the 2 options:
 
 ---
 
-## Component Usage
-
-### Default HTML element styling
-
-The `fluent.css` file styles all native html elements (`a`, `button`, `input`, `select`, `textarea`, `details`, etc...)
-**DO NOT** apply interactive (`:hover`, `:active`, `:focus`) or visual (`background`, `border`, `color`, `font`, etc..) css styles to these native html elements because they are already styled by fluent.css.
-Applying additional styles will break the visual styling, not improve it.
-
-### Component Class Styling
-
-`fluent.css` also provides class names for several component classes and modifiers.
-
-...
-
 ## Tailwind Integration (Optional)
 
-{...Describe integration}
-{if not using tailwind, skip this section}
+Fluent.css was design to cleanly integrate with tailwind by using the same class syntax, and css @layer definitions. However, tailwind is **NOT** required to use Fluent.css.
+
+### Import tailwind
+
+Import the tailwind browser runtime from CDN hosting in a script tag (unless tailwind is already integrated elsewhere)
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+```
 
 ### Tailwind usage rules
 
@@ -45,65 +44,104 @@ Applying additional styles will break the visual styling, not improve it.
 - **DO NOT** write any inline `style=""` attributes.
 - **DO NOT** apply tailwind classes on any table element: `table`, `thead`, `tr`, `td`, etc...
 
-### Import tailwind
+---
 
-Import the tailwind browser runtime from CDN hosting in a script tag (unless tailwind is already integrated)
+## Component Usage
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-```
+### Default HTML element styling
+
+The `fluent.css` file styles all native html elements (`a`, `button`, `input`, `select`, `textarea`, `details`, etc...) into 'components'.
+
+- **DO NOT** apply visual styles (`background`, `border`, `color`, `font`, etc..) to component elements
+- **DO NOT** apply interactive styles (`:hover`, `:active`, `:focus`) to component elements
+- **DO NOT** style the component elements anyway
+
+Applying additional styles will break the visual styling of these elements, not improve it.
+
+### Component Class Styling
+
+`fluent.css` provides utility classes to modify component elements
+
+#### Type
+
+Use`.type-{type}` where 'type' is any from the following list. For example, `button.type-primary` or `input.type-subtle`
+
+- `.type-default`: applies to all the below elements. The default most common style. (A no-op class. `button.type-default` is equivalent to `button`)
+- `.type-primary`: applies to `button`, `.btn`, `.btn-group`. An emphasis accent blue background for page's primary action. There should only be one per page.
+- `.type-outline`: applies to `button`, `.btn`, `.btn-group`, `input`, `.input` - An outlined button or input with no background color.
+- `.type-subtle`: applies `button`, `.btn`, `.btn-group`, `input`, `.input`, `.tab`, `.tabs` - A less intense version of the component
+- `.type-transparent` - applies to `button`, `.btn`, `.btn-group`, `input`, `.input` - No background color at rest or hover, only foreground color and underline.
+
+Applying 'type' to a parent element will its children. For example, `.tabs.type-subtle` styles all `.tab` children as 'subtle'.
+
+#### Size
+
+`.size-{size}` sizes components up or down. This applies to all component elements in fluent.css, including but not limited to `button`, `input`, `tabs`
+
+- `.size-sm`: makes components and text a _smaller_ size
+- `.size-md`: the default size for all element (A no-op class. `button.size-md` is equivalent to `button`)
+- `.size-lg`: makes components and text a _larger_ size
+
+Applying 'size' to a parent element will its children. For example, `.btn-group.size-small` styles all children as small.
+
+#### State and Interaction
+
+- `.selected`: applies a selected state to `.tab`, `button`, `.btn`, or `.interactive` to show it is active or toggled on. For example `a.tab.selected`. (This is _NOT_ the focus state)
+- `.disabled`: applies a disabled state to elements that do not have a `disabled` attribute. For example, `a.btn.disabled`.
+- `.interactive`: applies interactive `:hover` and `:active` `background-color`s to elements that would not normally be interactive. For example, `div.interactive`. The `.disabled` and `.selected` classes can be used in combination with this class
+
+#### Icon Only Buttons and Tabs
+
+`.icon-only`: applies to `button`, `.btn`, or `.tab` that contain a single icon element child. This give the element a square 1:1 aspect ratio.
+
+Applying `.icon-only` to a parent `.btn-group` or `.tabs` will its children. For example, `.btn-group.icon-only` styles all children as icon-only.
+
+Be sure to add a `title` attribute to all icon-only elements to aid accessibility.
 
 ---
 
-## Icons
-
-For icons, use emoji wrapped in a span: `<span class="emojicon">❤️</span>`.
-
-## Design
-
-## Colors rules
-
-Style the app using the semantic colors and classes provided.
-
-### Semantic colors
-
-Grayscale colors
-
-- `--color-card`: a background color for cards, popovers, tooltips, dialogs, etc. (default `dialog` element `background-color`)
-- `--color-panel`: a background color for for most content panel backgrounds
-- `--color-page`: a background color for for shell, navigation, and other persistent elements in layout (default `html` element `background-color`)
-- `--color-border`: a border color for for dividing content panels or outlining cards. (default `border-color` of `button`, `input`, and `hr` elements)
-- `--color-outline`: an intense border color for calling attention to a layout element. Used infrequently.
-- `--color-muted`: a foreground color for reduced importance text or icon elements
-- `--color-body`: the default foreground color for most text element
-- `--color-heading`: a foreground color for emphasized elements like headings, titles, bolded text, etc. (default `color` of `h1`-`h6` elements)
-
-Accent colors
-
-- `--color-link`: a blue foreground color for hyperlinks (default `color` of `a` elements).
-- `--color-brand`: a blue background color for primary interactive elements (default background-color for `button.type-primary`).
-
-Interaction colors
-
-- `--color-input`: the default background color for input elements like `button` or `input`
-- `--color-selected`: a background color for elements that are toggled-on, selected, or emphasized in a set.
-- `--color-hover`: a background color for `:hover`ed elements
-- `--color-active`: a background color for `:active`/pressed elements
+## Utility Classes
 
 ### Color Classes
 
-All `--color-{variables}` are also available in the standard tailwind utility class syntax of `.{text,bg,border}-{variable}`.
+Style the app using the semantic colors and via the tailwind style utility classes provided.
+**DO NOT** write raw color utility classes like `.bg-neutral-100`. This will break light/dark theming.
 
 - Background colors: use the utility classes: `.bg-page`, `.bg-panel`, and `.bg-card`.
 - Border colors: Primarily use `,border-border`. In specific instances, you may use `.border-page`, `.border-panel`, `.border-card` and `.border-outline`.
 - Text colors: use `.text-heading`, `.text-body`, and `.text-muted`.
 - Accent colors: use `.background-brand` or `.text-link`.
 
-### Light and Dark Themes
+### Semantic Colors
+
+#### Grayscale colors
+
+- `card`: a background color for cards, popovers, tooltips, dialogs, etc. (default `dialog` element `background-color`)
+- `panel`: a background color for for most content panel backgrounds
+- `page`: a background color for for shell, navigation, and other persistent elements in layout (default `html` element `background-color`)
+- `border`: a border color for for dividing content panels or outlining cards. (default `border-color` of `button`, `input`, and `hr` elements)
+- `outline`: an intense border color for calling attention to a layout element. Used infrequently.
+- `muted`: a foreground color for reduced importance text or icon elements
+- `body`: the default foreground color for most text element
+- `heading`: a foreground color for emphasized elements like headings, titles, bolded text, etc. (default `color` of `h1`-`h6` elements)
+
+#### Accent colors
+
+- `link`: a blue foreground color for hyperlinks (default `color` of `a` elements).
+- `brand`: a blue background color for primary interactive elements (default `background-color` for `button.type-primary` and `input[type=checkbox]:checked`).
+
+#### Interaction colors
+
+- `input`: the background color for input elements (default `background-color` of `button` and `input` elements)
+- `selected`: a background color for elements that are toggled-on, selected, or emphasized in a set.
+- `hover`: a background color for `:hover`ed elements
+- `active`: a background color for `:active`/pressed elements
+
+### Light and Dark Theme Classes.
 
 The app is styled in light theme by default. Applying a `.dark` class to a root element will change all the aforementioned semantic colors from light to dark theme.
 
-## Typography Classes
+### Typography Classes
 
 For text properties use the standard tailwind syntax `.text-{utility}`
 
@@ -111,52 +149,100 @@ For text properties use the standard tailwind syntax `.text-{utility}`
 - font weight: `.text-{weight}`, where `weight` can be `normal`, `semibold`, or `bold` (lighter weights are not available). `.text-semibold` for example. Prefer using `semibold` in place of `bold`.
 - font family: `.text-{family}`, where `family` can be `sans`, `mono`, or `serif`. Prefer `sans`.
 
-## Shadow Classes (Elevation)
+### Shadow Classes (Elevation)
 
 - box shadow: use the standard tailwind syntax `.shadow-{size}` where `size` is any of `none`, `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, or `2xl`.
 
-## Border Radius Classes
+### Border Radius Classes
 
 - border radius: use the standard tailwind syntax `.rounded-{size}` where `size` can be any of `none`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, or `full`.
 
+## CSS Variables (custom-properties)
+
+If writing css is allowed (which it is not), all values from the utility classes above are also available as css custom properties in the tailwind @theme syntax
+
+- Color: `--color-{name}` - `color:var(--color-body);` or `background-color:var(--color-panel);` for example
+- Text: `--text-{size,weight,family}` - `font-size:var(--font-sm);`, `font-weight:var(--font-semibold);`, or `font-family:var(--font-mono);` for example
+- Shadow: `--shadow-{size}` - `box-shadow:var(--shadow-xl);` for example
+- Radius: `--radius-{size}` - `border-radius:var(--radius-lg);` for example
+
 ---
 
-**fluent.css classes and component patterns**
+## Icons
+
+For icons, use emoji wrapped in a span: `<span class="emojicon">❤️</span>`.
+
+---
+
+## Component Examples
+
+### Button
 
 ```html
 <!-- a more intense, brand-colored primary button -->
 <button class="type-primary">Primary</button>
 
-<!-- *(default)* - a button with an outline -->
-<button>Outline</button>
+<!-- *(default)* - a typical button -->
+<button>Default</button>
+
+<!-- an outlined button with no background -->
+<button class="type-outline">Outline</button>
 
 <!-- a button with a dark background, and no outline -->
 <button class="type-subtle">Subtle</button>
 
-<!-- a button with no background  -->
+<!-- a button with no background -->
 <button class="type-transparent">Transparent</button>
 
 <!-- displays a icon button with 1:1 aspect ratio -->
-<button class="icon-only">&times;</button>
+<button class="icon-only" title="close">&times;</button>
 
-<!-- All the following elements will appear as buttons -->
+<!-- 
+ All the following elements will appear as buttons.
+ Use the `.btn` class to apply button styles to other elements
+-->
 <input type="reset" value="Input Reset" />
 <input type="submit" value="Input Submit" />
 <a href="#" class="btn">Anchor Button</a>
 <select class="btn">
   <option value="">Select Button</option>
 </select>
+```
 
-<!-- *(default)* - an input with a dark background, and no outline -->
-<input type="text" placeholder="Subtle" />
+### Button Group
 
-<!-- *(default)* - an input with an outline -->
+```html
+<!-- 
+ Display a set of buttons as a single element. USE SPARINGLY.
+ **DO NOT** use this pattern for all button sets.
+ ONLY use this pattern for buttons that are of a toolbar nature or for a "Split Button"
+-->
+<div class="btn-group">
+  <button class="selected">Bold</button>
+  <button>Italic</button>
+  <button>Underline</button>
+</div>
+```
+
+### Text Input
+
+```html
+<!-- *(default)* - a typical text input -->
+<input type="text" placeholder="Default" />
+
+<!-- an input with an outline and no background -->
 <input type="text" placeholder="Outline" class="type-outline" />
 
+<!-- an input with a darker fill and no border -->
+<input type="text" placeholder="Subtle" class="type-subtle" />
+
+<!-- an input with only an underline, no background or border -->
+<input type="text" placeholder="Subtle" class="type-subtle" />
+
 <!-- 
- An `.input` element will appear as visually input (with the child input unstyled). 
+ A `div.input` element will visually appear as an input (with the child input unstyled). 
  This pattern should **only** be used to include buttons, icons or other content inside of an input 
- Please use this pattern instead of tailwind layout where applicable
+ Use this pattern instead of tailwind layout where applicable
  -->
 <div class="input">
   <i class="emojicon">🔍</i>
@@ -164,12 +250,28 @@ For text properties use the standard tailwind syntax `.text-{utility}`
   <button class="size-small">Submit</button>
 </div>
 
+<!-- select elements are styled as inputs by default -->
+<select>
+  <option value="">Select Button</option>
+</select>
+
+<!-- textareas are styled as inputs too -->
+<textarea placeholder="tell me your life story"></textarea>
+```
+
+### Checkbox, Radios, and Switches
+
+```html
 <!-- For the "switch" variant of a standalone checkbox, add the `.switch` class -->
 <label><input type="checkbox" class="switch" checked />Checked</label>
 
 <!-- slider input range element -->
 <input type="range" min="0" max="100" value="50" />
+```
 
+### Loading & Progress Elements
+
+```html
 <!-- the default progress bar -->
 <progress value="33" max="100"></progress>
 
@@ -178,28 +280,102 @@ For text properties use the standard tailwind syntax `.text-{utility}`
 
 <!-- The `.spinner` variation displays a circular spinning loader instead of a progress bar -->
 <progress class="spinner" indeterminate></progress>
+```
 
+### Accordion
+
+```html
 <!-- The "accordion" element is the native `details` and `summary` html elements -->
 <details>
+  <!-- the summary element displays an open/close arrow icon to the left by default -->
   <summary>Accordion Item</summary>
   <p>Content for the accordion item.</p>
 </details>
 
+<details open>
+  <!-- the `.marker-end` class moves the open/close arrow icon to the right side of the element -->
+  <summary class="marker-end">Accordion Item</summary>
+  <p>Content for the accordion item.</p>
+</details>
+```
+
+### Tabs
+
+```html
 <!-- 
  `.tab` can be either button or link elements. 
- `.tab-list` display horizontally by default, or vertically with `vertical`
- PLEASE USE THIS PATTERN FOR TABS, DO NOT RECREATE TABS
+ `.tabs` display horizontally by default, or vertically with `vertical`
+ PLEASE USE THIS PATTERN FOR ALL TABS, DO NOT RECREATE TABS
 -->
 
-<nav class="tab-list">
+<nav class="tabs">
   <button class="tab active">Tab 1</button>
   <button class="tab">Tab 1</button>
   <button class="tab">Tab 1</button>
 </nav>
 
-<nav class="tab-list vertical">
+<nav class="tabs vertical">
   <a href="#" class="tab active">Tab 1</a>
   <a href="#" class="tab">Tab 1</a>
   <a href="#" class="tab">Tab 1</a>
 </nav>
 ```
+
+### Dialog
+
+```html
+<!-- Use dialogs with `header`, `main`, and `footer` elements. -->
+<dialog closedby="any">
+  <header>
+    <h3>Dialog Title</h3>
+    <!-- the `.dialog-close` button is positioned to the top right of the dialog -->
+    <button class="dialog-close type-subtle icon-only">&times;</button>
+  </header>
+  <main>
+    <!-- The `main` element will scroll when overflowing by default -->
+    <p>This is a sample dialog window with some content. Dialogs are modal overlays that require user interaction.</p>
+  </main>
+  <footer>
+    <button class="type-primary">Primary</button>
+    <button>Cancel</button>
+  </footer>
+</dialog>
+```
+
+### Popover and Tooltip
+```html
+<!-- any element with the `popover` attribute will appear as a floating card -->
+<div popover id="tooltip-popover">How to use the system:...</div>
+
+<!-- clicking this button will open the popover, no js required -->
+<button class="icon-only type-subtle" popovertarget="tooltip-popover" title="tooltip"><span class="emojicon">ℹ️</span></button>
+```
+
+### Split Button an Menu Popover
+```html
+<!-- a "Split Button" is a type of compound button with a main action and an overflowing menu of more actions -->
+<div class="btn-group type-primary">
+  <button>Split Button</button>
+  <button class="icon-only" popovertarget="menu-popover" title="Additional Actions">•••</button>
+</div>
+
+<!-- any element with the `.menu` class will display its children as vertical stack of options -->
+<div popover class="menu" id="menu-popover" >
+  <button>Add</button>
+  <button>Edit</button>
+  <button>Duplicate</button>
+  <hr>
+  <button>Remove</button>
+</div>
+```
+
+### Table
+```html
+<table>
+<!-- ... use typical semantic table content `thead`, `tbody`, `tr`, `th`, `th`, etc...  -->
+</table>
+```
+
+
+
+
