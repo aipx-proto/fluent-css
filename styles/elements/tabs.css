@@ -6,19 +6,19 @@
   &.vertical {
     flex-direction: column;
   }
+}
 
-  &:not(.vertical) {
-    & .tab {
-      --_negative-margin: calc(var(--p-default) * -1);
-      &:first-child {
-        margin-left: var(--_negative-margin);
-      }
-      &:last-child {
-        margin-right: var(--_negative-margin);
-      }
-    }
+/*! 
+.tabs:not(.vertical) .tab {
+  --_negative-margin: calc(var(--p-default) * -1);
+  &:first-child {
+    margin-left: var(--_negative-margin);
+  }
+  &:last-child {
+    margin-right: var(--_negative-margin);
   }
 }
+*/
 
 .tab {
   --_size-tab-underline: 3px;

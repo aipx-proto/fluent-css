@@ -1998,23 +1998,23 @@
   }
 }
 @layer components {
+  /*! 
+.tabs:not(.vertical) .tab {
+  --_negative-margin: calc(var(--p-default) * -1);
+  &:first-child {
+    margin-left: var(--_negative-margin);
+  }
+  &:last-child {
+    margin-right: var(--_negative-margin);
+  }
+}
+*/
   .tabs {
     display: flex;
     gap: 2px;
     flex-direction: row;
     &.vertical {
       flex-direction: column;
-    }
-    &:not(.vertical) {
-      & .tab {
-        --_negative-margin: calc(var(--p-default) * -1);
-        &:first-child {
-          margin-left: var(--_negative-margin);
-        }
-        &:last-child {
-          margin-right: var(--_negative-margin);
-        }
-      }
     }
   }
   .tab {

@@ -1,11 +1,12 @@
 {
-  "name": "mirai-css",
-  "version": "0.0.1",
-  "description": "A mirai.css file to style native html components",
-  "main": "index.js",
+  "name": "fluent-css",
+  "version": "0.0.2",
+  "description": "A fluent.css file to style native html components",
+  "author": "James Bradford",
+  "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aipx-proto/mirai-css.git"
+    "url": "git+https://github.com/aipx-proto/fluent-css.git"
   },
   "license": "ISC",
   "scripts": {
