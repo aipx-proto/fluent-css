@@ -1,9 +1,11 @@
 {
   "cssvar.ignore": [
     "**/node_modules/**",
-    "**/fluent-vars.css"
+    "**/reference/**",
+    "**/build/**",
   ],
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "llms.txt": "markdown"
   }
 }

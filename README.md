@@ -2,6 +2,8 @@
 
 **An attempt at an LLM-first design system**
 
+[Demo]() / [LLMs.txt]()
+
 ...
 
 ## Usage

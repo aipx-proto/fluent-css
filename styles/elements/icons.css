@@ -8,7 +8,7 @@
   --icon-chevron-down: url('data:image/svg+xml,<svg style="fill:white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.21 8.46C4.51 8.17 4.98 8.17 5.28 8.46L12 15.18L18.71 8.46C19.01 8.17 19.48 8.17 19.78 8.46C20.07 8.76 20.07 9.23 19.78 9.53L12.53 16.78C12.23 17.07 11.76 17.07 11.46 16.78L4.21 9.53C3.92 9.23 3.92 8.76 4.21 8.46Z"></path></svg>');
 }
 
-.icon {
+.icon, .emojicon {
   height: var(--h-icon);
   width: var(--h-icon);
   flex: 0 0 auto;
@@ -16,6 +16,9 @@
   align-items: center;
   justify-content: center;
 
+}
+
+svg.icon, .icon svg {
   fill: currentColor;
 }
 

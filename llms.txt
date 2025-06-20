@@ -1,44 +1,74 @@
+## Import
 
+Import the fluent.css file from CDN hosting via one of the 2 options:
 
-You must ensure that the proper dependencies are included:
+1. In the HTML head as a `link` tag (Preferred):
 
-Import the mirai.css file and tailwind layers. **DO NOT** write any additional CSS. The **only** lines of css required and allowed are:
-```css
-@layer properties, theme, base, components, utilities; 
-@import "https://esm.sh/gh/aipx-proto/mirai-css@main/styles/mirai.build.css?raw";
+```html
+<link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" />
 ```
 
-Import the tailwind module as the **last** line of HTML:
+2. In CSS via css `@import`:
+
+```css
+@import "https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw";
+```
+
+---
+
+## Usage
+
+### Default element styling
+
+The `fluent.css` file styles all native html elements (`a`, `button`, `input`, `select`, `textarea`, `details`, etc...)
+**DO NOT** apply interactive (`:hover`, `:active`, `:focus`) or visual (`background`, `border`, `color`, `font`, etc..) css styles to these native html elements because they are already styled by fluent.css.
+Applying additional styles will break the visual styling, not improve it.
+
+### Component Class Styling
+
+`fluent.css` also provides class names for several component classes and modifiers.
+
+### Utility Class styling
+
+...
+
+### Css variables styling
+
+...
+
+## Tailwind Integration (Optional)
+
+{...Describe integration}
+{if not using tailwind, skip this section}
+
+### Tailwind usage rules
+- Write only in sematic HTML with css utility classes,
+- Write styles **exclusively** using utility classes from tailwind and fluent.css.
+- Use tailwind classes **mostly** for layout, flexbox, grid, spacing.
+- Use fluent.css default styles and classes for native html elements
+- **DO NOT** write any CSS in `<style/>` elements or `.css` files.
+- **DO NOT** write any inline `style=""` attributes.
+- **DO NOT** apply tailwind classes on any table element: `table`, `thead`, `tr`, `td`, etc...
+
+### Import tailwind
+
+Import the browser runtime in a script tag (unless tailwind is already integrated)
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 ```
 
-
 ---
 
-Additional Environment Considerations
-- Any `form` elements should be handled by JS and `event.preventDefault9()` so the page does not reload.
-- Delete any boilerplate code on your first run
-
----
-
-The `mirai.css` file is already included and styles all base html components like `a`, `button`, `input`, `details`, etc... 
-Do **NOT** apply interactive or visual css styles to these elements because they are already styled. 
+## Icons
+For icons, use emoji wrapped in a span: `<span class="icon emojicon">❤️</span>`.
 
 Tailwind is used for the rest of the styles for typography and layout.
 
 Class name rules:
-- Write only in sematic HTML without any CSS or styles. 
-- Do **NOT** write any CSS.
-- Do **NOT** include any style attributes.
-- Javascript is permitted in its own code block
-- Use tailwind classes **mostly** for layout, flexbox, grid, spacing, and typography.
-- Do **NOT** apply tailwind classes on any table element: `table`, `thead`, `tr`, `td`, etc...
-
-Icons:
-- For icons, use emoji wrapped in a span: `<span class="mri-emojicon">❤️</span>`.
 
 Colors rules:
+
 - Write all layouts in dark theme (unless explicitly asked not to).
 - Primarily use `neutral` colors.
 - For background, primarily use `neutral-700`, but you may also use `neutral-900`, `neutral-800`, and `black`.
@@ -47,10 +77,9 @@ Colors rules:
 
 ---
 
-**Mirai.css classes and component patterns**
+**fluent.css classes and component patterns**
 
 ```html
-
 <!-- a more intense, brand-colored primary button -->
 <button class="mri-appearance-primary">Primary</button>
 
@@ -129,5 +158,4 @@ Colors rules:
   <a href="#" class="mri-tab">Tab 1</a>
   <a href="#" class="mri-tab">Tab 1</a>
 </nav>
-
 ```

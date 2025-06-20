@@ -1,4 +1,9 @@
-/*! Fluent.css */
+/*! 
+  Fluent.css - https://github.com/aipx-proto/fluent-css 
+  Demo: https://aipx-proto.github.io/fluent-css/
+  CDN: https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw
+  LLMs.txt: https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw
+*/
 
 @import "tailwindcss" source(none);
 
