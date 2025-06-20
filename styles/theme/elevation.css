@@ -4,9 +4,9 @@
   /* https://tailwindcss.com/docs/box-shadow ; */
 
   --color-shadow-overlay: oklch(0% 0 0 / 0.5);
-
   --color-shadow-ambient: oklch(0% 0 0 / 0.12);
   --color-shadow-key: oklch(0% 0 0 / 0.14);
+  --color-shadow: var(--color-shadow-key);
 
   /* non-standard */
   --shadow-2xs: 0 0 1px var(--color-shadow-ambient), 0px 0px 1px 0.25px var(--color-shadow-key);

@@ -66,7 +66,7 @@
 @source inline("rounded-{none,xs,sm,md,lg,xl,2xl,3xl,4xl,full}");
 
 /* override inline the .shadow-* classes - or it does some funky --tw-shadow-color things */
-/* @source inline("shadow-{2xs,xs,sm,md,lg,xl,2xl}"); */
-@import "./theme/box-shadow.css" layer(utilities);
+@source inline("shadow-{2xs,xs,sm,md,lg,xl,2xl}");
+/* @import "./theme/box-shadow.css" layer(utilities); */
 
 @source inline("opacity-disabled");

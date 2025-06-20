@@ -58,6 +58,7 @@ This file is used to trick tailwind into using all custom properties in the code
   --color-shadow-overlay: var(--color-shadow-overlay);
   --color-shadow-ambient: var(--color-shadow-ambient);
   --color-shadow-key: var(--color-shadow-key);
+  --color-shadow: var(--color-shadow);
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
