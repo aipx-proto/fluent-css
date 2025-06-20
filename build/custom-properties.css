@@ -2,6 +2,7 @@
 This file is used to trick tailwind into using all custom properties in the codebase.*/
 
 .ensure-tailwind-import {
+  --tw-shadow-color: var(--tw-shadow-color);
   --duration-rest: var(--duration-rest);
   --duration-hover: var(--duration-hover);
   --duration-active: var(--duration-active);
