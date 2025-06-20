@@ -1,3 +1,5 @@
+// Use https://aipx-proto.github.io/css-uni-palette/ instead //
+
 const colors = [
   "red",
   "orange",
@@ -47,3 +49,5 @@ function generateColorCSS() {
 
 // Output the generated CSS
 console.log(generateColorCSS());
+
+console.log('You should use https://aipx-proto.github.io/css-uni-palette/ instead')
