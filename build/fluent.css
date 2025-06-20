@@ -1,6 +1,7 @@
 /*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
 /*! 
-  Fluent.css - https://github.com/aipx-proto/fluent-css 
+  Fluent.css - An LLM-friendly CSS framework
+  Repo: https://github.com/aipx-proto/fluent-css 
   Demo: https://aipx-proto.github.io/fluent-css/
   CDN: https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw
   LLMs.txt: https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw
@@ -327,7 +328,6 @@
     --color-shadow-overlay: oklch(0% 0 0 / 0.5);
     --color-shadow-ambient: oklch(0% 0 0 / 0.12);
     --color-shadow-key: oklch(0% 0 0 / 0.14);
-    --color-shadow: var(--color-shadow-key);
     --rounded-default: var(--radius-md);
     --h-default: calc(var(--spacing) * 8);
     --text-default: var(--text-base);
@@ -930,6 +930,7 @@
 @layer theme;
 @layer theme {
   .dark, .dark * {
+    --color-shadow-overlay: oklch(0% 0 0 / 0.5);
     --color-shadow-ambient: oklch(0% 0 0 / 0.4);
     --color-shadow-key: oklch(0% 0 0 / 0.45);
   }
