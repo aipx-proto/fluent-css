@@ -2,37 +2,33 @@
 
 **An attempt at an LLM-first design system**
 
-[Demo]() / [LLMs.txt]()
-
-...
+[Demo](https://aipx-proto.github.io/fluent-css/) / [LLMs.txt](./llms.txt)
 
 ## Usage
 
-Fluent.css is based on the tailwind syntax, and integrates as a tailwind component library. However, *Tailwind is not a required dependency*. This library can be used as a standalone with zero dependencies.
+Fluent.css is based on the tailwind syntax, and integrates as a tailwind component library into the `theme` and `utilites` layers. However, *Tailwind is not a required dependency*. This component library can be used as a standalone with zero dependencies.
 
-### Components
-
-Fluent.css styles all default html elements into Microsoft Fluent styled components. This includes
-- Button - `<button/>`, `<a class="btn"/>`, `<select class="btn"/>`
-- Button Group - `<div>`
-- Input - `<input />`, `<textarea/>`, `<select/>`, `<div class="input"><i class="icon">🔍</i><input/><button>Submit</button></div>`
-- Accordion - `<details/>` & `<summary/>` together (`<details class="marker-end"/>` will place the arrow marker on the right side)
-
-### Component Utilities
-
-{...}
+### To see more complete usage documentation, please read the [LLMs.txt](./llms.txt)
 
 ## Development & Build
 
-{... Tailwind & custom-properties ...}
+Run `npm i` then `npm run dev` to start the build in watch mode. The open the index.html file in a browser or use something like `live-server` to host it locally.
+
+This library tailwind to build styles/index.css a build/fluent.css file. There are a few quirks to this.
+- No default scanning: Tailwind is included in 'index.css' with the `source(none)` directive so only explicit included sources will show up in the build
+- Tricking Tailwind into including all `@theme` variables: There is a `npm run pre-tailwind` script that: parses the entire 'styles/' folder, pulls out all `--custom-properties` and saves them to a `custom-properties.css` file. This file is referenced as a `@source` in 'index.css' so the tailwind compiler will think these are all used and won't exclude them from the build.
+- The styles/utilizes/ files override some default tailwind utility classes so tailwind won't include a bunch of unnecessary --tw-vars as boilerplate.
 
 ---
 
-# TODOs
+## TODOs
 
-## Transition to Fluent
+### Write LLMs.txt
 
-## Bugs & Improvements
+- test
+- remove reference to .btn-group and other uncommon use cases or it will be overused?
+
+### Bugs & Improvements
 
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
@@ -41,14 +37,14 @@ Fluent.css styles all default html elements into Microsoft Fluent styled compone
 - create docs page with tailwind
 - icon support
 
-## Icons?
+### Icons?
 
 - icons with svg use external
 - with [fluent icons font and css file](https://github.com/microsoft/fluentui-system-icons/blob/cd860cfdb9c60f6b731f6164b21e04909b23178e/fonts/FluentSystemIcons-Resizable.css)?
 - Icons in input: wrapper element that z-indexes input at the back and a before and after element for icons and buttons
 - with web-component
 
-## Naming `@component`s
+### Components
 
 - Naming conventions from tailwind component libraries
   - tailwind v3 components (which i can find no record of)
