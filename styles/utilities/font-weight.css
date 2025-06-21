@@ -1,9 +1,12 @@
-.font-bold {
-  font-weight: var(--font-weight-bold);
-}
 .font-normal {
   font-weight: var(--font-weight-normal);
 }
 .font-semibold {
   font-weight: var(--font-weight-semibold);
+}
+.font-heavyweight {
+  font-weight: var(--font-weight-heavyweight);
+}
+.font-bold {
+  font-weight: var(--font-weight-bold);
 }

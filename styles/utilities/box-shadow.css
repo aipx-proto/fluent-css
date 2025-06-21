@@ -1,3 +1,7 @@
+
+.shadow-none {
+  box-shadow: var(--shadow-none);
+}
 .shadow-2xs {
   box-shadow: var(--shadow-2xs);
 }
@@ -18,7 +22,4 @@
 }
 .shadow-2xl {
   box-shadow: var(--shadow-2xl);
-}
-.shadow-none {
-  box-shadow: 0 0 #0000;
 }

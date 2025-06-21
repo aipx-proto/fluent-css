@@ -328,6 +328,7 @@
     --color-shadow-overlay: oklch(0% 0 0 / 0.5);
     --color-shadow-ambient: oklch(0% 0 0 / 0.12);
     --color-shadow-key: oklch(0% 0 0 / 0.14);
+    --shadow-none: 0 0 0px var(--color-shadow-ambient), 0px 0px 0px 0px var(--color-shadow-key);
     --rounded-default: var(--radius-md);
     --h-default: calc(var(--spacing) * 8);
     --text-default: var(--text-base);
@@ -1139,8 +1140,7 @@
     }
     &.icon-only, .icon-only & {
       padding: 0;
-      width: var(--h-default);
-      height: var(--h-default);
+      aspect-ratio: 1 / 1;
       flex: 0 0 auto;
     }
     .menu & {
@@ -1431,9 +1431,6 @@
     }
     &.type-outline {
       --_color-background: transparent;
-      &:focus {
-        --_color-background: var(--color-input);
-      }
     }
     &.type-subtle {
       --_color-border: transparent;
@@ -2149,24 +2146,47 @@
     z-index: 1;
   }
 }
+@layer components {
+  .interactive:not(.disabled) {
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-hover);
+    }
+    &:active {
+      background-color: var(--color-active);
+    }
+    &.selected {
+      background-color: var(--color-selected);
+    }
+  }
+  .interactive.disabled {
+    cursor: not-allowed;
+  }
+}
 :has([aria-controls="panel-1"] input[type="radio"]:not(:checked)) #panel-1, :has([aria-controls="panel-2"] input[type="radio"]:not(:checked)) #panel-2, :has([aria-controls="panel-3"] input[type="radio"]:not(:checked)) #panel-3, :has([aria-controls="panel-4"] input[type="radio"]:not(:checked)) #panel-4, :has([aria-controls="panel-5"] input[type="radio"]:not(:checked)) #panel-5, :has([aria-controls="panel-6"] input[type="radio"]:not(:checked)) #panel-6, :has([aria-controls="panel-7"] input[type="radio"]:not(:checked)) #panel-7, :has([aria-controls="panel-8"] input[type="radio"]:not(:checked)) #panel-8, :has([aria-controls="panel-9"] input[type="radio"]:not(:checked)) #panel-9, :has([aria-controls="panel-10"] input[type="radio"]:not(:checked)) #panel-10, :has([aria-controls="panel-11"] input[type="radio"]:not(:checked)) #panel-11, :has([aria-controls="panel-12"] input[type="radio"]:not(:checked)) #panel-12, :has([aria-controls="panel-13"] input[type="radio"]:not(:checked)) #panel-13, :has([aria-controls="panel-14"] input[type="radio"]:not(:checked)) #panel-14, :has([aria-controls="panel-15"] input[type="radio"]:not(:checked)) #panel-15, :has([aria-controls="panel-16"] input[type="radio"]:not(:checked)) #panel-16, :has([aria-controls="panel-17"] input[type="radio"]:not(:checked)) #panel-17, :has([aria-controls="panel-18"] input[type="radio"]:not(:checked)) #panel-18, :has([aria-controls="panel-19"] input[type="radio"]:not(:checked)) #panel-19, :has([aria-controls="panel-20"] input[type="radio"]:not(:checked)) #panel-20 {
   display: none;
 }
 label[role="tab"] input[type="radio"] {
   display: none;
 }
-@layer utilities.fluent {
-  .font-bold {
-    font-weight: var(--font-weight-bold);
-  }
+@layer utilities {
   .font-normal {
     font-weight: var(--font-weight-normal);
   }
   .font-semibold {
     font-weight: var(--font-weight-semibold);
   }
+  .font-heavyweight {
+    font-weight: var(--font-weight-heavyweight);
+  }
+  .font-bold {
+    font-weight: var(--font-weight-bold);
+  }
 }
-@layer utilities.fluent {
+@layer utilities {
+  .shadow-none {
+    box-shadow: var(--shadow-none);
+  }
   .shadow-2xs {
     box-shadow: var(--shadow-2xs);
   }
@@ -2187,8 +2207,5 @@ label[role="tab"] input[type="radio"] {
   }
   .shadow-2xl {
     box-shadow: var(--shadow-2xl);
-  }
-  .shadow-none {
-    box-shadow: 0 0 #0000;
   }
 }

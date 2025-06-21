@@ -108,8 +108,10 @@ select.btn,
   &.icon-only,
   .icon-only & {
     padding: 0;
-    width: var(--h-default);
-    height: var(--h-default);
+    aspect-ratio: 1 / 1;
+    /* width: var(--h-default); */
+    /* height: var(--h-default); */
+    
     flex: 0 0 auto;
   }
 

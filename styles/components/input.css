@@ -83,10 +83,7 @@ input:where(:not([type])),
 
   &.type-outline {
     --_color-background: transparent;
-
-    &:focus {
-      --_color-background: var(--color-input);
-    }
+    /* &:focus { --_color-background: var(--color-input); } */
   }
 
   &.type-subtle {

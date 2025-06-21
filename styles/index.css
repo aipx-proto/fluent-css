@@ -50,6 +50,7 @@
 
 @import "./components/disabled.css" layer(components);
 @import "./components/focus.css" layer(components);
+@import "./components/interactive.css" layer(components);
 
 @import "./components/tabs-hack.css";
 
@@ -59,7 +60,7 @@
 
 /* override inline the .font-{weight} classes to avoid adding --tw-font-weight in properties @layer*/
 /* @source inline("font-{normal,semibold,bold}"); */
-@import "./utilities/font-weight.css" layer(utilities.fluent);
+@import "./utilities/font-weight.css" layer(utilities);
 
 @source inline("{text,bg,border}-{card,panel,page,border,outline,muted,body,heading,link,brand,contrast-brand,input,selected,hover,active}");
 
@@ -71,7 +72,7 @@
 @source inline("rounded-{none,xs,sm,md,lg,xl,2xl,3xl,4xl,full}");
 
 /* override inline the .shadow-* classes to avoid adding --tw-shadow-* in properties @layer*/
-/* @source inline("shadow-{2xs,xs,sm,md,lg,xl,2xl}"); */
-@import "./utilities/box-shadow.css" layer(utilities.fluent);
+/* @source inline("shadow-{none,2xs,xs,sm,md,lg,xl,2xl}"); */
+@import "./utilities/box-shadow.css" layer(utilities);
 
 @source inline("opacity-disabled");

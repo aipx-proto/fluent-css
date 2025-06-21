@@ -8,6 +8,9 @@
   --color-shadow-key: oklch(0% 0 0 / 0.14);
 
   /* non-standard */
+  --shadow-none: 0 0 0px var(--color-shadow-ambient), 0px 0px 0px 0px var(--color-shadow-key);
+
+  /* non-standard */
   --shadow-2xs: 0 0 1px var(--color-shadow-ambient), 0px 0px 1px 0.25px var(--color-shadow-key);
 
   /* shadow 2 */

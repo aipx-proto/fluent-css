@@ -1,0 +1,16 @@
+.interactive:not(.disabled) {
+  cursor: pointer;
+  &:hover {
+    background-color: var(--color-hover);
+  }
+  &:active {
+    background-color: var(--color-active);
+  }
+  &.selected {
+    background-color: var(--color-selected);
+  }
+}
+
+.interactive.disabled {
+  cursor: not-allowed;
+}

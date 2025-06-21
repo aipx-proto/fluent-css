@@ -4,9 +4,11 @@ This file is used to trick tailwind into using all custom properties in the code
 .ensure-tailwind-import {
   --tw-font-weight: var(--tw-font-weight);
   --tw-shadow-: var(--tw-shadow-);
-  --font-weight-bold: var(--font-weight-bold);
   --font-weight-normal: var(--font-weight-normal);
   --font-weight-semibold: var(--font-weight-semibold);
+  --font-weight-heavyweight: var(--font-weight-heavyweight);
+  --font-weight-bold: var(--font-weight-bold);
+  --shadow-none: var(--shadow-none);
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
