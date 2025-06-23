@@ -15,14 +15,13 @@
 </head>
 
 <body class="bg-panel text-body min-h-screen flex flex-col dark">
-    <!-- Header -->
-    <header class="bg-page flex items-center justify-between px-6 py-2 flex-shrink-0">
+    <header class="bg-page flex items-center justify-between px-6 py-2 flex-shrink-0" data-AIDEV-ID="header">
         <div class="flex items-center gap-1">
             <img alt="Azure AI Foundry" src="https://ai.azure.com/assets/aistudio-af17733a.svg" width="18" height="18">
             <h1 class="text-md font-semibold text-heading">Azure AI Foundry</h1>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3" data-AIDEV-ID="nav-actions">
             <button class="icon-only type-subtle" title="Toggle Theme">
                 <span class="emojicon">🌙</span>
             </button>
@@ -41,12 +40,10 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-1 max-w-[1100px] mx-auto p-6 w-full">
-        <!-- Page Title and Actions -->
-        <div class="flex items-center justify-between mb-6">
+    <main class="flex-1 max-w-[1100px] mx-auto p-6 w-full" data-AIDEV-ID="main-content">
+        <div class="flex items-center justify-between mb-6" data-AIDEV-ID="page-title-actions">
             <h2 class="text-2xl font-semibold text-heading">Keep building with Azure AI Foundry</h2>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3" data-AIDEV-ID="page-actions">
                 <a href="#" class="text-link hover:underline">View all resources</a>
                 <button class="type-primary flex items-center gap-2">
                     + Create new
@@ -57,8 +54,7 @@
             </div>
         </div>
 
-        <!-- Resources Table -->
-        <div class="bg-card rounded-lg overflow-hidden border border-border">
+        <div class="bg-card rounded-lg overflow-hidden border border-border" data-AIDEV-ID="resources-table">
             <table>
                 <thead>
                     <tr>
@@ -68,15 +64,15 @@
                         <th>Created on</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody data-AIDEV-ID="table-data">
                     <tr>
                         <td>
-                            <a href="#" class="text-link hover:underline font-medium">jabradford-fifth-project</a>
+                            <a href="#" class="text-link hover:underline font-medium">my-ai-project-alpha</a>
                         </td>
                         <td>
                             <div>Project</div>
                             <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">jabradford_ai-8582</a>
+                                <a href="#" class="text-link hover:underline">ai-hub-resource-001</a>
                                 <span class="text-muted">(Hub)</span>
                             </div>
                         </td>
@@ -85,12 +81,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#" class="text-link hover:underline font-medium">agentbugbash</a>
+                            <a href="#" class="text-link hover:underline font-medium">demo-workspace</a>
                         </td>
                         <td>
                             <div>Project (default)</div>
                             <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">agentbugbash-resource</a>
+                                <a href="#" class="text-link hover:underline">demo-ai-resource</a>
                                 <span class="text-muted">(AI Foundry)</span>
                             </div>
                         </td>
@@ -99,12 +95,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#" class="text-link hover:underline font-medium">agentfactory</a>
+                            <a href="#" class="text-link hover:underline font-medium">production-pipeline</a>
                         </td>
                         <td>
                             <div>Project</div>
                             <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">veward_ai-6683</a>
+                                <a href="#" class="text-link hover:underline">prod-hub-service</a>
                                 <span class="text-muted">(Hub)</span>
                             </div>
                         </td>
@@ -113,9 +109,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div>
-                                <a href="#" class="text-link hover:underline font-medium">agentproject-resource</a>
-                            </div>
+                            <a href="#" class="text-link hover:underline font-medium">shared-ai-resource</a>
                         </td>
                         <td>AI Foundry</td>
                         <td>eastus2</td>
@@ -123,12 +117,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#" class="text-link hover:underline font-medium">agentproject</a>
+                            <a href="#" class="text-link hover:underline font-medium">ml-experiment-beta</a>
                         </td>
                         <td>
                             <div>Project</div>
                             <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">agentproject-resource</a>
+                                <a href="#" class="text-link hover:underline">shared-ai-resource</a>
                                 <span class="text-muted">(AI Foundry)</span>
                             </div>
                         </td>
