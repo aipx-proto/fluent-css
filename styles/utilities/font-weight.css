@@ -1,12 +1,16 @@
 .font-normal {
+  --tw-font-weight: var(--font-weight-normal);
   font-weight: var(--font-weight-normal);
 }
 .font-semibold {
+  --tw-font-weight: var(--font-weight-semibold);
   font-weight: var(--font-weight-semibold);
 }
 .font-heavyweight {
+  --tw-font-weight: var(--font-weight-heavyweight);
   font-weight: var(--font-weight-heavyweight);
 }
 .font-bold {
+  --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
 }

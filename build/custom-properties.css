@@ -8,7 +8,12 @@ This file is used to trick tailwind into using all custom properties in the code
   --font-weight-semibold: var(--font-weight-semibold);
   --font-weight-heavyweight: var(--font-weight-heavyweight);
   --font-weight-bold: var(--font-weight-bold);
+  --tw-shadow: var(--tw-shadow);
   --shadow-none: var(--shadow-none);
+  --tw-inset-shadow: var(--tw-inset-shadow);
+  --tw-inset-ring-shadow: var(--tw-inset-ring-shadow);
+  --tw-ring-offset-shadow: var(--tw-ring-offset-shadow);
+  --tw-ring-shadow: var(--tw-ring-shadow);
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);

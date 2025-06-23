@@ -1,25 +1,40 @@
-
 .shadow-none {
-  box-shadow: var(--shadow-none);
+  --tw-shadow: var(--shadow-none);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
 .shadow-2xs {
-  box-shadow: var(--shadow-2xs);
+  --tw-shadow: var(--shadow-2xs);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
 .shadow-xs {
-  box-shadow: var(--shadow-xs);
+  --tw-shadow: var(--shadow-xs);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
 .shadow-sm {
-  box-shadow: var(--shadow-sm);
+  --tw-shadow: var(--shadow-sm);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
 .shadow-md {
-  box-shadow: var(--shadow-md);
+  --tw-shadow: var(--shadow-md);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
 .shadow-lg {
-  box-shadow: var(--shadow-lg);
+  --tw-shadow: var(--shadow-lg);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
 .shadow-xl {
-  box-shadow: var(--shadow-xl);
+  --tw-shadow: var(--shadow-xl);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
 .shadow-2xl {
-  box-shadow: var(--shadow-2xl);
+  --tw-shadow: var(--shadow-2xl);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
 }
