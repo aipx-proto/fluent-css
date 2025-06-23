@@ -47,9 +47,9 @@
   );
 
   --color-input: var(--color-neutral-800);
-  --color-selected: oklch(0 0 0 / 0.4);
-  --color-hover: oklch(0 0 0 / 0.5);
-  --color-active: oklch(0 0 0 / 0.6);
+  --color-selected: oklch(100% 0 0 / 0.075);
+  --color-hover: oklch(100% 0 0 / 0.125);
+  --color-active: oklch(0% 0 0 / 0.3);
 
   --opacity-disabled: 0.6;
 }

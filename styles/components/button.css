@@ -136,6 +136,7 @@ select.btn,
     no-repeat;
   --_icon-padding-right: calc(var(--h-icon) + var(--p-default));
 
+  line-height: revert;
   appearance: none;
   background-image: var(--_icon-background-image);
   background-position: var(--_icon-background-position);
