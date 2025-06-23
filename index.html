@@ -9,7 +9,7 @@
 
   <!-- 1. Tailwind first -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  
+
   <!-- 2. Fluent.css MUST come after Tailwind for proper CSS cascade -->
   <link rel="stylesheet" href="./build/fluent.css" />
 
@@ -112,7 +112,8 @@
     <hr class="m-0 w-8" />
 
     <p class="flex flex-col gap-1 items-start">
-      <a href="https://github.com/aipx-proto/fluent-css" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span>
+        <a href="https://github.com/aipx-proto/fluent-css" target="_blank" rel="noopener noreferrer">GitHub</a>
       </span>
       <span>
         <a href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" target="_blank"
@@ -126,7 +127,41 @@
 
   </header>
 
-  <main class="flex-auto py-6 pb-24 flex flex-col gap-6">
+  <main class="flex-auto min-w-0 py-6 pb-24 flex flex-col gap-6">
+
+    <section class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-6 p-6">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-3xl font-semibold">Fluent.css - An LLM first UI Library</h2>
+          <p class="text-lg">A modern CSS framework that combines Fluent Design with Tailwind utility classes. Can be
+            used independently or with Tailwind.</p>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <h3 class="text-xl font-semibold">LLMs.txt Usage</h3>
+          <p>For AI assistants and code generation tools, reference our <a
+              href="https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw" target="_blank"
+              rel="noopener noreferrer">LLMs.txt</a> file for
+            proper usage patterns and best practices.</p>
+
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <h3 class="text-xl font-semibold">Import</h3>
+          <div class="flex flex-col gap-2">
+            <span class="text-sm font-semibold text-muted">Standalone:</span>
+            <pre
+              class="bg-card text-sm"><code>&lt;link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css" /&gt;</code></pre>
+            <span class="text-sm font-semibold text-muted">With Tailwind:</span>
+            <pre class="bg-card text-sm"><code>&lt;!-- 1. Tailwind first --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+
+&lt;!-- 2. Fluent.css MUST come after Tailwind --&gt;
+&lt;link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css" /&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="rounded-md bg-panel shadow-lg">
       <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0" id="typography">
@@ -211,25 +246,25 @@
         </div>
         <div class="flex flex-row">
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-l-md shadow-2xs">Shadow<br/>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-l-md shadow-2xs">Shadow<br />
             2xs (0)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xs">Shadow<br/>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xs">Shadow<br />
             xs (2)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-sm">Shadow<br/>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-sm">Shadow<br />
             sm (4)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-md">Shadow<br/>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-md">Shadow<br />
             md (8)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-lg">Shadow<br/>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-lg">Shadow<br />
             lg (16)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xl">Shadow<br/>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xl">Shadow<br />
             xl (28)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-r-md shadow-2xl">Shadow<br/>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-r-md shadow-2xl">Shadow<br />
             2xl (64)</span>
         </div>
       </div>
@@ -301,32 +336,55 @@
           </form>
         </div>
       </div>
+      <div id="menu" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Menu & Split Button</h3>
+        <div class="btn-group type-primary">
+          <button class="shape-rounded">Split Button</button>
+          <button class="icon-only shape-rounded" popovertarget="menu-example">
+            •••
+          </button>
+        </div>
+        <div class="menu" id="menu-example" popover>
+          <button>Add</button>
+          <button>Edit</button>
+          <button>Duplicate</button>
+          <hr />
+          <button class="intent-danger">Delete</button>
+        </div>
+      </div>
     </section>
 
     <section id="forms" class="rounded-md bg-panel shadow-lg">
+      <style>
+        @scope {
+          input {
+            min-width: 0px;
+          }
+        }
+      </style>
       <div id="input" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
         <h3 class="scroll-mt-8">Input</h3>
-        <div>
+        <div class="flex flex-row gap-2 items-center">
           <input type="text" placeholder="Default" />
           <input type="text" placeholder="Outline" class="type-outline" />
           <input type="text" placeholder="Subtle" class="type-subtle" />
           <input type="text" placeholder="Transparent" class="type-transparent" />
         </div>
-        <div>
+        <div class="flex flex-row gap-2 items-center">
           <input type="text" placeholder="Disabled" disabled />
           <input type="text" placeholder="Readonly" value="Readonly" readonly />
         </div>
-        <div>
+        <div class="flex flex-row gap-2 items-center">
           <input type="text" placeholder="Small" class="size-sm" />
           <input type="text" placeholder="Medium" class="size-md" />
           <input type="text" placeholder="Large" class="size-lg" />
         </div>
-        <div>
+        <div class="flex flex-row gap-2 items-center">
           <input type="text" placeholder="Square" class="rounded-none" />
           <input type="text" placeholder="Rounded" class="rounded-md" />
           <input type="text" placeholder="Circular" class="rounded-full" />
         </div>
-        <div>
+        <div class="flex flex-row gap-2 items-center">
           <input type="number" placeholder="000" />
           <input type="color" />
           <input type="date" />
@@ -350,7 +408,7 @@
       <div id="select" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
         <h3 class="scroll-mt-8">Select</h3>
         <div>
-          <select id="select" name="select">
+          <select id="select-dropdown" name="select">
             <option value="" disabled selected>Select an option</option>
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
@@ -388,15 +446,15 @@
           <div class="flex flex-col gap-1">
             <div class="flex flex-col gap-1">
               <label class="size-lg">
-                <input type="radio" id="radio1" name="radio2" value="1" />
+                <input type="radio" id="radio-size-lg" name="radio2" value="1" />
                 Large
               </label>
               <label class="size-md">
-                <input type="radio" id="radio2" name="radio2" value="2" />
+                <input type="radio" id="radio-size-md" name="radio2" value="2" />
                 Medium
               </label>
               <label class="size-sm">
-                <input type="radio" id="radio3" name="radio2" value="3" />
+                <input type="radio" id="radio-size-sm" name="radio2" value="3" />
                 Small
               </label>
             </div>
@@ -424,7 +482,7 @@
               Checked
             </label>
             <label>
-              <input type="checkbox" id="checkbox2" name="checkbox2" onloa />
+              <input type="checkbox" id="checkbox2" name="checkbox2" />
               <script>
                 document.addEventListener('DOMContentLoaded', () => document.getElementById('checkbox2').indeterminate = true);
               </script>
@@ -580,59 +638,46 @@
           <div id="tooltip-example" popover="hint">
             This is a tooltip using the new popover API (and javascript)
           </div>
-
-          <div class="grid justify-center grid-cols-5 grid-rows-5 gap-0.5 flex-auto">
-            <button class="icon-only col-start-2 row-start-1" popovertarget="popover-above-start">AS</button>
-            <button class="icon-only col-start-3 row-start-1" popovertarget="popover-above">A</button>
-            <button class="icon-only col-start-4 row-start-1" popovertarget="popover-above-end">AE</button>
-
-            <button class="icon-only col-start-1 row-start-2" popovertarget="popover-before-top">BT</button>
-            <button class="icon-only col-start-1 row-start-3" popovertarget="popover-before">B</button>
-            <button class="icon-only col-start-1 row-start-4" popovertarget="popover-before-bottom">BB</button>
-
-            <button class="icon-only col-start-5 row-start-2" popovertarget="popover-after-top">AT</button>
-            <button class="icon-only col-start-5 row-start-3" popovertarget="popover-after">A</button>
-            <button class="icon-only col-start-5 row-start-4" popovertarget="popover-after-bottom">AB</button>
-
-            <button class="icon-only col-start-2 row-start-5" popovertarget="popover-below-start">BS</button>
-            <button class="icon-only col-start-3 row-start-5" popovertarget="popover-below">B</button>
-            <button class="icon-only col-start-4 row-start-5" popovertarget="popover-below-end">BE</button>
-          </div>
-
-          <div id="popover-above-start" class="position-above-start" popover>Above start</div>
-          <div id="popover-above" class="position-above" popover>Above</div>
-          <div id="popover-above-end" class="position-above-end" popover>Above end</div>
-
-          <div id="popover-before-top" class="position-before-top" popover>Before top</div>
-          <div id="popover-before" class="position-before" popover>Before</div>
-          <div id="popover-before-bottom" class="position-before-bottom" popover>Before bottom</div>
-
-          <div id="popover-after-top" class="position-after-top" popover>After top</div>
-          <div id="popover-after" class="position-after" popover>After</div>
-          <div id="popover-after-bottom" class="position-after-bottom" popover>After bottom</div>
-
-          <div id="popover-below-start" class="position-below-start" popover>Below start</div>
-          <div id="popover-below" class="position-below" popover>Below</div>
-          <div id="popover-below-end" class="position-below-end" popover>Below end</div>
-
         </div>
       </div>
+      <div id="popover-position" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Popover Position</h3>
 
-      <div id="menu" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
-        <h3 class="scroll-mt-8">Menu & Split Button</h3>
-        <div class="btn-group type-primary">
-          <button class="shape-rounded">Split Button</button>
-          <button class="icon-only shape-rounded" popovertarget="menu-example">
-            •••
-          </button>
+        <div class="grid justify-center gap-1 flex-auto">
+          <button class="icon-only col-start-2 row-start-1" popovertarget="popover-above-start">AS</button>
+          <button class="icon-only col-start-3 row-start-1" popovertarget="popover-above">A</button>
+          <button class="icon-only col-start-4 row-start-1" popovertarget="popover-above-end">AE</button>
+
+          <button class="icon-only col-start-1 row-start-2" popovertarget="popover-before-top">BT</button>
+          <button class="icon-only col-start-1 row-start-3" popovertarget="popover-before">B</button>
+          <button class="icon-only col-start-1 row-start-4" popovertarget="popover-before-bottom">BB</button>
+
+          <button class="icon-only col-start-5 row-start-2" popovertarget="popover-after-top">AT</button>
+          <button class="icon-only col-start-5 row-start-3" popovertarget="popover-after">A</button>
+          <button class="icon-only col-start-5 row-start-4" popovertarget="popover-after-bottom">AB</button>
+
+          <button class="icon-only col-start-2 row-start-5" popovertarget="popover-below-start">BS</button>
+          <button class="icon-only col-start-3 row-start-5" popovertarget="popover-below">B</button>
+          <button class="icon-only col-start-4 row-start-5" popovertarget="popover-below-end">BE</button>
         </div>
-        <div class="menu" id="menu-example" popover>
-          <button>Add</button>
-          <button>Edit</button>
-          <button>Duplicate</button>
-          <hr />
-          <button class="intent-danger">Delete</button>
-        </div>
+
+        <div id="popover-above-start" class="position-above-start" popover>Above start</div>
+        <div id="popover-above" class="position-above" popover>Above</div>
+        <div id="popover-above-end" class="position-above-end" popover>Above end</div>
+
+        <div id="popover-before-top" class="position-before-top" popover>Before top</div>
+        <div id="popover-before" class="position-before" popover>Before</div>
+        <div id="popover-before-bottom" class="position-before-bottom" popover>Before bottom</div>
+
+        <div id="popover-after-top" class="position-after-top" popover>After top</div>
+        <div id="popover-after" class="position-after" popover>After</div>
+        <div id="popover-after-bottom" class="position-after-bottom" popover>After bottom</div>
+
+        <div id="popover-below-start" class="position-below-start" popover>Below start</div>
+        <div id="popover-below" class="position-below" popover>Below</div>
+        <div id="popover-below-end" class="position-below-end" popover>Below end</div>
+
+      </div>
       </div>
     </section>
 
@@ -641,45 +686,57 @@
         <h3 class="scroll-mt-8 m-0">Accordion</h3>
         <details>
           <summary>Accordion Item 1</summary>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus,
-            nisl erat dictum enim, nec facilisis enim erat nec urna.</p>
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Pellentesque euismod nisi</li>
-          </ul>
+          <div class="flex flex-col gap-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+              cursus,
+              nisl erat dictum enim, nec facilisis enim erat nec urna.</p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Pellentesque euismod nisi</li>
+            </ul>
+          </div>
         </details>
         <details>
           <summary>Accordion Item 2</summary>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac sem nec
-            urna cursus faucibus.</p>
-          <ul>
-            <li>Vestibulum ante ipsum primis</li>
-            <li>Integer ac sem nec urna</li>
-            <li>Cursus faucibus et ultrices</li>
-          </ul>
+          <div class="flex flex-col gap-2 py-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+              cursus,
+              nisl erat dictum enim, nec facilisis enim erat nec urna.</p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Pellentesque euismod nisi</li>
+            </ul>
+          </div>
         </details>
         <details open>
           <summary>Accordion Item Open</summary>
-          <p>Morbi non urna vitae elit cursus dictum. Etiam euismod, sapien nec commodo cursus, enim erat dictum enim,
-            nec facilisis enim erat nec urna.</p>
-          <ul>
-            <li>Morbi non urna vitae elit</li>
-            <li>Etiam euismod sapien nec</li>
-            <li>Commodo cursus enim erat</li>
-          </ul>
+          <div class="flex flex-col gap-2 py-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+              cursus,
+              nisl erat dictum enim, nec facilisis enim erat nec urna.</p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Pellentesque euismod nisi</li>
+            </ul>
+          </div>
         </details>
       </div>
       <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0 ">
         <details>
           <summary class="marker-end">Accordion Marker End</summary>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus,
-            nisl erat dictum enim, nec facilisis enim erat nec urna.</p>
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Pellentesque euismod nisi</li>
-          </ul>
+          <div class="flex flex-col gap-2 py-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+              cursus,
+              nisl erat dictum enim, nec facilisis enim erat nec urna.</p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Pellentesque euismod nisi</li>
+            </ul>
+          </div>
         </details>
       </div>
     </section>
@@ -745,7 +802,7 @@
           <h3>Second Tab Content</h3>
           <p>This is the content of the second tab.</p>
 
-          <nav class="tabs" role="tablist" class="tabs">
+          <nav class="tabs" role="tablist">
             <label class="tab" role="tab" aria-controls="panel-7" for="tab-7">
               <input type="radio" name="tab-group-3" id="tab-7" />
               Nested Tab 7
@@ -846,7 +903,7 @@
         <h2 class="scroll-mt-8">HTML Elements</h2>
       </div>
 
-      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0  block">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
