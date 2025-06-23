@@ -25,9 +25,13 @@ Or in CSS:
 
 Fluent.css integrates cleanly with Tailwind using the same class syntax and CSS @layer definitions. Tailwind is **NOT** required.
 
-### Import Tailwind browser runtime:
+### Import Order (CRITICAL):
 ```html
+<!-- 1. Tailwind first -->
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- 2. Fluent.css MUST come after Tailwind for proper CSS cascade -->
+<link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" />
 ```
 
 ### Usage Rules:

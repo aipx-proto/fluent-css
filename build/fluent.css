@@ -6,6 +6,7 @@
   CDN: https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw
   LLMs.txt: https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw
 */
+@layer properties, theme, base, components, utilities;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {

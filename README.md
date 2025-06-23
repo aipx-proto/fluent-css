@@ -23,13 +23,15 @@ This library tailwind to build styles/index.css a build/fluent.css file. There a
 
 ## TODOs
 
-### Write LLMs.txt
-
-- test
-- remove reference to .btn-group and other uncommon use cases or it will be overused?
+- Write LLMs.txt
+  - test
+  - remove reference to .btn-group and other uncommon use cases or it will be overused?
 
 ### Bugs & Improvements
 
+- Build 
+  - use postcss with custom scripts for more streamline build (no generate-custom-properties concurrently)
+  - re-evaluate the overriding utilizes to integrate with tailwind properly
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
 - intent - info, brand, success, warning, danger
