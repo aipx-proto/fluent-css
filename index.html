@@ -7,40 +7,8 @@
   <title>Fluent.css</title>
   <link rel="stylesheet" href="./build/fluent.css" />
   <link rel="icon" type="image/svg+xml" href="assets/Fluent-logo.svg" />
-  <style>
-    html {
-      margin: 0;
-      padding: 0;
-    }
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ol,
-    ul {
-      /* to make flex style easier */
-      margin: 0;
-    }
-
-    .keep-default-margins {
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p,
-      ol,
-      ul {
-        margin: revert;
-      }
-    }
-  </style>
 
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -81,98 +49,18 @@
   </script>
 </head>
 
-<body class="wrapper">
-  <style>
-    .wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-
-      display: flex;
-      flex-direction: row;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .header {
-      flex: 0 0 auto;
-      position: sticky;
-      top: 0px;
-      padding: 24px 8px 40px 12px;
-      max-height: 100vh;
-      overflow-y: auto;
-    }
-
-    .main {
-      flex: 1 1 auto;
-      padding: 24px 0;
-      padding-bottom: 100px;
-    }
-  </style>
-
-  <header class="header">
-    <style>
-      .header {
-
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        align-items: flex-start;
-
-
-        ul,
-        ol,
-        li {
-          list-style: none;
-          padding: 0;
-        }
-
-        h1 {
-          font-size: var(--text-sm);
-          font-family: var(--font-mono);
-          font-weight: var(--font-normal);
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          align-items: start;
-        }
-
-        hr {
-          margin: 0;
-          width: 2em;
-        }
-      }
-
-      .nav__links,
-      .header__metadata {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        align-items: start;
-      }
-
-      .nav__categories {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .nav__categories span,
-      .nav__sub-header {
-        font-weight: var(--font-heavyweight);
-        color: var(--color-muted);
-      }
-    </style>
-    <h1>
+<body class="max-w-4xl mx-auto px-6 flex flex-row gap-4 items-start">
+  <header
+    class="flex-none sticky top-0 pt-6 pr-2 pb-10 pl-3 max-h-screen overflow-y-auto flex flex-col gap-4 items-start">
+    <h1 class="text-sm text-mono font-normal m-0 flex flex-col gap-2 items-start">
       <img src="assets/Fluent-logo.svg" alt="Fluent.css logotype" width="16" />
       <span>Fluent.css</span>
     </h1>
     <nav>
-      <ul class="nav__categories size-sm">
+      <ul class="list-none p-0 flex flex-col gap-4 text-sm">
         <li>
-          <ul class="nav__links">
-            <span>Core</span>
+          <ul class="list-none p-0 flex flex-col gap-1 items-start">
+            <span class="font-semibold text-muted">Core</span>
             <li><a href="#typography">Typography</a></li>
             <li><a href="#color">Color</a></li>
             <li><a href="#color-grid">Color Grid</a></li>
@@ -180,8 +68,8 @@
           </ul>
         </li>
         <li>
-          <ul class="nav__links">
-            <span>Forms</span>
+          <ul class="list-none p-0 flex flex-col gap-1 items-start">
+            <span class="font-semibold text-muted">Forms</span>
             <li><a href="#btn">Button</a></li>
             <li><a href="#btn-group">Control Group</a></li>
             <li><a href="#input">Input</a></li>
@@ -197,16 +85,16 @@
           </ul>
         </li>
         <li>
-          <ul class="nav__links">
-            <span>Overlay</span>
+          <ul class="list-none p-0 flex flex-col gap-1 items-start">
+            <span class="font-semibold text-muted">Overlay</span>
             <li><a href="#dialog">Dialog</a></li>
             <li><a href="#popover">Popover</a></li>
             <li><a href="#menu">Menu</a></li>
           </ul>
         </li>
         <li>
-          <ul class="nav__links">
-            <span>Other</span>
+          <ul class="list-none p-0 flex flex-col gap-1 items-start">
+            <span class="font-semibold text-muted">Other</span>
             <li><a href="#accordion">Accordion</a></li>
             <li><a href="#tabs">Tabs</a></li>
             <li><a href="#table">Table</a></li>
@@ -215,16 +103,15 @@
         </li>
       </ul>
     </nav>
-    <span class="header__metadata size-sm">
+    <span class="flex flex-col gap-1 items-start text-sm">
       <span>Theme</span>
-      <button id="theme-toggle" class="type-subtle size-sm" style="margin-left:-8px"
-        onclick="toggleTheme()">Dark</button>
+      <button id="theme-toggle" class="type-subtle size-sm -ml-2" onclick="toggleTheme()">Dark</button>
 
     </span>
 
-    <hr />
+    <hr class="m-0 w-8" />
 
-    <p class="header__metadata">
+    <p class="flex flex-col gap-1 items-start">
       <a href="https://github.com/aipx-proto/fluent-css" target="_blank" rel="noopener noreferrer">GitHub</a>
       </span>
       <span>
@@ -239,60 +126,13 @@
 
   </header>
 
-  <main class="main">
-    <style>
-      .main {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
+  <main class="flex-auto py-6 pb-24 flex flex-col gap-6">
 
-      .section {
-        border-radius: var(--radius-md);
-        background-color: var(--color-panel);
-        /* border: 1px solid var(--color-border); */
-        box-shadow: var(--shadow-lg);
-      }
-
-      .section__content {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        padding: 24px;
-        border-bottom: 1px solid var(--color-border);
-
-        &:last-child {
-          border-bottom: none;
-        }
-      }
-
-      .section__header {
-        scroll-margin-top: 32px;
-      }
-
-      .section__columns {
-        display: flex;
-        flex-direction: row;
-        gap: 24px;
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
-    </style>
-
-    <section class="section">
-      <div class="section__content" id="typography">
-        <style>
-          .typography__font-size,
-          .typography__font-family,
-          .typography__font-weight {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-          }
-        </style>
-        <h3 class="section__header">Typography</h3>
-        <div class="section__columns">
-          <div class="typography__font-size">
+    <section class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0" id="typography">
+        <h3 class="scroll-mt-8">Typography</h3>
+        <div class="flex flex-row gap-6 items-start flex-wrap">
+          <div class="flex flex-col gap-2">
             <span class="text-6xl font-semibold">Display</span>
             <span class="text-5xl font-semibold">Large Title</span>
             <span class="text-4xl font-semibold">Title 1</span>
@@ -304,136 +144,101 @@
             <span class="text-sm">Caption 1</span>
             <span class="text-xs">Caption 2</span>
           </div>
-          <div class="typography__font-family">
-            <span style="font-family: var(--font-sans);">Font Family Sans</span>
-            <span style="font-family: var(--font-mono);">Font Family Mono</span>
+          <div class="flex flex-col gap-2">
+            <span class="text-sans">Font Family Sans</span>
+            <span class="text-mono">Font Family Mono</span>
           </div>
-          <div class="typography__font-weight">
+          <div class="flex flex-col gap-2">
             <span class="font-normal">Font Weight Regular</span>
             <span class="font-semibold">Font Weight Bold</span>
           </div>
         </div>
       </div>
-      <div class="section__content" id="color">
-        <h3 class="section__header">Color</h3>
-        <style>
-          .color__text-color {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-          }
-
-          .color__background-color,
-          .color__border-color {
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-
-            span {
-              display: flex;
-              flex-wrap: wrap;
-              align-items: center;
-              justify-content: center;
-              height: 60px;
-              flex: 1 1 auto;
-              border-radius: var(--radius-md);
-              border: 1px solid var(--color-border);
-              padding: 8px;
-            }
-          }
-        </style>
-        <div class="color__text-color">
-          <p style="color: var(--color-heading);"><strong>Text Heading: </strong>Lorem ipsum dolor sit amet, consectetur
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0" id="color">
+        <h3 class="scroll-mt-8">Color</h3>
+        <div class="flex flex-col gap-2">
+          <p class="text-heading"><strong>Text Heading: </strong>Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p style="color: var(--color-body);"><strong>Text Body: </strong>Duis aute irure dolor in reprehenderit in
+          <p class="text-body"><strong>Text Body: </strong>Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p style="color: var(--color-muted);"><strong>Text Muted: </strong>Sed ut perspiciatis unde omnis iste natus
+          <p class="text-muted"><strong>Text Muted: </strong>Sed ut perspiciatis unde omnis iste natus
             error
             sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </div>
-        <div class="color__background-color">
-          <span style="background-color: var(--color-card);">Background Card </span>
-          <span style="background-color: var(--color-panel);">Background Panel</span>
-          <span style="background-color: var(--color-page);">Background Page</span>
+        <div class="flex flex-row gap-2">
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto rounded-md border border-border p-2 bg-card">Background
+            Card </span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto rounded-md border border-border p-2 bg-panel">Background
+            Panel</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto rounded-md border border-border p-2 bg-page">Background
+            Page</span>
         </div>
-        <div class="color__border-color">
-          <span style="border: 1px solid var(--color-border);">Border</span>
-          <span style="border: 1px solid var(--color-outline);">Outline</span>
+        <div class="flex flex-row gap-2">
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto rounded-md p-2 border border-border">Border</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto rounded-md p-2 border border-outline">Outline</span>
         </div>
 
       </div>
-      <div class="section__content" id="layout">
-        <style>
-          .layout__border-radius,
-          .layout__shadow {
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-            /* padding: 16px; */
-            /* border-radius: var(--radius-lg); */
-            /* background-color: var(--color-page); */
-
-            span {
-              display: flex;
-              flex-wrap: wrap;
-              align-items: center;
-              justify-content: center;
-              height: 60px;
-              flex: 1 1 auto;
-              /* border-radius: var(--radius-md); */
-              border: 1px solid var(--color-border);
-              padding: 8px;
-              background-color: var(--color-card);
-              text-align: center;
-            }
-          }
-
-          .layout__shadow {
-            gap: 0;
-
-            span {
-              border: 0;
-            }
-
-            span:first-child {
-              border-top-left-radius: var(--radius-md);
-              border-bottom-left-radius: var(--radius-md);
-            }
-
-            span:last-child {
-              border-bottom-right-radius: var(--radius-md);
-              border-top-right-radius: var(--radius-md);
-            }
-          }
-        </style>
-        <h3 class="section__header">Layout</h3>
-        <div class="layout__border-radius">
-          <span style="border-radius: 0">Radius None</span>
-          <span style="border-radius: var(--radius-sm);">Radius Small</span>
-          <span style="border-radius: var(--radius-md);">Radius Medium</span>
-          <span style="border-radius: var(--radius-lg);">Radius Large</span>
-          <span style="border-radius: var(--radius-xl);">Radius XLarge</span>
-          <span style="border-radius: var(--radius-4xl);">Radius Circular</span>
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0" id="layout">
+        <h3 class="scroll-mt-8">Layout</h3>
+        <div class="flex flex-row gap-2">
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-none">Radius
+            None</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-sm">Radius
+            Small</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-md">Radius
+            Medium</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-lg">Radius
+            Large</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-xl">Radius
+            XLarge</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-4xl">Radius
+            Circular</span>
         </div>
-        <div class="layout__shadow">
-          <span style="box-shadow: var(--shadow-2xs);">Shadow 0</span>
-          <span style="box-shadow: var(--shadow-xs);">Shadow 2</span>
-          <span style="box-shadow: var(--shadow-sm);">Shadow 4</span>
-          <span style="box-shadow: var(--shadow-md);">Shadow 8</span>
-          <span style="box-shadow: var(--shadow-lg);">Shadow 16</span>
-          <span style="box-shadow: var(--shadow-xl);">Shadow 28</span>
-          <span style="box-shadow: var(--shadow-2xl);">Shadow 64</span>
+        <div class="flex flex-row">
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-l-md shadow-2xs">Shadow
+            0</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xs">Shadow
+            2</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-sm">Shadow
+            4</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-md">Shadow
+            8</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-lg">Shadow
+            16</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xl">Shadow
+            28</span>
+          <span
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-r-md shadow-2xl">Shadow
+            64</span>
         </div>
       </div>
 
     </section>
 
-    <section id="btns" class="section">
-      <div id="btn" class="section__content">
-        <h3 class="section__header">Button</h3>
+    <section id="btns" class="rounded-md bg-panel shadow-lg">
+      <div id="btn" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Button</h3>
         <div class="btn_type">
           <button class="type-primary">Primary</button>
           <button>Default</button>
@@ -476,16 +281,9 @@
           <input type="file" />
         </div>
       </div>
-      <div id="btn-group" class="section__content">
-        <style>
-          .btn-group__samples {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-          }
-        </style>
-        <h3 class="section__header">Control Group</h3>
-        <div class="btn-group__samples">
+      <div id="btn-group" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Control Group</h3>
+        <div class="flex flex-col gap-4">
           <div class="btn-group">
             <button>Button 1</button>
             <button>Button 2</button>
@@ -505,9 +303,9 @@
       </div>
     </section>
 
-    <section id="forms" class="section">
-      <div id="input" class="section__content">
-        <h3 class="section__header">Input</h3>
+    <section id="forms" class="rounded-md bg-panel shadow-lg">
+      <div id="input" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Input</h3>
         <div>
           <input type="text" placeholder="Default" />
           <input type="text" placeholder="Outline" class="type-outline" />
@@ -534,8 +332,8 @@
           <input type="date" />
         </div>
       </div>
-      <div id="input-group" class="section__content">
-        <h3 class="section__header">Input Group</h3>
+      <div id="input-group" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Input Group</h3>
         <div>
           <div class="input">
             <i class="icon emojicon">🔍</i>
@@ -549,8 +347,8 @@
           </div> -->
         </div>
       </div>
-      <div id="select" class="section__content">
-        <h3 class="section__header">Select</h3>
+      <div id="select" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Select</h3>
         <div>
           <select id="select" name="select">
             <option value="" disabled selected>Select an option</option>
@@ -565,35 +363,19 @@
           </select>
         </div> -->
       </div>
-      <div id="textarea" class="section__content">
-        <h3 class="section__header">Textarea</h3>
+      <div id="textarea" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Textarea</h3>
         <div>
           <textarea placeholder="Textarea"></textarea>
           <!-- <textarea placeholder="Textarea Disabled" disabled></textarea> -->
         </div>
       </div>
 
-      <style>
-        .form__radios,
-        .form__checkboxes {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-        }
+      <div id="radio" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Radio</h3>
+        <div class="flex flex-row gap-6 items-start flex-wrap">
 
-        .form__switch {
-          display: flex;
-          flex-direction: row;
-          gap: 12px;
-          align-items: center;
-        }
-      </style>
-
-      <div id="radio" class="section__content">
-        <h3 class="section__header">Radio</h3>
-        <div class="section__columns">
-
-          <div class="form__radios">
+          <div class="flex flex-col gap-1">
             <label>
               <input type="radio" id="radio1" name="radio" value="1" checked />
               Checked
@@ -603,8 +385,8 @@
               Unchecked
             </label>
           </div>
-          <div class="form__radios">
-            <div class="form__radios">
+          <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1">
               <label class="size-lg">
                 <input type="radio" id="radio1" name="radio2" value="1" />
                 Large
@@ -632,11 +414,11 @@
         </div>
       </div>
 
-      <div id="checkbox" class="section__content">
-        <h3 class="section__header">Checkbox</h3>
-        <div class="section__columns">
+      <div id="checkbox" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Checkbox</h3>
+        <div class="flex flex-row gap-6 items-start flex-wrap">
 
-          <div class="form__checkboxes">
+          <div class="flex flex-col gap-1">
             <label>
               <input type="checkbox" id="checkbox1" name="checkbox1" checked />
               Checked
@@ -653,7 +435,7 @@
               Unchecked
             </label>
           </div>
-          <div class="form__checkboxes">
+          <div class="flex flex-col gap-1">
             <label class="size-lg">
               <input type="checkbox" id="checkbox-large" name="checkbox-large" />
               Large
@@ -680,16 +462,16 @@
         </div>
       </div>
 
-      <div id="switch" class="section__content">
-        <h3 class="section__header">Switch</h3>
-        <div class="section__columns">
-          <div class="form__switch">
+      <div id="switch" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Switch</h3>
+        <div class="flex flex-row gap-6 items-start flex-wrap">
+          <div class="flex flex-row gap-3 items-center">
             <label>
               <input type="checkbox" class="switch" id="switch1" name="switch1" checked />
               Default
             </label>
           </div>
-          <div class="form__switch">
+          <div class="flex flex-row gap-3 items-center">
             <label>
               <input type="checkbox" class="switch size-sm" id="switch-small" name="switch-small" />
               Small
@@ -712,16 +494,16 @@
         </div>
       </div>
 
-      <div id="slider" class="section__content">
-        <h3 class="section__header">Slider</h3>
+      <div id="slider" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Slider</h3>
         <div>
           <input type="range" min="0" max="100" value="50" />
           <!-- <input type="range" min="0" max="100" value="50" disabled /> -->
         </div>
       </div>
 
-      <div id="progress" class="section__content">
-        <h3 class="section__header">Progress</h3>
+      <div id="progress" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Progress</h3>
         <div>
           <progress value="33" max="100"></progress>
           <span>Value 33/100</span>
@@ -730,19 +512,19 @@
           <progress indeterminate></progress>
           <span>Indeterminate</span>
         </div>
-        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+        <div class="flex flex-row gap-3 items-center">
           <progress class="spinner" indeterminate></progress>
           <span>Spinner</span>
         </div>
       </div>
 
-      <div id="fieldset" class="section__content">
-        <h3 class="section__header">Fieldset</h3>
+      <div id="fieldset" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Fieldset</h3>
         <fieldset>
           <legend>Fieldset Legend</legend>
           <p>This is a fieldset with a legend and some content.</p>
           <br />
-          <div style="display: flex; flex-direction: column; gap: 8px; align-items: start;">
+          <div class="flex flex-col gap-2 items-start">
             <label>
               Name
             </label>
@@ -753,9 +535,9 @@
 
     </section>
 
-    <section id="overlay" class="section">
-      <div id="dialog" class="section__content">
-        <h3 class="section__header">Dialog</h3>
+    <section id="overlay" class="rounded-md bg-panel shadow-lg">
+      <div id="dialog" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Dialog</h3>
         <div>
           <button onclick="document.getElementById('dialog-modal').showModal()">Open Dialog</button>
           <dialog id="dialog-modal" closedby="any">
@@ -777,9 +559,9 @@
         </div>
       </div>
 
-      <div id="popover" class="section__content">
-        <h3 class="section__header">Popover</h3>
-        <div class="section__columns">
+      <div id="popover" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Popover</h3>
+        <div class="flex flex-row gap-6 items-start flex-wrap">
 
           <button popovertarget="popover-example">
             Click for popover
@@ -799,37 +581,22 @@
             This is a tooltip using the new popover API (and javascript)
           </div>
 
-          <div class="popover__positions">
-            <style>
-              .popover__positions {
-                display: grid;
-                justify-content: center;
-                grid-template-columns: repeat(5, auto);
-                grid-template-rows: repeat(5, auto);
-                gap: 2px;
-                flex: 1 1 auto;
-              }
-            </style>
-            <button class="icon-only" popovertarget="popover-above-start"
-              style="grid-column: 2; grid-row: 1;">AS</button>
-            <button class="icon-only" popovertarget="popover-above" style="grid-column: 3; grid-row: 1;">A</button>
-            <button class="icon-only" popovertarget="popover-above-end" style="grid-column: 4; grid-row: 1;">AE</button>
+          <div class="grid justify-center grid-cols-5 grid-rows-5 gap-0.5 flex-auto">
+            <button class="icon-only col-start-2 row-start-1" popovertarget="popover-above-start">AS</button>
+            <button class="icon-only col-start-3 row-start-1" popovertarget="popover-above">A</button>
+            <button class="icon-only col-start-4 row-start-1" popovertarget="popover-above-end">AE</button>
 
-            <button class="icon-only" popovertarget="popover-before-top"
-              style="grid-column: 1; grid-row: 2;">BT</button>
-            <button class="icon-only" popovertarget="popover-before" style="grid-column: 1; grid-row: 3;">B</button>
-            <button class="icon-only" popovertarget="popover-before-bottom"
-              style="grid-column: 1; grid-row: 4;">BB</button>
+            <button class="icon-only col-start-1 row-start-2" popovertarget="popover-before-top">BT</button>
+            <button class="icon-only col-start-1 row-start-3" popovertarget="popover-before">B</button>
+            <button class="icon-only col-start-1 row-start-4" popovertarget="popover-before-bottom">BB</button>
 
-            <button class="icon-only" popovertarget="popover-after-top" style="grid-column: 5; grid-row: 2;">AT</button>
-            <button class="icon-only" popovertarget="popover-after" style="grid-column: 5; grid-row: 3;">A</button>
-            <button class="icon-only" popovertarget="popover-after-bottom"
-              style="grid-column: 5; grid-row: 4;">AB</button>
+            <button class="icon-only col-start-5 row-start-2" popovertarget="popover-after-top">AT</button>
+            <button class="icon-only col-start-5 row-start-3" popovertarget="popover-after">A</button>
+            <button class="icon-only col-start-5 row-start-4" popovertarget="popover-after-bottom">AB</button>
 
-            <button class="icon-only" popovertarget="popover-below-start"
-              style="grid-column: 2; grid-row: 5;">BS</button>
-            <button class="icon-only" popovertarget="popover-below" style="grid-column: 3; grid-row: 5;">B</button>
-            <button class="icon-only" popovertarget="popover-below-end" style="grid-column: 4; grid-row: 5;">BE</button>
+            <button class="icon-only col-start-2 row-start-5" popovertarget="popover-below-start">BS</button>
+            <button class="icon-only col-start-3 row-start-5" popovertarget="popover-below">B</button>
+            <button class="icon-only col-start-4 row-start-5" popovertarget="popover-below-end">BE</button>
           </div>
 
           <div id="popover-above-start" class="position-above-start" popover>Above start</div>
@@ -851,8 +618,8 @@
         </div>
       </div>
 
-      <div id="menu" class="section__content">
-        <h3 class="section__header">Menu & Split Button</h3>
+      <div id="menu" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Menu & Split Button</h3>
         <div class="btn-group type-primary">
           <button class="shape-rounded">Split Button</button>
           <button class="icon-only shape-rounded" popovertarget="menu-example">
@@ -869,9 +636,9 @@
       </div>
     </section>
 
-    <section id="accordion" class="section">
-      <div class="section__content keep-default-margins">
-        <h3 class="section__header" style="margin: 0;">Accordion</h3>
+    <section id="accordion" class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0 ">
+        <h3 class="scroll-mt-8 m-0">Accordion</h3>
         <details>
           <summary>Accordion Item 1</summary>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus,
@@ -903,7 +670,7 @@
           </ul>
         </details>
       </div>
-      <div class="section__content keep-default-margins">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0 ">
         <details>
           <summary class="marker-end">Accordion Marker End</summary>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus,
@@ -917,36 +684,14 @@
       </div>
     </section>
 
-    <section id="tabs" class="section">
-      <div class="section__content">
-        <h3 class="section__header">Tabs</h3>
+    <section id="tabs" class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Tabs</h3>
       </div>
-      <div class="section__content tabs__sample">
-        <style>
-          .tabs__sample {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            min-height: 300px;
-            padding: 0;
+      <div
+        class="flex flex-row gap-4 min-h-80 p-0 [&_section]:flex [&_section]:flex-col [&_section]:gap-4 [&_section]:p-4">
 
-            section {
-              display: flex;
-              flex-direction: column;
-              gap: 16px;
-              padding: 16px;
-            }
-
-          }
-
-          .tabs__primary-nav {
-            flex: 0 0 auto;
-            border-right: 1px solid var(--color-page);
-            padding: 8px;
-          }
-        </style>
-
-        <nav class="tabs__primary-nav tabs vertical type-subtle" style="flex: 0 0 auto;">
+        <nav class="flex-none border-r border-page p-2 tabs vertical type-subtle">
           <label class="tab" role="tab" aria-controls="panel-1" for="tab-1">
             <input type="radio" name="tab-group-1" id="tab-1" checked />
             Tab 1
@@ -1064,9 +809,9 @@
       </div> -->
     </section>
 
-    <section id="table" class="section">
-      <div class="section__content">
-        <h3 class="section__header">Table</h3>
+    <section id="table" class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Table</h3>
         <table>
           <thead>
             <tr>
@@ -1096,12 +841,12 @@
       </div>
     </section>
 
-    <section id="html-sample" class="section">
-      <div class="section__content">
-        <h2 class="section__header">HTML Elements</h2>
+    <section id="html-sample" class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h2 class="scroll-mt-8">HTML Elements</h2>
       </div>
 
-      <div class="section__content keep-default-margins" style="display: block;">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0  block">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>

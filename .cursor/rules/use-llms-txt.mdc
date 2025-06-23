@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+When writing any html, use fluent.css and tailwind as described in [llms.txt](mdc:llms.txt).
