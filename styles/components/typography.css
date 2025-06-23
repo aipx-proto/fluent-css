@@ -73,7 +73,7 @@ small {
 blockquote {
   border-left: 2px solid var(--color-border);
   margin: 0;
-  padding-left: 8px;
+  padding-left: 1em;
   color: var(--color-heading);
   font-style: italic;
 }
@@ -84,7 +84,7 @@ q {
 
 ul,
 ol {
-  padding-left: var(--p-default);
+  padding-left: 1.25em;
 }
 
 code,

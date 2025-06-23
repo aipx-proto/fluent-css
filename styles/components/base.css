@@ -2,3 +2,8 @@ html {
   background-color: var(--color-page);
 }
 
+ul,
+ol {
+  /* tailwind preflight removes this */
+  list-style: revert;
+}
