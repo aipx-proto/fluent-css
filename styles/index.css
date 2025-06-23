@@ -13,8 +13,6 @@
 
 @import "./theme/variants.css";
 
-@import "tailwindcss/preflight" layer(base);
-
 @import "./font-face/font-segoe.css";
 
 @import "./theme/color-palette.css" layer(theme);
