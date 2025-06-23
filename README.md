@@ -31,7 +31,8 @@ This library tailwind to build styles/index.css a build/fluent.css file. There a
 
 - Build 
   - use postcss with custom scripts for more streamline build (no generate-custom-properties concurrently)
-  - re-evaluate the overriding utilizes to integrate with tailwind properly
+  - re-evaluate the overriding utilities to integrate with tailwind properly
+  - output a fluent.tailwind.css to import with  `<style type="text/tailwindcss">@import url(".../build/fluent.tailwind.css");</style>`
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
 - intent - info, brand, success, warning, danger
