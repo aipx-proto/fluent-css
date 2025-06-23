@@ -731,6 +731,12 @@
   .text-white {
     color: var(--color-white);
   }
+  .italic {
+    font-style: italic;
+  }
+  .not-italic {
+    font-style: normal;
+  }
   .opacity-disabled {
     opacity: var(--opacity-disabled);
   }

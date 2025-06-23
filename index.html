@@ -53,7 +53,7 @@
 <body class="max-w-4xl mx-auto px-6 flex flex-row gap-4 items-start">
   <header
     class="flex-none sticky top-0 pt-6 pr-2 pb-10 pl-3 max-h-screen overflow-y-auto flex flex-col gap-4 items-start">
-    <h1 class="text-sm text-mono font-normal m-0 flex flex-col gap-2 items-start">
+    <h1 class="text-sm font-mono font-normal m-0 flex flex-col gap-2 items-start">
       <img src="assets/Fluent-logo.svg" alt="Fluent.css logotype" width="16" />
       <span>Fluent.css</span>
     </h1>
@@ -64,7 +64,6 @@
             <span class="font-semibold text-muted">Core</span>
             <li><a href="#typography">Typography</a></li>
             <li><a href="#color">Color</a></li>
-            <li><a href="#color-grid">Color Grid</a></li>
             <li><a href="#layout">Layout</a></li>
           </ul>
         </li>
@@ -132,22 +131,22 @@
     <section class="rounded-md bg-panel shadow-lg">
       <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0" id="typography">
         <h3 class="scroll-mt-8">Typography</h3>
-        <div class="flex flex-row gap-6 items-start flex-wrap">
+        <div class="flex flex-col gap-6 items-start flex-wrap">
           <div class="flex flex-col gap-2">
-            <span class="text-6xl font-semibold">Display</span>
-            <span class="text-5xl font-semibold">Large Title</span>
-            <span class="text-4xl font-semibold">Title 1</span>
-            <span class="text-3xl font-semibold">Title 2</span>
-            <span class="text-2xl font-semibold">Title 3</span>
-            <span class="text-xl font-semibold">Subtitle 1</span>
-            <span class="text-lg">Subtitle 2</span>
-            <span class="text-base">Body 1</span>
-            <span class="text-sm">Caption 1</span>
-            <span class="text-xs">Caption 2</span>
+            <span class="text-7xl font-semibold">Display / 7xl</span>
+            <span class="text-5xl font-semibold">Large Title / 5xl</span>
+            <span class="text-4xl font-semibold">Title 1 / 4xl</span>
+            <span class="text-3xl font-semibold">Title 2 / 3xl</span>
+            <span class="text-2xl font-semibold">Title 3 / 2xl</span>
+            <span class="text-xl font-semibold">Subtitle 1 / xl</span>
+            <span class="text-lg">Subtitle 2 / lg</span>
+            <span class="text-base">Body 1 / md / base</span>
+            <span class="text-sm">Caption 1 / sm</span>
+            <span class="text-xs">Caption 2 / xs</span>
           </div>
           <div class="flex flex-col gap-2">
-            <span class="text-sans">Font Family Sans</span>
-            <span class="text-mono">Font Family Mono</span>
+            <span class="font-sans">Font Family Sans</span>
+            <span class="font-mono">Font Family Mono</span>
           </div>
           <div class="flex flex-col gap-2">
             <span class="font-normal">Font Weight Regular</span>
@@ -193,45 +192,45 @@
         <div class="flex flex-row gap-2">
           <span
             class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-none">Radius
-            None</span>
+            none</span>
           <span
             class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-sm">Radius
-            Small</span>
+            sm</span>
           <span
             class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-md">Radius
-            Medium</span>
+            md</span>
           <span
             class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-lg">Radius
-            Large</span>
+            lg</span>
           <span
             class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-xl">Radius
-            XLarge</span>
+            xl</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-4xl">Radius
-            Circular</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto border border-border p-2 bg-card text-center rounded-full">Radius
+            full</span>
         </div>
         <div class="flex flex-row">
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-l-md shadow-2xs">Shadow
-            0</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-l-md shadow-2xs">Shadow<br/>
+            2xs (0)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xs">Shadow
-            2</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xs">Shadow<br/>
+            xs (2)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-sm">Shadow
-            4</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-sm">Shadow<br/>
+            sm (4)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-md">Shadow
-            8</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-md">Shadow<br/>
+            md (8)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-lg">Shadow
-            16</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-lg">Shadow<br/>
+            lg (16)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xl">Shadow
-            28</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center shadow-xl">Shadow<br/>
+            xl (28)</span>
           <span
-            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-r-md shadow-2xl">Shadow
-            64</span>
+            class="flex flex-wrap items-center justify-center h-16 flex-auto p-2 bg-card text-center rounded-r-md shadow-2xl">Shadow<br/>
+            2xl (64)</span>
         </div>
       </div>
 
