@@ -1169,7 +1169,7 @@
 @layer components {
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-muted) transparent;
+    scrollbar-color: var(--color-border) transparent;
   }
 }
 @layer components {
