@@ -1,11 +1,17 @@
 .tabs {
   display: flex;
-  gap: 2px;
+  gap: calc(var(--p-default) * 1.5);
   flex-direction: row;
 
   &.vertical {
     flex-direction: column;
   }
+
+  &.type-subtle,
+  &.vertical {
+    gap: 2px;
+  }
+
 }
 
 /*! 
@@ -37,8 +43,28 @@
 
   border-radius: var(--rounded-default);
   font-size: var(--text-default);
-  min-height: var(--h-default);
-  padding: 0 var(--p-default);
+  min-height: calc(var(--h-default) * 1.5);
+  padding: 2px 0;
+
+  /* &:not(.type-subtle):not(.vertical) {
+    padding-inline: 0;
+    gap: var(--p-default);
+    &:after,
+    &:before {
+      inset: auto 0 0 0;
+    }
+  } */
+
+  .type-subtle &,
+  &.type-subtle,
+  .vertical & {
+    padding-inline: var(--p-default);
+    &:after,
+    &:before {
+      inset: auto 0 0 0;
+      inset: auto var(--p-default) 0 var(--p-default);
+    }
+  }
 
   transition: background-color var(--duration-rest) linear;
 
@@ -50,7 +76,7 @@
     display: block;
     position: absolute;
     border-radius: 999px;
-    inset: auto var(--p-default) 0 var(--p-default);
+    inset: auto 0 0 0;
     height: var(--_size-tab-underline);
     transform-origin: center;
     transition: transform var(--_duration-tab-underline) ease-out, opacity var(--duration-rest) linear;
@@ -67,8 +93,9 @@
   }
 
   .vertical & {
-    --_size-tab-underline-padding: calc((var(--h-default) - var(--h-icon)) / 2);
+    min-height: var(--h-default);
 
+    --_size-tab-underline-padding: calc((var(--h-default) - var(--h-icon)) / 2);
     &:after,
     &:before {
       inset: var(--_size-tab-underline-padding) auto var(--_size-tab-underline-padding) 0;
