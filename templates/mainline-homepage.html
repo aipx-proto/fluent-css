@@ -1,138 +1,228 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure AI Foundry</title>
-    <link rel="icon" type="image/svg+xml" href="https://ai.azure.com/assets/aistudio-af17733a.svg" />
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure AI Foundry</title>
+  <link rel="icon" type="image/svg+xml" href="https://ai.azure.com/assets/aistudio-af17733a.svg" />
 
-    <!-- Fluent.css -->
-    <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Fluent.css -->
+  <link rel="stylesheet" href="../build/fluent.css" />
 </head>
 
-<body class="bg-panel text-body min-h-screen flex flex-col dark">
-    <header class="bg-page flex items-center justify-between px-6 py-2 flex-shrink-0" data-AIDEV-ID="header">
-        <div class="flex items-center gap-1">
-            <img alt="Azure AI Foundry" src="https://ai.azure.com/assets/aistudio-af17733a.svg" width="18" height="18">
-            <h1 class="text-md font-semibold text-heading">Azure AI Foundry</h1>
-        </div>
+<body class="dark text-body min-h-screen flex flex-col ">
+  <header class=" flex items-center justify-between px-6 py-2 flex-shrink-0 flex-wrap" data-AIDEV-ID="header">
+    <nav class="flex items-center gap-3" data-AIDEV-ID="breadcrumbs">
+      <img alt="Azure AI Foundry" src="https://ai.azure.com/assets/aistudio-af17733a.svg" width="18" height="18">
+      <h1 class="text-md font-semibold text-heading">
+        <a href="#" class="text-heading">Azure AI Foundry</a>
+      </h1>
+      <!-- <span>/</span>
+      <a href="#" class="text-body">my-ai-project-alpha</a>
+      <span>/</span>
+      <span class="font-semibold">Overview</span> -->
+    </nav>
 
-        <div class="flex items-center gap-3" data-AIDEV-ID="nav-actions">
-            <button class="icon-only type-subtle" title="Toggle Theme">
-                <span class="emojicon">🌙</span>
-            </button>
-            <button class="icon-only type-subtle" title="Feedback">
-                <span class="emojicon">💬</span>
-            </button>
-            <button class="icon-only type-subtle" title="Settings">
-                <span class="emojicon">⚙️</span>
-            </button>
-            <button class="icon-only type-subtle" title="Help">
-                <span class="emojicon">❓</span>
-            </button>
-            <button class="icon-only type-subtle" title="Profile">
-                <span class="emojicon">👤</span>
-            </button>
-        </div>
-    </header>
+    <div class="flex items-center gap-2" data-AIDEV-ID="nav-actions">
+      <!-- <a href="#" class="text-body">All resources</a> -->
 
-    <main class="flex-1 max-w-[1100px] mx-auto p-6 w-full" data-AIDEV-ID="main-content">
-        <div class="flex items-center justify-between mb-6" data-AIDEV-ID="page-title-actions">
-            <h2 class="text-2xl font-semibold text-heading">Keep building with Azure AI Foundry</h2>
-            <div class="flex items-center gap-3" data-AIDEV-ID="page-actions">
-                <a href="#" class="text-link hover:underline">View all resources</a>
-                <button class="type-primary flex items-center gap-2">
-                    + Create new
-                </button>
-                <button class="icon-only type-outline" title="Help">
-                    <span class="emojicon">❓</span>
-                </button>
+      <button class="icon-only type-subtle" title="Toggle Theme">
+        <span class="emojicon">🌙</span>
+      </button>
+      <button class="icon-only type-subtle" title="Feedback">
+        <span class="emojicon">💬</span>
+      </button>
+      <button class="icon-only type-subtle" title="Settings">
+        <span class="emojicon">⚙️</span>
+      </button>
+      <button class="icon-only type-subtle" title="Help">
+        <span class="emojicon">❓</span>
+      </button>
+      <!-- <select class="btn type-subtle size-sm">
+        <option value="my-ai-project-alpha">Project: my-ai-project-alpha</option>
+      </select> -->
+      <button class="icon-only type-subtle bg-card rounded-full" title="Profile">
+        <span class="emojicon">👤</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="bg-panel flex-1 w-full" data-AIDEV-ID="main-content">
+
+    <div class="max-w-[1100px] mx-auto p-6 w-full" data-AIDEV-ID="page-feature-cards">
+
+      <div class="flex items-center justify-between mb-6" data-AIDEV-ID="page-title-actions">
+        <h2 class="text-2xl font-semibold text-heading">Page Heading</h2>
+        <div class="flex items-center gap-3" data-AIDEV-ID="page-actions">
+          <a href="#" class="text-link hover:underline">View all resources</a>
+          <button class="type-primary flex items-center gap-2">
+            + Create new
+          </button>
+          <button class="icon-only type-outline" title="Help">
+            <span class="emojicon">❓</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-lg overflow-hidden border border-border mb-6" data-AIDEV-ID="resources-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Resource name</th>
+              <th>Type</th>
+              <th>Region</th>
+              <th>Created on</th>
+            </tr>
+          </thead>
+          <tbody data-AIDEV-ID="table-data">
+            <tr>
+              <td>
+                <a href="#" class="text-link hover:underline font-medium">my-ai-project-alpha</a>
+              </td>
+              <td>
+                <div>Project</div>
+                <div class="text-sm text-muted">
+                  <a href="#" class="text-link hover:underline">ai-hub-resource-001</a>
+                  <span class="text-muted">(Hub)</span>
+                </div>
+              </td>
+              <td>westus3</td>
+              <td>Mar 21, 2025 2:29 PM</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#" class="text-link hover:underline font-medium">demo-workspace</a>
+              </td>
+              <td>
+                <div>Project (default)</div>
+                <div class="text-sm text-muted">
+                  <a href="#" class="text-link hover:underline">demo-ai-resource</a>
+                  <span class="text-muted">(AI Foundry)</span>
+                </div>
+              </td>
+              <td>eastus2</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#" class="text-link hover:underline font-medium">production-pipeline</a>
+              </td>
+              <td>
+                <div>Project</div>
+                <div class="text-sm text-muted">
+                  <a href="#" class="text-link hover:underline">prod-hub-service</a>
+                  <span class="text-muted">(Hub)</span>
+                </div>
+              </td>
+              <td>swedencentral</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#" class="text-link hover:underline font-medium">shared-ai-resource</a>
+              </td>
+              <td>AI Foundry</td>
+              <td>eastus2</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#" class="text-link hover:underline font-medium">ml-experiment-beta</a>
+              </td>
+              <td>
+                <div>Project</div>
+                <div class="text-sm text-muted">
+                  <a href="#" class="text-link hover:underline">shared-ai-resource</a>
+                  <span class="text-muted">(AI Foundry)</span>
+                </div>
+              </td>
+              <td>eastus2</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flex flex-col mb-6" data-AIDEV-ID="page-feature-cards">
+        <div class="flex items-center justify-between mb-4" data-AIDEV-ID="page-title-actions">
+          <h2 class="text-2xl font-semibold text-heading">Cards Section</h2>
+        </div>
+        <div class="flex flex-row gap-4 mb-8" data-AIDEV-ID="feature-cards">
+          <div class="bg-card border border-border rounded-lg p-3 flex flex-col">
+            <div>
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="text-lg font-semibold text-heading">Card Title One</h3>
+                <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                  <span class="text-white text-xl">📊</span>
+                </div>
+              </div>
+              <p class="text-body-secondary mb-4">
+                This is explanatory card content that describes the feature or capability.
+              </p>
             </div>
-        </div>
+            <div class="flex-1"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <button class="btn type-outline">Action Button</button>
+              <a href="#" class="text-sm">
+                <span>Learn more</span>
+                <span class="emojicon ml-1">🔗</span>
+              </a>
+            </div>
+          </div>
 
-        <div class="bg-card rounded-lg overflow-hidden border border-border" data-AIDEV-ID="resources-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Resource name</th>
-                        <th>Type</th>
-                        <th>Region</th>
-                        <th>Created on</th>
-                    </tr>
-                </thead>
-                <tbody data-AIDEV-ID="table-data">
-                    <tr>
-                        <td>
-                            <a href="#" class="text-link hover:underline font-medium">my-ai-project-alpha</a>
-                        </td>
-                        <td>
-                            <div>Project</div>
-                            <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">ai-hub-resource-001</a>
-                                <span class="text-muted">(Hub)</span>
-                            </div>
-                        </td>
-                        <td>westus3</td>
-                        <td>Mar 21, 2025 2:29 PM</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#" class="text-link hover:underline font-medium">demo-workspace</a>
-                        </td>
-                        <td>
-                            <div>Project (default)</div>
-                            <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">demo-ai-resource</a>
-                                <span class="text-muted">(AI Foundry)</span>
-                            </div>
-                        </td>
-                        <td>eastus2</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#" class="text-link hover:underline font-medium">production-pipeline</a>
-                        </td>
-                        <td>
-                            <div>Project</div>
-                            <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">prod-hub-service</a>
-                                <span class="text-muted">(Hub)</span>
-                            </div>
-                        </td>
-                        <td>swedencentral</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#" class="text-link hover:underline font-medium">shared-ai-resource</a>
-                        </td>
-                        <td>AI Foundry</td>
-                        <td>eastus2</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#" class="text-link hover:underline font-medium">ml-experiment-beta</a>
-                        </td>
-                        <td>
-                            <div>Project</div>
-                            <div class="text-sm text-muted">
-                                <a href="#" class="text-link hover:underline">shared-ai-resource</a>
-                                <span class="text-muted">(AI Foundry)</span>
-                            </div>
-                        </td>
-                        <td>eastus2</td>
-                        <td>-</td>
-                    </tr>
-                </tbody>
-            </table>
+          <div class="bg-card border border-border rounded-lg p-3 flex flex-col">
+            <div>
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="text-lg font-semibold text-heading">Card Title Two</h3>
+                <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <span class="text-white text-xl">⚙️</span>
+                </div>
+              </div>
+              <p class="text-body-secondary mb-4">
+                Another card with different content explaining a different feature or service.
+              </p>
+            </div>
+            <div class="flex-1"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <button class="btn type-outline">Action Button</button>
+              <a href="#" class="text-sm">
+                <span>Learn more</span>
+                <span class="emojicon ml-1">🔗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-card border border-border rounded-lg p-3 flex flex-col">
+            <div>
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="text-lg font-semibold text-heading">Card Title Three</h3>
+                <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                  <span class="text-white text-xl">🚀</span>
+                </div>
+              </div>
+              <p class="text-body-secondary mb-4">
+                Third card content describing additional functionality or features available.
+              </p>
+            </div>
+            <div class="flex-1"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <button class="btn type-outline">Action Button</button>
+              <a href="#" class="text-sm">
+                <span>Learn more</span>
+                <span class="emojicon ml-1">🔗</span>
+              </a>
+            </div>
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
+
+
+  </main>
 </body>
 
 </html>
