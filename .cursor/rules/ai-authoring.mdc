@@ -26,10 +26,10 @@ Add specially formatted comments throughout the codebase, where appropriate, for
 - In HTML, tag relevant elements with `data-AIDEV-ID="{name}"` so they can be easily searched for. Only add html comments when there is a comment, not just a content label.
 - **Important:** Before scanning files, always first try to **grep for existing anchors** `AIDEV-*` in relevant subdirectories.
 - **Update relevant anchors** when modifying associated code.
-- **Do not remove `AIDEV-NOTE`s** without explicit human instruction.
 - Make sure to add relevant anchor comments or ids, whenever a file or piece of code is:
   - too complex, or
   - very important, or
   - confusing, or
   - could have a bug
+- Do not add `AIDEV-` comments for simple changes. 
 
