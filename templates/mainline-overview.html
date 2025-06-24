@@ -186,238 +186,196 @@
     </aside>
 
     <main class="flex-1 p-6 overflow-auto rounded-tl-lg bg-panel shadow-lg" data-AIDEV-ID="main-content">
-      <div class="max-w-5xl">
-        <!-- Project Header -->
-        <div class="mb-8" data-AIDEV-ID="project-header">
-          <div class="flex items-center gap-2 mb-2">
-            <h1 class="text-2xl font-semibold text-heading">jabradford-fifth-project</h1>
-            <button class="icon-only type-subtle size-sm" title="Edit project name">
-              <span class="emojicon">✏️</span>
-            </button>
+      <div class="">
+        <!-- Page Header -->
+        <div class="flex justify-between items-start mb-6" data-AIDEV-ID="page-header">
+          <div>
+            <h1 class="text-3xl font-semibold text-heading mb-4">Fine-tune with your own data</h1>
+            <p class="text-body text-lg max-w-4xl leading-relaxed">
+              Optimize models for specific tasks with smaller, task specific datasets to improve its performance and
+              accuracy. Because this method tends to require fewer examples in the prompts, generally less text is
+              sent—and tokens processed—per call.
+            </p>
           </div>
-          <div class="flex items-center gap-2 text-body-secondary">
-            <span>Add a project description (optional)</span>
-            <button class="icon-only type-subtle size-sm" title="Edit description">
-              <span class="emojicon">✏️</span>
-            </button>
-          </div>
+          <button class="btn type-outline">
+            <span class="emojicon">❓</span>
+            <span>Help</span>
+          </button>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <!-- Left Column - Endpoints and Keys -->
-          <div class="lg:col-span-2 space-y-6">
-            <div class="bg-card border border-border rounded-lg p-6" data-AIDEV-ID="endpoints-keys">
-              <div class="flex items-center justify-between mb-4">
-                <h2 class="text-lg font-semibold text-heading">Endpoints and keys</h2>
-                <a href="#" class="link">View all endpoints</a>
+        <!-- Tabs -->
+        <div class="tabs horizontal mb-6" data-AIDEV-ID="fine-tuning-tabs">
+          <a class="tab selected" href="#generative-ai-fine-tuning">
+            <span>Generative AI fine-tuning</span>
+          </a>
+          <a class="tab" href="#ai-service-fine-tuning">
+            <span>AI Service fine-tuning</span>
+          </a>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="flex items-center gap-1 mb-6 p-1 border border-border rounded-lg" data-AIDEV-ID="action-bar">
+          <button class="btn type-primary">
+            <span>+</span>
+            <span>Fine-tune model</span>
+          </button>
+          <button class="btn type-subtle">
+            <span class="emojicon">🔄</span>
+            <span>Refresh</span>
+          </button>
+          <button class="btn type-subtle">
+            <span class="emojicon">🚀</span>
+            <span>Deploy</span>
+          </button>
+          <button class="btn type-subtle">
+            <span class="emojicon">↺</span>
+            <span>Reset view</span>
+          </button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="bg-card border border-border rounded-lg" data-AIDEV-ID="fine-tuning-content">
+          <!-- Search and Filter Bar -->
+          <div class="flex items-center justify-between p-4 border-b border-border" data-AIDEV-ID="table-controls">
+            <div class="flex items-center gap-2">
+              <div class="input type-subtle">
+                <span class="emojicon">🔍</span>
+                <input type="search" placeholder="Search fine-tuned models..." >
               </div>
-
-              <div class="space-y-4">
-                <div>
-                  <label class="block text-sm font-medium text-body mb-2">API Key</label>
-                  <div class="flex items-center gap-2">
-                    <input type="password"
-                      value="••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
-                      class="input flex-1" readonly>
-                    <button class="icon-only type-subtle" title="Show API key">
-                      <span class="emojicon">👁️</span>
-                    </button>
-                    <button class="icon-only type-subtle" title="Copy API key">
-                      <span class="emojicon">📋</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="text-sm font-medium text-body mb-3">Included capabilities</h3>
-                  <div class="space-y-2">
-                    <div class="flex items-center gap-3">
-                      <div class="w-2 h-2 bg-brand rounded-full"></div>
-                      <span class="font-medium">Azure AI inference</span>
-                    </div>
-                    <div class="ml-5 text-sm text-body-secondary mb-3">
-                      Use the following endpoint to call all your deployed base models:
-                    </div>
-                    <div class="ml-5 space-y-2">
-                      <div>
-                        <span class="text-sm font-medium text-body">Azure AI model inference endpoint</span>
-                        <span class="text-xs bg-card px-1.5 py-0.5 rounded uppercase font-medium ml-2">PREVIEW</span>
-                      </div>
-                      <div class="flex items-center gap-2">
-                        <input type="text" value="https://ai-jabradfordai858274251097872.services.ai.azure.com"
-                          class="input flex-1 text-sm" readonly>
-                        <button class="icon-only type-subtle" title="Copy endpoint">
-                          <span class="emojicon">📋</span>
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="ml-5 mt-3">
-                      <button class="link text-sm">
-                        <span class="text-base leading-none mr-1">📖</span>
-                        API documentation
-                      </button>
-                    </div>
-
-                    <div class="flex items-center gap-3 mt-4">
-                      <div class="w-2 h-2 bg-brand rounded-full"></div>
-                      <span class="font-medium">Azure OpenAI</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                      <div class="w-2 h-2 bg-brand rounded-full"></div>
-                      <span class="font-medium">Azure AI Services</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <button class="btn type-subtle">
+                <span class="emojicon">🔽</span>
+                <span>Filter</span>
+              </button>
             </div>
-
-            <!-- Getting Started Steps -->
-            <div data-AIDEV-ID="getting-started">
-              <h2 class="text-lg font-semibold text-heading mb-4">Nail the basics with these steps</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
-                  <div class="flex items-start gap-3 mb-3">
-                    <div class="w-8 h-8 bg-brand/10 rounded-lg flex items-center justify-center">
-                      <span class="text-base leading-none text-brand">🔍</span>
-                    </div>
-                    <h3 class="font-semibold text-heading">Define + explore</h3>
-                  </div>
-                  <div class="space-y-2 text-sm text-body-secondary">
-                    <div class="flex items-center gap-2">
-                      <span>Choose the right model</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span>Experiment in a playground</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
-                  <div class="flex items-start gap-3 mb-3">
-                    <div class="w-8 h-8 bg-brand/10 rounded-lg flex items-center justify-center">
-                      <span class="text-base leading-none text-brand">🛠️</span>
-                    </div>
-                    <h3 class="font-semibold text-heading">Build + customize</h3>
-                  </div>
-                  <div class="space-y-2 text-sm text-body-secondary">
-                    <div class="flex items-center gap-2">
-                      <span>Build with agents</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span>Use a code template</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
-                  <div class="flex items-start gap-3 mb-3">
-                    <div class="w-8 h-8 bg-brand/10 rounded-lg flex items-center justify-center">
-                      <span class="text-base leading-none text-brand">📊</span>
-                    </div>
-                    <h3 class="font-semibold text-heading">Observe + optimize</h3>
-                  </div>
-                  <div class="space-y-2 text-sm text-body-secondary">
-                    <div class="flex items-center gap-2">
-                      <span>Debug with tracing</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span>Monitor application</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
-                  <div class="flex items-start gap-3 mb-3">
-                    <div class="w-8 h-8 bg-brand/10 rounded-lg flex items-center justify-center">
-                      <span class="text-base leading-none text-brand">🔒</span>
-                    </div>
-                    <h3 class="font-semibold text-heading">Protect + govern</h3>
-                  </div>
-                  <div class="space-y-2 text-sm text-body-secondary">
-                    <div class="flex items-center gap-2">
-                      <span>Evaluate quality and safety</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span>Customize guardrails</span>
-                      <span class="ml-auto">→</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="text-sm text-body-secondary">
+              5 models
             </div>
           </div>
-
-          <!-- Right Column - Project Details -->
-          <div class="space-y-6">
-            <div class="bg-card border border-border rounded-lg p-6" data-AIDEV-ID="project-details">
-              <h2 class="text-lg font-semibold text-heading mb-4">Project details</h2>
-              <div class="space-y-4 text-sm">
-                <div>
-                  <div class="text-body-secondary mb-1">Project connection string</div>
+          
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Base model</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Training time</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
                   <div class="flex items-center gap-2">
-                    <span class="font-mono text-xs truncate">westus3.api.azureml.ms.f611008b-8c0f-407...</span>
-                    <button class="icon-only type-subtle size-sm" title="Copy connection string">
-                      <span class="emojicon">📋</span>
+                    <span class="emojicon">🧠</span>
+                    <span class="font-medium">customer-support-gpt4</span>
+                  </div>
+                </td>
+                <td>GPT-4</td>
+                <td>
+                  <span class="badge type-success">Completed</span>
+                </td>
+                <td>Dec 15, 2024</td>
+                <td>2h 34m</td>
+                <td>
+                  <div class="flex items-center gap-1">
+                    <button class="btn type-subtle size-sm">Deploy</button>
+                    <button class="icon-only type-subtle size-sm" title="More actions">
+                      <span class="emojicon">⋯</span>
                     </button>
                   </div>
-                </div>
-                <div>
-                  <div class="text-body-secondary mb-1">Subscription</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <div class="flex items-center gap-2">
-                    <span>AI Futures Non-Production (PM + Design)</span>
-                    <button class="icon-only type-subtle size-sm" title="Copy subscription">
-                      <span class="emojicon">📋</span>
+                    <span class="emojicon">🧠</span>
+                    <span class="font-medium">code-review-assistant</span>
+                  </div>
+                </td>
+                <td>GPT-3.5 Turbo</td>
+                <td>
+                  <span class="badge type-warning">Training</span>
+                </td>
+                <td>Dec 16, 2024</td>
+                <td>1h 12m</td>
+                <td>
+                  <div class="flex items-center gap-1">
+                    <button class="btn type-subtle size-sm" disabled>Deploy</button>
+                    <button class="icon-only type-subtle size-sm" title="More actions">
+                      <span class="emojicon">⋯</span>
                     </button>
                   </div>
-                </div>
-                <div>
-                  <div class="text-body-secondary mb-1">Subscription ID</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <div class="flex items-center gap-2">
-                    <span class="font-mono text-xs">f611008b-8c0f-407c-a551-e44897b10f3a</span>
-                    <button class="icon-only type-subtle size-sm" title="Copy subscription ID">
-                      <span class="emojicon">📋</span>
+                    <span class="emojicon">🧠</span>
+                    <span class="font-medium">medical-qa-model</span>
+                  </div>
+                </td>
+                <td>GPT-4</td>
+                <td>
+                  <span class="badge type-error">Failed</span>
+                </td>
+                <td>Dec 14, 2024</td>
+                <td>-</td>
+                <td>
+                  <div class="flex items-center gap-1">
+                    <button class="btn type-subtle size-sm">Retry</button>
+                    <button class="icon-only type-subtle size-sm" title="More actions">
+                      <span class="emojicon">⋯</span>
                     </button>
                   </div>
-                </div>
-                <div>
-                  <div class="text-body-secondary mb-1">Location</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <div class="flex items-center gap-2">
-                    <span>westus3</span>
-                    <button class="icon-only type-subtle size-sm" title="Copy location">
-                      <span class="emojicon">📋</span>
+                    <span class="emojicon">🧠</span>
+                    <span class="font-medium">legal-document-analyzer</span>
+                  </div>
+                </td>
+                <td>GPT-4 Turbo</td>
+                <td>
+                  <span class="badge type-success">Completed</span>
+                </td>
+                <td>Dec 13, 2024</td>
+                <td>3h 45m</td>
+                <td>
+                  <div class="flex items-center gap-1">
+                    <button class="btn type-subtle size-sm">Deploy</button>
+                    <button class="icon-only type-subtle size-sm" title="More actions">
+                      <span class="emojicon">⋯</span>
                     </button>
                   </div>
-                </div>
-              </div>
-
-              <div class="mt-6 pt-4 border-t border-border">
-                <h3 class="font-semibold text-heading mb-3">Manage project settings</h3>
-                <div class="grid grid-cols-2 gap-2 text-sm">
-                  <button class="text-left p-2 hover:bg-subtle rounded">
-                    <div class="font-medium">• Add users</div>
-                  </button>
-                  <button class="text-left p-2 hover:bg-subtle rounded">
-                    <div class="font-medium">• View quota</div>
-                  </button>
-                  <button class="text-left p-2 hover:bg-subtle rounded">
-                    <div class="font-medium">• Connect resources</div>
-                  </button>
-                  <button class="text-left p-2 hover:bg-subtle rounded">
-                    <div class="font-medium">• Track costs</div>
-                  </button>
-                </div>
-                <button class="mt-3 text-sm link">Open in management center</button>
-              </div>
-            </div>
-          </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-2">
+                    <span class="emojicon">🧠</span>
+                    <span class="font-medium">product-description-writer</span>
+                  </div>
+                </td>
+                <td>GPT-3.5 Turbo</td>
+                <td>
+                  <span class="badge type-info">Queued</span>
+                </td>
+                <td>Dec 16, 2024</td>
+                <td>-</td>
+                <td>
+                  <div class="flex items-center gap-1">
+                    <button class="btn type-subtle size-sm" disabled>Deploy</button>
+                    <button class="icon-only type-subtle size-sm" title="More actions">
+                      <span class="emojicon">⋯</span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </main>
