@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 
 <head>
   <meta charset="UTF-8">
@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="../build/fluent.css" />
 </head>
 
-<body class="dark min-h-screen flex flex-col flex-wrap">
-  <header class=" flex items-center justify-between px-6 py-2 flex-shrink-0" data-AIDEV-ID="header">
+<body class="dark h-full flex flex-col overflow-hidden">
+  <header class=" flex items-center justify-between px-6 py-2 flex-shrink-0 flex-wrap" data-AIDEV-ID="header">
     <nav class="flex items-center gap-3" data-AIDEV-ID="breadcrumbs">
       <img alt="Azure AI Foundry" src="https://ai.azure.com/assets/aistudio-af17733a.svg" width="18" height="18">
       <h1 class="text-md font-semibold text-heading">
@@ -51,26 +51,26 @@
       </button>
     </div>
   </header>
-
-  <div class="flex flex-1">
-    <aside class="w-60 flex-shrink-0" data-AIDEV-ID="sidebar">
-      <nav class="p-4 space-y-4">
+  
+  <div class="flex flex-1 h-0">
+    <aside class="w-60 flex-shrink-0 overflow-y-auto h-full" data-AIDEV-ID="sidebar">
+      <nav class="p-4 space-y-4 h-full flex flex-col">
         <div class="tabs vertical type-subtle">
           <a class="tab selected" href="#overview">
             <span class="emojicon">🏠</span>
             <span>Overview</span>
           </a>
-
+          
           <a class="tab" href="#model-catalog">
             <span class="emojicon">📚</span>
             <span>Model catalog</span>
           </a>
-
+          
           <a class="tab" href="#playgrounds">
             <span class="emojicon">🎮</span>
             <span>Playgrounds</span>
           </a>
-
+          
           <a class="tab" href="#ai-services">
             <span class="emojicon">🔧</span>
             <span>AI Services</span>
@@ -177,7 +177,7 @@
           <span>More</span>
         </button>
 
-        <div class="flex-1"></div>
+        <div class="grow"></div>
 
         <button class="type-outline w-full">
           <span>Open in management center</span>
@@ -185,16 +185,14 @@
       </nav>
     </aside>
 
-    <main class="flex-1 p-6 overflow-auto rounded-tl-lg bg-panel shadow-lg" data-AIDEV-ID="main-content">
-      <div class="">
+    <main class="flex-1 rounded-tl-lg bg-panel shadow-lg overflow-y-auto h-full" data-AIDEV-ID="main-content">
+      <div class="p-6">
         <!-- Page Header -->
         <div class="flex justify-between items-start mb-6" data-AIDEV-ID="page-header">
           <div>
-            <h1 class="text-3xl font-semibold text-heading mb-4">Fine-tune with your own data</h1>
+            <h1 class="text-3xl font-semibold text-heading mb-4">Page Title</h1>
             <p class="text-body text-lg max-w-4xl leading-relaxed">
-              Optimize models for specific tasks with smaller, task specific datasets to improve its performance and
-              accuracy. Because this method tends to require fewer examples in the prompts, generally less text is
-              sent—and tokens processed—per call.
+              This is the main page description. It explains what this page is for and provides context to help users understand the features and functionality available.
             </p>
           </div>
           <button class="btn type-outline">
@@ -202,86 +200,83 @@
             <span>Help</span>
           </button>
         </div>
-        
-        <!-- EXAMPLE CARDS -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" data-AIDEV-ID="example-cards">
-          <!-- DeepSeek Card -->
-          <div class="bg-card border border-border rounded-lg p-3 flex flex-col ">
+
+        <!-- Feature Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" data-AIDEV-ID="feature-cards">
+          <div class="bg-card border border-border rounded-lg p-3 flex flex-col">
             <div>
               <div class="flex items-start justify-between mb-2">
-                <h3 class="text-lg font-semibold text-heading">Introducing DeepSeek-R1-0528</h3>
+                <h3 class="text-lg font-semibold text-heading">Card Title One</h3>
                 <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                  <span class="text-white text-xl">🐋</span>
+                  <span class="text-white text-xl">📊</span>
                 </div>
               </div>
               <p class="text-body-secondary mb-4">
-                Improved reasoning, fewer hallucinations, better coding and functions
+                This is explanatory card content that describes the feature or capability.
               </p>
             </div>
             <div class="flex-1"></div>
             <div class="flex items-center gap-3 mt-2">
-              <button class="btn type-outline">Check out model</button>
+              <button class="btn type-outline">Action Button</button>
               <a href="#" class="text-sm">
-                <span>Read blog</span>
+                <span>Learn more</span>
                 <span class="emojicon ml-1">🔗</span>
               </a>
             </div>
           </div>
 
-          <!-- Sora Card -->
-          <div class="bg-card border border-border rounded-lg p-3 flex flex-col ">
+          <div class="bg-card border border-border rounded-lg p-3 flex flex-col">
             <div>
               <div class="flex items-start justify-between mb-2">
-                <h3 class="text-lg font-semibold text-heading">Sora</h3>
-                <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                  <span class="text-white text-xl">✨</span>
+                <h3 class="text-lg font-semibold text-heading">Card Title Two</h3>
+                <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <span class="text-white text-xl">⚙️</span>
                 </div>
               </div>
               <p class="text-body-secondary mb-4">
-                Generate up to 20s 1080p videos with Sora and its unique API: text-to-video...
+                Another card with different content explaining a different feature or service.
               </p>
             </div>
             <div class="flex-1"></div>
             <div class="flex items-center gap-3 mt-2">
-              <button class="btn type-outline">Check out model</button>
+              <button class="btn type-outline">Action Button</button>
               <a href="#" class="text-sm">
-                <span>Read blog</span>
+                <span>Learn more</span>
                 <span class="emojicon ml-1">🔗</span>
               </a>
             </div>
           </div>
 
-          <!-- Grok 3 Card -->
-          <div class="bg-card border border-border rounded-lg p-3 flex flex-col ">
+          <div class="bg-card border border-border rounded-lg p-3 flex flex-col">
             <div>
               <div class="flex items-start justify-between mb-2">
-                <h3 class="text-lg font-semibold text-heading">Introducing Grok 3</h3>
-                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                  <span class="text-black text-xl font-bold">𝕏</span>
+                <h3 class="text-lg font-semibold text-heading">Card Title Three</h3>
+                <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                  <span class="text-white text-xl">🚀</span>
                 </div>
               </div>
               <p class="text-body-secondary mb-4">
-                A model suite blending superior reasoning with extensive pre-training knowledge.
+                Third card content describing additional functionality or features available.
               </p>
             </div>
             <div class="flex-1"></div>
             <div class="flex items-center gap-3 mt-2">
-              <button class="btn type-outline">Check out models</button>
+              <button class="btn type-outline">Action Button</button>
               <a href="#" class="text-sm">
-                <span>Read blog</span>
+                <span>Learn more</span>
                 <span class="emojicon ml-1">🔗</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Tabs -->
-        <div class="tabs horizontal mb-6" data-AIDEV-ID="fine-tuning-tabs">
-          <a class="tab selected" href="#generative-ai-fine-tuning">
-            <span>Generative AI fine-tuning</span>
+        <!-- Navigation Tabs -->
+        <div class="tabs horizontal mb-6" data-AIDEV-ID="page-tabs">
+          <a class="tab selected" href="#tab-one">
+            <span>Tab One</span>
           </a>
-          <a class="tab" href="#ai-service-fine-tuning">
-            <span>AI Service fine-tuning</span>
+          <a class="tab" href="#tab-two">
+            <span>Tab Two</span>
           </a>
         </div>
 
@@ -289,7 +284,7 @@
         <div class="flex items-center gap-1 mb-6 p-1 border border-border rounded-lg" data-AIDEV-ID="action-bar">
           <button class="btn type-primary">
             <span>+</span>
-            <span>Fine-tune model</span>
+            <span>Primary Action</span>
           </button>
           <button class="btn type-subtle">
             <span class="emojicon">🔄</span>
@@ -301,18 +296,18 @@
           </button>
           <button class="btn type-subtle">
             <span class="emojicon">↺</span>
-            <span>Reset view</span>
+            <span>Reset</span>
           </button>
         </div>
 
         <!-- Main Content Area -->
-        <div class="bg-card border border-border rounded-lg" data-AIDEV-ID="fine-tuning-content">
+        <div class="bg-card border border-border rounded-lg" data-AIDEV-ID="main-content-area">
           <!-- Search and Filter Bar -->
           <div class="flex items-center justify-between p-4 border-b border-border" data-AIDEV-ID="table-controls">
             <div class="flex items-center gap-2">
               <div class="input type-subtle">
                 <span class="emojicon">🔍</span>
-                <input type="search" placeholder="Search fine-tuned models..." >
+                <input type="search" placeholder="Search items...">
               </div>
               <button class="btn type-subtle">
                 <span class="emojicon">🔽</span>
@@ -320,18 +315,18 @@
               </button>
             </div>
             <div class="text-sm text-body-secondary">
-              5 models
+              5 items
             </div>
           </div>
           
+          <!-- Data Table -->
           <table class="table">
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Base model</th>
+                <th>Type</th>
                 <th>Status</th>
                 <th>Created</th>
-                <th>Training time</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -339,19 +334,18 @@
               <tr>
                 <td>
                   <div class="flex items-center gap-2">
-                    <span class="emojicon">🧠</span>
-                    <span class="font-medium">customer-support-gpt4</span>
+                    <span class="emojicon">📄</span>
+                    <span class="font-medium">Item One</span>
                   </div>
                 </td>
-                <td>GPT-4</td>
+                <td>Type A</td>
                 <td>
-                  <span class="badge type-success">Completed</span>
+                  <span class="badge type-success">Active</span>
                 </td>
                 <td>Dec 15, 2024</td>
-                <td>2h 34m</td>
                 <td>
                   <div class="flex items-center gap-1">
-                    <button class="btn type-subtle size-sm">Deploy</button>
+                    <button class="btn type-subtle size-sm">Edit</button>
                     <button class="icon-only type-subtle size-sm" title="More actions">
                       <span class="emojicon">⋯</span>
                     </button>
@@ -361,19 +355,18 @@
               <tr>
                 <td>
                   <div class="flex items-center gap-2">
-                    <span class="emojicon">🧠</span>
-                    <span class="font-medium">code-review-assistant</span>
+                    <span class="emojicon">📄</span>
+                    <span class="font-medium">Item Two</span>
                   </div>
                 </td>
-                <td>GPT-3.5 Turbo</td>
+                <td>Type B</td>
                 <td>
-                  <span class="badge type-warning">Training</span>
+                  <span class="badge type-warning">Pending</span>
                 </td>
                 <td>Dec 16, 2024</td>
-                <td>1h 12m</td>
                 <td>
                   <div class="flex items-center gap-1">
-                    <button class="btn type-subtle size-sm" disabled>Deploy</button>
+                    <button class="btn type-subtle size-sm">Edit</button>
                     <button class="icon-only type-subtle size-sm" title="More actions">
                       <span class="emojicon">⋯</span>
                     </button>
@@ -383,16 +376,15 @@
               <tr>
                 <td>
                   <div class="flex items-center gap-2">
-                    <span class="emojicon">🧠</span>
-                    <span class="font-medium">medical-qa-model</span>
+                    <span class="emojicon">📄</span>
+                    <span class="font-medium">Item Three</span>
                   </div>
                 </td>
-                <td>GPT-4</td>
+                <td>Type A</td>
                 <td>
                   <span class="badge type-error">Failed</span>
                 </td>
                 <td>Dec 14, 2024</td>
-                <td>-</td>
                 <td>
                   <div class="flex items-center gap-1">
                     <button class="btn type-subtle size-sm">Retry</button>
@@ -405,19 +397,18 @@
               <tr>
                 <td>
                   <div class="flex items-center gap-2">
-                    <span class="emojicon">🧠</span>
-                    <span class="font-medium">legal-document-analyzer</span>
+                    <span class="emojicon">📄</span>
+                    <span class="font-medium">Item Four</span>
                   </div>
                 </td>
-                <td>GPT-4 Turbo</td>
+                <td>Type C</td>
                 <td>
-                  <span class="badge type-success">Completed</span>
+                  <span class="badge type-success">Active</span>
                 </td>
                 <td>Dec 13, 2024</td>
-                <td>3h 45m</td>
                 <td>
                   <div class="flex items-center gap-1">
-                    <button class="btn type-subtle size-sm">Deploy</button>
+                    <button class="btn type-subtle size-sm">Edit</button>
                     <button class="icon-only type-subtle size-sm" title="More actions">
                       <span class="emojicon">⋯</span>
                     </button>
@@ -427,19 +418,18 @@
               <tr>
                 <td>
                   <div class="flex items-center gap-2">
-                    <span class="emojicon">🧠</span>
-                    <span class="font-medium">product-description-writer</span>
+                    <span class="emojicon">📄</span>
+                    <span class="font-medium">Item Five</span>
                   </div>
                 </td>
-                <td>GPT-3.5 Turbo</td>
+                <td>Type B</td>
                 <td>
-                  <span class="badge type-info">Queued</span>
+                  <span class="badge type-info">Draft</span>
                 </td>
                 <td>Dec 16, 2024</td>
-                <td>-</td>
                 <td>
                   <div class="flex items-center gap-1">
-                    <button class="btn type-subtle size-sm" disabled>Deploy</button>
+                    <button class="btn type-subtle size-sm">Edit</button>
                     <button class="icon-only type-subtle size-sm" title="More actions">
                       <span class="emojicon">⋯</span>
                     </button>
