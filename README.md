@@ -2,36 +2,49 @@
 
 **An attempt at an LLM-first design system**
 
-Fluent.css pre-styles native html elements into Microsoft Fluent Design Language, and provides several utilities to apply theming and additional class-based components. The usage API is designed to be as minimal as possible so that the full docs can be included in am llm prompt and empowers an llm to write properly styled UI. This allows a portable design system whose artifacts are an LLMs.txt docs file and an imported .css file.
+Fluent.css automatically styles native HTML elements into [Microsoft Fluent Design Language](https://fluent2.microsoft.design/). It provides utilities for theming and class-based components with a minimal API designed so the full documentation fits in an LLM prompt.
 
-Fluent.css is based on Tailwind syntax and integrates as a Tailwind component library into the `theme`, `components` and `utilities` `@layers`. Several class based utilizes are also provided by default.  
+The design system consists of only two artifacts: an `llms.txt` documentation file and an imported `fluent.css` file. This portable design allows the library to be integrated in any code gen platform or development environment.
 
-**Why Tailwind syntax?** There is something special about tailwind that helps LLMs produce much better UI output. (See [mirai-css-prompts](https://github.com/aipx-proto/mirai-css-prompts) for an experimental comparison.) All AI based app generators use tailwind (bolt, Lovable, Stitch, V0, OnLook), possibly for this reason. This library skews to what the model writes best rather than what a dev writes best.
+**Tailwind Integration** - Fluent.css uses Tailwind syntax and integrates as a component library into Tailwind's `theme`, `components`, and `utilities` css `@layer`s. It also provides css component classes, utility classes, and css variables.
 
-**However, *Tailwind is not a required dependency*. This component library can be used standalone with zero dependencies.**
+**Why Tailwind syntax?** LLMs produce significantly better UI output with Tailwind syntax (see [mirai-css-prompts](https://github.com/aipx-proto/mirai-css-prompts) for experimental results). All AI app generators (bolt, Lovable, Stitch, V0, OnLook) use Tailwind, likely for this reason.
 
-[Components Demo](https://aipx-proto.github.io/fluent-css/) / [LLMs.txt](./llms.txt)
+**Tailwind is not required** - this library works standalone with zero dependencies.
+
+[Components Demo](https://aipx-proto.github.io/fluent-css/) / [LLMs.txt Documentation](./llms.txt)
 
 ## Usage
+1. Feed your model the LLMs.txt: [`https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw`](https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw)
 
-Import the css build from: `https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw`
+2. Import the css from CDN in your code:
 
-(Or try to use the un-compiled tailwind css in [`./build/fluent.tailwind.css`](./build/fluent.tailwind.css))
+   ```
+   <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" />
+   ```
 
-### Please read [LLMs.txt](./llms.txt) for more complete documentation
+3. Ask the model to write HTML UI code.
 
-## Development & Build
+### See [LLMs.txt](./llms.txt) for complete documentation.
 
-Run `npm i` then `npm run dev` to start the build in watch mode. Then open the `index.html` file in a browser, or use something like `live-server` to host it locally.
+## Development
 
-This library uses PostCSS and Tailwind to build `styles/index.css` into a `build/fluent.css` file. There are a few quirks to this process:
-- No default scanning: Tailwind is included in `index.css` with the `source(none)` directive, so only explicitly included sources will show up in the build.
-- Tricking Tailwind into including all `@theme` variables: 
-  - There is a custom PostCSS script, `extract-custom-properties`, that parses the entire `styles/` folder, pulls out all `--custom-properties`, and adds them to the PostCSS buffer under a CSS rule. 
-  - That rule is later removed by `css-byebye`.
-- The `styles/utilities/` files override some default Tailwind utility classes so Tailwind won't include a bunch of unnecessary `--tw-vars` as boilerplate.
+```bash
+npm install
+npm run dev  # Start build in watch mode
+```
 
-There is also a second PostCSS script that generates an un-compiled version of the Tailwind CSS library in `build/fluent.tailwind.css`. This can be included in a Tailwind build for a more optimized output.
+Open `index.html` in a browser or use a local server like [`live-server`](https://www.npmjs.com/package/live-server).
+
+### Build Process
+
+PostCSS builds `styles/index.css` into `build/fluent.css` with these steps:
+
+- **No default scanning**: Tailwind uses `source(none)` directive for explicit inclusion only
+- **Custom properties extraction**: A custom PostCSS plugin `extract-custom-properties` extracts all `--custom-properties` from `styles/` and includes them as CSS variables, then removes the temporary rules with `css-byebye`. This _tricks_ tailwind into including all our properties in the output.
+- **Utility overrides**: Files in `styles/utilities/` override default Tailwind utilities to prevent unnecessary `--tw-vars`
+
+A second script generates `build/fluent.tailwind.css` for optimized of integrating into Tailwind builds. The usage of this file is not been designed yet. (Copy+Paste to try it out)
 
 ---
 
@@ -88,5 +101,3 @@ There is also a second PostCSS script that generates an un-compiled version of t
     - .skeleton
     - .dialog-drawer
     - table interactive
-
-
