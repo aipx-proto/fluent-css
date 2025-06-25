@@ -7,7 +7,7 @@
 */
 @layer properties, theme, base, components, utilities;
 
-@import "tailwindcss" source(none);
+/* @import "tailwindcss" source(none); */
 
 /* @source "../index.html"; */
 
@@ -15,64 +15,7 @@
 
 @import "./font-face/font-segoe.css";
 
-@import "./theme/color-palette.css" layer(theme);
-@import "./theme/color-theme.css" layer(theme);
+@import "./theme/color-palette.css";
+@import "./theme/color-theme.css";
 
-@import "./theme/font.css" layer(theme);
-@import "./theme/elevation.css" layer(theme);
-@import "./theme/sizes.css" layer(theme);
-@import "./theme/transition.css" layer(theme);
 
-@import "./components/base.css" layer(components);
-@import "./components/typography.css" layer(components);
-@import "./components/icons.css" layer(components);
-@import "./components/scrollbar.css" layer(components);
-
-@import "./components/button.css" layer(components);
-@import "./components/link.css" layer(components);
-@import "./components/checkbox-radio.css" layer(components);
-@import "./components/switch.css" layer(components);
-@import "./components/input.css" layer(components);
-@import "./components/button-group.css" layer(components);
-@import "./components/slider.css" layer(components);
-@import "./components/fieldset.css" layer(components);
-
-@import "./components/progress.css" layer(components);
-@import "./components/spinner.css" layer(components);
-
-@import "./components/accordion.css" layer(components);
-@import "./components/dialog.css" layer(components);
-@import "./components/popover.css" layer(components);
-
-@import "./components/table.css" layer(components);
-@import "./components/tabs.css" layer(components);
-
-@import "./components/disabled.css" layer(components);
-@import "./components/focus.css" layer(components);
-@import "./components/interactive.css" layer(components);
-
-@import "./components/tabs-hack.css";
-
-@source inline("text-{xs,sm,md,base,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl}");
-
-@source inline("font-{sans,mono,serif,numeric}");
-@source inline("{italic,not-italic}");
-
-/* @source inline("font-{normal,semibold,bold}"); */
-/* override inline the .font-{weight} classes to avoid adding --tw-font-weight in properties @layer*/
-@import "./utilities/font-weight.css" layer(utilities);
-
-@source inline("{text,bg,border}-{card,panel,page,border,outline,muted,body,heading,link,brand,contrast-brand,input,selected,hover,active}");
-
-/* @source inline("{text,bg,border}-{blue,neutral}-{50,100,200,300,400,500,600,700,800,900,950}"); */
-@source "../build/custom-properties.css";
-
-@source inline("{text,bg,border}-{black,white}");
-
-@source inline("rounded-{none,xs,sm,md,lg,xl,2xl,3xl,4xl,full}");
-
-/* @source inline("shadow-{none,2xs,xs,sm,md,lg,xl,2xl}"); */
-/* override inline the .shadow-* classes to avoid adding --tw-shadow-* in properties @layer*/
-@import "./utilities/box-shadow.css" layer(utilities);
-
-@source inline("opacity-disabled");
