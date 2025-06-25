@@ -1,3 +1,5 @@
+![Fluent css hero image with fluent logo and rainbow hex pattern](./assets/fluent-css-hero.png)
+
 # Fluent.css
 
 **An attempt at an LLM-first design system**
