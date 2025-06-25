@@ -1,13 +1,15 @@
+const ensureTailwindImport = ".ensure-tailwind-import";
+
 module.exports = {
   plugins: [
     // require('postcss-import'),
     require('./plugins/extract-custom-properties')({
       scanDir: './styles',
-      className: 'ensure-tailwind-import'
+      ruleName: ensureTailwindImport
     }),
     require('@tailwindcss/postcss'),
-    require('./plugins/delete-selectors')({
-      selectors: ['.ensure-tailwind-import']
+    require('css-byebye')({
+      rulesToRemove: [ensureTailwindImport]
     }),
     // require('postcss-url')({ url: 'rebase' }),
   ]

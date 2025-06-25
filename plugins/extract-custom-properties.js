@@ -10,7 +10,7 @@ module.exports = (opts = {}) => {
   // Plugin options with defaults
   const options = {
     scanDir: './styles',
-    className: 'ensure-tailwind-import',
+    ruleName: '.ensure-tailwind-import',
     ...opts
   };
 
@@ -66,7 +66,7 @@ module.exports = (opts = {}) => {
 
         // Create the CSS rule with custom properties
         const rule = new Rule({
-          selector: `.${options.className}`,
+          selector: options.ruleName,
         });
 
         // Add declarations for each custom property
@@ -84,11 +84,11 @@ module.exports = (opts = {}) => {
         root.prepend(comment);
         root.prepend(rule);
         
-        console.log(`📁 Injected ${customProperties.size} custom properties into PostCSS buffer`);
+        console.log(`> Injected ${customProperties.size} custom properties into PostCSS buffer`);
       }
       
     } catch (error) {
-      console.error(`✗ extract-custom-properties plugin error: ${error.message}`);
+      console.error(`X extract-custom-properties plugin error: ${error.message}`);
     }
   };
 
