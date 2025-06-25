@@ -10,7 +10,6 @@ module.exports = (opts = {}) => {
   // Plugin options with defaults
   const options = {
     scanDir: './styles',
-    output: './build/custom-properties.css',
     className: 'ensure-tailwind-import',
     ...opts
   };
@@ -37,19 +36,15 @@ module.exports = (opts = {}) => {
       if (stat.isDirectory()) {
         findCSSFiles(fullPath, files);
       } else if (item.endsWith('.css')) {
-        // Exclude the output file itself
-        const outputFileName = path.basename(options.output);
-        if (item !== outputFileName) {
-          files.push(fullPath);
-        }
+        files.push(fullPath);
       }
     }
     
     return files;
   };
 
-  // AIDEV-NOTE: Main function to process files and generate output
-  const processFiles = () => {
+  // AIDEV-NOTE: Main function to process files and inject CSS into PostCSS buffer
+  const processFilesAndInject = (root, { Comment, Rule, Declaration }) => {
     try {
       // Find all CSS files in scan directory
       const files = findCSSFiles(path.resolve(options.scanDir));
@@ -63,23 +58,34 @@ module.exports = (opts = {}) => {
         properties.forEach(prop => customProperties.add(prop));
       }
 
-      // Ensure output directory exists
-      const outputDir = path.dirname(path.resolve(options.output));
-      if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
+      if (customProperties.size > 0) {
+        // Create comment node
+        const comment = new Comment({
+          text: ` Built by extract-custom-properties PostCSS plugin.\n   This ensures Tailwind CSS recognizes all custom properties in the codebase. `
+        });
+
+        // Create the CSS rule with custom properties
+        const rule = new Rule({
+          selector: `.${options.className}`,
+        });
+
+        // Add declarations for each custom property
+        Array.from(customProperties)
+          .sort() // Sort for consistent output
+          .forEach(prop => {
+            const decl = new Declaration({
+              prop: prop,
+              value: `var(${prop})`
+            });
+            rule.append(decl);
+          });
+
+        // Append to the beginning of the CSS
+        root.prepend(comment);
+        root.prepend(rule);
+        
+        console.log(`📁 Injected ${customProperties.size} custom properties into PostCSS buffer`);
       }
-
-      const comment = `/* Built by extract-custom-properties PostCSS plugin - don't edit this file manually.\n   This file is used to ensure Tailwind CSS recognizes all custom properties in the codebase. */`;
-      
-      // Create the CSS content with reflexive structure
-      const cssContent = `${comment}\n\n.${options.className} {\n${Array.from(customProperties)
-        .sort() // Sort for consistent output
-        .map(prop => `  ${prop}: var(${prop});`)
-        .join('\n')}\n}`;
-
-      // Write to output file
-      fs.writeFileSync(path.resolve(options.output), cssContent);
-      console.log(`📁 Extracted ${customProperties.size} custom properties to ${options.output}`);
       
     } catch (error) {
       console.error(`✗ extract-custom-properties plugin error: ${error.message}`);
@@ -89,9 +95,9 @@ module.exports = (opts = {}) => {
   return {
     postcssPlugin: 'extract-custom-properties',
     
-    // AIDEV-NOTE: Run once at the end of processing to extract all custom properties
-    OnceExit(root, { result }) {
-      processFiles();
+    // AIDEV-NOTE: Run once at the beginning to inject custom properties before other plugins
+    Once(root, { result, Comment, Rule, Declaration }) {
+      processFilesAndInject(root, { Comment, Rule, Declaration });
       
       // Add dependency message for build systems
       result.messages.push({
