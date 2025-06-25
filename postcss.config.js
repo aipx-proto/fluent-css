@@ -1,11 +1,12 @@
 module.exports = {
   plugins: [
-    require('postcss-import'),
-    require('./plugins/fluent-css-custom')({
-      addHeader: true,
-      headerText: 'Processed by fluent-css custom plugin'
+    // require('postcss-import'),
+    require('./plugins/extract-custom-properties')({
+      scanDir: './styles',
+      output: './build/custom-properties.css',
+      className: 'ensure-tailwind-import'
     }),
-    // require('@tailwindcss/postcss'),
+    require('@tailwindcss/postcss'),
     // require('postcss-url')({ url: 'rebase' }),
   ]
 }; 

@@ -11,7 +11,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "npm run postcss -- --watch",
-    "postcss": "postcss -o ./build/fluent.postcss.css ./styles/index.css",
+    "postcss": "postcss -o ./build/fluent.css ./styles/index.css",
     "build": "npm run postcss"
   },
   "devDependencies": {
