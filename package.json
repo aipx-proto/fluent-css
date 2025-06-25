@@ -10,15 +10,19 @@
   },
   "license": "ISC",
   "scripts": {
-    "dev": "concurrently \"npm run pre-tailwind -- --watch\" \"npm run tailwind -- --watch\"",
-    "tailwind": "npx @tailwindcss/cli -i ./styles/index.css -o ./build/fluent.css",
-    "pre-tailwind": "node scripts/extract-custom-properties.js styles/**/*.css build/custom-properties.css **/fluent*.css",
-    "build": "npm run pre-tailwind && npm run tailwind"
+    "dev": "npm run build:css -- --watch",
+    "build:css": "postcss ./styles/index.css -o ./build/fluent.css ",
+    "build:tailwind": "postcss ./styles/index.tailwind.css -o ./build/fluent.tailwind.css -u postcss-import postcss-discard-comments --no-map",
+    "build": "npm run build:css && npm run build:tailwind"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.10",
-    "tailwindcss": "^4.1.10",
-    "glob": "^11.0.3",
-    "concurrently": "^9.1.2"
+    "@tailwindcss/postcss": "^4.1.10",
+    "css-byebye": "^4.0.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-discard-comments": "^7.0.4",
+    "postcss-import": "^16.1.1",
+    "postcss-merge-at-rules": "^1.2.0",
+    "tailwindcss": "^4.1.10"
   }
 }

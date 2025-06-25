@@ -1,43 +1,63 @@
+![Fluent css hero image with fluent logo and rainbow hex pattern](./assets/fluent-css-hero.png)
+
 # Fluent.css
 
 **An attempt at an LLM-first design system**
 
-[Demo](https://aipx-proto.github.io/fluent-css/) / [LLMs.txt](./llms.txt)
+Fluent.css automatically styles native HTML elements into [Microsoft Fluent Design Language](https://fluent2.microsoft.design/). It provides utilities for theming and class-based components with a minimal API designed so the full documentation fits in an LLM prompt.
+
+The design system consists of only two artifacts: an `llms.txt` documentation file and an imported `fluent.css` file. This portable design allows the library to be integrated in any code gen platform or development environment.
+
+**Tailwind Integration** - Fluent.css uses Tailwind syntax and integrates as a component library into Tailwind's `theme`, `components`, and `utilities` css `@layer`s. It also provides css component classes, utility classes, and css variables.
+
+**Why Tailwind syntax?** LLMs produce significantly better UI output with Tailwind syntax (see [mirai-css-prompts](https://github.com/aipx-proto/mirai-css-prompts) for experimental results). All AI app generators (bolt, Lovable, Stitch, V0, OnLook) use Tailwind, likely for this reason.
+
+**Tailwind is not required** - this library works standalone with zero dependencies.
+
+[Components Demo](https://aipx-proto.github.io/fluent-css/) / [LLMs.txt Documentation](./llms.txt)
 
 ## Usage
+1. Feed your model the LLMs.txt: [`https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw`](https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw)
 
-Fluent.css is based on the tailwind syntax, and integrates as a tailwind component library into the `theme` and `utilites` layers. However, *Tailwind is not a required dependency*. This component library can be used as a standalone with zero dependencies.
+2. Import the css from CDN in your code:
 
-### To see more complete usage documentation, please read the [LLMs.txt](./llms.txt)
+   ```
+   <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" />
+   ```
 
-## Development & Build
+3. Ask the model to write HTML UI code.
 
-Run `npm i` then `npm run dev` to start the build in watch mode. The open the index.html file in a browser or use something like `live-server` to host it locally.
+### See [LLMs.txt](./llms.txt) for complete documentation.
 
-This library tailwind to build styles/index.css a build/fluent.css file. There are a few quirks to this.
-- No default scanning: Tailwind is included in 'index.css' with the `source(none)` directive so only explicit included sources will show up in the build
-- Tricking Tailwind into including all `@theme` variables: There is a `npm run pre-tailwind` script that: parses the entire 'styles/' folder, pulls out all `--custom-properties` and saves them to a `custom-properties.css` file. This file is referenced as a `@source` in 'index.css' so the tailwind compiler will think these are all used and won't exclude them from the build.
-- The styles/utilizes/ files override some default tailwind utility classes so tailwind won't include a bunch of unnecessary --tw-vars as boilerplate.
+## Development
+
+```bash
+npm install
+npm run dev  # Start build in watch mode
+```
+
+Open `index.html` in a browser or use a local server like [`live-server`](https://www.npmjs.com/package/live-server).
+
+### Build Process
+
+PostCSS builds `styles/index.css` into `build/fluent.css` with these steps:
+
+- **No default scanning**: Tailwind uses `source(none)` directive for explicit inclusion only
+- **Custom properties extraction**: A custom PostCSS plugin `extract-custom-properties` extracts all `--custom-properties` from `styles/` and includes them as CSS variables, then removes the temporary rules with `css-byebye`. This _tricks_ tailwind into including all our properties in the output.
+- **Utility overrides**: Files in `styles/utilities/` override default Tailwind utilities to prevent unnecessary `--tw-vars`
+
+A second script generates `build/fluent.tailwind.css` for optimized of integrating into Tailwind builds. The usage of this file is not been designed yet. (Copy+Paste to try it out)
 
 ---
 
 ## TODOs
 
-- Write LLMs.txt
-  - test
-  - remove reference to .btn-group and other uncommon use cases or it will be overused?
-
 ### Bugs & Improvements
 
-- Build 
-  - use postcss with custom scripts for more streamline build (no generate-custom-properties concurrently)
-  - re-evaluate the overriding utilities to integrate with tailwind properly
-  - output a fluent.tailwind.css to import with  `<style type="text/tailwindcss">@import url(".../build/fluent.tailwind.css");</style>`
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
 - intent - info, brand, success, warning, danger
 - icons for input types - search, date, numeric
-- create docs page with tailwind
 - icon support
 
 ### Icons?
@@ -83,5 +103,3 @@ This library tailwind to build styles/index.css a build/fluent.css file. There a
     - .skeleton
     - .dialog-drawer
     - table interactive
-
-

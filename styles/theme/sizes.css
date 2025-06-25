@@ -22,20 +22,22 @@
   --h-icon: calc(var(--spacing) * 4);
 }
 
-.size-sm {
-  --h-default: calc(var(--spacing) * 6);
-  --text-default: var(--text-sm);
-  --p-default: calc(var(--spacing) * 2);
-  --h-icon: calc(var(--spacing) * 3);
+@layer theme {
+  .size-sm {
+    --h-default: calc(var(--spacing) * 6);
+    --text-default: var(--text-sm);
+    --p-default: calc(var(--spacing) * 2);
+    --h-icon: calc(var(--spacing) * 3);
 
-  font-size: var(--text-default);
+    font-size: var(--text-default);
+  }
+  .size-lg {
+    --h-default: calc(var(--spacing) * 10);
+    --text-default: var(--text-lg);
+    --p-default: calc(var(--spacing) * 4);
+    --h-icon: calc(var(--spacing) * 5);
+    
+    font-size: var(--text-default);
+  }
+  /* .size-md { Default @theme } */
 }
-.size-lg {
-  --h-default: calc(var(--spacing) * 10);
-  --text-default: var(--text-lg);
-  --p-default: calc(var(--spacing) * 4);
-  --h-icon: calc(var(--spacing) * 5);
-
-  font-size: var(--text-default);
-}
-/* .size-md { Default @theme } */

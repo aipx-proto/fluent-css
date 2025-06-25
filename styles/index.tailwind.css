@@ -1,0 +1,42 @@
+
+@import "./theme/variants.css";
+
+@import "./font-face/font-segoe.css";
+
+@import "./theme/color-palette.css";
+@import "./theme/color-theme.css";
+
+@import "./theme/font.css";
+@import "./theme/elevation.css";
+@import "./theme/sizes.css";
+@import "./theme/transition.css";
+
+@import "./components/base.css" layer(components);
+@import "./components/typography.css" layer(components);
+@import "./components/icons.css" layer(components);
+@import "./components/scrollbar.css" layer(components);
+
+@import "./components/button.css" layer(components);
+@import "./components/link.css" layer(components);
+@import "./components/checkbox-radio.css" layer(components);
+@import "./components/switch.css" layer(components);
+@import "./components/input.css" layer(components);
+@import "./components/button-group.css" layer(components);
+@import "./components/slider.css" layer(components);
+@import "./components/fieldset.css" layer(components);
+
+@import "./components/progress.css" layer(components);
+@import "./components/spinner.css" layer(components);
+
+@import "./components/accordion.css" layer(components);
+@import "./components/dialog.css" layer(components);
+@import "./components/popover.css" layer(components);
+
+@import "./components/table.css" layer(components);
+@import "./components/tabs.css" layer(components);
+
+@import "./components/disabled.css" layer(components);
+@import "./components/focus.css" layer(components);
+@import "./components/interactive.css" layer(components);
+
+

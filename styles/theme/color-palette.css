@@ -2,7 +2,7 @@
  CSS UniPalette
  https://aipx-proto.github.io/css-uni-palette/
 */
-:root {
+@theme {
   --color-red-50: oklch(0.98 0.0934469 24.6856);
   --color-red-100: oklch(0.96 0.113447 24.6856);
   --color-red-200: oklch(0.922 0.133447 24.6856);
