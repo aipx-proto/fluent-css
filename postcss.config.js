@@ -11,6 +11,11 @@ module.exports = {
     require('css-byebye')({
       rulesToRemove: [ensureTailwindImport]
     }),
+    require('postcss-merge-at-rules'),
+    // require('cssnano')({
+    //   preset: 'default',
+    // }),
+    // require('postcss-prettify'),
     // require('postcss-url')({ url: 'rebase' }),
   ]
 }; 

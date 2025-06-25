@@ -14,7 +14,7 @@
 
 }
 
-/*! 
+/*
 .tabs:not(.vertical) .tab {
   --_negative-margin: calc(var(--p-default) * -1);
   &:first-child {

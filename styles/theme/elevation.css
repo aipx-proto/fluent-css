@@ -32,8 +32,10 @@
   --shadow-2xl: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
 }
 
-@variant dark {
-  --color-shadow-overlay: oklch(0% 0 0 / 0.5);
-  --color-shadow-ambient: oklch(0% 0 0 / 0.4);
-  --color-shadow-key: oklch(0% 0 0 / 0.45);
+@layer theme {
+  @variant dark {
+    --color-shadow-overlay: oklch(0% 0 0 / 0.5);
+    --color-shadow-ambient: oklch(0% 0 0 / 0.4);
+    --color-shadow-key: oklch(0% 0 0 / 0.45);
+  }
 }
