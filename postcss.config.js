@@ -2,7 +2,6 @@ const ensureTailwindImport = ".ensure-tailwind-import";
 
 module.exports = {
   plugins: [
-    // require('postcss-import'),
     require('./plugins/extract-custom-properties')({
       scanDir: './styles',
       ruleName: ensureTailwindImport
@@ -12,10 +11,5 @@ module.exports = {
       rulesToRemove: [ensureTailwindImport]
     }),
     require('postcss-merge-at-rules'),
-    // require('cssnano')({
-    //   preset: 'default',
-    // }),
-    // require('postcss-prettify'),
-    // require('postcss-url')({ url: 'rebase' }),
   ]
 }; 

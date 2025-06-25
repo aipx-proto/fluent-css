@@ -10,9 +10,10 @@
   },
   "license": "ISC",
   "scripts": {
-    "dev": "npm run postcss -- --watch",
-    "postcss": "postcss -o ./build/fluent.css ./styles/index.css",
-    "build": "npm run postcss"
+    "dev": "npm run build:css -- --watch",
+    "build:css": "postcss ./styles/index.css -o ./build/fluent.css ",
+    "build:tailwind": "postcss ./styles/index.tailwind.css -o ./build/fluent.tailwind.css -u postcss-import postcss-discard-comments --no-map",
+    "build": "npm run build:css && npm run build:tailwind"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.10",
@@ -20,6 +21,7 @@
     "cssnano": "^7.0.7",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
+    "postcss-discard-comments": "^7.0.4",
     "postcss-import": "^16.1.0",
     "postcss-merge-at-rules": "^1.2.0",
     "postcss-prettify": "^0.3.4",
