@@ -313,9 +313,7 @@
     --color-heading: var(--color-neutral-900);
     --color-link: var(--color-blue-500);
     --color-brand: var(--color-blue-500);
-    --color-contrast-brand: hwb(
-    from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
-  );
+    --color-contrast-brand: white;
     --color-input: var(--color-white);
     --color-selected: oklch(0 0 0 / 0.05);
     --color-hover: oklch(0 0 0 / 0.065);
@@ -352,9 +350,7 @@
     --color-heading: var(--color-white);
     --color-link: var(--color-blue-400);
     --color-brand: var(--color-blue-500);
-    --color-contrast-brand: hwb(
-      from oklch(from var(--color-brand) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999))
-    );
+    --color-contrast-brand: white;
     --color-input: var(--color-neutral-800);
     --color-selected: oklch(100% 0 0 / 0.075);
     --color-hover: oklch(100% 0 0 / 0.125);
