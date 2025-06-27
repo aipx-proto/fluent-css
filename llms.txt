@@ -88,6 +88,17 @@ Applies to: `button`, `.btn`, `.btn-group`, `input`, `.input`, `.tab`, `.tabs`
 
 **Parent Inheritance**: Applying type/size/state to parent elements affects all children. Example: `.btn-group.size-sm` makes all child buttons small.
 
+#### Position Classes
+
+Control popover positioning with `.position-{direction}-{alignment}` classes:
+
+**Above**: `.position-above-start`, `.position-above` (center), `.position-above-end`
+**Below**: `.position-below-start`, `.position-below` (center), `.position-below-end`
+**Before**: `.position-before-top`, `.position-before` (center), `.position-before-bottom`
+**After**: `.position-after-top`, `.position-after` (center), `.position-after-bottom`
+
+Default positioning: popovers use `position-above-start`, menus use `position-below-end`.
+
 ---
 
 ## Utility Classes
@@ -282,13 +293,30 @@ Use emoji in spans: `<span class="emojicon">❤️</span>`
 
 ### Popover & Menus
 
+#### Basic Popovers (Tooltips, Info Cards)
+
+Use plain `popover` attribute for tooltips and informational content. **DO NOT** add `.menu` class to basic popovers.
+
 ```html
-<!-- Tooltip/Popover -->
+<!-- Tooltip/Info Popover (NO .menu class) -->
 <div popover id="tooltip">How to use the system...</div>
 <button class="icon-only type-subtle" popovertarget="tooltip" title="Help">
   <span class="emojicon">ℹ️</span>
 </button>
 
+<!-- Info Card Popover -->
+<div popover id="info" class="position-above">
+  <h4>Feature Details</h4>
+  <p>This feature helps you...</p>
+</div>
+<button popovertarget="info">Learn More</button>
+```
+
+#### Menus
+
+Use `.menu` class **ONLY** for interactive menus with buttons/links. Menus default to `position-below-end` positioning.
+
+```html
 <!-- Split Button with Menu -->
 <div class="btn-group type-primary">
   <button>Split Button</button>
