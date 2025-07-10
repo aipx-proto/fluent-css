@@ -853,9 +853,6 @@
   html {
     background-color: var(--color-page);
   }
-  ul, ol {
-    list-style: revert;
-  }
   * {
     font-family: inherit;
   }
@@ -901,9 +898,6 @@
   q {
     font-style: italic;
     color: var(--color-heading);
-  }
-  ul, ol {
-    padding-left: 1.25em;
   }
   code, kbd, pre, samp, tt {
     font-family: var(--font-mono);
