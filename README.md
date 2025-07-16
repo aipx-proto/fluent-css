@@ -54,6 +54,7 @@ A second script generates `build/fluent.tailwind.css` for optimized of integrati
 
 ### Bugs & Improvements
 
+- the disabled transparent button has a background
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
 - intent - info, brand, success, warning, danger

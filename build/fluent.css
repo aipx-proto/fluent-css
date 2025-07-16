@@ -1003,7 +1003,7 @@
     .btn-group.type-outline &, &.type-outline {
       --_color-background: transparent;
     }
-    .menu &, .input &, .btn-group.type-subtle &, &.type-subtle {
+    :where(.menu) &, :where(.input) &, .btn-group.type-subtle &, &.type-subtle {
       --_color-border: transparent;
       --_color-background: transparent;
       &:hover .icon {
@@ -1030,9 +1030,7 @@
       aspect-ratio: 1 / 1;
       flex: 0 0 auto;
     }
-    .menu & {
-      --_border-radius: var(--radius-sm);
-      border-color: transparent;
+    :where(.menu) & {
       justify-content: flex-start;
       font-weight: var(--font-normal);
     }
