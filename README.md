@@ -46,7 +46,7 @@ PostCSS builds `styles/index.css` into `build/fluent.css` with these steps:
 - **Custom properties extraction**: A custom PostCSS plugin `extract-custom-properties` extracts all `--custom-properties` from `styles/` and includes them as CSS variables, then removes the temporary rules with `css-byebye`. This _tricks_ tailwind into including all our properties in the output.
 - **Utility overrides**: Files in `styles/utilities/` override default Tailwind utilities to prevent unnecessary `--tw-vars`
 
-A second script generates `build/fluent.tailwind.css` for optimized of integrating into Tailwind builds. The usage of this file is not been designed yet. (Copy+Paste to try it out)
+A second script generates `build/fluent.tailwind.css` for optimized of integrating into Tailwind builds. The usage of this file has not been designed yet. (Copy+Paste to try it out)
 
 ---
 
@@ -58,8 +58,10 @@ A second script generates `build/fluent.tailwind.css` for optimized of integrati
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
 - intent - info, brand, success, warning, danger
-- icons for input types - search, date, numeric
-- icon support
+- publish to npm
+- add versioning
+- icons for input types - search, date, time, numeric
+- icon support: vibe-icon
 
 ### Icons?
 
