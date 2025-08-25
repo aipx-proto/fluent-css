@@ -33,10 +33,10 @@ The design system consists of only two artifacts: an `llms.txt` documentation fi
 
 ```bash
 npm install
-npm run dev  # Start build in watch mode
+npm run dev
 ```
 
-Open `index.html` in a browser or use a local server like [`live-server`](https://www.npmjs.com/package/live-server).
+Then open http://localhost:8080
 
 ### Build Process
 
