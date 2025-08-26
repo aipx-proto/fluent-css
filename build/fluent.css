@@ -1309,15 +1309,21 @@
     }
     &.type-outline {
       --_color-background: transparent;
+      --_color-border: var(--color-border);
+      --_color-border-bottom: var(--color-outline);
+      --_color-border-focus: var(--color-brand);
     }
     &.type-subtle {
       --_color-border: transparent;
       --_color-border-bottom: transparent;
       --_color-background: var(--color-selected);
+      --_color-border-focus: var(--color-brand);
     }
     &.type-transparent {
       --_color-background: transparent;
       --_color-border: transparent;
+      --_color-border-bottom: var(--color-outline);
+      --_color-border-focus: var(--color-brand);
       padding: 2px;
       min-height: auto;
       border-radius: 1px;

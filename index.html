@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="next-gen">
 
 <head>
   <meta charset="UTF-8" />
@@ -12,6 +12,8 @@
 
   <!-- 2. Fluent.css MUST come after Tailwind for proper CSS cascade -->
   <link rel="stylesheet" href="./build/fluent.css" />
+
+  <link rel="stylesheet" href="./styles/theme-variants/next-gen.css" />
 
   <script id="theme-toggle-script">
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -289,7 +291,7 @@
         </div>
         <div class="btn__shape">
           <button class="rounded-none">Square</button>
-          <button>Rounded</button>
+          <button class="rounded-md">Rounded</button>
           <button class="rounded-full">Circular</button>
         </div>
         <div class="btn__states">

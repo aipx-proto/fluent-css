@@ -1,0 +1,145 @@
+/*!
+The NextGen (or "Mirai") theme variant is made for the Azure AI Foundry.
+Key differences from default Fluent:
+- Colors
+  - Neutral colors are more flat
+  - Brand color is an Indigo
+  - Minimal inputs are darker than panel background
+- Fonts are Aptos and Monaspace Neon
+- Buttons are rounded-circular by default
+- Inputs are appearance-minimal by default
+- Modal has some extra borders
+- There is a new tab option
+- Accordion header text is monospace by default
+
+ */
+
+/* @custom-variant dark (.next-gen.dark, .next-gen.dark *, html:has(body.next-gen.dark)); */
+@layer theme {
+  .next-gen,
+  .next-gen *,
+  html:has(body.next-gen),
+  .next-gen.dark,
+  .next-gen.dark *,
+  html:has(body.next-gen.dark) {
+    /* --rounded-default: var(--radius-lg); */
+
+    /* Next Gen Brand */
+    --color-purple-50: oklch(96.646% 0.02207 312.004);
+    --color-purple-100: oklch(95.016% 0.03775 319.046);
+    --color-purple-200: oklch(87.85% 0.06571 303.807);
+    --color-purple-300: oklch(83.715% 0.08917 302.923);
+    --color-purple-400: oklch(69.796% 0.16568 299.059);
+    --color-purple-500: oklch(57.578% 0.22309 292.287); /* Brand #8251EE */
+    --color-purple-600: oklch(44.28% 0.16013 293.899);
+    --color-purple-700: oklch(37.714% 0.12382 294.937);
+    --color-purple-800: oklch(28.155% 0.07722 297.291);
+    --color-purple-900: oklch(20.628% 0.03981 298.997);
+    --color-purple-950: oklch(9.276% 0.01729 297.522);
+
+    --font-sans: "Aptos", system-ui, Roboto, Helvetica Neue, ui-sans-serif,
+      sans-serif;
+    --font-mono: "Monaspace Neon", "Cascadia Code", "Source Code Pro", Menlo,
+      Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
+    --font-serif: Georgia, Cambria, ui-serif, serif;
+    --font-numeric: var(--font-mono);
+  }
+
+  .next-gen,
+  .next-gen *,
+  html:has(body.next-gen) {
+    --color-card: var(--color-white);
+    --color-panel: var(--color-white); /*Page*/
+    --color-page: var(--color-neutral-100); /*Shell*/
+
+    --color-border: var(--color-neutral-300); /*Stroke 1*/
+    --color-outline: var(--color-neutral-500);
+
+    --color-muted: var(--color-neutral-600);
+    --color-body: var(--color-neutral-800);
+    --color-heading: var(--color-neutral-900);
+
+    --color-link: var(--color-purple-600);
+    --color-brand: var(--color-purple-500);
+    --color-contrast-brand: white;
+
+    --color-input: var(--color-white); /*Control*/
+    --color-selected: oklch(0 0 0 / 0.04); /*Shell-transparent*/
+    --color-hover: oklch(0 0 0 / 0.065);
+    --color-active: oklch(0 0 0 / 0.12);
+  }
+
+  .next-gen.dark,
+  .next-gen.dark *,
+  html:has(body.next-gen.dark) {
+    --color-card: var(--color-neutral-900);
+    --color-panel: var(--color-neutral-900);
+    --color-page: var(--color-neutral-950);
+
+    --color-border: var(--color-neutral-700);
+    --color-outline: var(--color-neutral-500);
+
+    --color-muted: var(--color-neutral-500);
+    --color-body: var(--color-neutral-300);
+    --color-heading: var(--color-white);
+
+    --color-link: var(--color-purple-300);
+    --color-brand: var(--color-purple-500);
+    --color-contrast-brand: white;
+
+    --color-input: var(--color-neutral-900);
+    --color-selected: oklch(0 0 0 / 0.86);
+    --color-hover: oklch(0 0 0 / 0.9);
+    --color-active: oklch(0 0 0 / 0.96);
+  }
+}
+
+@layer components {
+  .next-gen,
+  .next-gen *,
+  html:has(body.next-gen),
+  .next-gen.dark,
+  .next-gen.dark *,
+  html:has(body.next-gen.dark) {
+    /* button */
+    button:where(:not(.tab)),
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    a.btn,
+    select.btn,
+    .btn,
+    ::-webkit-file-upload-button {
+      --rounded-default: var(--radius-4xl);
+      /* border-radius: var(--rounded-default); */
+    }
+
+    /* inputs */
+    input:where(:not([type])),
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="search"],
+    input[type="color"],
+    input[type="url"],
+    /* input[type="file"], */
+    input[type="tel"],
+    select:where(:not(.btn)),
+    textarea,
+    .input {
+      &,
+      &.type-subtle {
+        --_color-border: transparent;
+        --_color-border-bottom: transparent;
+        --_color-background: var(--color-selected);
+        --_color-border-focus: var(--color-brand);
+      }
+    }
+  }
+}
