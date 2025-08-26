@@ -1,0 +1,91 @@
+/*!
+Aptos Font - by Microsoft
+Download and License - https://www.microsoft.com/en-us/download/details.aspx?id=106087
+Info - https://learn.microsoft.com/en-us/typography/font-list/aptos
+*/
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-Light-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* no medium font 500? */
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-SemiBold-Italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-Bold-Italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-ExtraBold-Italic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos";
+  src: url("./font-aptos/Aptos-Black-Italic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}

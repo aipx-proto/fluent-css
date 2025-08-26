@@ -14,6 +14,10 @@ Key differences from default Fluent:
 
  */
 
+/* TODO: update to ESM raw */
+@import "../font-face/font-aptos.css";
+@import "../font-face/font-monaspace-neon.css";
+
 /* @custom-variant dark (.next-gen.dark, .next-gen.dark *, html:has(body.next-gen.dark)); */
 @layer theme {
   .next-gen,
@@ -53,10 +57,10 @@ Key differences from default Fluent:
     --color-page: var(--color-neutral-100); /*Shell*/
 
     --color-border: var(--color-neutral-300); /*Stroke 1*/
-    --color-outline: var(--color-neutral-500);
+    --color-outline: var(--color-neutral-400);
 
-    --color-muted: var(--color-neutral-600);
-    --color-body: var(--color-neutral-800);
+    --color-muted: var(--color-neutral-500);
+    --color-body: var(--color-neutral-700);
     --color-heading: var(--color-neutral-900);
 
     --color-link: var(--color-purple-600);
@@ -88,9 +92,9 @@ Key differences from default Fluent:
     --color-contrast-brand: white;
 
     --color-input: var(--color-neutral-900);
-    --color-selected: oklch(0 0 0 / 0.86);
-    --color-hover: oklch(0 0 0 / 0.9);
-    --color-active: oklch(0 0 0 / 0.96);
+    --color-selected: oklch(0 0 0 / 0.55);
+    --color-hover: oklch(100% 0 0 / 0.05);
+    --color-active: oklch(0 0 0 / 0.8);
   }
 }
 
@@ -111,8 +115,11 @@ Key differences from default Fluent:
     .btn,
     ::-webkit-file-upload-button {
       --rounded-default: var(--radius-4xl);
-      /* border-radius: var(--rounded-default); */
+      .menu & {
+        --rounded-default: var(--radius-md);
+      }
     }
+    /* TODO: undo border-radius on menu buttons */
 
     /* inputs */
     input:where(:not([type])),
@@ -133,13 +140,22 @@ Key differences from default Fluent:
     select:where(:not(.btn)),
     textarea,
     .input {
-      &,
+      &:not([class*="type-"]),
       &.type-subtle {
         --_color-border: transparent;
         --_color-border-bottom: transparent;
         --_color-background: var(--color-selected);
         --_color-border-focus: var(--color-brand);
       }
+
+      &::placeholder {
+        color: var(--color-muted);
+        opacity: 1;
+      }
+    }
+    
+    details summary {
+      font-family: var(--font-mono);
     }
   }
 }

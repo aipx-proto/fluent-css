@@ -824,6 +824,10 @@
     font-weight: var(--font-weight-bold);
   }
 }
+/*!
+Segoe UI - by Microsoft & Agfa Monotype Corporation 
+Download and License - https://learn.microsoft.com/en-us/typography/font-list/segoe-ui
+*/
 @font-face {
   font-family: "Segoe UI";
   src: local("Segoe UI Light"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
@@ -1890,7 +1894,7 @@
   .tab {
     --_size-tab-underline: 3px;
     --_color-tab-underline-hover: var(--color-border);
-    --_color-tab-underline-active: var(--color-link);
+    --_color-tab-underline-active: var(--color-brand);
     --_duration-tab-underline: 0.1s;
     cursor: pointer;
     appearance: none;
