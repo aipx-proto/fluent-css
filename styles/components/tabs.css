@@ -29,7 +29,7 @@
 .tab {
   --_size-tab-underline: 3px;
   --_color-tab-underline-hover: var(--color-border);
-  --_color-tab-underline-active: var(--color-link);
+  --_color-tab-underline-active: var(--color-brand);
   --_duration-tab-underline: 0.1s;
 
   cursor: pointer;
