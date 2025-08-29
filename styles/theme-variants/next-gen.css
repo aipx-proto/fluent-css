@@ -7,11 +7,9 @@ Key differences from default Fluent:
   - Minimal inputs are darker than panel background
 - Fonts are Aptos and Monaspace Neon
 - Buttons are rounded-circular by default
-- Inputs are appearance-minimal by default
-- Modal has some extra borders
-- There is a new tab option
+- Inputs are type-minimal by default
 - Accordion header text is monospace by default
-
+- There is a new tab.type-elevated 
  */
 
 /* TODO: update to ESM raw */
@@ -88,7 +86,7 @@ Key differences from default Fluent:
     --color-heading: var(--color-white);
 
     --color-link: var(--color-purple-300);
-    --color-brand: var(--color-purple-500);
+    --color-brand: var(--color-purple-600);
     --color-contrast-brand: white;
 
     --color-input: var(--color-neutral-900);
@@ -153,9 +151,44 @@ Key differences from default Fluent:
         opacity: 1;
       }
     }
-    
+
     details summary {
       font-family: var(--font-mono);
+    }
+
+    .tabs.type-elevated {
+      gap: 2px;
+      padding: 2px;
+      border-radius: calc(var(--rounded-default) + 2px);
+      background-color: var(--color-selected);
+
+      .tab {
+        padding-inline: var(--p-default);
+        min-height: var(--h-default);
+
+        &::after,
+        &::before {
+          content: unset;
+        }
+
+        &:not(:disabled):not(.disabled):not(:has(input[type="radio"]:disabled))
+        /* :not(.selected):not(:has(input[type="radio"]:checked))  */ {
+          &:hover {
+            background-color: oklch(
+              from var(--color-hover) l c h / calc(alpha * 2)
+            );
+          }
+
+          &:active {
+            background-color: var(--color-active);
+          }
+        }
+
+        &.selected,
+        &:has(input[type="radio"]:checked) {
+          background-color: var(--color-hover);
+        }
+      }
     }
   }
 }
