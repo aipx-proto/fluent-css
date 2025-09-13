@@ -303,22 +303,22 @@
     --shadow-2xl: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-card: var(--color-white);
-    --color-panel: var(--color-neutral-50);
-    --color-page: var(--color-neutral-100);
-    --color-border: var(--color-neutral-300);
-    --color-outline: var(--color-neutral-500);
-    --color-muted: var(--color-neutral-600);
-    --color-body: var(--color-neutral-800);
-    --color-heading: var(--color-neutral-900);
-    --color-link: var(--color-blue-500);
-    --color-brand: var(--color-blue-500);
-    --color-contrast-brand: white;
-    --color-input: var(--color-white);
-    --color-selected: oklch(0 0 0 / 0.05);
-    --color-hover: oklch(0 0 0 / 0.065);
-    --color-active: oklch(0 0 0 / 0.12);
-    --opacity-disabled: 0.6;
+    --color-card: unset;
+    --color-panel: unset;
+    --color-page: unset;
+    --color-border: unset;
+    --color-outline: unset;
+    --color-muted: unset;
+    --color-body: unset;
+    --color-heading: unset;
+    --color-link: unset;
+    --color-brand: unset;
+    --color-contrast-brand: unset;
+    --color-input: unset;
+    --color-selected: unset;
+    --color-hover: unset;
+    --color-active: unset;
+    --opacity-disabled: unset;
     --text-md: var(--text-base);
     --text-md--line-height: var(--text-base--line-height);
     --font-numeric: var(--font-mono);
@@ -337,6 +337,24 @@
     --duration-active: 100ms;
     --icon-check: url('data:image/svg+xml,<svg style="fill:white;" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z"></path></svg>');
     --icon-chevron-down: url('data:image/svg+xml,<svg style="fill:black;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.21 8.46C4.51 8.17 4.98 8.17 5.28 8.46L12 15.18L18.71 8.46C19.01 8.17 19.48 8.17 19.78 8.46C20.07 8.76 20.07 9.23 19.78 9.53L12.53 16.78C12.23 17.07 11.76 17.07 11.46 16.78L4.21 9.53C3.92 9.23 3.92 8.76 4.21 8.46Z"></path></svg>');
+  }
+  :root, :host, .light, .light *, html:has(body.light) {
+    --color-card: var(--color-white);
+    --color-panel: var(--color-neutral-50);
+    --color-page: var(--color-neutral-100);
+    --color-border: var(--color-neutral-300);
+    --color-outline: var(--color-neutral-500);
+    --color-muted: var(--color-neutral-600);
+    --color-body: var(--color-neutral-800);
+    --color-heading: var(--color-neutral-900);
+    --color-link: var(--color-blue-500);
+    --color-brand: var(--color-blue-500);
+    --color-contrast-brand: white;
+    --color-input: var(--color-white);
+    --color-selected: oklch(0 0 0 / 0.05);
+    --color-hover: oklch(0 0 0 / 0.065);
+    --color-active: oklch(0 0 0 / 0.12);
+    --opacity-disabled: 0.6;
   }
   .dark, .dark *, html:has(body.dark) {
     color-scheme: dark;

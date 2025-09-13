@@ -4,5 +4,5 @@
 /* @custom-variant dark (:where(.dark, .dark *)); */
 /* @custom-variant light (:where(.light, .light *)); */
 
+@custom-variant light (:root, :host, .light, .light *, html:has(body.light));
 @custom-variant dark (.dark, .dark *, html:has(body.dark));
-@custom-variant light (.light, .light *, html:has(body.light));
