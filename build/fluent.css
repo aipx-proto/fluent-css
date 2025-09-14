@@ -303,6 +303,17 @@
     --shadow-2xl: 0 0 8px var(--color-shadow-ambient), 0 32px 64px var(--color-shadow-key);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --l-50: 0.98;
+    --l-100: 0.96;
+    --l-200: 0.922;
+    --l-300: 0.87;
+    --l-400: 0.708;
+    --l-500: 0.556;
+    --l-600: 0.439;
+    --l-700: 0.371;
+    --l-800: 0.269;
+    --l-900: 0.205;
+    --l-950: 0.145;
     --color-card: var(--color-white);
     --color-panel: var(--color-neutral-50);
     --color-page: var(--color-neutral-100);
@@ -318,6 +329,9 @@
     --color-selected: oklch(0 0 0 / 0.05);
     --color-hover: oklch(0 0 0 / 0.065);
     --color-active: oklch(0 0 0 / 0.12);
+    --color-danger: var(--color-red-500);
+    --color-warning: var(--color-yellow-500);
+    --color-success: var(--color-green-500);
     --opacity-disabled: 0.6;
     --text-md: var(--text-base);
     --text-md--line-height: var(--text-base--line-height);
@@ -355,7 +369,27 @@
     --color-selected: oklch(100% 0 0 / 0.075);
     --color-hover: oklch(100% 0 0 / 0.125);
     --color-active: oklch(0% 0 0 / 0.3);
+    --color-danger: var(--color-red-500);
+    --color-warning: var(--color-yellow-500);
+    --color-success: var(--color-green-500);
     --opacity-disabled: 0.6;
+    &.intent-danger, .intent-danger, .intent-danger * {
+      --color-card: oklch(from var(--color-danger) var(--l-800) c h);
+      --color-panel: oklch(from var(--color-danger) var(--l-900) c h);
+      --color-page: oklch(from var(--color-danger) var(--l-950) c h);
+      --color-border: oklch(from var(--color-danger) var(--l-700) c h);
+      --color-outline: oklch(from var(--color-danger) var(--l-500) c h);
+      --color-muted: oklch(from var(--color-danger) var(--l-500) c h);
+      --color-body: oklch(from var(--color-danger) var(--l-300) c h);
+      --color-heading: oklch(from var(--color-danger) var(--l-950) c h);
+      --color-link: oklch(from var(--color-danger) var(--l-400) c h);
+      --color-brand: var(--color-danger);
+      --color-contrast-brand: white;
+      --color-input: oklch(from var(--color-danger) var(--l-800) c h);
+      --color-selected: oklch(100% 0 0 / 0.075);
+      --color-hover: oklch(100% 0 0 / 0.125);
+      --color-active: oklch(0% 0 0 / 0.3);
+    }
   }
   .dark, .dark *, html:has(body.dark) {
     --color-shadow-overlay: oklch(0% 0 0 / 0.5);

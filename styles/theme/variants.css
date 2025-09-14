@@ -6,3 +6,7 @@
 
 @custom-variant dark (.dark, .dark *, html:has(body.dark));
 @custom-variant light (.light, .light *, html:has(body.light));
+@custom-variant intent-danger (&.intent-danger, .intent-danger, .intent-danger *);
+@custom-variant intent-warning (&.intent-warning, .intent-warning, .intent-warning *);
+@custom-variant intent-success (&.intent-success, .intent-success, .intent-success *);
+@custom-variant intent-brand (&.intent-brand, .intent-brand, .intent-brand *);

@@ -19,6 +19,10 @@
   --color-hover: oklch(0 0 0 / 0.065);
   --color-active: oklch(0 0 0 / 0.12);
 
+  --color-danger: var(--color-red-500);
+  --color-warning: var(--color-yellow-500);
+  --color-success: var(--color-green-500);
+
   --opacity-disabled: 0.6;
 }
 
@@ -46,6 +50,33 @@
     --color-hover: oklch(100% 0 0 / 0.125);
     --color-active: oklch(0% 0 0 / 0.3);
 
+    --color-danger: var(--color-red-500);
+    --color-warning: var(--color-yellow-500);
+    --color-success: var(--color-green-500);
+
     --opacity-disabled: 0.6;
+
+    @variant intent-danger {
+      --color-card: oklch(from var(--color-danger) var(--l-800) c h); /* 800 */
+      --color-panel: oklch(from var(--color-danger) var(--l-900) c h); /* 900 */
+      --color-page: oklch(from var(--color-danger) var(--l-950) c h); /* 950 */
+
+      --color-border: oklch(from var(--color-danger) var(--l-700) c h); /* 700 */
+      --color-outline: oklch(from var(--color-danger) var(--l-500) c h); /* 500 */
+
+      --color-muted: oklch(from var(--color-danger) var(--l-500) c h); /* 500 */
+      --color-body: oklch(from var(--color-danger) var(--l-300) c h); /* 300 */
+      --color-heading: oklch(from var(--color-danger) var(--l-950) c h); /* white */
+
+      --color-link: oklch(from var(--color-danger) var(--l-400) c h); /* 400 */
+      --color-brand: var(--color-danger);
+      --color-contrast-brand: white;
+
+      --color-input: oklch(from var(--color-danger) var(--l-800) c h); /* 800 */
+      --color-selected: oklch(100% 0 0 / 0.075);
+      --color-hover: oklch(100% 0 0 / 0.125);
+      --color-active: oklch(0% 0 0 / 0.3);
+
+    }
   }
 }
