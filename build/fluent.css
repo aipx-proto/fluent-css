@@ -376,48 +376,18 @@
     --opacity-disabled: 0.6;
     &.intent-danger, .intent-danger, .intent-danger * {
       color: var(--color-body);
-      --color-card: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 12%, oklch(0.269 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-card: color-mix(in oklch, var(--color-danger) 12%, var(--color-neutral-800));
-      }
-      --color-panel: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 8%, oklch(0.205 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-panel: color-mix(in oklch, var(--color-danger) 8%, var(--color-neutral-900));
-      }
-      --color-page: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 5%, oklch(0.145 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-page: color-mix(in oklch, var(--color-danger) 5%, var(--color-neutral-950));
-      }
-      --color-border: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 30%, oklch(0.371 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-border: color-mix(in oklch, var(--color-danger) 30%, var(--color-neutral-700));
-      }
-      --color-outline: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 50%, oklch(0.556 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-outline: color-mix(in oklch, var(--color-danger) 50%, var(--color-neutral-500));
-      }
-      --color-muted: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 50%, oklch(0.556 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-muted: color-mix(in oklch, var(--color-danger) 50%, var(--color-neutral-500));
-      }
-      --color-body: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 30%, oklch(0.87 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-body: color-mix(in oklch, var(--color-danger) 30%, var(--color-neutral-300));
-      }
-      --color-heading: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 10%, oklch(100% 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-heading: color-mix(in oklch, var(--color-danger) 10%, var(--color-white));
-      }
-      --color-link: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 60%, oklch(0.708 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-link: color-mix(in oklch, var(--color-danger) 60%, var(--color-neutral-400));
-      }
+      --color-card: oklch(from var(--color-danger) var(--l-800) 0.02 h);
+      --color-panel: oklch(from var(--color-danger) var(--l-900) 0.01 h);
+      --color-page: oklch(from var(--color-danger) var(--l-950) 0.005 h);
+      --color-border: oklch(from var(--color-danger) var(--l-700) 0.03 h);
+      --color-outline: oklch(from var(--color-danger) var(--l-500) 0.05 h);
+      --color-muted: oklch(from var(--color-danger) var(--l-500) 0.05 h);
+      --color-body: oklch(from var(--color-danger) var(--l-300) 0.03 h);
+      --color-heading: oklch(from var(--color-danger) var(--l-100) 0.01 h);
+      --color-link: oklch(from var(--color-danger) var(--l-400) c h);
       --color-brand: var(--color-danger);
       --color-contrast-brand: white;
-      --color-input: color-mix(in srgb, oklch(0.556 0.193447 24.6856) 12%, oklch(0.269 0 0));
-      @supports (color: color-mix(in lab, red, red)) {
-        --color-input: color-mix(in oklch, var(--color-danger) 12%, var(--color-neutral-800));
-      }
+      --color-input: oklch(from var(--color-danger) var(--l-800) 0.02 h);
       --color-selected: oklch(from var(--color-danger) l c h / 0.075);
       --color-hover: oklch(from var(--color-danger) l c h / 0.125);
       --color-active: oklch(from var(--color-danger) 0.05 c h / 0.3);

@@ -60,22 +60,22 @@
     @variant intent-danger {
       color: var(--color-body);
 
-      --color-card: color-mix(in oklch, var(--color-danger) 12%, var(--color-neutral-800)); /* 800 */
-      --color-panel: color-mix(in oklch, var(--color-danger) 8%, var(--color-neutral-900)); /* 900 */
-      --color-page: color-mix(in oklch, var(--color-danger) 5%, var(--color-neutral-950)); /* 950 */
+      --color-card: oklch(from var(--color-danger) var(--l-800) 0.02 h); /* 800 */
+      --color-panel: oklch(from var(--color-danger) var(--l-900) 0.01 h); /* 900 */
+      --color-page: oklch(from var(--color-danger) var(--l-950) 0.005 h); /* 950 */
 
-      --color-border: color-mix(in oklch, var(--color-danger) 30%, var(--color-neutral-700)); /* 700 */
-      --color-outline: color-mix(in oklch, var(--color-danger) 50%, var(--color-neutral-500)); /* 500 */
+      --color-border: oklch(from var(--color-danger) var(--l-700) 0.03 h); /* 700 */
+      --color-outline: oklch(from var(--color-danger) var(--l-500) 0.05 h); /* 500 */
 
-      --color-muted: color-mix(in oklch, var(--color-danger) 50%, var(--color-neutral-500)); /* 500 */
-      --color-body: color-mix(in oklch, var(--color-danger) 30%, var(--color-neutral-300)); /* 300 */
-      --color-heading: color-mix(in oklch, var(--color-danger) 10%, var(--color-white)); /* white */
+      --color-muted: oklch(from var(--color-danger) var(--l-500) 0.05 h); /* 500 */
+      --color-body: oklch(from var(--color-danger) var(--l-300) 0.03 h); /* 300 */
+      --color-heading: oklch(from var(--color-danger) var(--l-100) 0.01 h); /* 100 / white */
 
-      --color-link: color-mix(in oklch, var(--color-danger) 60%, var(--color-neutral-400)); /* 400 */
+      --color-link: oklch(from var(--color-danger) var(--l-400) c h); /* 400 */
       --color-brand: var(--color-danger);
       --color-contrast-brand: white;
 
-      --color-input: color-mix(in oklch, var(--color-danger) 12%, var(--color-neutral-800)); /* 800 */
+      --color-input: oklch(from var(--color-danger) var(--l-800) 0.02 h); /* 800 */
       --color-selected: oklch(from var(--color-danger) l c h / 0.075);
       --color-hover: oklch(from var(--color-danger) l c h / 0.125);
       --color-active: oklch(from var(--color-danger) 0.05 c h / 0.3);
