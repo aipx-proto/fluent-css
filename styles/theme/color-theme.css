@@ -1,6 +1,5 @@
 @theme {
-  /**! These are set in `@variant light` which also covers `:root, :host` */
-  --_message-unset-color: "These are set in variant light which also covers root and host";
+  --color-comment-about-unset-colors: "These are set in light variant which also covers :root, :host";
   --color-card: unset;
   --color-panel: unset;
   --color-page: unset;
