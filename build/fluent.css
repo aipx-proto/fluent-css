@@ -377,17 +377,17 @@
     --opacity-disabled: 0.6;
     &.intent-danger, .intent-danger, .intent-danger *, &.intent-warning, .intent-warning, .intent-warning *, &.intent-success, .intent-success, .intent-success *, &.intent-brand, .intent-brand, .intent-brand * {
       color: var(--color-body);
-      --color-card: oklch(from var(--color-intent) var(--l-800) 0.02 h);
+      --color-card: oklch(from var(--color-intent) var(--l-800) 0.015 h);
       --color-panel: oklch(from var(--color-intent) var(--l-900) 0.01 h);
       --color-page: oklch(from var(--color-intent) var(--l-950) 0.005 h);
-      --color-border: oklch(from var(--color-intent) var(--l-700) 0.03 h);
-      --color-outline: oklch(from var(--color-intent) var(--l-500) 0.05 h);
+      --color-border: oklch(from var(--color-intent) var(--l-700) 0.05 h);
+      --color-outline: oklch(from var(--color-intent) var(--l-500) 0.15 h);
       --color-muted: oklch(from var(--color-intent) var(--l-500) 0.05 h);
-      --color-body: oklch(from var(--color-intent) var(--l-300) 0.03 h);
-      --color-heading: oklch(from var(--color-intent) var(--l-100) 0.01 h);
+      --color-body: oklch(from var(--color-intent) var(--l-300) 0.065 h);
+      --color-heading: oklch(from var(--color-intent) var(--l-50) 0.05 h);
       --color-link: oklch(from var(--color-intent) var(--l-400) c h);
       --color-contrast-brand: white;
-      --color-input: oklch(from var(--color-intent) var(--l-800) 0.02 h);
+      --color-input: oklch(from var(--color-intent) var(--l-800) 0.015 h);
       --color-selected: oklch(from var(--color-intent) l c h / 0.075);
       --color-hover: oklch(from var(--color-intent) l c h / 0.125);
       --color-active: oklch(from var(--color-intent) 0.05 c h / 0.3);
@@ -885,6 +885,12 @@
   src: local("Segoe UI Bold"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
   font-weight: 700;
 }
+.intent-info, .intent-info * {
+  --color-intent: var(--color-heading);
+  --color-brand: var(--color-heading);
+  --color-link: var(--color-body);
+  --color-contrast-brand: var(--color-page);
+}
 .intent-danger, .intent-danger * {
   --color-intent: var(--color-danger);
   --color-brand: var(--color-intent);
@@ -899,12 +905,6 @@
 }
 .intent-brand, .intent-brand * {
   --color-intent: var(--color-brand);
-}
-.intent-info, .intent-info * {
-  --color-intent: var(--color-heading);
-  --color-brand: var(--color-heading);
-  --color-link: var(--color-body);
-  --color-contrast-brand: var(--color-page);
 }
 @layer components {
   html {
@@ -1330,7 +1330,7 @@
     border: 1px solid var(--_color-border);
     border-bottom-color: var(--_color-border-bottom);
     &::placeholder {
-      color: var(--color-outline);
+      color: var(--color-muted);
       opacity: 1;
     }
     --_icon-background-image: none;

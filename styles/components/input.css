@@ -39,7 +39,7 @@ input:where(:not([type])),
   border-bottom-color: var(--_color-border-bottom);
 
   &::placeholder {
-    color: var(--color-outline);
+    color: var(--color-muted);
     opacity: 1;
   }
 
