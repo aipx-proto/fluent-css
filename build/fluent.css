@@ -314,6 +314,7 @@
     --l-800: 0.269;
     --l-900: 0.205;
     --l-950: 0.145;
+    --color-comment-about-unset-colors: "These are set in light variant which also covers :root, :host";
     --color-card: unset;
     --color-panel: unset;
     --color-page: unset;
