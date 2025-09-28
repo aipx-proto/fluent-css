@@ -1,5 +1,6 @@
 @theme {
   --color-comment-about-unset-colors: "These are set in light variant which also covers :root, :host";
+  
   --color-card: unset;
   --color-panel: unset;
   --color-page: unset;
