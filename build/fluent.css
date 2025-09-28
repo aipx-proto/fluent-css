@@ -382,7 +382,7 @@
       --color-page: oklch(from var(--color-intent) var(--l-100) 0.04 h);
       --color-border: oklch(from var(--color-intent) var(--l-300) 0.1 h);
       --color-outline: oklch(from var(--color-intent) var(--l-400) c h);
-      --color-muted: oklch(from var(--color-intent) var(--l-500) 0.15 h);
+      --color-muted: oklch(from var(--color-intent) var(--l-600) 0.15 h);
       --color-body: oklch(from var(--color-intent) var(--l-700) 0.2 h);
       --color-heading: oklch(from var(--color-intent) var(--l-900) 0.25 h);
       --color-link: oklch(from var(--color-intent) var(--l-500) c h);
@@ -422,9 +422,9 @@
       --color-page: oklch(from var(--color-intent) var(--l-950) 0.01 h);
       --color-border: oklch(from var(--color-intent) var(--l-700) 0.05 h);
       --color-outline: oklch(from var(--color-intent) var(--l-500) 0.15 h);
-      --color-muted: oklch(from var(--color-intent) var(--l-500) 0.05 h);
+      --color-muted: oklch(from var(--color-intent) var(--l-400) 0.05 h);
       --color-body: oklch(from var(--color-intent) var(--l-300) 0.065 h);
-      --color-heading: oklch(from var(--color-intent) var(--l-50) 0.05 h);
+      --color-heading: oklch(from var(--color-intent) var(--l-50) 0.07 h);
       --color-link: oklch(from var(--color-intent) var(--l-400) c h);
       --color-contrast-brand: white;
       --color-input: oklch(from var(--color-intent) var(--l-800) 0.01 h);
