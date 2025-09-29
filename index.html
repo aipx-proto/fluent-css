@@ -50,7 +50,7 @@
   </script>
 </head>
 
-<body class="max-w-4xl mx-auto px-6 flex flex-row gap-4 items-start intent-danger">
+<body class="max-w-4xl mx-auto px-6 flex flex-row gap-4 items-start">
   <header
     class="flex-none sticky top-0 pt-6 pr-2 pb-10 pl-3 max-h-screen overflow-y-auto flex flex-col gap-4 items-start">
     <h1 class="text-sm font-mono font-normal m-0 flex flex-col gap-2 items-start">
@@ -349,7 +349,7 @@
           <button>Edit</button>
           <button>Duplicate</button>
           <hr />
-          <button class="type-primary">Send</button>
+          <button class="intent-danger">Delete</button>
         </div>
       </div>
     </section>
@@ -596,6 +596,75 @@
         </fieldset>
       </div>
 
+    </section>
+
+    <section id="intent" class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Intent</h3>
+        <div class="intent-danger rounded-md border border-outline bg-card p-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <h4>Intent Danger</h4>
+              <p class="text-sm text-body">
+                We've refreshed Fluent.css with improved contrast tokens. Review the changelog before updating your
+                project to the latest build.
+              </p>
+            </div>
+            <div class="flex flex-row gap-2 flex-shrink-0">
+              <button class="type-primary size-sm">View changelog</button>
+              <button class="type-transparent size-sm">Remind me later</button>
+            </div>
+        </div>
+        <div class="intent-success rounded-md border border-outline bg-card p-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <h4>Intent Success</h4>
+              <p class="text-sm text-body">
+                Deployment completed without issues. All targeted regions are live with the new Fluent.css build.
+              </p>
+            </div>
+            <div class="flex flex-row gap-2 flex-shrink-0">
+              <button class="type-primary size-sm">View release</button>
+              <button class="type-transparent size-sm">Dismiss</button>
+            </div>
+        </div>
+        <div class="intent-warning rounded-md border border-outline bg-card p-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <h4>Intent Warning</h4>
+              <p class="text-sm text-body">
+                Some components still reference deprecated token names. Update to the v2 naming scheme before the next
+                cut.
+              </p>
+            </div>
+            <div class="flex flex-row gap-2 flex-shrink-0">
+              <button class="type-primary size-sm">Run migration</button>
+              <button class="type-transparent size-sm">Ignore for now</button>
+            </div>
+        </div>
+        <div class="intent-brand rounded-md border border-outline bg-card p-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <h4>Intent Brand</h4>
+              <p class="text-sm text-body">
+                Celebrate Fluent.css v1.0! Explore the launch blog for design highlights and guidance for product
+                teams.
+              </p>
+            </div>
+            <div class="flex flex-row gap-2 flex-shrink-0">
+              <button class="type-primary size-sm">Read launch notes</button>
+              <button class="type-transparent size-sm">Share feedback</button>
+            </div>
+        </div>
+        <div class="intent-info rounded-md border border-outline bg-card p-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <h4>Intent Info</h4>
+              <p class="text-sm text-body">
+                A new icon pack is available in the assets directory. Update your builds if you rely on Fluent icons.
+              </p>
+            </div>
+            <div class="flex flex-row gap-2 flex-shrink-0">
+              <button class="type-primary size-sm">Download pack</button>
+              <button class="type-transparent size-sm">Remind me tomorrow</button>
+            </div>
+        </div>
+      </div>
     </section>
 
     <section id="overlay" class="rounded-md bg-panel shadow-lg">
