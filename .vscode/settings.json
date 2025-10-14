@@ -7,5 +7,6 @@
   "files.associations": {
     "*.css": "tailwindcss",
     "llms.txt": "markdown"
-  }
+  },
+  "workbench.colorTheme": "Aura Dark"
 }
