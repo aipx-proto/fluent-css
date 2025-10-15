@@ -188,7 +188,7 @@
     --color-pink-800: oklch(var(--l-800) 0.166533 346.698);
     --color-pink-900: oklch(var(--l-900) 0.146533 346.698);
     --color-pink-950: oklch(var(--l-950) 0.126533 346.698);
-    --color-rose-50: oklch(var(--l-50) 0.106336 25.8509);
+    --color-rose-50: oklch(var(--l-50)   0.106336 25.8509);
     --color-rose-100: oklch(var(--l-100) 0.126336 25.8509);
     --color-rose-200: oklch(var(--l-200) 0.146336 25.8509);
     --color-rose-300: oklch(var(--l-300) 0.166336 25.8509);
@@ -372,8 +372,8 @@
     --color-hover: oklch(0 0 0 / 0.065);
     --color-active: oklch(0 0 0 / 0.12);
     --color-danger: var(--color-red-500);
-    --color-warning: var(--color-amber-400);
-    --color-success: var(--color-green-500);
+    --color-warning: var(--color-orange-400);
+    --color-success: var(--color-emerald-500);
     --opacity-disabled: 0.6;
     &.intent-danger, .intent-danger, .intent-danger *, &.intent-warning, .intent-warning, .intent-warning *, &.intent-success, .intent-success, .intent-success *, &.intent-brand, .intent-brand, .intent-brand * {
       color: var(--color-body);
@@ -391,6 +391,11 @@
       --color-selected: oklch(from var(--color-intent) l c h / 0.05);
       --color-hover: oklch(from var(--color-intent) l c h / 0.1);
       --color-active: oklch(from var(--color-intent) l c h / 0.2);
+    }
+    .intent-info, .intent-info * {
+      --color-card: oklch(from var(--color-intent) var(--l-100) 0 h);
+      --color-panel: oklch(from var(--color-intent) var(--l-200) 0 h);
+      --color-page: oklch(from var(--color-intent) var(--l-300) 0 h);
     }
   }
   .dark, .dark *, html:has(body.dark) {
@@ -412,8 +417,8 @@
     --color-hover: oklch(100% 0 0 / 0.125);
     --color-active: oklch(0% 0 0 / 0.3);
     --color-danger: var(--color-red-500);
-    --color-warning: var(--color-amber-400);
-    --color-success: var(--color-green-500);
+    --color-warning: var(--color-orange-400);
+    --color-success: var(--color-emerald-500);
     --opacity-disabled: 0.6;
     &.intent-danger, .intent-danger, .intent-danger *, &.intent-warning, .intent-warning, .intent-warning *, &.intent-success, .intent-success, .intent-success *, &.intent-brand, .intent-brand, .intent-brand * {
       color: var(--color-body);
@@ -431,6 +436,11 @@
       --color-selected: oklch(from var(--color-intent) l c h / 0.075);
       --color-hover: oklch(from var(--color-intent) l c h / 0.125);
       --color-active: oklch(from var(--color-intent) 0.05 c h / 0.3);
+    }
+    .intent-info, .intent-info * {
+      --color-card: var(--color-neutral-950);
+      --color-panel: var(--color-neutral-950);
+      --color-page: var(--color-black);
     }
   }
   .intent-info, .intent-info * {

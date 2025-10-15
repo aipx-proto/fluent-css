@@ -207,7 +207,7 @@
   --color-pink-900: oklch(var(--l-900) 0.146533 346.698);
   --color-pink-950: oklch(var(--l-950) 0.126533 346.698);
 
-  --color-rose-50: oklch(var(--l-50) 0.106336 25.8509);
+  --color-rose-50: oklch(var(--l-50)   0.106336 25.8509);
   --color-rose-100: oklch(var(--l-100) 0.126336 25.8509);
   --color-rose-200: oklch(var(--l-200) 0.146336 25.8509);
   --color-rose-300: oklch(var(--l-300) 0.166336 25.8509);
