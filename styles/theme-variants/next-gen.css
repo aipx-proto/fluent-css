@@ -82,7 +82,7 @@ TODO:
     --color-body: var(--color-neutral-300);
     --color-heading: var(--color-white);
 
-    --color-link: var(--color-purple-300);
+    --color-link: var(--color-purple-400);
     --color-brand: var(--color-purple-600);
     --color-contrast-brand: white;
 
@@ -95,10 +95,8 @@ TODO:
 
 @layer components {
   .next-gen,
-  .next-gen *,
   html:has(body.next-gen),
   .next-gen.dark,
-  .next-gen.dark *,
   html:has(body.next-gen.dark) {
     /* button */
     button:where(:not(.tab)),
