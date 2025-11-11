@@ -88,6 +88,18 @@ Applies to: `button`, `.btn`, `.btn-group`, `input`, `.input`, `.tab`, `.tabs`
 
 **Parent Inheritance**: Applying type/size/state to parent elements affects all children. Example: `.btn-group.size-sm` makes all child buttons small.
 
+#### Intent Classes
+
+Use `.intent-{type}` to style components with semantic color schemes to communicate status and criticality
+
+- `.intent-brand`: Blue brand color - Use for promotional messages, new features, primary announcements
+- `.intent-danger`: Red/error color - Use for errors, destructive actions, critical warnings, validation failures
+- `.intent-warning`: Orange/caution color - Use for warnings, important notices, cautionary messages
+- `.intent-success`: Green/positive color - Use for success messages, confirmations, completed actions
+- `.intent-info`: Gray/neutral color - Applies more high-contrast and intense gray than default and removes all brand colors. Use for informational messages, and tips
+
+**Parent Inheritance**: Applying intent to parent elements affects all children, including text colors, background colors, border colors, buttons, inputs, progress, everything.
+
 #### Position Classes
 
 Control popover positioning with `.position-{direction}-{alignment}` classes:
@@ -129,7 +141,7 @@ App defaults to light theme. Add `.dark` class to root element for dark theme.
 
 ### Typography
 
-- Font sizes: `.text-{xs|sm|md|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl}`
+- Font sizes: `.text-{xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl}`
 - Font weight: `.text-{normal|semibold|bold}` (prefer `semibold` over `bold`)
 - Font family: `.text-{sans|mono|serif}` (prefer `sans`)
 
@@ -205,6 +217,30 @@ Use emoji in spans: `<span class="emojicon">❤️</span>`
   <option>Select Option</option>
 </select>
 <textarea placeholder="Enter text"></textarea>
+```
+
+### Form Validation
+
+```html
+<!-- Use `.intent-{type}` for form validation queues -->
+<div>
+  <label for="user-email">Email Address</label>
+  <input type="email" id="user-email" placeholder="email@example.com" value="not.an.email" class="intent-danger" />
+  <span class="text-sm intent-danger text-heading">Please enter a valid email address</span>
+</div>
+```
+
+### Messages
+
+```html
+<!-- Use `.intent-{type}` to style messages -->
+<div class="intent-info">
+  <h4 class="text-lg">Scheduled Maintenance</h4>
+  <p class="text-md text-muted">
+    Scheduled maintenance will occur tonight at 2:00 AM UTC. Expected downtime is 30 minutes.
+  </p>
+  <button class="type-subtle icon-only" title="Dismiss">Dismiss</button>
+</div>
 ```
 
 ### Checkbox
@@ -328,7 +364,7 @@ Use `.menu` class **ONLY** for interactive menus with buttons/links. Menus defau
   <button>Edit</button>
   <button>Duplicate</button>
   <hr />
-  <button>Remove</button>
+  <button class="intent-danger">Delete</button>
 </div>
 ```
 

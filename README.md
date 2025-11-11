@@ -57,11 +57,12 @@ A second script generates `build/fluent.tailwind.css` for optimized of integrati
 - the disabled transparent button has a background
 - use padding and absolute positions for the marker in `details summary` instead of flex? Or use `float:right;`?
 - firefox & safari support? (for input pseudo elements)
-- intent - info, brand, success, warning, danger
 - publish to npm
 - add versioning
 - icons for input types - search, date, time, numeric
 - icon support: vibe-icon
+- replace 'muted' with 'subtle'
+- simplify tooltip popover anchor properties based on the css podcast episode advice
 
 ### Icons?
 
