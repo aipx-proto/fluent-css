@@ -338,6 +338,7 @@
     --text-md: var(--text-base);
     --text-md--line-height: var(--text-base--line-height);
     --font-numeric: var(--font-mono);
+    --font-mono-scale: 0.82em;
     --font-heavyweight: 600;
     --color-shadow-overlay: oklch(0% 0 0 / 0.5);
     --color-shadow-ambient: oklch(0% 0 0 / 0.12);
@@ -1010,19 +1011,25 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     font-style: italic;
     color: var(--color-heading);
   }
-  code, kbd, pre, samp, tt {
+  code, kbd, pre, samp {
     font-family: var(--font-mono);
   }
-  kbd {
+  kbd, code {
     padding: 2px 4px;
     border-radius: 3px;
     background-color: var(--color-selected);
+    font-size: var(--font-mono-scale);
   }
   pre {
     background-color: var(--color-selected);
     padding: var(--p-default);
     border-radius: var(--radius-md);
     overflow-x: auto;
+    code {
+      background-color: revert;
+      padding: revert;
+      font-size: revert;
+    }
   }
   hr {
     border: none;
