@@ -89,3 +89,33 @@ Info - https://learn.microsoft.com/en-us/typography/font-list/aptos
   font-weight: 900;
   font-style: italic;
 }
+
+/* Aptos Mono */
+
+@font-face {
+  font-family: "Aptos Mono";
+  src: url("./font-aptos/Aptos-Mono.ttf") format("truetype");
+  font-weight: 400 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos Mono";
+  src: url("./font-aptos/Aptos-Mono-Italic.ttf") format("truetype");
+  font-weight: 400 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aptos Mono";
+  src: url("./font-aptos/Aptos-Mono-Bold.ttf") format("truetype");
+  font-weight: 600 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aptos Mono";
+  src: url("./font-aptos/Aptos-Mono-Bold-Italic.ttf") format("truetype");
+  font-weight: 600 700;
+  font-style: italic;
+}
