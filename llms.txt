@@ -3,7 +3,7 @@
 A css-only implementation of Microsoft's Fluent Design Language.
 
 Fluent.css automatically styles native HTML elements (buttons, inputs, dialogs, etc.) into Fluent themed components.
-It provides utility classes for theming, sizing, and variants, with built-in light/dark theme support.
+It provides utility classes for theming, sizing, and variants, with built-in light/dark mode support.
 Works standalone or integrates seamlessly with Tailwind CSS using the same utility class syntax.
 
 ## Import
@@ -135,9 +135,9 @@ Default positioning: popovers use `position-above-start`, menus use `position-be
 - `link/brand`: Blue brand colors
 - `input/selected/hover/active`: Interaction states
 
-### Light/Dark Theme
+### Light/Dark Mode
 
-App defaults to light theme. Add `.dark` class to root element for dark theme.
+App defaults to light mode. Add `.dark` class to root element for dark mode.
 
 ### Typography
 

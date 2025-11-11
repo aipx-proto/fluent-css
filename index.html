@@ -15,37 +15,37 @@
 
   <link rel="stylesheet" href="./styles/theme-variants/next-gen.css" />
 
-  <script id="theme-toggle-script">
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  <script id="mode-toggle-script">
+    // On page load or when changing modes, best to add inline in `head` to avoid FOUC
 
-    function initializeTheme() {
-      const theme = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", theme === "dark");
-      document.documentElement.classList.toggle("light", theme === "light");
+    function initializeMode() {
+      const mode = localStorage.mode || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", mode === "dark");
+      document.documentElement.classList.toggle("light", mode === "light");
     }
 
-    initializeTheme();
+    initializeMode();
 
     function setButtonText() {
       const isDark = document.documentElement.classList.contains('dark');
-      const themeBtn = document.getElementById("theme-toggle");
-      if (themeBtn) {
-        themeBtn.textContent = isDark ? "Dark" : "Light";
+      const modeBtn = document.getElementById("mode-toggle");
+      if (modeBtn) {
+        modeBtn.textContent = isDark ? "Dark" : "Light";
       }
     }
 
     document.addEventListener("DOMContentLoaded", setButtonText);
 
-    function toggleTheme() {
+    function toggleMode() {
       const isDark = document.documentElement.classList.contains('dark');
       if (isDark) {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem('mode', 'light');
       } else {
         document.documentElement.classList.remove('light');
         document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('mode', 'dark');
       }
       setButtonText();
     }
@@ -106,10 +106,10 @@
         </li>
       </ul>
     </nav>
-    <span class="flex flex-col gap-1 items-start text-sm">
-      <span>Theme</span>
-      <button id="theme-toggle" class="type-subtle size-sm -ml-2" onclick="toggleTheme()">Dark</button>
 
+    <span class="flex items-center gap-0.5 text-sm">
+      <span>Mode:</span>
+      <button id="mode-toggle" class="type-subtle size-sm -m-1" onclick="toggleMode()">Dark</button>
     </span>
 
     <hr class="m-0 w-8" />
