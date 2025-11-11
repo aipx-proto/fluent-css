@@ -74,7 +74,7 @@
       --color-heading: oklch(from var(--color-intent) var(--l-900) 0.25 h);
 
       --color-link: oklch(from var(--color-intent) var(--l-500) c h);
-      /* --color-brand: var(--color-intent); */
+      /* --color-brand: var(--color-intent); circular dependency */
       --color-contrast-brand: white;
 
       --color-input: oklch(from var(--color-intent) var(--l-50) 0.015 h);
@@ -135,7 +135,7 @@
       --color-heading: oklch(from var(--color-intent) var(--l-50) 0.07 h);
 
       --color-link: oklch(from var(--color-intent) var(--l-400) c h);
-      /* --color-brand: var(--color-intent); */
+      /* --color-brand: var(--color-intent); circular dependency */
       --color-contrast-brand: white;
 
       --color-input: oklch(from var(--color-intent) var(--l-800) 0.01 h);
@@ -145,9 +145,9 @@
     }
 
     @variant intent-info {
-    --color-card: var(--color-neutral-950);
-    --color-panel: var(--color-neutral-950);
-    --color-page: var(--color-black);
+      --color-card: var(--color-neutral-950);
+      --color-panel: var(--color-neutral-950);
+      --color-page: var(--color-black);
     }
   }
 
@@ -162,15 +162,19 @@
     --color-intent: var(--color-danger);
     --color-brand: var(--color-intent);
   }
+
   @variant intent-warning {
     --color-intent: var(--color-warning);
     --color-brand: var(--color-intent);
   }
+
   @variant intent-success {
     --color-intent: var(--color-success);
     --color-brand: var(--color-intent);
   }
+
   @variant intent-brand {
     --color-intent: var(--color-brand);
+    /* --color-brand: var(--color-brand); circular dependency */
   }
 }
