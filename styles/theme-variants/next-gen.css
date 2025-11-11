@@ -16,7 +16,6 @@ TODO:
 
 /* TODO: update to ESM raw */
 @import "../font-face/font-aptos.css";
-@import "../font-face/font-monaspace-neon.css";
 
 /* @custom-variant dark (.next-gen.dark, .next-gen.dark *, html:has(body.next-gen.dark)); */
 @layer theme {
@@ -41,7 +40,7 @@ TODO:
 
     --font-sans: "Aptos", system-ui, Roboto, Helvetica Neue, ui-sans-serif,
       sans-serif;
-    --font-mono: "Monaspace Neon", "Cascadia Code", "Source Code Pro", Menlo,
+    --font-mono: "Aptos Mono", "Cascadia Code", "Source Code Pro", Menlo,
       Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
     --font-serif: Georgia, Cambria, ui-serif, serif;
     --font-numeric: var(--font-mono);
