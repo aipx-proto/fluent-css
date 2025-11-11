@@ -15,6 +15,47 @@
   --l-900: 0.205;
   --l-950: 0.145;
 
+  /* 
+  these are not consistent across hues, so defined per color
+  --c-50: 0.0934469;
+  --c-100: 0.113447;
+  --c-200: 0.133447;
+  --c-300: 0.153447;
+  --c-400: 0.173447;
+  --c-500: 0.193447;
+  --c-600: var(--c-400);
+  --c-700: var(--c-300);
+  --c-800: var(--c-200);
+  --c-900: var(--c-100);
+  --c-950: var(--c-50); 
+  */
+
+  /* these are dependent on chroma, so defined per color
+  --h-red: 24.6856;
+  --h-orange: 42.9597;
+  --h-amber: 77.4211;
+  --h-yellow: 100.931;
+  --h-lime: 130.095;
+  --h-green: 142.662;
+  --h-emerald: 152.2;
+  --h-teal: 198.593;
+  --h-cyan: 221.683;
+  --h-sky: 245.639;
+  --h-blue: 251.316;
+  --h-indigo: 250.928;
+  --h-violet: 269.974;
+  --h-purple: 301.165;
+  --h-fuchsia: 332.775;
+  --h-pink: 346.698;
+  --h-rose: 25.8509;
+
+  --h-slate: 214.465;
+  --h-gray: 218.513;
+  --h-zinc: 235.286;
+  --h-stone: 31.0318;
+  --h-neutral: 0; 
+  */
+  
   --color-red-50: oklch(var(--l-50) 0.0934469 24.6856);
   --color-red-100: oklch(var(--l-100) 0.113447 24.6856);
   --color-red-200: oklch(var(--l-200) 0.133447 24.6856);
@@ -207,7 +248,7 @@
   --color-pink-900: oklch(var(--l-900) 0.146533 346.698);
   --color-pink-950: oklch(var(--l-950) 0.126533 346.698);
 
-  --color-rose-50: oklch(var(--l-50)   0.106336 25.8509);
+  --color-rose-50: oklch(var(--l-50) 0.106336 25.8509);
   --color-rose-100: oklch(var(--l-100) 0.126336 25.8509);
   --color-rose-200: oklch(var(--l-200) 0.146336 25.8509);
   --color-rose-300: oklch(var(--l-300) 0.166336 25.8509);
@@ -254,7 +295,7 @@
   --color-zinc-800: oklch(var(--l-800) 0.0136482 235.286);
   --color-zinc-900: oklch(var(--l-900) 0.0136482 235.286);
   --color-zinc-950: oklch(var(--l-950) 0.0136482 235.286);
-  
+
   --color-stone-50: oklch(var(--l-50) 0.00639771 31.0318);
   --color-stone-100: oklch(var(--l-100) 0.00639771 31.0318);
   --color-stone-200: oklch(var(--l-200) 0.00639771 31.0318);
@@ -266,7 +307,7 @@
   --color-stone-800: oklch(var(--l-800) 0.00639771 31.0318);
   --color-stone-900: oklch(var(--l-900) 0.00639771 31.0318);
   --color-stone-950: oklch(var(--l-950) 0.00639771 31.0318);
-  
+
   --color-neutral-50: oklch(var(--l-50) 0 0);
   --color-neutral-100: oklch(var(--l-100) 0 0);
   --color-neutral-200: oklch(var(--l-200) 0 0);
