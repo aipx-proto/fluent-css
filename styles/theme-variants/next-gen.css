@@ -21,10 +21,8 @@ TODO:
 /* @custom-variant dark (.next-gen.dark, .next-gen.dark *, html:has(body.next-gen.dark)); */
 @layer theme {
   .next-gen,
-  .next-gen *,
   html:has(body.next-gen),
   .next-gen.dark,
-  .next-gen.dark *,
   html:has(body.next-gen.dark) {
     /* --rounded-default: var(--radius-lg); */
 
@@ -50,7 +48,6 @@ TODO:
   }
 
   .next-gen,
-  .next-gen *,
   html:has(body.next-gen) {
     --color-card: var(--color-white);
     --color-panel: var(--color-white); /*Page*/
@@ -74,7 +71,6 @@ TODO:
   }
 
   .next-gen.dark,
-  .next-gen.dark *,
   html:has(body.next-gen.dark) {
     --color-card: var(--color-neutral-900);
     --color-panel: var(--color-neutral-900);
@@ -116,10 +112,10 @@ TODO:
     ::-webkit-file-upload-button {
       --rounded-default: var(--radius-4xl);
       .menu & {
+        /* undo border-radius on menu buttons */
         --rounded-default: var(--radius-md);
       }
     }
-    /* TODO: undo border-radius on menu buttons */
 
     /* inputs */
     input:where(:not([type])),
@@ -189,6 +185,59 @@ TODO:
         &.selected,
         &:has(input[type="radio"]:checked) {
           background-color: var(--color-hover);
+        }
+      }
+    }
+
+    table {
+      --_border-radius: var(--radius-lg);
+      --_border-color: var(--color-border);
+
+      /* these are !important because LLMs try to override them */
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+
+      border-radius: var(--_border-radius);
+      border: solid 1px var(--_border-color);
+      width: 100%;
+
+      th,
+      td {
+        text-align: left;
+        border-bottom: solid 1px var(--_border-color);
+        padding: 12px 2px 12px 16px;
+        &:last-child {
+          padding-right: 16px;
+        }
+      }
+
+      th {
+        background-color: var(--color-selected);
+        padding: 8px 2px 8px 16px;
+      }
+
+      > :last-child tr:last-child {
+        & th,
+        & td {
+          border-bottom: none;
+          &:first-child {
+            border-bottom-left-radius: var(--_border-radius);
+          }
+          &:last-child {
+            border-bottom-right-radius: var(--_border-radius);
+          }
+        }
+      }
+
+      > :first-child tr:first-child {
+        & th,
+        & td {
+          &:first-child {
+            border-top-left-radius: var(--_border-radius);
+          }
+          &:last-child {
+            border-top-right-radius: var(--_border-radius);
+          }
         }
       }
     }
