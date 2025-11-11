@@ -65,6 +65,7 @@
             <li><a href="#typography">Typography</a></li>
             <li><a href="#color">Color</a></li>
             <li><a href="#layout">Layout</a></li>
+            <li><a href="#intent">Intent</a></li>
           </ul>
         </li>
         <li>
@@ -349,7 +350,7 @@
           <button>Edit</button>
           <button>Duplicate</button>
           <hr />
-          <button class="type-primary">Send</button>
+          <button class="intent-danger">Delete</button>
         </div>
       </div>
     </section>
@@ -596,6 +597,101 @@
         </fieldset>
       </div>
 
+    </section>
+
+    <section id="intent" class="rounded-md bg-panel shadow-lg">
+      <div class="flex flex-col gap-4 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Intent</h3>
+        <div class="flex flex-col gap-2">
+          <div class="intent-danger rounded-md border border-outline bg-card py-2 px-4 flex flex-col gap-2">
+            <div>
+              <h4 class="text-md inline">Intent Danger</h4>
+              <span class="text-md text-body">
+                We've refreshed Fluent.css with improved contrast tokens. Review the changelog before updating your
+                project to the latest build.
+              </span>
+            </div>
+            <div class="flex flex-row gap-2 flex-shrink-0">
+              <button class="type-primary size-sm">View changelog</button>
+              <button class="type-subtle size-sm">Remind me later</button>
+            </div>
+          </div>
+          <input type="email" placeholder="email@example.com" value="not.an.email" class="intent-danger" />
+        </div>
+        
+        <!-- <fieldset class="intent-brand">
+          <h4 class="text-lg font-semibold mt-4">Nested Intents</h4>
+          <legend>Account Security Warning</legend>
+          <p class="mb-3">Your password expires in 3 days. Please update your credentials.</p>
+          
+          <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-2">
+              <label>New Password</label>
+              <input type="password" class="intent-success" placeholder="Strong password entered" />
+            </div>
+            
+            <div class="flex flex-col gap-2 intent-danger">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Passwords don't match" />
+            </div>
+            
+            <div class="flex flex-row gap-2 mt-2 intent-info">
+              <button class="intent-success type-primary size-sm">Update Password</button>
+              <button class="intent-warning type-outline size-sm">Change Later</button>
+              <button class="type-primary size-sm">Cancel</button>
+            </div>
+          </div>
+        </fieldset> -->
+
+        <div class="intent-warning rounded-md border border-outline bg-card py-2 px-4 flex flex-col gap-2">
+          <div>
+            <h4 class="text-md inline">Intent Warning</h4>
+            <span class="text-md text-body">
+              Your session will expire in 5 minutes. Please save your work to avoid losing any changes.
+            </span>
+          </div>
+          <div class="flex flex-row gap-2 flex-shrink-0">
+            <button class="type-primary size-sm">Extend session</button>
+            <button class="type-subtle size-sm">Dismiss</button>
+          </div>
+        </div>
+        <div class="intent-success rounded-md border border-outline bg-card py-2 px-4 flex flex-col gap-2">
+          <div>
+            <h4 class="text-md inline">Intent Success</h4>
+            <span class="text-md text-body">
+              Your changes have been saved successfully. All updates are now live in production.
+            </span>
+          </div>
+          <div class="flex flex-row gap-2 flex-shrink-0">
+            <button class="type-primary size-sm">View changes</button>
+            <button class="type-subtle size-sm">Close</button>
+          </div>
+        </div>
+        <div class="intent-brand rounded-md border border-outline bg-card py-2 px-4 flex flex-col gap-2">
+          <div>
+            <h4 class="text-md inline">Intent Brand</h4>
+            <span class="text-md text-body">
+              Discover new features in Fluent.css v2.0. Enhanced accessibility and improved performance.
+            </span>
+          </div>
+          <div class="flex flex-row gap-2 flex-shrink-0">
+            <button class="type-primary size-sm">Learn more</button>
+            <button class="type-subtle size-sm">Not now</button>
+          </div>
+        </div>
+        <div class="intent-info rounded-md border border-outline bg-card py-2 px-4 flex flex-col gap-2">
+          <div>
+            <h4 class="text-md inline">Intent Info</h4>
+            <span class="text-md text-body">
+              Scheduled maintenance will occur tonight at 2:00 AM UTC. Expected downtime is 30 minutes.
+            </span>
+          </div>
+          <div class="flex flex-row gap-2 flex-shrink-0">
+            <button class="type-primary size-sm">View details</button>
+            <button class="type-subtle size-sm">OK</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="overlay" class="rounded-md bg-panel shadow-lg">
