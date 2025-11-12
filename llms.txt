@@ -3,7 +3,7 @@
 A css-only implementation of Microsoft's Fluent Design Language.
 
 Fluent.css automatically styles native HTML elements (buttons, inputs, dialogs, etc.) into Fluent themed components.
-It provides utility classes for theming, sizing, and variants, with built-in light/dark theme support.
+It provides utility classes for theming, sizing, and variants, with built-in light/dark mode support.
 Works standalone or integrates seamlessly with Tailwind CSS using the same utility class syntax.
 
 ## Import
@@ -43,6 +43,25 @@ Fluent.css integrates cleanly with Tailwind using the same class syntax and CSS 
 - Write **only** semantic HTML with utility classes
 - **DO NOT** write CSS in `<style>` elements, `.css` files, or `style=""` attributes
 - **DO NOT** write tailwind CSS in `<style>` elements—it will not apply.
+
+---
+
+## Theming
+
+To make a custom theme, override base styles using CSS `@layer theme` for colors/fonts and `@layer components` for specific element styling. 
+
+Apply theme class (`.next-gen` for example) to `<html>` or `<body>` to customize colors, fonts, and component styles. Can be combined with `.dark` and `.light` modes.
+
+```html
+<html class="next-gen dark">
+<head>
+  <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" />
+  <!-- theme.css MUST come after fluent.css for proper CSS cascade -->
+  <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/styles/theme-variants/next-gen.css?raw" />
+</head>
+```
+
+The NextGen example theme implements a purple brand color, Aptos fonts, pill buttons, minimal inputs, a wrapped table, and a special `.tabs.type-elevated` style.
 
 ---
 
@@ -135,9 +154,9 @@ Default positioning: popovers use `position-above-start`, menus use `position-be
 - `link/brand`: Blue brand colors
 - `input/selected/hover/active`: Interaction states
 
-### Light/Dark Theme
+### Light/Dark Mode
 
-App defaults to light theme. Add `.dark` class to root element for dark theme.
+App defaults to light mode. Add `.dark` class to root element for dark mode.
 
 ### Typography
 

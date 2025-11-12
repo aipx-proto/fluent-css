@@ -13,37 +13,39 @@
   <!-- 2. Fluent.css MUST come after Tailwind for proper CSS cascade -->
   <link rel="stylesheet" href="./build/fluent.css" />
 
-  <script id="theme-toggle-script">
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  <link rel="stylesheet" href="./styles/theme-variants/next-gen.css" />
 
-    function initializeTheme() {
-      const theme = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", theme === "dark");
-      document.documentElement.classList.toggle("light", theme === "light");
+  <script id="mode-toggle-script">
+    // On page load or when changing modes, best to add inline in `head` to avoid FOUC
+
+    function initializeMode() {
+      const mode = localStorage.mode || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", mode === "dark");
+      document.documentElement.classList.toggle("light", mode === "light");
     }
 
-    initializeTheme();
+    initializeMode();
 
     function setButtonText() {
       const isDark = document.documentElement.classList.contains('dark');
-      const themeBtn = document.getElementById("theme-toggle");
-      if (themeBtn) {
-        themeBtn.textContent = isDark ? "Dark" : "Light";
+      const modeBtn = document.getElementById("mode-toggle");
+      if (modeBtn) {
+        modeBtn.textContent = isDark ? "Dark" : "Light";
       }
     }
 
     document.addEventListener("DOMContentLoaded", setButtonText);
 
-    function toggleTheme() {
+    function toggleMode() {
       const isDark = document.documentElement.classList.contains('dark');
       if (isDark) {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem('mode', 'light');
       } else {
         document.documentElement.classList.remove('light');
         document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('mode', 'dark');
       }
       setButtonText();
     }
@@ -104,10 +106,19 @@
         </li>
       </ul>
     </nav>
-    <span class="flex flex-col gap-1 items-start text-sm">
-      <span>Theme</span>
-      <button id="theme-toggle" class="type-subtle size-sm -ml-2" onclick="toggleTheme()">Dark</button>
 
+    <span class="flex items-start flex-col gap-0.5 text-sm">
+      <label>Mode:</label>
+      <button id="mode-toggle" class="type-subtle size-sm -mx-2 -my-1" onclick="toggleMode()">Dark</button>
+    </span>
+
+    <span class="flex items-start flex-col gap-0.5 text-sm">
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select" class="btn type-subtle size-sm -mx-2 -my-1"
+        onchange="document.documentElement.classList.toggle('next-gen', this.value === 'next-gen')">
+        <option value="">Default</option>
+        <option value="next-gen">Next Gen</option>
+      </select>
     </span>
 
     <hr class="m-0 w-8" />
@@ -152,9 +163,9 @@
           <div class="flex flex-col gap-2">
             <span class="text-sm font-semibold text-muted">Standalone:</span>
             <pre
-              class="bg-card text-sm"><code>&lt;link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css" /&gt;</code></pre>
+              class="text-sm"><code>&lt;link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css" /&gt;</code></pre>
             <span class="text-sm font-semibold text-muted">With Tailwind:</span>
-            <pre class="bg-card text-sm"><code>&lt;!-- 1. Tailwind first --&gt;
+            <pre class="text-sm"><code>&lt;!-- 1. Tailwind first --&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
 
 &lt;!-- 2. Fluent.css MUST come after Tailwind --&gt;
@@ -290,7 +301,7 @@
         </div>
         <div class="btn__shape">
           <button class="rounded-none">Square</button>
-          <button>Rounded</button>
+          <button class="rounded-md">Rounded</button>
           <button class="rounded-full">Circular</button>
         </div>
         <div class="btn__states">
@@ -618,7 +629,7 @@
           </div>
           <input type="email" placeholder="email@example.com" value="not.an.email" class="intent-danger" />
         </div>
-        
+
         <!-- <fieldset class="intent-brand">
           <h4 class="text-lg font-semibold mt-4">Nested Intents</h4>
           <legend>Account Security Warning</legend>

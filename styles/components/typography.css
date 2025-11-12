@@ -85,16 +85,16 @@ q {
 code,
 kbd,
 pre,
-samp,
-tt {
+samp 
+{
   font-family: var(--font-mono);
-  /* font-size: var(--font-mono-scale); */
 }
 
-kbd {
+kbd, code {
   padding: 2px 4px;
   border-radius: 3px;
   background-color: var(--color-selected);
+  font-size: var(--font-mono-scale);
 }
 
 pre {
@@ -102,6 +102,12 @@ pre {
   padding: var(--p-default);
   border-radius: var(--radius-md);
   overflow-x: auto;
+
+  code {
+    background-color: revert;
+    padding: revert;
+    font-size: revert;
+  }
 }
 
 hr {

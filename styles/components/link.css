@@ -1,17 +1,29 @@
 a:where(:not(.btn):not(.tab)) {
   --_color-text: var(--color-link);
-  --_color-hover: oklch(from var(--_color-text) calc(l - 0.2) c h);
+  /* --_color-hover: defined by mode below */
   --_color-active: var(--color-link);
-
+  
   color: var(--_color-text);
   text-decoration: none;
-
+  
   &:hover {
     color: var(--_color-hover);
     text-decoration: underline;
   }
-
+  
   &:active {
     color: var(--_color-active);
+  }
+}
+
+@variant light {
+  a:where(:not(.btn):not(.tab)) {
+    --_color-hover: oklch(from var(--_color-text) calc(l - 0.1) c h);
+  }
+}
+
+@variant dark {
+  a:where(:not(.btn):not(.tab)){
+    --_color-hover: oklch(from var(--_color-text) calc(l + 0.1) c h);
   }
 }

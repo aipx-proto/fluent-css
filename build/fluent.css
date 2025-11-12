@@ -338,6 +338,7 @@
     --text-md: var(--text-base);
     --text-md--line-height: var(--text-base--line-height);
     --font-numeric: var(--font-mono);
+    --font-mono-scale: 0.82em;
     --font-heavyweight: 600;
     --color-shadow-overlay: oklch(0% 0 0 / 0.5);
     --color-shadow-ambient: oklch(0% 0 0 / 0.12);
@@ -931,6 +932,10 @@
     font-weight: var(--font-weight-bold);
   }
 }
+/*!
+Segoe UI - by Microsoft & Agfa Monotype Corporation 
+Download and License - https://learn.microsoft.com/en-us/typography/font-list/segoe-ui
+*/
 @font-face {
   font-family: "Segoe UI";
   src: local("Segoe UI Light"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"), url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
@@ -1006,19 +1011,25 @@
     font-style: italic;
     color: var(--color-heading);
   }
-  code, kbd, pre, samp, tt {
+  code, kbd, pre, samp {
     font-family: var(--font-mono);
   }
-  kbd {
+  kbd, code {
     padding: 2px 4px;
     border-radius: 3px;
     background-color: var(--color-selected);
+    font-size: var(--font-mono-scale);
   }
   pre {
     background-color: var(--color-selected);
     padding: var(--p-default);
     border-radius: var(--radius-md);
     overflow-x: auto;
+    code {
+      background-color: revert;
+      padding: revert;
+      font-size: revert;
+    }
   }
   hr {
     border: none;
@@ -1183,7 +1194,6 @@
   }
   a:where(:not(.btn):not(.tab)) {
     --_color-text: var(--color-link);
-    --_color-hover: oklch(from var(--_color-text) calc(l - 0.2) c h);
     --_color-active: var(--color-link);
     color: var(--_color-text);
     text-decoration: none;
@@ -1193,6 +1203,16 @@
     }
     &:active {
       color: var(--_color-active);
+    }
+  }
+  :root, :host, .light, html:has(body.light) {
+    a:where(:not(.btn):not(.tab)) {
+      --_color-hover: oklch(from var(--_color-text) calc(l - 0.1) c h);
+    }
+  }
+  .dark, html:has(body.dark) {
+    a:where(:not(.btn):not(.tab)) {
+      --_color-hover: oklch(from var(--_color-text) calc(l + 0.1) c h);
     }
   }
   input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
@@ -1416,15 +1436,21 @@
     }
     &.type-outline {
       --_color-background: transparent;
+      --_color-border: var(--color-border);
+      --_color-border-bottom: var(--color-outline);
+      --_color-border-focus: var(--color-brand);
     }
     &.type-subtle {
       --_color-border: transparent;
       --_color-border-bottom: transparent;
       --_color-background: var(--color-selected);
+      --_color-border-focus: var(--color-brand);
     }
     &.type-transparent {
       --_color-background: transparent;
       --_color-border: transparent;
+      --_color-border-bottom: var(--color-outline);
+      --_color-border-focus: var(--color-brand);
       padding: 2px;
       min-height: auto;
       border-radius: 1px;
@@ -1991,7 +2017,7 @@
   .tab {
     --_size-tab-underline: 3px;
     --_color-tab-underline-hover: var(--color-border);
-    --_color-tab-underline-active: var(--color-link);
+    --_color-tab-underline-active: var(--color-brand);
     --_duration-tab-underline: 0.1s;
     cursor: pointer;
     appearance: none;
