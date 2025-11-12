@@ -107,9 +107,18 @@
       </ul>
     </nav>
 
-    <span class="flex items-center gap-0.5 text-sm">
-      <span>Mode:</span>
-      <button id="mode-toggle" class="type-subtle size-sm -m-1" onclick="toggleMode()">Dark</button>
+    <span class="flex items-start flex-col gap-0.5 text-sm">
+      <label>Mode:</label>
+      <button id="mode-toggle" class="type-subtle size-sm -mx-2 -my-1" onclick="toggleMode()">Dark</button>
+    </span>
+
+    <span class="flex items-start flex-col gap-0.5 text-sm">
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select" class="btn type-subtle size-sm -mx-2 -my-1"
+        onchange="document.documentElement.classList.toggle('next-gen', this.value === 'next-gen')">
+        <option value="next-gen">Next Gen</option>
+        <option value="">Default</option>
+      </select>
     </span>
 
     <hr class="m-0 w-8" />
@@ -620,7 +629,7 @@
           </div>
           <input type="email" placeholder="email@example.com" value="not.an.email" class="intent-danger" />
         </div>
-        
+
         <!-- <fieldset class="intent-brand">
           <h4 class="text-lg font-semibold mt-4">Nested Intents</h4>
           <legend>Account Security Warning</legend>
