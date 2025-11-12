@@ -1,20 +1,18 @@
 /*!
-The NextGen (or "Mirai") theme variant is made for the Azure AI Foundry.
+The NextGen (or "Mirai") theme variant is made for the Microsoft Foundry (formerly Azure AI Foundry)
 Key differences from default Fluent:
 - Colors
   - Neutral colors are more flat
-  - Brand color is an Indigo
+  - Brand color is an Indigo/Purple
   - Minimal inputs are darker than panel background
-- Fonts are Aptos and Monaspace Neon
-- Buttons are rounded-circular by default
-- Inputs are type-minimal by default
-- Accordion header text is monospace by default
-- There is a new tab.type-elevated 
-TODO:
-- updated table styles
+- Fonts are Aptos and Aptos Mono
+- Buttons are `.rounded-full` by default
+- Inputs are `.type-minimal` by default
+- There is a new tab.type-elevated style
+- Tables are wrapped in a rounded border
  */
 
-/* TODO: update to ESM raw */
+/* TODO: update to ESM raw? */
 @import "../font-face/font-aptos.css";
 
 /* @custom-variant dark (.next-gen.dark, .next-gen.dark *, html:has(body.next-gen.dark)); */
@@ -23,8 +21,6 @@ TODO:
   html:has(body.next-gen),
   .next-gen.dark,
   html:has(body.next-gen.dark) {
-    /* --rounded-default: var(--radius-lg); */
-
     /* Next Gen Brand */
     --color-purple-50: oklch(96.646% 0.02207 312.004);
     --color-purple-100: oklch(95.016% 0.03775 319.046);
@@ -145,10 +141,6 @@ TODO:
         color: var(--color-muted);
         opacity: 1;
       }
-    }
-
-    details summary {
-      font-family: var(--font-mono);
     }
 
     .tabs.type-elevated {

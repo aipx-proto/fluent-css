@@ -46,6 +46,25 @@ Fluent.css integrates cleanly with Tailwind using the same class syntax and CSS 
 
 ---
 
+## Theming
+
+To make a custom theme, override base styles using CSS `@layer theme` for colors/fonts and `@layer components` for specific element styling. 
+
+Apply theme class (`.next-gen` for example) to `<html>` or `<body>` to customize colors, fonts, and component styles. Can be combined with `.dark` and `.light` modes.
+
+```html
+<html class="next-gen dark">
+<head>
+  <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent.css?raw" />
+  <!-- theme.css MUST come after fluent.css for proper CSS cascade -->
+  <link rel="stylesheet" href="https://esm.sh/gh/aipx-proto/fluent-css@main/styles/theme-variants/next-gen.css?raw" />
+</head>
+```
+
+The NextGen example theme implements a purple brand color, Aptos fonts, pill buttons, minimal inputs, a wrapped table, and a special `.tabs.type-elevated` style.
+
+---
+
 ## Component Usage
 
 ### Default HTML Element Styling
