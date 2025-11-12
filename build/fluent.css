@@ -1194,7 +1194,6 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
   }
   a:where(:not(.btn):not(.tab)) {
     --_color-text: var(--color-link);
-    --_color-hover: oklch(from var(--_color-text) calc(l - 0.2) c h);
     --_color-active: var(--color-link);
     color: var(--_color-text);
     text-decoration: none;
@@ -1204,6 +1203,16 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     }
     &:active {
       color: var(--_color-active);
+    }
+  }
+  :root, :host, .light, html:has(body.light) {
+    a:where(:not(.btn):not(.tab)) {
+      --_color-hover: oklch(from var(--_color-text) calc(l - 0.1) c h);
+    }
+  }
+  .dark, html:has(body.dark) {
+    a:where(:not(.btn):not(.tab)) {
+      --_color-hover: oklch(from var(--_color-text) calc(l + 0.1) c h);
     }
   }
   input[type="checkbox"]:where(:not(.switch)), input[type="radio"] {
