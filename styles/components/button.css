@@ -35,15 +35,16 @@ select.btn,
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
 
-    &:hover:not(:open) {
-      background-color: var(--_color-hover);
-      transition-duration: var(--duration-hover);
-    }
+  &:hover:where(:not(:open)) {
+    background-color: var(--_color-hover);
+    transition-duration: var(--duration-hover);
+  }
 
-    &:active, &:open {
-      background-color: var(--_color-active);
-      transition-duration: var(--duration-hover);
-    }
+  &:active,
+  &:open {
+    background-color: var(--_color-active);
+    transition-duration: var(--duration-hover);
+  }
 
   &.selected {
     background-color: var(--_color-selected);
@@ -59,9 +60,9 @@ select.btn,
   .btn-group.type-primary &,
   &.type-primary {
     --_color-background: var(--color-brand);
-    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
-    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
-    --_color-selected: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-hover: oklch(from var(--_color-background) calc(l + 0.1) c h);
+    --_color-active: oklch(from var(--_color-background) calc(l - 0.1) c h);
+    --_color-selected: oklch(from var(--_color-background) calc(l - 0.05) c h);
     --_color-text: var(--color-contrast-brand);
     --_color-border: transparent;
   }
@@ -109,7 +110,7 @@ select.btn,
     aspect-ratio: 1 / 1;
     /* width: var(--h-default); */
     /* height: var(--h-default); */
-    
+
     flex: 0 0 auto;
   }
 
@@ -128,8 +129,8 @@ select.btn,
   --_icon-background-image: var(--icon-chevron-down);
   --_icon-background-position: right calc(var(--p-default) - 4px) center;
   --_icon-background-size: var(--h-icon);
-  --_icon-background: var(--_icon-background-image) var(--_icon-background-position) / var(--_icon-background-size)
-    no-repeat;
+  --_icon-background: var(--_icon-background-image)
+    var(--_icon-background-position) / var(--_icon-background-size) no-repeat;
   --_icon-padding-right: calc(var(--h-icon) + var(--p-default));
 
   line-height: revert;

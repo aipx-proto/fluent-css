@@ -22,16 +22,16 @@ Key differences from default Fluent:
   .next-gen.dark,
   html:has(body.next-gen.dark) {
     /* Next Gen Brand */
-    --color-purple-50: oklch(96.646% 0.02207 312.004);
-    --color-purple-100: oklch(95.016% 0.03775 319.046);
-    --color-purple-200: oklch(87.85% 0.06571 303.807);
-    --color-purple-300: oklch(83.715% 0.08917 302.923);
-    --color-purple-400: oklch(69.796% 0.16568 299.059);
+    --color-purple-50:  oklch(91.844% 0.04553 305.191);
+    --color-purple-100: oklch(88.759% 0.06563 308.065);
+    --color-purple-200: oklch(81.956% 0.09803 302.449);
+    --color-purple-300: oklch(74.568% 0.13802 300.542);
+    --color-purple-400: oklch(66.512% 0.18126 297.493);
     --color-purple-500: oklch(57.578% 0.22309 292.287); /* Brand #8251EE */
-    --color-purple-600: oklch(44.28% 0.16013 293.899);
+    --color-purple-600: oklch(45.694% 0.16501 293.759);
     --color-purple-700: oklch(37.714% 0.12382 294.937);
-    --color-purple-800: oklch(28.155% 0.07722 297.291);
-    --color-purple-900: oklch(20.628% 0.03981 298.997);
+    --color-purple-800: oklch(28.229% 0.07876 296.776);
+    --color-purple-900: oklch(21.059% 0.03965 299.085);
     --color-purple-950: oklch(9.276% 0.01729 297.522);
 
     --font-sans: "Aptos", system-ui, Roboto, Helvetica Neue, ui-sans-serif,
@@ -56,7 +56,7 @@ Key differences from default Fluent:
     --color-heading: var(--color-neutral-900);
 
     --color-link: var(--color-purple-600);
-    --color-brand: var(--color-purple-500);
+    --color-brand: var(--color-purple-600);
     --color-contrast-brand: white;
 
     --color-input: var(--color-white); /*Control*/
@@ -78,8 +78,8 @@ Key differences from default Fluent:
     --color-body: var(--color-neutral-300);
     --color-heading: var(--color-white);
 
-    --color-link: var(--color-purple-400);
-    --color-brand: var(--color-purple-600);
+    --color-link: var(--color-purple-200);
+    --color-brand: var(--color-purple-500);
     --color-contrast-brand: white;
 
     --color-input: var(--color-neutral-900);
