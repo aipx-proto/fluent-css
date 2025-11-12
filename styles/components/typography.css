@@ -31,8 +31,7 @@ h5,
 h6,
 strong,
 em,
-th,
-summary {
+th{
   color: var(--color-heading);
 }
 

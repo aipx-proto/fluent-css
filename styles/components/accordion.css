@@ -2,7 +2,8 @@ details {
   --_duration-open: 0.2s;
   --_duration-close: 0.07s;
 
-  --_size-marker: var(--h-icon);
+  --_padding-marker:  calc(var(--spacing)* 0.5);
+  --_size-marker: calc(var(--h-icon) + (var(--_padding-marker) * 2));
 
   summary {
     display: flex;
@@ -24,8 +25,25 @@ details {
       transform: rotate(-90deg);
       transform-origin: center;
       transition: transform var(--_duration-open) ease-in-out;
+
+      padding: var(--_padding-marker);
+      margin: calc(var(--_padding-marker) * -1);
+      border-radius: 999px;
+      background-color: transparent;
     }
-    
+
+    &:hover {
+      color: var(--color-heading);
+      &:before {
+        background-color: var(--color-hover);
+      }
+    }
+    &:active {
+      &:before {
+        background-color: var(--color-active);
+      }
+    }
+
     .marker-end &,
     &.marker-end {
       justify-content: space-between;
