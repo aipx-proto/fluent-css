@@ -59,8 +59,8 @@ input[type="radio"] {
 
   &:checked {
     --_color-background: var(--color-brand);
-    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
-    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-hover: var(--_color-brand-hover);
+    --_color-active: var(--_color-brand-active);
     --_color-border: var(--color-brand);
 
     &:after {
@@ -109,8 +109,8 @@ input[type="checkbox"]:where(:not(.switch)) {
 
   &:indeterminate {
     --_color-background: var(--color-brand);
-    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
-    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-hover: var(--_color-brand-hover);
+    --_color-active: var(--_color-brand-active);
     --_color-border: var(--color-brand);
 
     &,

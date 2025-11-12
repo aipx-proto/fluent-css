@@ -60,9 +60,9 @@ select.btn,
   .btn-group.type-primary &,
   &.type-primary {
     --_color-background: var(--color-brand);
-    --_color-hover: oklch(from var(--_color-background) calc(l + 0.1) c h);
-    --_color-active: oklch(from var(--_color-background) calc(l - 0.1) c h);
-    --_color-selected: oklch(from var(--_color-background) calc(l - 0.05) c h);
+    --_color-hover: var(--_color-brand-hover);
+    --_color-active: var(--_color-brand-active);
+    --_color-selected: var(--_color-brand-selected);
     --_color-text: var(--color-contrast-brand);
     --_color-border: transparent;
   }

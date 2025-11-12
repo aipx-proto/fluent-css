@@ -376,6 +376,11 @@
     --color-warning: var(--color-orange-400);
     --color-success: var(--color-emerald-500);
     --opacity-disabled: 0.6;
+    * {
+      --_color-brand-hover: oklch(from var(--color-brand) calc(l - 0.075) c h);
+      --_color-brand-active: oklch(from var(--color-brand) calc(l - 0.15) c h);
+      --_color-brand-selected: oklch(from var(--color-brand) calc(l - 0.1) c h);
+    }
     &.intent-danger, .intent-danger, &.intent-warning, .intent-warning, &.intent-success, .intent-success, &.intent-brand, .intent-brand {
       color: var(--color-body);
       --color-card: oklch(from var(--color-intent) var(--l-50) 0.015 h);
@@ -421,6 +426,11 @@
     --color-warning: var(--color-orange-400);
     --color-success: var(--color-emerald-500);
     --opacity-disabled: 0.6;
+    * {
+      --_color-brand-hover: oklch(from var(--color-brand) calc(l + 0.1) c h);
+      --_color-brand-active: oklch(from var(--color-brand) calc(l - 0.1) c h);
+      --_color-brand-selected: oklch(from var(--color-brand) calc(l - 0.05) c h);
+    }
     &.intent-danger, .intent-danger, &.intent-warning, .intent-warning, &.intent-success, .intent-success, &.intent-brand, .intent-brand {
       color: var(--color-body);
       --color-card: oklch(from var(--color-intent) var(--l-800) 0.015 h);
@@ -1110,9 +1120,9 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     }
     .btn-group.type-primary &, &.type-primary {
       --_color-background: var(--color-brand);
-      --_color-hover: oklch(from var(--_color-background) calc(l + 0.1) c h);
-      --_color-active: oklch(from var(--_color-background) calc(l - 0.1) c h);
-      --_color-selected: oklch(from var(--_color-background) calc(l - 0.05) c h);
+      --_color-hover: var(--_color-brand-hover);
+      --_color-active: var(--_color-brand-active);
+      --_color-selected: var(--_color-brand-selected);
       --_color-text: var(--color-contrast-brand);
       --_color-border: transparent;
     }
@@ -1261,8 +1271,8 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     }
     &:checked {
       --_color-background: var(--color-brand);
-      --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
-      --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+      --_color-hover: var(--_color-brand-hover);
+      --_color-active: var(--_color-brand-active);
       --_color-border: var(--color-brand);
       &:after {
         opacity: 1;
@@ -1299,8 +1309,8 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     }
     &:indeterminate {
       --_color-background: var(--color-brand);
-      --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
-      --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+      --_color-hover: var(--_color-brand-hover);
+      --_color-active: var(--_color-brand-active);
       --_color-border: var(--color-brand);
       &, &:hover, &:active {
         background-color: transparent !important;
@@ -1365,8 +1375,8 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     }
     &:checked {
       --_color-background: var(--color-brand);
-      --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
-      --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+      --_color-hover: var(--_color-brand-hover);
+      --_color-active: var(--_color-brand-active);
       --_color-thumb: var(--color-input);
       --_color-border: transparent;
       &:after {

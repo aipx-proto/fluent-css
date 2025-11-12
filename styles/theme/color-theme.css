@@ -59,6 +59,13 @@
 
     --opacity-disabled: 0.6;
 
+    * {
+      /* _private - not overridable for now */
+      --_color-brand-hover: oklch(from var(--color-brand) calc(l - 0.075) c h);
+      --_color-brand-active: oklch(from var(--color-brand) calc(l - 0.15) c h);
+      --_color-brand-selected: oklch(from var(--color-brand) calc(l - 0.1) c h);
+    }
+
     @variant intent {
       color: var(--color-body);
 
@@ -119,6 +126,13 @@
     --color-success: var(--color-emerald-500);
 
     --opacity-disabled: 0.6;
+
+    * { 
+      /* _private - not overridable for now */
+      --_color-brand-hover: oklch(from var(--color-brand) calc(l + 0.1) c h);
+      --_color-brand-active: oklch(from var(--color-brand) calc(l - 0.1) c h);
+      --_color-brand-selected: oklch(from var(--color-brand) calc(l - 0.05) c h);
+    }
 
     @variant intent {
       color: var(--color-body);

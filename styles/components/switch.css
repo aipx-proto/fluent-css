@@ -41,7 +41,6 @@ input[type="checkbox"].switch {
     position: absolute;
     top: var(--_size-padding);
     left: var(--_size-padding);
-    /* margin: var(--_size-padding); */
 
     transition: 0.1s ease-in-out;
     transition-property: inset, background-color;
@@ -61,17 +60,13 @@ input[type="checkbox"].switch {
 
   &:checked {
     --_color-background: var(--color-brand);
-    --_color-hover: oklch(from var(--_color-background) calc(l - 0.1) c h);
-    --_color-active: oklch(from var(--_color-background) calc(l - 0.2) c h);
+    --_color-hover: var(--_color-brand-hover);
+    --_color-active: var(--_color-brand-active);
     --_color-thumb: var(--color-input);
-    /* --_color-border: var(--color-brand); */
     --_color-border: transparent;
 
-    /* background-color: var(--_color-checked); */
-    /* border-color: var(--_color-checked); */
     &:after {
       left: calc(100% - var(--_size-thumb) - var(--_size-padding));
-      /* background-color: var(--_color-background); */
     }
   }
 
