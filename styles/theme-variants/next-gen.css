@@ -104,10 +104,14 @@ Key differences from default Fluent:
     .btn,
     ::-webkit-file-upload-button {
       --rounded-default: var(--radius-4xl);
-      .menu & {
+      .menu &, ::picker(select) {
         /* undo border-radius on menu buttons */
         --rounded-default: var(--radius-md);
       }
+    }
+    ::picker(select) {
+      /* undo border-radius on menu buttons */
+      --rounded-default: var(--radius-md);
     }
 
     /* inputs */

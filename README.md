@@ -63,6 +63,7 @@ A second script generates `build/fluent.tailwind.css` for optimized of integrati
 - icon support: vibe-icon
 - replace 'muted' with 'subtle'
 - simplify tooltip popover anchor properties based on the css podcast episode advice
+- style [Customizable select elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select) to look like popover menu
 
 ### Icons?
 

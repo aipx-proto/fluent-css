@@ -1,0 +1,17 @@
+select,
+select.btn,
+select.input {
+  appearance: base-select;
+  &::picker-icon {
+    display: none;
+  }
+}
+
+::picker(select) {
+  appearance: base-select;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--rounded-default);
+  padding: calc(var(--spacing) * 1) ;
+}

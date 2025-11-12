@@ -1092,15 +1092,13 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     border: 1px solid var(--_color-border);
     transition: background-color var(--duration-rest) linear;
     transition-property: background-color, color, border-color;
-    &:not(:disabled):not(.disabled) {
-      &:hover {
-        background-color: var(--_color-hover);
-        transition-duration: var(--duration-hover);
-      }
-      &:active {
-        background-color: var(--_color-active);
-        transition-duration: var(--duration-hover);
-      }
+    &:hover:not(:open) {
+      background-color: var(--_color-hover);
+      transition-duration: var(--duration-hover);
+    }
+    &:active, &:open {
+      background-color: var(--_color-active);
+      transition-duration: var(--duration-hover);
     }
     &.selected {
       background-color: var(--_color-selected);
@@ -1156,7 +1154,7 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
   a.btn {
     text-decoration: none;
   }
-  select.btn, .btn.select {
+  select.btn, .select.btn {
     --_icon-background-image: var(--icon-chevron-down);
     --_icon-background-position: right calc(var(--p-default) - 4px) center;
     --_icon-background-size: var(--h-icon);
@@ -1164,12 +1162,14 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
     no-repeat;
     --_icon-padding-right: calc(var(--h-icon) + var(--p-default));
     line-height: revert;
-    appearance: none;
     background-image: var(--_icon-background-image);
     background-position: var(--_icon-background-position);
     background-size: var(--_icon-background-size);
     background-repeat: no-repeat;
     padding-right: var(--_icon-padding-right);
+    &:focus-visible:open {
+      outline: none;
+    }
   }
   input[type="file"] {
     &::-webkit-file-upload-button {
@@ -1987,6 +1987,20 @@ Download and License - https://learn.microsoft.com/en-us/typography/font-list/se
   @position-try --_position-try-before-bottom {
     position-area: var(--_position-before-bottom);
     margin: var(--_margin-offset-before-after);
+  }
+  select, select.btn, select.input {
+    appearance: base-select;
+    &::picker-icon {
+      display: none;
+    }
+  }
+  ::picker(select) {
+    appearance: base-select;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-card);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--rounded-default);
+    padding: calc(var(--spacing) * 1);
   }
   table {
     --_border-radius: var(--radius-md);

@@ -31,6 +31,7 @@
 @import "./components/accordion.css" layer(components);
 @import "./components/dialog.css" layer(components);
 @import "./components/popover.css" layer(components);
+@import "./components/select.css" layer(components);
 
 @import "./components/table.css" layer(components);
 @import "./components/tabs.css" layer(components);

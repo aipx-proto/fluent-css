@@ -35,17 +35,15 @@ select.btn,
   transition: background-color var(--duration-rest) linear;
   transition-property: background-color, color, border-color;
 
-  &:not(:disabled):not(.disabled) {
-    &:hover {
+    &:hover:not(:open) {
       background-color: var(--_color-hover);
       transition-duration: var(--duration-hover);
     }
 
-    &:active {
+    &:active, &:open {
       background-color: var(--_color-active);
       transition-duration: var(--duration-hover);
     }
-  }
 
   &.selected {
     background-color: var(--_color-selected);
@@ -126,7 +124,7 @@ a.btn {
 }
 
 select.btn,
-.btn.select {
+.select.btn {
   --_icon-background-image: var(--icon-chevron-down);
   --_icon-background-position: right calc(var(--p-default) - 4px) center;
   --_icon-background-size: var(--h-icon);
@@ -135,12 +133,15 @@ select.btn,
   --_icon-padding-right: calc(var(--h-icon) + var(--p-default));
 
   line-height: revert;
-  appearance: none;
   background-image: var(--_icon-background-image);
   background-position: var(--_icon-background-position);
   background-size: var(--_icon-background-size);
   background-repeat: no-repeat;
   padding-right: var(--_icon-padding-right);
+
+  &:focus-visible:open {
+    outline: none;
+  }
 }
 
 input[type="file"] {
