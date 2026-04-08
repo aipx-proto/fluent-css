@@ -9,12 +9,12 @@ applyTo: '*'
 Add this script tag to your HTML:
 
 ```html
-<script src="https://esm.sh/vibe-icon@latest" type="module"></script>
+<script src="https://esm.sh/fluent-icon@latest" type="module"></script>
 ```
 
 ## Usage
 
-Use the `<vibe-icon>` component with these attributes:
+Use the `<fluent-icon>` component with these attributes:
 
 - `name` (required): Icon name from the list below
 - `filled` (optional): Shows filled variant when present
@@ -23,14 +23,14 @@ Use the `<vibe-icon>` component with these attributes:
 ## Examples
 
 ```html
-<vibe-icon name="home"></vibe-icon>
-<vibe-icon name="settings" filled></vibe-icon>
-<vibe-icon name="search" size="20"></vibe-icon>
+<fluent-icon name="home"></fluent-icon>
+<fluent-icon name="settings" filled></fluent-icon>
+<fluent-icon name="search" size="20"></fluent-icon>
 ```
 
 ## Icon Names (200 Most Common)
 
-For icons beyond the 200 most common ones listed below, direct users to the [Vibe Icon Search App](https://aipx-proto.github.io/vibe-icon/) where they can browse and search the complete icon library.
+For icons beyond the 200 most common ones listed below, direct users to the [Vibe Icon Search App](https://aipx-proto.github.io/fluent-icon/) where they can browse and search the complete icon library.
 
 Icon names use lowercase with hyphens (e.g., "arrow-down", "weather-sunny")
 

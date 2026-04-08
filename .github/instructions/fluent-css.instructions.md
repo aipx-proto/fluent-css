@@ -186,7 +186,7 @@ All utility values available as CSS custom properties:
 
 ## Icons
 
-Use vibe-icon: `<vibe-icon name="heart"></vibe-icon>`
+Use fluent-icon: `<fluent-icon name="heart"></fluent-icon>`
 
 ---
 
@@ -200,7 +200,7 @@ Use vibe-icon: `<vibe-icon name="heart"></vibe-icon>`
 <button class="type-outline">Outline</button>
 <button class="type-subtle">Subtle</button>
 <button class="type-transparent">Transparent</button>
-<button class="icon-only" title="Close"><vibe-icon name="dismiss"></vibe-icon></button>
+<button class="icon-only" title="Close"><fluent-icon name="dismiss"></fluent-icon></button>
 
 <!-- Other elements as buttons -->
 <input type="submit" value="Submit" />
@@ -231,7 +231,7 @@ Use vibe-icon: `<vibe-icon name="heart"></vibe-icon>`
 
 <!-- Composite input: ONLY for including icons/buttons inside inputs -->
 <div class="input">
-  <vibe-icon name="search" ></vibe-icon>
+  <fluent-icon name="search" ></fluent-icon>
   <input type="text" placeholder="Search" />
   <button class="size-sm">Submit</button>
 </div>
@@ -338,7 +338,7 @@ Use vibe-icon: `<vibe-icon name="heart"></vibe-icon>`
   <header>
     <h3>Dialog Title</h3>
     <button class="dialog-close type-subtle icon-only" title="Close">
-      <vibe-icon name="dismiss"></vibe-icon>
+      <fluent-icon name="dismiss"></fluent-icon>
     </button>
   </header>
   <main>
@@ -362,7 +362,7 @@ Use plain `popover` attribute for tooltips and informational content. **DO NOT**
 <!-- Tooltip/Info Popover (NO .menu class) -->
 <div popover id="tooltip">How to use the system...</div>
 <button class="icon-only type-subtle" popovertarget="tooltip" title="Help">
-  <vibe-icon name="info" ></vibe-icon>
+  <fluent-icon name="info" ></fluent-icon>
 </button>
 
 <!-- Info Card Popover -->
@@ -382,7 +382,7 @@ Use `.menu` class **ONLY** for interactive menus with buttons/links. Menus defau
 <div class="btn-group type-primary">
   <button>Split Button</button>
   <button class="icon-only" popovertarget="menu" title="More Actions">
-    <vibe-icon name="chevron-down"></vibe-icon>
+    <fluent-icon name="chevron-down"></fluent-icon>
   </button>
 </div>
 

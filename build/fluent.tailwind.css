@@ -576,7 +576,7 @@ mark, ::selection{
 
 .icon,
 .emojicon,
-vibe-icon{
+fluent-icon{
   flex:0 0 auto;
   display:inline-flex;
   align-items:center;
