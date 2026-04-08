@@ -99,6 +99,7 @@
         <li>
           <ul class="list-none p-0 flex flex-col gap-1 items-start">
             <span class="font-semibold text-muted">Other</span>
+            <li><a href="#icon">Icon</a></li>
             <li><a href="#accordion">Accordion</a></li>
             <li><a href="#tabs">Tabs</a></li>
             <li><a href="#table">Table</a></li>
@@ -285,6 +286,27 @@
     </section>
 
     <section id="btns" class="rounded-md bg-panel shadow-lg">
+      <div id="icon" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
+        <h3 class="scroll-mt-8">Fluent Icon</h3>
+        <p class="text-sm text-muted">Use <code class="text-mono text-xs">&lt;fluent-icon&gt;</code> for Microsoft Fluent icons. Set <code class="text-mono text-xs">name</code>, optional <code class="text-mono text-xs">filled</code>, and <code class="text-mono text-xs">size</code> attributes.</p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <fluent-icon name="home"></fluent-icon>
+          <fluent-icon name="settings"></fluent-icon>
+          <fluent-icon name="heart" filled></fluent-icon>
+          <fluent-icon name="search"></fluent-icon>
+          <fluent-icon name="star" filled></fluent-icon>
+          <fluent-icon name="mail"></fluent-icon>
+          <fluent-icon name="person"></fluent-icon>
+          <fluent-icon name="calendar"></fluent-icon>
+          <fluent-icon name="chat"></fluent-icon>
+          <fluent-icon name="sparkle"></fluent-icon>
+        </div>
+        <div class="flex flex-wrap gap-4 items-end">
+          <fluent-icon name="heart" size="16"></fluent-icon>
+          <fluent-icon name="heart" size="20"></fluent-icon>
+          <fluent-icon name="heart" size="24"></fluent-icon>
+        </div>
+      </div>
       <div id="btn" class="flex flex-col gap-6 p-6 border-b border-border [&:last-child]:border-b-0">
         <h3 class="scroll-mt-8">Button</h3>
         <div class="btn__type">
@@ -310,7 +332,9 @@
           <button disabled>Disabled</button>
           <button class="selected">Selected</button>
           <span style=" margin: 0 16px">
-            <button class="icon-only">×</button>
+            <button class="icon-only" title="Dismiss"><fluent-icon name="dismiss"></fluent-icon></button>
+            <button class="icon-only" title="Settings"><fluent-icon name="settings"></fluent-icon></button>
+            <button class="icon-only" title="Add"><fluent-icon name="add"></fluent-icon></button>
             <span style="margin-left: 4px; color: var(--color-muted);">Icon Only</span>
           </span>
         </div>
@@ -341,7 +365,7 @@
             <button>Size Small</button>
             <button>Type Outline</button>
             <button class="selected">Selected</button>
-            <button class="icon-only">•••</button>
+            <button class="icon-only" title="More"><fluent-icon name="more-horizontal"></fluent-icon></button>
           </div>
           <form class="btn-group shape-rounded">
             <input type="email" placeholder="Your email" />
@@ -353,8 +377,8 @@
         <h3 class="scroll-mt-8">Menu & Split Button</h3>
         <div class="btn-group type-primary">
           <button class="shape-rounded">Split Button</button>
-          <button class="icon-only shape-rounded" popovertarget="menu-example">
-            •••
+          <button class="icon-only shape-rounded" popovertarget="menu-example" title="More Actions">
+            <fluent-icon name="chevron-down"></fluent-icon>
           </button>
         </div>
         <div class="menu" id="menu-example" popover>
@@ -721,7 +745,7 @@
                   interaction.</p>
               </main>
               <footer>
-                <button class="dialog-close type-subtle icon-only">×</button>
+                <button class="dialog-close type-subtle icon-only" title="Close"><fluent-icon name="dismiss"></fluent-icon></button>
                 <button class="type-primary">Primary</button>
                 <button>Cancel</button>
               </footer>

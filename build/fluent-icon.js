@@ -22,6 +22,8 @@ export class FluentIcon extends HTMLElement {
   static define() {
     if (!customElements.get("fluent-icon")) {
       customElements.define("fluent-icon", FluentIcon);
+    } else {
+      console.warn("<fluent-icon/> is already defined");
     }
   }
 
@@ -30,6 +32,7 @@ export class FluentIcon extends HTMLElement {
   static placeholderIconPath = `<circle cx="10" cy="10" r="8" fill="currentColor" opacity="0.15"/>`;
 
   #renderController = null;
+  #connected = false;
 
   constructor() {
     super();
@@ -38,16 +41,18 @@ export class FluentIcon extends HTMLElement {
   }
 
   connectedCallback() {
+    this.#connected = true;
     this.#scheduleRender();
   }
 
   disconnectedCallback() {
+    this.#connected = false;
     this.#renderController?.abort();
     this.#renderController = null;
   }
 
   attributeChangedCallback(_name, oldValue, newValue) {
-    if (oldValue !== newValue) {
+    if (oldValue !== newValue && this.#connected) {
       this.#scheduleRender();
     }
   }
@@ -80,7 +85,11 @@ export class FluentIcon extends HTMLElement {
       const asyncResult = fetch(this.#getSourcePath(name, size, style), { signal })
         .then((r) => r.text())
         .catch((e) => {
-          if (e.name !== "AbortError") console.error(`Failed to fetch ${name} icon`);
+          if (e.name === "AbortError") {
+            FluentIcon.cache.delete(cacheKey);
+          } else {
+            console.error(`Failed to fetch ${name} icon`);
+          }
           return "";
         });
       FluentIcon.cache.set(cacheKey, asyncResult);
