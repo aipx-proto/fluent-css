@@ -6,7 +6,11 @@
 
 Fluent.css automatically styles native HTML elements into [Microsoft Fluent Design Language](https://fluent2.microsoft.design/). It provides utilities for theming and class-based components with a minimal API designed so the full documentation fits in an LLM prompt.
 
-The design system consists of only two artifacts: an `llms.txt` documentation file and an imported `fluent.css` file. This portable design allows the library to be integrated in any code gen platform or development environment.
+The design system consists of two artifacts and their instruction files:
+- [`fluent.css`](build/fluent.css) — CSS framework ([`fluent-css.instructions.md`](.github/instructions/fluent-css.instructions.md))
+- [`fluent-icon.js`](build/fluent-icon.js) — Icon web component ([`fluent-icon.instructions.md`](.github/instructions/fluent-icon.instructions.md))
+
+This portable design allows the library to be integrated in any code gen platform or development environment.
 
 **Tailwind Integration** - Fluent.css uses Tailwind syntax and integrates as a component library into Tailwind's `theme`, `components`, and `utilities` css `@layer`s. It also provides css component classes, utility classes, and css variables.
 
@@ -14,10 +18,10 @@ The design system consists of only two artifacts: an `llms.txt` documentation fi
 
 **Tailwind is not required** - this library works standalone with zero dependencies.
 
-[Components Demo](https://aipx-proto.github.io/fluent-css/) / [LLMs.txt Documentation](./llms.txt)
+### [Components Demo](https://aipx-proto.github.io/fluent-css/)
 
 ## Usage
-1. Feed your model the LLMs.txt: [`https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw`](https://esm.sh/gh/aipx-proto/fluent-css@main/llms.txt?raw)
+1. Feed your model the instructions: [`fluent-css.instructions.md`](.github/instructions/fluent-css.instructions.md) and [`fluent-icon.instructions.md`](.github/instructions/fluent-icon.instructions.md)
 
 2. Import the css from CDN in your code:
 
@@ -27,7 +31,7 @@ The design system consists of only two artifacts: an `llms.txt` documentation fi
 
 3. Ask the model to write HTML UI code.
 
-### See [LLMs.txt](./llms.txt) for complete documentation.
+### See [fluent-css.instructions.md](.github/instructions/fluent-css.instructions.md) for complete documentation.
 
 ## Development
 

@@ -186,6 +186,8 @@ All utility values available as CSS custom properties:
 
 ## Icons
 
+See [fluent-icon.instructions.md](https://esm.sh/gh/aipx-proto/fluent-css@main/.github/instructions/fluent-icon.instructions.md?raw) for the full icon component documentation, including available icon names.
+
 Use fluent-icon: `<fluent-icon name="heart"></fluent-icon>`
 
 ---
