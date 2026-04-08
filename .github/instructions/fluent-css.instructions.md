@@ -1,3 +1,7 @@
+---
+applyTo: '*'
+---
+
 # Fluent.css
 
 A css-only implementation of Microsoft's Fluent Design Language.
@@ -182,7 +186,7 @@ All utility values available as CSS custom properties:
 
 ## Icons
 
-Use emoji in spans: `<span class="emojicon">❤️</span>`
+Use vibe-icon: `<vibe-icon name="heart"></vibe-icon>`
 
 ---
 
@@ -196,7 +200,7 @@ Use emoji in spans: `<span class="emojicon">❤️</span>`
 <button class="type-outline">Outline</button>
 <button class="type-subtle">Subtle</button>
 <button class="type-transparent">Transparent</button>
-<button class="icon-only" title="Close">&times;</button>
+<button class="icon-only" title="Close"><vibe-icon name="dismiss"></vibe-icon></button>
 
 <!-- Other elements as buttons -->
 <input type="submit" value="Submit" />
@@ -227,7 +231,7 @@ Use emoji in spans: `<span class="emojicon">❤️</span>`
 
 <!-- Composite input: ONLY for including icons/buttons inside inputs -->
 <div class="input">
-  <span class="emojicon">🔍</span>
+  <vibe-icon name="search" ></vibe-icon>
   <input type="text" placeholder="Search" />
   <button class="size-sm">Submit</button>
 </div>
@@ -333,7 +337,9 @@ Use emoji in spans: `<span class="emojicon">❤️</span>`
 <dialog closedby="any">
   <header>
     <h3>Dialog Title</h3>
-    <button class="dialog-close type-subtle icon-only" title="Close">&times;</button>
+    <button class="dialog-close type-subtle icon-only" title="Close">
+      <vibe-icon name="dismiss"></vibe-icon>
+    </button>
   </header>
   <main>
     <!-- Main element scrolls automatically when content overflows -->
@@ -356,7 +362,7 @@ Use plain `popover` attribute for tooltips and informational content. **DO NOT**
 <!-- Tooltip/Info Popover (NO .menu class) -->
 <div popover id="tooltip">How to use the system...</div>
 <button class="icon-only type-subtle" popovertarget="tooltip" title="Help">
-  <span class="emojicon">ℹ️</span>
+  <vibe-icon name="info" ></vibe-icon>
 </button>
 
 <!-- Info Card Popover -->
@@ -375,7 +381,9 @@ Use `.menu` class **ONLY** for interactive menus with buttons/links. Menus defau
 <!-- Split Button with Menu -->
 <div class="btn-group type-primary">
   <button>Split Button</button>
-  <button class="icon-only" popovertarget="menu" title="More Actions">•••</button>
+  <button class="icon-only" popovertarget="menu" title="More Actions">
+    <vibe-icon name="chevron-down"></vibe-icon>
+  </button>
 </div>
 
 <div popover class="menu" id="menu">
