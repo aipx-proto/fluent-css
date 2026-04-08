@@ -2,14 +2,14 @@
 applyTo: '*'
 ---
 
-# Vibe Icon - Microsoft Fluent Icons Web Component
+# Fluent Icon - Microsoft Fluent Icons Web Component
 
 ## Installation
 
 Add this script tag to your HTML:
 
 ```html
-<script src="https://esm.sh/fluent-icon@latest" type="module"></script>
+<script src="https://esm.sh/gh/aipx-proto/fluent-css@main/build/fluent-icon.js?raw" type="module"></script>
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ Use the `<fluent-icon>` component with these attributes:
 
 ## Icon Names (200 Most Common)
 
-For icons beyond the 200 most common ones listed below, direct users to the [Vibe Icon Search App](https://aipx-proto.github.io/fluent-icon/) where they can browse and search the complete icon library.
+For icons beyond the 200 most common ones listed below, direct users to the [Fluent Icon Search App](https://aipx-proto.github.io/vibe-icon/) where they can browse and search the complete icon library.
 
 Icon names use lowercase with hyphens (e.g., "arrow-down", "weather-sunny")
 

@@ -12,6 +12,7 @@
 
   <!-- 2. Fluent.css MUST come after Tailwind for proper CSS cascade -->
   <link rel="stylesheet" href="./build/fluent.css" />
+  <script type="module" src="./build/fluent-icon.js"></script>
 
   <link rel="stylesheet" href="./styles/theme-variants/next-gen.css" />
 
@@ -406,17 +407,17 @@
         <h3 class="scroll-mt-8">Input Group</h3>
         <div>
           <div class="input">
-            <i class="icon emojicon">🔍</i>
+            <fluent-icon name="search"></fluent-icon>
             <input type="text" placeholder="Input" />
             <button class="size-sm">Submit</button>
           </div>
           <!-- <div class="input mb-4">
-            <i class="icon emojicon">+</i>
+            <fluent-icon name="add"></fluent-icon>
             <input placeholder="What needs to be done?" type="text" value="">
             <button class="type-primary">Add</button>
           </div> -->
           <!-- <div class="input">
-            <i class="icon emojicon">🔍</i>
+            <fluent-icon name="search"></fluent-icon>
             <textarea type="text" placeholder="Input"></textarea>
             <button>Send</button>
           </div> -->
